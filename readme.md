@@ -234,3 +234,5 @@ A positive outcome would be a theorem-backed reserve certificate: given a domain
 A negative outcome is also valuable: every obstruction becomes a new floor, a warning for protocol designers, or a reason to switch to folded/subspace-design codes, random/punctured domains, or domain-shattered constructions.
 
 Either way, the aim is to replace folklore “near-capacity RS should work” claims with exact, checkable mathematics.
+
+The current work was done with GPT-5.5 Pro and Claude Fable 5 and still needs proper revision. Human input is welcome.

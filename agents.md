@@ -479,6 +479,9 @@ Attach script, seed, exact command, or symbolic certificate.
 6. Compare base-list product bounds with direct interleaved-list enumeration for tiny `mu=2` cases.
 7. Search for the first genuinely extension-valued bad line over `F_{p^2}`.
 8. Produce a JSON schema for Paper C reserve certificates.
+9. Start a Lean formalization of the core definitions, reserve ledgers, quotient identities, and finite certificate statements.
+
+Lean formalization would be very useful for this project, but it has not been done yet. Start small: formalize the finite-field/domain definitions, locator identities, quotient-profile predicates, and exact script-certificate statements before attempting the main local-limit conjectures.
 
 ## Success criteria
 
