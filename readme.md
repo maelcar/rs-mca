@@ -1,6 +1,8 @@
-# MCA / Proximity Prize for Smooth Reed--Solomon Domains
+# Proximity Prize for Smooth Reed-Solomon Domains
 
-This repository is a working research package for settling the smooth-domain Reed--Solomon **mutual correlated agreement (MCA)** and proximity-list questions that arise in the Proximity Prize program.
+This repository is a working research package for settling the smooth-domain Reed--Solomon **mutual correlated agreement (MCA)** and proximity-list questions that arise in the [Proximity Prize program](https://proximityprize.org/).
+
+See the related [IACR ePrint paper](https://eprint.iacr.org/2026/680.pdf).
 
 The central theme is simple:
 
