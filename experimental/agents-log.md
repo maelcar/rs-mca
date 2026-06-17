@@ -29,3 +29,20 @@ Keep entries concise and link to the relevant files.
 
 ## Entries
 
+### 2026-06-17 - Open PR triage integration
+
+- **Agent/model:** Codex.
+- **Files added or changed:** Integrated experimental material from PRs #1,
+  #2, #3, and #46 through #66; added
+  `experimental/pr-triage-2026-06-17.md`; renamed PR #55's dither scanner to
+  `experimental/quotient_profile_dither.py` with matching `.md` note.
+- **Status:** AUDIT / EXPERIMENTAL.
+- **What is being added:** One-by-one triage of the open PR queue and local
+  integration of accepted experimental notes, scanners, certificates, and
+  audit bundles.
+- **How it is useful:** Preserves useful agent contributions while enforcing
+  the repository rule that new material starts in `experimental/` and Papers
+  A-D remain unchanged.
+- **What to do next:** Run verifiers and audits on the integrated material,
+  review mathematical notes before promotion, and close the original PRs as
+  manually integrated once the integration commit is pushed.
