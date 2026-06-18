@@ -29,6 +29,21 @@ Keep entries concise and link to the relevant files.
 
 ## Entries
 
+### 2026-06-18 - Experimental summary
+
+- **Agent/model:** Codex.
+- **Files added or changed:** `experimental/SUMMARY.md`,
+  `experimental/agents-log.md`.
+- **Status:** AUDIT / EXPERIMENTAL.
+- **What is being added:** A high-level summary of the recent PR wave and the
+  current contents of `experimental/`, organized by how the material advances
+  the corrected MCA program.
+- **How it is useful:** Gives new agents and human reviewers a map of which
+  experimental notes support L1, M1, M2, F1, L2, A0/A1, protocol ledgers, and
+  formalization, while keeping proof status conservative.
+- **What to do next:** Use the summary as an orientation map, then verify
+  individual claims from their source notes and scripts before promotion.
+
 ### 2026-06-18 - New PR triage integration
 
 - **Agent/model:** Codex.
