@@ -109,6 +109,68 @@ The exceptional locus `s=h=0` is lower-dimensional unless the whole `Delta1`
 polynomial vanishes; it belongs in the finite scanner/audit, not in the banked
 collapse claim.
 
+## Divisibility-Gate Theorem
+
+This gives a small new theorem beyond the original Cycle 18 message.
+
+**Theorem.** In the restricted setting above, assume `Delta1` is not the zero
+polynomial. Write
+
+```text
+Delta1 = s(tau1,tau2) tau3 + h(tau1,tau2).
+```
+
+Let
+
+```text
+G(tau1,tau2) =
+  s(tau1,tau2)^2 Delta0(tau1,tau2,-h(tau1,tau2)/s(tau1,tau2))
+```
+
+after clearing denominators. Since the `p_i,q_i` are affine-linear in
+`(tau1,tau2)`, `s` has degree at most `1`, `h` has degree at most `2`, and
+`G` has degree at most `4`.
+
+If `G` is not the zero polynomial, then the common-zero set
+
+```text
+Delta0=Delta1=0
+```
+
+has only `O(p)` points over `B=F_p`. Consequently the number of distinct
+slopes contributed by this branch is `C2=O(p)=O(n)`.
+
+Thus a growing-prime `Theta(p^2)=Theta(q_line)` family in the nonzero-Delta1
+branch can occur only if the divisibility identity
+
+```text
+G == 0
+```
+
+holds identically. Equivalently, after clearing the `s` denominator,
+`Delta0` is divisible by the linear `tau3` equation `Delta1` on the relevant
+open set.
+
+**Proof.** On `s != 0`, the equation `Delta1=0` forces the graph
+`tau3=-h/s`, so any common zero also satisfies `G(tau1,tau2)=0`. If `G` is
+nonzero of degree at most `4`, the Schwartz-Zippel bound gives at most `4p`
+base pairs `(tau1,tau2)`. Each such pair gives at most one graph value of
+`tau3`.
+
+On `s=0`, the equation `Delta1=0` forces `h=0`. This contributes at most a
+line's worth of base pairs if `s` is a nonzero affine form, and at most a
+degree-`2` curve's worth if `s` is identically zero but `h` is not. For each
+base pair, `Delta0` is monic quadratic in `tau3`, hence gives at most two
+values of `tau3`. This is again `O(p)`. Therefore a two-dimensional
+common-zero surface can only remain in the nonzero-`Delta1` branch when
+`G` vanishes identically. Slope count is bounded by landing-point count, so
+`C2=O(p)` whenever `G` is nonzero.
+
+This theorem is still a restricted finite-field algebra statement. It does not
+prove graph-image collapse in the exceptional `G==0` case; it proves that
+`G==0` is the exact algebraic gate any large graph-branch counterpacket must
+pass.
+
 ## Slope Map On The Graph
 
 The landing equation `iota=z mu` gives

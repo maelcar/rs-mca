@@ -41,12 +41,16 @@ Keep entries concise and link to the relevant files.
 - **What is being added:** A local reconstruction of Danny's Cycle 18
   `t=2,j=3` resonance reduction: `Delta` becomes a monic quadratic in
   `tau3`, the alpha component is at most linear, and the non-coprime branch
-  reduces to either `Delta1==0` or the graph `tau3=-h/s`.
+  reduces to either `Delta1==0` or the graph `tau3=-h/s`. The audit also
+  records the divisibility-gate theorem: if the cleared graph polynomial
+  `G=s^2 Delta0(tau1,tau2,-h/s)` is nonzero, the branch is already
+  curve-sized and contributes only `O(p)` slopes.
 - **How it is useful:** Sharpens the Paper B/F1 restricted toy-window wall
   from the Cycle 16 `Q==0` split to a concrete rational slope-map collapse
   question.
 - **What to do next:** Extend the Cycle 17 scanner to compute the graph branch
-  and projective map image on source-valid split cubics across growing primes.
+  and projective map image on source-valid split cubics across growing primes,
+  with `G==0` as the first exact gate for possible `Theta(p^2)` behavior.
 
 ### 2026-06-18 - Paper B counterexample comparison
 
