@@ -14,6 +14,7 @@ import itertools
 import json
 import math
 from collections import Counter
+from fractions import Fraction
 from typing import Any
 
 
@@ -35,7 +36,9 @@ def parse_int_list(text: str) -> list[int]:
     try:
         values = [int(part.strip()) for part in text.split(",") if part.strip()]
     except ValueError as exc:
-        raise argparse.ArgumentTypeError("expected a comma-separated integer list") from exc
+        raise argparse.ArgumentTypeError(
+            "expected a comma-separated integer list"
+        ) from exc
     if not values:
         raise argparse.ArgumentTypeError("expected a nonempty integer list")
     return values
@@ -66,12 +69,17 @@ def eval_received_polys(
     coeff_rows: list[list[int]], domain: list[int], prime: int
 ) -> list[list[int]]:
     return [
-        [eval_poly([coeff % prime for coeff in coeffs], x_value, prime) for x_value in domain]
+        [
+            eval_poly([coeff % prime for coeff in coeffs], x_value, prime)
+            for x_value in domain
+        ]
         for coeffs in coeff_rows
     ]
 
 
-def normalize_value_rows(rows: list[list[int]], domain_size: int, prime: int) -> list[list[int]]:
+def normalize_value_rows(
+    rows: list[list[int]], domain_size: int, prime: int
+) -> list[list[int]]:
     normalized = []
     for row in rows:
         if len(row) != domain_size:
@@ -94,7 +102,8 @@ def agreement_histograms(
     total = codeword_count(prime, dimension)
     if total > max_codewords:
         raise ValueError(
-            f"refusing to enumerate {total} codewords; raise --max-codewords if intended"
+            f"refusing to enumerate {total} codewords; "
+            "raise --max-codewords if intended"
         )
 
     histograms = [Counter() for _ in received_rows]
@@ -112,7 +121,17 @@ def agreement_histograms(
 
 
 def count_base_list(histogram: Counter[int], agreement: int) -> int:
-    return sum(count for mask, count in histogram.items() if mask.bit_count() >= agreement)
+    return sum(
+        count for mask, count in histogram.items() if mask.bit_count() >= agreement
+    )
+
+
+def count_raw_base_fiber(histogram: Counter[int], agreement: int) -> int:
+    return sum(
+        count * math.comb(mask.bit_count(), agreement)
+        for mask, count in histogram.items()
+        if mask.bit_count() >= agreement
+    )
 
 
 def count_interleaved(
@@ -125,7 +144,366 @@ def count_interleaved(
             for row_mask, row_count in histogram.items():
                 next_combined[current_mask & row_mask] += current_count * row_count
         combined = next_combined
-    return sum(count for mask, count in combined.items() if mask.bit_count() >= agreement)
+    return sum(
+        count for mask, count in combined.items() if mask.bit_count() >= agreement
+    )
+
+
+def count_raw_simultaneous_fiber(
+    histograms: list[Counter[int]], agreement: int, domain_size: int
+) -> int:
+    combined: Counter[int] = Counter({(1 << domain_size) - 1: 1})
+    for histogram in histograms:
+        next_combined: Counter[int] = Counter()
+        for current_mask, current_count in combined.items():
+            for row_mask, row_count in histogram.items():
+                next_combined[current_mask & row_mask] += current_count * row_count
+        combined = next_combined
+    return sum(
+        count * math.comb(mask.bit_count(), agreement)
+        for mask, count in combined.items()
+        if mask.bit_count() >= agreement
+    )
+
+
+def common_intersection_histogram(
+    histograms: list[Counter[int]], domain_size: int
+) -> Counter[int]:
+    combined: Counter[int] = Counter({(1 << domain_size) - 1: 1})
+    for histogram in histograms:
+        next_combined: Counter[int] = Counter()
+        for current_mask, current_count in combined.items():
+            for row_mask, row_count in histogram.items():
+                next_combined[current_mask & row_mask] += current_count * row_count
+        combined = next_combined
+    histogram: Counter[int] = Counter()
+    for mask, count in combined.items():
+        if count:
+            histogram[mask.bit_count()] += count
+    return histogram
+
+
+def max_two_row_codegrees(
+    histograms: list[Counter[int]], agreement: int
+) -> dict[str, int] | None:
+    if len(histograms) != 2:
+        return None
+
+    left, right = histograms
+    left_max = 0
+    for left_mask in left:
+        compatible = sum(
+            count
+            for right_mask, count in right.items()
+            if (left_mask & right_mask).bit_count() >= agreement
+        )
+        left_max = max(left_max, compatible)
+
+    right_max = 0
+    for right_mask in right:
+        compatible = sum(
+            count
+            for left_mask, count in left.items()
+            if (left_mask & right_mask).bit_count() >= agreement
+        )
+        right_max = max(right_max, compatible)
+
+    return {
+        "left_to_right": left_max,
+        "right_to_left": right_max,
+    }
+
+
+def support_size_histogram(
+    histogram: Counter[int], agreement: int
+) -> Counter[int]:
+    sizes: Counter[int] = Counter()
+    for mask, count in histogram.items():
+        support_size = mask.bit_count()
+        if support_size >= agreement:
+            sizes[support_size] += count
+    return sizes
+
+
+def johnson_neighborhood_size(
+    domain_size: int, agreement: int, support_size: int, max_excess: int
+) -> int:
+    if support_size < agreement:
+        return 0
+    if support_size > agreement + max_excess:
+        raise ValueError("support_size exceeds agreement + max_excess")
+
+    excess = support_size - agreement
+    outside_size = domain_size - support_size
+    total = 0
+    for removed in range(excess + 1):
+        max_added = max_excess - excess + removed
+        for added in range(min(outside_size, max_added) + 1):
+            total += (
+                math.comb(support_size, removed)
+                * math.comb(outside_size, added)
+            )
+    return total
+
+
+def near_exact_johnson_bound(
+    histograms: list[Counter[int]],
+    agreement: int,
+    dimension: int,
+    domain_size: int,
+) -> dict[str, Any]:
+    support_sizes = [
+        support_size_histogram(histogram, agreement) for histogram in histograms
+    ]
+    listed_supports = [sum(histogram.values()) for histogram in support_sizes]
+
+    if any(count == 0 for count in listed_supports):
+        return {
+            "status": "proved",
+            "reason": "some row has no listed supports",
+            "max_excess": None,
+            "support_size_histograms": [
+                dict(sorted(histogram.items())) for histogram in support_sizes
+            ],
+            "bound": 0,
+            "row_bounds": [],
+            "neighborhood_sizes": {},
+        }
+
+    if agreement < dimension:
+        return {
+            "status": "not_applicable",
+            "reason": "requires agreement >= k for support injectivity",
+            "max_excess": None,
+            "support_size_histograms": [
+                dict(sorted(histogram.items())) for histogram in support_sizes
+            ],
+            "bound": None,
+            "row_bounds": [],
+            "neighborhood_sizes": {},
+        }
+
+    if any(
+        count != 1
+        for histogram in histograms
+        for mask, count in histogram.items()
+        if mask.bit_count() >= agreement
+    ):
+        return {
+            "status": "not_applicable",
+            "reason": "listed agreement supports are not injective",
+            "max_excess": None,
+            "support_size_histograms": [
+                dict(sorted(histogram.items())) for histogram in support_sizes
+            ],
+            "bound": None,
+            "row_bounds": [],
+            "neighborhood_sizes": {},
+        }
+
+    max_excess = max(
+        support_size - agreement
+        for histogram in support_sizes
+        for support_size in histogram
+    )
+    neighborhood_sizes = {
+        support_size: johnson_neighborhood_size(
+            domain_size, agreement, support_size, max_excess
+        )
+        for support_size in range(agreement, agreement + max_excess + 1)
+    }
+    row_bounds = []
+    row_count = len(histograms)
+    for histogram in support_sizes:
+        row_bounds.append(
+            sum(
+                count * neighborhood_sizes[support_size] ** (row_count - 1)
+                for support_size, count in histogram.items()
+            )
+        )
+
+    return {
+        "status": "proved",
+        "reason": "all listed supports have size in [a,a+c]",
+        "max_excess": max_excess,
+        "support_size_histograms": [
+            dict(sorted(histogram.items())) for histogram in support_sizes
+        ],
+        "bound": min(row_bounds),
+        "row_bounds": row_bounds,
+        "neighborhood_sizes": dict(sorted(neighborhood_sizes.items())),
+    }
+
+
+def johnson_layer_kernel(
+    domain_size: int, agreement: int, anchor_size: int, support_size: int
+) -> int:
+    if agreement > min(anchor_size, support_size):
+        return 0
+
+    outside_anchor = domain_size - anchor_size
+    total = 0
+    for intersection_size in range(agreement, min(anchor_size, support_size) + 1):
+        outside_size = support_size - intersection_size
+        if outside_size <= outside_anchor:
+            total += (
+                math.comb(anchor_size, intersection_size)
+                * math.comb(outside_anchor, outside_size)
+            )
+    return total
+
+
+def layered_johnson_bound(
+    histograms: list[Counter[int]],
+    agreement: int,
+    dimension: int,
+    domain_size: int,
+) -> dict[str, Any]:
+    support_layers = [
+        support_size_histogram(histogram, agreement) for histogram in histograms
+    ]
+    listed_supports = [sum(histogram.values()) for histogram in support_layers]
+
+    if any(count == 0 for count in listed_supports):
+        return {
+            "status": "proved",
+            "reason": "some row has no listed supports",
+            "support_size_histograms": [
+                dict(sorted(histogram.items())) for histogram in support_layers
+            ],
+            "bound": 0,
+            "row_bounds": [],
+            "kernel_by_anchor_size": {},
+        }
+
+    if agreement < dimension:
+        return {
+            "status": "not_applicable",
+            "reason": "requires agreement >= k for support injectivity",
+            "support_size_histograms": [
+                dict(sorted(histogram.items())) for histogram in support_layers
+            ],
+            "bound": None,
+            "row_bounds": [],
+            "kernel_by_anchor_size": {},
+        }
+
+    if any(
+        count != 1
+        for histogram in histograms
+        for mask, count in histogram.items()
+        if mask.bit_count() >= agreement
+    ):
+        return {
+            "status": "not_applicable",
+            "reason": "listed agreement supports are not injective",
+            "support_size_histograms": [
+                dict(sorted(histogram.items())) for histogram in support_layers
+            ],
+            "bound": None,
+            "row_bounds": [],
+            "kernel_by_anchor_size": {},
+        }
+
+    all_sizes = sorted(
+        {
+            support_size
+            for histogram in support_layers
+            for support_size in histogram
+        }
+    )
+    kernel_by_anchor_size = {
+        anchor_size: {
+            support_size: johnson_layer_kernel(
+                domain_size, agreement, anchor_size, support_size
+            )
+            for support_size in all_sizes
+        }
+        for anchor_size in all_sizes
+    }
+
+    row_bounds = []
+    for anchor_index, anchor_layers in enumerate(support_layers):
+        row_total = 0
+        for anchor_size, anchor_count in anchor_layers.items():
+            completion_bound = 1
+            for other_index, other_layers in enumerate(support_layers):
+                if other_index == anchor_index:
+                    continue
+                layer_sum = sum(
+                    min(
+                        support_count,
+                        kernel_by_anchor_size[anchor_size][support_size],
+                    )
+                    for support_size, support_count in other_layers.items()
+                )
+                completion_bound *= layer_sum
+            row_total += anchor_count * completion_bound
+        row_bounds.append(row_total)
+
+    return {
+        "status": "proved",
+        "reason": "bounded by support-size layer counts",
+        "support_size_histograms": [
+            dict(sorted(histogram.items())) for histogram in support_layers
+        ],
+        "bound": min(row_bounds),
+        "row_bounds": row_bounds,
+        "kernel_by_anchor_size": {
+            anchor_size: dict(sorted(kernel.items()))
+            for anchor_size, kernel in sorted(kernel_by_anchor_size.items())
+        },
+    }
+
+
+def binomial_tail_probability(
+    trials: int, success_denominator: int, threshold: int
+) -> Fraction:
+    total = Fraction(0, 1)
+    failure = success_denominator - 1
+    denominator = success_denominator**trials
+    for hits in range(threshold, trials + 1):
+        numerator = math.comb(trials, hits) * failure ** (trials - hits)
+        total += Fraction(numerator, denominator)
+    return total
+
+
+def fraction_payload(value: Fraction) -> dict[str, int | str | float | None]:
+    try:
+        decimal: float | None = float(value)
+    except OverflowError:
+        decimal = None
+    return {
+        "exact": str(value),
+        "numerator": value.numerator,
+        "denominator": value.denominator,
+        "decimal": decimal,
+    }
+
+
+def random_received_baseline(
+    prime: int, dimension: int, domain_size: int, agreement: int, row_count: int
+) -> dict[str, Any]:
+    base_tail = binomial_tail_probability(domain_size, prime, agreement)
+    direct_tail = binomial_tail_probability(
+        domain_size, prime**row_count, agreement
+    )
+    expected_base = Fraction(prime**dimension, 1) * base_tail
+    expected_direct = Fraction(prime ** (dimension * row_count), 1) * direct_tail
+    expected_product = expected_base**row_count
+    product_to_direct = (
+        None if expected_direct == 0 else expected_product / expected_direct
+    )
+
+    return {
+        "model": "uniform_independent_received_rows",
+        "expected_base_list": fraction_payload(expected_base),
+        "expected_direct_interleaved_list": fraction_payload(expected_direct),
+        "expected_product_bound": fraction_payload(expected_product),
+        "expected_product_to_direct_ratio": None
+        if product_to_direct is None
+        else fraction_payload(product_to_direct),
+    }
 
 
 def top_masks(histogram: Counter[int], limit: int) -> list[dict[str, int]]:
@@ -154,7 +532,9 @@ def compute_report(args: argparse.Namespace) -> dict[str, Any]:
     else:
         if args.subgroup_order is None:
             raise ValueError("--subgroup-generator requires --subgroup-order")
-        domain = subgroup_domain(args.subgroup_generator % args.p, args.subgroup_order, args.p)
+        domain = subgroup_domain(
+            args.subgroup_generator % args.p, args.subgroup_order, args.p
+        )
 
     if len(set(domain)) != len(domain):
         raise ValueError("domain values must be distinct modulo p")
@@ -175,10 +555,32 @@ def compute_report(args: argparse.Namespace) -> dict[str, Any]:
         received_rows=received_rows,
         max_codewords=args.max_codewords,
     )
-    base_counts = [count_base_list(histogram, args.agreement) for histogram in histograms]
+    base_counts = [
+        count_base_list(histogram, args.agreement) for histogram in histograms
+    ]
+    raw_base_counts = [
+        count_raw_base_fiber(histogram, args.agreement) for histogram in histograms
+    ]
     product_bound = math.prod(base_counts)
     direct_count = count_interleaved(histograms, args.agreement, len(domain))
+    raw_simultaneous_count = count_raw_simultaneous_fiber(
+        histograms, args.agreement, len(domain)
+    )
+    intersection_histogram = common_intersection_histogram(histograms, len(domain))
+    two_row_codegrees = max_two_row_codegrees(histograms, args.agreement)
+    johnson_bound = near_exact_johnson_bound(
+        histograms, args.agreement, args.k, len(domain)
+    )
+    layered_bound = layered_johnson_bound(
+        histograms, args.agreement, args.k, len(domain)
+    )
+    random_baseline = random_received_baseline(
+        args.p, args.k, len(domain), args.agreement, len(received_rows)
+    )
     ratio = None if product_bound == 0 else direct_count / product_bound
+    raw_to_direct_ratio = (
+        None if direct_count == 0 else raw_simultaneous_count / direct_count
+    )
 
     return {
         "p": args.p,
@@ -190,9 +592,17 @@ def compute_report(args: argparse.Namespace) -> dict[str, Any]:
         "row_source": row_source,
         "codeword_count_per_row": codeword_count(args.p, args.k),
         "base_list_counts": base_counts,
+        "raw_base_fiber_counts": raw_base_counts,
         "trivial_product_bound": product_bound,
         "direct_interleaved_count": direct_count,
+        "raw_simultaneous_fiber_count": raw_simultaneous_count,
         "direct_to_product_ratio": ratio,
+        "raw_to_direct_ratio": raw_to_direct_ratio,
+        "common_intersection_histogram": dict(sorted(intersection_histogram.items())),
+        "two_row_max_codegrees": two_row_codegrees,
+        "near_exact_johnson_bound": johnson_bound,
+        "layered_johnson_bound": layered_bound,
+        "random_received_baseline": random_baseline,
         "support_mask_counts": [len(histogram) for histogram in histograms],
         "top_masks": [
             top_masks(histogram, args.show_masks) for histogram in histograms
@@ -214,10 +624,64 @@ def print_report(report: dict[str, Any]) -> None:
     )
     print(f"codewords per row: {report['codeword_count_per_row']}")
     print(f"base list counts: {report['base_list_counts']}")
+    print(f"raw base fiber counts: {report['raw_base_fiber_counts']}")
     print(f"trivial product bound: {report['trivial_product_bound']}")
     print(f"direct interleaved count: {report['direct_interleaved_count']}")
+    print(f"raw simultaneous fiber count: {report['raw_simultaneous_fiber_count']}")
     ratio = report["direct_to_product_ratio"]
     print("direct/product ratio: " + ("undefined" if ratio is None else f"{ratio:.6g}"))
+    raw_ratio = report["raw_to_direct_ratio"]
+    print(
+        "raw/direct ratio: "
+        + ("undefined" if raw_ratio is None else f"{raw_ratio:.6g}")
+    )
+    print(f"common intersection histogram: {report['common_intersection_histogram']}")
+    if report["two_row_max_codegrees"] is not None:
+        print(f"two-row max codegrees: {report['two_row_max_codegrees']}")
+    johnson_bound = report["near_exact_johnson_bound"]
+    print(f"near-exact Johnson status: {johnson_bound['status']}")
+    if johnson_bound["bound"] is not None:
+        print(f"near-exact Johnson bound: {johnson_bound['bound']}")
+    if johnson_bound["max_excess"] is not None:
+        print(f"near-exact max excess: {johnson_bound['max_excess']}")
+    if johnson_bound["neighborhood_sizes"]:
+        print(
+            "Johnson neighborhood sizes: "
+            f"{johnson_bound['neighborhood_sizes']}"
+        )
+    layered_bound = report["layered_johnson_bound"]
+    print(f"layered Johnson status: {layered_bound['status']}")
+    if layered_bound["bound"] is not None:
+        print(f"layered Johnson bound: {layered_bound['bound']}")
+    if layered_bound["kernel_by_anchor_size"]:
+        print(
+            "layered Johnson kernels: "
+            f"{layered_bound['kernel_by_anchor_size']}"
+        )
+
+    def decimal_text(item: dict[str, Any]) -> str:
+        decimal = item["decimal"]
+        return "overflow" if decimal is None else f"{decimal:.6g}"
+
+    random_baseline = report["random_received_baseline"]
+    print(
+        "random expected base list: "
+        + decimal_text(random_baseline["expected_base_list"])
+    )
+    print(
+        "random expected direct interleaved list: "
+        + decimal_text(random_baseline["expected_direct_interleaved_list"])
+    )
+    print(
+        "random expected product bound: "
+        + decimal_text(random_baseline["expected_product_bound"])
+    )
+    product_ratio = random_baseline["expected_product_to_direct_ratio"]
+    if product_ratio is not None:
+        print(
+            "random expected product/direct ratio: "
+            + decimal_text(product_ratio)
+        )
     print(f"support masks per row: {report['support_mask_counts']}")
 
     if report["top_masks"]:

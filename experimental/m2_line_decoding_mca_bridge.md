@@ -90,6 +90,162 @@ condition that the direction is not explained on that support by a degree `< k`
 polynomial.  This is the local algebra behind both the one-bad-parameter
 support bound and the residue-line packing formulation.
 
+## Support-Witness Projection Certificate
+
+The per-support algebra gives a finite certificate object for `LD_sw`.  For a
+line `f+z g` and agreement size `a`, define
+
+```text
+W_a(f,g)
+  = { (S,z) :
+        |S| >= a,
+        (f+z g)|S in C|S,
+        not (f|S in C|S and g|S in C|S) }.
+```
+
+Then the support-wise bad-slope set is exactly the projection
+
+```text
+pi_z W_a(f,g).
+```
+
+Hence
+
+```text
+#{support-wise noncontained slopes}
+  <= |W_a(f,g)|.
+```
+
+Moreover, if every bad slope has at least `mu` witness supports in `W_a(f,g)`,
+then
+
+```text
+#{support-wise noncontained slopes}
+  <= |W_a(f,g)| / mu.
+```
+
+For linear codes this certificate can be emitted support-by-support: if
+`g|S in C|S`, the support contributes no noncontained slope, while if
+`g|S notin C|S`, it contributes at most one slope.  Thus an M2 certificate may
+bound `LD_sw` either by counting noncontained supports directly or by using
+slope-fiber multiplicity in the projection.  This is useful because the
+support-family machinery often naturally bounds witness supports, while
+line-decoding consumes distinct slopes.
+
+For Reed-Solomon codes, this certificate may be reduced to exact-size
+supports.  Suppose `C=RS[F,D,k]` and `a >= k+1`.  If a slope has a
+support-wise noncontained witness on some support `T` with `|T| >= a`, then it
+has one on a support `S subset T` with `|S|=a`.  Indeed, the line point remains
+code-explained on every subset of `T`.  Since the witness on `T` is
+noncontained, at least one of `f|T` or `g|T` is not the restriction of a
+degree-`<k` polynomial.  That failure is already visible on some
+`(k+1)`-subset of `T`; otherwise every `(k+1)`-subset would force the same
+degree-`<k` interpolation one point at a time.  Extend this bad `(k+1)`-subset
+inside `T` to size `a`.  The resulting support still explains the line point
+but does not explain both `f` and `g`.
+
+Thus for Reed-Solomon codes and `a >= k+1`, `LD_sw(C,a)` is unchanged if
+`W_a(f,g)` is restricted to exact supports `|S|=a`.  This is the form most
+useful for finite support-family scanners and for comparison with the M1
+exact-support ledgers.
+
+## Residue-Line Equivalence for Reed-Solomon Codes
+
+The support-wise numerator is exactly the residue-line packing number from
+`tex/slackMCA_v3.tex`, after translating radius into agreement size.  This is
+the finite M2 bridge in agreement coordinates.
+
+Let `C=RS[F,D,k]`, `|D|=n`, and `r=n-k`.  Assume there is a degree-`r`
+polynomial nonzero on `D`; this holds for multiplicative domains by taking
+`X^r`.  For `1 <= t <= r`, define a degree-`t` residue-line datum to be
+
+```text
+E in F[X], deg E=t, E(x) != 0 on D,
+B in F[X], deg B<t,
+w:D -> F.
+```
+
+For agreement size `a`, a slope `z` is witnessed by this datum if there are
+`S subset D` and `Q_z in F[X]` such that
+
+```text
+|S| >= a,
+deg Q_z < k+t,
+Q_z == zB mod E,
+Q_z = w on S,
+```
+
+and the witness is noncontained if no `A,G in F[X]_{<k}` satisfy
+
+```text
+A = w/E on S,        G = -B/E on S.
+```
+
+Let `RL_NC(D,k,a)` be the maximum, over all degrees `1 <= t <= r` and all such
+data, of the number of slopes with noncontained witnesses.  Then
+
+```text
+LD_sw(RS[F,D,k],a) = RL_NC(D,k,a).
+```
+
+If `a >= k+1`, define `RL_NC^=(D,k,a)` by the same maximum but requiring every
+witness support to have exact size `|S|=a`.  The exact-support reduction above
+gives the sharper agreement-coordinate identity
+
+```text
+LD_sw(RS[F,D,k],a) = RL_NC^=(D,k,a) = RL_NC(D,k,a).
+```
+
+Consequently, the corrected M2 target can be stated equivalently as a bound on
+the exact-support residue-line packing number `RL_NC^=(D,k,a(delta))` whenever
+`a(delta) >= k+1`; dividing by `|F|` gives the MCA bound by the exact bridge
+above.  This is the form aligned with the M1 exact-support overlap ledgers.
+
+Proof.  First fix a line `f+z g` and a set of support-wise noncontained slopes.
+Choose a degree-`r` polynomial `E` nonzero on `D`.  By interpolation and
+Euclidean division, write on `D`
+
+```text
+g = R - B/E,        deg R<k,        deg B<r.
+```
+
+For a bad slope `z`, let `P_z in F[X]_{<k}` explain `f+z g` on a witness
+support `S_z`.  Put
+
+```text
+w = E f,        Q_z = E(P_z - zR) + zB.
+```
+
+Then `deg Q_z<k+r`, `Q_z == zB mod E`, and on `S_z`,
+
+```text
+Q_z = E(f+z g-zR)+zB = E f = w.
+```
+
+If the residue witness were contained, then `A=w/E` and `G=-B/E` on `S_z`
+would give degree-`<k` explanations of `f` and `g=R+G` on the same support,
+contradicting support-wise noncontainment.  Thus every line contributes no
+more slopes than one residue-line datum, so `LD_sw <= RL_NC`.
+
+Conversely, given a residue-line datum and noncontained witnessed slopes,
+define words on `D` by
+
+```text
+f = w/E,        g = -B/E.
+```
+
+For each witnessed slope, `Q_z-zB` is divisible by `E`; set
+
+```text
+P_z = (Q_z-zB)/E.
+```
+
+The degree bound gives `deg P_z<k`, and on the witness support
+`P_z=(w-zB)/E=f+z g`.  Noncontainedness of the datum is exactly failure of
+simultaneous degree-`<k` explanations for `f` and `g` on that support.  Hence
+every residue-line packing instance gives a support-wise line-decoding
+instance with the same slope set, proving `RL_NC <= LD_sw`.
+
 ## What an External Line-Decoding Theorem Must Prove
 
 A close-point line-decoding bound with a contained-line exception,
@@ -102,12 +258,130 @@ is sufficient, since support-wise noncontained slopes are a subset of close
 line points, and a line contained in `C` has no support-wise noncontained
 slopes.  This sufficient condition is usually stronger than necessary.
 
+## Close-Point Line-Decoding Is Strictly Stronger
+
+The sufficient close-point predicate above is not equivalent to the
+support-wise numerator.  This matters when importing external line-decoding
+theorems: a theorem that bounds all close line points with only a "line
+contained in the code" exception may be much stronger than what MCA needs.
+
+Here is an explicit Reed-Solomon separation.  Let `C=RS[F,D,k]`, `|D|=n`, and
+assume
+
+```text
+k <= n-2,        a=n-1.
+```
+
+Choose `x0 in D` and let `h` be the one-point spike supported at `x0`, with
+`h(x0)=1`.  Fix `lambda in F`, and take
+
+```text
+f = lambda h,        g = h.
+```
+
+Then the affine line `f+F g` is not contained in `C`, but every slope is a
+close point:
+
+```text
+#{z in F : dist(f+z g,C) <= 1/n} = |F|.
+```
+
+By contrast, the support-wise noncontained slopes at agreement `a=n-1` are
+exactly
+
+```text
+{-lambda}.
+```
+
+Thus ordinary close-point line-decoding can count `|F|` slopes on a line whose
+support-wise numerator is only `1`.  The gap is entirely a common-support
+issue: for every `z != -lambda`, the line point is explained by the zero
+codeword on the punctured support `D \ {x0}`, and that same support also
+explains both `f` and `g`.
+
+Proof.  A nonzero degree-`<k` polynomial cannot agree with `h` on any support
+of size `n-1` containing `x0`: it would have at least `n-2 >= k` roots and
+also be nonzero at `x0`.  Hence `h` is not in `C`, so the line is not contained
+in `C`.
+
+For every `z`, the word `f+z g=(lambda+z)h` agrees with the zero codeword on
+`D \ {x0}`, so every slope is close at radius `1/n`.  If `z != -lambda`, this
+is the only size-`n-1` explaining support.  Any size-`n-1` support containing
+`x0` would force a degree-`<k` polynomial to have `n-2` zeros and a nonzero
+value at `x0`, impossible.  The unique explaining support therefore also
+explains `f` and `g`, so the slope is not support-wise noncontained.
+
+For `z=-lambda`, the line point is the zero codeword on every support.  Choose
+a size-`n-1` support containing `x0`.  The line point is explained there, but
+the same root-counting argument shows that `g` is not explained by a
+degree-`<k` codeword on that support.  Therefore no pair of codewords can
+explain both `f` and `g` there, so this slope is support-wise noncontained.
+
+## Common Code-Line Exception Residual Bound
+
+The spike example is also a useful diagnostic for stronger external
+line-decoding theorems.  If the exceptional case says not merely "the line has
+many close points", but that the received line is close to a genuine code-line
+on a common support, then the support-wise numerator is controlled by the
+residual outside that support.
+
+Let `C=RS[F,D,k]`, fix agreement size `a`, and suppose there are codewords
+`c_f,c_g in C` and a support `S0 subset D` of size `b` such that
+
+```text
+f=c_f on S0,        g=c_g on S0,
+```
+
+with
+
+```text
+a+b-n >= k.
+```
+
+Put `Omega=D \ S0`, `f'=f-c_f`, and `g'=g-c_g`; then `f'` and `g'` vanish on
+`S0`.  Set
+
+```text
+h = max(1,a-b),
+c0 = |{x in Omega : f'(x)=g'(x)=0}|.
+```
+
+Every support-wise noncontained slope must satisfy
+
+```text
+|{x in Omega : f'(x)+z g'(x)=0}| >= h.
+```
+
+Consequently, if `h>c0`, then
+
+```text
+#{support-wise noncontained slopes}
+  <= floor((|Omega|-c0)/(h-c0)).
+```
+
+The proof is a direct puncturing argument.  Let `z` have a witness support
+`T`, and subtract the code-line `c_f+z c_g` from the explaining codeword on
+`T`.  The residual degree-`<k` codeword vanishes on `T cap S0`, whose size is
+at least `a+b-n >= k`; hence the residual codeword is zero.  Thus
+`f'+z g'` vanishes on all of `T`, so it has at least `h` zeros in `Omega`.
+If `h>c0`, the common residual-zero positions contribute to every slope, while
+each remaining outside coordinate contributes to at most one slope.  Counting
+coordinate-slope incidences gives the displayed bound.
+
+For the spike line, take `S0=D \ {x0}` and the zero code-line.  Then
+`b=a=n-1`, `h=1`, `c0=0`, and `|Omega|=1`, so the residual bound gives exactly
+one possible support-wise noncontained slope.  This explains why a
+code-line-proximity exception can absorb the `|F|` close-point count while
+still leaving a small support-wise numerator to budget.
+
 For a theorem with an exceptional "the line is explained" alternative, the
 exception must be checked in the support-wise sense: for every close slope and
 every large explaining support consumed by the protocol, the same support must
 also explain both `f` and `g`.  A theorem that only says many line points are
 close to `C` is not enough by itself, because MCA is sensitive to the common
-support.
+support.  A common code-line exception is usable only after the residual
+support-wise budget above, or a sharper replacement, is included in the
+certificate.
 
 Therefore the corrected M2 target can be stated as:
 
@@ -121,14 +395,31 @@ LD_sw(C_n,a_n)
 ```
 
 under the same entropy and quotient-profile hypotheses as the corrected MCA
-conjecture.  The MCA statement is then the immediate corollary obtained by
-dividing this numerator by `q_n`.
+conjecture.  Equivalently, by the residue-line bridge above, the same bound is
+the agreement-coordinate form of the companion's noncontained residue-line
+packing conjecture.  The MCA statement is then the immediate corollary
+obtained by dividing this numerator by `q_n`.  The spike-line separation shows
+why this support-wise numerator is the right expected object: a stronger
+close-point line-decoding theorem is welcome when available, but it should not
+be assumed to follow from the residue-line packing conjecture.
 
 ## Follow-Up Checks
 
 - Match the external `(delta,a_LD,n+1)` line-decoding definition used in
   protocol papers against `LD_sw(C,a)`.
-- Express the residue-line packing number in `tex/slackMCA_v3.tex` as this
-  `LD_sw` numerator.
 - Decide whether the `n+1` parameter is only a codeword-uniqueness threshold or
   whether it hides an additional proximity-loss convention.
+- Check whether protocol line-decoding imports have a common-support or
+  code-line-proximity exception strong enough to avoid the spike-line
+  close-point separation.
+
+## Verifier
+
+The script `experimental/m2_line_decoding_separation.py` verifies the spike
+line on a tiny prime-field RS code by enumerating all degree-`<k` codewords and
+all supports of size `n-1`:
+
+```bash
+python3 experimental/m2_line_decoding_separation.py
+python3 experimental/m2_line_decoding_separation.py --format json
+```

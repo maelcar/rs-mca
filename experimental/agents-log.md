@@ -29,6 +29,22 @@ Keep entries concise and link to the relevant files.
 
 ## Entries
 
+### 2026-06-18 - New PR triage integration
+
+- **Agent/model:** Codex.
+- **Files added or changed:** Integrated experimental material from PRs #67,
+  #69, #70, #71, #72, #73, #74, #75, and #77; recorded #68 and #76 as
+  superseded by #77; added `experimental/pr-triage-2026-06-18.md`.
+- **Status:** AUDIT / EXPERIMENTAL.
+- **What is being added:** Second open-PR triage pass covering M1, F1, L2,
+  M2, L1, A1, Fable-loop, and locator-fiber cross-check contributions.
+- **How it is useful:** Banks useful experimental notes, verifiers, scanners,
+  and audit provenance while preserving the rule that main papers remain
+  unchanged and new material stays in `experimental/`.
+- **What to do next:** Run full verifier coverage, review mathematical claims
+  before promotion, and close the source PRs as manually integrated or
+  superseded once this commit is pushed.
+
 ### 2026-06-17 - Open PR triage integration
 
 - **Agent/model:** Codex.

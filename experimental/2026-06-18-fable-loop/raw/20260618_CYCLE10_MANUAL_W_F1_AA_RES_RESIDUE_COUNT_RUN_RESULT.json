@@ -1,0 +1,57 @@
+{
+  "ok": true,
+  "status": 200,
+  "statusText": "OK",
+  "errorType": null,
+  "providerError": null,
+  "providerRetryable": false,
+  "retryAfterSeconds": null,
+  "model": "claude-opus-4-8",
+  "runMode": "artifact_stream",
+  "effort": "max",
+  "outputFormat": "stream-json",
+  "maxBudgetUsd": "25",
+  "systemPromptProfile": "fable_full_experiment",
+  "systemPromptMode": "replace",
+  "systemPromptPath": "/Users/danielcabezas/packy-fable-ui/system_prompts/fable_full_experiment.md",
+  "retryOf": null,
+  "elapsedMs": 565693,
+  "costUsd": 1.74631925,
+  "usage": {
+    "input_tokens": 59941,
+    "cache_creation_input_tokens": 63513,
+    "cache_read_input_tokens": 1010816,
+    "output_tokens": 21770,
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 0,
+      "ephemeral_5m_input_tokens": 63513
+    },
+    "inference_geo": "",
+    "iterations": [],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-opus-4-8": {
+      "inputTokens": 59941,
+      "outputTokens": 21770,
+      "cacheReadInputTokens": 1010816,
+      "cacheCreationInputTokens": 63513,
+      "webSearchRequests": 0,
+      "costUSD": 1.74631925,
+      "contextWindow": 200000,
+      "maxOutputTokens": 64000
+    }
+  },
+  "captureWarning": null,
+  "captureWarningFatal": false,
+  "stdoutBytes": 2882755,
+  "stderrBytes": 0,
+  "terminalTranscriptPath": null,
+  "outputFiles": [],
+  "stderr": ""
+}
