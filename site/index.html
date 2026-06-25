@@ -1,0 +1,809 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>RS-MCA Frontier | Ulam</title>
+  <meta name="description" content="Interactive frontier tracker for smooth Reed-Solomon MCA proof records, targets, and audits." />
+  <meta name="theme-color" content="#ffffff" />
+  <meta property="og:title" content="RS-MCA Frontier" />
+  <meta property="og:description" content="A public frontier board for smooth Reed-Solomon MCA proof records, targets, and non-claims." />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']],
+        processEscapes: true,
+        packages: {'[+]': ['ams']}
+      },
+      options: { skipHtmlTags: ['script','noscript','style','textarea','pre','code'] },
+      chtml: { scale: 0.82, matchFontHeight: false }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  <style>
+    :root{
+      /* Ulam.ai-like palette from the supplied example: white, warm paper,
+         graphite, subtle black borders, soft research-lab gray. */
+      --page:#f7f7f3;
+      --paper:#ffffff;
+      --paper-soft:#fbfaf7;
+      --ink:#303034;
+      --ink-2:#3e3d40;
+      --muted:#6c6d71;
+      --quiet:#8b8c90;
+      --line:rgba(0,0,0,.12);
+      --line-strong:rgba(0,0,0,.18);
+      --wash:rgba(255,255,255,.84);
+      --soft:#f0eee8;
+      --soft-2:#e7e5df;
+      --good:#28735f;
+      --warn:#9a6a16;
+      --bad:#9f3b48;
+      --blue:#3858d6;
+      --shadow:0 18px 44px rgba(0,0,0,.07);
+      --shadow-soft:0 10px 26px rgba(0,0,0,.045);
+      --radius:14px;
+      --mono:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+      --sans:Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --serif:Georgia, "Times New Roman", serif;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      color:var(--ink);
+      font-family:var(--sans);
+      background:
+        radial-gradient(circle at 12% 0%, rgba(62,61,64,.055), transparent 30rem),
+        radial-gradient(circle at 90% 12%, rgba(0,0,0,.035), transparent 34rem),
+        linear-gradient(180deg, #fff 0%, var(--page) 36%, #fff 100%);
+      min-height:100vh;
+    }
+    body:before{
+      content:"";
+      position:fixed;
+      inset:0;
+      z-index:-1;
+      pointer-events:none;
+      background-image:
+        linear-gradient(rgba(0,0,0,.028) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,0,0,.028) 1px, transparent 1px);
+      background-size:44px 44px;
+      mask-image:linear-gradient(180deg, transparent 0%, black 12%, black 58%, transparent 100%);
+    }
+    a{color:inherit;text-decoration:none}
+    .shell{width:min(1120px, calc(100vw - 32px)); margin:0 auto;}
+
+    .site-header{
+      position:sticky; top:0; z-index:50;
+      background:rgba(255,255,255,.88);
+      backdrop-filter:blur(18px);
+      border-bottom:1px solid var(--line);
+    }
+    .header-content{display:flex; align-items:center; justify-content:space-between; gap:20px; padding:15px 0;}
+    .logo-container{display:flex; align-items:center; gap:7px; min-width:0;}
+    .head-mark{
+      width:36px;height:36px;border-radius:50%;
+      border:1px solid var(--line-strong);
+      display:grid;place-items:center;
+      font-family:var(--serif);font-weight:700;font-size:18px;
+      background:var(--paper);
+    }
+    .logo-letter{
+      font-weight:900; letter-spacing:-.04em; font-size:20px; line-height:1;
+      color:var(--ink-2);
+    }
+    .logo-word{display:flex; gap:2px; align-items:center;}
+    .brand-sub{font-size:11px;color:var(--muted);letter-spacing:.05em;margin-left:9px;white-space:nowrap;}
+    .main-navigation{display:flex; gap:8px; flex-wrap:wrap; justify-content:flex-end;}
+    .main-navigation a,.chip,button.chip{
+      border:1px solid var(--line);
+      border-radius:999px;
+      padding:.52rem .82rem;
+      background:rgba(255,255,255,.76);
+      font-weight:650;
+      font-size:.92rem;
+      color:var(--ink-2);
+      transition:.18s ease;
+      cursor:pointer;
+    }
+    .main-navigation a:hover,.chip:hover,button.chip:hover{background:var(--soft);border-color:var(--line-strong);transform:translateY(-1px)}
+
+    .hero{padding:74px 0 28px;}
+    .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:28px;align-items:stretch;}
+    .hero-kicker{
+      display:inline-block;
+      margin:0 0 1rem;
+      padding:.35rem .75rem;
+      border:1px solid var(--line-strong);
+      border-radius:999px;
+      font-size:.75rem;
+      letter-spacing:.06em;
+      text-transform:uppercase;
+      font-weight:800;
+      opacity:.9;
+      background:rgba(255,255,255,.66);
+    }
+    h1{font-size:clamp(42px,7.8vw,92px);line-height:.93;margin:0 0 18px;letter-spacing:-.075em;color:var(--ink-2);}
+    h1 em{font-family:var(--serif);font-style:italic;font-weight:500;letter-spacing:-.055em;}
+    .lead{font-size:clamp(17px,2vw,22px);line-height:1.55;color:#4f5054;max-width:820px;margin:0;}
+    .hero-links{display:flex;gap:.65rem;flex-wrap:wrap;margin-top:1.35rem;}
+    .hero-links a,.button{
+      text-decoration:none;
+      border:1px solid var(--line-strong);
+      border-radius:999px;
+      padding:.68rem 1rem;
+      font-weight:700;
+      font-size:.95rem;
+      background:rgba(255,255,255,.88);
+      box-shadow:var(--shadow-soft);
+      transition:.18s ease;
+      cursor:pointer;
+    }
+    .hero-links a.primary,.button.primary{background:var(--ink-2);color:#fff;border-color:var(--ink-2);}
+    .hero-links a:hover,.button:hover{transform:translateY(-2px);background:var(--soft);}
+    .hero-links a.primary:hover,.button.primary:hover{background:#242428;color:#fff;}
+
+    .receipt-card,.program-card,.card,.stat,.proof-band,.workflow-strip{
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      background:var(--wash);
+      box-shadow:var(--shadow);
+    }
+    .receipt-card{padding:1rem;display:flex;flex-direction:column;min-height:418px;}
+    .receipt-head{display:flex;align-items:center;justify-content:space-between;gap:12px;border-bottom:1px solid var(--line);padding-bottom:.72rem;margin-bottom:.84rem;}
+    .receipt-title{font-family:var(--mono);font-size:.82rem;color:var(--muted);}
+    .dotset{display:flex;gap:6px}.dot{width:9px;height:9px;border-radius:50%;background:#3e3d40;opacity:.45}.dot:nth-child(2){opacity:.28}.dot:nth-child(3){opacity:.16}
+    .receipt-body{font-family:var(--mono);font-size:.86rem;line-height:1.7;color:#343438;}
+    .receipt-row{display:grid;grid-template-columns:minmax(125px,.7fr) 1fr;gap:10px;border-bottom:1px dashed rgba(0,0,0,.10);padding:.28rem 0;}
+    .receipt-row span:first-child{color:var(--muted)}
+    .mono{font-family:var(--mono)}
+    .good{color:var(--good)}.warn{color:var(--warn)}.bad{color:var(--bad)}.blue{color:var(--blue)}
+    /* MathJax refinement: keep formulae compact.
+       Important: chart SVG styling is scoped to #frontierChart so MathJax SVG/CHTML
+       is never stretched to 100% width. */
+    mjx-container{
+      font-size:.88em!important;
+      line-height:1.18!important;
+      color:var(--ink-2);
+      max-width:100%;
+    }
+    mjx-container[display="true"]{
+      font-size:clamp(.72rem,.88vw,.84rem)!important;
+      margin:.04rem 0!important;
+      max-width:100%;
+      overflow-x:auto;
+      overflow-y:hidden;
+      padding:.02rem 0;
+    }
+    mjx-container svg{
+      width:auto!important;
+      height:auto!important;
+      max-width:100%!important;
+      display:inline-block!important;
+      overflow:visible!important;
+    }
+    .formula{
+      margin:.74rem 0;
+      padding:.68rem .82rem;
+      border:1px solid var(--line);
+      border-radius:11px;
+      background:rgba(255,255,255,.86);
+      overflow:auto;
+      line-height:1.32;
+    }
+    .formula mjx-container{font-size:.84rem!important;}
+    .formula mjx-container[display="true"]{font-size:clamp(.68rem,.82vw,.78rem)!important;}
+    .compact-formula{padding:.58rem .68rem;margin-top:.75rem!important;}
+    .lead mjx-container,
+    .stat span mjx-container,
+    .caption mjx-container,
+    .program-card mjx-container,
+    .gate mjx-container{font-size:.88em!important;}
+    .stat span mjx-container{vertical-align:-.08em;}
+
+    .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:34px;}
+    .stat{padding:1rem;}
+    .stat small{display:block;color:var(--muted);font-size:.72rem;text-transform:uppercase;letter-spacing:.12em;margin-bottom:.55rem;font-family:var(--mono);}
+    .stat b{font-size:clamp(24px,3vw,35px);letter-spacing:-.045em;color:var(--ink-2);}
+    .stat span{display:block;color:var(--muted);font-size:.82rem;margin-top:.36rem;line-height:1.4;}
+
+    section{padding:52px 0;}
+    .section-title{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;margin-bottom:20px;}
+    .section-title h2{margin:0;font-size:clamp(30px,4.5vw,56px);letter-spacing:-.058em;line-height:.96;color:var(--ink-2);}
+    .section-title p{margin:0;color:var(--muted);max-width:620px;line-height:1.55;}
+    .dashboard{display:grid;grid-template-columns:1.15fr .85fr;gap:16px;align-items:stretch;}
+    .card{padding:1rem;overflow:hidden;position:relative;}
+    .card h3{margin:.05rem 0 .75rem;font-size:1.05rem;letter-spacing:-.01em;color:var(--ink-2);}
+    .caption{color:var(--muted);font-size:.86rem;line-height:1.48;margin:0 0 1rem;}
+    .controls{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.7rem;margin-bottom:1rem;}
+    label{display:block;color:var(--muted);font-size:.68rem;text-transform:uppercase;letter-spacing:.12em;margin-bottom:.42rem;font-family:var(--mono);}
+    select,input[type="search"],input[type="text"],input[type="number"]{
+      width:100%;border:1px solid var(--line);background:#fff;color:var(--ink);
+      border-radius:11px;padding:.68rem .72rem;outline:none;font-family:var(--mono);font-size:.86rem;
+    }
+    select:focus,input:focus{border-color:var(--line-strong);box-shadow:0 0 0 3px rgba(0,0,0,.045)}
+    .chart-wrap{height:420px;position:relative;background:rgba(255,255,255,.46);border:1px solid rgba(0,0,0,.06);border-radius:12px;padding:10px;}
+    #frontierChart{display:block;width:100%;height:100%;overflow:visible;}
+    .axis text{fill:var(--muted);font-size:11px;font-family:var(--mono)}
+    .axis line,.axis path{stroke:rgba(0,0,0,.18)}
+    .grid line{stroke:rgba(0,0,0,.07)}
+    .tooltip{position:absolute;pointer-events:none;z-index:5;border:1px solid var(--line-strong);background:#fff;padding:.7rem .8rem;border-radius:12px;min-width:220px;box-shadow:0 20px 54px rgba(0,0,0,.14);font-size:.78rem;color:var(--ink);font-family:var(--mono);opacity:0;transform:translateY(6px);transition:.12s ease;}
+
+    .leaderboard{width:100%;border-collapse:separate;border-spacing:0 9px;font-size:.86rem;}
+    .leaderboard th{color:var(--muted);text-align:left;font-size:.68rem;text-transform:uppercase;letter-spacing:.12em;font-weight:800;padding:0 .68rem .25rem;font-family:var(--mono);}
+    .leaderboard td{padding:.75rem .68rem;background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line);vertical-align:middle;}
+    .leaderboard tr td:first-child{border-left:1px solid var(--line);border-radius:12px 0 0 12px;}
+    .leaderboard tr td:last-child{border-right:1px solid var(--line);border-radius:0 12px 12px 0;}
+    .leaderboard tbody tr{cursor:pointer;transition:.16s ease;}
+    .leaderboard tbody tr:hover td{background:var(--soft);border-color:var(--line-strong);}
+    .tag{display:inline-flex;align-items:center;border:1px solid var(--line);border-radius:999px;padding:.24rem .55rem;font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.05em;background:#fff;white-space:nowrap;}
+    .tag.proved{color:var(--good);border-color:rgba(40,115,95,.24);background:rgba(40,115,95,.055)}
+    .tag.target{color:var(--warn);border-color:rgba(154,106,22,.24);background:rgba(154,106,22,.055)}
+    .tag.candidate{color:var(--blue);border-color:rgba(56,88,214,.22);background:rgba(56,88,214,.052)}
+
+    .details-panel{min-height:224px;}
+    .details-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.62rem;margin:.75rem 0;}
+    .mini{background:#fff;border:1px solid var(--line);border-radius:12px;padding:.72rem;}
+    .mini small{display:block;color:var(--muted);font-family:var(--mono);font-size:.68rem;text-transform:uppercase;letter-spacing:.1em;margin-bottom:.28rem;}
+    .mini b{font-size:1.05rem;color:var(--ink-2);}
+    .details-panel pre{white-space:pre-wrap;word-break:break-word;background:#fff;border:1px solid var(--line);border-radius:12px;padding:.82rem;color:#343438;font-family:var(--mono);font-size:.78rem;line-height:1.5;}
+
+    .program-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.8rem;margin:1rem auto 0;text-align:left;}
+    .program-card{padding:.95rem;background:rgba(255,255,255,.82);}
+    .program-card h3{margin:0 0 .45rem;font-size:1.02rem;color:var(--ink-2);}
+    .program-card p{margin:0;line-height:1.5;color:var(--muted);}
+    .program-card .paper-actions,.program-card .update-actions{display:flex;gap:.45rem;flex-wrap:wrap;margin-top:.75rem;}
+    .program-card a.source-link{border:1px solid var(--line);border-radius:999px;padding:.35rem .58rem;font-size:.78rem;font-weight:800;background:#fff;color:var(--ink-2);}
+    .program-card a.source-link:hover{background:var(--soft);}
+    .update-meta{font-family:var(--mono);font-size:.72rem;color:var(--quiet);text-transform:uppercase;letter-spacing:.08em;margin-bottom:.5rem;}
+    .stack-label{display:inline-block;margin-bottom:.55rem;font-size:.74rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--quiet);}
+
+    .proof-band,.workflow-strip{padding:1rem;background:rgba(255,255,255,.84);margin-top:1rem;}
+    .proof-band p,.workflow-strip p{margin:.4rem 0;line-height:1.55;color:#4f5054;}
+    .calc-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.75rem;}
+    .calc-result{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.75rem;margin-top:.9rem;}
+    .gate-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.75rem;}
+    .gate{display:flex;gap:.72rem;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:12px;padding:.85rem;}
+    .gate .check{width:28px;height:28px;border-radius:50%;display:grid;place-items:center;background:var(--soft);border:1px solid var(--line);font-weight:900;color:var(--ink-2);flex:0 0 auto;}
+    .gate.warn .check{color:var(--warn)}
+    .gate h4{margin:.05rem 0 .28rem;color:var(--ink-2);}
+    .gate p{margin:0;color:var(--muted);line-height:1.45;font-size:.88rem;}
+    details{border:1px solid var(--line);background:#fff;border-radius:12px;padding:.85rem;margin:.72rem 0;}
+    summary{cursor:pointer;font-weight:800;color:var(--ink-2);}
+    details p{color:var(--muted);line-height:1.55;}
+    .timeline{position:relative;margin-left:.45rem;padding-left:1.2rem;}
+    .timeline:before{content:"";position:absolute;left:0;top:8px;bottom:8px;width:1px;background:var(--line-strong);}
+    .event{position:relative;background:#fff;border:1px solid var(--line);border-radius:12px;padding:.85rem;margin:.75rem 0;}
+    .event:before{content:"";position:absolute;left:-1.55rem;top:1rem;width:9px;height:9px;border-radius:50%;background:var(--ink-2);box-shadow:0 0 0 5px var(--page);}
+    .footer{border-top:1px solid var(--line);padding:2rem 0;color:var(--muted);font-size:.88rem;}
+    .footer-grid{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;}
+    .small{font-size:.78rem;color:var(--muted);line-height:1.5;}
+
+    @media (max-width:940px){
+      .hero-grid,.dashboard{grid-template-columns:1fr;}
+      .stats,.calc-grid,.calc-result,.gate-list{grid-template-columns:repeat(2,minmax(0,1fr));}
+      .controls{grid-template-columns:1fr;}
+      .program-grid{grid-template-columns:1fr;}
+      .section-title{display:block}.section-title p{margin-top:.8rem;}
+    }
+    @media (max-width:620px){
+      .main-navigation{display:none}.brand-sub{display:none}.stats,.calc-grid,.calc-result,.gate-list,.details-grid{grid-template-columns:1fr;}
+      .hero{padding-top:48px}h1{font-size:44px}.receipt-row{grid-template-columns:1fr;gap:2px}.leaderboard{font-size:.78rem}.leaderboard th:nth-child(4),.leaderboard td:nth-child(4){display:none}
+      mjx-container[jax="SVG"][display="true"]{font-size:.76rem!important;}
+      .formula{padding:.58rem .68rem;}
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="shell header-content">
+      <a class="logo-container" href="#top" aria-label="Ulam RS-MCA frontier home">
+        <span class="head-mark">∴</span>
+        <span class="logo-word" aria-label="Ulam"><span class="logo-letter">U</span><span class="logo-letter">L</span><span class="logo-letter">A</span><span class="logo-letter">M</span></span>
+        <span class="brand-sub">RS-MCA frontier</span>
+      </a>
+      <nav class="main-navigation" aria-label="Main navigation">
+        <a href="#frontier">Frontier</a>
+        <a href="#leaderboard">Leaderboard</a>
+        <a href="#calculator">Calculator</a>
+        <a href="#updates">Updates</a>
+        <a href="#papers">Papers</a>
+        <a href="#gates">Gates</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="shell hero-grid">
+        <div>
+          <span class="hero-kicker">Research-grade certificates for smooth RS MCA</span>
+          <h1>Can you push <em>MCA.fail</em> deeper?</h1>
+          <p class="lead">An interactive frontier board for Reed–Solomon mutual correlated agreement failure certificates. Track how far below capacity a smooth RS row can still certify \(\varepsilon_{\rm mca}(C,\delta)>2^{-128}\), with field ledgers, admissibility gates, and non-claims visible by default.</p>
+          <div class="hero-links">
+            <a class="primary" href="#frontier">View frontier →</a>
+            <a href="#calculator">Try a certificate</a>
+            <a href="#papers">Read papers</a>
+            <a href="#submit">Submit a row</a>
+          </div>
+          <div class="formula" aria-label="Main score formula">
+            \[
+              \text{score}=128+\log_2\!\left(\frac{N_{\rm bad}}{q_{\rm line}}\right)
+            \]
+          </div>
+        </div>
+        <aside class="receipt-card" aria-label="Current best proof record">
+          <div class="receipt-head">
+            <div class="receipt-title">frontier / proof record</div>
+            <div class="dotset"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+          </div>
+          <div class="receipt-body">
+            <div class="receipt-row"><span>row</span><span>RS[F_17^32, H, 256]</span></div>
+            <div class="receipt-row"><span>rate</span><span>1/2</span></div>
+            <div class="receipt-row"><span>domain</span><span>|H| = 512</span></div>
+            <div class="receipt-row"><span>agreement</span><span>263</span></div>
+            <div class="receipt-row"><span>strict distance</span><span>249 &lt; 250</span></div>
+            <div class="receipt-row"><span>bad challenges</span><span>52,747,567,092</span></div>
+            <div class="receipt-row"><span>denominator</span><span>q_line = 17^32</span></div>
+            <div class="receipt-row"><span>epsilon</span><span>≈ 2^-95.18</span></div>
+            <div class="receipt-row"><span>margin</span><span class="good">+32.82 bits</span></div>
+            <div class="receipt-row"><span>status</span><span>finite/source-scoped; not a protocol exploit</span></div>
+          </div>
+          <div class="formula compact-formula" style="margin-top:auto">
+            \[
+              \varepsilon_{\rm mca}(C,249/512)\ge
+              \frac{52{,}747{,}567{,}092}{17^{32}}>2^{-128}.
+            \]
+          </div>
+        </aside>
+      </div>
+      <div class="shell stats" aria-label="Frontier metrics">
+        <div class="stat"><small>Best certified margin</small><b id="stat-margin">+32.82</b><span>bits above the 2<sup>−128</sup> failure line</span></div>
+        <div class="stat"><small>Best strict radius</small><b id="stat-radius">249/512</b><span>Cycle119 strict263 proof record</span></div>
+        <div class="stat"><small>Bad challenges</small><b>52.7B</b><span>distinct gamma values imported from Cycle84</span></div>
+        <div class="stat"><small>Next threshold</small><b>≥ 7</b><span>bad slopes clear 2<sup>−128</sup> over F<sub>17<sup>32</sup></sub></span></div>
+      </div>
+    </section>
+
+    <section id="frontier">
+      <div class="shell">
+        <div class="section-title">
+          <h2>Frontier progress</h2>
+          <p>Every point is a proof record, candidate, or target with a row, radius, field denominator, predicate, and status. Smaller reserve means closer to capacity; higher margin means more certified failure mass.</p>
+        </div>
+        <div class="dashboard">
+          <div class="card">
+            <div class="controls">
+              <div>
+                <label for="metricSelect">Chart metric</label>
+                <select id="metricSelect">
+                  <option value="marginBits">Margin above 2^-128</option>
+                  <option value="epsilonBits">-log2 epsilon</option>
+                  <option value="sigma">Slack sigma = a-k</option>
+                </select>
+              </div>
+              <div>
+                <label for="statusFilter">Status</label>
+                <select id="statusFilter">
+                  <option value="all">All entries</option>
+                  <option value="proved">Proof records</option>
+                  <option value="target">Targets only</option>
+                  <option value="candidate">Candidates</option>
+                </select>
+              </div>
+              <div>
+                <label for="searchBox">Search</label>
+                <input id="searchBox" type="search" placeholder="Cycle119, strict264, F_17^32…" />
+              </div>
+            </div>
+            <div class="chart-wrap">
+              <svg id="frontierChart" role="img" aria-label="Interactive frontier chart"></svg>
+              <div class="tooltip" id="tooltip"></div>
+            </div>
+          </div>
+          <div class="card details-panel" id="detailsPanel">
+            <h3>Selected certificate</h3>
+            <p class="caption">Click a chart point or leaderboard row to inspect the row, radius, proof status, and non-claims.</p>
+            <div id="detailsContent"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="leaderboard">
+      <div class="shell">
+        <div class="section-title">
+          <h2>Leaderboard</h2>
+          <p>The primary score is \(128+\log_2(N_{\rm bad}/q_{\rm line})\). Positive score means the certificate exceeds the ABF target threshold.</p>
+        </div>
+        <div class="card">
+          <table class="leaderboard" aria-label="RS-MCA certificate leaderboard">
+            <thead><tr><th>Entry</th><th>Radius</th><th>Slack</th><th>Bad slopes</th><th>Score</th><th>Status</th></tr></thead>
+            <tbody id="leaderboardBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section id="updates">
+      <div class="shell">
+        <div class="section-title">
+          <h2>Recent updates</h2>
+          <p>The latest PR wave did not increase the Cycle120 numerator. It did sharpen endpoints, bridges, and proof-program targets.</p>
+        </div>
+        <div class="program-grid" id="updatesGrid"></div>
+      </div>
+    </section>
+
+    <section id="calculator">
+      <div class="shell">
+        <div class="section-title">
+          <h2>Certificate calculator</h2>
+          <p>Check whether a proposed row clears the exact integer test \(2^{128}N_{\rm bad}>q_{\rm line}\), and see the induced radius for the fixed \([512,256]\) row.</p>
+        </div>
+        <div class="card">
+          <div class="calc-grid">
+            <div><label for="calcN">Bad slopes \(N_{\rm bad}\)</label><input id="calcN" type="text" value="52747567092" /></div>
+            <div><label for="calcQ">Denominator \(q_{\rm line}\)</label><input id="calcQ" type="text" value="17^32" /></div>
+            <div><label for="calcAgreement">Agreement</label><input id="calcAgreement" type="number" value="263" min="257" max="512" /></div>
+            <div><label for="calcK">Dimension \(k\)</label><input id="calcK" type="number" value="256" /></div>
+          </div>
+          <div class="calc-result" id="calcResult"></div>
+          <p class="caption" style="margin-top:1rem">For this fixed row, \(\delta=1-a/512\), \(\sigma=a-k\), and \(\eta=1/2-\delta=\sigma/512\).</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="gates">
+      <div class="shell">
+        <div class="section-title">
+          <h2>Admissibility gates</h2>
+          <p>A certificate is only useful if row, predicate, sampler, radius convention, and event-retention semantics are made explicit.</p>
+        </div>
+        <div class="gate-list">
+          <div class="gate"><div class="check">✓</div><div><h4>RS row</h4><p>Explicit \(\mathrm{RS}[F,L,k]\), rate in the challenge set, smooth domain, and degree bound.</p></div></div>
+          <div class="gate"><div class="check">✓</div><div><h4>Support-wise predicate</h4><p>One support \(S\) explains the combination but not the two source words on the same support.</p></div></div>
+          <div class="gate"><div class="check">✓</div><div><h4>Sampler</h4><p>\(\gamma\) is sampled uniformly from the line field used in the denominator.</p></div></div>
+          <div class="gate"><div class="check">✓</div><div><h4>Radius convention</h4><p>Closed and strict support thresholds are shown separately to prevent endpoint ambiguity.</p></div></div>
+          <div class="gate warn"><div class="check">!</div><div><h4>Event retention</h4><p>Any endpoint, duplicate, quotient, charge, or retained-event filter must print the retained numerator.</p></div></div>
+          <div class="gate warn"><div class="check">!</div><div><h4>Non-claims</h4><p>Not ordinary list decoding, not protocol soundness, not an efficient attack, not exact \(\delta_C^*\).</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="context">
+      <div class="shell">
+        <div class="section-title">
+          <h2>Why this board exists</h2>
+          <p>Paper B turns no-slack smooth-domain failures into a corrected slack ledger. The frontier asks which certified bad-slope sets survive at larger agreement slack.</p>
+        </div>
+        <div class="program-grid">
+          <article class="program-card">
+            <span class="stack-label">Paper B coordinates</span>
+            <h3>Slack frontier</h3>
+            <p>For \(C=\mathrm{RS}[\mathbb F_{17^{32}},H,256]\), a certificate at agreement \(a=256+\sigma\) proves failure at \(\delta=1-a/512\).</p>
+          </article>
+          <article class="program-card">
+            <span class="stack-label">Next target</span>
+            <h3>Strict264</h3>
+            <p>Agreement 264 means \(\sigma=8\) and \(\delta=31/64\). Since \(\lfloor17^{32}/2^{128}\rfloor=6\), seven retained slopes already beat \(2^{-128}\).</p>
+          </article>
+          <article class="program-card">
+            <span class="stack-label">Proof quality</span>
+            <h3>Replay before publicity</h3>
+            <p>Each entry should identify whether the census was rerun, hash-bound, imported, locally checked, peer-reviewed, or only proposed.</p>
+          </article>
+          <article class="program-card">
+            <span class="stack-label">Ulam eval vibe</span>
+            <h3>Reasoning artifacts</h3>
+            <p>The goal is not a victory lap. It is a durable reasoning/evidence layer: claims, checkers, thresholds, and failure modes in one place.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="papers">
+      <div class="shell">
+        <div class="section-title">
+          <h2>Papers</h2>
+          <p>The main papers should be read as the authority for definitions and claims. New frontier material stays experimental until reviewed.</p>
+        </div>
+        <div class="program-grid" id="papersGrid"></div>
+      </div>
+    </section>
+
+    <section id="submit">
+      <div class="shell">
+        <div class="section-title">
+          <h2>Submit a certificate</h2>
+          <p>Use the checklist below to turn a model-run, theorem note, or script output into a board-ready artifact.</p>
+        </div>
+        <div class="dashboard">
+          <div class="card">
+            <h3>Required fields</h3>
+            <details open><summary>Row and field ledger</summary><p>Print \(F\), \(L\), \(k\), \(n\), \(q_{\rm gen}\), \(q_{\rm code}\), \(q_{\rm line}\), and any separate \(q_{\rm chal}\).</p></details>
+            <details><summary>Bad-slope certificate</summary><p>Print \(N_{\rm bad}\), duplicate policy, slope map, and the exact integer threshold \(2^{128}N_{\rm bad}>q_{\rm line}\).</p></details>
+            <details><summary>Radius and support convention</summary><p>Print agreement \(a\), distance \(n-a\), radius \(\delta=1-a/n\), and whether the target is closed or strict.</p></details>
+            <details><summary>Reproducibility</summary><p>Attach checker, hashes, environment notes, and the smallest independent rerun that validates the claim.</p></details>
+          </div>
+          <div class="card">
+            <h3>Score history</h3>
+            <div class="timeline" id="timeline"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="shell footer-grid">
+      <div><strong>ULAM / MCA Frontier</strong><br><span class="small">Static prototype · single HTML · MathJax-enabled LaTeX</span></div>
+      <div class="small">This board tracks mathematical certificates. It does not claim deployed-system compromise, protocol soundness failure, or ordinary list-decoding failure.</div>
+    </div>
+  </footer>
+
+  <script>
+    const POW_2_128 = BigInt('340282366920938463463374607431768211456');
+
+    function parseBigIntExpr(raw){
+      const s = String(raw).trim().replaceAll(',', '').replaceAll(' ', '');
+      if(/^\d+\^\d+$/.test(s)){
+        const [a,b] = s.split('^').map(BigInt);
+        return a ** b;
+      }
+      if(/^\d+$/.test(s)) return BigInt(s);
+      throw new Error('Use an integer or exponent form like 17^32');
+    }
+    function log2BigInt(n){
+      if(n <= 0n) return -Infinity;
+      const str = n.toString();
+      const digits = Math.min(18, str.length);
+      const leading = Number(str.slice(0, digits));
+      return Math.log2(leading) + (str.length - digits) * Math.log2(10);
+    }
+    function fmt(x, d=2){ return Number.isFinite(x) ? x.toFixed(d) : '—'; }
+    function gcd(a,b){while(b){const t=a%b;a=b;b=t;}return Math.abs(a)}
+    function frac(num, den){const g=gcd(num,den);return `${num/g}/${den/g}`}
+
+    const fallbackEntriesRaw = [
+      { id:'cycle116', title:'Cycle116 closed-threshold proof record', short:'ABF printed closed threshold at 125/256.', row:'RS[F_17^32,H,256]', n:512, k:256, rho:0.5, agreement:262, badSlopes:'52747567092', q:'17^32', status:'proved', tag:'proved', label:'proof record', radiusLabel:'125/256', proof:'Cycle116 transfer: agreement 262, closed ABF threshold.', nonclaims:'Not ordinary list decoding; not protocol soundness; not exact δ*_C.' },
+      { id:'cycle119', title:'Cycle119 strict263 proof record', short:'Two-ended upgrade with one-symbol strict margin.', row:'RS[F_17^32,H,256]', n:512, k:256, rho:0.5, agreement:263, badSlopes:'52747567092', q:'17^32', status:'proved', tag:'proved', label:'proof record', radiusLabel:'249/512', proof:'Two-ended locator theorem: common top-six coefficients plus common nonzero constant.', nonclaims:'Finite/source theorem; imported Cycle84 numerator; not an official prize solve by itself.' },
+      { id:'strict264-min', title:'Strict264 minimal threshold target', short:'First Paper-B slack upgrade target: only seven slopes needed.', row:'RS[F_17^32,H,256]', n:512, k:256, rho:0.5, agreement:264, badSlopes:'7', q:'17^32', status:'target', tag:'target', radiusLabel:'31/64', proof:'Target: find or audit ≥7 retained bad slopes at agreement 264.', nonclaims:'Target row, not a theorem.' },
+      { id:'strict264-2187', title:'Strict264 2187-slope candidate', short:'Candidate subpacket shape if the hinted strict264 target is validated.', row:'RS[F_17^32,H,256]', n:512, k:256, rho:0.5, agreement:264, badSlopes:'2187', q:'17^32', status:'candidate', tag:'candidate', radiusLabel:'31/64', proof:'Candidate target; requires independent theorem and admissibility audit.', nonclaims:'Do not cite as proved without a proof record.' },
+      { id:'reserve272', title:'Reserve-scale target σ=16', short:'A more serious finite slack target.', row:'RS[F_17^32,H,256]', n:512, k:256, rho:0.5, agreement:272, badSlopes:'7', q:'17^32', status:'target', tag:'target', radiusLabel:'15/32', proof:'Search target for deeper slack frontier.', nonclaims:'Speculative target.' },
+      { id:'reserve288', title:'Reserve-scale target σ=32', short:'Deeper below capacity; still only seven slopes needed.', row:'RS[F_17^32,H,256]', n:512, k:256, rho:0.5, agreement:288, badSlopes:'7', q:'17^32', status:'target', tag:'target', radiusLabel:'7/16', proof:'Search target for Paper-B corrected reserve stress tests.', nonclaims:'Speculative target.' },
+      { id:'reserve313', title:'n/log n scale target σ≈57', short:'Closer to the local-limit reserve scale.', row:'RS[F_17^32,H,256]', n:512, k:256, rho:0.5, agreement:313, badSlopes:'7', q:'17^32', status:'target', tag:'target', radiusLabel:'199/512', proof:'Longer-range target near n/log2(n).', nonclaims:'Speculative target.' }
+    ];
+
+    const fallbackUpdatesRaw = [
+      {date:'2026-06-25', status:'latest', title:'Latest PR integration', summary:'No larger Cycle120 numerator; endpoint, bridge, and proof-program updates were integrated.', impact:'Use the data files and linked notes for the current public state.', href:'https://github.com/przchojecki/rs-mca/blob/main/experimental/notes/triage/pr-triage-2026-06-25.md'}
+    ];
+    const fallbackPapersRaw = [
+      {letter:'A', title:'Paper A: No-Slack Obstruction', pdf:'papers/RS_disproof_v3.pdf', tex:'https://github.com/przchojecki/rs-mca/blob/main/tex/RS_disproof_v3.tex', summary:'Refutes the old no-slack support-wise line-MCA statement.'},
+      {letter:'B', title:'Paper B: Slack, Quotient, and Entropy Theory', pdf:'papers/slackMCA_v3.pdf', tex:'https://github.com/przchojecki/rs-mca/blob/main/tex/slackMCA_v3.tex', summary:'Builds the corrected-reserve theory and proof targets.'},
+      {letter:'D', title:'Paper D: Universal Field-Size Cap', pdf:'papers/cs25_cap_v4.pdf', tex:'https://github.com/przchojecki/rs-mca/blob/main/tex/cs25_cap_v4.tex', summary:'Proves the universal MCA threshold cap via CS25.'},
+      {letter:'C', title:'Paper C: SNARK and Protocol Ledger', pdf:'papers/snarks_v4.pdf', tex:'https://github.com/przchojecki/rs-mca/blob/main/tex/snarks_v4.tex', summary:'Separates protocol soundness accounting from MCA/list ledgers.'}
+    ];
+
+    function enrich(e){
+      const q = parseBigIntExpr(e.q);
+      const N = parseBigIntExpr(e.badSlopes);
+      const logEps = log2BigInt(N) - log2BigInt(q);
+      const epsilonBits = -logEps;
+      const marginBits = 128 + logEps;
+      const delta = 1 - e.agreement/e.n;
+      const eta = 1 - e.rho - delta;
+      const sigma = e.agreement - e.k;
+      const floor = q / POW_2_128;
+      const passes = POW_2_128 * N > q;
+      return {...e, q, N, logEps, epsilonBits, marginBits, delta, eta, sigma, floor, passes};
+    }
+    let entriesRaw = fallbackEntriesRaw;
+    let updatesRaw = fallbackUpdatesRaw;
+    let papersRaw = fallbackPapersRaw;
+    let entries = entriesRaw.map(enrich);
+
+    function filteredEntries(){
+      const status = document.getElementById('statusFilter')?.value || 'all';
+      const q = (document.getElementById('searchBox')?.value || '').toLowerCase();
+      return entries.filter(e => (status === 'all' || e.status === status) && JSON.stringify(e).toLowerCase().includes(q));
+    }
+    function fractionish(e){ return e.radiusLabel || frac(Math.round(e.delta*e.n), e.n); }
+
+    function renderLeaderboard(){
+      const tbody = document.getElementById('leaderboardBody');
+      const rows = filteredEntries().slice().sort((a,b)=>a.delta-b.delta || b.marginBits-a.marginBits);
+      tbody.innerHTML = rows.map(e => `
+        <tr data-id="${e.id}">
+          <td><strong>${e.title}</strong><br><span class="small">${e.short}</span></td>
+          <td class="mono">${fractionish(e)}</td>
+          <td class="mono">σ=${e.sigma}</td>
+          <td class="mono">${e.N.toLocaleString()}</td>
+          <td class="mono ${e.marginBits>0?'good':'bad'}">${e.marginBits>0?'+':''}${fmt(e.marginBits)}</td>
+          <td><span class="tag ${e.tag}">${e.label || e.status}</span></td>
+        </tr>`).join('');
+      tbody.querySelectorAll('tr').forEach(tr => tr.addEventListener('click', () => selectEntry(tr.dataset.id)));
+    }
+
+    function renderDetails(e){
+      const el = document.getElementById('detailsContent');
+      el.innerHTML = `
+        <h3>${e.title}</h3>
+        <p class="caption">${e.short}</p>
+        <div class="details-grid">
+          <div class="mini"><small>Row</small><b class="mono">${e.row}</b></div>
+          <div class="mini"><small>Radius δ</small><b class="mono">${fractionish(e)}</b></div>
+          <div class="mini"><small>Agreement</small><b class="mono">${e.agreement}</b></div>
+          <div class="mini"><small>Slack</small><b class="mono">σ=${e.sigma}</b></div>
+          <div class="mini"><small>Bad slopes</small><b class="mono">${e.N.toLocaleString()}</b></div>
+          <div class="mini"><small>Score</small><b class="mono ${e.marginBits>0?'good':'bad'}">${e.marginBits>0?'+':''}${fmt(e.marginBits)} bits</b></div>
+        </div>
+        ${(e.links || []).length ? `<div class="hero-links">${e.links.map(link => `<a href="${link.href}" target="_blank" rel="noopener">${link.label}</a>`).join('')}</div>` : ''}
+        <pre>${JSON.stringify({id:e.id,status:e.label || e.status,proof:e.proof,q_line:e.q.toString(),floor_q_over_2_128:e.floor.toString(),integer_test:`2^128 * ${e.N.toString()} > ${e.q.toString()}`,passes:e.passes,nonclaims:e.nonclaims}, null, 2)}</pre>`;
+    }
+    function selectEntry(id){
+      const e = entries.find(x=>x.id===id) || entries[0];
+      renderDetails(e);
+      document.querySelectorAll('[data-id]').forEach(node => node.classList.toggle('selected', node.dataset.id === id));
+    }
+
+    function renderChart(){
+      const svg = document.getElementById('frontierChart');
+      const tip = document.getElementById('tooltip');
+      const metric = document.getElementById('metricSelect').value;
+      const data = filteredEntries();
+      if(!data.length){
+        svg.innerHTML = `<text x="50%" y="50%" text-anchor="middle" fill="#6c6d71" font-family="var(--mono)" font-size="13">No matching entries</text>`;
+        tip.style.opacity = 0;
+        return;
+      }
+      const W = svg.clientWidth || 700, H = svg.clientHeight || 390;
+      const m = {l:58,r:22,t:20,b:54};
+      const xVals = data.map(d=>d.eta);
+      const yVals = data.map(d=>d[metric]);
+      const xMin = Math.min(...xVals, 0), xMax = Math.max(...xVals, .12);
+      let yMin = Math.min(...yVals), yMax = Math.max(...yVals);
+      if(metric === 'epsilonBits'){ yMin = Math.min(90,yMin); yMax = Math.max(130,yMax); }
+      if(metric === 'marginBits'){ yMin = Math.min(-10,yMin); yMax = Math.max(40,yMax); }
+      if(yMin === yMax){yMin -= 1; yMax += 1;}
+      const X = v => m.l + (v-xMin)/(xMax-xMin)*(W-m.l-m.r);
+      const Y = v => H-m.b - (v-yMin)/(yMax-yMin)*(H-m.t-m.b);
+      const yLabel = metric === 'marginBits' ? 'score bits' : metric === 'epsilonBits' ? '-log2 epsilon' : 'slack sigma';
+      let grid='';
+      for(let i=0;i<=5;i++){
+        const yy=m.t+i*(H-m.t-m.b)/5;
+        const val=yMax-i*(yMax-yMin)/5;
+        grid += `<line x1="${m.l}" y1="${yy}" x2="${W-m.r}" y2="${yy}"/><text x="${m.l-8}" y="${yy+4}" text-anchor="end">${fmt(val, metric==='sigma'?0:1)}</text>`;
+      }
+      for(let i=0;i<=5;i++){
+        const xx=m.l+i*(W-m.l-m.r)/5;
+        const val=xMin+i*(xMax-xMin)/5;
+        grid += `<line x1="${xx}" y1="${m.t}" x2="${xx}" y2="${H-m.b}"/><text x="${xx}" y="${H-m.b+22}" text-anchor="middle">${fmt(val,3)}</text>`;
+      }
+      const threshold = metric === 'marginBits' ? `<line x1="${m.l}" y1="${Y(0)}" x2="${W-m.r}" y2="${Y(0)}" stroke="rgba(159,59,72,.55)" stroke-dasharray="6 5"/><text x="${W-m.r}" y="${Y(0)-8}" text-anchor="end" fill="#9f3b48" font-family="var(--mono)" font-size="11">2^-128 threshold</text>` : '';
+      const pts = data.map(d => {
+        const fill = d.status==='proved' ? '#3e3d40' : d.status==='candidate' ? '#3858d6' : '#9a6a16';
+        return `<circle class="point" data-id="${d.id}" cx="${X(d.eta)}" cy="${Y(d[metric])}" r="7" fill="${fill}" stroke="#fff" stroke-width="2"/>`;
+      }).join('');
+      svg.innerHTML = `
+        <g class="grid">${grid}</g>
+        ${threshold}
+        <g class="axis"><line x1="${m.l}" y1="${H-m.b}" x2="${W-m.r}" y2="${H-m.b}"/><line x1="${m.l}" y1="${m.t}" x2="${m.l}" y2="${H-m.b}"/>
+        <text x="${(W+m.l-m.r)/2}" y="${H-14}" text-anchor="middle">reserve η = 1 − ρ − δ</text>
+        <text transform="translate(16 ${(H-m.b+m.t)/2}) rotate(-90)" text-anchor="middle">${yLabel}</text></g>
+        ${pts}`;
+      svg.querySelectorAll('.point').forEach(p => {
+        p.addEventListener('mouseenter', ev => {
+          const d = entries.find(x=>x.id===p.dataset.id);
+          tip.innerHTML = `<strong>${d.title}</strong><br>δ=${fractionish(d)} · σ=${d.sigma}<br>score=${d.marginBits>0?'+':''}${fmt(d.marginBits)} bits<br>N=${d.N.toLocaleString()}`;
+          tip.style.opacity = 1;
+        });
+        p.addEventListener('mousemove', ev => {
+          const rect = svg.parentElement.getBoundingClientRect();
+          tip.style.left = `${ev.clientX - rect.left + 12}px`;
+          tip.style.top = `${ev.clientY - rect.top - 10}px`;
+        });
+        p.addEventListener('mouseleave', () => tip.style.opacity = 0);
+        p.addEventListener('click', () => selectEntry(p.dataset.id));
+      });
+    }
+
+    function renderCalc(){
+      const out = document.getElementById('calcResult');
+      try{
+        const N = parseBigIntExpr(document.getElementById('calcN').value);
+        const q = parseBigIntExpr(document.getElementById('calcQ').value);
+        const a = Number(document.getElementById('calcAgreement').value);
+        const k = Number(document.getElementById('calcK').value);
+        const delta = 1 - a/512;
+        const sigma = a-k;
+        const margin = 128 + log2BigInt(N) - log2BigInt(q);
+        const floor = q / POW_2_128;
+        const pass = POW_2_128*N > q;
+        out.innerHTML = `
+          <div class="mini"><small>Integer test</small><b class="${pass?'good':'bad'}">${pass?'PASS':'FAIL'}</b><div class="small">floor(q/2^128)=${floor.toString()}</div></div>
+          <div class="mini"><small>Score</small><b class="mono ${margin>0?'good':'bad'}">${margin>0?'+':''}${fmt(margin)}</b><div class="small">bits vs threshold</div></div>
+          <div class="mini"><small>Radius</small><b class="mono">${frac(512-a,512)}</b><div class="small">δ≈${delta.toFixed(6)}</div></div>
+          <div class="mini"><small>Slack</small><b class="mono">σ=${sigma}</b><div class="small">distance=${512-a}</div></div>`;
+      }catch(err){
+        out.innerHTML = `<div class="mini"><small>Error</small><b class="bad">Invalid input</b><div class="small">${err.message}</div></div>`;
+      }
+    }
+
+    function renderUpdates(){
+      const grid = document.getElementById('updatesGrid');
+      if(!grid) return;
+      grid.innerHTML = updatesRaw.map(item => `
+        <article class="program-card">
+          <div class="update-meta">${item.date || 'undated'} · ${item.status || 'update'}</div>
+          <h3>${item.title}</h3>
+          <p>${item.summary}</p>
+          ${item.impact ? `<p class="small" style="margin-top:.65rem">${item.impact}</p>` : ''}
+          ${item.href ? `<div class="update-actions"><a class="source-link" href="${item.href}" target="_blank" rel="noopener">Source note</a></div>` : ''}
+        </article>
+      `).join('');
+    }
+
+    function renderPapers(){
+      const grid = document.getElementById('papersGrid');
+      if(!grid) return;
+      grid.innerHTML = papersRaw.map(paper => `
+        <article class="program-card">
+          <span class="stack-label">Paper ${paper.letter}</span>
+          <h3>${paper.title}</h3>
+          <p>${paper.summary}</p>
+          <div class="paper-actions">
+            <a class="source-link" href="${paper.pdf}" target="_blank" rel="noopener">PDF</a>
+            <a class="source-link" href="${paper.tex}" target="_blank" rel="noopener">TeX source</a>
+          </div>
+        </article>
+      `).join('');
+    }
+
+    function renderTimeline(){
+      const t = document.getElementById('timeline');
+      const rows = entries.slice(0,5);
+      t.innerHTML = rows.map(e => `<div class="event"><strong>${e.title}</strong><p class="caption">${e.short} · radius ${fractionish(e)} · score ${e.marginBits>0?'+':''}${fmt(e.marginBits)} bits</p></div>`).join('');
+    }
+
+    function refresh(){ renderLeaderboard(); renderChart(); }
+    async function loadJson(path, fallback){
+      try{
+        const response = await fetch(path, {cache:'no-store'});
+        if(!response.ok) throw new Error(`${path}: ${response.status}`);
+        return await response.json();
+      }catch(_err){
+        return fallback;
+      }
+    }
+    async function boot(){
+      const [frontierData, updatesData, papersData] = await Promise.all([
+        loadJson('data/frontier.json', fallbackEntriesRaw),
+        loadJson('data/updates.json', fallbackUpdatesRaw),
+        loadJson('data/papers.json', fallbackPapersRaw)
+      ]);
+      entriesRaw = frontierData;
+      updatesRaw = updatesData;
+      papersRaw = papersData;
+      entries = entriesRaw.map(enrich);
+      refresh();
+      renderCalc();
+      renderTimeline();
+      renderUpdates();
+      renderPapers();
+      selectEntry('cycle119');
+      if(window.MathJax?.typesetPromise) MathJax.typesetPromise();
+    }
+    window.addEventListener('resize', renderChart);
+    document.getElementById('metricSelect').addEventListener('change', renderChart);
+    document.getElementById('statusFilter').addEventListener('change', refresh);
+    document.getElementById('searchBox').addEventListener('input', refresh);
+    ['calcN','calcQ','calcAgreement','calcK'].forEach(id => document.getElementById(id).addEventListener('input', renderCalc));
+    boot();
+  </script>
+</body>
+</html>

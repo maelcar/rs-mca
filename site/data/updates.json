@@ -1,0 +1,66 @@
+[
+  {
+    "date": "2026-06-25",
+    "status": "conditional / computation-dependent",
+    "title": "Cycle119/Cycle120 ABF-row obstruction",
+    "summary": "The numerator did not increase: the active value remains 52,747,567,092 bad challenges over F_17^32. The useful update is endpoint precision: Cycle116 reaches the printed ABF closed threshold at delta = 125/256, while Cycle119 gives the strict endpoint delta <= 249/512 if the finite inputs check out.",
+    "impact": "Keeps the strongest current prize-facing obstruction focused on one smooth rate-1/2 row, without claiming ordinary list decoding, protocol soundness, or an official prize solve.",
+    "href": "https://github.com/przchojecki/rs-mca/blob/main/experimental/notes/m1/m1_cycle120_abf_counterexample_candidate.md"
+  },
+  {
+    "date": "2026-06-25",
+    "status": "proof-check-needed",
+    "title": "Standalone Cycle120 LDsw proof note",
+    "summary": "PR #105 adds a compact standalone note for the source-scoped lower bound LD_sw(RS[F_17^32,H,256],262) >= 52,747,567,092.",
+    "impact": "This is the human-review target that replaces a large raw generated packet for public communication.",
+    "href": "https://github.com/przchojecki/rs-mca/blob/main/experimental/notes/m1/m1_cycle120_standalone_ldsw_proof.md"
+  },
+  {
+    "date": "2026-06-25",
+    "status": "bridge",
+    "title": "Exact MCA to line-decoding normalization",
+    "summary": "PR #102 records the support-wise identity epsilon_mca(C,delta) = LD_sw(C,ceil((1-delta)n))/|F| for the two-source object.",
+    "impact": "Future updates should use this bridge to avoid denominator and endpoint drift.",
+    "href": "https://github.com/przchojecki/rs-mca/blob/main/experimental/notes/m2/m2_line_decoding_mca_bridge.md"
+  },
+  {
+    "date": "2026-06-25",
+    "status": "counterexample family",
+    "title": "Extension-line lower floors",
+    "summary": "PR #103 strengthens the F1 warning: fixed-rate extension-line families have floors on the order of (1-rho)^2/2 for sigma one and (1-rho)^(sigma+1)/(sigma+1)! at fixed sigma before extension-degree dilution.",
+    "impact": "Naive base-to-extension transfer remains false without an explicit theorem.",
+    "href": "https://github.com/przchojecki/rs-mca/blob/main/experimental/notes/f1/f1_fixed_rate_extension_counterexample.md"
+  },
+  {
+    "date": "2026-06-25",
+    "status": "audit",
+    "title": "M1 beta-pushforward spectral audit",
+    "summary": "PR #104 scans beta-pushforward rows and finds no hidden growing p^2 mass in the tested windows.",
+    "impact": "This supports the current M1 conductor-style proof target but does not prove the missing bounded-conductor estimate.",
+    "href": "https://github.com/przchojecki/rs-mca/blob/main/experimental/notes/m1/m1_beta_pushforward_spectral_audit.md"
+  },
+  {
+    "date": "2026-06-25",
+    "status": "proof program",
+    "title": "L1 quotient-budgeted locator route",
+    "summary": "PRs #99 and #106 add characteristic-zero prefix reductions, bad-prime proof-record machinery, quotient-budgeted locator conjectures, and a full-list quotient proof program.",
+    "impact": "This is the main positive-route infrastructure for generated-field locator local limits.",
+    "href": "https://github.com/przchojecki/rs-mca/blob/main/experimental/notes/l1/l1_quotient_budgeted_locator_conjecture.md"
+  },
+  {
+    "date": "2026-06-25",
+    "status": "target",
+    "title": "Sharp interleaved-list target",
+    "summary": "PR #107 sharpens L2: interleaved-list analysis should charge quotient-core mass diagonally and avoid the naive Cartesian-product numerator.",
+    "impact": "This turns a vague interleaving hazard into a finite set of support/codegree targets.",
+    "href": "https://github.com/przchojecki/rs-mca/blob/main/experimental/notes/l2/l2_sharp_target_conjecture.md"
+  },
+  {
+    "date": "2026-06-25",
+    "status": "scaffold",
+    "title": "X1 bridges and Lean formalization stub",
+    "summary": "PR #101 adds deep-point/interleaved bridge notes, quotient-reduction notes, prize-path maps, and a small Lean scaffold.",
+    "impact": "This gives future agents a cleaner path from experimental notes toward mechanized statements.",
+    "href": "https://github.com/przchojecki/rs-mca/tree/main/experimental/lean/rs_mca_formalization"
+  }
+]

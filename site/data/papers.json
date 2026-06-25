@@ -1,0 +1,38 @@
+[
+  {
+    "id": "paper-a",
+    "letter": "A",
+    "title": "Paper A: No-Slack Obstruction",
+    "file": "RS_disproof_v3.pdf",
+    "pdf": "papers/RS_disproof_v3.pdf",
+    "tex": "https://github.com/przchojecki/rs-mca/blob/main/tex/RS_disproof_v3.tex",
+    "summary": "Refutes the old no-slack support-wise line-MCA statement for smooth multiplicative Reed-Solomon domains."
+  },
+  {
+    "id": "paper-b",
+    "letter": "B",
+    "title": "Paper B: Slack, Quotient, and Entropy Theory",
+    "file": "slackMCA_v3.pdf",
+    "pdf": "papers/slackMCA_v3.pdf",
+    "tex": "https://github.com/przchojecki/rs-mca/blob/main/tex/slackMCA_v3.tex",
+    "summary": "Builds the corrected-reserve theory and names the main local-limit, quotient, extension, and MCA proof targets."
+  },
+  {
+    "id": "paper-d",
+    "letter": "D",
+    "title": "Paper D: Universal Field-Size Cap",
+    "file": "cs25_cap_v4.pdf",
+    "pdf": "papers/cs25_cap_v4.pdf",
+    "tex": "https://github.com/przchojecki/rs-mca/blob/main/tex/cs25_cap_v4.tex",
+    "summary": "Uses the Crites-Stewart list-to-agreement conversion to prove a universal MCA threshold cap in the relevant sub-capacity band."
+  },
+  {
+    "id": "paper-c",
+    "letter": "C",
+    "title": "Paper C: SNARK and Protocol Ledger",
+    "file": "snarks_v4.pdf",
+    "pdf": "papers/snarks_v4.pdf",
+    "tex": "https://github.com/przchojecki/rs-mca/blob/main/tex/snarks_v4.tex",
+    "summary": "Separates protocol soundness accounting from list, CA, MCA, line-decoding, extension, and interleaving ledgers."
+  }
+]
