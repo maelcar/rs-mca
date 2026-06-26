@@ -28,6 +28,24 @@
   },
   {
     "date": "2026-06-26",
+    "status": "proved subgroup bound",
+    "author": "Scott Hughes",
+    "title": "L1 d=2 cubic subgroup twisted bound",
+    "summary": "PR #121 proves a proper-subgroup H^{2k} cubic collision estimate using Fourier reconstruction, multiplicative-character expansion of 1_H, and one-variable Gauss/Kummer-Artin-Schreier input.",
+    "impact": "This is useful L1 infrastructure for generated-field local limits, but it is not a new MCA leaderboard row or a general higher-moment theorem.",
+    "href": "https://github.com/przchojecki/rs-mca/blob/main/experimental/notes/l1/l1_prefix_dual_d2_cubic_subgroup_twisted_bound.md"
+  },
+  {
+    "date": "2026-06-26",
+    "status": "route-cut audit",
+    "author": "Scott Hughes",
+    "title": "L1 odd-moment Hooley-Katz audit",
+    "summary": "PR #120 proves the full-affine projective odd-moment collision geometry and audits the Hooley-Katz/Ghorpade-Lachaud constant route.",
+    "impact": "The audit keeps full-affine, full-torus, and proper-subgroup ledgers separate and shows why the generic full-affine point-count path is not yet enough for the subgroup L1 reserve-scale problem.",
+    "href": "https://github.com/przchojecki/rs-mca/blob/main/experimental/notes/l1/l1_prefix_dual_odd_moment_projective_geometry.md"
+  },
+  {
+    "date": "2026-06-26",
     "status": "proved normal form",
     "author": "AllenGrahamHart",
     "title": "F1 syndrome-pencil normal form",

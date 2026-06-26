@@ -24,6 +24,9 @@ papers. The source triage records are:
 - `notes/triage/experiment-run-2026-06-26.md`: one-by-one run of the current
   Cycle120, strict264, reserve-ladder, F1, L2, A0, and M2 validators, with
   structured output summarized in `data/experiment-run-2026-06-26.json`.
+- `notes/triage/pr-triage-2026-06-26-round2.md`: PRs #120 and #121, adding a
+  full-affine Hooley--Katz route-cut audit and a `d=2` proper-subgroup cubic
+  twisted collision bound.
 
 The common policy was: keep Papers A-D unchanged, land new material in
 `experimental/`, preserve explicit status labels, and require review before any
@@ -54,6 +57,28 @@ large theorem yet; it is the reduction of several vague hazards into named,
 script-checkable walls.
 
 ## What Was Added
+
+### Latest 2026-06-26 round 2 integration
+
+PRs #120 and #121 do not add a new MCA frontier numerator, agreement endpoint,
+or rate leaderboard row.  They do add useful L1 infrastructure:
+
+- `notes/l1/l1_prefix_dual_odd_moment_projective_geometry.md` proves the
+  projective odd-moment collision geometry for `k>d` and records the
+  Hooley--Katz/Ghorpade--Lachaud constant ledger for the full-affine
+  point-count route.  Its reserve-scale audit is mainly a route cut: the
+  generic full-affine imported constants do not yet solve the subgroup L1
+  problem.
+- `notes/l1/l1_prefix_dual_d2_cubic_subgroup_twisted_bound.md` addresses the
+  actual proper-subgroup `H^{2k}` cubic collision object.  It expands `1_H`
+  into multiplicative characters and, using standard one-variable
+  Gauss/Kummer--Artin--Schreier input, proves exponential error decay once
+  `|H| > (3+epsilon) sqrt(p)`.
+
+These updates were added to the public site updates feed, but not to
+`rate-leaderboards.json`: the leaderboard remains reserved for rows with an
+explicit rate, radius, field denominator, endpoint convention, and certified
+retained mass.
 
 ### Latest 2026-06-26 integration
 

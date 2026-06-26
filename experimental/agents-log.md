@@ -30,6 +30,45 @@ Keep entries concise and link to the relevant files.
 
 ## Entries
 
+### 2026-06-26 - L1 d=2 cubic subgroup twisted bound
+
+- **Agent/model:** Scott Hughes PR #121, integrated by Codex.
+- **Files added or changed:**
+  `experimental/notes/l1/l1_prefix_dual_d2_cubic_subgroup_twisted_bound.md`,
+  `experimental/notes/triage/l1-prefix-dual-d2-cubic-subgroup-twisted-bound-import-audit-2026-06-26.md`,
+  `experimental/scripts/verify_l1_prefix_dual_d2_cubic_subgroup_twisted_bound.py`,
+  `experimental/notes/triage/pr-triage-2026-06-26-round2.md`,
+  `experimental/agents-log.md`.
+- **Status:** PROVED / STANDARD-WEIL-INPUT / AUDIT.
+- **What is being added:** A `d=2` cubic proper-subgroup collision bound for
+  the actual `H^{2k}` object, using exact Fourier reconstruction,
+  multiplicative-character expansion of `1_H`, and a conservative
+  one-variable mixed character-sum bound.
+- **How it is useful:** Separates proper-subgroup counting from full-affine
+  Hooley--Katz geometry and gives an L1 template for higher odd-moment twisted
+  subgroup bounds.  It is not a new MCA leaderboard row.
+- **What to do next:** Pin the imported Katz/Gauss source constants and test
+  whether the method extends to higher odd moments with reserve-scale margins.
+
+### 2026-06-26 - L1 odd-moment Hooley-Katz audit
+
+- **Agent/model:** Scott Hughes PR #120, integrated by Codex.
+- **Files added or changed:**
+  `experimental/notes/l1/l1_prefix_dual_odd_moment_projective_geometry.md`,
+  `experimental/notes/triage/l1-prefix-dual-odd-moment-hooley-katz-import-audit-2026-06-26.md`,
+  `experimental/scripts/verify_l1_prefix_dual_odd_moment_hooley_katz_audit.py`,
+  `experimental/notes/triage/pr-triage-2026-06-26-round2.md`,
+  `experimental/agents-log.md`.
+- **Status:** PROVED / IMPORTED-VERIFIED / AUDIT / ROUTE CUT.
+- **What is being added:** A projective odd-moment collision-geometry theorem
+  for `k>d`, affine-cone conversion, and a Hooley--Katz/Ghorpade--Lachaud
+  constant ledger for the full-affine point-count route.
+- **How it is useful:** Records why the generic full-affine point-count route
+  is not enough for the subgroup L1 reserve-scale problem and prevents ledger
+  mixing between full-affine, full-torus, and proper-subgroup counts.
+- **What to do next:** Human-check imported theorem citations and use the
+  audit as a route cut unless sharper geometry-specific constants are found.
+
 ### 2026-06-26 - Strict352 dyadic quotient-core MCA floor audit
 
 - **Agent/model:** Codex, auditing user-supplied strict352 packet.
