@@ -18,8 +18,10 @@ The deployed entry point is `index.html`.
 ## Data Files
 
 - `data/frontier.json`: chart and leaderboard entries.
-- `data/updates.json`: recent PR/theory update cards.
-- `data/papers.json`: Paper A/B/D/C links.
+- `data/updates.json`: browsable result ledger entries for proof notes,
+  audits, counterexamples, bridge results, and targets.
+- `data/papers.json`: Paper A/B/D/C links, including GitHub PDF and TeX
+  source URLs.
 
 The four PDF files are copied into `papers/` because Vercel only serves files
 inside the configured root directory.

@@ -84,7 +84,7 @@
       border-bottom:1px solid var(--line);
     }
     .header-content{display:flex; align-items:center; justify-content:space-between; gap:20px; padding:15px 0;}
-    .logo-container{display:flex; align-items:center; gap:7px; min-width:0;}
+    .logo-container{display:flex; align-items:center; gap:9px; min-width:0;}
     .head-mark{
       width:36px;height:36px;border-radius:50%;
       border:1px solid var(--line-strong);
@@ -92,12 +92,17 @@
       font-family:var(--serif);font-weight:700;font-size:18px;
       background:var(--paper);
     }
-    .logo-letter{
-      font-weight:900; letter-spacing:-.04em; font-size:20px; line-height:1;
+    .brand-copy{display:flex;align-items:baseline;gap:7px;white-space:nowrap;min-width:0;}
+    .brand-title{
+      font-weight:850;
+      letter-spacing:-.035em;
+      font-size:1.02rem;
+      line-height:1;
       color:var(--ink-2);
     }
-    .logo-word{display:flex; gap:2px; align-items:center;}
-    .brand-sub{font-size:11px;color:var(--muted);letter-spacing:.05em;margin-left:9px;white-space:nowrap;}
+    .brand-by{font-size:.78rem;color:var(--muted);letter-spacing:.01em;}
+    .brand-ulam{font-weight:800;color:var(--ink-2);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;}
+    .brand-ulam:hover{color:#111;}
     .main-navigation{display:flex; gap:8px; flex-wrap:wrap; justify-content:flex-end;}
     .main-navigation a,.chip,button.chip{
       border:1px solid var(--line);
@@ -259,6 +264,16 @@
     .program-card .paper-actions,.program-card .update-actions{display:flex;gap:.45rem;flex-wrap:wrap;margin-top:.75rem;}
     .program-card a.source-link{border:1px solid var(--line);border-radius:999px;padding:.35rem .58rem;font-size:.78rem;font-weight:800;background:#fff;color:var(--ink-2);}
     .program-card a.source-link:hover{background:var(--soft);}
+    .results-toolbar{display:grid;grid-template-columns:minmax(180px,.35fr) 1fr;gap:.75rem;margin-bottom:1rem;}
+    .result-dashboard{grid-template-columns:1fr .72fr;align-items:start;}
+    .results-grid{grid-template-columns:1fr;margin-top:0;}
+    .result-card{cursor:pointer;transition:.16s ease;}
+    .result-card:hover,.result-card.active{background:#fff;border-color:var(--line-strong);transform:translateY(-1px);}
+    .result-card.active{box-shadow:0 0 0 3px rgba(0,0,0,.045), var(--shadow-soft);}
+    .result-detail .source-link{display:inline-flex;border:1px solid var(--line);border-radius:999px;padding:.42rem .66rem;font-size:.8rem;font-weight:800;background:#fff;margin-top:.7rem;}
+    .paper-link-strip{display:flex;gap:.42rem;flex-wrap:wrap;margin-top:.75rem;}
+    .paper-link-strip a{border:1px solid var(--line);border-radius:999px;padding:.38rem .6rem;font-size:.78rem;font-weight:800;background:#fff;}
+    .paper-link-strip a:hover{background:var(--soft);}
     .update-meta{font-family:var(--mono);font-size:.72rem;color:var(--quiet);text-transform:uppercase;letter-spacing:.08em;margin-bottom:.5rem;}
     .stack-label{display:inline-block;margin-bottom:.55rem;font-size:.74rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--quiet);}
 
@@ -284,14 +299,15 @@
     .small{font-size:.78rem;color:var(--muted);line-height:1.5;}
 
     @media (max-width:940px){
-      .hero-grid,.dashboard{grid-template-columns:1fr;}
+      .hero-grid,.dashboard,.result-dashboard{grid-template-columns:1fr;}
       .stats,.calc-grid,.calc-result,.gate-list{grid-template-columns:repeat(2,minmax(0,1fr));}
       .controls{grid-template-columns:1fr;}
+      .results-toolbar{grid-template-columns:1fr;}
       .program-grid{grid-template-columns:1fr;}
       .section-title{display:block}.section-title p{margin-top:.8rem;}
     }
     @media (max-width:620px){
-      .main-navigation{display:none}.brand-sub{display:none}.stats,.calc-grid,.calc-result,.gate-list,.details-grid{grid-template-columns:1fr;}
+      .main-navigation{display:none}.brand-by{display:none}.stats,.calc-grid,.calc-result,.gate-list,.details-grid{grid-template-columns:1fr;}
       .hero{padding-top:48px}h1{font-size:44px}.receipt-row{grid-template-columns:1fr;gap:2px}.leaderboard{font-size:.78rem}.leaderboard th:nth-child(4),.leaderboard td:nth-child(4){display:none}
       mjx-container[jax="SVG"][display="true"]{font-size:.76rem!important;}
       .formula{padding:.58rem .68rem;}
@@ -301,11 +317,13 @@
 <body>
   <header class="site-header">
     <div class="shell header-content">
-      <a class="logo-container" href="#top" aria-label="Ulam RS-MCA frontier home">
+      <div class="logo-container" aria-label="RS-MCA frontier by Ulam">
         <span class="head-mark">∴</span>
-        <span class="logo-word" aria-label="Ulam"><span class="logo-letter">U</span><span class="logo-letter">L</span><span class="logo-letter">A</span><span class="logo-letter">M</span></span>
-        <span class="brand-sub">RS-MCA frontier</span>
-      </a>
+        <div class="brand-copy">
+          <a class="brand-title" href="#top">RS-MCA frontier</a>
+          <span class="brand-by">by <a class="brand-ulam" href="https://ulam.ai/" target="_blank" rel="noopener">Ulam</a></span>
+        </div>
+      </div>
       <nav class="main-navigation" aria-label="Main navigation">
         <a href="#frontier">Frontier</a>
         <a href="#leaderboard">Leaderboard</a>
@@ -322,7 +340,7 @@
       <div class="shell hero-grid">
         <div>
           <span class="hero-kicker">Research-grade certificates for smooth RS MCA</span>
-          <h1>Can you push <em>MCA.fail</em> deeper?</h1>
+          <h1>Can you push <em>RS MCA</em> frontier?</h1>
           <p class="lead">An interactive frontier board for Reed–Solomon mutual correlated agreement failure certificates. Track how far below capacity a smooth RS row can still certify \(\varepsilon_{\rm mca}(C,\delta)>2^{-128}\), with field ledgers, admissibility gates, and non-claims visible by default.</p>
           <div class="hero-links">
             <a class="primary" href="#frontier">View frontier →</a>
@@ -432,10 +450,29 @@
     <section id="updates">
       <div class="shell">
         <div class="section-title">
-          <h2>Recent updates</h2>
-          <p>The latest PR wave did not increase the Cycle120 numerator. It did sharpen endpoints, bridges, and proof-program targets.</p>
+          <h2>Existing results</h2>
+          <p>Recent proof notes, audits, counterexample families, and bridge results are pulled into a browsable result ledger with source links.</p>
         </div>
-        <div class="program-grid" id="updatesGrid"></div>
+        <div class="results-toolbar">
+          <div>
+            <label for="updateFilter">Result type</label>
+            <select id="updateFilter">
+              <option value="all">All results</option>
+            </select>
+          </div>
+          <div>
+            <label for="updateSearch">Search results</label>
+            <input id="updateSearch" type="search" placeholder="Cycle119, extension, L1, interleaved…" />
+          </div>
+        </div>
+        <div class="dashboard result-dashboard">
+          <div class="program-grid results-grid" id="updatesGrid"></div>
+          <aside class="card result-detail" id="updateDetails">
+            <h3>Selected result</h3>
+            <p class="caption">Choose a result to inspect its status, impact, and source note.</p>
+            <div id="updateDetailsContent"></div>
+          </aside>
+        </div>
       </div>
     </section>
 
@@ -498,9 +535,9 @@
             <p>Each entry should identify whether the census was rerun, hash-bound, imported, locally checked, peer-reviewed, or only proposed.</p>
           </article>
           <article class="program-card">
-            <span class="stack-label">Ulam eval vibe</span>
-            <h3>Reasoning artifacts</h3>
-            <p>The goal is not a victory lap. It is a durable reasoning/evidence layer: claims, checkers, thresholds, and failure modes in one place.</p>
+            <span class="stack-label">Result ledger</span>
+            <h3>Contributor artifacts</h3>
+            <p>The board keeps claims, checkers, thresholds, audits, and failure modes next to their source notes so results can be inspected before they are reused.</p>
           </article>
         </div>
       </div>
@@ -541,7 +578,7 @@
 
   <footer class="footer">
     <div class="shell footer-grid">
-      <div><strong>ULAM / MCA Frontier</strong><br><span class="small">Static prototype · single HTML · MathJax-enabled LaTeX</span></div>
+      <div><strong>RS-MCA frontier by Ulam</strong><br><span class="small">Static prototype · single HTML · MathJax-enabled LaTeX</span></div>
       <div class="small">This board tracks mathematical certificates. It does not claim deployed-system compromise, protocol soundness failure, or ordinary list-decoding failure.</div>
     </div>
   </footer>
@@ -583,10 +620,10 @@
       {date:'2026-06-25', status:'latest', title:'Latest PR integration', summary:'No larger Cycle120 numerator; endpoint, bridge, and proof-program updates were integrated.', impact:'Use the data files and linked notes for the current public state.', href:'https://github.com/przchojecki/rs-mca/blob/main/experimental/notes/triage/pr-triage-2026-06-25.md'}
     ];
     const fallbackPapersRaw = [
-      {letter:'A', title:'Paper A: No-Slack Obstruction', pdf:'papers/RS_disproof_v3.pdf', tex:'https://github.com/przchojecki/rs-mca/blob/main/tex/RS_disproof_v3.tex', summary:'Refutes the old no-slack support-wise line-MCA statement.'},
-      {letter:'B', title:'Paper B: Slack, Quotient, and Entropy Theory', pdf:'papers/slackMCA_v3.pdf', tex:'https://github.com/przchojecki/rs-mca/blob/main/tex/slackMCA_v3.tex', summary:'Builds the corrected-reserve theory and proof targets.'},
-      {letter:'D', title:'Paper D: Universal Field-Size Cap', pdf:'papers/cs25_cap_v4.pdf', tex:'https://github.com/przchojecki/rs-mca/blob/main/tex/cs25_cap_v4.tex', summary:'Proves the universal MCA threshold cap via CS25.'},
-      {letter:'C', title:'Paper C: SNARK and Protocol Ledger', pdf:'papers/snarks_v4.pdf', tex:'https://github.com/przchojecki/rs-mca/blob/main/tex/snarks_v4.tex', summary:'Separates protocol soundness accounting from MCA/list ledgers.'}
+      {letter:'A', title:'Paper A: No-Slack Obstruction', pdf:'papers/RS_disproof_v3.pdf', githubPdf:'https://github.com/przchojecki/rs-mca/blob/main/site/papers/RS_disproof_v3.pdf', tex:'https://github.com/przchojecki/rs-mca/blob/main/tex/RS_disproof_v3.tex', summary:'Refutes the old no-slack support-wise line-MCA statement.'},
+      {letter:'B', title:'Paper B: Slack, Quotient, and Entropy Theory', pdf:'papers/slackMCA_v3.pdf', githubPdf:'https://github.com/przchojecki/rs-mca/blob/main/site/papers/slackMCA_v3.pdf', tex:'https://github.com/przchojecki/rs-mca/blob/main/tex/slackMCA_v3.tex', summary:'Builds the corrected-reserve theory and proof targets.'},
+      {letter:'D', title:'Paper D: Universal Field-Size Cap', pdf:'papers/cs25_cap_v4.pdf', githubPdf:'https://github.com/przchojecki/rs-mca/blob/main/site/papers/cs25_cap_v4.pdf', tex:'https://github.com/przchojecki/rs-mca/blob/main/tex/cs25_cap_v4.tex', summary:'Proves the universal MCA threshold cap via CS25.'},
+      {letter:'C', title:'Paper C: SNARK and Protocol Ledger', pdf:'papers/snarks_v4.pdf', githubPdf:'https://github.com/przchojecki/rs-mca/blob/main/site/papers/snarks_v4.pdf', tex:'https://github.com/przchojecki/rs-mca/blob/main/tex/snarks_v4.tex', summary:'Separates protocol soundness accounting from MCA/list ledgers.'}
     ];
 
     function enrich(e){
@@ -606,6 +643,7 @@
     let updatesRaw = fallbackUpdatesRaw;
     let papersRaw = fallbackPapersRaw;
     let entries = entriesRaw.map(enrich);
+    let selectedUpdateIndex = 0;
 
     function filteredEntries(){
       const status = document.getElementById('statusFilter')?.value || 'all';
@@ -734,18 +772,84 @@
       }
     }
 
+    function escapeHtml(value){
+      return String(value ?? '').replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
+    }
+
+    function populateUpdateFilter(){
+      const filter = document.getElementById('updateFilter');
+      if(!filter) return;
+      const current = filter.value || 'all';
+      const statuses = [...new Set(updatesRaw.map(item => item.status).filter(Boolean))].sort();
+      filter.innerHTML = '<option value="all">All results</option>' + statuses.map(status => `<option value="${escapeHtml(status)}">${escapeHtml(status)}</option>`).join('');
+      filter.value = statuses.includes(current) ? current : 'all';
+    }
+
+    function filteredUpdates(){
+      const status = document.getElementById('updateFilter')?.value || 'all';
+      const query = (document.getElementById('updateSearch')?.value || '').toLowerCase();
+      return updatesRaw.map((item, index) => ({item, index})).filter(({item}) => {
+        const statusMatch = status === 'all' || item.status === status;
+        const queryMatch = !query || JSON.stringify(item).toLowerCase().includes(query);
+        return statusMatch && queryMatch;
+      });
+    }
+
+    function renderUpdateDetails(item){
+      const target = document.getElementById('updateDetailsContent');
+      if(!target) return;
+      if(!item){
+        target.innerHTML = '<p class="caption">No matching result.</p>';
+        return;
+      }
+      target.innerHTML = `
+        <div class="update-meta">${escapeHtml(item.date || 'undated')} · ${escapeHtml(item.status || 'result')}${item.author ? ` · ${escapeHtml(item.author)}` : ''}</div>
+        <h3>${escapeHtml(item.title)}</h3>
+        <p>${escapeHtml(item.summary)}</p>
+        ${item.impact ? `<p class="small" style="margin-top:.65rem">${escapeHtml(item.impact)}</p>` : ''}
+        ${item.href ? `<a class="source-link" href="${escapeHtml(item.href)}" target="_blank" rel="noopener">Open source note</a>` : ''}
+      `;
+    }
+
+    function selectUpdate(index){
+      selectedUpdateIndex = index;
+      renderUpdateDetails(updatesRaw[index]);
+      document.querySelectorAll('.result-card').forEach(card => {
+        card.classList.toggle('active', Number(card.dataset.updateIndex) === selectedUpdateIndex);
+      });
+    }
+
     function renderUpdates(){
       const grid = document.getElementById('updatesGrid');
       if(!grid) return;
-      grid.innerHTML = updatesRaw.map(item => `
-        <article class="program-card">
-          <div class="update-meta">${item.date || 'undated'} · ${item.status || 'update'}</div>
-          <h3>${item.title}</h3>
-          <p>${item.summary}</p>
-          ${item.impact ? `<p class="small" style="margin-top:.65rem">${item.impact}</p>` : ''}
-          ${item.href ? `<div class="update-actions"><a class="source-link" href="${item.href}" target="_blank" rel="noopener">Source note</a></div>` : ''}
+      const rows = filteredUpdates();
+      if(!rows.length){
+        grid.innerHTML = '<article class="program-card"><h3>No matching results</h3><p>Try a broader status filter or search term.</p></article>';
+        renderUpdateDetails(null);
+        return;
+      }
+      if(!rows.some(row => row.index === selectedUpdateIndex)) selectedUpdateIndex = rows[0].index;
+      grid.innerHTML = rows.map(({item, index}) => `
+        <article class="program-card result-card ${index === selectedUpdateIndex ? 'active' : ''}" data-update-index="${index}" tabindex="0">
+          <div class="update-meta">${escapeHtml(item.date || 'undated')} · ${escapeHtml(item.status || 'result')}${item.author ? ` · ${escapeHtml(item.author)}` : ''}</div>
+          <h3>${escapeHtml(item.title)}</h3>
+          <p>${escapeHtml(item.summary)}</p>
+          ${item.href ? `<div class="update-actions"><a class="source-link" href="${escapeHtml(item.href)}" target="_blank" rel="noopener">Source note</a></div>` : ''}
         </article>
       `).join('');
+      grid.querySelectorAll('.result-card').forEach(card => {
+        card.addEventListener('click', event => {
+          if(event.target.closest('a')) return;
+          selectUpdate(Number(card.dataset.updateIndex));
+        });
+        card.addEventListener('keydown', event => {
+          if(event.key === 'Enter' || event.key === ' '){
+            event.preventDefault();
+            selectUpdate(Number(card.dataset.updateIndex));
+          }
+        });
+      });
+      renderUpdateDetails(updatesRaw[selectedUpdateIndex]);
     }
 
     function renderPapers(){
@@ -753,12 +857,13 @@
       if(!grid) return;
       grid.innerHTML = papersRaw.map(paper => `
         <article class="program-card">
-          <span class="stack-label">Paper ${paper.letter}</span>
-          <h3>${paper.title}</h3>
-          <p>${paper.summary}</p>
-          <div class="paper-actions">
-            <a class="source-link" href="${paper.pdf}" target="_blank" rel="noopener">PDF</a>
-            <a class="source-link" href="${paper.tex}" target="_blank" rel="noopener">TeX source</a>
+          <span class="stack-label">Paper ${escapeHtml(paper.letter)}</span>
+          <h3>${escapeHtml(paper.title)}</h3>
+          <p>${escapeHtml(paper.summary)}</p>
+          <div class="paper-link-strip">
+            <a href="${escapeHtml(paper.githubPdf || paper.pdf)}" target="_blank" rel="noopener">PDF on GitHub</a>
+            <a href="${escapeHtml(paper.tex)}" target="_blank" rel="noopener">TeX on GitHub</a>
+            ${paper.pdf ? `<a href="${escapeHtml(paper.pdf)}" target="_blank" rel="noopener">Local mirror</a>` : ''}
           </div>
         </article>
       `).join('');
@@ -790,6 +895,7 @@
       updatesRaw = updatesData;
       papersRaw = papersData;
       entries = entriesRaw.map(enrich);
+      populateUpdateFilter();
       refresh();
       renderCalc();
       renderTimeline();
@@ -802,6 +908,8 @@
     document.getElementById('metricSelect').addEventListener('change', renderChart);
     document.getElementById('statusFilter').addEventListener('change', refresh);
     document.getElementById('searchBox').addEventListener('input', refresh);
+    document.getElementById('updateFilter').addEventListener('change', renderUpdates);
+    document.getElementById('updateSearch').addEventListener('input', renderUpdates);
     ['calcN','calcQ','calcAgreement','calcK'].forEach(id => document.getElementById(id).addEventListener('input', renderCalc));
     boot();
   </script>
