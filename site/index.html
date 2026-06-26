@@ -495,7 +495,64 @@
         <div class="card">
           <table class="leaderboard" aria-label="RS-MCA certificate leaderboard">
             <thead><tr><th>Entry</th><th>Radius</th><th>Slack</th><th>Bad slopes</th><th>Score</th><th>Status</th></tr></thead>
-            <tbody id="leaderboardBody"></tbody>
+            <tbody id="leaderboardBody">
+              <tr data-id="cycle116">
+                <td><strong>Cycle116 closed-threshold proof record</strong><br><span class="small">ABF printed closed threshold at delta = 125/256.</span></td>
+                <td class="mono">125/256</td>
+                <td class="mono">σ=6</td>
+                <td class="mono">52,747,567,092</td>
+                <td class="mono good">+32.82</td>
+                <td><span class="tag proved">proof record</span></td>
+              </tr>
+              <tr data-id="cycle119">
+                <td><strong>Cycle119 strict263 proof record</strong><br><span class="small">Two-ended upgrade with one-symbol strict margin.</span></td>
+                <td class="mono">249/512</td>
+                <td class="mono">σ=7</td>
+                <td class="mono">52,747,567,092</td>
+                <td class="mono good">+32.82</td>
+                <td><span class="tag proved">proof record</span></td>
+              </tr>
+              <tr data-id="strict264-min">
+                <td><strong>Strict264 minimal threshold target</strong><br><span class="small">First Paper-B slack upgrade target: only seven retained slopes are enough.</span></td>
+                <td class="mono">31/64</td>
+                <td class="mono">σ=8</td>
+                <td class="mono">7</td>
+                <td class="mono good">+0.01</td>
+                <td><span class="tag target">target</span></td>
+              </tr>
+              <tr data-id="strict264-2187">
+                <td><strong>Strict264 2187-slope candidate</strong><br><span class="small">Candidate subpacket shape if the hinted strict264 target is validated.</span></td>
+                <td class="mono">31/64</td>
+                <td class="mono">σ=8</td>
+                <td class="mono">2,187</td>
+                <td class="mono good">+8.30</td>
+                <td><span class="tag candidate">candidate</span></td>
+              </tr>
+              <tr data-id="reserve272">
+                <td><strong>Reserve-scale target sigma = 16</strong><br><span class="small">A more serious finite-slack target.</span></td>
+                <td class="mono">15/32</td>
+                <td class="mono">σ=16</td>
+                <td class="mono">7</td>
+                <td class="mono good">+0.01</td>
+                <td><span class="tag target">target</span></td>
+              </tr>
+              <tr data-id="reserve288">
+                <td><strong>Reserve-scale target sigma = 32</strong><br><span class="small">Deeper below capacity; still only seven retained slopes are enough.</span></td>
+                <td class="mono">7/16</td>
+                <td class="mono">σ=32</td>
+                <td class="mono">7</td>
+                <td class="mono good">+0.01</td>
+                <td><span class="tag target">target</span></td>
+              </tr>
+              <tr data-id="reserve313">
+                <td><strong>n/log n scale target sigma ~= 57</strong><br><span class="small">Closer to the local-limit reserve scale.</span></td>
+                <td class="mono">199/512</td>
+                <td class="mono">σ=57</td>
+                <td class="mono">7</td>
+                <td class="mono good">+0.01</td>
+                <td><span class="tag target">target</span></td>
+              </tr>
+            </tbody>
           </table>
         </div>
       </div>
@@ -520,11 +577,96 @@
           </div>
         </div>
         <div class="dashboard result-dashboard">
-          <div class="program-grid results-grid" id="updatesGrid"></div>
+          <div class="program-grid results-grid" id="updatesGrid">
+            <article class="program-card result-card active" data-update-index="0" tabindex="0">
+              <div class="update-meta">2026-06-26 · proved normal form · AllenGrahamHart</div>
+              <h3>F1 syndrome-pencil normal form</h3>
+              <p>PR #118 gives a Hankel-pencil incidence test for support-wise line explanations and a matching noncontainment criterion.</p>
+              <div class="update-actions"><a class="source-link" href="https://github.com/przchojecki/rs-mca/blob/main/experimental/notes/f1/f1_syndrome_pencil_normal_form.md" target="_blank" rel="noopener">Source note</a></div>
+            </article>
+            <article class="program-card result-card" data-update-index="1" tabindex="0">
+              <div class="update-meta">2026-06-26 · proved reduction · AllenGrahamHart</div>
+              <h3>L2 interleaved codegree reduction</h3>
+              <p>PR #108 proves a two-regime and recursive reduction from interleaved lists to base-code lists at agreements a and 2a-k.</p>
+              <div class="update-actions"><a class="source-link" href="https://github.com/przchojecki/rs-mca/blob/main/experimental/notes/l2/l2_codegree_reduction_theorem.md" target="_blank" rel="noopener">Source note</a></div>
+            </article>
+            <article class="program-card result-card" data-update-index="2" tabindex="0">
+              <div class="update-meta">2026-06-26 · dependency split · AllenGrahamHart</div>
+              <h3>Paper D MCA cap gets a CS25-free route</h3>
+              <p>PR #115 isolates a simple-pole/deep-point averaging proof route for the headline MCA cap under Paper D's finite-field hypotheses.</p>
+              <div class="update-actions"><a class="source-link" href="https://github.com/przchojecki/rs-mca/blob/main/experimental/notes/audits/a0_deep_point_cap_dependency_split.md" target="_blank" rel="noopener">Source note</a></div>
+            </article>
+            <article class="program-card result-card" data-update-index="3" tabindex="0">
+              <div class="update-meta">2026-06-26 · audit target · AllenGrahamHart</div>
+              <h3>Strict264 remains a seven-slope target</h3>
+              <p>PR #110 confirms the arithmetic: over F_17^32, seven retained slopes at agreement 264 would clear 2^-128.</p>
+              <div class="update-actions"><a class="source-link" href="https://github.com/przchojecki/rs-mca/blob/main/experimental/notes/m1/m1_strict264_audit.md" target="_blank" rel="noopener">Source note</a></div>
+            </article>
+            <article class="program-card result-card" data-update-index="4" tabindex="0">
+              <div class="update-meta">2026-06-26 · conditional route cut · Scott Hughes</div>
+              <h3>Large-domain mixed-Weil energy floor</h3>
+              <p>PR #119 adds a possible L1 route cut for large-domain prefix-dual energy, kept conditional pending the mixed Weil citation and constant check.</p>
+              <div class="update-actions"><a class="source-link" href="https://github.com/przchojecki/rs-mca/blob/main/experimental/notes/l1/l1_prefix_dual_large_domain_weil_energy_floor.md" target="_blank" rel="noopener">Source note</a></div>
+            </article>
+            <article class="program-card result-card" data-update-index="5" tabindex="0">
+              <div class="update-meta">2026-06-25 · conditional / computation-dependent</div>
+              <h3>Cycle119/Cycle120 ABF-row obstruction</h3>
+              <p>The active value remains 52,747,567,092 bad challenges over F_17^32; Cycle116 reaches the printed closed endpoint and Cycle119 gives the strict endpoint if finite inputs check out.</p>
+              <div class="update-actions"><a class="source-link" href="https://github.com/przchojecki/rs-mca/blob/main/experimental/notes/m1/m1_cycle120_abf_counterexample_candidate.md" target="_blank" rel="noopener">Source note</a></div>
+            </article>
+            <article class="program-card result-card" data-update-index="6" tabindex="0">
+              <div class="update-meta">2026-06-25 · proof-check-needed</div>
+              <h3>Standalone Cycle120 LDsw proof note</h3>
+              <p>PR #105 adds a compact standalone note for the source-scoped lower bound LD_sw(RS[F_17^32,H,256],262) >= 52,747,567,092.</p>
+              <div class="update-actions"><a class="source-link" href="https://github.com/przchojecki/rs-mca/blob/main/experimental/notes/m1/m1_cycle120_standalone_ldsw_proof.md" target="_blank" rel="noopener">Source note</a></div>
+            </article>
+            <article class="program-card result-card" data-update-index="7" tabindex="0">
+              <div class="update-meta">2026-06-25 · bridge</div>
+              <h3>Exact MCA to line-decoding normalization</h3>
+              <p>PR #102 records the support-wise identity epsilon_mca(C,delta) = LD_sw(C,ceil((1-delta)n))/|F| for the two-source object.</p>
+              <div class="update-actions"><a class="source-link" href="https://github.com/przchojecki/rs-mca/blob/main/experimental/notes/m2/m2_line_decoding_mca_bridge.md" target="_blank" rel="noopener">Source note</a></div>
+            </article>
+            <article class="program-card result-card" data-update-index="8" tabindex="0">
+              <div class="update-meta">2026-06-25 · counterexample family</div>
+              <h3>Extension-line lower floors</h3>
+              <p>PR #103 strengthens the F1 warning: fixed-rate extension-line families create floors before extension-degree dilution.</p>
+              <div class="update-actions"><a class="source-link" href="https://github.com/przchojecki/rs-mca/blob/main/experimental/notes/f1/f1_fixed_rate_extension_counterexample.md" target="_blank" rel="noopener">Source note</a></div>
+            </article>
+            <article class="program-card result-card" data-update-index="9" tabindex="0">
+              <div class="update-meta">2026-06-25 · audit</div>
+              <h3>M1 beta-pushforward spectral audit</h3>
+              <p>PR #104 scans beta-pushforward rows and finds no hidden growing p^2 mass in the tested windows.</p>
+              <div class="update-actions"><a class="source-link" href="https://github.com/przchojecki/rs-mca/blob/main/experimental/notes/m1/m1_beta_pushforward_spectral_audit.md" target="_blank" rel="noopener">Source note</a></div>
+            </article>
+            <article class="program-card result-card" data-update-index="10" tabindex="0">
+              <div class="update-meta">2026-06-25 · proof program</div>
+              <h3>L1 quotient-budgeted locator route</h3>
+              <p>PRs #99 and #106 add characteristic-zero prefix reductions, bad-prime proof-record machinery, and a full-list quotient proof program.</p>
+              <div class="update-actions"><a class="source-link" href="https://github.com/przchojecki/rs-mca/blob/main/experimental/notes/l1/l1_quotient_budgeted_locator_conjecture.md" target="_blank" rel="noopener">Source note</a></div>
+            </article>
+            <article class="program-card result-card" data-update-index="11" tabindex="0">
+              <div class="update-meta">2026-06-25 · target</div>
+              <h3>Sharp interleaved-list target</h3>
+              <p>PR #107 sharpens L2: interleaved-list analysis should charge quotient-core mass diagonally and avoid the naive Cartesian-product numerator.</p>
+              <div class="update-actions"><a class="source-link" href="https://github.com/przchojecki/rs-mca/blob/main/experimental/notes/l2/l2_sharp_target_conjecture.md" target="_blank" rel="noopener">Source note</a></div>
+            </article>
+            <article class="program-card result-card" data-update-index="12" tabindex="0">
+              <div class="update-meta">2026-06-25 · scaffold</div>
+              <h3>X1 bridges and Lean formalization stub</h3>
+              <p>PR #101 adds deep-point/interleaved bridge notes, quotient-reduction notes, prize-path maps, and a small Lean scaffold.</p>
+              <div class="update-actions"><a class="source-link" href="https://github.com/przchojecki/rs-mca/tree/main/experimental/lean/rs_mca_formalization" target="_blank" rel="noopener">Source note</a></div>
+            </article>
+          </div>
           <aside class="card result-detail" id="updateDetails">
             <h3>Selected result</h3>
             <p class="caption">Choose a result to inspect its status, impact, and source note.</p>
-            <div id="updateDetailsContent"></div>
+            <div id="updateDetailsContent">
+              <div class="update-meta">2026-06-26 · proved normal form · AllenGrahamHart</div>
+              <h3>F1 syndrome-pencil normal form</h3>
+              <p>PR #118 gives a Hankel-pencil incidence test for support-wise line explanations and a matching noncontainment criterion.</p>
+              <p class="small" style="margin-top:.65rem">This replaces vague extension-line language with an exact locator equation over the actual line field. It is theory infrastructure, not a completed F1 theorem.</p>
+              <a class="source-link" href="https://github.com/przchojecki/rs-mca/blob/main/experimental/notes/f1/f1_syndrome_pencil_normal_form.md" target="_blank" rel="noopener">Open source note</a>
+            </div>
           </aside>
         </div>
       </div>
@@ -764,10 +906,17 @@
     let entries = entriesRaw.map(enrich);
     let selectedUpdateIndex = 0;
 
+    function entrySearchText(e){
+      return [
+        e.id, e.title, e.short, e.row, e.status, e.tag, e.label,
+        e.radiusLabel, e.proof, e.nonclaims, e.badSlopes, e.q,
+        ...(e.links || []).flatMap(link => [link.label, link.href])
+      ].filter(Boolean).join(' ').toLowerCase();
+    }
     function filteredEntries(){
       const status = document.getElementById('statusFilter')?.value || 'all';
       const q = (document.getElementById('searchBox')?.value || '').toLowerCase();
-      return entries.filter(e => (status === 'all' || e.status === status) && JSON.stringify(e).toLowerCase().includes(q));
+      return entries.filter(e => (status === 'all' || e.status === status) && entrySearchText(e).includes(q));
     }
     function fractionish(e){ return e.radiusLabel || frac(Math.round(e.delta*e.n), e.n); }
 
