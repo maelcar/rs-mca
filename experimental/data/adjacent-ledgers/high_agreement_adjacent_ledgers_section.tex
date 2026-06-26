@@ -1,0 +1,374 @@
+\section{High-Agreement Adjacent Ledgers}
+\label{sec:high-agreement-adjacent-ledgers}
+
+\textbf{Status: \textsc{New-local} finite Reed--Solomon theorem package,
+one MDS interleaved-list theorem, and a \textsc{Conditional} protocol-ledger
+corollary.}
+The tangent staircase of Section~\ref{sec:tangent-staircase} settles more than
+finite-slope support-wise MCA.  In the same high-agreement range it also pins
+the no-loss correlated-agreement line count, the projective-slope line count,
+the finite-parameter degree-\(d\) curve count, and the interleaved-list size.
+The protocol statement at the end of this section is only a ledger corollary:
+it applies to reductions whose coding error is exactly one of the listed
+terms, plus an explicitly added query/folding error.
+
+Except in the interleaved-list theorem, \(C=\RS[F,D,k]\) with
+\(|D|=n\), dimension \(k\), and \(q=|F|\).  The interleaved-list uniqueness
+statement only uses the MDS property.  The agreement parameter is an integer
+\(a\), so the corresponding closed Hamming radius is \(1-a/n\).
+
+\subsection{No-loss CA and projective slopes}
+
+Let \(\operatorname{LD}_{\rm ca}(C,a)\) denote the maximum number of finite
+slopes \(z\in F\) on an affine received line \(f+zg\) such that \(f+zg\) has a
+\(C\)-explanation on at least \(a\) positions while the pair \((f,g)\) has no
+\(C^2\)-explanation on any support of size at least \(a\).  This is the
+integer-agreement version of no-loss CA.  Let
+\(\operatorname{LD}_{\rm sw,proj}(C,a)\) be the corresponding support-wise MCA
+count when slopes are points of \(\mathbb P^1(F)\), so the point at infinity is
+also allowed.
+
+\begin{theorem}[high-agreement CA and projective tangent staircase]
+\label{thm:ca-projective-tangent-staircase}
+Let \(C=\RS[F,D,k]\) with \(|D|=n\).  If
+\[
+  3a-2n\ge k,
+\]
+then
+\[
+  \operatorname{LD}_{\rm ca}(C,a)
+  =
+  \operatorname{LD}_{\rm sw,proj}(C,a)
+  =
+  n-a+1 .
+\]
+\end{theorem}
+
+\begin{proof}
+The finite-slope support-wise count is \(n-a+1\) by
+Theorem~\ref{thm:very-high-tangent-staircase}.  Every no-loss CA-bad finite
+slope is support-wise MCA-bad: if the line word is explained on a support
+\(S\) of size at least \(a\) and \((f,g)\) were simultaneously explained on
+that same \(S\), then \((f,g)\) would be \(C^2\)-close at the no-loss CA radius.
+Thus
+\[
+  \operatorname{LD}_{\rm ca}(C,a)\le n-a+1 .
+\]
+
+The moving-root line from Theorem~\ref{thm:moving-root-tangent-floor} gives the
+matching CA lower bound.  Indeed, with \(A\subset D\), \(|A|=a-1\), put
+\(B_A(X)=\prod_{x\in A}(X-x)\),
+\[
+  f=(XB_A)_{\ge k},
+  \qquad
+  g=-(B_A)_{\ge k}.
+\]
+For each \(t\in D\setminus A\), the slope \(t\) is explained on
+\(A\cup\{t\}\).  Suppose \((f,g)\) were explained by two degree-\(<k\)
+polynomials on some support \(T\) of size at least \(a\).  Since
+\[
+  |T\cap A|\ge a-(n-a+1)=2a-n-1,
+\]
+and the hypothesis \(3a-2n\ge k\) implies \(2a-n-1\ge k\) when \(a<n\)
+(the case \(a=n\) gives \(n-1\ge k\)), the two explaining polynomials must be
+the unique degree-\(<k\) polynomials agreeing with \(f\) and \(g\) on \(A\),
+namely \(-(XB_A)_{<k}\) and \((B_A)_{<k}\).  At any point
+\(x\in D\setminus A\), simultaneous agreement with those two polynomials would
+force both \(XB_A(x)=0\) and \(B_A(x)=0\), impossible.  Hence \((f,g)\) is
+globally CA-far at agreement \(a\), and the \(n-a+1\) slopes are CA-bad.
+
+It remains to pass from finite to projective slopes.  A projective bad-slope
+set cannot be all of \(\mathbb P^1(F)\): otherwise, after choosing any
+projective point as infinity, the remaining \(q\) points would be finite bad
+slopes in an affine coordinate, contradicting
+\(q>n-a+1\) since \(D\subseteq F\) and \(a>k\).  Choose a nonbad projective
+point and send it to infinity by a change of basis of the two-dimensional
+received-line span.  All bad projective points are then finite slopes in the
+new coordinate, so Theorem~\ref{thm:very-high-tangent-staircase} bounds their
+number by \(n-a+1\).  The affine moving-root construction gives the matching
+projective lower bound.
+\end{proof}
+
+\subsection{Finite-parameter curve MCA}
+
+Fix an integer \(d\ge1\).  A degree-\(d\) received curve is a family
+\[
+  W_\gamma=f_0+\gamma f_1+\cdots+\gamma^d f_d,
+  \qquad \gamma\in F .
+\]
+Let \(\operatorname{CurveLD}_{\rm sw}^{(d)}(C,a)\) be the maximum number of
+parameters \(\gamma\in F\) for which \(W_\gamma\) has a \(C\)-explanation on a
+support of size at least \(a\), while the tuple \((f_0,\ldots,f_d)\) is not
+simultaneously explained by \(C^{d+1}\) on that support.  Define
+\(\operatorname{CurveLD}_{\rm ca}^{(d)}(C,a)\) similarly, replacing the
+support-wise condition by the no-loss global CA condition that
+\((f_0,\ldots,f_d)\) is not \(C^{d+1}\)-close at agreement \(a\).
+
+\begin{theorem}[degree-\(d\) curve tangent staircase]
+\label{thm:curve-tangent-staircase}
+Let \(C=\RS[F,D,k]\), \(|D|=n\), \(|F|=q\), and \(d\ge1\).  If
+\[
+  (d+2)a-(d+1)n\ge k,
+\]
+then
+\[
+  \operatorname{CurveLD}_{\rm sw}^{(d)}(C,a)
+  =
+  \operatorname{CurveLD}_{\rm ca}^{(d)}(C,a)
+  =
+  \min\{q,\ d(n-a+1)\}.
+\]
+\end{theorem}
+
+\begin{proof}
+Put \(m=n-a+1\).  For the lower bound, choose \(A\subset D\) with
+\(|A|=a-1\) and let \(\Omega=D\setminus A\), so \(|\Omega|=m\).  Choose
+\(M=\min\{q,dm\}\) distinct parameters in \(F\), partition them among the
+points \(x\in\Omega\) into sets \(R_x\) of size at most \(d\), and for each
+\(x\in\Omega\) choose a nonzero polynomial
+\[
+  P_x(T)=\sum_{i=0}^d p_{i,x}T^i
+\]
+whose root set contains \(R_x\).  Define \(f_i=0\) on \(A\) and
+\(f_i(x)=p_{i,x}\) for \(x\in\Omega\).  If \(\gamma\in R_x\), then
+\(W_\gamma\) vanishes on \(A\cup\{x\}\), so it is explained by the zero codeword
+on a support of size \(a\).  On this same support the tuple
+\((f_0,\ldots,f_d)\) is not simultaneously explained: every component vanishes
+on \(A\), which has at least \(k\) points, so the only possible explaining
+codewords are all zero, but \(P_x\) is not the zero polynomial and hence some
+component is nonzero at \(x\).
+
+The same construction is CA-far.  If the tuple were globally explained on a
+support \(T\) of size at least \(a\), then
+\[
+  |T\cap A|\ge 2a-n-1.
+\]
+The curve-range hypothesis implies \(2a-n-1\ge k\) when \(a<n\), and the case
+\(a=n\) is immediate from \(n-1\ge k\).  Thus all explaining codewords would be
+zero, which is impossible on every point of \(\Omega\) by construction.  Hence
+all \(M\) parameters are curve-CA-bad and support-wise curve-MCA-bad.
+
+For the upper bound, it is enough to prove the support-wise statement, since
+curve-CA-bad parameters are support-wise bad.  If there are at most \(d\) bad
+parameters, the bound is immediate.  Otherwise pick \(d+1\) distinct bad
+parameters \(\gamma_0,\ldots,\gamma_d\), with explaining codewords on supports
+\(S_0,\ldots,S_d\).  Their intersection has size at least
+\[
+  b_0\ge (d+1)a-dn .
+\]
+On this intersection, interpolation in the parameter \(\gamma\) expresses each
+component \(f_i\) as an \(F\)-linear combination of the \(d+1\) explaining
+codewords, hence as a codeword \(c_i\in C\).  Let \(S_*\) be a maximal support
+on which all \(f_i=c_i\), and put \(b=|S_*|\).  Then
+\(b\ge b_0\), and the hypothesis gives
+\[
+  a+b-n\ge a+b_0-n=(d+2)a-(d+1)n\ge k .
+\]
+
+Now consider any bad parameter \(\gamma\), with explaining codeword \(p_\gamma\)
+on a support \(S\) of size at least \(a\).  On \(S\cap S_*\), whose size is at
+least \(a+b-n\ge k\), the codeword \(p_\gamma\) agrees with
+\[
+  c_\gamma=\sum_{i=0}^d\gamma^i c_i\in C.
+\]
+Therefore the residual word \(W_\gamma-c_\gamma\) must vanish on at least
+\(h=\max\{1,a-b\}\) points of \(D\setminus S_*\).  By maximality of \(S_*\), for
+each residual coordinate \(x\in D\setminus S_*\) the polynomial
+\[
+  R_x(T)=\sum_{i=0}^d T^i(f_i(x)-c_i(x))
+\]
+is not identically zero, so it has at most \(d\) roots in \(F\).  Counting
+incidences \((\gamma,x)\) with \(R_x(\gamma)=0\) gives
+\[
+  \#\{\text{bad parameters}\}\cdot h
+  \le d(n-b).
+\]
+If \(b\ge a\), then \(h=1\) and the right side is at most
+\(d(n-a)\le d(n-a+1)\).  If \(b<a\), then
+\[
+  \#\{\text{bad parameters}\}
+  \le
+  d\,\frac{n-b}{a-b}
+  =
+  d\left(1+\frac{n-a}{a-b}\right)
+  \le d(n-a+1),
+\]
+because \(a-b\ge1\).  The trivial field-size cap gives the additional upper
+bound \(q\).  This proves the exact formula.
+\end{proof}
+
+\subsection{Interleaved-list uniqueness}
+
+For \(\mu\ge1\), let \(\Lambda_\mu(C,a)\) denote the maximum, over all
+\(\mu\)-row received words \(U=(U_1,\ldots,U_\mu)\), of the number of tuples
+\((c_1,\ldots,c_\mu)\in C^\mu\) that agree with \(U\) on at least \(a\) common
+positions.
+
+\begin{theorem}[high-agreement interleaved-list uniqueness]
+\label{thm:interleaved-unique-high-agreement}
+Let \(C\subseteq F^D\) be MDS of length \(n\) and dimension \(k\).  If
+\[
+  2a-n\ge k,
+\]
+then for every \(\mu\ge1\),
+\[
+  \Lambda_\mu(C,a)=1 .
+\]
+\end{theorem}
+
+\begin{proof}
+The lower bound is obtained by taking \(U\) itself to be a code tuple.  For the
+upper bound, suppose two tuples \(c=(c_1,\ldots,c_\mu)\) and
+\(c'=(c'_1,\ldots,c'_\mu)\) both agree with \(U\) on supports of size at least
+\(a\).  The supports intersect in at least \(2a-n\ge k\) positions.  On this
+intersection, each row \(c_i\) agrees with \(c'_i\).  Since \(C\) is MDS, two
+codewords that agree on \(k\) positions are equal.  Thus \(c_i=c'_i\) for every
+row \(i\), so the tuples are identical.
+\end{proof}
+
+\subsection{The \(\F_{17^{32}}\), \(n=512\), \(k=256\) protocol-facing ledger}
+
+\begin{corollary}[high-agreement adjacent ledgers for the \(17^{32}\) row]
+\label{cor:f17-adjacent-ledgers}
+Let \(H\subset\F_{17^{32}}^*\) have order \(512\), and let
+\[
+  C=\RS[\F_{17^{32}},H,256].
+\]
+Put \(q=17^{32}\) and
+\[
+  B_*=\left\lfloor q/2^{128}\right\rfloor=6.
+\]
+Then the following statements hold.
+
+\begin{enumerate}
+\item For every \(a\ge427\),
+\[
+  \operatorname{LD}_{\rm ca}(C,a)
+  =
+  \operatorname{LD}_{\rm sw,proj}(C,a)
+  =
+  \operatorname{LD}_{\rm sw}(C,a)
+  =
+  513-a.
+\]
+Thus the affine/projective line numerator is \(6\) at \(a=507\) and \(7\) at
+\(a=506\).
+
+\item For every \(\mu\ge1\) and every \(a\ge384\),
+\[
+  \Lambda_\mu(C,a)=1.
+\]
+
+\item For degree-\(d\) finite-parameter curves, whenever
+\[
+  a\ge
+  \left\lceil\frac{(d+1)512+256}{d+2}\right\rceil,
+\]
+we have
+\[
+  \operatorname{CurveLD}_{\rm sw}^{(d)}(C,a)
+  =
+  \operatorname{CurveLD}_{\rm ca}^{(d)}(C,a)
+  =
+  \min\{17^{32},\,d(513-a)\}.
+\]
+\end{enumerate}
+\end{corollary}
+
+\begin{proof}
+The first item is Corollary~\ref{cor:f17-32-exact-tangent-gate} together with
+Theorem~\ref{thm:ca-projective-tangent-staircase}.  The second item is
+Theorem~\ref{thm:interleaved-unique-high-agreement}, because
+\(2a-512\ge256\) is equivalent to \(a\ge384\).  The third item is
+Theorem~\ref{thm:curve-tangent-staircase} after substituting \(n=512\) and
+\(k=256\).  The integer \(B_*=6\) follows from
+\[
+  6\cdot2^{128}<17^{32}<7\cdot2^{128}.
+\]
+\end{proof}
+
+\begin{corollary}[conditional high-agreement protocol ledger]
+\label{cor:high-agreement-protocol-ledger}
+Consider a protocol reduction for the row of
+Corollary~\ref{cor:f17-adjacent-ledgers} whose coding-theoretic error at
+agreement \(a\) is exactly
+\[
+  \frac{N_{\rm geom}(a)}{17^{32}}
+  +
+  \frac{\Lambda_\mu(C,a)}{17^{32}}
+  +
+  \varepsilon_{\rm query},
+\]
+where \(N_{\rm geom}(a)\) is one affine/projective line CA/MCA numerator or one
+degree-\(d\) finite-parameter curve numerator, and where no additional fold,
+hash, Fiat--Shamir, or extension-lift loss is hidden in the notation.  In the
+high-agreement ranges above, this ledger becomes the following explicit integer
+test.
+
+For affine/projective line CA/MCA,
+\[
+  N_{\rm geom}(a)+\Lambda_\mu(C,a)
+  =
+  (513-a)+1
+  =
+  514-a
+  \qquad (a\ge427).
+\]
+With \(\varepsilon_{\rm query}=0\), this is at most the \(2^{-128}\) budget iff
+\(a\ge508\).  Thus the combined line-plus-list ledger is safe at agreement
+\(508\) and unsafe at agreement \(507\).
+
+For degree-\(d\) finite-parameter curve MCA/CA,
+\[
+  N_{\rm geom}(a)+\Lambda_\mu(C,a)
+  =
+  d(513-a)+1
+\]
+in the curve-staircase range.  With \(\varepsilon_{\rm query}=0\), the safe
+grid points are exactly those satisfying
+\[
+  d(513-a)+1\le6 .
+\]
+In particular:
+\[
+\begin{array}{c|c|c}
+d & \text{curve-plus-list safe grid} & \text{curve term alone safe grid}\\
+\hline
+1 & a\ge508\ (r\le4) & a\ge507\ (r\le5)\\
+2 & a\ge511\ (r\le1) & a\ge510\ (r\le2)\\
+3 & a=512\ (r=0) & a\ge511\ (r\le1)\\
+4 & a=512\ (r=0) & a=512\ (r=0)\\
+5 & a=512\ (r=0) & a=512\ (r=0)\\
+6 & \text{no safe grid point with the list term} & a=512\ (r=0)\\
+d\ge7 & \text{no safe grid point with the list term} &
+        \text{no safe grid point for the curve term alone}
+\end{array}
+\]
+where \(r=n-a\) is the integer Hamming radius.
+\end{corollary}
+
+\begin{proof}
+By Corollary~\ref{cor:f17-adjacent-ledgers}, the interleaved-list numerator is
+\(1\) throughout the displayed high-agreement range.  The affine/projective line
+numerator is \(513-a\), and the degree-\(d\) curve numerator is \(d(513-a)\).
+Since
+\[
+  \left\lfloor 17^{32}/2^{128}\right\rfloor=6,
+\]
+the code-level numerator must be at most \(6\) when
+\(\varepsilon_{\rm query}=0\).  The displayed inequalities are exactly the
+resulting integer conditions.
+\end{proof}
+
+\begin{remark}[what this does and does not settle]
+Theorems~\ref{thm:ca-projective-tangent-staircase},
+\ref{thm:curve-tangent-staircase}, and
+\ref{thm:interleaved-unique-high-agreement} are unconditional finite
+statements under the hypotheses printed above: the CA/projective/curve
+statements are Reed--Solomon evaluation-domain statements, while interleaved
+uniqueness is MDS.  Corollary~\ref{cor:high-agreement-protocol-ledger} is
+conditional on the protocol really consuming only the printed coding terms over
+the printed field.  It does not cover reductions with additional curve
+families, extension-line lifts, folding losses, query errors, or cryptographic
+errors unless those terms are added to the ledger.
+\end{remark}

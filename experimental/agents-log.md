@@ -30,6 +30,29 @@ Keep entries concise and link to the relevant files.
 
 ## Entries
 
+### 2026-06-26 - High-agreement adjacent CA/curve/list ledgers
+
+- **Agent/model:** GPT-5.5 Pro adjacent-ledgers packet, audited and integrated
+  by Codex.
+- **Files added or changed:** `experimental/data/adjacent-ledgers/`,
+  `experimental/experiments.tex`, `experimental/experiments.pdf`,
+  `experimental/SUMMARY.md`, `experimental/agents-log.md`,
+  `site/data/frontier.json`, `site/data/updates.json`,
+  `site/data/rate-leaderboards.json`, `site/index.html`.
+- **Status:** PROVED / CONDITIONAL-PROTOCOL-LEDGER / ARITHMETIC-AUDIT.
+- **What is being added:** The high-agreement tangent staircase is extended to
+  no-loss CA, projective-slope support-wise MCA, finite-parameter degree-`d`
+  curve CA/MCA, and MDS interleaved-list uniqueness.  For
+  `RS[F_17^32,H,256]`, the line-plus-list coding ledger is unsafe at
+  agreement `a=507` and safe at `a=508` when no query/folding loss is added.
+- **How it is useful:** This answers the immediate adjacent-ledger question
+  past the finite-slope `506/507` gate: the high-agreement CA/projective/curve
+  and interleaved-list coding objects are now pinned by explicit integer
+  formulae, rather than left as open checks.
+- **What to do next:** Human-review protocol reductions before using the
+  conditional ledger in SNARK claims, and add any query, folding, hash,
+  extension-lift, or cryptographic error terms explicitly.
+
 ### 2026-06-26 - Tangent-star extremizer barrier
 
 - **Agent/model:** GPT-5.5 Pro tangent-star packet, audited and integrated by
@@ -48,9 +71,9 @@ Keep entries concise and link to the relevant files.
   left by the tangent staircase: no non-tangent mechanism can push the current
   `F_17^32`, `n=512`, `k=256` row past the `506/507` gate under the
   finite-slope support-wise MCA convention.
-- **What to do next:** Check whether projective-slope, CA, curve-MCA,
-  interleaved-list, challenge-field, or protocol ledgers preserve this exact
-  finite-slope threshold or introduce a different object.
+- **What to do next:** Use the adjacent-ledgers packet for the high-agreement
+  CA/projective/curve/list coding objects, and keep protocol, challenge-field,
+  extension-lift, folding, query, and cryptographic losses as separate ledgers.
 
 ### 2026-06-26 - High-agreement tangent staircase
 
@@ -68,9 +91,9 @@ Keep entries concise and link to the relevant files.
   `LD_sw(C,507)=6`.  Thus the finite-slope support-wise `2^-128` staircase is
   pinned between agreements `506` and `507`; agreement `353` and the strict352
   quotient-core frontier are superseded by the tangent floor.
-- **What to do next:** Human-review the endpoint convention and decide whether
-  projective-slope, CA, curve-MCA, interleaved-list, challenge-field, or
-  protocol ledgers alter the finite-slope conclusion.
+- **What to do next:** Human-review the endpoint convention and use the
+  adjacent-ledgers packet for the high-agreement CA/projective/curve/list
+  coding objects; protocol-facing losses still need separate ledgers.
 
 ### 2026-06-26 - L1 d=2 cubic subgroup twisted bound
 

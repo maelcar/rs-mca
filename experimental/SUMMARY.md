@@ -32,6 +32,9 @@ papers. The source triage records are:
 - `data/tangent-star/`: tangent-star barrier packet, adding the extremizer
   classification and ruling out a seventh finite-slope branch past agreement
   `506` for the current `F_17^32`, `n=512`, `k=256` row.
+- `data/adjacent-ledgers/`: adjacent high-agreement ledger packet, extending
+  the tangent staircase to CA, projective slopes, finite-parameter curves, and
+  interleaved lists, with a conditional protocol-facing integer ledger.
 
 The common policy was: keep Papers A-D unchanged, land new material in
 `experimental/`, preserve explicit status labels, and require review before any
@@ -108,10 +111,30 @@ agreement `353` already has the tangent lower bound `LD_sw(C,353)>=160`, and
 agreement `352` has `LD_sw(C,352)>=161`.  The quotient-core packets remain
 useful mechanism records.  The tangent-star refinement now closes the finite
 slope follow-up: no non-tangent finite-slope mechanism can add a seventh bad
-slope at agreement `a>=507`.  The remaining questions are whether
-projective-slope, CA, curve-MCA, interleaved-list, challenge-field, or protocol
-ledgers preserve this exact finite-slope threshold or require a different
-object.
+slope at agreement `a>=507`.  The adjacent-ledgers packet below handles the
+high-agreement CA, projective-slope, curve-MCA, and interleaved-list coding
+objects.  The remaining checks are protocol-facing: challenge-field,
+extension-lift, folding, query, and cryptographic ledgers must be added
+explicitly before making SNARK-style claims.
+
+### Latest adjacent-ledgers update
+
+The adjacent-ledgers packet extends the high-agreement tangent staircase beyond
+finite-slope support-wise MCA:
+
+- If `3a - 2n >= k`, then for `C=RS[F,D,k]`
+  `LD_sw(C,a) = LD_ca(C,a) = LD_sw,proj(C,a) = n-a+1`.
+- If `(d+2)a - (d+1)n >= k`, then finite-parameter degree-`d` curve CA/MCA has
+  exact numerator `min(q, d*(n-a+1))`.
+- If `2a - n >= k`, then every MDS interleaving arity has common-support list
+  size `Lambda_mu(C,a)=1`.
+
+For the `F_17^32`, `n=512`, `k=256` row, this gives a conditional
+line-plus-list coding ledger numerator `514-a` in the high-agreement range.
+Since `floor(17^32/2^128)=6`, that ledger is unsafe at agreement `a=507` and
+safe at agreement `a=508`, assuming no additional query, folding, hash,
+extension-lift, or cryptographic error term is being hidden.  This is a coding
+ledger, not a full protocol theorem.
 
 ### Latest 2026-06-26 round 2 integration
 

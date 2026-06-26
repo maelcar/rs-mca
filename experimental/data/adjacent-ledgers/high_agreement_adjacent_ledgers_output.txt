@@ -1,0 +1,27 @@
+Field and target
+q = 17^32 = 2367911594760467245844106297320951247361
+floor(q / 2^128) = 6
+6*2^128 < q: True
+7*2^128 > q: True
+
+High-agreement starts
+affine/projective line exact start ceil((2n+k)/3) = 427
+interleaved unique-list start ceil((n+k)/2) = 384
+
+Affine/projective line plus interleaved-list ledger
+a=506, r=6: line=7, list=1, total=8, total<=budget? False
+a=507, r=5: line=6, list=1, total=7, total<=budget? False
+a=508, r=4: line=5, list=1, total=6, total<=budget? True
+
+Degree-d finite-parameter curve ledger
+d | curve exact start | safe with list | safe curve alone
+ 1 |               427 | a >= 508 (r <= 4)        | a >= 507 (r <= 5)
+ 2 |               448 | a >= 511 (r <= 1)        | a >= 510 (r <= 2)
+ 3 |               461 | a >= 512 (r <= 0)        | a >= 511 (r <= 1)
+ 4 |               470 | a >= 512 (r <= 0)        | a >= 512 (r <= 0)
+ 5 |               476 | a >= 512 (r <= 0)        | a >= 512 (r <= 0)
+ 6 |               480 | none                     | a >= 512 (r <= 0)
+ 7 |               484 | none                     | none
+ 8 |               487 | none                     | none
+ 9 |               489 | none                     | none
+10 |               491 | none                     | none
