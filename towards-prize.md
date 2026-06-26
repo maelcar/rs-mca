@@ -305,7 +305,119 @@ N_{\mathrm{bad}}/q_{\mathrm{line}} \approx 2^{-95.18}.
 
 The row is strong because it is more than 32 bits above the \(2^{-128}\) target. But it is not a full prize solution because it only proves unsafety at a radius. It does not prove the matching safe radius.
 
-### 3.3 strict264 is the first clean finite prize push
+### 3.3 What has and has not been solved
+
+The project has not yet determined the full Proximity Prize threshold for smooth-domain Reed-Solomon codes.
+
+What is settled:
+
+```text
+smooth no-slack MCA/RCA optimism is false;
+explicit smooth-domain obstruction floors exist;
+the current finite frontier gives real bad-side certificates;
+Paper D caps delta_C^*(2^-128) away from capacity across the challenge envelope.
+```
+
+What is not yet settled:
+
+```text
+the exact delta_C^*(2^-128) for every smooth-domain RS[F,L,k];
+the matching safe-side upper bounds below the obstruction radius;
+the full agreement staircase B_C(a) for the main finite rows;
+the aperiodic local-limit theorem after quotient-periodic floors are removed.
+```
+
+In the language of the ePrint challenge, current results mostly prove statements of the form
+
+\[
+\delta_C^*(2^{-128}) \le \Delta_{\mathrm{cap}}
+\]
+
+or produce explicit radii where
+
+\[
+\varepsilon_{\mathrm{mca}}(C,\delta)>2^{-128}.
+\]
+
+That is necessary but not sufficient for resolving the challenge. To resolve it for a code \(C\), one must specify a candidate threshold \(\delta_C^*\) and prove both sides of the staircase:
+
+1. for every \(\delta>\delta_C^*\), the MCA error is larger than \(2^{-128}\);
+2. for every \(\delta<\delta_C^*\), or for the corresponding next safer agreement level after endpoint conventions are fixed, the MCA error is at most \(2^{-128}\).
+
+Equivalently, in integer agreement language, one must locate the first agreement level \(a\) at which
+
+\[
+LD_{\mathrm{sw}}(C,a) \le \lfloor q_{\mathrm{line}}2^{-128}\rfloor
+\]
+
+and prove the adjacent lower level is still unsafe.
+
+### 3.4 How to approach the full threshold
+
+The route to an actual \(\delta_C^*\) theorem has two tracks.
+
+**Finite-row track.** Start with the main board row
+
+\[
+C=\mathrm{RS}[\mathbb F_{17^{32}},H,256],
+\quad n=512,
+\quad \rho=1/2.
+\]
+
+For this row the numerical cutoff is
+
+\[
+\lfloor 17^{32}/2^{128}\rfloor = 6.
+\]
+
+Thus the immediate goal is not a huge asymptotic theorem. It is the adjacent-pair statement
+
+\[
+LD_{\mathrm{sw}}(C,264)\ge 7
+\]
+
+and
+
+\[
+LD_{\mathrm{sw}}(C,265)\le 6
+\]
+
+or a counterexample showing that the first safe level is later. This would turn the current one-sided obstruction frontier into a finite threshold computation.
+
+Concrete attacks:
+
+- replay the Cycle116/119 numerator and reduce it to a small independent certificate;
+- reconstruct or replace the strict264 seven-slot survivor model;
+- use the F1 Hankel-pencil normal form to enumerate support-complement strata at \(a=264\) and \(a=265\);
+- split quotient-periodic witnesses from aperiodic witnesses before counting;
+- certify noncontainment ranks and endpoint conventions in machine-checkable JSON;
+- if \(LD_{\mathrm{sw}}(C,265)>6\), record the new obstruction and move the threshold target to \(266\) or beyond.
+
+**General smooth-domain track.** After the finite row is understood, prove the floor-corrected local-limit theorem. The target theorem should not say "smooth RS is safe up to capacity." It should say that above a stated reserve
+
+\[
+\eta = 1-\rho-\delta
+\]
+
+the bad-slope count is bounded by tangent, quotient-profile, and aperiodic terms divided by \(q_{\mathrm{line}}\). The quotient term must remain explicit.
+
+Concrete attacks:
+
+- prove generated-field locator local limits after quotient cores are budgeted;
+- prove residue-line packing bounds in the F1 Hankel-pencil normal form;
+- show interleaved-list codegree reductions do not lose the exponent needed for protocol fields;
+- prove extension-line transfer theorems or exhibit extension-only counterexamples;
+- convert the resulting bounds into explicit agreement thresholds for all prize rates and all admissible \(k\le2^{40}\), \(|F|<2^{256}\).
+
+The end product should be a theorem or certificate generator that takes
+
+```text
+F, L, k, q_gen, q_line, q_chal
+```
+
+and outputs either a proved threshold interval for \(\delta_C^*(2^{-128})\) or a declared obstruction/counterexample floor.
+
+### 3.5 strict264 is the first clean finite prize push
 
 At \(a=264\),
 
@@ -344,7 +456,7 @@ The strict264 audit verifies much of the algebraic bridge:
 
 The remaining open piece is the exact survivor count. The seven-slot model must be reconstructed or replaced by an in-repository, independently replayable certificate.
 
-### 3.4 The main theoretical gap is the aperiodic local limit
+### 3.6 The main theoretical gap is the aperiodic local limit
 
 Paper B isolates the correct positive-theorem shape:
 
@@ -368,7 +480,7 @@ aperiodic residue-line mass
 
 The quotient floor is real and must remain on the right-hand side. The missing hard theorem is a finite-field local-limit bound for arbitrary-word list decoding and all-line MCA after quotient cores have been removed.
 
-### 3.5 The F1 normal form is the main algebraic tool
+### 3.7 The F1 normal form is the main algebraic tool
 
 The F1 note turns all-line support-wise MCA into a Hankel-pencil incidence problem.
 
