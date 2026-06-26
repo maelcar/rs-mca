@@ -1,0 +1,200 @@
+{
+  "date": "2026-06-26",
+  "operator": "Codex",
+  "purpose": "Run the current experimental validators one by one following the strict264 / finite-row / theorem-infrastructure plan.",
+  "frontier_numeric_update": false,
+  "new_prize_worthy_result": false,
+  "summary": {
+    "cycle120_current_row": "PASS, but still computation/source-conditional",
+    "strict264": "All local gate and toy-transfer validators pass; no real seven-slope retained certificate was produced.",
+    "reserve_ladder": "Seven slopes would clear the bridge gate at sigma 8,16,32,57 over F_17^32; no retained slopes were found by these scripts.",
+    "theory_infrastructure": "F1 syndrome-pencil, L2 codegree stack, A0 deep-point algebra, and M2 residual-budget validators pass.",
+    "site_frontier_action": "Do not change frontier.json."
+  },
+  "runs": [
+    {
+      "command": "python3 experimental/scripts/verify_m1_cycle120_standalone_ldsw_proof.py --json",
+      "status": "PASS",
+      "key_output": {
+        "theorem_problem_id": "M1 Cycle120 standalone LD_sw proof",
+        "proved_transfer_target": "LD_sw(RS[F_17^32,H,256],262) >= 52747567092",
+        "minimum_bad_parameters_for_gate": 7,
+        "proof_status": "PROVED / COMPUTATION-DEPENDENT / SOURCE-CONDITIONAL",
+        "remaining_inputs": [
+          "reviewer acceptance of the Cycle84 finite computation",
+          "official ABF source-gate verification",
+          "Cycle116 slot identity and beta-not-in-domain certificates"
+        ]
+      }
+    },
+    {
+      "command": "python3 experimental/scripts/verify_audit_pr100_cycle120_gate.py --json",
+      "status": "PASS",
+      "key_output": {
+        "N": 52747567092,
+        "density_log2_N_over_K": -95.18,
+        "floor_17e32_over_2e128": 6,
+        "unverified_imports": [
+          "Cycle84 finite occupancy census",
+          "Cycle116/Cycle119 fixed-jet transfer proofs",
+          "official ABF wording",
+          "H=<theta> smoothness/generator certificate"
+        ]
+      }
+    },
+    {
+      "command": "python3 experimental/scripts/verify_m1_strict264_admissibility.py --json",
+      "status": "PASS",
+      "key_output": {
+        "n": 512,
+        "k": 256,
+        "agreement": 264,
+        "j": 248,
+        "sigma": 8,
+        "corrected_fixed_degrees": "{0,249,...,255}",
+        "all_ok": true
+      }
+    },
+    {
+      "command": "python3 experimental/scripts/verify_m1_strict264_bridge.py --json",
+      "status": "PASS",
+      "key_output": {
+        "delta": "31/64",
+        "floor_17_32_over_2_128": 6,
+        "min_retained_slopes": 7,
+        "strict264_stronger_than_cycle119": true
+      }
+    },
+    {
+      "command": "python3 experimental/scripts/verify_m1_strict264_mechanism.py --json",
+      "status": "PASS",
+      "key_output": {
+        "toy_retained_counts_by_sigma": [10, 2, 1, 1],
+        "interpretation": "Toy richness drops as slack rises; strict264 needs the specific Cycle84 slot model, not generic richness."
+      }
+    },
+    {
+      "command": "python3 experimental/scripts/verify_m1_strict264_two_ended_transfer.py --json",
+      "status": "PASS",
+      "key_output": {
+        "conclusion": "Two-ended LD_sw transfer requires top sigma-1 coefficients fixed plus endpoint; literal top sigma-2 plus endpoint breaks in the top parity row."
+      }
+    },
+    {
+      "command": "python3 experimental/scripts/verify_m1_strict264_end_to_end.py --json",
+      "status": "PASS",
+      "key_output": {
+        "toy_class_size": 4,
+        "toy_distinct_slopes_LDsw": 4,
+        "all_ok": true,
+        "scope": "Toy end-to-end transfer only; no F_17^32 seven-slope certificate."
+      }
+    },
+    {
+      "command": "python3 experimental/scripts/verify_m1_reserve_scale_bridge.py --json",
+      "status": "PASS",
+      "key_output": {
+        "targets": ["strict264", "reserve272", "reserve288", "reserve313"],
+        "floor_q_over_2_128": 6,
+        "gate": "Seven slopes clear at every listed agreement target."
+      }
+    },
+    {
+      "command": "python3 experimental/scripts/verify_m1_reserve_scale_richness.py --json",
+      "status": "PASS",
+      "key_output": {
+        "reserve_targets_free_dim_min": 142,
+        "interpretation": "Degenerate uniqueness is ruled out at target scales, but small-model richness collapse is a field/domain artifact."
+      }
+    },
+    {
+      "command": "python3 experimental/scripts/verify_f1_syndrome_pencil_normal_form.py --json",
+      "status": "PASS",
+      "key_output": {
+        "theorem": "F1 syndrome-pencil normal form",
+        "cases_passed": true,
+        "scope": "Local normal form and branch tests, not a completed F1 theorem."
+      }
+    },
+    {
+      "command": "python3 experimental/scripts/verify_l2_codegree_decomposition.py --json",
+      "status": "PASS",
+      "key_output": {
+        "all_identities_hold": true,
+        "scope": "Direct codegree identity checks."
+      }
+    },
+    {
+      "command": "python3 experimental/scripts/verify_l2_reduction_bound.py --json",
+      "status": "PASS",
+      "key_output": {
+        "all_ok": true,
+        "scope": "Two-regime L2 reduction bound."
+      }
+    },
+    {
+      "command": "python3 experimental/scripts/verify_l2_mu_recursion.py --json",
+      "status": "PASS",
+      "key_output": {
+        "all_ok": true,
+        "scope": "Mu-arity recursion sampled checks."
+      }
+    },
+    {
+      "command": "python3 experimental/scripts/verify_l2_profile_decay.py --json",
+      "status": "PASS",
+      "key_output": {
+        "generic_random_max_ratio_examples": [0.538, 0.186],
+        "periodic_max_ratio_examples": [1.0, 0.206],
+        "interpretation": "Aperiodic tail decay is plausible in samples; quotient-periodic mass must be separated."
+      }
+    },
+    {
+      "command": "python3 experimental/scripts/verify_l2_punctured_johnson.py --json",
+      "status": "PASS",
+      "key_output": {
+        "num_checks": 90,
+        "num_violations": 0
+      }
+    },
+    {
+      "command": "python3 experimental/scripts/verify_l2_stratified_sum.py --json",
+      "status": "PASS",
+      "key_output": {
+        "all_ok": true,
+        "scope": "Markov/Cauchy-Schwarz stratified sum bounds in sampled cases."
+      }
+    },
+    {
+      "command": "python3 experimental/scripts/verify_a0_deep_point_cap_algebra.py --json",
+      "status": "PASS",
+      "key_output": {
+        "claim": "L >= q/k+1 and M >= L/(1+k(L-1)/(q-n)) imply M/q > (1/(2k))(1-n/q)",
+        "grid_case_count": 164104,
+        "grid_min_residual": 4
+      }
+    },
+    {
+      "command": "python3 experimental/scripts/verify_m2_common_code_line_residual_budget.py",
+      "status": "PASS",
+      "key_output": {
+        "result": "m2_common_code_line_residual_budget: PASS",
+        "scope": "Residual-budget and sharpness/necessity toy families."
+      }
+    }
+  ],
+  "next_required_experiments": [
+    {
+      "target": "strict264 seven-slope certificate",
+      "needed": "Produce seven explicit retained slopes/supports/rank certificates for RS[F_17^32,H,256] at agreement 264."
+    },
+    {
+      "target": "submission-grade Cycle116/119 replay",
+      "needed": "Independent replay of Cycle84 finite count and fixed-jet transfer with a machine-readable certificate."
+    },
+    {
+      "target": "threshold pinning",
+      "needed": "Attempt LD_sw(C,265) <= 6, or find the next obstruction, using the Hankel/residue-line normal form."
+    }
+  ]
+}

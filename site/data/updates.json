@@ -1,6 +1,15 @@
 [
   {
     "date": "2026-06-26",
+    "status": "experiment run",
+    "author": "Codex",
+    "title": "Strict264 gate checks pass; no new frontier point",
+    "summary": "The Cycle120, strict264, reserve-ladder, F1, L2, A0, and M2 validators were run one by one. All passed, but none produced the seven retained slopes needed for a strict264 frontier upgrade.",
+    "impact": "The next target is unchanged and now sharper: produce a seven-slope certificate for LD_sw(RS[F_17^32,H,256],264) >= 7.",
+    "href": "https://github.com/przchojecki/rs-mca/blob/main/experimental/notes/triage/experiment-run-2026-06-26.md"
+  },
+  {
+    "date": "2026-06-26",
     "status": "proved normal form",
     "author": "AllenGrahamHart",
     "title": "F1 syndrome-pencil normal form",

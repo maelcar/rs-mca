@@ -21,6 +21,9 @@ papers. The source triage records are:
 - `notes/triage/pr-triage-2026-06-26.md`: PRs #108 through #119, with theorem
   material extracted into `experiments.tex`, structured triage data recorded in
   `data/pr-triage-2026-06-26.json`, and no frontier-numerator upgrade.
+- `notes/triage/experiment-run-2026-06-26.md`: one-by-one run of the current
+  Cycle120, strict264, reserve-ladder, F1, L2, A0, and M2 validators, with
+  structured output summarized in `data/experiment-run-2026-06-26.json`.
 
 The common policy was: keep Papers A-D unchanged, land new material in
 `experimental/`, preserve explicit status labels, and require review before any
@@ -83,6 +86,32 @@ occupancy ledgers, centered Krawtchouk and large-domain Weil route cuts,
 strict264 bridge audits, L1/M1 reserve audits, and L2 sharp-constant stress
 tests.  New theorem-level statements were added to `experiments.tex` and
 compiled into `experiments.pdf`; contributed scripts were not run locally.
+
+### 2026-06-26 experiment run
+
+The post-integration experiment run validated the current gates but did not
+produce a new frontier point:
+
+- Cycle120 standalone and gate-audit scripts pass, preserving the current
+  `52,747,567,092 / 17^32` obstruction as source-conditional and
+  computation-dependent.
+- All strict264 scripts pass as audits: admissibility, bridge arithmetic,
+  mechanism toy model, corrected two-ended transfer, and end-to-end toy
+  transfer.  The exact missing object remains seven actual retained slopes for
+  the `F_17^32` row at agreement `264`.
+- Reserve-scale bridge/richness scripts pass: seven slopes would clear the
+  `2^-128` gate at sigma `8`, `16`, `32`, and `57`, but no retained-slope
+  certificates were produced.
+- F1 syndrome-pencil, L2 codegree/reduction/profile, A0 deep-point algebra, and
+  M2 residual-budget verifiers pass.  The L2 profile run again shows why
+  quotient-periodic mass must be split before claiming an interleaved saving.
+
+The next experimental task is therefore not another broad verifier run.  It is
+the narrow strict264 certificate:
+
+```text
+LD_sw(RS[F_17^32,H,256],264) >= 7.
+```
 
 ### Latest 2026-06-25 integration
 

@@ -30,6 +30,25 @@ Keep entries concise and link to the relevant files.
 
 ## Entries
 
+### 2026-06-26 - One-by-one experiment run
+
+- **Agent/model:** Codex.
+- **Files added or changed:** `experimental/data/experiment-run-2026-06-26.json`,
+  `experimental/notes/triage/experiment-run-2026-06-26.md`,
+  `experimental/SUMMARY.md`, `experimental/agents-log.md`,
+  `site/data/updates.json`.
+- **Status:** AUDIT / EXPERIMENTAL RUN.
+- **What is being added:** A sequential run of the current Cycle120,
+  strict264, reserve-ladder, F1, L2, A0, and M2 validators.  All executed
+  scripts passed, but no script produced a new retained-slope certificate or
+  improved frontier numerator.
+- **How it is useful:** Confirms that the current proof infrastructure is
+  internally consistent and isolates the exact next strict264 blocker:
+  seven explicit retained bad slopes at agreement `264` for the
+  `RS[F_17^32,H,256]` row.
+- **What to do next:** Build the strict264 seven-slope certificate and an
+  independent replayable certificate for the existing `52,747,567,092` count.
+
 ### 2026-06-26 - PR #108--#119 proof and audit integration
 
 - **Agent/model:** AllenGrahamHart PRs #108--#112, #114--#118, Scott Hughes
