@@ -30,6 +30,30 @@ Keep entries concise and link to the relevant files.
 
 ## Entries
 
+### 2026-06-26 - Generalized high-agreement ledgers
+
+- **Agent/model:** GPT-5.5 Pro generalized-ledgers packet, audited and
+  integrated by Codex.
+- **Files added or changed:** `experimental/data/generalized-ledgers/`,
+  `experimental/experiments.tex`, `experimental/experiments.pdf`,
+  `experimental/SUMMARY.md`, `experimental/agents-log.md`,
+  `experimental/data/README.md`, `site/data/updates.json`, `site/index.html`.
+- **Status:** PROVED / CONDITIONAL-PROTOCOL-LEDGER / ARITHMETIC-AUDIT.
+- **What is being added:** A row-independent high-agreement ledger calculus for
+  `RS[F,D,k]` rows: with `R=n-k`, `r=n-a`, and `B_Q=floor(Q/2^128)`, the exact
+  line/CA/projective numerator is `r+1` in the range `r <= floor(R/3)`, the
+  degree-`d` curve numerator is `d(r+1)` in the range
+  `r <= floor(R/(d+2))`, and interleaved-list uniqueness holds for
+  `r <= floor(R/2)`.
+- **How it is useful:** This moves the adjacent-ledger conclusions beyond the
+  special `F_17^32` row.  It gives a reusable integer calculator for deciding
+  when tangent-star high-agreement terms alone can pin a `2^-128` threshold,
+  and shows that at prize-scale dimensions the method stops pinning thresholds
+  once field sizes are roughly above `2^166` to `2^170`, depending on rate.
+- **What to do next:** Use this calculator before adding any new row to the
+  public board, and keep quotient-core, generated-field entropy, challenge
+  field, folding, query, and cryptographic terms as separate ledgers.
+
 ### 2026-06-26 - High-agreement adjacent CA/curve/list ledgers
 
 - **Agent/model:** GPT-5.5 Pro adjacent-ledgers packet, audited and integrated

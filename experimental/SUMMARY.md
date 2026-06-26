@@ -35,6 +35,9 @@ papers. The source triage records are:
 - `data/adjacent-ledgers/`: adjacent high-agreement ledger packet, extending
   the tangent staircase to CA, projective slopes, finite-parameter curves, and
   interleaved lists, with a conditional protocol-facing integer ledger.
+- `data/generalized-ledgers/`: row-independent high-agreement ledger packet,
+  turning the tangent-star formulas into reusable `R=n-k`, `r=n-a`, and
+  `B_Q=floor(Q/2^128)` threshold calculators beyond the `F_17^32` row.
 
 The common policy was: keep Papers A-D unchanged, land new material in
 `experimental/`, preserve explicit status labels, and require review before any
@@ -135,6 +138,33 @@ Since `floor(17^32/2^128)=6`, that ledger is unsafe at agreement `a=507` and
 safe at agreement `a=508`, assuming no additional query, folding, hash,
 extension-lift, or cryptographic error term is being hidden.  This is a coding
 ledger, not a full protocol theorem.
+
+### Latest generalized-ledgers update
+
+The generalized-ledgers packet moves the adjacent-ledger formulas beyond the
+special `F_17^32` row.  For any `RS[F,D,k]` row, write
+
+```text
+R = n-k,    r = n-a,    B_Q = floor(Q/2^128),
+```
+
+where `Q` is the sampler/challenge denominator used by the ledger.  In the
+exact high-agreement range:
+
+- line, no-loss CA, and projective-slope MCA have numerator `r+1` for
+  `r <= floor(R/3)`;
+- degree-`d` finite-parameter curve CA/MCA has numerator `d(r+1)` for
+  `r <= floor(R/(d+2))`;
+- interleaved-list uniqueness gives numerator `1` for `r <= floor(R/2)`.
+
+Thus a single line term is safe at target `2^-128` for `r <= B_Q-1`, while a
+line term plus one interleaved-list term is safe for `r <= B_Q-2`, provided the
+radius lies inside the exact tangent range.  For prize rates at the maximal
+dimension `k=2^40`, this tangent method can pin line thresholds only up to field
+sizes around `2^166.4`, `2^168.0`, `2^169.2`, and `2^170.3` at rates
+`1/2`, `1/4`, `1/8`, and `1/16`, respectively.  Larger fields require the
+lower-agreement quotient-core, generated-field entropy, curve/folding, or
+aperiodic local-limit ledgers.
 
 ### Latest 2026-06-26 round 2 integration
 

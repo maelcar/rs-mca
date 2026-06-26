@@ -1,0 +1,36 @@
+ROW RS[F_17^32,H,256], |H|=512
+  n=512, k=256, R=n-k=256
+  Q=2367911594760467245844106297320951247361
+  B=floor(Q/2^128)=6
+  exact line radius range r<=floor(R/3)=85
+  interleaved uniqueness range r<=floor(R/2)=128
+  line alone: threshold pinned in exact range; largest safe r=5, first unsafe r=6
+  line + one list: threshold pinned in exact range; largest safe r=4, first unsafe r=5
+  degree d=1: exact r<=85; curve alone safe r<=5; curve+list safe r<=4
+  degree d=2: exact r<=64; curve alone safe r<=2; curve+list safe r<=1
+  degree d=3: exact r<=51; curve alone safe r<=1; curve+list safe r<=0
+  degree d=4: exact r<=42; curve alone safe r<=0; curve+list safe r<=0
+  degree d=5: exact r<=36; curve alone safe r<=0; curve+list safe r<=0
+  degree d=6: exact r<=32; curve alone safe r<=0; curve+list safe r<=-1
+  degree d=7: exact r<=28; curve alone safe r<=-1; curve+list safe r<=-1
+  degree d=8: exact r<=25; curve alone safe r<=-1; curve+list safe r<=-1
+
+FIELD-BIT BUDGET TABLE FOR Q=2^lambda
+  lambda=128: B=2^0=1; line safe r<=0; line+list safe r<=-1
+  lambda=129: B=2^1=2; line safe r<=1; line+list safe r<=0
+  lambda=130: B=2^2=4; line safe r<=3; line+list safe r<=2
+  lambda=131: B=2^3=8; line safe r<=7; line+list safe r<=6
+  lambda=140: B=2^12=4096; line safe r<=4095; line+list safe r<=4094
+  lambda=150: B=2^22=4194304; line safe r<=4194303; line+list safe r<=4194302
+  lambda=160: B=2^32=4294967296; line safe r<=4294967295; line+list safe r<=4294967294
+  lambda=170: B=2^42=4398046511104; line safe r<=4398046511103; line+list safe r<=4398046511102
+  lambda=192: B=2^64=18446744073709551616; line safe r<=18446744073709551615; line+list safe r<=18446744073709551614
+  lambda=256: B=2^128=340282366920938463463374607431768211456; line safe r<=340282366920938463463374607431768211455; line+list safe r<=340282366920938463463374607431768211454
+
+PRIZE-RATE APPLICABILITY AT k=2^40
+  rho=1/2: n=2199023255552, R=1099511627776, R/3=3.66504e+11, lambda_max≈166.415
+  rho=1/4: n=4398046511104, R=3298534883328, R/3=1.09951e+12, lambda_max≈168.000
+  rho=1/8: n=8796093022208, R=7696581394432, R/3=2.56553e+12, lambda_max≈169.222
+  rho=1/16: n=17592186044416, R=16492674416640, R/3=5.49756e+12, lambda_max≈170.322
+
+All generalized high-agreement ledger arithmetic checks passed.

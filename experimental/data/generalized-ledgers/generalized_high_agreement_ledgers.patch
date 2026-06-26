@@ -1,0 +1,762 @@
+diff --git a/experimental/data/generalized-ledgers/generalized_high_agreement_ledgers_section.tex b/experimental/data/generalized-ledgers/generalized_high_agreement_ledgers_section.tex
+new file mode 100644
+index 0000000..0000000
+--- /dev/null
++++ b/experimental/data/generalized-ledgers/generalized_high_agreement_ledgers_section.tex
+@@ -0,0 +1,365 @@
++\section{General High-Agreement Ledgers Beyond the \texorpdfstring{$\F_{17^{32}}$}{F17^32} Row}
++\label{sec:general-high-agreement-ledgers}
++
++\textbf{Status: \textsc{New-local} finite Reed--Solomon/MDS theorem package plus
++\textsc{Conditional} protocol ledger.}
++This section generalizes the high-agreement tangent-star method away from the
++special field \(\F_{17^{32}}\).  The statements below are finite-grid coding
++statements.  They do not use smoothness, except when one wants to combine them
++with the quotient-core and generated-field ledgers elsewhere in this repository.
++The line lower bound may be proved either by the RS locator construction of
++Theorem~\ref{thm:moving-root-tangent-floor} or by the coordinate tangent-star
++construction below; the upper bounds use only the MDS zero-rigidity property and
++linearity of the code.
++
++Throughout this section let \(C=\RS[F,D,k]\) with \(D\subset F\), \(|D|=n\),
++and dimension \(k\).  The upper-bound arguments below use only the MDS
++zero-rigidity property of Reed--Solomon codes, so they apply verbatim to any
++linear MDS code for which the relevant received words and parameter sets are
++defined.  Put
++\[
++  R=n-k,
++  \qquad r=n-a .
++\]
++Thus \(r\) is the integer Hamming radius and \(a=n-r\) is the agreement
++threshold.  We only discuss the high-agreement range \(a\ge k+1\), equivalently
++\(0\le r\le R-1\).
++
++\subsection{A coordinate tangent star}
++
++The next construction is useful because it removes all dependence on the
++particular field \(\F_{17^{32}}\), on multiplicative smoothness, and on the
++locator-polynomial model.  It uses only coordinate values, linearity, and the
++MDS zero-rigidity of Reed--Solomon codes.
++
++\begin{lemma}[coordinate tangent-star lower bound]
++\label{lem:coordinate-tangent-star}
++Let \(C=\RS[F,D,k]\) with \(D\subset F\).  For every \(a\) with \(k+1\le a\le n\),
++\[
++  \operatorname{LD}_{\rm sw}(C,a)\ge n-a+1 .
++\]
++If in addition \(2a-n-1\ge k\), then the same construction gives
++\[
++  \operatorname{LD}_{\rm ca}(C,a)\ge n-a+1 .
++\]
++\end{lemma}
++
++\begin{proof}
++Choose \(A\subset D\) with \(|A|=a-1\), and write
++\(T=D\setminus A\), so \(|T|=n-a+1\).  Choose an injection
++\(\theta:T\hookrightarrow F\), which exists because \(T\subseteq D\subset F\).
++Define two received words \(f,g:D\to F\) by
++\[
++  f(x)=g(x)=0\quad (x\in A),
++  \qquad
++  f(t)=-\theta(t),\quad g(t)=1\quad (t\in T).
++\]
++For a point \(t\in T\), the finite slope \(z=\theta(t)\) gives
++\(f+zg=0\) on \(A\cup\{t\}\), a support of size \(a\).  Hence this slope is
++explained by the zero codeword.
++
++The same support is support-wise noncontained.  Indeed, if both \(f\) and \(g\)
++were separately explained on \(A\cup\{t\}\), then the explaining codeword for
++\(g\) would vanish on the \(a-1\ge k\) points of \(A\), hence would be the zero
++codeword by the MDS property.  But \(g(t)=1\), a contradiction.
++
++The pair \((f,g)\) is also globally far from \(C^2\) at agreement \(a\).  The
++same argument applied to the word \(g\) shows that no codeword of \(C\) agrees
++with \(g\) on any support of size \(a\): such a support contains at least
++\(a-|T|=2a-n-1\) points of \(A\), and in the high-agreement applications below we
++will have \(2a-n-1\ge k\).  Alternatively, for the lower bound in the line case
++one may use the RS locator construction of Theorem~\ref{thm:moving-root-tangent-floor},
++which gives the no-loss CA witness directly for \(\RS[F,D,k]\).  The displayed
++MCA lower bound holds unconditionally for \(a\ge k+1\), and the CA lower bound
++holds in the range \(2a-n-1\ge k\), in particular throughout the exact staircase
++range \(3a-2n\ge k\).
++\end{proof}
++
++\begin{remark}[scope]
++The support-wise MCA construction is coordinate-level.  It uses MDS rigidity
++and the inclusion \(D\subset F\).  The no-loss CA part needs global farness; in
++the exact range below, the needed support-count condition follows from the
++staircase hypothesis.
++\end{remark}
++
++\subsection{Uniform line, CA, and projective-slope threshold}
++
++\begin{theorem}[uniform high-agreement line staircase]
++\label{thm:uniform-line-staircase}
++Let \(C=\RS[F,D,k]\) with \(|D|=n\), and let \(a=n-r\).  If
++\[
++  3a-2n\ge k
++  \qquad\text{equivalently}\qquad
++  r\le \frac{n-k}{3},
++\]
++then
++\[
++  \operatorname{LD}_{\rm sw}(C,a)
++  =
++  \operatorname{LD}_{\rm ca}(C,a)
++  =
++  \operatorname{LD}_{\rm sw,proj}(C,a)
++  =
++  r+1
++  =n-a+1 .
++\]
++Here \(\operatorname{LD}_{\rm sw,proj}\) allows slopes in \(\mathbb P^1(F)\).
++\end{theorem}
++
++\begin{proof}
++The finite-slope support-wise upper bound is Theorem~\ref{thm:very-high-tangent-staircase},
++whose proof uses only MDS zero-rigidity and the common residual budget.  The
++lower bound is Lemma~\ref{lem:coordinate-tangent-star}, or, for Reed--Solomon
++codes, Theorem~\ref{thm:moving-root-tangent-floor}.  No-loss CA-bad slopes are a
++subset of support-wise MCA-bad slopes, while the same tangent-star witness gives
++\(r+1\) no-loss CA-bad slopes in the present range, so the CA numerator is also
++\(r+1\).
++
++For projective slopes, suppose a projective bad set had size larger than
++\(r+1\).  If there is a nonbad projective point, use it as the point at infinity;
++all projective bad points then become finite bad slopes, contradicting the
++finite-slope bound.  If every point of \(\mathbb P^1(F)\) is bad, choose any
++point as infinity.  The remaining \(|F|\) finite slopes are bad.  Since
++\(|F|\ge n>r+1\), this again contradicts the finite-slope bound.  Thus the
++projective numerator is also \(r+1\), and the finite lower-bound construction
++shows equality.
++\end{proof}
++
++\subsection{Degree-\texorpdfstring{$d$}{d} curve MCA/CA}
++
++For an integer \(d\ge1\), a finite-parameter power curve is a received family
++\[
++  W_\gamma=f_0+\gamma f_1+\cdots+\gamma^d f_d,
++  \qquad \gamma\in F .
++\]
++The support-wise curve-MCA predicate asks for parameters \(\gamma\) for which
++\(W_\gamma\) has an explanation on a support of size at least \(a\), while the
++\((d+1)\)-tuple \((f_0,\ldots,f_d)\) is not simultaneously explained on that
++same support.  The no-loss curve-CA predicate replaces support-wise
++noncontainment by global farness of the \((d+1)\)-tuple from \(C^{d+1}\).
++
++\begin{theorem}[degree-\(d\) high-agreement curve staircase]
++\label{thm:uniform-curve-staircase}
++Let \(C=\RS[F,D,k]\) with \(|D|=n\), and let \(a=n-r\).  If
++\[
++  (d+2)a-(d+1)n\ge k
++  \qquad\text{equivalently}\qquad
++  r\le \frac{n-k}{d+2},
++\]
++then
++\[
++  \operatorname{CurveLD}_{\rm sw}^{(d)}(C,a)
++  =
++  \operatorname{CurveLD}_{\rm ca}^{(d)}(C,a)
++  =
++  \min\{|F|,\ d(r+1)\} .
++\]
++\end{theorem}
++
++\begin{proof}
++First prove the lower bound.  Choose \(A\subset D\) with \(|A|=a-1\) and put
++\(T=D\setminus A\), so \(|T|=r+1\).  Choose disjoint parameter sets
++\(\Gamma_t\subseteq F\), \(t\in T\), with \(|\Gamma_t|\le d\) and
++\(\sum_t |\Gamma_t|=\min\{|F|,d(r+1)\}\).  For each \(t\), choose a nonzero
++polynomial
++\[
++  h_t(Y)=h_{t,0}+h_{t,1}Y+\cdots+h_{t,d}Y^d
++\]
++of degree exactly \(d\), with leading coefficient nonzero, that vanishes on all
++parameters in \(\Gamma_t\).  Define received words by
++\[
++  f_i(x)=0\quad(x\in A),
++  \qquad
++  f_i(t)=h_{t,i}\quad(t\in T),
++  \qquad 0\le i\le d .
++\]
++For \(\gamma\in\Gamma_t\), the curve word \(W_\gamma\) vanishes on
++\(A\cup\{t\}\), hence is explained by the zero codeword on a support of size
++\(a\).  The tuple is not simultaneously explained on that support: on the
++\(a-1\ge k\) points of \(A\), every explaining endpoint codeword would have to be
++zero, but at \(t\) the coefficient vector of \(h_t\) is not zero.  This gives the
++support-wise curve-MCA lower bound.
++
++The same construction is globally far in the exact range.  The last endpoint
++\(f_d\) is zero on \(A\) and nonzero on every point of \(T\).  Any support of
++size \(a\) contains at least \(a-|T|=2a-n-1\) points of \(A\).  The hypothesis
++\(r\le (n-k)/(d+2)\), with \(d\ge1\), implies \(2a-n-1\ge k\).  Therefore any
++codeword agreeing with \(f_d\) on such a support would have to be the zero
++codeword, but the support must contain at least one point of \(T\), where
++\(f_d\ne0\).  Thus the endpoint tuple is not \(C^{d+1}\)-close at agreement
++\(a\), proving the no-loss curve-CA lower bound.
++
++For the upper bound, it is enough to rule out more than \(d(r+1)\) bad
++parameters, because the trivial cap is \(|F|\).  If a curve had more than
++\(d(r+1)\) bad parameters, then in particular it would have at least \(d+1\)
++bad parameters.  Select \(d+1\) distinct bad parameters
++\(\gamma_0,\ldots,\gamma_d\) and supports \(S_i\) of size at least \(a\).  Their
++intersection has size at least
++\[
++  (d+1)a-dn .
++\]
++On this intersection the \(d+1\) explained codewords interpolate, as functions
++of \(\gamma\), to codewords \(c_0,\ldots,c_d\in C\) explaining the endpoints
++\(f_0,\ldots,f_d\).  Let \(S_0\) be a maximal common support for this endpoint tuple,
++put \(b=|S_0|\), and set \(m=n-b\).  Then
++\[
++  m\le (d+1)(n-a)=(d+1)r .
++\]
++For any further bad parameter, its explaining codeword must equal
++\(c_0+\gamma c_1+\cdots+\gamma^d c_d\), because
++\[
++  a+b-n\ge (d+2)a-(d+1)n\ge k .
++\]
++Thus outside \(S_0\) it needs at least \(h=\max(1,a-b)\) zeros of the residual
++coordinate polynomials.  By maximality of \(S_0\), no residual coordinate
++polynomial is identically zero, and each has degree at most \(d\), hence can be
++charged to at most \(d\) bad parameters.  If \(b\ge a\), then \(m\le r\) and the
++count is at most \(dm\le dr\le d(r+1)\).  If \(b<a\), then
++\(h=a-b=m-r\) and \(r<m\le(d+1)r\); the charging bound gives
++\[
++  \#\{\text{bad parameters}\}
++  \le
++  \left\lfloor\frac{dm}{m-r}\right\rfloor
++  \le d(r+1).
++\]
++The trivial parameter-space cap gives the additional upper bound \(|F|\).
++Together with the lower bound this proves equality.
++\end{proof}
++
++\subsection{Interleaved-list uniqueness}
++
++\begin{theorem}[uniform interleaved-list uniqueness]
++\label{thm:uniform-interleaved-uniqueness}
++Let \(C\subseteq F^D\) be a linear MDS code of dimension \(k\), and let
++\(\mu\ge1\).
++If
++\[
++  2a-n\ge k
++  \qquad\text{equivalently}\qquad
++  r\le\frac{n-k}{2},
++\]
++then every \(\mu\)-row received word has at most one \(\mu\)-row codeword tuple
++agreeing with it on at least \(a\) common coordinates.  Since equality is
++attained by taking the received word itself to be a code tuple,
++\[
++  \Lambda_\mu(C,a)=1 .
++\]
++\end{theorem}
++
++\begin{proof}
++If two \(\mu\)-row codeword tuples agree with the same received word on supports
++\(S\) and \(S'\) of size at least \(a\), then they agree with each other on
++\(S\cap S'\), whose size is at least \(2a-n\ge k\).  Row by row, the MDS
++property forces the two codewords to be equal.  Hence the tuples are equal.
++The lower bound \(\Lambda_\mu(C,a)\ge1\) is obtained by choosing the received
++word to be a codeword tuple.
++\end{proof}
++
++\subsection{General finite-grid threshold calculator}
++
++Let \(\varepsilon_*=2^{-128}\) and let \(Q\) be the denominator of the sampler or
++challenge field used by a particular ledger.  Define the integer budget
++\[
++  B_Q=\left\lfloor \varepsilon_* Q\right\rfloor .
++\]
++The high-agreement theorems above convert coding ledgers into integer arithmetic.
++For example, in the exact line range \(r\le\lfloor R/3\rfloor\), a single affine
++line, no-loss CA, or projective-line numerator is
++\[
++  N_{\rm line}(r)=r+1 .
++\]
++Thus the line term alone is safe whenever \(r+1\le B_Q\), and the first unsafe
++radius is \(r=B_Q\), provided \(B_Q\le\lfloor R/3\rfloor\).  If
++\(B_Q>\lfloor R/3\rfloor\), then the tangent-star method proves safety
++throughout the exact high-agreement range but does not locate the eventual
++threshold.
++
++For one degree-\(d\) finite-parameter curve term in its exact range
++\(r\le\lfloor R/(d+2)\rfloor\), the numerator is
++\[
++  N_{\rm curve,d}(r)=\min\{|F|,d(r+1)\}.
++\]
++If all coding terms use the same denominator \(Q\), a protocol ledger with curve
++terms of degrees \(d_1,\ldots,d_s\) and \(\ell\) independent interleaved-list
++terms has high-agreement numerator
++\[
++  N_{\rm total}(r)=\ell+\sum_{i=1}^s d_i(r+1),
++\]
++valid for
++\[
++  r\le
++  \min\left\{
++    \left\lfloor\frac R2\right\rfloor\text{ if }\ell>0,
++    \min_i\left\lfloor\frac R{d_i+2}\right\rfloor
++  \right\}.
++\]
++The ledger is certified at target \(\varepsilon_*\) whenever
++\[
++  N_{\rm total}(r)\le B_Q .
++\]
++With different denominators \(Q_i\), one should not combine numerators; the
++correct test is the rational inequality
++\[
++  \sum_i \frac{N_i(r)}{Q_i}+\varepsilon_{\rm query}\le \varepsilon_* .
++\]
++
++\begin{corollary}[row-independent closed-form gates]
++\label{cor:row-independent-gates}
++Let \(R=n-k\), \(B_Q=\lfloor Q/2^{128}\rfloor\), and assume the relevant radius
++lies in the exact high-agreement range.
++\begin{enumerate}
++\item A single affine/projective line, no-loss CA, or support-wise MCA term is
++safe for every integer radius
++\[
++  r\le B_Q-1 .
++\]
++The first unsafe radius is \(r=B_Q\), if \(B_Q\le\lfloor R/3\rfloor\).
++\item A single line/CA/MCA term plus one interleaved-list term over the same
++field is safe for
++\[
++  r\le B_Q-2 .
++\]
++The first unsafe radius is \(r=B_Q-1\), if \(B_Q-1\le\lfloor R/3\rfloor\).
++\item A single degree-\(d\) curve term is safe for
++\[
++  r\le \left\lfloor \frac{B_Q}{d}\right\rfloor-1 .
++\]
++The first unsafe radius is \(r=\lfloor B_Q/d\rfloor\), if this radius is at most
++\(\lfloor R/(d+2)\rfloor\).
++\item A single degree-\(d\) curve term plus one interleaved-list term over the
++same field is safe for
++\[
++  r\le \left\lfloor \frac{B_Q-1}{d}\right\rfloor-1 .
++\]
++The first unsafe radius is \(r=\lfloor(B_Q-1)/d\rfloor\), if this radius is in
++range.
++\end{enumerate}
++Negative right-hand sides mean that even radius zero is not certified for that
++ledger and denominator.
++\end{corollary}
++
++\subsection{Prize-rate applicability}
++
++For the Proximity Prize rates \(\rho\in\{1/2,1/4,1/8,1/16\}\), with
++\(k\le2^{40}\), the exact line range reaches integer radii
++\[
++  r\le \frac{n-k}{3}=\frac{(1-\rho)n}{3}=\frac{1-\rho}{3\rho}k .
++\]
++Thus, for a field with \(|F|\approx2^\lambda\), the high-agreement tangent gate
++can pin the line threshold only when roughly
++\[
++  2^{\lambda-128}\lesssim \frac{n-k}{3} .
++\]
++At the maximal allowed dimension \(k=2^{40}\), this gives the following
++approximate largest field-bit sizes for which the line threshold can still be
++pinned inside the exact tangent range:
++\[
++\begin{array}{c|c|c}
++\rho & (n-k)/3\text{ at }k=2^{40} & \lambda\text{ up to about}\\
++\hline
++1/2  & 2^{40}/3      & 166.4\\
++1/4  & 2^{40}        & 168.0\\
++1/8  & 7\cdot2^{40}/3 & 169.2\\
++1/16 & 5\cdot2^{40} & 170.3
++\end{array}
++\]
++For substantially larger challenge fields, such as \(2^{192}\) or \(2^{256}\),
++the tangent numerator is below the \(2^{-128}\) budget throughout the exact
++high-agreement range for all prize-size rows.  The threshold, if any, must then
++be controlled by the lower-agreement quotient-core, generated-field entropy,
++curve/folding, or aperiodic local-limit ledgers; the tangent-star method alone
++no longer pins it.
+diff --git a/experimental/data/generalized-ledgers/generalized_high_agreement_ledgers_summary.md b/experimental/data/generalized-ledgers/generalized_high_agreement_ledgers_summary.md
+new file mode 100644
+index 0000000..0000000
+--- /dev/null
++++ b/experimental/data/generalized-ledgers/generalized_high_agreement_ledgers_summary.md
+@@ -0,0 +1,173 @@
++# Generalized high-agreement ledgers beyond the F_17^32 row
++
++## What changed
++
++The high-agreement tangent method is not special to `F_17^32`.  It gives a row-independent finite-grid calculator for any Reed--Solomon row `RS[F,D,k]` with `D subset F`; most upper-bound arguments only need the MDS property.  This is still a coding-ledger theorem, not a full protocol theorem.
++
++Write
++
++```text
++n = |D|,
++k = dimension,
++R = n-k,
++a = agreement threshold,
++r = n-a = integer Hamming radius,
++q = |F|,
++B_Q = floor(Q / 2^128)
++```
++
++where `Q` is the denominator used by the sampler or challenge field.
++
++## Line / CA / projective slope
++
++In the exact high-agreement range
++
++```text
++3a - 2n >= k
++```
++
++equivalently
++
++```text
++r <= floor((n-k)/3),
++```
++
++one has
++
++```text
++LD_sw(C,a) = LD_ca(C,a) = LD_sw,proj(C,a) = n-a+1 = r+1.
++```
++
++This generalizes the `F_17^32` row formula `513-a`.
++
++If the line denominator is `Q`, the line term alone is safe at target `2^-128` when
++
++```text
++r + 1 <= B_Q.
++```
++
++The first unsafe radius is `r = B_Q`, provided `B_Q <= floor((n-k)/3)`.
++
++## Interleaved-list uniqueness
++
++For every interleaving arity `mu >= 1`, if
++
++```text
++2a - n >= k
++```
++
++equivalently
++
++```text
++r <= floor((n-k)/2),
++```
++
++then
++
++```text
++Lambda_mu(C,a) = 1.
++```
++
++Thus in the line exact range the interleaved-list term contributes exactly one numerator unit.
++
++A line/CA/MCA term plus one interleaved-list term over the same field is safe when
++
++```text
++(r + 1) + 1 <= B_Q,
++```
++
++so
++
++```text
++r <= B_Q - 2.
++```
++
++The first unsafe radius is `r = B_Q - 1`, if it lies in the exact line range.
++
++## Degree-d finite-parameter curves
++
++For a finite-parameter power curve
++
++```text
++W_gamma = f_0 + gamma f_1 + ... + gamma^d f_d,
++gamma in F,
++```
++
++in the exact curve range
++
++```text
++(d+2)a - (d+1)n >= k
++```
++
++equivalently
++
++```text
++r <= floor((n-k)/(d+2)),
++```
++
++the support-wise curve-MCA and no-loss curve-CA numerators are
++
++```text
++CurveLD_sw^(d)(C,a) = CurveLD_ca^(d)(C,a) = min(q, d(r+1)).
++```
++
++The curve term alone is safe when
++
++```text
++d(r+1) <= B_Q.
++```
++
++A curve term plus one interleaved-list term is safe when
++
++```text
++d(r+1) + 1 <= B_Q.
++```
++
++## General protocol numerator with common denominator
++
++If a protocol ledger uses curve or line terms of degrees `d_1,...,d_s`, where affine/projective line is `d=1`, and `ell` interleaved-list terms, all over the same denominator `Q`, then in the common exact range
++
++```text
++N_total(r) = ell + sum_i d_i (r+1).
++```
++
++It is certified at target `2^-128` if
++
++```text
++N_total(r) <= B_Q.
++```
++
++If different terms use different fields, do not combine numerators.  Use
++
++```text
++sum_i N_i(r)/Q_i + query_error <= 2^-128.
++```
++
++## Prize-rate applicability
++
++For prize rates `rho in {1/2,1/4,1/8,1/16}` and `k <= 2^40`, the tangent line method can pin the threshold only if
++
++```text
++2^(lambda-128) <= (n-k)/3,
++```
++
++where `q approx 2^lambda`.
++
++At maximal `k = 2^40`, the largest approximate field sizes for which the line threshold can still be pinned inside the exact tangent range are:
++
++| rho | max line-range radius at k=2^40 | lambda up to about |
++|---:|---:|---:|
++| 1/2 | 2^40 / 3 | 166.4 |
++| 1/4 | 2^40 | 168.0 |
++| 1/8 | 7*2^40 / 3 | 169.2 |
++| 1/16 | 5*2^40 | 170.3 |
++
++For fields around `2^192` or `2^256`, the tangent numerator is below the `2^-128` budget throughout the exact high-agreement range.  The threshold then has to be controlled by quotient-core, generated-field entropy, curve/folding, or aperiodic local-limit ledgers.
++
++
++## Integration notes
++
++- Put the LaTeX section after the tangent staircase section and before the older finite-threshold/prize-gate material.
++- Wording now avoids claiming that every construction is an abstract MDS theorem: the lower constructions are phrased for `RS[F,D,k]` / evaluation-domain codes, while the uniqueness and upper-bound arguments are MDS.
++- The verifier output in this packet is clean and contains only the generalized ledger arithmetic.
++- The protocol statement remains conditional: it applies only to reductions whose coding error is exactly the printed sum of line/curve/list terms over the stated denominators, plus any separately supplied query/folding error.
+diff --git a/experimental/scripts/verify_generalized_high_agreement_ledgers.py b/experimental/scripts/verify_generalized_high_agreement_ledgers.py
+new file mode 100644
+index 0000000..0000000
+--- /dev/null
++++ b/experimental/scripts/verify_generalized_high_agreement_ledgers.py
+@@ -0,0 +1,130 @@
++#!/usr/bin/env python3
++"""Verify arithmetic for generalized high-agreement ledger formulas."""
++from __future__ import annotations
++
++from dataclasses import dataclass
++from fractions import Fraction
++from math import floor, log2
++
++EPS_DEN = 2**128
++
++
++def budget(Q: int) -> int:
++    return Q // EPS_DEN
++
++
++def line_range_radius(n: int, k: int) -> int:
++    return (n - k) // 3
++
++
++def list_range_radius(n: int, k: int) -> int:
++    return (n - k) // 2
++
++
++def curve_range_radius(n: int, k: int, d: int) -> int:
++    return (n - k) // (d + 2)
++
++
++def line_safe_radius(Q: int) -> int:
++    return budget(Q) - 1
++
++
++def line_plus_list_safe_radius(Q: int) -> int:
++    return budget(Q) - 2
++
++
++def curve_safe_radius(Q: int, d: int) -> int:
++    return budget(Q) // d - 1
++
++
++def curve_plus_list_safe_radius(Q: int, d: int) -> int:
++    return (budget(Q) - 1) // d - 1
++
++
++def classify_radius(safe_r: int, exact_r: int) -> str:
++    if safe_r < 0:
++        return "no radius-zero certificate"
++    if safe_r < exact_r:
++        return f"threshold pinned in exact range; largest safe r={safe_r}, first unsafe r={safe_r+1}"
++    return f"safe throughout exact range up to r={exact_r}; threshold not pinned by tangent method"
++
++
++@dataclass(frozen=True)
++class Row:
++    name: str
++    n: int
++    k: int
++    Q: int
++
++
++def print_row(row: Row) -> None:
++    B = budget(row.Q)
++    R = row.n - row.k
++    print(f"ROW {row.name}")
++    print(f"  n={row.n}, k={row.k}, R=n-k={R}")
++    print(f"  Q={row.Q}")
++    print(f"  B=floor(Q/2^128)={B}")
++    print(f"  exact line radius range r<=floor(R/3)={line_range_radius(row.n,row.k)}")
++    print(f"  interleaved uniqueness range r<=floor(R/2)={list_range_radius(row.n,row.k)}")
++    print(f"  line alone: {classify_radius(line_safe_radius(row.Q), line_range_radius(row.n,row.k))}")
++    print(f"  line + one list: {classify_radius(line_plus_list_safe_radius(row.Q), line_range_radius(row.n,row.k))}")
++    for d in range(1, 9):
++        exact = curve_range_radius(row.n, row.k, d)
++        safe_curve = curve_safe_radius(row.Q, d)
++        safe_curve_list = curve_plus_list_safe_radius(row.Q, d)
++        print(
++            f"  degree d={d}: exact r<={exact}; "
++            f"curve alone safe r<={safe_curve}; curve+list safe r<={safe_curve_list}"
++        )
++    print()
++
++
++def prize_rate_thresholds() -> None:
++    print("PRIZE-RATE APPLICABILITY AT k=2^40")
++    k = 2**40
++    for rho_num, rho_den in [(1,2), (1,4), (1,8), (1,16)]:
++        n = k * rho_den // rho_num
++        R = n - k
++        max_line_r = R / 3
++        lambda_max = 128 + log2(max_line_r)
++        print(
++            f"  rho={rho_num}/{rho_den}: n={n}, R={R}, "
++            f"R/3={max_line_r:.6g}, lambda_max≈{lambda_max:.3f}"
++        )
++    print()
++
++
++def bit_size_table() -> None:
++    print("FIELD-BIT BUDGET TABLE FOR Q=2^lambda")
++    for lam in [128, 129, 130, 131, 140, 150, 160, 170, 192, 256]:
++        Q = 2**lam
++        B = budget(Q)
++        print(
++            f"  lambda={lam:3d}: B=2^{lam-128}={B}; "
++            f"line safe r<={B-1}; line+list safe r<={B-2}"
++        )
++    print()
++
++
++def main() -> None:
++    q_f17 = 17**32
++    row = Row("RS[F_17^32,H,256], |H|=512", n=512, k=256, Q=q_f17)
++    print_row(row)
++
++    assert budget(q_f17) == 6
++    assert line_range_radius(512, 256) == 85
++    assert line_safe_radius(q_f17) == 5
++    assert line_plus_list_safe_radius(q_f17) == 4
++    assert curve_safe_radius(q_f17, 2) == 2
++    assert curve_plus_list_safe_radius(q_f17, 2) == 1
++    assert curve_safe_radius(q_f17, 6) == 0
++    assert curve_plus_list_safe_radius(q_f17, 6) == -1
++
++    bit_size_table()
++    prize_rate_thresholds()
++
++    print("All generalized high-agreement ledger arithmetic checks passed.")
++
++
++if __name__ == "__main__":
++    main()
+diff --git a/experimental/data/generalized-ledgers/generalized_high_agreement_ledgers_output.txt b/experimental/data/generalized-ledgers/generalized_high_agreement_ledgers_output.txt
+new file mode 100644
+index 0000000..0000000
+--- /dev/null
++++ b/experimental/data/generalized-ledgers/generalized_high_agreement_ledgers_output.txt
+@@ -0,0 +1,36 @@
++ROW RS[F_17^32,H,256], |H|=512
++  n=512, k=256, R=n-k=256
++  Q=2367911594760467245844106297320951247361
++  B=floor(Q/2^128)=6
++  exact line radius range r<=floor(R/3)=85
++  interleaved uniqueness range r<=floor(R/2)=128
++  line alone: threshold pinned in exact range; largest safe r=5, first unsafe r=6
++  line + one list: threshold pinned in exact range; largest safe r=4, first unsafe r=5
++  degree d=1: exact r<=85; curve alone safe r<=5; curve+list safe r<=4
++  degree d=2: exact r<=64; curve alone safe r<=2; curve+list safe r<=1
++  degree d=3: exact r<=51; curve alone safe r<=1; curve+list safe r<=0
++  degree d=4: exact r<=42; curve alone safe r<=0; curve+list safe r<=0
++  degree d=5: exact r<=36; curve alone safe r<=0; curve+list safe r<=0
++  degree d=6: exact r<=32; curve alone safe r<=0; curve+list safe r<=-1
++  degree d=7: exact r<=28; curve alone safe r<=-1; curve+list safe r<=-1
++  degree d=8: exact r<=25; curve alone safe r<=-1; curve+list safe r<=-1
++
++FIELD-BIT BUDGET TABLE FOR Q=2^lambda
++  lambda=128: B=2^0=1; line safe r<=0; line+list safe r<=-1
++  lambda=129: B=2^1=2; line safe r<=1; line+list safe r<=0
++  lambda=130: B=2^2=4; line safe r<=3; line+list safe r<=2
++  lambda=131: B=2^3=8; line safe r<=7; line+list safe r<=6
++  lambda=140: B=2^12=4096; line safe r<=4095; line+list safe r<=4094
++  lambda=150: B=2^22=4194304; line safe r<=4194303; line+list safe r<=4194302
++  lambda=160: B=2^32=4294967296; line safe r<=4294967295; line+list safe r<=4294967294
++  lambda=170: B=2^42=4398046511104; line safe r<=4398046511103; line+list safe r<=4398046511102
++  lambda=192: B=2^64=18446744073709551616; line safe r<=18446744073709551615; line+list safe r<=18446744073709551614
++  lambda=256: B=2^128=340282366920938463463374607431768211456; line safe r<=340282366920938463463374607431768211455; line+list safe r<=340282366920938463463374607431768211454
++
++PRIZE-RATE APPLICABILITY AT k=2^40
++  rho=1/2: n=2199023255552, R=1099511627776, R/3=3.66504e+11, lambda_max≈166.415
++  rho=1/4: n=4398046511104, R=3298534883328, R/3=1.09951e+12, lambda_max≈168.000
++  rho=1/8: n=8796093022208, R=7696581394432, R/3=2.56553e+12, lambda_max≈169.222
++  rho=1/16: n=17592186044416, R=16492674416640, R/3=5.49756e+12, lambda_max≈170.322
++
++All generalized high-agreement ledger arithmetic checks passed.
+diff --git a/experimental/agents-log.md b/experimental/agents-log.md
+--- a/experimental/agents-log.md
++++ b/experimental/agents-log.md
+@@ -33,6 +33,26 @@
+ ## Entries
++
++### 2026-06-26 - Generalized high-agreement ledgers beyond F_17^32
++
++- **Agent/model:** GPT-5.5 Pro.
++- **Files added or changed:** `experimental/data/generalized-ledgers/`,
++  `experimental/scripts/verify_generalized_high_agreement_ledgers.py`,
++  `experimental/agents-log.md`.
++- **Status:** PROVED / ARITHMETIC-AUDIT / CONDITIONAL-PROTOCOL-LEDGER.
++- **What is being added:** A row-independent high-agreement ledger package:
++  line/CA/projective numerator `r+1` in the exact range `r <= (n-k)/3`,
++  degree-`d` curve numerator `min(q,d(r+1))` in the exact range
++  `r <= (n-k)/(d+2)`, and interleaved-list uniqueness `Lambda_mu=1` in the
++  range `r <= (n-k)/2`.
++- **How it is useful:** Moves the tangent-star and adjacent-ledger methods beyond
++  the `F_17^32` row.  It gives closed-form safe/unsafe integer-radius gates for
++  arbitrary `(n,k,Q,epsilon*)` rows and shows when the tangent method can or
++  cannot pin thresholds at the Proximity Prize rates.
++- **What to do next:** Paste or input the LaTeX section into
++  `experimental/experiments.tex` after the tangent staircase, then decide which
++  protocol reductions have exactly the printed line/curve/list denominator
++  structure.  Keep query/folding/extension-field losses separate.
+
+ ### 2026-06-26 - High-agreement tangent staircase
