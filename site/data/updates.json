@@ -12,15 +12,6 @@
     "date": "2026-06-26",
     "status": "proof record",
     "author": "Codex",
-    "title": "Strict352 dyadic quotient-core proof record",
-    "summary": "The strict352 quotient-core packet proves LD_sw(C,a) >= 7 for every agreement 264 <= a <= 352 for C = RS[F_17^32,H,256], with LD_sw(C,352) >= 16.",
-    "impact": "The rate-1/2 MCA lower-bound frontier moves to delta = 5/16. The next coarse quotient-prefix frontier is agreement 353.",
-    "href": "https://github.com/przchojecki/rs-mca/blob/main/experimental/data/strict352/strict352_quotient_core_summary.md"
-  },
-  {
-    "date": "2026-06-26",
-    "status": "proof record",
-    "author": "Codex",
     "title": "Strict264 quotient-floor proof record",
     "summary": "The strict264 quotient-core construction uses the map x -> x^8, an augmented-code list of size binom(64,33), and deep-point conversion to produce at least nine support-wise bad slopes at agreement 264.",
     "impact": "The rate-1/2 MCA board now has a proved strict264 row at delta = 31/64. The next threshold-pinning target is the agreement-265 upper bound.",
