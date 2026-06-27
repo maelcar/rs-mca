@@ -1549,6 +1549,51 @@ slices and top packets.  These reductions define a promising M1 proof program,
 but they do not yet prove the desired uniform polynomial bound on residual
 aperiodic slope images.
 
+\subsection{M1: variable-line packet reduction}
+
+The follow-up variable-line packet note isolates a local reduction inside the
+same Hankel-pencil branch.  Fix a \((j-2)\)-core \(R\) and a non-fixed proper
+one-dimensional determinant component \(L\) in the two-root plane
+\[
+  T=R\cup\{x,y\},\qquad s=x+y,\quad p=xy .
+\]
+Under the stated packet hypotheses, the active-new mass \(r_L\) on \(L\) obeys
+\[
+  r_L
+  \le
+  {\bf 1}_{d_L=m_L=r_L=1}
+  +(d_L-m_L)+2\binom{m_L}{2}.
+\]
+The unordered packet pairs in the final term inject into the global
+different-slope two-exchange codegree ledger, so summing over non-fixed
+variable lines gives
+\[
+  \sum_L r_L
+  \le S_{\rm dom}+Q_{\rm def}+2E_{\rm pkt}.
+\]
+The remaining domain-singleton term is reduced to contained/tangent and
+one-outside target images:
+\[
+  S_{\rm dom}
+  \le
+  Z_0
+  +2\binom{j}{2}\binom{n-j}{2}|{\rm Target}_{\rm cb}|
+  +(j-1)\binom{n-j+1}{2}|{\rm Target}_{\rm off}|.
+\]
+Writing \(a=n-j\), the exceptional zero-lower term vanishes whenever
+\[
+  a>\frac{n+1}{2},
+\]
+and hence throughout the positive-slack rate-half range \(k\ge n/2\),
+\(a=k+t\), \(t\ge1\).  Consequently the non-fixed variable-line branch is
+reduced to two explicit residual estimates: the active different-slope
+two-exchange codegree and the one-outside boundary target image, after quotient
+defects and contained/tangent ledgers have been paid.
+
+\textbf{Status.}  This is a proved local packet lemma under the Hankel-pencil
+normal form and its non-fixed variable-line hypotheses.  It is not the final
+all-line M1 theorem and does not add a leaderboard row.
+
 \subsection{Challenge-map pullbacks and public status corrections}
 
 The adjacent-ledger update adds the missing pullback rule from slope ledgers to

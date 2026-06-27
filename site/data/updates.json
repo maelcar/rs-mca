@@ -37,6 +37,15 @@
   },
   {
     "date": "2026-06-27",
+    "status": "M1 proof-program",
+    "author": "AllenGrahamHart / Codex audit",
+    "title": "Variable-line packet lemmas reduce the M1 residual branch",
+    "summary": "PR #130 adds local Hankel variable-line packet lemmas: non-fixed packet mass is charged to quotient defects, active domain singletons, and different-slope two-exchange codegree; in the high-agreement rate-half range the zero-lower singleton class vanishes.",
+    "impact": "Useful M1 infrastructure, but not a final all-line residue-packing theorem and not a leaderboard row. The remaining targets are polynomial bounds for active codegree and one-outside boundary target images.",
+    "href": "https://github.com/przchojecki/rs-mca/blob/main/experimental/notes/m1/m1_hankel_variable_line_packet_lemma.md"
+  },
+  {
+    "date": "2026-06-27",
     "status": "M2 ledger infrastructure",
     "author": "AllenGrahamHart",
     "title": "Challenge-map pullback ledgers for adjacent high-agreement objects",

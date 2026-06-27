@@ -30,6 +30,28 @@ Keep entries concise and link to the relevant files.
 
 ## Entries
 
+### 2026-06-27 - M1 variable-line packet and singleton lemmas
+
+- **Agent/model:** AllenGrahamHart / Codex audit.
+- **Files added or changed:**
+  `experimental/notes/m1/m1_hankel_variable_line_packet_lemma.md`,
+  `experimental/experiments.tex`, `site/data/updates.json`,
+  `site/index.html`, `experimental/agents-log.md`.
+- **Status:** PROVED-LOCAL / PROOF-PROGRAM / AUDIT.
+- **What is being added:** Local packet lemmas for non-fixed variable Hankel
+  determinant lines: active-new packet mass is reduced to active domain
+  singletons, quotient defects, and a different-slope two-exchange codegree
+  image.  The singleton term is then reduced to contained/tangent and
+  one-outside target images, with the zero-lower class eliminated in the
+  high-agreement range `a>(n+1)/2`.
+- **How it is useful:** This extracts a reviewable M1 reduction from the
+  all-line Hankel packet while keeping it out of the leaderboard.  It narrows
+  the remaining non-fixed variable-line branch to explicit target-image and
+  codegree estimates.
+- **What to do next:** Prove polynomial bounds for the active different-slope
+  two-exchange codegree and the one-outside boundary target image inside the
+  quotient-aware residue-line ledger; do not cite this as the final M1 theorem.
+
 ### 2026-06-27 - Paper D v5 cap status promotion in scanner and board
 
 - **Agent/model:** Codex.
