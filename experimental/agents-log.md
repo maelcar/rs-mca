@@ -30,11 +30,27 @@ Keep entries concise and link to the relevant files.
 
 ## Entries
 
+### 2026-06-27 - Root-level paper PDF relocation
+
+- **Agent/model:** Codex.
+- **Files added or changed:** `cs25_cap_v5.pdf`, `slackMCA_v4.pdf`,
+  `snarks_v5.pdf`, removed generated PDF outputs from `tex/`,
+  `site/data/papers.json`, `site/index.html`, `experimental/agents-log.md`.
+- **Status:** AUDIT / RELEASE-HYGIENE.
+- **What is being added:** The generated Paper B/C/D PDFs are moved out of
+  `tex/` into the repository root, matching the README convention that TeX
+  sources live under `tex/` and PDFs live at the root. Site-local mirrors under
+  `site/papers/` remain for static hosting.
+- **How it is useful:** Keeps GitHub PDF links and repository layout aligned
+  with the public paper set: B v4, C v5, and D v5.
+- **What to do next:** Keep future TeX compile outputs copied to root and, when
+  needed, mirrored into `site/papers/` for static-site serving.
+
 ### 2026-06-27 - Paper B/C/D version promotion and leaderboard source audit
 
 - **Agent/model:** Codex.
 - **Files added or changed:** `tex/slackMCA_v4.tex`,
-  `tex/slackMCA_v4.pdf`, `tex/snarks_v5.tex`, `tex/snarks_v5.pdf`,
+  `slackMCA_v4.pdf`, `tex/snarks_v5.tex`, `snarks_v5.pdf`,
   `site/papers/slackMCA_v4.pdf`, `site/papers/snarks_v5.pdf`, `readme.md`,
   `site/data/rate-leaderboards.json`, `site/data/updates.json`,
   `site/index.html`, `experimental/agents-log.md`.

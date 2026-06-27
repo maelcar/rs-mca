@@ -5,7 +5,7 @@
     "title": "Paper A: No-Slack Obstruction",
     "file": "RS_disproof_v3.pdf",
     "pdf": "papers/RS_disproof_v3.pdf",
-    "githubPdf": "https://github.com/przchojecki/rs-mca/blob/main/site/papers/RS_disproof_v3.pdf",
+    "githubPdf": "https://github.com/przchojecki/rs-mca/blob/main/RS_disproof_v3.pdf",
     "tex": "https://github.com/przchojecki/rs-mca/blob/main/tex/RS_disproof_v3.tex",
     "summary": "Refutes the old no-slack support-wise line-MCA statement for smooth multiplicative Reed-Solomon domains."
   },
@@ -15,7 +15,7 @@
     "title": "Paper B: Slack, Quotient, and Entropy Theory",
     "file": "slackMCA_v4.pdf",
     "pdf": "papers/slackMCA_v4.pdf",
-    "githubPdf": "https://github.com/przchojecki/rs-mca/blob/main/site/papers/slackMCA_v4.pdf",
+    "githubPdf": "https://github.com/przchojecki/rs-mca/blob/main/slackMCA_v4.pdf",
     "tex": "https://github.com/przchojecki/rs-mca/blob/main/tex/slackMCA_v4.tex",
     "summary": "Builds the corrected-reserve theory and adds the solved high-agreement line/list/curve boundary layer."
   },
@@ -25,7 +25,7 @@
     "title": "Paper C: SNARK and Protocol Ledger",
     "file": "snarks_v5.pdf",
     "pdf": "papers/snarks_v5.pdf",
-    "githubPdf": "https://github.com/przchojecki/rs-mca/blob/main/site/papers/snarks_v5.pdf",
+    "githubPdf": "https://github.com/przchojecki/rs-mca/blob/main/snarks_v5.pdf",
     "tex": "https://github.com/przchojecki/rs-mca/blob/main/tex/snarks_v5.tex",
     "summary": "Separates protocol soundness accounting and adds a theorem-backed high-agreement ledger compiler."
   },
@@ -35,7 +35,7 @@
     "title": "Paper D: Universal Field-Size Cap",
     "file": "cs25_cap_v5.pdf",
     "pdf": "papers/cs25_cap_v5.pdf",
-    "githubPdf": "https://github.com/przchojecki/rs-mca/blob/main/site/papers/cs25_cap_v5.pdf",
+    "githubPdf": "https://github.com/przchojecki/rs-mca/blob/main/cs25_cap_v5.pdf",
     "tex": "https://github.com/przchojecki/rs-mca/blob/main/tex/cs25_cap_v5.tex",
     "summary": "Proves the main universal MCA threshold cap with a self-contained deep-point conversion in the relevant sub-capacity band."
   }
