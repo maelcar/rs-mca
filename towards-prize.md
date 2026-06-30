@@ -392,6 +392,24 @@ root/numerator table
 auditor note explaining why this is a format test, not a new theorem
 ```
 
+Status: completed by the smoke packet
+
+```text
+experimental/data/certificates/hankel-smoke-f17-506-507/
+```
+
+The packet records the known finite-slope support-wise MCA transition:
+
+```text
+A=506: numerator 7, unsafe;
+A=507: numerator 6, safe.
+```
+
+It is intentionally an "empty after tangent removal" v9 packet: the tangent
+common-code-line ledger pays the entire numerator in this high-agreement
+range, so the declared aperiodic numerator is `0`.  This validates packet
+format and bookkeeping, not a new aperiodic eliminant theorem.
+
 ### M3. Regular Non-Tangent Window
 
 For the \(F_{17^{32}}\), \(n=512,k=256\) row, the regular overdetermined minor

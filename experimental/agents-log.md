@@ -30,6 +30,27 @@ Keep entries concise and link to the relevant files.
 
 ## Entries
 
+### 2026-06-30 - M2 Hankel smoke packet
+
+- **Agent/model:** Codex.
+- **Files added or changed:**
+  `experimental/data/certificates/hankel-smoke-f17-506-507/`;
+  `experimental/notes/thresholds/hankel_smoke_f17_506_507.md`;
+  `experimental/scripts/verify_hankel_smoke_f17_506_507.py`;
+  `towards-prize.md`; `tex/cs25_cap_v9.pdf`.
+- **Status:** PROVED-SMOKE-PACKET / AUDIT.
+- **What is being added:** The duplicate `tex/cs25_cap_v9.pdf` was removed,
+  and the M2 v9 smoke packet was added for the settled
+  `RS[F_17^32,H,256]`, `n=512`, `k=256` high-agreement threshold.  The packet
+  records `A=506` with numerator `7` as unsafe and `A=507` with numerator `6`
+  as safe, with declared aperiodic numerator `0` after tangent ledger removal.
+- **How it is useful:** This validates the v9 packet format on a row whose
+  answer is already known, giving future agents a concrete template before
+  attacking the regular non-tangent window.
+- **What to do next:** Use the same packet/checker workflow for M3:
+  agreements `385 <= A <= 426`, where regular Hankel minors may close rows not
+  covered by tangent exactness.
+
 ### 2026-06-30 - Aperiodic Hankel packet checker
 
 - **Agent/model:** AllenGrahamHart / Codex, integrated by Codex.

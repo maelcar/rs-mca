@@ -1,0 +1,49 @@
+{
+  "schema_version": "aperiodic-hankel-eliminant-v1",
+  "row": {
+    "n": 512,
+    "k": 256,
+    "field": "F_17^32",
+    "domain_hash": "smoke:f17_32_subgroup_order_512_generator_not_encoded",
+    "domain_description": "H is a smooth multiplicative subgroup of order 512 in F_17^32; this smoke packet tests the v9 schema on the already-settled high-agreement threshold row."
+  },
+  "agreement_threshold": 506,
+  "sampler": "finite_affine_line",
+  "removed_ledgers": [
+    {
+      "name": "tangent_common_code_line_A506",
+      "numerator": 7,
+      "certificate_ref": "experimental/data/certificates/high-agreement-threshold-package/f17_512_high_agreement_threshold_certificate.json#/f17_512_affine"
+    },
+    {
+      "name": "tangent_common_code_line_A507",
+      "numerator": 6,
+      "certificate_ref": "experimental/data/certificates/high-agreement-threshold-package/f17_512_high_agreement_threshold_certificate.json#/f17_512_affine"
+    }
+  ],
+  "exact_agreements": [
+    {
+      "A": 506,
+      "j": 6,
+      "t": 250,
+      "status": "empty",
+      "smoke_role": "first_unsafe_closed_grid_agreement",
+      "known_total_numerator": 7,
+      "known_total_source": "tangent_common_code_line",
+      "residual_after_removed_ledgers": 0
+    },
+    {
+      "A": 507,
+      "j": 5,
+      "t": 251,
+      "status": "empty",
+      "smoke_role": "first_safe_closed_grid_agreement",
+      "known_total_numerator": 6,
+      "known_total_source": "tangent_common_code_line",
+      "residual_after_removed_ledgers": 0
+    }
+  ],
+  "declared_aperiodic_numerator": 0,
+  "root_union_table_ref": "experimental/data/certificates/hankel-smoke-f17-506-507/f17_32_n512_k256_a506_507_numerator_table.json#/aperiodic_after_removed_ledgers",
+  "smoke_test_nonclaim": "This packet does not prove a new aperiodic eliminant theorem. It checks that the v9 packet format can represent an already-settled row after the tangent ledger is paid."
+}

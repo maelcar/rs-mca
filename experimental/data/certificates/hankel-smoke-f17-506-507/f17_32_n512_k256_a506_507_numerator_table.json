@@ -1,0 +1,71 @@
+{
+  "status": "PROVED-SMOKE-PACKET / AUDIT",
+  "object": "finite-slope support-wise MCA / LD_sw",
+  "row": {
+    "code": "RS[F_17^32,H,256]",
+    "n": 512,
+    "k": 256,
+    "rho": "1/2",
+    "q_line": 2367911594760467245844106297320951247361
+  },
+  "target": {
+    "epsilon": "2^-128",
+    "budget": 6,
+    "budget_formula": "floor(q_line / 2^128)",
+    "budget_bracket": "6*2^128 < 17^32 < 7*2^128"
+  },
+  "theorem_input": {
+    "name": "high-agreement tangent line staircase",
+    "formula": "LD_sw(C,a)=n-a+1 when n-a <= floor((n-k)/3)",
+    "source": "experimental/data/certificates/high-agreement-threshold-package/f17_512_high_agreement_threshold_certificate.json",
+    "exact_range_min_agreement": 427,
+    "line_exact_radius": 85
+  },
+  "rows": [
+    {
+      "A": 506,
+      "j": 6,
+      "t": 250,
+      "r": 6,
+      "sigma": 250,
+      "ld_sw_numerator": 7,
+      "tangent_numerator": 7,
+      "quotient_numerator": 0,
+      "aperiodic_after_removed_ledgers": 0,
+      "denominator": 2367911594760467245844106297320951247361,
+      "comparison_to_budget": "7 > 6",
+      "verdict": "UNSAFE_BY_PROVED_LOWER_BOUND",
+      "closed_radius": "6/512 = 3/256",
+      "endpoint_attained_as_safe": false
+    },
+    {
+      "A": 507,
+      "j": 5,
+      "t": 251,
+      "r": 5,
+      "sigma": 251,
+      "ld_sw_numerator": 6,
+      "tangent_numerator": 6,
+      "quotient_numerator": 0,
+      "aperiodic_after_removed_ledgers": 0,
+      "denominator": 2367911594760467245844106297320951247361,
+      "comparison_to_budget": "6 <= 6",
+      "verdict": "SAFE_BY_PROVED_UPPER_BOUND",
+      "closed_radius": "5/512",
+      "endpoint_attained_as_safe": true
+    }
+  ],
+  "closed_grid_transition": {
+    "largest_safe_integer_radius": 5,
+    "first_unsafe_integer_radius": 6,
+    "first_safe_agreement": 507,
+    "last_unsafe_agreement": 506,
+    "real_safe_interval": "[0, 6/512)",
+    "real_supremum": "6/512 = 3/256",
+    "supremum_attained": false
+  },
+  "aperiodic_after_removed_ledgers": {
+    "declared_aperiodic_numerator": 0,
+    "reason": "In the high-agreement exact range all bad finite slopes are paid by the tangent/common-code-line staircase."
+  }
+}
