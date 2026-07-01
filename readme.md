@@ -19,7 +19,7 @@ The core repo consists of four papers and two guide files. .tex versions are in 
 |---|---|---|
 | `RS_disproof_v3.tex` | **Paper A: no-slack obstruction** | Refutes the unslacked, support-wise line-MCA reading of “up to capacity” for smooth multiplicative RS domains. Provides explicit lower-bound mechanisms and deployed-field obstructions. |
 | `slackMCA_v4.tex` | **Paper B: slack / quotient / entropy theory** | Main theory paper. Builds the corrected reserve framework and now promotes the solved high-agreement line/list/curve boundary layer into the main theory. |
-| `cs25_cap_v9.tex` | **Paper D: universal cap and Hankel certificate atlas** | Extracts and sharpens the cap result. In v9 the main MCA universal and first-grid caps remain self-contained, the quotient-support/image ledgers are preserved, and the paper adds an aperiodic Hankel chart atlas for future safe-side certificates. |
+| `cs25_cap_v10.tex` | **Paper D: universal cap and v10 Hankel/ledger program** | Extracts and sharpens the cap result. In v10 the main MCA universal and first-grid caps remain self-contained, the quotient-support/image ledgers are preserved, and the paper adds scanner-ready quotient, extension, and canonical regular-Hankel ledgers for safe-side certificates. |
 | `snarks_v5.tex` | **Paper C: SNARK ledger** | Turns the corrected theory into a protocol-facing certificate and adds a theorem-backed high-agreement ledger compiler for line/list/curve coding numerators. |
 | `README.md` | Repo overview | Explains what the papers do, how they depend on each other, and what the project is trying to prove. |
 | `AGENTS.md` | Research-agent guide | Gives AI agents and new contributors a prioritized list of proof targets, toy cases, scripts, and “do not confuse these” rules. |
@@ -77,19 +77,20 @@ The ledgers that must be separated are:
 
 ## Current paper versions and leaderboard impact
 
-The current public paper set is **A v3, B v4, D v9, C v5**.
+The current public paper set is **A v3, B v4, D v10, C v5**.
 The version changes matter for the website and scanner as follows:
 
 - **Paper B v4** promotes the high-agreement tangent/list/curve boundary layer
   from experimental notes into the main theory. Public tangent and
   interleaved-list high-agreement rows should now cite `slackMCA_v4.tex` when
   they use this theorem package.
-- **Paper D v9** makes the headline universal MCA cap self-contained, adds
-  the prize-facing integer-staircase/completion program, and proves the
-  first-grid MCA cap for large official-envelope rows. It also adds quotient
-  support/image ledgers for safe-side branch accounting. Version v9 adds the
-  aperiodic Hankel chart atlas and certificate schema workflow; this is proof
-  infrastructure for future rows, not a new numerical leaderboard row by itself.
+- **Paper D v10** keeps the headline universal MCA cap self-contained, keeps
+  the prize-facing integer-staircase/completion program and first-grid MCA cap,
+  and upgrades the safe-side completion program with quantitative deep-list
+  floors, exact divisor-block quotient ledgers, gcd/lcm quotient-image ledgers,
+  extension-pole simple-pole witnesses, and canonical regular-Hankel gcd/lcm
+  ledgers. This is proof infrastructure for future safe-side rows, not a new
+  numerical leaderboard row by itself.
 - **Paper C v5** adds the theorem-backed high-agreement ledger compiler for
   protocol-facing line/list/curve numerator accounting. It changes certificate
   packaging and denominator checks, not the mathematical value of the MCA cap
@@ -146,9 +147,9 @@ Paper B is where most new mathematics should land. It contains the theorem/conje
 
 ### Paper D: universal field-size cap
 
-`cs25_cap_v9.tex` is a short cap paper plus a prize-facing completion program.
+`cs25_cap_v10.tex` is a short cap paper plus a prize-facing completion program.
 
-In v9, the main Paper D universal MCA cap is self-contained. It proves a field-size-universal cap for the MCA challenge:
+In v10, the main Paper D universal MCA cap is self-contained. It proves a field-size-universal cap for the MCA challenge:
 
 ```text
 delta*_C(2^-128) <= 1 - rho - 2^-9      for rho in {1/2, 1/4, 1/8},
@@ -157,7 +158,7 @@ delta*_C(2^-128) <= 1 - rho - 2^-10     for rho = 1/16,
 
 throughout the challenge range `|F| < 2^256`, with the stated smoothness/divisibility hypotheses. It gives error `> 2^-86` uniformly and improves to `> 2^-42` when `|F| >= 2n`.
 
-Version v9 also contains the large-row first-grid cap. For the official
+Version v10 also contains the large-row first-grid cap. For the official
 rates, once `k` is at least `127, 78, 58, 47` respectively and `q>n`, the first
 closed grid point below capacity is already CA/MCA unsafe:
 
@@ -167,13 +168,13 @@ delta*_C(2^-128) <= 1 - rho - 1/n.
 
 Paper D supersedes the older internal cap in Paper B for final constants. Paper B keeps its native quotient-core cap because it explains the mechanism; Paper D owns the sharp field-size-universal statement.
 
-Version v9 is strictly stronger as a paper package than v8: it keeps the same
+Version v10 is strictly stronger as a paper package than v9: it keeps the same
 universal fixed-divisor and first-grid caps, keeps the no-loss CA endpoint
-`floor(delta n) <= n-k-1`, preserves the quotient-support and distinct-parameter
-image ledgers, and adds the aperiodic Hankel chart atlas. The atlas splits the
-remaining safe-side MCA problem into regular overdetermined minors, finite
-affine pivots, projective-infinity charts, curve coefficient pivots, and named
-singular residual buckets. These are proved certificate theorems and workflow
+`floor(delta n) <= n-k-1`, preserves the v9 aperiodic chart atlas, and adds
+scanner-ready lower, quotient, extension, and canonical regular-Hankel ledgers.
+The remaining safe-side MCA problem is now organized around actual root tables,
+paid-root subtraction, affine/projective/curve pivot charts, and named singular
+residual buckets. These are proved certificate theorems and workflow
 infrastructure, not a full safe-side M1 theorem by themselves.
 
 ### Paper C: SNARK ledger
@@ -204,10 +205,10 @@ A rough status map:
 | Explicit deployed-field lower-bound floors | Proved in Paper A/B for the stated regimes. |
 | Quotient-core list obstructions | Proved in Paper B. |
 | Exact slack calculus and many failure ladders | Proved in Paper B. |
-| Universal field-size MCA cap | Proved in Paper D v9 under its printed divisor/binomial/subfield hypotheses. |
-| First-grid MCA cap for large official rows | Proved in Paper D v9 at `delta = 1-rho-1/n` under its printed `k` and `q>n` hypotheses. |
-| Quotient support/image branch ledgers | Proved in Paper D v9 for declared quotient-remainder support families; not a full aperiodic safe-side theorem. |
-| Aperiodic Hankel chart atlas | Proved as a certificate framework in Paper D v9; the actual small eliminants remain the main M1 work. |
+| Universal field-size MCA cap | Proved in Paper D v10 under its printed divisor/binomial/subfield hypotheses. |
+| First-grid MCA cap for large official rows | Proved in Paper D v10 at `delta = 1-rho-1/n` under its printed `k` and `q>n` hypotheses. |
+| Quotient support/image/extension branch ledgers | Proved in Paper D v10 for declared quotient-remainder and extension-pole families; not a full aperiodic safe-side theorem. |
+| Aperiodic Hankel chart atlas and canonical regular ledgers | Proved as a certificate framework in Paper D v10; actual root tables and singular-bucket closures remain the main M1/M3 work. |
 | Generated-field locator local limit above all floors | Open. Main list-side positive theorem target. |
 | Corrected MCA / residue-line local limit above all floors | Open. Main MCA-side positive theorem target. |
 | Line-decoding formulation of corrected MCA | Open. Important for protocols. |
@@ -225,8 +226,8 @@ Good first contributions include:
 3. **Toy-case exploration.** Exhaust small fields/domains to discover or refute local-limit behavior.
 4. **Hankel certificates.** Use `scripts/aperiodic_eliminant_schema.json` to
    package exact-agreement eliminants, empty chart certificates, or named
-   residual obstructions for the Paper D v9 aperiodic atlas.
-5. **External-import audit.** Check the exact hypotheses and constants of the Crites-Stewart list-to-agreement conversion for older CA/list comparison routes. The main Paper D v9 MCA cap is self-contained.
+   residual obstructions for the Paper D v10 aperiodic atlas.
+5. **External-import audit.** Check the exact hypotheses and constants of the Crites-Stewart list-to-agreement conversion for older CA/list comparison routes. The main Paper D v10 MCA cap is self-contained.
 6. **New bounds.** Attack the local-limit conjectures, interleaved-list constants, extension-line MCA, or domain-shattering alternatives.
 7. **Protocol rewrites.** Rewrite FRI, WHIR, or other proximity reductions in the exact ledger format of Paper C.
 
@@ -245,7 +246,7 @@ ledger-audit tool, not a proof of extension-line MCA, arbitrary-word locator
 local limits, aperiodic Hankel-pencil packing, or deployed protocol soundness.
 
 The aperiodic Hankel certificate schema lives at
-`scripts/aperiodic_eliminant_schema.json`. It is for Paper D v9 certificate
+`scripts/aperiodic_eliminant_schema.json`. It is for Paper D v10 certificate
 packets: row and domain hash, exact agreement levels, removed tangent/quotient
 ledgers, regular minors, pivot charts, eliminants, empty-chart proofs,
 dimension-degree fallbacks, and named residual obstructions.
@@ -263,7 +264,7 @@ scripts/
   interleaved_budget.py      # base/interleaved list-to-field soundness budget
   certificate_emit.py        # JSON + TeX certificate tables for Paper C
   aperiodic_eliminant_schema.json
-                              # Paper D v9 Hankel eliminant certificate schema
+                              # Paper D v10 Hankel eliminant certificate schema
 
 experimental/notes/certificate_scanner/
   certificate_scanner.py     # EXPERIMENTAL A/B/C/D + high-agreement ledger scanner
@@ -295,7 +296,7 @@ When editing the papers:
 
 - Cite companion results with theorem/proposition numbers, not just “the companion proves.”
 - Mark every result as proved, conditional, conjectural, experimental, or audit-only.
-- Cite the main Paper D v9 MCA universal and first-grid caps as proved under their printed hypotheses; keep older CS25-based CA/list comparison routes separately labeled until audited.
+- Cite the main Paper D v10 MCA universal and first-grid caps as proved under their printed hypotheses; keep older CS25-based CA/list comparison routes separately labeled until audited.
 - Do not state an error-one result from Paper D’s cap; Paper D caps the threshold and gives a small certified failure probability, but the error-one-in-the-band problem remains open.
 - Keep Paper D as the canonical reference for the final universal-cap constants.
 - Keep Paper C as the canonical reference for protocol ledgers and field-accounting rules.

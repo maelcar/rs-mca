@@ -9,19 +9,85 @@ The four papers are:
 ```text
 RS_disproof_v3.tex      Paper A: no-slack obstruction
 slackMCA_v4.tex         Paper B: slack / quotient / entropy theory
-cs25_cap_v9.tex         Paper D: universal cap and Hankel certificate atlas
+cs25_cap_v10.tex        Paper D: universal cap and v10 Hankel/ledger program
 snarks_v5.tex           Paper C: SNARK / protocol ledger
 ```
 
 Use logical order **A → B → D → C** unless you are working specifically on protocol ledgers.
 
-## Current priority: Hankel certificates
+## Current priority: v10 Hankel safe-side packets
 
-The current priority is making the aperiodic Hankel certificate program
-replayable.  Paper D v9 adds the chart atlas for this: regular
-overdetermined minors, finite affine noncontainment pivots `B_h != 0`,
-projective-infinity charts `B=0, A!=0`, finite-parameter curve coefficient
-pivots `(V_i)_h != 0`, and a named singular residual bucket.
+The current priority is no longer finding another lower-bound example.  It is
+using Paper D v10 to produce safe-side upper-bound packets for the aperiodic
+Hankel regime.
+
+### Next to do: M3/M4 packet for the `F_17^32` row
+
+Work on the row
+
+```text
+C = RS[F_17^32, H, 256],    |H| = 512.
+```
+
+For exact agreement `A`, set
+
+```text
+j = 512 - A,
+t = A - 256.
+```
+
+The regular overdetermined Hankel range is
+
+```text
+385 <= A <= 426,
+```
+
+and tangent exactness starts at `A=427`.  The finite-slope prize budget is
+
+```text
+floor(17^32 / 2^128) = 6.
+```
+
+The degree-only regular bound over `385 <= A <= 426` is `4515`, so it cannot
+prove safety.  The next useful contribution must compute actual root tables or
+classify singular buckets, then subtract paid roots.
+
+For each exact agreement `A`, output a table with:
+
+```text
+B_tan(A)
+B_quot_support(A)
+B_quot_image(A)
+B_ext(A)
+B_ap_regular(A)
+B_ap_pivot(A)
+deduped_total(A)
+deduped_total(A) <= 6 ?
+```
+
+Use the existing starting artifacts:
+
+```text
+experimental/data/certificates/hankel-f17-32-row-descriptor/
+experimental/data/certificates/hankel-regular-window-f17-385-426/
+experimental/data/certificates/hankel-f17-32-generic-regular-minor/
+experimental/scripts/extract_regular_hankel_minors.py
+experimental/scripts/verify_f17_32_m3_generic_regular_minor.py
+towards-prize.md
+```
+
+If a regular bucket does not close, build the v10 pivot charts instead of
+calling it evidence.  Every leftover chart must end as `eliminant`, `empty`,
+`dimension_degree`, or `residual_obstruction`, with residuals labelled
+`quotient`, `tangent`, `extension`, `candidate_new_obstruction`, or `unknown`.
+
+### General v10 certificate format
+
+Paper D v10 gives the chart and ledger program: regular overdetermined
+maximal-minor gcd/lcm ledgers, finite affine noncontainment pivots
+`B_h != 0`, projective-infinity charts `B=0, A!=0`, finite-parameter curve
+coefficient pivots `(V_i)_h != 0`, quotient support/image ledgers,
+extension-pole lower-side ledgers, and named singular residual buckets.
 
 Use `scripts/aperiodic_eliminant_schema.json` for machine-readable
 certificates.  A certificate should:
@@ -29,7 +95,7 @@ certificates.  A certificate should:
 1. state the row, field, domain hash, agreement threshold, and sampler;
 2. remove already paid tangent/common-code-line and quotient-image ledgers;
 3. for each exact agreement `A`, set `j=n-A` and `t=A-k`;
-4. first try regular maximal Hankel minors when `t >= j+1`;
+4. first try the v10 canonical regular Hankel gcd/lcm ledger when `t >= j+1`;
 5. otherwise build locator charts and split them by affine, projective, or
    curve pivots;
 6. end every chart as `eliminant`, `empty`, `dimension_degree`, or
@@ -103,7 +169,7 @@ Treat Papers A-D as stable reference documents unless a maintainer explicitly as
 ```text
 tex/RS_disproof_v3.tex
 tex/slackMCA_v4.tex
-tex/cs25_cap_v9.tex
+tex/cs25_cap_v10.tex
 tex/snarks_v5.tex
 ```
 
@@ -117,8 +183,8 @@ Whenever you add or materially change something under `experimental/`, add an en
 
 1. Read the abstract and scope section of `RS_disproof_v3.tex`.
 2. Read the introduction and frontier/open-problems section of `slackMCA_v4.tex`.
-3. Read the main theorem, aperiodic Hankel chart atlas, and open problems of
-   `cs25_cap_v9.tex`.
+3. Read the main theorem, v10 quotient/extension/Hankel ledgers, and open
+   problems of `cs25_cap_v10.tex`.
 4. Read the certificate ledgers and open problems of `snarks_v5.tex`.
 5. Return to Paper B for the exact theorem labels relevant to your task.
 
@@ -129,7 +195,8 @@ The current research picture is:
 ```text
 Paper A gives explicit no-slack lower bounds.
 Paper B builds the corrected reserve theory and states the main missing local limits.
-Paper D v9 gives a self-contained universal MCA cap and an aperiodic Hankel certificate atlas.
+Paper D v10 gives the self-contained universal MCA cap plus scanner-ready
+quotient, extension, and aperiodic Hankel ledgers.
 Paper C says how a protocol must consume the theory without mixing ledgers.
 ```
 
@@ -139,16 +206,21 @@ The main mathematical unknowns are not in Paper A. They are in the positive loca
 
 ### L1. Generated-field locator local limit
 
-**Goal.** Prove polynomial locator-fiber bounds for generated-field smooth domains above the entropy and quotient reserves.
+**Goal.** Prove polynomial codeword-image locator-fiber bounds for generated-field smooth domains above the entropy and quotient reserves.
 
 A useful target statement is:
 
 ```text
 For smooth domains H_n of size n, rate rho, and generated field q_gen = poly(n),
-all arbitrary received words U have locator fiber size <= n^B once
+all arbitrary received words U have image locator fiber size |ImgFib_U(k+sigma)| <= n^B once
 sigma * log2(q_gen) exceeds log2 binomial(n, k + sigma)
 and active quotient-core contributions are absent or budgeted.
 ```
+
+Raw support fibers `Fib_U` can be exponentially inflated by many supports
+explaining the same codeword.  The exact list object is the image fiber
+`ImgFib_U`; use raw `Fib_U` only as a coarse upper bound when multiplicity is
+explicitly budgeted.
 
 **Why it matters.** This is the main positive list theorem missing from Paper B. Paper C needs it to create list certificates.
 
@@ -281,7 +353,7 @@ Record which quotient scales remain active.
 
 **Goal.** Determine when a corrected-reserve list bound implies a corrected-reserve CA/MCA/line-decoding bound at essentially the same radius.
 
-**Why it matters.** Paper D v9 uses a self-contained deep-point conversion to cap the MCA challenge; older list-to-agreement routes remain relevant for CA/list comparison audits. A forward positive equivalence would be powerful, but may be false.
+**Why it matters.** Paper D v10 uses a self-contained deep-point conversion to cap the MCA challenge; older list-to-agreement routes remain relevant for CA/list comparison audits. A forward positive equivalence would be powerful, but may be false.
 
 **First attacks.**
 
@@ -308,7 +380,7 @@ Record which quotient scales remain active.
 
 ### A0. Audit older imported CA/list conversions
 
-Paper D v9's main MCA universal cap is self-contained. The older CS25/ABF
+Paper D v10's main MCA universal cap is self-contained. The older CS25/ABF
 list-to-agreement routes remain relevant for CA and list-comparison statements.
 Audit:
 

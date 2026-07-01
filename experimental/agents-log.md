@@ -30,6 +30,26 @@ Keep entries concise and link to the relevant files.
 
 ## Entries
 
+### 2026-07-01 - v10 guide and site metadata sync
+
+- **Agent/model:** Codex.
+- **Files added or changed:** `AGENTS.md`; `README.md`/`readme.md`;
+  `site/index.html`; `site/papers/cs25_cap_v10.pdf`;
+  `towards-prize.md`; `experimental/agents-log.md`.
+- **Status:** AUDIT / DOCUMENTATION.
+- **What is being added:** The agent guide, repo overview, prize roadmap, and
+  site paper metadata now point at Paper D v10 as the current cap/Hankel-ledger
+  package.  `AGENTS.md` also names the next concrete prize task: an M3/M4
+  root-table and paid-root-subtraction packet for the `F_17^32`, `n=512`,
+  `k=256` row over agreements `385 <= A <= 426`.
+- **How it is useful:** Prevents new agents and site readers from treating v9,
+  strict264, or strict352 as the active frontier.  The current route is v10
+  safe-side Hankel packets, singular-bucket classification, and exact ledger
+  subtraction against the six-slope `F_17^32` budget.
+- **What to do next:** Build the first M3/M4 table for selected agreements in
+  `385 <= A <= 426`, including regular roots, tangent/quotient/extension
+  subtraction, and residual chart labels.
+
 ### 2026-07-01 - PR 161--169 frontier integration
 
 - **Agent/model:** Codex, integrating contributions from holmbuar,

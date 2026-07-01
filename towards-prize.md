@@ -68,7 +68,7 @@ The no-slack smooth-domain MCA/RCA optimism is dead.  Paper A gives explicit
 obstructions.  Positive statements must include reserve and explicit quotient
 floors.
 
-Paper D v10 is the current Paper D package.  It preserves the v9 universal cap,
+Paper D v10 is the current Paper D package.  It preserves the universal-cap package,
 first-grid cap, and aperiodic Hankel chart atlas, then adds four strictly
 stronger proof-ledger upgrades:
 
@@ -366,7 +366,7 @@ one table saying which repo theorem uses which convention
 no "officially solved" language
 ```
 
-### M1. v9 Schema Verifier
+### M1. v10 Schema Verifier
 
 Write a checker for `scripts/aperiodic_eliminant_schema.json`.
 
@@ -394,7 +394,7 @@ one intentionally failing packet
 documented expected output
 ```
 
-### M2. Smoke-Test v9 on a Settled Row
+### M2. Smoke-Test v10 on a Settled Row
 
 Create a proof packet for the already-settled high-agreement row
 \[
@@ -432,7 +432,7 @@ A=506: numerator 7, unsafe;
 A=507: numerator 6, safe.
 ```
 
-It is intentionally an "empty after tangent removal" v9 packet: the tangent
+It is intentionally an "empty after tangent removal" v10 packet: the tangent
 common-code-line ledger pays the entire numerator in this high-agreement
 range, so the declared aperiodic numerator is `0`.  This validates packet
 format and bookkeeping, not a new aperiodic eliminant theorem.
@@ -453,7 +453,7 @@ The window
 \[
         385\le A\le426
 \]
-is the first useful v9 stress test: regular Hankel minors may give upper bounds
+is the first useful v10 stress test: regular Hankel minors may give upper bounds
 where tangent exactness does not.
 
 Exit criterion:
@@ -500,7 +500,7 @@ The next packet must compute actual root tables or identify singular buckets.
 
 ### M4. Quotient and Tangent Subtraction
 
-Integrate the v9 packets with the existing quotient-image and tangent ledgers.
+Integrate the v10 packets with the existing quotient-image and tangent ledgers.
 For each exact agreement \(A\), output:
 
 ```text
@@ -596,7 +596,7 @@ the route to the full prize.
 
 ## 6. Parallel Mathematical Lanes
 
-The v9 Hankel lane is central, but it cannot finish the whole prize alone.
+The v10 Hankel lane is central, but it cannot finish the whole prize alone.
 These lanes feed into or consume the Hankel packets.
 
 ### L1. Generated-Field Locator Local Limit
@@ -795,7 +795,7 @@ used by that statement and print the replacement.
 The next useful PRs, in order:
 
 1. **Schema checker.**
-   Validate v9 proof packets before any new math is claimed.
+   Validate v10 proof packets before any new math is claimed.
 
 2. **Hankel smoke packet for \(F_{17^{32}}\), \(A=506,507\).**
    Exercise the format on a settled row.
@@ -808,7 +808,7 @@ The next useful PRs, in order:
    Determine where the regular bucket succeeds and where singular buckets begin.
 
 5. **Quotient/tangent subtraction table.**
-   Produce one deduped table combining existing ledgers with v9 root counts.
+   Produce one deduped table combining existing ledgers with v10 root counts.
 
 6. **First singular pivot packet.**
    Pick one singular bucket and close it by affine pivots or certify the
@@ -849,7 +849,7 @@ official acceptance by prize judges
 The project is moving toward the prize if it produces:
 
 ```text
-v9 Hankel proof packets with checked eliminants
+v10 Hankel proof packets with checked eliminants
 named and minimized singular residual buckets
 explicit quotient/tangent/aperiodic/extension ledger tables
 threshold-pinned rows, not just lower bounds
@@ -863,7 +863,7 @@ The shortest current path is:
 ```text
 finite threshold package for F_17^32
   +
-v9 Hankel proof-packet pipeline
+v10 Hankel proof-packet pipeline
   +
 M1 aperiodic residual classification
   +
