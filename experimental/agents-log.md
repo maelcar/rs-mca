@@ -30,27 +30,42 @@ Keep entries concise and link to the relevant files.
 
 ## Entries
 
-### 2026-07-02 - Paper D final-submission spine framing
+### 2026-07-02 - Restore Paper D title and content
 
 - **Agent/model:** Codex.
 - **Files added or changed:** `tex/cs25_cap_v12.tex`; `cs25_cap_v12.pdf`;
-  `tex/towards-prize.tex`; `towards-prize.pdf`; `readme.md`;
+  `site/papers/cs25_cap_v12.pdf`; `readme.md`; `towards-prize.md`;
+  `site/data/papers.json`; `site/data/updates.json`; `site/index.html`;
+  `experimental/agents-log.md`.
+- **Status:** AUDIT / REVERT / DOCUMENTATION.
+- **What is being added:** Paper D itself is restored to the pre-framing
+  version, including its original title.  External docs and site metadata keep
+  the stronger role description, but display the Paper D title as
+  `Paper D: Two-Sided Cap and Certificate Grammar`.
+- **How it is useful:** This preserves Paper D as a stable mathematical source
+  while still telling contributors that it is the main submission reference for
+  cap hypotheses, endpoint conventions, denominators, and proof status.
+- **What to do next:** Do not edit Paper D wording for hierarchy/framing unless
+  explicitly requested; make such hierarchy changes in README, roadmap, site,
+  and logs only.
+
+### 2026-07-02 - Paper D external submission-reference framing
+
+- **Agent/model:** Codex.
+- **Files added or changed:** `tex/towards-prize.tex`; `towards-prize.pdf`; `readme.md`;
   `towards-prize.md`; `site/data/papers.json`; `site/data/updates.json`;
-  `site/index.html`; `site/papers/cs25_cap_v12.pdf`;
-  `site/papers/towards-prize.pdf`; `experimental/agents-log.md`.
-- **Status:** AUDIT / PAPER-FRAMING / COMPILED.
-- **What is being added:** Paper D is now explicitly framed as the main
-  Proximity Prize submission paper.  Its title and introduction emphasize the
-  final-submission role: universal unsafe cap, safe-side pincer, deployed-row
-  two-sided intervals, model transfers, and certificate grammar.  The
-  `towards-prize` note now states that it is a compact companion, not a
-  competing authority.
+  `site/index.html`; `site/papers/towards-prize.pdf`; `experimental/agents-log.md`.
+- **Status:** AUDIT / DOCUMENTATION / COMPILED.
+- **What is being added:** External docs were adjusted to present Paper D as
+  the main submission reference for the package, while preserving Paper D's
+  own title and text.  The `towards-prize` note states that it is a compact
+  companion, not a competing authority.
 - **How it is useful:** This removes ambiguity in the package hierarchy:
   public rows, scanner outputs, and companion notes should cite Paper D v12 for
   final hypotheses, endpoint conventions, denominators, and proof status.
-- **What to do next:** Audit the strengthened Paper D introduction against the
-  theorem statements before external submission, especially model-transfer
-  scope and the optional imported half-distance theorem.
+- **What to do next:** Keep hierarchy/framing edits outside Paper D unless
+  explicitly requested; audit Paper D itself through theorem statements and
+  certificate checks.
 
 ### 2026-07-02 - Towards-prize sparse note documentation pass
 

@@ -46,8 +46,7 @@
 \newcommand{\eone}{e_1}
 \newcommand{\UU}{\mathbb{U}}
 
-\title{Universal Field-Size Caps, Two-Sided Sandwiches, and Certificate Grammar\\
-for Mutual Correlated Agreement on Smooth Reed--Solomon Domains}
+\title{Universal Field-Size Caps and a Two-Sided Sandwich\\ for Mutual Correlated Agreement on Smooth Reed--Solomon Domains}
 \author{Przemek Chojecki\\ \small ulam.ai}
 \date{July 2, 2026}
 
@@ -77,19 +76,6 @@ For the deployed KoalaBear-sextic and Mersenne-$31$ circle rows, these results g
 \section{Introduction}\label{sec:intro}
 
 Proximity testing for Reed--Solomon codes underlies the soundness of modern SNARKs, and the sharpest available soundness accounting is phrased through \emph{mutual correlated agreement} (MCA): a random linear combination $f_1+\gamma f_2$ being $\delta$-close to the code should force $f_1,f_2$ to be simultaneously explained by codewords on a \emph{common} agreement set, except with small probability $\emca(C,\delta)$ over $\gamma$. The survey of Arnon, Boneh and Fenzi \cite{ABF26} crystallizes the state of the art into a \emph{grand MCA challenge}: for $C=\RS[\F,L,k]$ over a smooth domain $L$, with rate $\rho\in\{1/2,1/4,1/8,1/16\}$, degree $k\le2^{40}$, and field size $|\F|<2^{256}$, determine the largest proximity parameter $\delta^*$ at which $\emca(C,\delta)\le2^{-128}$ can hold.
-
-\paragraph{Role of this manuscript.}
-This is the main submission document for the present RS--MCA package.  The
-companion papers and notes have distinct roles: the no-slack and slack papers
-identify the obstruction mechanisms and reserve ledgers, the protocol paper
-explains how those ledgers enter SNARK soundness, and the short
-\emph{towards-prize} note extracts the current execution plan.  The final
-mathematical claims intended for submission are consolidated here: the
-field-size-universal unsafe cap, the safe-side pincer, the deployed-row
-two-sided intervals, the model-transfer statements, and the finite certificate
-grammar.  In particular, whenever a public row, scanner output, or companion
-note cites the cap or deployed threshold package, this paper is the authority
-for the hypotheses, endpoint conventions, denominators, and proof status.
 
 Positive results reach the Johnson bound $1-\sqrt\rho$. On the negative side, \cite{Cho26b} showed $\delta^*_C(2^{-128})<1-\rho-1/64$ for all prime fields of size up to roughly $2^{150}$ (per-rate reaches between $2^{150.6}$ and $2^{161.8}$), by exhibiting quotient-locator witnesses whose bad-slope sets are value sets of restricted symmetric sums over small subgroups; it further proved a \emph{conditional} universal cap over every field of size at most $2^{256}$ --- error $2^{-42}$ at gap $2^{-11}$, assuming $|\F|\ge2n$ --- by composing quotient-core lists with the same conversion isolated and proved directly here (its universal-cap theorem). Above the value-set reach, what remained open was the \emph{error-one} question, identified there with the \emph{per-fiber collision problem}: controlling, at a \emph{fixed} large prime, the collisions of characteristic-zero locator values under reduction. Extension fields, the setting actually deployed (\cite[\S6.3]{ABF26} works over a sextic extension of KoalaBear), posed an additional obstruction: by the subfield-confinement theorem of \cite{Cho26b}, refined in \cref{sec:subfield}, every explicit witness of \cite{Cho26a,Cho26b} is $\B$-rational and contributes only $p^{-5}<2^{-154}$ over the deployed extension.
 
