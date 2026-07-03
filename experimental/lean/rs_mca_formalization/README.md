@@ -96,6 +96,11 @@ This is not a formal proof of the main rs-mca theorems. It is a typed starting
 point for later agents to connect finite script certificates and locator
 identities to theorem statements.
 
+In parallel, `przchojecki` is currently working with Aristotle from Harmonic on
+a fuller Lean formalization.  That work should be added here soon as a separate
+track, with explicit theorem names, build instructions, and status labels, rather
+than silently replacing the stdlib-only certificate layer.
+
 `CERTIFICATION_MAP.md` is the reviewer-facing index for the tier-1 Lean gates:
 it maps every submission-gate arithmetic claim to the Lean theorem that
 certifies it and marks the typed targets that are deliberately outside the
