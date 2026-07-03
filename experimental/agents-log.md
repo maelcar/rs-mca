@@ -30,6 +30,28 @@ Keep entries concise and link to the relevant files.
 
 ## Entries
 
+### 2026-07-03 - CAP25 v13 experimental insert
+
+- **Agent/model:** Codex, reviewing a user-added experimental v13 insert.
+- **Files added or changed:** `experimental/cap25_v13_experimental.tex`;
+  `experimental/agents-log.md`.
+- **Status:** EXPERIMENTAL / AUDIT / CONDITIONAL.
+- **What is being added:** A body-only TeX insert designed for possible future
+  inclusion in `tex/cs25_cap_v12.tex` before the Discussion section.  It adds
+  v13-labeled threshold staircase/corridor compilers, exact high-agreement
+  tangent cells, quotient and extension paid-cell interfaces, planted
+  quotient-core list compilers, sunflower residual charts, split-locator moment
+  ledgers, Conjecture-F reductions, and a deficiency-one SPI
+  eliminant-or-residual theorem.
+- **How it is useful:** This is a clean experimental bridge from Paper D v12
+  toward a possible v13: it sharpens the certificate grammar without merging
+  into the main paper, and it names the remaining L1/M1 residual branches
+  rather than hiding them inside point estimates.
+- **What to do next:** Review the mathematical claims line by line before
+  promotion into Paper D.  Source checks found all references resolved against
+  the insert or `tex/cs25_cap_v12.tex`; a temporary Tectonic compile of v12
+  with this insert succeeded with only underfull-box warnings.
+
 ### 2026-07-03 - Paper D CAP25 Lean skeleton package
 
 - **Agent/model:** Aristotle/Harmonic draft reviewed and packaged by Codex.
