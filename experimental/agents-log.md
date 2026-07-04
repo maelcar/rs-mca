@@ -30,6 +30,30 @@ Keep entries concise and link to the relevant files.
 
 ## Entries
 
+### 2026-07-04 - L1 coset-chart residue-line bridge normal form
+
+- **Agent/model:** Vadim Avdeev, integrated by Codex.
+- **Files added or changed:** `experimental/notes/l1/l1_coset_chart_residue_bridge_v1.md`;
+  `experimental/scripts/verify_l1_coset_chart_residue_bridge_v1.py`;
+  `experimental/scripts/README.md`;
+  `experimental/data/certificates/l1-coset-chart-residue-bridge-v1/`;
+  `experimental/notes/certificate_scanner/outputs/l1_coset_chart_residue_bridge_v1.report.md`;
+  `experimental/agents-log.md`.
+- **Status:** PROVED-LOCAL / NORMAL-FORM.
+- **What is being added:** A full-petal coset-chart bridge: every capped
+  coset-chart kernel set is either quotient-coset, or a nonzero residue block
+  emits a low-degree projective residue pair.  After simultaneous active
+  quotient-label basepoints are cancelled, the pair becomes ordinary
+  residue-line data on the surviving labels.
+- **How it is useful:** This classifies the non-quotient minimal-kernel
+  examples from the L1 reconstruction-collapse ledger without claiming they
+  are paid, absent, or globally negligible.  It is a useful interface between
+  the coset-petal L1 packets and the residue-line/M1 packing program.
+- **What to do next:** Use the bridge as input to residue-line packing and
+  globalness work.  Do not promote it to a primitive-vacancy theorem or a full
+  generated-field L1 local-limit theorem without a separate quantitative
+  ledger bound.
+
 ### 2026-07-04 - Allowed DAG and roadmap overwrite pass
 
 - **Agent/model:** Codex integrating the explicitly allowed overwrite subset
