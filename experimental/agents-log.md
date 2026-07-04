@@ -30,6 +30,33 @@ Keep entries concise and link to the relevant files.
 
 ## Entries
 
+### 2026-07-04 - CAP25 v13 frontier addendum and terminal KoalaBear edge
+
+- **Agent/model:** Codex reviewing and integrating a user-added experimental
+  addendum.
+- **Files added or changed:** `experimental/cap25_v13_frontier_addendum.tex`;
+  `experimental/scripts/towards v13/collision1b.py`;
+  `experimental/scripts/towards v13/collision2.py`;
+  `experimental/scripts/towards v13/frontier2.py`;
+  `experimental/scripts/towards v13/frontier3.py`; `site/data/rate-leaderboards.json`;
+  `site/data/updates.json`; `site/index.html`; `experimental/agents-log.md`.
+- **Status:** EXPERIMENTAL / CONDITIONAL / AUDIT.
+- **What is being added:** A frontier addendum for a possible CAP25 v13 route
+  that optimizes the deployed KoalaBear sextic terminal-scale `c=2` construction.
+  The new experimental MCA edge is
+  `delta = 490557/1048576 ~= 0.46783161`, improving the earlier deployed edge
+  `15331/32768 ~= 0.46786499`; the scripts reproduce the edge arithmetic and
+  report a `+18.4` bit margin against the `2^-128` target.
+- **How it is useful:** This sharpens the deployed `delta^*` upper-side
+  frontier and identifies the next threshold task as an adjacent safe-side
+  certificate: explicit quotient-prefix and aperiodic-band control at the next
+  agreement step.  It is now shown on the site as a `rho=1/2` experimental MCA
+  leaderboard row.
+- **What to do next:** Before promotion to Paper D, replace floating-margin
+  verifier output with exact certificate objects, make the finite deployed
+  constants in the conditional closing theorem explicit, and audit the
+  quotient-prefix/aperiodic-band assumptions separately.
+
 ### 2026-07-04 - PR 262-269 audit, sigma_C, and L1 frontier packets
 
 - **Agent/model:** Codex integrating PR material from LegaSage/Ken Webster
