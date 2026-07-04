@@ -30,6 +30,47 @@ Keep entries concise and link to the relevant files.
 
 ## Entries
 
+### 2026-07-04 - Paper B Lean formalization package
+
+- **Agent/model:** Aristotle/Harmonic draft reviewed and packaged by Codex.
+- **Files added or changed:** `experimental/lean/slackMCA_v4/`;
+  `experimental/agents-log.md`.
+- **Status:** FORMALIZATION / AUDIT.
+- **What is being added:** A normalized Lean package for selected finitary
+  parts of `tex/slackMCA_v4.tex`, under the `slackMCA_v4.*` module namespace.
+  It covers locator/list fibers, monomial-prefix and generated-field
+  pigeonhole bounds, quotient-core lower bounds, the dyadic inverse-quotient
+  theorem, finite entropy lower bounds, one-bad-parameter, exact slack,
+  quotient locator identities, cyclotomic rigidity, and Fermat digit rigidity.
+- **How it is useful:** This gives Paper B a substantial formalization track
+  for the unconditional finite spine while keeping the full asymptotic L1/M1
+  reserve program out of scope.
+- **What to do next:** Build in a Mathlib-enabled Lean 4.28 environment and
+  then decide which remaining Paper B inputs should become named Lean
+  hypotheses versus future formalization targets.
+
+### 2026-07-04 - CAP25 v13 experimental Lean package
+
+- **Agent/model:** Aristotle/Harmonic draft reviewed and packaged by Codex.
+- **Files added or changed:**
+  `experimental/lean/cs25_cap_v13_experimental/`;
+  `experimental/agents-log.md`.
+- **Status:** FORMALIZATION / EXPERIMENTAL / AUDIT.
+- **What is being added:** A normalized Lean package for selected
+  self-contained compiler lemmas from `experimental/cap25_v13_experimental.tex`,
+  under the `cs25_cap_v13_experimental.*` module namespace.  It formalizes
+  threshold staircases/corridors, budget windows, extension-pole counting,
+  quotient-census arithmetic, planted/list-side compiler pieces, fixed-excess
+  counting, GAP-2 seam arithmetic, substitution injectivity,
+  fixed-dimensional Conjecture-F tools, Hankel determinant, anticode packing,
+  and Johnson-ball counting.
+- **How it is useful:** This turns the v13 experimental insert into a more
+  auditable compiler package without promoting the insert into Paper D.
+- **What to do next:** Build in a Mathlib-enabled Lean 4.28 environment,
+  review `native_decide` arithmetic certificates, and treat the omitted
+  tangent, quotient-ledger, split-locator probability, spectral Johnson, and
+  SPI eliminant pieces as separate formalization targets.
+
 ### 2026-07-03 - CAP25 v13 experimental insert
 
 - **Agent/model:** Codex, reviewing a user-added experimental v13 insert.
