@@ -30,6 +30,37 @@ Keep entries concise and link to the relevant files.
 
 ## Entries
 
+### 2026-07-04 - PR 210-260 integration sweep
+
+- **Agent/model:** Codex integrating PR material from AllenGrahamHart, Holm
+  Buar, Vadim Avdeev, DannyExperiments/Gia, LegaSage, and Latif Kasuli.
+- **Files added or changed:** `experimental/cap25_v13_experimental.tex`;
+  `experimental/notes/l1/`; `experimental/notes/m1/`;
+  `experimental/notes/roadmaps/`; `experimental/notes/thresholds/`;
+  `experimental/notes/audits/`; `experimental/data/certificates/`;
+  `experimental/scripts/`; `experimental/lean/l1_threshold_ledger/`;
+  `site/data/`.
+- **Status:** PROVED / CONDITIONAL / EXPERIMENTAL / AUDIT /
+  COUNTEREXAMPLE, as tagged in the individual notes.
+- **What is being added:** The sweep integrates the narrow CAP25 v13 SPI split
+  repair, Vadim's A407/A408 residual-design finite-slope threshold row and
+  site entry, the Holm Buar L1 reduction/refutation chain, a small L1 Lean
+  ledger, sigma_C and Hankel-kernel experimental censuses, and Allen's
+  clean-rate proof-spine packets for quotient/tangent budgeting, PTE and
+  square-shift trades, good-reduction/GCD certification, XR residual
+  decompositions, and the `16 n^3` clean-rate compiler target.
+- **How it is useful:** The new public leaderboard item is the prime-field
+  `A=406/A=407` finite-slope gate.  The rest is proof-program infrastructure:
+  it narrows the CAP25 v13/M1 route, corrects the PTE half-size window to
+  `h <= A`, records the primitive-vacancy L1 refutation, and makes the current
+  clean-rate path auditable without promoting conditional roadmap packets into
+  Paper D.
+- **What to do next:** Replay only the lightweight verifier scripts selected
+  for promotion, distill the clean-rate proof-spine into the next
+  `towards-prize`/CAP25 planning note, decide whether broad DAG PRs should be
+  merged separately, and avoid claiming official prize resolution until the
+  terminal post-strip `R_post <= 16 n^3` input is proved or replaced.
+
 ### 2026-07-04 - Paper B Lean formalization package
 
 - **Agent/model:** Aristotle/Harmonic draft reviewed and packaged by Codex.

@@ -1257,7 +1257,7 @@ with $\deg_XR<j$ and $\deg_ZR_m\le(n-j+1)t$ for every $X$-coefficient $R_m(Z)$ o
         t+(n-j+1)t,
 \]
 is a finite eliminant whose root set contains every top-chart slope passing the split test together with every slope of classes \textup{(i)} and \textup{(ii)};
-\item all $R_m$ vanish identically; then every top-chart slope passes the split test, and the chart must be retained as a named residual branch rather than discarded.
+\item all $R_m$ vanish identically; then every top-chart slope passes the split test.  Moreover, after monic normalization the Cramer locator is a fixed split divisor of $X^n-1$.  In the exact syndrome-pencil application this full-rank top chart is a contained fixed-support chart and contributes no support-wise noncontained exact-$A$ slope through this chart; roots of $c_j$ remain in the rank-drop ledger.
 \end{enumerate}
 \end{theorem}
 
@@ -1266,11 +1266,21 @@ Class \textup{(0)} and the trichotomy are immediate from the definitions: each m
 
 For the pseudo-division, dividing the degree-$n$ polynomial $X^n-1$ by the degree-$j$ polynomial $L_Z$ with leading coefficient $c_j(Z)$ performs $\Delta=n-j+1$ elimination steps, each multiplying the running remainder by $c_j(Z)$ once and subtracting a $c_i(Z)$-multiple of a shift of $L_Z$; since every $c_i$ has $Z$-degree at most $t$, each step raises the $Z$-degree of the remainder coefficients by at most $t$, giving $\deg_ZR_m\le\Delta t=(n-j+1)t$ from the degree-$0$ start.
 
-In case \textup{(a)}, let $z$ be a top-chart slope passing the split test.  Substituting $Z=z$, the left-hand side $c_j(z)^\Delta(X^n-1)$ is divisible by $L_z$, and so is $Q(z,X)L_z(X)$; hence $L_z(X)\mid R(z,X)$, and $\deg_XR(z,X)<j=\deg L_z$ forces $R(z,X)=0$, so $R_m(z)=0$ for every $m$, in particular for the chosen nonzero one.  Slopes of classes \textup{(i)} and \textup{(ii)} satisfy $c_j(z)=0$ \textup(at rank drop, all minors vanish, in particular $M_j$\textup).  Hence all these slopes are roots of $c_jR_m$, whose degree is at most $t+(n-j+1)t$.  In case \textup{(b)}, substituting any top-chart slope gives $c_j(z)^\Delta(X^n-1)=Q(z,X)L_z(X)$ with $c_j(z)\ne0$, so $L_z$ divides $X^n-1$: the split test is identically passed on the top chart, which is then a genuine residual family.
+In case \textup{(a)}, let $z$ be a top-chart slope passing the split test.  Substituting $Z=z$, the left-hand side $c_j(z)^\Delta(X^n-1)$ is divisible by $L_z$, and so is $Q(z,X)L_z(X)$; hence $L_z(X)\mid R(z,X)$, and $\deg_XR(z,X)<j=\deg L_z$ forces $R(z,X)=0$, so $R_m(z)=0$ for every $m$, in particular for the chosen nonzero one.  Slopes of classes \textup{(i)} and \textup{(ii)} satisfy $c_j(z)=0$ \textup(at rank drop, all minors vanish, in particular $M_j$\textup).  Hence all these slopes are roots of $c_jR_m$, whose degree is at most $t+(n-j+1)t$.
+
+In case \textup{(b)}, work over $K=F(Z)$.  Since $c_j\not\equiv0$, the monic normalization $\widehat L_Z=L_Z/c_j$ is a degree-$j$ divisor of $X^n-1$ in $K[X]$.  The polynomial $X^n-1=\prod_{h\in H}(X-h)$ is split and squarefree over the constant field $F$, so every monic degree-$j$ divisor over $K$ is the product of a fixed $j$-subset of these linear factors.  Hence $\widehat L_Z=L_T$ for some fixed $T\subset H$, $|T|=j$, and $L_Z=c_jL_T$ in $F[Z,X]$.  The cofactor identity gives
+\[
+        M(Z)(c_0(Z),\ldots,c_j(Z))^{\mathsf T}=0,
+\]
+so, writing $\ell_T$ for the coefficient vector of the monic locator $L_T$,
+\[
+        c_j(Z)M(Z)\ell_T=0.
+\]
+Because $F[Z]$ is a domain and $c_j\not\equiv0$, one has $M(Z)\ell_T=0$.  In the exact syndrome-pencil application $M(Z)=U+ZV$, with $U=H_{j,j}(\operatorname{Syn}(f))$ and $V=H_{j,j}(\operatorname{Syn}(g))$, so $U\ell_T=V\ell_T=0$.  By the support-locator recurrence and the exact line-image map, both line coordinates are explained on $H\setminus T$, and the support-wise noncontainment condition $V\ell_T\ne0$ fails.  Thus the full-rank top chart is contained.  If $c_j(z)=0$ in this branch, then $c_i(z)=c_j(z)\ell_{T,i}=0$ for all $i$, so such slopes lie in the rank-drop ledger.
 \end{proof}
 
 \begin{remark}[relation to the v12 eliminant machinery, and calibration]\label{rem:v13-spi-calibration}
-\Cref{thm:v13-spi} complements the certificate framework of \cref{sec:aperiodic-hankel-certificates}: \cref{thm:aperiodic-affine-eliminant} and \cref{thm:kernel-compressed-affine-eliminant} bound chart contributions \emph{given} a nonzero eliminant, while \cref{thm:v13-spi} \emph{produces} one for every deficiency-one chart with explicit degree, or else names the residual branch \textup(identically rank-deficient pencils, handled by \cref{lem:singular-pencil}, and identically split top charts\textup).  As calibration: for $n=512$, $k=256$, $A=384$, one has $t=j=128$, and the global one-parameter cap of case \textup{(a)} is
+\Cref{thm:v13-spi} complements the certificate framework of \cref{sec:aperiodic-hankel-certificates}: \cref{thm:aperiodic-affine-eliminant} and \cref{thm:kernel-compressed-affine-eliminant} bound chart contributions \emph{given} a nonzero eliminant, while \cref{thm:v13-spi} \emph{produces} one for every deficiency-one chart with explicit degree, or else names the identically rank-deficient residual branch handled by \cref{lem:singular-pencil}.  The identically split full-rank top chart is not a support-wise noncontained residual after the exact line-image gate is imposed.  As calibration: for $n=512$, $k=256$, $A=384$, one has $t=j=128$, and the global one-parameter cap of case \textup{(a)} is
 \[
         t+(n-j+1)t=128+385\cdot128=49408,
 \]
@@ -1310,7 +1320,7 @@ A CAP25 v13 update can use this insert as follows.
 \item Use \cref{thm:v13-fixeddim,thm:v13-dim2,lem:v13-dim1} to dispose of fixed-dimensional and projective-plane Conjecture-F subcases.  The growing-dimensional primitive incidence problem remains open inside \cref{prob:band}.
 \item Use \cref{thm:v13-first-moment,thm:v13-second-moment,cor:v13-exact-variance,cor:v13-dependency} as a random-pair moment ledger only, never as a worst-case safe-side theorem \textup(\cref{rem:v13-moment-scope}\textup).
 \item Use \cref{prop:v13-hankel,prop:v13-johnson-exchange,prop:v13-anticode} as algebraic and support-combinatorial inputs for exchange-rigidity or spectral routes.
-\item Use \cref{thm:v13-spi} to state the first SPI chart as eliminant-or-residual, with identically rank-deficient pencils and identically split top charts kept as named residual branches, connected to \cref{lem:singular-pencil} and the eliminant certificates of \cref{sec:aperiodic-hankel-certificates}.
+\item Use \cref{thm:v13-spi} to state the first SPI chart as eliminant-or-contained-chart: nonzero pseudo-remainders give finite eliminants, identically rank-deficient pencils remain a named residual branch connected to \cref{lem:singular-pencil}, and identically split full-rank top charts are contained after the exact line-image noncontainment gate.
 \end{enumerate}
 
 % ============================= END V13 BODY =============================
