@@ -1257,7 +1257,7 @@ with $\deg_XR<j$ and $\deg_ZR_m\le(n-j+1)t$ for every $X$-coefficient $R_m(Z)$ o
         t+(n-j+1)t,
 \]
 is a finite eliminant whose root set contains every top-chart slope passing the split test together with every slope of classes \textup{(i)} and \textup{(ii)};
-\item all $R_m$ vanish identically; then every top-chart slope passes the split test.  Moreover, after monic normalization the Cramer locator is a fixed split divisor of $X^n-1$.  In the exact syndrome-pencil application this full-rank top chart is a contained fixed-support chart and contributes no support-wise noncontained exact-$A$ slope through this chart; roots of $c_j$ remain in the rank-drop ledger.
+\item all $R_m$ vanish identically; then every top-chart slope passes the split test, and the chart must be retained as a named residual branch rather than discarded.
 \end{enumerate}
 \end{theorem}
 
@@ -1266,21 +1266,11 @@ Class \textup{(0)} and the trichotomy are immediate from the definitions: each m
 
 For the pseudo-division, dividing the degree-$n$ polynomial $X^n-1$ by the degree-$j$ polynomial $L_Z$ with leading coefficient $c_j(Z)$ performs $\Delta=n-j+1$ elimination steps, each multiplying the running remainder by $c_j(Z)$ once and subtracting a $c_i(Z)$-multiple of a shift of $L_Z$; since every $c_i$ has $Z$-degree at most $t$, each step raises the $Z$-degree of the remainder coefficients by at most $t$, giving $\deg_ZR_m\le\Delta t=(n-j+1)t$ from the degree-$0$ start.
 
-In case \textup{(a)}, let $z$ be a top-chart slope passing the split test.  Substituting $Z=z$, the left-hand side $c_j(z)^\Delta(X^n-1)$ is divisible by $L_z$, and so is $Q(z,X)L_z(X)$; hence $L_z(X)\mid R(z,X)$, and $\deg_XR(z,X)<j=\deg L_z$ forces $R(z,X)=0$, so $R_m(z)=0$ for every $m$, in particular for the chosen nonzero one.  Slopes of classes \textup{(i)} and \textup{(ii)} satisfy $c_j(z)=0$ \textup(at rank drop, all minors vanish, in particular $M_j$\textup).  Hence all these slopes are roots of $c_jR_m$, whose degree is at most $t+(n-j+1)t$.
-
-In case \textup{(b)}, work over $K=F(Z)$.  Since $c_j\not\equiv0$, the monic normalization $\widehat L_Z=L_Z/c_j$ is a degree-$j$ divisor of $X^n-1$ in $K[X]$.  The polynomial $X^n-1=\prod_{h\in H}(X-h)$ is split and squarefree over the constant field $F$, so every monic degree-$j$ divisor over $K$ is the product of a fixed $j$-subset of these linear factors.  Hence $\widehat L_Z=L_T$ for some fixed $T\subset H$, $|T|=j$, and $L_Z=c_jL_T$ in $F[Z,X]$.  The cofactor identity gives
-\[
-        M(Z)(c_0(Z),\ldots,c_j(Z))^{\mathsf T}=0,
-\]
-so, writing $\ell_T$ for the coefficient vector of the monic locator $L_T$,
-\[
-        c_j(Z)M(Z)\ell_T=0.
-\]
-Because $F[Z]$ is a domain and $c_j\not\equiv0$, one has $M(Z)\ell_T=0$.  In the exact syndrome-pencil application $M(Z)=U+ZV$, with $U=H_{j,j}(\operatorname{Syn}(f))$ and $V=H_{j,j}(\operatorname{Syn}(g))$, so $U\ell_T=V\ell_T=0$.  By the support-locator recurrence and the exact line-image map, both line coordinates are explained on $H\setminus T$, and the support-wise noncontainment condition $V\ell_T\ne0$ fails.  Thus the full-rank top chart is contained.  If $c_j(z)=0$ in this branch, then $c_i(z)=c_j(z)\ell_{T,i}=0$ for all $i$, so such slopes lie in the rank-drop ledger.
+In case \textup{(a)}, let $z$ be a top-chart slope passing the split test.  Substituting $Z=z$, the left-hand side $c_j(z)^\Delta(X^n-1)$ is divisible by $L_z$, and so is $Q(z,X)L_z(X)$; hence $L_z(X)\mid R(z,X)$, and $\deg_XR(z,X)<j=\deg L_z$ forces $R(z,X)=0$, so $R_m(z)=0$ for every $m$, in particular for the chosen nonzero one.  Slopes of classes \textup{(i)} and \textup{(ii)} satisfy $c_j(z)=0$ \textup(at rank drop, all minors vanish, in particular $M_j$\textup).  Hence all these slopes are roots of $c_jR_m$, whose degree is at most $t+(n-j+1)t$.  In case \textup{(b)}, substituting any top-chart slope gives $c_j(z)^\Delta(X^n-1)=Q(z,X)L_z(X)$ with $c_j(z)\ne0$, so $L_z$ divides $X^n-1$: the split test is identically passed on the top chart, which is then a genuine residual family.
 \end{proof}
 
 \begin{remark}[relation to the v12 eliminant machinery, and calibration]\label{rem:v13-spi-calibration}
-\Cref{thm:v13-spi} complements the certificate framework of \cref{sec:aperiodic-hankel-certificates}: \cref{thm:aperiodic-affine-eliminant} and \cref{thm:kernel-compressed-affine-eliminant} bound chart contributions \emph{given} a nonzero eliminant, while \cref{thm:v13-spi} \emph{produces} one for every deficiency-one chart with explicit degree, or else names the identically rank-deficient residual branch handled by \cref{lem:singular-pencil}.  The identically split full-rank top chart is not a support-wise noncontained residual after the exact line-image gate is imposed.  As calibration: for $n=512$, $k=256$, $A=384$, one has $t=j=128$, and the global one-parameter cap of case \textup{(a)} is
+\Cref{thm:v13-spi} complements the certificate framework of \cref{sec:aperiodic-hankel-certificates}: \cref{thm:aperiodic-affine-eliminant} and \cref{thm:kernel-compressed-affine-eliminant} bound chart contributions \emph{given} a nonzero eliminant, while \cref{thm:v13-spi} \emph{produces} one for every deficiency-one chart with explicit degree, or else names the residual branch \textup(identically rank-deficient pencils, handled by \cref{lem:singular-pencil}, and identically split top charts\textup).  As calibration: for $n=512$, $k=256$, $A=384$, one has $t=j=128$, and the global one-parameter cap of case \textup{(a)} is
 \[
         t+(n-j+1)t=128+385\cdot128=49408,
 \]
@@ -1320,7 +1310,181 @@ A CAP25 v13 update can use this insert as follows.
 \item Use \cref{thm:v13-fixeddim,thm:v13-dim2,lem:v13-dim1} to dispose of fixed-dimensional and projective-plane Conjecture-F subcases.  The growing-dimensional primitive incidence problem remains open inside \cref{prob:band}.
 \item Use \cref{thm:v13-first-moment,thm:v13-second-moment,cor:v13-exact-variance,cor:v13-dependency} as a random-pair moment ledger only, never as a worst-case safe-side theorem \textup(\cref{rem:v13-moment-scope}\textup).
 \item Use \cref{prop:v13-hankel,prop:v13-johnson-exchange,prop:v13-anticode} as algebraic and support-combinatorial inputs for exchange-rigidity or spectral routes.
-\item Use \cref{thm:v13-spi} to state the first SPI chart as eliminant-or-contained-chart: nonzero pseudo-remainders give finite eliminants, identically rank-deficient pencils remain a named residual branch connected to \cref{lem:singular-pencil}, and identically split full-rank top charts are contained after the exact line-image noncontainment gate.
+\item Use \cref{thm:v13-spi} to state the first SPI chart as eliminant-or-residual, with identically rank-deficient pencils and identically split top charts kept as named residual branches, connected to \cref{lem:singular-pencil} and the eliminant certificates of \cref{sec:aperiodic-hankel-certificates}.
 \end{enumerate}
+
+% --------------------------------------------------------------------
+% Identity-scale frontier section (strictly supersedes the c=2 proposal)
+% --------------------------------------------------------------------
+
+% ======================================================================
+% CAP25 v13 identity-scale frontier section.
+% Integrated into this single v13 experimental body.  It supersedes the
+% deleted standalone cap25_v13_frontier_addendum.tex: the terminal
+% graded-prefix scale is the identity scale c=1, not c=2, unless one
+% deliberately excludes the identity prefix floor.
+% ======================================================================
+\providecommand{\B}{\mathbb B}
+\providecommand{\F}{\mathbb F}
+\providecommand{\Hb}{H_{\mathrm b}}
+\providecommand{\Lst}{\mathrm{Lst}}
+\providecommand{\emca}{\varepsilon_{\mathrm{mca}}}
+\providecommand{\ceil}[1]{\left\lceil #1\right\rceil}
+\providecommand{\floor}[1]{\left\lfloor #1\right\rfloor}
+
+\section{Frontier programme after the identity-scale check}\label{sec:v13f1-frontier}
+
+The proposed terminal-scale addendum correctly identifies a much better unsafe edge than the old optimized rows of \cref{rem:exact-frontier}; however, the route does not actually stop at $c=2$.  The proof of the graded-prefix floor also runs at the identity scale $c=1$.  This gives a strictly better finite certificate in all four deployed rate-$\tfrac12$ rows.  Thus the phrase ``terminal scale'' should mean the identity prefix floor unless the identity map is intentionally excluded from the route.
+
+\subsection{The identity prefix floor}
+
+\begin{lemma}[identity-scale prefix floor]\label{lem:v13f1-identity-prefix-floor}
+Let $\B\subseteq\F$, let $D\subseteq\B$ have $|D|=n$, and let $1\le K\le n$.  For every integer $m$ with $K\le m\le n$, put $w=m-K$.  Then there is a $\B$-valued received word $U:D\to\B$ such that
+\[
+        \bigl|\Lst(\RS[\F,D,K],1-m/n,U)\bigr|
+        \ge
+        \left\lceil {\binom n m\over |\B|^{\,w}}\right\rceil .
+\]
+Consequently the graded-prefix route of \cref{prop:graded-prefix-floor} extends to the identity scale $c=1$.
+\end{lemma}
+
+\begin{proof}
+For each $m$-subset $M\subseteq D$, write
+\[
+        \Lambda_M(X)=\prod_{b\in M}(X-b)
+        =X^m+\sum_{j=1}^{m}(-1)^j e_j(M)X^{m-j}.
+\]
+For $z=(z_1,\ldots,z_w)\in\B^w$, define
+\[
+        U_z:=\Bigl(X^m+\sum_{j=1}^{w}z_jX^{m-j}\Bigr)\Big|_D.
+\]
+The map $M\mapsto((-1)^je_j(M))_{1\le j\le w}$ has codomain $\B^w$, so one fiber contains at least $\binom nm/|\B|^w$ subsets.  Fix such a prefix value $z^*$, and for each $M$ in the fiber put
+\[
+        c_M:=U_{z^*}-\Lambda_M|_D
+        =-\sum_{j=w+1}^{m}(-1)^je_j(M)X^{m-j}\Big|_D.
+\]
+Since $m-w-1=K-1$, the word $c_M$ is a codeword of $\RS[\F,D,K]$.  On the $m$ points of $M$, the locator vanishes, so $c_M$ agrees with $U_{z^*}$ on at least $m$ positions.
+
+It remains only to check injectivity.  If $c_M=c_{M'}$, then the difference of the two displayed polynomials has degree at most $K-1<n$ and vanishes on all points of $D$, hence is the zero polynomial.  Therefore the coefficients $e_j(M)$ and $e_j(M')$ agree for all $j>w$; the prefix-fiber condition gives agreement for $j\le w$.  The two monic locator polynomials are equal, and hence $M=M'$.
+\end{proof}
+
+\subsection{Exact deployed certificates at the true terminal scale}
+
+Throughout this subsection $n=2^{21}$, $k=2^{20}$.  For the KoalaBear row, $p=2^{31}-2^{24}+1$ and $q=p^6$; for the Mersenne-31 line-round circle row, $p'=2^{31}-1$ and $q=(p')^4$.  The MCA rows use the floor at $K=k+1$ and then the deep-point conversion to the dimension-$k$ code, exactly as in \cref{cor:widened-deployed,rem:exact-frontier}; the list rows use $K=k$.
+
+\begin{proposition}[identity-scale frontier, exact]\label{prop:v13f1-identity-frontier}
+The exact identity-scale prefix-floor certificates are:
+\begin{center}\footnotesize
+\begin{tabular}{@{}lllllll@{}}
+\toprule
+row / challenge & $c$ & $m$ & $w$ & $\Delta=m-k$ & certified unsafe range & margins (bits)\\
+\midrule
+KoalaBear, MCA & $1$ & $1116043$ & $67466$ & $67467$ & $\delta\in[\,\tfrac{981109}{2097152},\tfrac12)=[0.4678292\ldots,\tfrac12)$ & $+25.7\ /\ -5.5$\\
+KoalaBear, list & $1$ & $1116046$ & $67470$ & $67470$ & $\delta\in[\,\tfrac{490553}{1048576},1-\rho)=[0.4678278\ldots,1-\rho)$ & $+9.2\ /\ -22.0$\\
+Mersenne-31 line round, MCA & $1$ & $1116021$ & $67444$ & $67445$ & $\delta\in[\,\tfrac{981131}{2097152},\tfrac12)=[0.4678397\ldots,\tfrac12)$ & $+10.3\ /\ -20.9$\\
+Mersenne-31 line round, list & $1$ & $1116022$ & $67446$ & $67446$ & $\delta\in[\,\tfrac{490565}{1048576},1-\rho)=[0.4678392\ldots,1-\rho)$ & $+28.1\ /\ -3.1$\\
+\bottomrule
+\end{tabular}
+\end{center}
+Each printed $m$ passes by exact integer comparison, and $m+1$ fails by exact integer comparison.  These four edges strictly improve the $c=2$ edges
+\[
+\tfrac{490557}{1048576},\quad
+\tfrac{245277}{524288},\quad
+\tfrac{490567}{1048576},\quad
+\tfrac{245283}{524288}
+\]
+from the proposed terminal-scale scan, and therefore also supersede the older $c=16/32$ values in \cref{rem:exact-frontier,tab:scanner2}.
+\end{proposition}
+
+\begin{proof}
+The construction is \cref{lem:v13f1-identity-prefix-floor}.  For the list rows, the displayed list floor directly exceeds the target list budget.  For the MCA rows, apply the floor with $K=k+1$ and use the same deep-point conversion as in \cref{cor:widened-deployed}: the list in $\RS[\F,D,k+1]$ has size exceeding $q/k+1$, and since $m\ge k+1$ the integer admissibility condition $n-m\le n-k-1$ holds.  Thus \cref{thm:A}, \cref{fact:chain}, and \cref{lem:mca-monotone} give the printed MCA-unsafe intervals.
+
+The four certified comparisons are, respectively,
+\[
+\binom n{1116043}\,k>p^{67466}(p^6+k),\quad
+\binom n{1116046}\,2^{128}>p^{67470}p^6,
+\]
+\[
+\binom n{1116021}\,k>(p')^{67444}((p')^4+k),\quad
+\binom n{1116022}\,2^{100}>(p')^{67446}(p')^4,
+\]
+and in each case the same inequality with $m$ replaced by $m+1$ and $w$ by $w+1$ is false.  The comparisons were verified as integer inequalities; the bit margins in the table are only orientation values.  The edge fractions are $1-m/n$.  The strict improvement over $c=2$ is immediate from the displayed fractions.
+\end{proof}
+
+\begin{corollary}[superseded deployed sandwich edges]\label{cor:v13f1-sandwich-edges}
+In \cref{thm:sandwich2}, the upper edge for the KoalaBear MCA row improves to
+\[
+        \delta^*_C(2^{-128})\le {981109\over2097152}=0.4678292\ldots,
+\]
+so the imported sandwich becomes
+\[
+        \delta^*_C(2^{-128})\in\left[\,{1\over4},\,{981109\over2097152}\,\right]
+\]
+with the same lower edge as before.  The corresponding list and Mersenne-31 line-round upper edges are the three remaining fractions in \cref{prop:v13f1-identity-frontier}.
+\end{corollary}
+
+\begin{proof}
+Substitute \cref{prop:v13f1-identity-frontier} into the unsafe side of \cref{thm:sandwich2}; the safe-side inputs are unchanged.
+\end{proof}
+
+\subsection{Consequences for the frontier conjecture}
+
+\begin{definition}[frontier function, unchanged]\label{def:v13f1-gstar}
+For $\rho\in(0,1)$ and $\beta>0$, put
+\[
+        g^*(\rho,\beta)=\sup\{g\in(0,1-\rho]:\Hb(\rho+g)\ge \beta g\}.
+\]
+For KoalaBear, $\beta=\log_2(2^{31}-2^{24}+1)=30.988685\ldots$ and
+\[
+1-\rho-g^*(\rho,\beta)=0.4678266,\ 0.7225056,\ 0.8557947,\ 0.9251114
+\]
+for $\rho=1/2,1/4,1/8,1/16$.  For Mersenne-31, the corresponding values are
+\[
+0.4678383,\ 0.7225161,\ 0.8558023,\ 0.9251165.
+\]
+At rate $1/2$, the identity-scale deployed gaps are within $2.7\cdot10^{-6}$ of the KoalaBear MCA ceiling, $1.2\cdot10^{-6}$ of the KoalaBear list ceiling, $1.5\cdot10^{-6}$ of the Mersenne-31 MCA ceiling, and $1.0\cdot10^{-6}$ of the Mersenne-31 list ceiling.  Larger-block extrapolations from floating-point scans should be recorded as numerical evidence unless separately certified by exact integer comparisons.
+\end{definition}
+
+\begin{problem}[frontier conjecture, asymptotic and finite forms]\label{prob:v13f1-frontier}
+Prove or refute the asymptotic safe-side match
+\[
+        \delta^*_C(\varepsilon^*)=1-\rho-g^*(\rho,\log_2|\B|)+o(1)
+\]
+for smooth multiplicative and circle line-round rows at the deployed challenge targets.  The strongest finite deployed version is not literally equivalent to the asymptotic statement: it predicts that the first safe agreement is one more than the best exact unsafe agreement printed in \cref{prop:v13f1-identity-frontier}.  Thus the predicted adjacent pairs are
+\[
+\begin{array}{c|cc}
+\text{row} & \text{proved unsafe agreement }a_0 & \text{conjectured first safe agreement }a_0+1\\ \hline
+\text{KoalaBear MCA} & 1116043 & 1116044\\
+\text{KoalaBear list} & 1116046 & 1116047\\
+\text{Mersenne-31 MCA} & 1116021 & 1116022\\
+\text{Mersenne-31 list} & 1116022 & 1116023
+\end{array}
+\]
+with the real closed-ball endpoint convention of \cref{cor:v13-endpoint}.
+\end{problem}
+
+\begin{remark}[closure mechanisms after $c=1$]\label{rem:v13f1-closure}
+The two ``free'' mechanisms in the proposed addendum should be kept, but with the endpoint changed.  Subgroup-invariant subset selection at a nontrivial scale is absorbed into the composite scale exactly as before; iterating this can only move toward the identity prefix floor, where no nontrivial quotient remains.  The $c=2$, $\sigma=1$ planted hybrid is also dominated by the identity row at the deployed parameters: its best net agreement is at most the $c=2$ agreement minus one, whereas \cref{prop:v13f1-identity-frontier} improves the $c=2$ agreement by $5,2,3,2$ steps in the four rows.  Thus planting remains useful as a structural lower construction, but it is not the deployed frontier certificate once identity prefixes are allowed.
+\end{remark}
+
+\subsection{A repaired conditional closing statement}
+
+\begin{proposition}[what the two named inputs actually close]\label{prop:v13f1-closing}
+Let $a_0$ be one of the four identity-scale unsafe agreements in \cref{prob:v13f1-frontier}.  An exact finite one-step theorem at the deployed size follows from the exact upper certificate
+\[
+        U(a_0+1)\le B_*<L(a_0),
+\]
+where $L$ is the lower staircase supplied by \cref{prop:v13f1-identity-frontier}, $U$ is the complete upper ledger for the same row, and $B_*$ is the challenge budget.  Then \cref{prop:onestep}, equivalently \cref{thm:v13-staircase,thm:v13-corridor}, gives $a_*=a_0+1$.
+
+By contrast, quotient-fiber equidistribution only up to a factor $\operatorname{poly}(n)$, together with the aperiodic band input \cref{prob:band}, is enough for the asymptotic frontier away from an $O(\log n)$ agreement reserve, but it does not by itself prove the finite adjacent pair.  At the deployed size the adjacent fail margins are only $5.5$, $22.0$, $20.9$, and $3.1$ bits in the four identity rows; an unspecified polynomial factor can exceed those margins.
+\end{proposition}
+
+\begin{proof}
+The first paragraph is exactly the one-step staircase compiler.  For the second paragraph, a factor $n^C$ costs $C\log_2 n=21C$ bits at $n=2^{21}$, while the printed adjacent margins are constants.  Therefore a polynomial-loss quotient input cannot be read as a finite adjacent upper certificate unless its degree and all constants are included and fit inside the printed margin.  Asymptotically, however, if one asks for agreement at least $a_0+R$ with $R\gg\log n$, the entropy--subfield inequality is separated from the frontier by $\Omega(R)$ bits along the same prefix ledger, and a fixed polynomial factor is absorbed.  This proves the stated distinction between finite one-step closing and asymptotic closing.
+\end{proof}
+
+\begin{remark}[propagation checklist]\label{rem:v13f1-propagation}
+If this identity-scale section is promoted into the main Paper D source, propagate the four new fractions to the informal theorem, \cref{rem:exact-frontier}, \cref{thm:sandwich2}, \cref{tab:scanner2}, and the finite-certificate table.  The old $c=16/32$ and proposed $c=2$ rows can remain as cross-checks or historical remarks, but they should no longer be called the optimized frontier.
+\end{remark}
 
 % ============================= END V13 BODY =============================

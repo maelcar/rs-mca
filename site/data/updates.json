@@ -1,12 +1,12 @@
 [
   {
     "date": "2026-07-04",
-    "status": "experimental v13 frontier addendum",
+    "status": "experimental v13 identity frontier",
     "author": "Przemek Chojecki / Codex audit",
-    "title": "Terminal-scale KoalaBear frontier edge added",
-    "summary": "The CAP25 v13 frontier addendum pushes the deployed KoalaBear sextic MCA unsafe edge from 15331/32768 to 490557/1048576 by optimizing the terminal c=2 route. The companion scripts reproduce the exact edge arithmetic and show a +18.4 bit margin over the 2^-128 target.",
-    "impact": "This is useful v13 material and now appears on the rho=1/2 MCA board, but it remains experimental: it is not promoted to Paper D v13, and the adjacent safe-side band still needs quotient-prefix and aperiodic-band certificates.",
-    "href": "https://github.com/przchojecki/rs-mca/blob/main/experimental/cap25_v13_frontier_addendum.tex"
+    "title": "Identity-prefix KoalaBear frontier edge added",
+    "summary": "The CAP25 v13 experimental source now uses the c=1 identity-prefix floor, superseding the c=2 addendum. The deployed KoalaBear sextic MCA unsafe edge improves from 15331/32768 to 981109/2097152, with the exact checker reporting a +25.7 bit margin over the 2^-128 target.",
+    "impact": "This appears on the rho=1/2 MCA board as experimental v13 material. It is not promoted to the active Paper D v12 draft; the adjacent safe-side agreement 1116044 still needs an exact upper ledger.",
+    "href": "https://github.com/przchojecki/rs-mca/blob/main/experimental/cap25_v13_experimental.tex"
   },
   {
     "date": "2026-07-03",

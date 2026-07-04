@@ -30,32 +30,39 @@ Keep entries concise and link to the relevant files.
 
 ## Entries
 
-### 2026-07-04 - CAP25 v13 frontier addendum and terminal KoalaBear edge
+### 2026-07-04 - CAP25 v13 identity-prefix frontier merge
 
 - **Agent/model:** Codex reviewing and integrating a user-added experimental
-  addendum.
-- **Files added or changed:** `experimental/cap25_v13_frontier_addendum.tex`;
+  addendum and exact checker.
+- **Files added or changed:** `experimental/cap25_v13_experimental.tex`;
   `experimental/scripts/towards v13/collision1b.py`;
   `experimental/scripts/towards v13/collision2.py`;
   `experimental/scripts/towards v13/frontier2.py`;
-  `experimental/scripts/towards v13/frontier3.py`; `site/data/rate-leaderboards.json`;
-  `site/data/updates.json`; `site/index.html`; `experimental/agents-log.md`.
+  `experimental/scripts/towards v13/frontier3.py`;
+  `experimental/scripts/towards v13/cap25_v13_frontier_identity_exact_checks.py`;
+  `site/data/rate-leaderboards.json`; `site/data/updates.json`;
+  `site/index.html`; `experimental/agents-log.md`.  The standalone
+  `experimental/cap25_v13_frontier_addendum.tex` and temporary
+  `experimental/cap25_v13_body_merged_strict_plus_identity_frontier.tex` files
+  were removed so the v13 experimental source is single-file again.
 - **Status:** EXPERIMENTAL / CONDITIONAL / AUDIT.
-- **What is being added:** A frontier addendum for a possible CAP25 v13 route
-  that optimizes the deployed KoalaBear sextic terminal-scale `c=2` construction.
-  The new experimental MCA edge is
-  `delta = 490557/1048576 ~= 0.46783161`, improving the earlier deployed edge
-  `15331/32768 ~= 0.46786499`; the scripts reproduce the edge arithmetic and
-  report a `+18.4` bit margin against the `2^-128` target.
+- **What is being added:** The v13 experimental source now includes the
+  identity-scale prefix floor, which supersedes the proposed `c=2` terminal
+  addendum unless the identity map is intentionally excluded.  The new
+  experimental KoalaBear MCA edge is
+  `delta = 981109/2097152 ~= 0.4678292`, improving both the `c=2` edge
+  `490557/1048576` and the older deployed edge `15331/32768`; the exact checker
+  verifies the c=1 rows, the c=2 rows, and the older c=16/32 rows by integer
+  inequalities.
 - **How it is useful:** This sharpens the deployed `delta^*` upper-side
   frontier and identifies the next threshold task as an adjacent safe-side
-  certificate: explicit quotient-prefix and aperiodic-band control at the next
-  agreement step.  It is now shown on the site as a `rho=1/2` experimental MCA
-  leaderboard row.
-- **What to do next:** Before promotion to Paper D, replace floating-margin
-  verifier output with exact certificate objects, make the finite deployed
-  constants in the conditional closing theorem explicit, and audit the
-  quotient-prefix/aperiodic-band assumptions separately.
+  certificate at agreement `1116044`.  It is now shown on the site as a
+  `rho=1/2` experimental MCA leaderboard row, while the active Paper D v12 draft
+  remains unchanged.
+- **What to do next:** Before promotion to Paper D, build the exact upper
+  ledger for the adjacent safe-side step, keep polynomial-loss quotient
+  equidistribution out of finite one-step claims unless constants fit inside
+  the printed bit margin, and audit the aperiodic-band input separately.
 
 ### 2026-07-04 - PR 262-269 audit, sigma_C, and L1 frontier packets
 

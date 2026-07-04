@@ -1598,12 +1598,12 @@
     const fallbackUpdatesRaw = [
     {
         "date": "2026-07-04",
-        "status": "experimental v13 frontier addendum",
+        "status": "experimental v13 identity frontier",
         "author": "Przemek Chojecki / Codex audit",
-        "title": "Terminal-scale KoalaBear frontier edge added",
-        "summary": "The CAP25 v13 frontier addendum pushes the deployed KoalaBear sextic MCA unsafe edge from 15331/32768 to 490557/1048576 by optimizing the terminal c=2 route. The companion scripts reproduce the exact edge arithmetic and show a +18.4 bit margin over the 2^-128 target.",
-        "impact": "This is useful v13 material and now appears on the rho=1/2 MCA board, but it remains experimental: it is not promoted to Paper D v13, and the adjacent safe-side band still needs quotient-prefix and aperiodic-band certificates.",
-        "href": "https://github.com/przchojecki/rs-mca/blob/main/experimental/cap25_v13_frontier_addendum.tex"
+        "title": "Identity-prefix KoalaBear frontier edge added",
+        "summary": "The CAP25 v13 experimental source now uses the c=1 identity-prefix floor, superseding the c=2 addendum. The deployed KoalaBear sextic MCA unsafe edge improves from 15331/32768 to 981109/2097152, with the exact checker reporting a +25.7 bit margin over the 2^-128 target.",
+        "impact": "This appears on the rho=1/2 MCA board as experimental v13 material. It is not promoted to the active Paper D v12 draft; the adjacent safe-side agreement 1116044 still needs an exact upper ledger.",
+        "href": "https://github.com/przchojecki/rs-mca/blob/main/experimental/cap25_v13_experimental.tex"
     },
     {
         "date": "2026-07-03",
@@ -2158,8 +2158,8 @@
                     "authors": "Paper D authors / Codex audit"
                 },
                 {
-                    "id": "cap25-v13-frontier-kb-c2-mca-edge",
-                    "title": "CAP25 v13 frontier addendum KoalaBear terminal-scale edge",
+                    "id": "cap25-v13-identity-kb-mca-edge",
+                    "title": "CAP25 v13 experimental KoalaBear identity-prefix edge",
                     "rho": "1/2",
                     "track": "mca",
                     "trackLabel": "support-wise MCA",
@@ -2170,18 +2170,18 @@
                     "fieldSizeLog2": 185.93,
                     "domainKind": "multiplicative-subgroup",
                     "smoothPowerOfTwo": true,
-                    "agreementA": "1116038",
-                    "sigma": "67462",
-                    "deltaExact": "490557/1048576",
-                    "deltaApprox": 0.46783161,
-                    "etaExact": "33731/1048576",
-                    "etaApprox": 0.03216839,
-                    "qGen": "p",
-                    "qLine": "p^6",
+                    "agreementA": "1116043",
+                    "sigma": "67467",
+                    "deltaExact": "981109/2097152",
+                    "deltaApprox": 0.4678292,
+                    "etaExact": "67467/2097152",
+                    "etaApprox": 0.03217077,
+                    "qGen": "2130706433",
+                    "qLine": "2130706433^6",
                     "qChal": "protocol-dependent",
                     "bound": "epsilon_mca > 2^-128",
-                    "failureMarginBits": 18.4,
-                    "marginLabel": "+18.4 bits",
+                    "failureMarginBits": 25.7,
+                    "marginLabel": "+25.7 bits",
                     "prizeBox": {
                         "rate": true,
                         "smoothDomain": true,
@@ -2193,16 +2193,16 @@
                         "conditionalImport": true,
                         "rhoNIntegral": true,
                         "powerOfTwoQuotient": true,
-                        "quotientDivisor": "terminal c=2 scale in the deployed KoalaBear subgroup"
+                        "quotientDivisor": "identity-prefix scale c=1 over the deployed KoalaBear subgroup"
                     },
-                    "status": "EXPERIMENTAL_V13_FRONTIER_ADDENDUM",
-                    "statusLabel": "experimental v13 addendum",
-                    "source": "CAP25 v13 frontier addendum",
-                    "sourceHref": "https://github.com/przchojecki/rs-mca/blob/main/experimental/cap25_v13_frontier_addendum.tex",
+                    "status": "EXPERIMENTAL_V13_IDENTITY_FRONTIER",
+                    "statusLabel": "experimental v13 identity frontier",
+                    "source": "CAP25 v13 experimental identity frontier",
+                    "sourceHref": "https://github.com/przchojecki/rs-mca/blob/main/experimental/cap25_v13_experimental.tex",
                     "nonClaims": [
-                        "Experimental addendum only; not promoted to Paper D v13 or to the active Paper D v12 submission draft.",
-                        "This narrows the deployed KoalaBear unsafe edge from 15331/32768 to 490557/1048576, but it does not close the safe-side threshold band.",
-                        "The adjacent safe-side target still needs explicit quotient-prefix and aperiodic-band certificates; the companion scripts are frontier calculators, not final certificate emitters."
+                        "Experimental v13 source only; not promoted to the active Paper D v12 submission draft.",
+                        "This supersedes the c=2 addendum edge 490557/1048576 and narrows the deployed KoalaBear unsafe edge from 15331/32768 to 981109/2097152, but it does not close the safe-side threshold band.",
+                        "The conjectured adjacent safe agreement is 1116044 and still needs an exact upper ledger; the companion checker verifies the displayed lower edge, not the safe side."
                     ],
                     "authors": "Przemek Chojecki / Codex audit"
                 },
