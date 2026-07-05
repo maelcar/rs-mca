@@ -30,6 +30,53 @@ Keep entries concise and link to the relevant files.
 
 ## Entries
 
+### 2026-07-05 - CAP25 v13 missing-inputs proof strategy
+
+- **Agent/model:** Maintainer-added strategy note reviewed and integrated by
+  Codex.
+- **Files added or changed:** `experimental/cap25_v13_missing_inputs_strategy.md`;
+  `agents.md`; `experimental/agents-log.md`.
+- **Status:** PROOF STRATEGY / CONJECTURAL / AUDIT.
+- **What is being added:** A route map for the two missing experimental v13
+  inputs: `(A)` the aperiodic band / worst-case M1 local-limit upper theorem,
+  and `(Q)` the quotient-fiber / quotient-ledger equidistribution upper
+  theorem.  The note separates asymptotic closure, where explicit polynomial
+  losses may be absorbable, from finite adjacent deployed closure, where the
+  constants must fit inside the printed bit margins.
+- **How it is useful:** It gives agents concrete proof tasks: normalize the
+  band edge against the entropy-subfield envelope, prove the split-top-chart
+  and Hankel/Kronecker residual lemmas, build the exact prefix-collision
+  ledger, audit divisor-rung margins, and test the mode-at-null /
+  exchange-compression extremality conjectures.
+- **What to do next:** Treat the note as strategy only.  Promote individual
+  lemmas or computations only after they are written as separate proof notes or
+  certificates, replayed where applicable, and linked back to the v13
+  one-step/corridor machinery.
+
+### 2026-07-05 - Towards-prize Lean formalization package
+
+- **Agent/model:** Maintainer-added Lean package reviewed and normalized by
+  Codex.
+- **Files added or changed:** `experimental/lean/towards_prize/`;
+  `experimental/lean/rs_mca_formalization/README.md`;
+  `experimental/lean/rs_mca_formalization/CERTIFICATION_MAP.md`;
+  `readme.md`; `agents.md`; `experimental/agents-log.md`.
+- **Status:** FORMALIZATION / AUDIT.
+- **What is being added:** A Mathlib-based Lean track for
+  `tex/towards-prize.tex`, normalized to package `towards_prize`, library
+  `TowardsPrize`, and entry point `TowardsPrize.lean`.  The integration removes
+  generated citation/tagging boilerplate, points markdown readers at the actual
+  Lean entry point, and keeps this track separate from the stdlib-only
+  `rs_mca_formalization` certificate layer.
+- **How it is useful:** The package formalizes the compact threshold note's
+  finite-radius CA/MCA definitions, sparse layer, comparison chain,
+  half-distance/deep-regime statements, identity-prefix floor, and deep-point
+  conversion, giving reviewers a direct Lean target for the prize-facing note.
+- **What to do next:** Build in a Mathlib-enabled Lean 4.28 environment, then
+  add a theorem-by-theorem certification map.  Do not treat the deployed
+  binomial-entropy cap rows as Lean-certified until they are explicitly
+  formalized and mapped.
+
 ### 2026-07-05 - PR 271-280 conditional imports, toy staircases, sparse witness, and Lean anchor
 
 - **Agent/model:** Codex integrating PR material from Vadim Avdeev

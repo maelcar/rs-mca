@@ -202,6 +202,38 @@ This final-resolution spine does not override the current Paper D v12 audit
 priority: promotion of any v13 frontier packet requires the v12/towards-prize
 audit gates below to be clean or explicitly waived by a maintainer.
 
+### Missing inputs strategy: `(A)` and `(Q)`
+
+The proof-program guide
+`experimental/cap25_v13_missing_inputs_strategy.md` is the current agent route
+map for the two missing v13 inputs:
+
+```text
+(A) aperiodic band / worst-case M1 local-limit upper theorem
+(Q) quotient-fiber / quotient-ledger equidistribution upper theorem
+```
+
+Use it as a strategy document, not as a theorem.  It makes three points agents
+should preserve:
+
+1. The asymptotic frontier can absorb explicitly bounded polynomial losses once
+   the agreement reserve is larger than `O(log n)`.
+2. The finite deployed adjacent step cannot absorb an unspecified `poly(n)`
+   factor; constants must fit inside the printed bit margins.
+3. Both inputs should be treated as split-locator flatness problems, with
+   quotient/graded strata paid separately and residual aperiodic branches named
+   rather than hidden in point estimates.
+
+Near-term useful tasks from that note are:
+
+- normalize the left edge of `prob:band` against the entropy-subfield envelope;
+- prove or refute the split-top-chart collapse and Kronecker/Berlekamp-Massey
+  singular-bucket lemmas;
+- build the exact prefix-collision ledger for `(Q)`;
+- run the rung-margin audit for the four deployed v13 adjacent rows;
+- test the mode-at-null / exchange-compression extremality conjectures on small
+  rows.
+
 ## Current priority: audit Paper D v12 and `towards-prize.tex`
 
 The main focus is now **auditing Paper D v12**:
@@ -747,6 +779,15 @@ circle-code, and ECFFT/rational-map skeletons.  This is a good task for
 Claude Code Opus 4.8 or Claude Fable 5 style agents: keep changes modular,
 remove one `sorry` at a time, and update the package README/agents log after
 each completed theorem.
+
+For the compact prize-facing theorem note, use the separate Mathlib package
+`experimental/lean/towards_prize/`.  Its entry point is `TowardsPrize.lean` and
+it targets `tex/towards-prize.tex`: MCA/CA definitions, sparse layer,
+half-distance/deep-regime statements, identity-prefix floor, and deep-point
+conversion.  Before citing any towards-prize result as Lean-certified, run the
+package in a Mathlib-enabled Lean 4.28 environment and add a theorem-by-theorem
+map; the deployed binomial-entropy cap rows remain outside this package unless
+explicitly formalized.
 
 ## Success criteria
 

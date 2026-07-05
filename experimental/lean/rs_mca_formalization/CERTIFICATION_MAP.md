@@ -9,11 +9,10 @@ The Lean package deliberately proves only `Nat`, `Int`, and normalized `Rat`
 ledger facts.  Reed-Solomon, finite-field, polynomial, and protocol statements
 remain cited proofs, verifier outputs, or typed targets.
 
-Current parallel track: `przchojecki` is also working with Aristotle from
-Harmonic on a fuller Lean formalization.  That material is not yet included in
-this directory; when it lands, it should be added here as a separate
-formalization track with its own build instructions, theorem map, and proof
-status labels.
+Parallel track: the Mathlib-based formalization of the compact prize-facing
+note now lives at `experimental/lean/towards_prize/`.  That package has its own
+build instructions and should receive its own theorem map before any claim is
+called Lean-certified by the broader project.
 
 Build command:
 
