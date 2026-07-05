@@ -57,10 +57,12 @@ Keep entries concise and link to the relevant files.
   has been superseded, and keep constants/status labels explicit when moving
   material into Paper D or `towards-prize`.
 
-### 2026-07-05 - CAP25 v13 auxiliary script batch for missing inputs
+### 2026-07-05 - CAP25 v13/v14 auxiliary script batch for missing inputs
 
 - **Agent/model:** Maintainer-added scripts reviewed by Codex.
-- **Files added or changed:** `experimental/scripts/towards v13/gamma_census.py`;
+- **Files added or changed:** `experimental/scripts/towards v13/cap25_v14_moved_frontier_checks.py`;
+  `experimental/scripts/towards v13/collision_margins.py`;
+  `experimental/scripts/towards v13/gamma_census.py`;
   `experimental/scripts/towards v13/lattice_check.py`;
   `experimental/scripts/towards v13/lattice_check2.py`;
   `experimental/scripts/towards v13/prize_packing.py`;
@@ -69,22 +71,25 @@ Keep entries concise and link to the relevant files.
   `experimental/scripts/towards v13/r1_model.py`;
   `experimental/agents-log.md`.
 - **Status:** EXPERIMENTAL / AUDIT.
-- **What is being added:** A small batch of auxiliary v13 scripts supporting
+- **What is being added:** A small batch of auxiliary v13/v14 scripts supporting
   the missing-inputs strategy: group-algebra collision census calibration,
   toy lattice dictionary checks, packing-bound negative calibration,
-  twisted-smooth identity checks, quotient-unification checks, and rank-one
-  census model margins.
+  twisted-smooth identity checks, quotient-unification checks, rank-one
+  census model margins, moved-frontier integer checks, and collision-margin
+  head/frontier rung calibration.
 - **How it is useful:** These scripts help agents decide which proof routes are
   plausible for the `(A)` aperiodic local-limit input and `(Q)` quotient-fiber
   equidistribution input.  The cleanly running scripts show that naive packing
-  and triangle-inequality character expansion are far too weak, while the
-  rank-one model is far below the adjacent deployed budget.
+  and triangle-inequality character expansion are far too weak, the rank-one
+  model is far below the adjacent deployed budget, and the proposed moved MCA
+  frontier checks reduce to exact integer comparisons for the deployed rows.
 - **What to do next:** Keep this batch experimental until an accompanying note
   or paper section states the exact claims.  The `numpy`-dependent scripts need
   either dependency documentation or pure-Python fallbacks.  `q_unify_check.py`
   currently verifies one toy regime only partially (`m=6,w=3` reports `54/60`),
   so its prescribed-prefix divisor identity should be repaired or restricted
-  before being cited as a verifier.
+  before being cited as a verifier.  The v14 moved-frontier checker confirms the
+  lower-floor cutoff, not a complete adjacent safe upper ledger.
 
 ### 2026-07-05 - CAP25 v13 missing-inputs proof strategy
 
