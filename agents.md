@@ -808,6 +808,62 @@ Attach script, seed, exact command, or symbolic certificate.
 8. Produce a JSON schema for Paper C reserve certificates.
 9. Extend the Lean formalization packages under `experimental/lean/`.
 
+### Lean blueprint workflow
+
+Use `experimental/lean/lean-blueprint.json` as the current formalization
+blueprint for `experimental/cap25_cap_v13_raw.tex`.  It is a dependency graph:
+each node records the TeX label, statement kind, module bucket, `depends_on`,
+reverse `implies`, and a `formalization` slot.  The important final targets are:
+
+```text
+target:Q_prefix_flatness
+target:BC_base_field_split_pencil
+target:SP_primitive_shift_pair_control
+target:finite_adjacent_deployed_ledgers
+target:RS_MCA_full_resolution
+```
+
+Do not fill a `lean_file` / `lean_name` slot by guesswork.  Fill or update it
+only when an actual Lean declaration exists under `experimental/lean/` and the
+statement has been matched to the blueprint node.
+
+After adding or renaming Lean declarations, regenerate the mapping with:
+
+```bash
+python3 experimental/lean/update-blueprint-map.py
+```
+
+This script is a source scanner, not a proof checker.  It scans Lean
+declarations, applies exact TeX-label matches, curated aliases, and conservative
+name heuristics, then updates:
+
+```text
+experimental/lean/lean-blueprint.json
+experimental/lean/lean-inventory.json
+experimental/lean/lean-blueprint-report.md
+```
+
+Interpret the generated fields carefully:
+
+```text
+mapping_confidence  exact_label_match / curated_alias / name_heuristic / mixed
+audit_status        whether the match still needs statement audit or proof work
+related_lean        all Lean declarations supporting a split blueprint node
+statement_status    source-scan status; not a Lake build result
+```
+
+`lean-inventory.json` is the reverse map: every Lean declaration and which
+blueprint nodes it currently maps to.  `lean-blueprint-report.md` is the human
+coverage report, including mapped/unmapped counts, Q/BC/SP dependency closures,
+nodes with visible `sorry`, and high-priority unmapped nodes.  Use the report to
+choose the next formalization target.
+
+If you complete a Lean theorem, run the mapper, inspect the diff in
+`lean-blueprint.json`, update the relevant package README or correspondence map
+when appropriate, and add an entry to `experimental/agents-log.md`.  Only call a
+result Lean-certified after the relevant Lake package has actually been built
+and the theorem statement has been compared against the TeX node.
+
 The highest-priority formalization task is now to make
 `experimental/lean/cs25_cap_v12/` a complete Lean formalization of Paper D
 v12.  The package already has a substantial proved core and a named skeleton

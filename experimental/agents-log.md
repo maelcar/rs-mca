@@ -30,6 +30,33 @@ Keep entries concise and link to the relevant files.
 
 ## Entries
 
+### 2026-07-06 - Lean-to-blueprint mapping pass 1
+
+- **Agent/model:** Codex.
+- **Files added or changed:** `experimental/lean/lean-blueprint.json`;
+  `experimental/lean/update-blueprint-map.py`;
+  `experimental/lean/lean-inventory.json`;
+  `experimental/lean/lean-blueprint-report.md`;
+  `experimental/agents-log.md`.
+- **Status:** AUDIT / FORMALIZATION MAP.
+- **What is being added:** The CAP25 v13 raw Lean blueprint now has a first
+  Lean-to-TeX mapping pass: existing declarations under `experimental/lean/`
+  are attached to matching blueprint nodes through Lean doc-comment labels,
+  declaration-name matches, and the local correspondence maps.  Each mapped node
+  keeps its primary `lean_file`/`lean_name`, `mapping_confidence`,
+  `audit_status`, and a `related_lean` list for split Lean proof packages.
+  The checked-in mapper script regenerates the mapping, reverse Lean inventory,
+  and human-readable coverage report.
+- **How it is useful:** Shows which parts of the CAP25 v13 raw dependency graph
+  already have Lean statements or auxiliary formalizations, especially the
+  staircase/corridor compilers, Johnson bound, deep MCA, MCA-from-CA, support
+  ledgers, quotient-remainder skeletons, and v13 compiler helpers.  The Q, BC,
+  and SP final targets remain visibly unmapped.
+- **What to do next:** Audit the mapped statements against the raw TeX one by
+  one, then fill remaining high-priority nodes only from actual Lean
+  declarations.  Do not treat `source_scan_status=no_sorry_or_admit_seen` as a
+  Lake build result.
+
 ### 2026-07-06 - CAP25 v13 raw Lean blueprint
 
 - **Agent/model:** Codex.

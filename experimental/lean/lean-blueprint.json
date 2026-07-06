@@ -27,7 +27,14 @@
     "manual_target_nodes": 5,
     "edges": 625,
     "external_references": 30,
-    "total_nodes": 394
+    "total_nodes": 394,
+    "lean_mapped_nodes": 66,
+    "lean_unmapped_nodes": 328,
+    "lean_related_declarations": 125,
+    "tex_conjecture_environments": 1,
+    "conjectural_target_nodes": 3,
+    "certificate_target_nodes": 1,
+    "final_goal_nodes": 1
   },
   "sections": [
     {
@@ -1327,10 +1334,32 @@
       "kind": "definition",
       "status": "definition",
       "formalization": {
-        "lean_file": "",
-        "lean_name": "",
-        "statement_status": "not_started",
-        "notes": ""
+        "lean_file": "experimental/lean/cs25_cap_v12/cs25_cap_v12/Main.lean",
+        "lean_name": "RSCap.caBad",
+        "statement_status": "lean_statement_present_no_sorry_source_scan",
+        "notes": "Mapped from existing Lean source by update-blueprint-map.py. Primary selected from 2 related declaration(s); source-level scan only, Lake not run.",
+        "mapping_confidence": "curated_alias",
+        "audit_status": "mapped_source_scanned_not_built",
+        "related_lean": [
+          {
+            "lean_file": "experimental/lean/cs25_cap_v12/cs25_cap_v12/Main.lean",
+            "lean_name": "RSCap.caBad",
+            "decl_kind": "def",
+            "line": 76,
+            "source_scan_status": "no_sorry_or_admit_seen",
+            "mapping_confidence": "curated_alias",
+            "mapping_reason": "curated_alias"
+          },
+          {
+            "lean_file": "experimental/lean/cs25_cap_v12/cs25_cap_v12/Main.lean",
+            "lean_name": "RSCap.ecaErr",
+            "decl_kind": "def",
+            "line": 99,
+            "source_scan_status": "no_sorry_or_admit_seen",
+            "mapping_confidence": "curated_alias",
+            "mapping_reason": "curated_alias"
+          }
+        ]
       },
       "statement_excerpt": "{ABF26}} up to notation] For $0_{fld}_{int}<1$, \\[ (C,_{fld},_{int})\\;:=\\;_{f_1,f_2^n}\\ _{}, \\] and the no-proximity-loss variant is $(C,):=(C,,)$. A slope $$ realizing the event for a fixed pair $(f_1,f_2)$ is called CA-bad for that pair.",
       "depends_on": [],
@@ -1357,10 +1386,32 @@
       "kind": "definition",
       "status": "definition",
       "formalization": {
-        "lean_file": "",
-        "lean_name": "",
-        "statement_status": "not_started",
-        "notes": ""
+        "lean_file": "experimental/lean/cs25_cap_v12/cs25_cap_v12/Main.lean",
+        "lean_name": "RSCap.mcaBad",
+        "statement_status": "lean_statement_present_no_sorry_source_scan",
+        "notes": "Mapped from existing Lean source by update-blueprint-map.py. Primary selected from 2 related declaration(s); source-level scan only, Lake not run.",
+        "mapping_confidence": "curated_alias",
+        "audit_status": "mapped_source_scanned_not_built",
+        "related_lean": [
+          {
+            "lean_file": "experimental/lean/cs25_cap_v12/cs25_cap_v12/Main.lean",
+            "lean_name": "RSCap.mcaBad",
+            "decl_kind": "def",
+            "line": 83,
+            "source_scan_status": "no_sorry_or_admit_seen",
+            "mapping_confidence": "curated_alias",
+            "mapping_reason": "curated_alias"
+          },
+          {
+            "lean_file": "experimental/lean/cs25_cap_v12/cs25_cap_v12/Main.lean",
+            "lean_name": "RSCap.emcaErr",
+            "decl_kind": "def",
+            "line": 107,
+            "source_scan_status": "no_sorry_or_admit_seen",
+            "mapping_confidence": "curated_alias",
+            "mapping_reason": "curated_alias"
+          }
+        ]
       },
       "statement_excerpt": "{ABF26}} up to notation] For $(0,1)$, \\[ (C,):=_{f_1,f_2^n}_{} {and }((f_1,f_2),C^{2})>0 {array} ]. \\] Equivalently, $$ is MCA-bad for $(f_1,f_2)$ if some large agreement set $S$ explains the point $f_1+ f_2$, but the same set $S$ does not simultaneously explain $f_1$ and $f_2$ by two codewords of $C$.",
       "depends_on": [],
@@ -1387,10 +1438,32 @@
       "kind": "definition",
       "status": "definition",
       "formalization": {
-        "lean_file": "",
-        "lean_name": "",
-        "statement_status": "not_started",
-        "notes": ""
+        "lean_file": "experimental/lean/cs25_cap_v12/cs25_cap_v12/Main.lean",
+        "lean_name": "RSCap.dStar",
+        "statement_status": "lean_statement_present_no_sorry_source_scan",
+        "notes": "Mapped from existing Lean source by update-blueprint-map.py. Primary selected from 2 related declaration(s); source-level scan only, Lake not run.",
+        "mapping_confidence": "mixed",
+        "audit_status": "mapped_needs_statement_audit",
+        "related_lean": [
+          {
+            "lean_file": "experimental/lean/cs25_cap_v12/cs25_cap_v12/Main.lean",
+            "lean_name": "RSCap.dStar",
+            "decl_kind": "def",
+            "line": 113,
+            "source_scan_status": "no_sorry_or_admit_seen",
+            "mapping_confidence": "curated_alias",
+            "mapping_reason": "curated_alias"
+          },
+          {
+            "lean_file": "experimental/lean/towards_prize/TowardsPrize.lean",
+            "lean_name": "TowardsPrize.dstar",
+            "decl_kind": "def",
+            "line": 559,
+            "source_scan_status": "no_sorry_or_admit_seen",
+            "mapping_confidence": "name_heuristic",
+            "mapping_reason": "name_heuristic"
+          }
+        ]
       },
       "statement_excerpt": "Following the grand MCA challenge of {ABF26}, for $^*(0,1)$ set $^*_C(^*):=\\{(0,1-):(C,)^*\\}$, with $:=0$.",
       "depends_on": [],
@@ -1416,10 +1489,23 @@
       "kind": "lemma",
       "status": "proved_in_tex_or_imported",
       "formalization": {
-        "lean_file": "",
-        "lean_name": "",
-        "statement_status": "not_started",
-        "notes": ""
+        "lean_file": "experimental/lean/cs25_cap_v12/cs25_cap_v12/Main.lean",
+        "lean_name": "RSCap.emca_mono",
+        "statement_status": "lean_statement_present_no_sorry_source_scan",
+        "notes": "Mapped from existing Lean source by update-blueprint-map.py. Primary selected from 1 related declaration(s); source-level scan only, Lake not run.",
+        "mapping_confidence": "curated_alias",
+        "audit_status": "mapped_source_scanned_not_built",
+        "related_lean": [
+          {
+            "lean_file": "experimental/lean/cs25_cap_v12/cs25_cap_v12/Main.lean",
+            "lean_name": "RSCap.emca_mono",
+            "decl_kind": "theorem",
+            "line": 169,
+            "source_scan_status": "no_sorry_or_admit_seen",
+            "mapping_confidence": "curated_alias",
+            "mapping_reason": "curated_alias"
+          }
+        ]
       },
       "statement_excerpt": "For every linear code $C^D$, the function \\[ (C,) \\] is nondecreasing.",
       "depends_on": [],
@@ -1820,10 +1906,32 @@
       "kind": "lemma",
       "status": "proved_in_tex_or_imported",
       "formalization": {
-        "lean_file": "",
-        "lean_name": "",
-        "statement_status": "not_started",
-        "notes": ""
+        "lean_file": "experimental/lean/cs25_cap_v12/cs25_cap_v12/Fiber.lean",
+        "lean_name": "RSCap.lem_fiber_ii",
+        "statement_status": "lean_mixed_proved_and_skeleton_source_scan",
+        "notes": "Mapped from existing Lean source by update-blueprint-map.py. Primary selected from 2 related declaration(s); source-level scan only, Lake not run.",
+        "mapping_confidence": "exact_label_match",
+        "audit_status": "mapped_split_package_needs_statement_audit",
+        "related_lean": [
+          {
+            "lean_file": "experimental/lean/cs25_cap_v12/cs25_cap_v12/Fiber.lean",
+            "lean_name": "RSCap.lem_fiber_ii",
+            "decl_kind": "theorem",
+            "line": 50,
+            "source_scan_status": "contains_sorry_or_admit",
+            "mapping_confidence": "exact_label_match",
+            "mapping_reason": "exact_label_match"
+          },
+          {
+            "lean_file": "experimental/lean/cs25_cap_v12/cs25_cap_v12/MainCap.lean",
+            "lean_name": "RSCap.universal_cap_of_fiber_list",
+            "decl_kind": "theorem",
+            "line": 53,
+            "source_scan_status": "no_sorry_or_admit_seen",
+            "mapping_confidence": "exact_label_match",
+            "mapping_reason": "exact_label_match"
+          }
+        ]
       },
       "statement_excerpt": "Let $$, let $D^$ be a multiplicative coset of order $n$, and let $k$ satisfy $a k$ and $=k/n$. Write $_1:= N+1$ and $_2:= N+2$. {enumerate}[label=()] If $_1 N$, there exists $z$ such that, with $u_z:=(x^{k+a}+z\\,x^{k})_{x D}^n$, \\[ |(,\\ 1--1N,\\ u_z)|\\;\\;{N}{_1}/|| . \\] If $_2 N$, there exists $z$ such that, with $u_z:=(x^{k+2a}+z\\,x^{k+a})_{x D}^n$, \\[ |(,\\ 1--2N,\\ u_z)|\\;\\;{N}{_2}/|| . \\] {enumerate} In both cases the words $u_z$ are $$-valued and all listed codewords lie in $$ (resp.\\ $$).",
       "depends_on": [],
@@ -1947,10 +2055,23 @@
       "kind": "lemma",
       "status": "proved_in_tex_or_imported",
       "formalization": {
-        "lean_file": "",
-        "lean_name": "",
-        "statement_status": "not_started",
-        "notes": ""
+        "lean_file": "experimental/lean/cs25_cap_v12/cs25_cap_v12/QuotientRemainder.lean",
+        "lean_name": "RSCap.lem_quotient_remainder_prefix",
+        "statement_status": "lean_statement_skeleton_sorry_source_scan",
+        "notes": "Mapped from existing Lean source by update-blueprint-map.py. Primary selected from 1 related declaration(s); source-level scan only, Lake not run.",
+        "mapping_confidence": "exact_label_match",
+        "audit_status": "mapped_skeleton_needs_proof",
+        "related_lean": [
+          {
+            "lean_file": "experimental/lean/cs25_cap_v12/cs25_cap_v12/QuotientRemainder.lean",
+            "lean_name": "RSCap.lem_quotient_remainder_prefix",
+            "decl_kind": "theorem",
+            "line": 48,
+            "source_scan_status": "contains_sorry_or_admit",
+            "mapping_confidence": "exact_label_match",
+            "mapping_reason": "exact_label_match"
+          }
+        ]
       },
       "statement_excerpt": "Let $$, let $D^$ be a multiplicative coset of order $n$, and let $K<n$. Fix $c n$, write $N=n/c$, and let \\[ A_0=mc+s, 0 s<c, 0 m N, A_0 K . \\] If $s>0$, assume $mc+s n$. Put $=A_0-K$ and \\[ M_{c,m,s}:= Nm{n-mc}{s}. \\] Then there is a $$-valued received word $U:D$ such that \\[ |(,\\,1-A_0/n,\\,U)| {M_{c,m,s}}{||^{w_c(s,)}} . \\] The listed codewords may be chosen in $$.",
       "depends_on": [],
@@ -2009,10 +2130,41 @@
       "kind": "lemma",
       "status": "proved_in_tex_or_imported",
       "formalization": {
-        "lean_file": "",
-        "lean_name": "",
-        "statement_status": "not_started",
-        "notes": ""
+        "lean_file": "experimental/lean/cs25_cap_v12/cs25_cap_v12/QuotientRemainder.lean",
+        "lean_name": "RSCap.lem_heaviest_prefix_locator_floor",
+        "statement_status": "lean_mixed_proved_and_skeleton_source_scan",
+        "notes": "Mapped from existing Lean source by update-blueprint-map.py. Primary selected from 3 related declaration(s); source-level scan only, Lake not run.",
+        "mapping_confidence": "exact_label_match",
+        "audit_status": "mapped_split_package_needs_statement_audit",
+        "related_lean": [
+          {
+            "lean_file": "experimental/lean/cs25_cap_v12/cs25_cap_v12/QuotientRemainder.lean",
+            "lean_name": "RSCap.lem_heaviest_prefix_locator_floor",
+            "decl_kind": "theorem",
+            "line": 64,
+            "source_scan_status": "contains_sorry_or_admit",
+            "mapping_confidence": "exact_label_match",
+            "mapping_reason": "exact_label_match"
+          },
+          {
+            "lean_file": "experimental/lean/cs25_cap_v12/cs25_cap_v12/QuotientRemainder.lean",
+            "lean_name": "RSCap.thm_quotient_remainder_deep_floor",
+            "decl_kind": "theorem",
+            "line": 83,
+            "source_scan_status": "no_sorry_or_admit_seen",
+            "mapping_confidence": "exact_label_match",
+            "mapping_reason": "exact_label_match"
+          },
+          {
+            "lean_file": "experimental/lean/cs25_cap_v12/cs25_cap_v12/QuotientRemainder.lean",
+            "lean_name": "RSCap.cor_quotient_remainder_trigger",
+            "decl_kind": "theorem",
+            "line": 115,
+            "source_scan_status": "no_sorry_or_admit_seen",
+            "mapping_confidence": "exact_label_match",
+            "mapping_reason": "exact_label_match"
+          }
+        ]
       },
       "statement_excerpt": "Under the hypotheses of lem:quotient-remainder-prefix, there is a $$-valued received word $U:D$ such that \\[ |(,\\,1-A_0/n,\\,U)| H_{c,m,s}^{K}. \\] Consequently \\[ |(,\\,1-A_0/n,\\,U)| {M_{c,m,s}}{I_{c,m,s}^{K}} {M_{c,m,s}}{||^{w_c(s,A_0-K)}} \\] when only the coarser certificates are available. The listed codewords may be chosen in $$.",
       "depends_on": [
@@ -2040,10 +2192,32 @@
       "kind": "theorem",
       "status": "proved_in_tex_or_imported",
       "formalization": {
-        "lean_file": "",
-        "lean_name": "",
-        "statement_status": "not_started",
-        "notes": ""
+        "lean_file": "experimental/lean/cs25_cap_v12/cs25_cap_v12/QuotientRemainder.lean",
+        "lean_name": "RSCap.thm_quotient_remainder_deep_floor",
+        "statement_status": "lean_statement_present_no_sorry_source_scan",
+        "notes": "Mapped from existing Lean source by update-blueprint-map.py. Primary selected from 2 related declaration(s); source-level scan only, Lake not run.",
+        "mapping_confidence": "exact_label_match",
+        "audit_status": "mapped_source_scanned_not_built",
+        "related_lean": [
+          {
+            "lean_file": "experimental/lean/cs25_cap_v12/cs25_cap_v12/QuotientRemainder.lean",
+            "lean_name": "RSCap.thm_quotient_remainder_deep_floor",
+            "decl_kind": "theorem",
+            "line": 83,
+            "source_scan_status": "no_sorry_or_admit_seen",
+            "mapping_confidence": "exact_label_match",
+            "mapping_reason": "exact_label_match"
+          },
+          {
+            "lean_file": "experimental/lean/cs25_cap_v12/cs25_cap_v12/QuotientRemainder.lean",
+            "lean_name": "RSCap.cor_quotient_remainder_trigger",
+            "decl_kind": "theorem",
+            "line": 115,
+            "source_scan_status": "no_sorry_or_admit_seen",
+            "mapping_confidence": "exact_label_match",
+            "mapping_reason": "exact_label_match"
+          }
+        ]
       },
       "statement_excerpt": "Let $$, let $q=||>n$, let $D^$ be a multiplicative coset of order $n$, and let $C=$. Fix an agreement value $A\\{k+1,,n\\}$ and a divisor $c n$. For each \\[ \\{{ heavy},{ image},{ box}\\} \\] and every \\[ one has \\[ (C,) E_{q,k}(L_{c,}^+(A)). \\] If $>0$, then also \\[ (C,) E_{q,k}(L_{c,}^+(A)). \\] Here $ E_{q,k}$ is as in cor:deep-list-trigger-ceiling. More precisely, some received line has at least \\[ N_{q,k}(L_{c,}^+(A)) \\] CA-bad finite slopes at that radius, and for $>0$ these slopes are MCA-bad. Consequently, for a closed agreement threshold $a k+1$, define \\[ B_{Q,}^-(a) :=_{{c n\\\\ A\\{a,a+1,,n\\}}} N_{q,k}(L_{c,}^+(A)). \\] Then $B_{Q,}^-(a)$ i",
       "depends_on": [
@@ -2073,10 +2247,23 @@
       "kind": "corollary",
       "status": "proved_in_tex_or_imported",
       "formalization": {
-        "lean_file": "",
-        "lean_name": "",
-        "statement_status": "not_started",
-        "notes": ""
+        "lean_file": "experimental/lean/cs25_cap_v12/cs25_cap_v12/QuotientRemainder.lean",
+        "lean_name": "RSCap.cor_quotient_remainder_trigger",
+        "statement_status": "lean_statement_present_no_sorry_source_scan",
+        "notes": "Mapped from existing Lean source by update-blueprint-map.py. Primary selected from 1 related declaration(s); source-level scan only, Lake not run.",
+        "mapping_confidence": "exact_label_match",
+        "audit_status": "mapped_source_scanned_not_built",
+        "related_lean": [
+          {
+            "lean_file": "experimental/lean/cs25_cap_v12/cs25_cap_v12/QuotientRemainder.lean",
+            "lean_name": "RSCap.cor_quotient_remainder_trigger",
+            "decl_kind": "theorem",
+            "line": 115,
+            "source_scan_status": "no_sorry_or_admit_seen",
+            "mapping_confidence": "exact_label_match",
+            "mapping_reason": "exact_label_match"
+          }
+        ]
       },
       "statement_excerpt": "In the setting of thm:quotient-remainder-deep-floor, if $L_{c,}^+(A)>(q-n)/k$ for any $\\{{ heavy},{ image},{ box}\\}$, then, for every $ and for every such $>0$, \\[ (C,)> 1{2k}(1- nq). \\]",
       "depends_on": [
@@ -2102,10 +2289,23 @@
       "kind": "corollary",
       "status": "proved_in_tex_or_imported",
       "formalization": {
-        "lean_file": "",
-        "lean_name": "",
-        "statement_status": "not_started",
-        "notes": ""
+        "lean_file": "experimental/lean/cs25_cap_v12/cs25_cap_v12/QuotientRemainder.lean",
+        "lean_name": "RSCap.cor_quantitative_first_grid_floor",
+        "statement_status": "lean_statement_skeleton_sorry_source_scan",
+        "notes": "Mapped from existing Lean source by update-blueprint-map.py. Primary selected from 1 related declaration(s); source-level scan only, Lake not run.",
+        "mapping_confidence": "exact_label_match",
+        "audit_status": "mapped_skeleton_needs_proof",
+        "related_lean": [
+          {
+            "lean_file": "experimental/lean/cs25_cap_v12/cs25_cap_v12/QuotientRemainder.lean",
+            "lean_name": "RSCap.cor_quantitative_first_grid_floor",
+            "decl_kind": "theorem",
+            "line": 138,
+            "source_scan_status": "contains_sorry_or_admit",
+            "mapping_confidence": "exact_label_match",
+            "mapping_reason": "exact_label_match"
+          }
+        ]
       },
       "statement_excerpt": "Let $C=$, let $q=||>n$, and assume only that $D$ has $n$ distinct points. Then for every $ and for every such $>0$, \\[ (C,) E_{q,k}( n{k+1}). \\] In particular, if $ n{k+1}>(q-n)/k$, then the printed $(2k)^{-1}(1-n/q)$ lower bound holds on this entire first grid interval without any multiplicative smoothness assumption.",
       "depends_on": [],
@@ -2210,10 +2410,23 @@
       "kind": "corollary",
       "status": "proved_in_tex_or_imported",
       "formalization": {
-        "lean_file": "",
-        "lean_name": "",
-        "statement_status": "not_started",
-        "notes": ""
+        "lean_file": "experimental/lean/cs25_cap_v12/cs25_cap_v12/QuotientRemainder.lean",
+        "lean_name": "RSCap.cor_first_grid_cap",
+        "statement_status": "lean_statement_skeleton_sorry_source_scan",
+        "notes": "Mapped from existing Lean source by update-blueprint-map.py. Primary selected from 1 related declaration(s); source-level scan only, Lake not run.",
+        "mapping_confidence": "exact_label_match",
+        "audit_status": "mapped_skeleton_needs_proof",
+        "related_lean": [
+          {
+            "lean_file": "experimental/lean/cs25_cap_v12/cs25_cap_v12/QuotientRemainder.lean",
+            "lean_name": "RSCap.cor_first_grid_cap",
+            "decl_kind": "theorem",
+            "line": 153,
+            "source_scan_status": "contains_sorry_or_admit",
+            "mapping_confidence": "exact_label_match",
+            "mapping_reason": "exact_label_match"
+          }
+        ]
       },
       "statement_excerpt": "Let $C=$, $q=||$, and suppose $q>n$. Let $c(n,k)$. If $c>1$, assume $D^$ is a multiplicative coset as above; for $c=1$, no smoothness is needed. If \\[ {n/c}{k/c+1} q/k+1, \\] then \\[ (C,1-(k+c)/n) >1{2k}(1- nq), (C,1-(k+c)/n) >1{2k}(1- nq). \\] For $c=1$ this is the first closed grid point below capacity.",
       "depends_on": [],
@@ -2264,10 +2477,50 @@
       "kind": "lemma",
       "status": "proved_in_tex_or_imported",
       "formalization": {
-        "lean_file": "",
-        "lean_name": "",
-        "statement_status": "not_started",
-        "notes": ""
+        "lean_file": "experimental/lean/cs25_cap_v12/cs25_cap_v12/QuotientLedgers.lean",
+        "lean_name": "RSCap.lem_one_support_one_line",
+        "statement_status": "lean_statement_present_no_sorry_source_scan",
+        "notes": "Mapped from existing Lean source by update-blueprint-map.py. Primary selected from 4 related declaration(s); source-level scan only, Lake not run.",
+        "mapping_confidence": "exact_label_match",
+        "audit_status": "mapped_source_scanned_not_built",
+        "related_lean": [
+          {
+            "lean_file": "experimental/lean/cs25_cap_v12/cs25_cap_v12/QuotientLedgers.lean",
+            "lean_name": "RSCap.lem_one_support_one_line",
+            "decl_kind": "theorem",
+            "line": 59,
+            "source_scan_status": "no_sorry_or_admit_seen",
+            "mapping_confidence": "exact_label_match",
+            "mapping_reason": "exact_label_match"
+          },
+          {
+            "lean_file": "experimental/lean/cs25_cap_v12/cs25_cap_v12/QuotientLedgers.lean",
+            "lean_name": "RSCap.prop_support_family_line_ledger",
+            "decl_kind": "theorem",
+            "line": 86,
+            "source_scan_status": "no_sorry_or_admit_seen",
+            "mapping_confidence": "exact_label_match",
+            "mapping_reason": "exact_label_match"
+          },
+          {
+            "lean_file": "experimental/lean/cs25_cap_v12/cs25_cap_v12/QuotientLedgers.lean",
+            "lean_name": "RSCap.lem_one_support_d_curve",
+            "decl_kind": "theorem",
+            "line": 104,
+            "source_scan_status": "no_sorry_or_admit_seen",
+            "mapping_confidence": "exact_label_match",
+            "mapping_reason": "exact_label_match"
+          },
+          {
+            "lean_file": "experimental/lean/cs25_cap_v12/cs25_cap_v12/QuotientLedgers.lean",
+            "lean_name": "RSCap.prop_support_family_curve_ledger",
+            "decl_kind": "theorem",
+            "line": 151,
+            "source_scan_status": "no_sorry_or_admit_seen",
+            "mapping_confidence": "exact_label_match",
+            "mapping_reason": "exact_label_match"
+          }
+        ]
       },
       "statement_excerpt": "Let $C=$ and let $a k$. Fix a support $S D$ with $|S| a$. For any received line $f+zg$, at most one finite slope $z$ can be support-wise noncontained on the fixed support $S$. Likewise, at most one finite slope can be no-loss CA-bad while being explained on this fixed support $S$. Consequently, for every support family $ S$, \\[ \\#\\{ S{-witnessed support-wise MCA-bad finite slopes}\\} | S|, \\] and the same bound holds for no-loss CA slopes witnessed by $ S$.",
       "depends_on": [],
@@ -2291,10 +2544,32 @@
       "kind": "lemma",
       "status": "proved_in_tex_or_imported",
       "formalization": {
-        "lean_file": "",
-        "lean_name": "",
-        "statement_status": "not_started",
-        "notes": ""
+        "lean_file": "experimental/lean/cs25_cap_v12/cs25_cap_v12/QuotientLedgers.lean",
+        "lean_name": "RSCap.lem_one_support_d_curve",
+        "statement_status": "lean_statement_present_no_sorry_source_scan",
+        "notes": "Mapped from existing Lean source by update-blueprint-map.py. Primary selected from 2 related declaration(s); source-level scan only, Lake not run.",
+        "mapping_confidence": "exact_label_match",
+        "audit_status": "mapped_source_scanned_not_built",
+        "related_lean": [
+          {
+            "lean_file": "experimental/lean/cs25_cap_v12/cs25_cap_v12/QuotientLedgers.lean",
+            "lean_name": "RSCap.lem_one_support_d_curve",
+            "decl_kind": "theorem",
+            "line": 104,
+            "source_scan_status": "no_sorry_or_admit_seen",
+            "mapping_confidence": "exact_label_match",
+            "mapping_reason": "exact_label_match"
+          },
+          {
+            "lean_file": "experimental/lean/cs25_cap_v12/cs25_cap_v12/QuotientLedgers.lean",
+            "lean_name": "RSCap.prop_support_family_curve_ledger",
+            "decl_kind": "theorem",
+            "line": 151,
+            "source_scan_status": "no_sorry_or_admit_seen",
+            "mapping_confidence": "exact_label_match",
+            "mapping_reason": "exact_label_match"
+          }
+        ]
       },
       "statement_excerpt": "Let $C=$, let $a k$, and fix a support $S D$ with $|S| a$. For a degree-$d$ power curve $W_$, at most $d$ finite parameters $$ can be support-wise curve-bad on $S$. The same bound holds for no-loss curve-CA parameters explained on $S$. Consequently any support family $ S$ witnesses at most $d| S|$ bad finite curve parameters.",
       "depends_on": [],
@@ -2348,10 +2623,41 @@
       "kind": "proposition",
       "status": "proved_in_tex_or_imported",
       "formalization": {
-        "lean_file": "",
-        "lean_name": "",
-        "statement_status": "not_started",
-        "notes": ""
+        "lean_file": "experimental/lean/cs25_cap_v12/cs25_cap_v12/QuotientLedgers.lean",
+        "lean_name": "RSCap.prop_support_family_line_ledger",
+        "statement_status": "lean_statement_present_no_sorry_source_scan",
+        "notes": "Mapped from existing Lean source by update-blueprint-map.py. Primary selected from 3 related declaration(s); source-level scan only, Lake not run.",
+        "mapping_confidence": "exact_label_match",
+        "audit_status": "mapped_source_scanned_not_built",
+        "related_lean": [
+          {
+            "lean_file": "experimental/lean/cs25_cap_v12/cs25_cap_v12/QuotientLedgers.lean",
+            "lean_name": "RSCap.prop_support_family_line_ledger",
+            "decl_kind": "theorem",
+            "line": 86,
+            "source_scan_status": "no_sorry_or_admit_seen",
+            "mapping_confidence": "exact_label_match",
+            "mapping_reason": "exact_label_match"
+          },
+          {
+            "lean_file": "experimental/lean/cs25_cap_v12/cs25_cap_v12/QuotientLedgers.lean",
+            "lean_name": "RSCap.lem_one_support_d_curve",
+            "decl_kind": "theorem",
+            "line": 104,
+            "source_scan_status": "no_sorry_or_admit_seen",
+            "mapping_confidence": "exact_label_match",
+            "mapping_reason": "exact_label_match"
+          },
+          {
+            "lean_file": "experimental/lean/cs25_cap_v12/cs25_cap_v12/QuotientLedgers.lean",
+            "lean_name": "RSCap.prop_support_family_curve_ledger",
+            "decl_kind": "theorem",
+            "line": 151,
+            "source_scan_status": "no_sorry_or_admit_seen",
+            "mapping_confidence": "exact_label_match",
+            "mapping_reason": "exact_label_match"
+          }
+        ]
       },
       "statement_excerpt": "Let $C=$ and let $a k$. Fix a divisor set $ C$ and let $ S_{ C}^{ a}$ be the quotient-remainder support family above. Then, for every received line, the number of finite support-wise MCA-bad slopes whose witness support lies in $ S_{ C}^{ a}$ is at most \\[ U_{ C}^{ supp}(a) U_{ C}^{ sum}(a). \\] The same bound holds for no-loss CA slopes witnessed by this family. For a finite-parameter degree-$d$ power curve, the corresponding support-wise curve-MCA and no-loss curve-CA numerator is at most \\[ d\\,U_{ C}^{ supp}(a) d\\,U_{ C}^{ sum}(a). \\] For every interleaving arity $1$, the number of interleaved list tuples whose common agreement support belo",
       "depends_on": [],
@@ -2669,10 +2975,41 @@
       "kind": "proposition",
       "status": "proved_in_tex_or_imported",
       "formalization": {
-        "lean_file": "",
-        "lean_name": "",
-        "statement_status": "not_started",
-        "notes": ""
+        "lean_file": "experimental/lean/cs25_cap_v12/cs25_cap_v12/QuotientLedgers.lean",
+        "lean_name": "RSCap.prop_support_family_line_ledger",
+        "statement_status": "lean_statement_present_no_sorry_source_scan",
+        "notes": "Mapped from existing Lean source by update-blueprint-map.py. Primary selected from 3 related declaration(s); source-level scan only, Lake not run.",
+        "mapping_confidence": "exact_label_match",
+        "audit_status": "mapped_source_scanned_not_built",
+        "related_lean": [
+          {
+            "lean_file": "experimental/lean/cs25_cap_v12/cs25_cap_v12/QuotientLedgers.lean",
+            "lean_name": "RSCap.prop_support_family_line_ledger",
+            "decl_kind": "theorem",
+            "line": 86,
+            "source_scan_status": "no_sorry_or_admit_seen",
+            "mapping_confidence": "exact_label_match",
+            "mapping_reason": "exact_label_match"
+          },
+          {
+            "lean_file": "experimental/lean/cs25_cap_v12/cs25_cap_v12/QuotientLedgers.lean",
+            "lean_name": "RSCap.lem_one_support_d_curve",
+            "decl_kind": "theorem",
+            "line": 104,
+            "source_scan_status": "no_sorry_or_admit_seen",
+            "mapping_confidence": "exact_label_match",
+            "mapping_reason": "exact_label_match"
+          },
+          {
+            "lean_file": "experimental/lean/cs25_cap_v12/cs25_cap_v12/QuotientLedgers.lean",
+            "lean_name": "RSCap.prop_support_family_curve_ledger",
+            "decl_kind": "theorem",
+            "line": 151,
+            "source_scan_status": "no_sorry_or_admit_seen",
+            "mapping_confidence": "exact_label_match",
+            "mapping_reason": "exact_label_match"
+          }
+        ]
       },
       "statement_excerpt": "For every received line $f+zg$, the finite affine slopes that are support-wise MCA-bad and have a witness support in $ S_{ C}^{ a}$ are exactly the elements of $_{ C}^{ aff}(f,g;a)$. Hence the exact quotient-branch line numerator is \\[ |_{ C}^{ aff}(f,g;a)| U_{ C}^{ supp}(a). \\] The corresponding projective-slope numerator is \\[ |_{ C}^{ proj}(f,g;a)| U_{ C}^{ supp}(a). \\] The same image ledgers upper-bound no-loss CA parameters whose explaining support lies in the same quotient family.",
       "depends_on": [],
@@ -2843,10 +3180,23 @@
       "kind": "theorem",
       "status": "proved_in_tex_or_imported",
       "formalization": {
-        "lean_file": "",
-        "lean_name": "",
-        "statement_status": "not_started",
-        "notes": ""
+        "lean_file": "experimental/lean/cs25_cap_v12/cs25_cap_v12/QuotientLedgers.lean",
+        "lean_name": "RSCap.prop_support_family_curve_ledger",
+        "statement_status": "lean_statement_present_no_sorry_source_scan",
+        "notes": "Mapped from existing Lean source by update-blueprint-map.py. Primary selected from 1 related declaration(s); source-level scan only, Lake not run.",
+        "mapping_confidence": "exact_label_match",
+        "audit_status": "mapped_source_scanned_not_built",
+        "related_lean": [
+          {
+            "lean_file": "experimental/lean/cs25_cap_v12/cs25_cap_v12/QuotientLedgers.lean",
+            "lean_name": "RSCap.prop_support_family_curve_ledger",
+            "decl_kind": "theorem",
+            "line": 151,
+            "source_scan_status": "no_sorry_or_admit_seen",
+            "mapping_confidence": "exact_label_match",
+            "mapping_reason": "exact_label_match"
+          }
+        ]
       },
       "statement_excerpt": "Let $a>k$, let $ C$ be a finite divisor set, and let $ T_{ C}^{ a}$ be the quotient co-support family. For every finite-parameter degree-$d$ power curve, the exact quotient-branch support-wise curve-MCA numerator is \\[ { |_{ C}^{(d)}(f_0,,f_d;a)| = R_{ T_{ C}^{ a},F}^{(d)} . } \\] Consequently \\[ |_{ C}^{(d)}(f_0,,f_d;a)| R_{ T_{ C}^{ a}}^{(d)} d\\,U_{ C}^{ supp}(a), \\] and the final support count may be evaluated by the exact divisor-block formula of thm:exact-divisor-block-support-ledger. The same lcm ledger upper-bounds no-loss curve-CA parameters whose explaining support lies in the same quotient family.",
       "depends_on": [
@@ -3076,10 +3426,23 @@
       "kind": "definition",
       "status": "definition",
       "formalization": {
-        "lean_file": "",
-        "lean_name": "",
-        "statement_status": "not_started",
-        "notes": ""
+        "lean_file": "experimental/lean/cs25_cap_v12/cs25_cap_v12/AperiodicHankel.lean",
+        "lean_name": "RSCap.RegularHankelCert",
+        "statement_status": "lean_statement_present_no_sorry_source_scan",
+        "notes": "Mapped from existing Lean source by update-blueprint-map.py. Primary selected from 1 related declaration(s); source-level scan only, Lake not run.",
+        "mapping_confidence": "exact_label_match",
+        "audit_status": "mapped_source_scanned_not_built",
+        "related_lean": [
+          {
+            "lean_file": "experimental/lean/cs25_cap_v12/cs25_cap_v12/AperiodicHankel.lean",
+            "lean_name": "RSCap.RegularHankelCert",
+            "decl_kind": "def",
+            "line": 60,
+            "source_scan_status": "no_sorry_or_admit_seen",
+            "mapping_confidence": "exact_label_match",
+            "mapping_reason": "exact_label_match"
+          }
+        ]
       },
       "statement_excerpt": "A regular Hankel minor certificate at exact agreement $A$ is a row set $I_A\\{0,,t_A-1\\}$ of size $j_A+1$ such that \\[ _A(Z) := M_A(Z)_{I_A,\\{0,,j_A\\}} \\] is not the zero polynomial in $F[Z]$. If no such row set exists, the line is called Hankel-singular at $A$.",
       "depends_on": [],
@@ -3103,10 +3466,23 @@
       "kind": "lemma",
       "status": "proved_in_tex_or_imported",
       "formalization": {
-        "lean_file": "",
-        "lean_name": "",
-        "statement_status": "not_started",
-        "notes": ""
+        "lean_file": "experimental/lean/cs25_cap_v12/cs25_cap_v12/AperiodicHankel.lean",
+        "lean_name": "RSCap.lem_regular_exact_agreement_eliminant",
+        "statement_status": "lean_statement_skeleton_sorry_source_scan",
+        "notes": "Mapped from existing Lean source by update-blueprint-map.py. Primary selected from 1 related declaration(s); source-level scan only, Lake not run.",
+        "mapping_confidence": "exact_label_match",
+        "audit_status": "mapped_skeleton_needs_proof",
+        "related_lean": [
+          {
+            "lean_file": "experimental/lean/cs25_cap_v12/cs25_cap_v12/AperiodicHankel.lean",
+            "lean_name": "RSCap.lem_regular_exact_agreement_eliminant",
+            "decl_kind": "theorem",
+            "line": 77,
+            "source_scan_status": "contains_sorry_or_admit",
+            "mapping_confidence": "exact_label_match",
+            "mapping_reason": "exact_label_match"
+          }
+        ]
       },
       "statement_excerpt": "Assume $t_A j_A+1$, and suppose $_A(Z)$ is a regular Hankel minor certificate. Every finite support-wise MCA-bad slope with a witness support of exact size $A$ is a root of $_A$. Hence the number of such slopes is at most \\[ _A j_A+1=n-A+1 . \\] The same root containment holds for no-loss CA-bad slopes with exact agreement $A$.",
       "depends_on": [],
@@ -3132,10 +3508,32 @@
       "kind": "theorem",
       "status": "proved_in_tex_or_imported",
       "formalization": {
-        "lean_file": "",
-        "lean_name": "",
-        "statement_status": "not_started",
-        "notes": ""
+        "lean_file": "experimental/lean/cs25_cap_v12/cs25_cap_v12/AperiodicHankel.lean",
+        "lean_name": "RSCap.thm_regular_closed_ball_hankel_packing",
+        "statement_status": "lean_mixed_proved_and_skeleton_source_scan",
+        "notes": "Mapped from existing Lean source by update-blueprint-map.py. Primary selected from 2 related declaration(s); source-level scan only, Lake not run.",
+        "mapping_confidence": "exact_label_match",
+        "audit_status": "mapped_split_package_needs_statement_audit",
+        "related_lean": [
+          {
+            "lean_file": "experimental/lean/cs25_cap_v12/cs25_cap_v12/AperiodicHankel.lean",
+            "lean_name": "RSCap.thm_regular_closed_ball_hankel_packing",
+            "decl_kind": "theorem",
+            "line": 91,
+            "source_scan_status": "contains_sorry_or_admit",
+            "mapping_confidence": "exact_label_match",
+            "mapping_reason": "exact_label_match"
+          },
+          {
+            "lean_file": "experimental/lean/cs25_cap_v12/cs25_cap_v12/AperiodicHankel.lean",
+            "lean_name": "RSCap.thm_scanner_checkable_residual_aperiodic_ledger",
+            "decl_kind": "theorem",
+            "line": 119,
+            "source_scan_status": "no_sorry_or_admit_seen",
+            "mapping_confidence": "exact_label_match",
+            "mapping_reason": "exact_label_match"
+          }
+        ]
       },
       "statement_excerpt": "Let $a k$ and suppose that for each exact agreement $A\\{a,a+1,,n\\}$ with $t_A j_A+1$ a regular Hankel minor certificate $_A$ is supplied. Then all bad finite slopes whose exact witness size is in this regular bucket lie in the root set of \\[ _{ a}(Z):=_{A=a}^{n}_A(Z), \\] with factors omitted for exact agreements outside the overdetermined range. Consequently their number is at most \\[ _A _A . \\] If exact root sets are supplied, roots already charged to the tangent or quotient-image ledgers may be removed from this count by duplicate coalescing.",
       "depends_on": [],
@@ -3811,10 +4209,23 @@
       "kind": "theorem",
       "status": "proved_in_tex_or_imported",
       "formalization": {
-        "lean_file": "",
-        "lean_name": "",
-        "statement_status": "not_started",
-        "notes": ""
+        "lean_file": "experimental/lean/cs25_cap_v12/cs25_cap_v12/AperiodicHankel.lean",
+        "lean_name": "RSCap.thm_scanner_checkable_residual_aperiodic_ledger",
+        "statement_status": "lean_statement_present_no_sorry_source_scan",
+        "notes": "Mapped from existing Lean source by update-blueprint-map.py. Primary selected from 1 related declaration(s); source-level scan only, Lake not run.",
+        "mapping_confidence": "exact_label_match",
+        "audit_status": "mapped_source_scanned_not_built",
+        "related_lean": [
+          {
+            "lean_file": "experimental/lean/cs25_cap_v12/cs25_cap_v12/AperiodicHankel.lean",
+            "lean_name": "RSCap.thm_scanner_checkable_residual_aperiodic_ledger",
+            "decl_kind": "theorem",
+            "line": 119,
+            "source_scan_status": "no_sorry_or_admit_seen",
+            "mapping_confidence": "exact_label_match",
+            "mapping_reason": "exact_label_match"
+          }
+        ]
       },
       "statement_excerpt": "Assume that the chart families $ R_A$, for $A a$, cover every remaining locator after tangent/common-line and quotient-image removals. Suppose each residual chart $Y$ is certified by one of the following data: {enumerate}[label=(),leftmargin=2.2em] an affine eliminant $Q_Y(Z)$, contributing $(Q_Y,Z^q-Z)$; a homogeneous projective eliminant $Q_Y(Z_0,Z_1)$, contributing $(Q_Y(1,Z),Z^q-Z)+ 1_{Q_Y(0,1)=0}$; a finite curve eliminant $Q_Y()$, contributing $(Q_Y,^q-)$; an extension Weil-restricted projection certificate $(_Y,e_Y)$, contributing $_Y||^{e_Y}$ parameters. {enumerate} Then the finite affine aperiodic numerator after quotient/tangent rem",
       "depends_on": [],
@@ -4204,10 +4615,41 @@
       "kind": "lemma",
       "status": "proved_in_tex_or_imported",
       "formalization": {
-        "lean_file": "",
-        "lean_name": "",
-        "statement_status": "not_started",
-        "notes": ""
+        "lean_file": "experimental/lean/cs25_cap_v12/cs25_cap_v12/InterleavingTransfer.lean",
+        "lean_name": "RSCap.lem_inter_emca",
+        "statement_status": "lean_statement_present_no_sorry_source_scan",
+        "notes": "Mapped from existing Lean source by update-blueprint-map.py. Primary selected from 3 related declaration(s); source-level scan only, Lake not run.",
+        "mapping_confidence": "exact_label_match",
+        "audit_status": "mapped_source_scanned_not_built",
+        "related_lean": [
+          {
+            "lean_file": "experimental/lean/cs25_cap_v12/cs25_cap_v12/InterleavingTransfer.lean",
+            "lean_name": "RSCap.lem_inter_emca",
+            "decl_kind": "theorem",
+            "line": 91,
+            "source_scan_status": "no_sorry_or_admit_seen",
+            "mapping_confidence": "exact_label_match",
+            "mapping_reason": "exact_label_match"
+          },
+          {
+            "lean_file": "experimental/lean/cs25_cap_v12/cs25_cap_v12/InterleavingTransfer.lean",
+            "lean_name": "RSCap.lem_inter_eca",
+            "decl_kind": "theorem",
+            "line": 41,
+            "source_scan_status": "no_sorry_or_admit_seen",
+            "mapping_confidence": "exact_label_match",
+            "mapping_reason": "exact_label_match"
+          },
+          {
+            "lean_file": "experimental/lean/cs25_cap_v12/cs25_cap_v12/BlueprintCommon.lean",
+            "lean_name": "RSCap.interleave",
+            "decl_kind": "def",
+            "line": 69,
+            "source_scan_status": "no_sorry_or_admit_seen",
+            "mapping_confidence": "exact_label_match",
+            "mapping_reason": "exact_label_match"
+          }
+        ]
       },
       "statement_excerpt": "For every linear code $C^n$, every $s1$ and every $(0,1)$: \\[ (C^{ s},)\\ \\ (C,), (C^{ s},)\\ \\ (C,). \\]",
       "depends_on": [],
@@ -4233,10 +4675,41 @@
       "kind": "theorem",
       "status": "proved_in_tex_or_imported",
       "formalization": {
-        "lean_file": "",
-        "lean_name": "",
-        "statement_status": "not_started",
-        "notes": ""
+        "lean_file": "experimental/lean/cs25_cap_v12/cs25_cap_v12/MainCap.lean",
+        "lean_name": "RSCap.universal_cap_emca_of_fiber_list",
+        "statement_status": "lean_mixed_proved_and_skeleton_source_scan",
+        "notes": "Mapped from existing Lean source by update-blueprint-map.py. Primary selected from 3 related declaration(s); source-level scan only, Lake not run.",
+        "mapping_confidence": "exact_label_match",
+        "audit_status": "mapped_split_package_needs_statement_audit",
+        "related_lean": [
+          {
+            "lean_file": "experimental/lean/cs25_cap_v12/cs25_cap_v12/MainCap.lean",
+            "lean_name": "RSCap.universal_cap_emca_of_fiber_list",
+            "decl_kind": "theorem",
+            "line": 82,
+            "source_scan_status": "no_sorry_or_admit_seen",
+            "mapping_confidence": "exact_label_match",
+            "mapping_reason": "exact_label_match"
+          },
+          {
+            "lean_file": "experimental/lean/cs25_cap_v12/cs25_cap_v12/MainCap.lean",
+            "lean_name": "RSCap.universal_cap_of_fiber_list",
+            "decl_kind": "theorem",
+            "line": 53,
+            "source_scan_status": "no_sorry_or_admit_seen",
+            "mapping_confidence": "exact_label_match",
+            "mapping_reason": "exact_label_match"
+          },
+          {
+            "lean_file": "experimental/lean/cs25_cap_v12/cs25_cap_v12/Fiber.lean",
+            "lean_name": "RSCap.thm_phi_cap",
+            "decl_kind": "theorem",
+            "line": 91,
+            "source_scan_status": "contains_sorry_or_admit",
+            "mapping_confidence": "exact_label_match",
+            "mapping_reason": "exact_label_match"
+          }
+        ]
       },
       "statement_excerpt": "Let $$ be finite fields, let $q=||$, let $D^$ be a multiplicative coset of order $n$, and let $k$ have $=k/n(0,1)$; set $C:=$. Let $N n$ satisfy $a:=n/N k$ and $(1-)N3$. If {equation} {N}{ N+2} ||( qk+1), {equation} then, writing \\[ _N:=1--2N, \\] we have \\[ (C,) > 1{2k}(1- nq) \\] for every integer-admissible radius \\[ _N 1--1n . \\] In particular, \\[ (C,) > 1{2k}(1- nq) \\] for every \\[ _N < 1- . \\] Consequently, \\[ ^*_C(^*) 1--2N \\] for every \\[ ^* 1{2k}(1- nq). \\]",
       "depends_on": [],
@@ -4656,10 +5129,23 @@
       "kind": "definition",
       "status": "definition",
       "formalization": {
-        "lean_file": "",
-        "lean_name": "",
-        "statement_status": "not_started",
-        "notes": ""
+        "lean_file": "experimental/lean/cs25_cap_v12/cs25_cap_v12/BlueprintCommon.lean",
+        "lean_name": "RSCap.DomSmooth",
+        "statement_status": "lean_statement_present_no_sorry_source_scan",
+        "notes": "Mapped from existing Lean source by update-blueprint-map.py. Primary selected from 1 related declaration(s); source-level scan only, Lake not run.",
+        "mapping_confidence": "exact_label_match",
+        "audit_status": "mapped_source_scanned_not_built",
+        "related_lean": [
+          {
+            "lean_file": "experimental/lean/cs25_cap_v12/cs25_cap_v12/BlueprintCommon.lean",
+            "lean_name": "RSCap.DomSmooth",
+            "decl_kind": "def",
+            "line": 62,
+            "source_scan_status": "no_sorry_or_admit_seen",
+            "mapping_confidence": "exact_label_match",
+            "mapping_reason": "exact_label_match"
+          }
+        ]
       },
       "statement_excerpt": "Let $$ be finite fields, let $$ have degree $a1$, and let $D$ be a finite set of size $n$. The set $D$ is $(,a)$-smooth if every nonempty fiber $^{-1}(w) D$, $w(D)$, has exactly $a$ elements. In that case $Q:=(D)$ has size $N:=n/a$, and $D$ is the disjoint union of the $N$ fibers $S_b:=\\{x D:(x)=b\\}$, $b Q$.",
       "depends_on": [],
@@ -4686,10 +5172,23 @@
       "kind": "lemma",
       "status": "proved_in_tex_or_imported",
       "formalization": {
-        "lean_file": "",
-        "lean_name": "",
-        "statement_status": "not_started",
-        "notes": ""
+        "lean_file": "experimental/lean/cs25_cap_v12/cs25_cap_v12/Fiber.lean",
+        "lean_name": "RSCap.lem_phi_fiber_ii",
+        "statement_status": "lean_statement_skeleton_sorry_source_scan",
+        "notes": "Mapped from existing Lean source by update-blueprint-map.py. Primary selected from 1 related declaration(s); source-level scan only, Lake not run.",
+        "mapping_confidence": "exact_label_match",
+        "audit_status": "mapped_skeleton_needs_proof",
+        "related_lean": [
+          {
+            "lean_file": "experimental/lean/cs25_cap_v12/cs25_cap_v12/Fiber.lean",
+            "lean_name": "RSCap.lem_phi_fiber_ii",
+            "decl_kind": "theorem",
+            "line": 70,
+            "source_scan_status": "contains_sorry_or_admit",
+            "mapping_confidence": "exact_label_match",
+            "mapping_reason": "exact_label_match"
+          }
+        ]
       },
       "statement_excerpt": "Let $$ and let $D$ be a $(,a)$-smooth domain of size $n$, with $Q=(D)$ and $N=n/a$ as above. Let $1 k<n$ and $:=k/n$. Put \\[ _1:={k-1}a+2, _2:={k}a+2, A_1:=a_1, A_2:=a_2, \\] so that $k+a A_1 k+2a-1$ and $k+a+1 A_2 k+2a$, with $A_1=k+a$ and $A_2=k+2a$ when $a k$. {enumerate}[label=()] If $_1 N-1$, there exists $z$ such that, with $u_z:=((x)^{_1}+z\\,(x)^{_1-1})_{x D}^n$, \\[ |(,\\,1-{A_1}n,\\,u_z)|\\ \\ N{_1}/|| . \\] If $_2 N-1$, there exists $z$ such that, with $u_z:=((x)^{_2}+z\\,(x)^{_2-1})_{x D}^n$, \\[ |(,\\,1-{A_2}n,\\,u_z)|\\ \\ N{_2}/|| . \\] {enumerate} In both cases $u_z$ is $$-valued, and the listed codewords lie in $$ (resp.\\ $$).",
       "depends_on": [],
@@ -4763,10 +5262,23 @@
       "kind": "theorem",
       "status": "proved_in_tex_or_imported",
       "formalization": {
-        "lean_file": "",
-        "lean_name": "",
-        "statement_status": "not_started",
-        "notes": ""
+        "lean_file": "experimental/lean/cs25_cap_v12/cs25_cap_v12/Fiber.lean",
+        "lean_name": "RSCap.thm_phi_cap",
+        "statement_status": "lean_statement_skeleton_sorry_source_scan",
+        "notes": "Mapped from existing Lean source by update-blueprint-map.py. Primary selected from 1 related declaration(s); source-level scan only, Lake not run.",
+        "mapping_confidence": "exact_label_match",
+        "audit_status": "mapped_skeleton_needs_proof",
+        "related_lean": [
+          {
+            "lean_file": "experimental/lean/cs25_cap_v12/cs25_cap_v12/Fiber.lean",
+            "lean_name": "RSCap.thm_phi_cap",
+            "decl_kind": "theorem",
+            "line": 91,
+            "source_scan_status": "contains_sorry_or_admit",
+            "mapping_confidence": "exact_label_match",
+            "mapping_reason": "exact_label_match"
+          }
+        ]
       },
       "statement_excerpt": "Let $$ be finite fields, $q:=||$, and let $D$ be a $(,a)$-smooth domain of size $n<q$. Let $1 k<n$, $:=k/n$, $C:=$, and let $N=n/a$, $_2= k/a+2$, $A_2=a_2$ be as in lem:phi-fiber. Assume $_2 N-1$ and {equation} N{_2}\\ \\ ||( qk+1). {equation} Then \\[ (C,)\\;>\\;1{2k}(1- nq) {for every }\\ , \\] and \\[ (C,)\\;>\\;1{2k}(1- nq) {for every }\\ Consequently \\[ ^*_C(^*)\\ \\ 1-{A_2}n\\ \\ 1--{a+1}n {for every }\\ ^*1{2k}(1- nq). \\]",
       "depends_on": [
@@ -4893,10 +5405,23 @@
       "kind": "lemma",
       "status": "proved_in_tex_or_imported",
       "formalization": {
-        "lean_file": "",
-        "lean_name": "",
-        "statement_status": "not_started",
-        "notes": ""
+        "lean_file": "experimental/lean/cs25_cap_v12/cs25_cap_v12/CircleCode.lean",
+        "lean_name": "RSCap.lem_cheb_fibers",
+        "statement_status": "lean_statement_skeleton_sorry_source_scan",
+        "notes": "Mapped from existing Lean source by update-blueprint-map.py. Primary selected from 1 related declaration(s); source-level scan only, Lake not run.",
+        "mapping_confidence": "exact_label_match",
+        "audit_status": "mapped_skeleton_needs_proof",
+        "related_lean": [
+          {
+            "lean_file": "experimental/lean/cs25_cap_v12/cs25_cap_v12/CircleCode.lean",
+            "lean_name": "RSCap.lem_cheb_fibers",
+            "decl_kind": "theorem",
+            "line": 52,
+            "source_scan_status": "contains_sorry_or_admit",
+            "mapping_confidence": "exact_label_match",
+            "mapping_reason": "exact_label_match"
+          }
+        ]
       },
       "statement_excerpt": "Let $ D=gH g^{-1}H$ be a twin coset of size $2M$, let $D:=( D)_p$, $|D|=M$, and let $a M$ satisfy $g^{2a} H^{(a)}$. Then $D$ is $(T_a,a)$-smooth over $_p$, and \\[ T_a(D)\\ =\\ ( D^{(a)}) \\] is the $x$-coordinate domain of the twin coset $ D^{(a)}$, of size $M/a$. In particular, if $ord(g)2M$, this holds at every scale $a M$ simultaneously, and for $M=2^m$ the tower \\[ D\\ {\\ T_2\\ }\\ T_2(D)\\ {\\ T_2\\ }\\ T_4(D)\\ {\\ T_2\\ }\\ \\] consists of $x$-coordinate twin-coset domains of sizes $M,M/2,M/4,$ --- the line-round tower of circle FRI HLP24.",
       "depends_on": [],
@@ -4956,10 +5481,23 @@
       "kind": "lemma",
       "status": "proved_in_tex_or_imported",
       "formalization": {
-        "lean_file": "",
-        "lean_name": "",
-        "statement_status": "not_started",
-        "notes": ""
+        "lean_file": "experimental/lean/cs25_cap_v12/cs25_cap_v12/Main.lean",
+        "lean_name": "RSCap.caBad_diag_imp_mcaBad",
+        "statement_status": "lean_statement_present_no_sorry_source_scan",
+        "notes": "Mapped from existing Lean source by update-blueprint-map.py. Primary selected from 1 related declaration(s); source-level scan only, Lake not run.",
+        "mapping_confidence": "curated_alias",
+        "audit_status": "mapped_source_scanned_not_built",
+        "related_lean": [
+          {
+            "lean_file": "experimental/lean/cs25_cap_v12/cs25_cap_v12/Main.lean",
+            "lean_name": "RSCap.caBad_diag_imp_mcaBad",
+            "decl_kind": "theorem",
+            "line": 128,
+            "source_scan_status": "no_sorry_or_admit_seen",
+            "mapping_confidence": "curated_alias",
+            "mapping_reason": "curated_alias"
+          }
+        ]
       },
       "statement_excerpt": "Let $C^n$ be a linear code and $t(^{})^n$; write $t v$ for the coordinatewise product and $t C:=\\{t c:c C\\}$. Then for every received word $U$, every radius $$, and every pair of radii, \\[ (t C,,t U)=t(C,,U), (t C,,)=(C,,), (t C,)=(C,). \\]",
       "depends_on": [],
@@ -4986,10 +5524,23 @@
       "kind": "lemma",
       "status": "proved_in_tex_or_imported",
       "formalization": {
-        "lean_file": "",
-        "lean_name": "",
-        "statement_status": "not_started",
-        "notes": ""
+        "lean_file": "experimental/lean/cs25_cap_v12/cs25_cap_v12/CircleCode.lean",
+        "lean_name": "RSCap.lem_circle_rs",
+        "statement_status": "lean_statement_skeleton_sorry_source_scan",
+        "notes": "Mapped from existing Lean source by update-blueprint-map.py. Primary selected from 1 related declaration(s); source-level scan only, Lake not run.",
+        "mapping_confidence": "exact_label_match",
+        "audit_status": "mapped_skeleton_needs_proof",
+        "related_lean": [
+          {
+            "lean_file": "experimental/lean/cs25_cap_v12/cs25_cap_v12/CircleCode.lean",
+            "lean_name": "RSCap.lem_circle_rs",
+            "decl_kind": "theorem",
+            "line": 74,
+            "source_scan_status": "contains_sorry_or_admit",
+            "mapping_confidence": "exact_label_match",
+            "mapping_reason": "exact_label_match"
+          }
+        ]
       },
       "statement_excerpt": "Let $p34$, let $_{p^2}$ be a finite field (so $i$), let $E C(_p)$ be a set of circle points, and let $E':=(E)_{p^2}^{}$. For $w0$ define the $$-coefficient circle code \\[ C_w(,E)\\ :=\\ \\{(f(P))_{P E}\\ :\\ f/(x^2+y^2-1),\\ f w\\}. \\] Then, under the coordinate bijection $:E E'$ and with the diagonal vector $t:=(u^{-w})_{u E'}$, \\[ C_w(,E)\\ =\\ t. \\] Consequently, by lem:diag-invariance, the circle code and the Reed--Solomon code $$ of odd dimension $2w+1$ on the torus domain $E'$ have identical list sizes at every radius and identical $$ and $$ at every (pair of) radii.",
       "depends_on": [
@@ -5019,10 +5570,23 @@
       "kind": "corollary",
       "status": "proved_in_tex_or_imported",
       "formalization": {
-        "lean_file": "",
-        "lean_name": "",
-        "statement_status": "not_started",
-        "notes": ""
+        "lean_file": "experimental/lean/cs25_cap_v12/cs25_cap_v12/CircleCode.lean",
+        "lean_name": "RSCap.cor_circle_grand",
+        "statement_status": "lean_statement_skeleton_sorry_source_scan",
+        "notes": "Mapped from existing Lean source by update-blueprint-map.py. Primary selected from 1 related declaration(s); source-level scan only, Lake not run.",
+        "mapping_confidence": "exact_label_match",
+        "audit_status": "mapped_skeleton_needs_proof",
+        "related_lean": [
+          {
+            "lean_file": "experimental/lean/cs25_cap_v12/cs25_cap_v12/CircleCode.lean",
+            "lean_name": "RSCap.cor_circle_grand",
+            "decl_kind": "theorem",
+            "line": 89,
+            "source_scan_status": "contains_sorry_or_admit",
+            "mapping_confidence": "exact_label_match",
+            "mapping_reason": "exact_label_match"
+          }
+        ]
       },
       "statement_excerpt": "Let $p34$ be prime, let $ D=gH g^{-1}H$ be a twin coset of size $2M$ with $ord(g)2M$ (e.g.\\ any standard-position coset of HLP24, by rem:standard-position), and let $$ be any finite field with $q:=||<2^{256}$. {enumerate}[label=()] (Line rounds.) Assume $_p$. Let $D:=( D)$, $n:=M$, and $C:=$ with $k2^{40}$ and $:=k/n$. If $18$, assume $2^{10} M$ and set $N:=2^{10}$; if $<18$, assume $2^{11} M$ and set $N:=2^{11}$. Then \\[ (C,)\\;>\\;1{2k}(1- nq)\\;\\;2^{-86}\\;\\;2^{-128} {for every }\\ and the same lower bound holds for $(C,)$ on the integer-admissible subinterval $[1-{A_2}n,\\,1--1n]$, with $A_2$ as in lem:phi-fiber for $a=n/N$. If moreover $ nN k$",
       "depends_on": [
@@ -5202,10 +5766,41 @@
       "kind": "proposition",
       "status": "proved_in_tex_or_imported",
       "formalization": {
-        "lean_file": "",
-        "lean_name": "",
-        "statement_status": "not_started",
-        "notes": ""
+        "lean_file": "experimental/lean/staircase_logic/StaircaseLogic/Staircase.lean",
+        "lean_name": "StaircaseLogic.Staircase.oneStep_isFirstSafe",
+        "statement_status": "lean_statement_present_no_sorry_source_scan",
+        "notes": "Mapped from existing Lean source by update-blueprint-map.py. Primary selected from 3 related declaration(s); source-level scan only, Lake not run.",
+        "mapping_confidence": "exact_label_match",
+        "audit_status": "mapped_source_scanned_not_built",
+        "related_lean": [
+          {
+            "lean_file": "experimental/lean/staircase_logic/StaircaseLogic/Staircase.lean",
+            "lean_name": "StaircaseLogic.Staircase.oneStep_isFirstSafe",
+            "decl_kind": "theorem",
+            "line": 125,
+            "source_scan_status": "no_sorry_or_admit_seen",
+            "mapping_confidence": "exact_label_match",
+            "mapping_reason": "exact_label_match"
+          },
+          {
+            "lean_file": "experimental/lean/staircase_logic/StaircaseLogic/ToyCert.lean",
+            "lean_name": "StaircaseLogic.toy_isFirstSafe",
+            "decl_kind": "theorem",
+            "line": 83,
+            "source_scan_status": "no_sorry_or_admit_seen",
+            "mapping_confidence": "exact_label_match",
+            "mapping_reason": "exact_label_match"
+          },
+          {
+            "lean_file": "experimental/lean/staircase_logic/StaircaseLogic/Staircase.lean",
+            "lean_name": "StaircaseLogic.Staircase.oneStep_firstSafe",
+            "decl_kind": "theorem",
+            "line": 251,
+            "source_scan_status": "no_sorry_or_admit_seen",
+            "mapping_confidence": "exact_label_match",
+            "mapping_reason": "exact_label_match"
+          }
+        ]
       },
       "statement_excerpt": "Fix a row $C$ and a denominator $q_{ line}$. Suppose that for some agreement $a_0$ one has a lower certificate \\[ B_{ mca}(a_0)>2^{-128}q_{ line} \\] and an upper theorem \\[ B_{ mca}(a_0+1)2^{-128}q_{ line}. \\] Then, under the closed integer-radius convention, radius $1-a_0/n$ is unsafe and radius $1-(a_0+1)/n$ is safe. As a real-radius supremum, the threshold is $1-a_0/n$ and is not attained if the closed ball at that endpoint is counted.",
       "depends_on": [],
@@ -5471,10 +6066,59 @@
       "kind": "theorem",
       "status": "proved_in_tex_or_imported",
       "formalization": {
-        "lean_file": "",
-        "lean_name": "",
-        "statement_status": "not_started",
-        "notes": ""
+        "lean_file": "experimental/lean/cs25_cap_v12/cs25_cap_v12/DeepMCA.lean",
+        "lean_name": "RSCap.emcaErr_le_deep",
+        "statement_status": "lean_statement_present_no_sorry_source_scan",
+        "notes": "Mapped from existing Lean source by update-blueprint-map.py. Primary selected from 5 related declaration(s); source-level scan only, Lake not run.",
+        "mapping_confidence": "exact_label_match",
+        "audit_status": "mapped_source_scanned_not_built",
+        "related_lean": [
+          {
+            "lean_file": "experimental/lean/cs25_cap_v12/cs25_cap_v12/DeepMCA.lean",
+            "lean_name": "RSCap.emcaErr_le_deep",
+            "decl_kind": "theorem",
+            "line": 177,
+            "source_scan_status": "no_sorry_or_admit_seen",
+            "mapping_confidence": "exact_label_match",
+            "mapping_reason": "exact_label_match"
+          },
+          {
+            "lean_file": "experimental/lean/cs25_cap_v12/cs25_cap_v12/DeepMCA.lean",
+            "lean_name": "RSCap.close_slope_dichotomy",
+            "decl_kind": "theorem",
+            "line": 55,
+            "source_scan_status": "no_sorry_or_admit_seen",
+            "mapping_confidence": "exact_label_match",
+            "mapping_reason": "exact_label_match"
+          },
+          {
+            "lean_file": "experimental/lean/cs25_cap_v12/cs25_cap_v12/RSSandwich.lean",
+            "lean_name": "RSCap.rs_emcaErr_le_deep",
+            "decl_kind": "theorem",
+            "line": 97,
+            "source_scan_status": "no_sorry_or_admit_seen",
+            "mapping_confidence": "exact_label_match",
+            "mapping_reason": "exact_label_match"
+          },
+          {
+            "lean_file": "experimental/lean/cs25_cap_v12/cs25_cap_v12/RSSandwich.lean",
+            "lean_name": "RSCap.rs_ecaErr_le_deep",
+            "decl_kind": "theorem",
+            "line": 109,
+            "source_scan_status": "no_sorry_or_admit_seen",
+            "mapping_confidence": "exact_label_match",
+            "mapping_reason": "exact_label_match"
+          },
+          {
+            "lean_file": "experimental/lean/cs25_cap_v12/cs25_cap_v12/DeepMCA.lean",
+            "lean_name": "RSCap.ecaErr_le_deep",
+            "decl_kind": "theorem",
+            "line": 159,
+            "source_scan_status": "no_sorry_or_admit_seen",
+            "mapping_confidence": "exact_label_match",
+            "mapping_reason": "exact_label_match"
+          }
+        ]
       },
       "statement_excerpt": "Let $C^n$ be any $$-linear code of minimum Hamming weight $w$, let $q=||$, let $(0,1)$, and put $r:= n$. Assume \\[ 3r\\ \\ w-1 . \\] Then for every pair $(f_1,f_2)^n^n$, at least one of the following alternatives holds: {enumerate}[label=()] (Tangent pair.) There are codewords $c_1,c_2 C$ and a set $T'\\{1,,n\\}$ with $|T'| r$ such that $f_i=c_i$ off $T'$ for $i=1,2$; in this case $(f_1,f_2)$ has no CA-bad slope at radii $(,_{int})$ for any $_{int}$, and at most $|T'| r$ MCA-bad slopes at radius $$, namely a subset of $\\{-e_{1,j}/e_{2,j}:\\,j T',\\ e_{2,j}0\\}$ where $e_i:=f_i-c_i$. (Generic pair.) $\\#\\{:\\ (f_1+ f_2,\\,C)\\}\\ \\ r+1$. {enumerate} Conseq",
       "depends_on": [],
@@ -5756,10 +6400,41 @@
       "kind": "theorem",
       "status": "proved_in_tex_or_imported",
       "formalization": {
-        "lean_file": "",
-        "lean_name": "",
-        "statement_status": "not_started",
-        "notes": ""
+        "lean_file": "experimental/lean/cs25_cap_v12/cs25_cap_v12/Johnson.lean",
+        "lean_name": "RSCap.johnson_list_bound",
+        "statement_status": "lean_statement_present_no_sorry_source_scan",
+        "notes": "Mapped from existing Lean source by update-blueprint-map.py. Primary selected from 3 related declaration(s); source-level scan only, Lake not run.",
+        "mapping_confidence": "exact_label_match",
+        "audit_status": "mapped_source_scanned_not_built",
+        "related_lean": [
+          {
+            "lean_file": "experimental/lean/cs25_cap_v12/cs25_cap_v12/Johnson.lean",
+            "lean_name": "RSCap.johnson_list_bound",
+            "decl_kind": "theorem",
+            "line": 61,
+            "source_scan_status": "no_sorry_or_admit_seen",
+            "mapping_confidence": "exact_label_match",
+            "mapping_reason": "exact_label_match"
+          },
+          {
+            "lean_file": "experimental/lean/cs25_cap_v12/cs25_cap_v12/Johnson.lean",
+            "lean_name": "RSCap.sum_deg_eq",
+            "decl_kind": "theorem",
+            "line": 38,
+            "source_scan_status": "no_sorry_or_admit_seen",
+            "mapping_confidence": "exact_label_match",
+            "mapping_reason": "exact_label_match"
+          },
+          {
+            "lean_file": "experimental/lean/cs25_cap_v12/cs25_cap_v12/Johnson.lean",
+            "lean_name": "RSCap.sum_deg_sq_eq",
+            "decl_kind": "theorem",
+            "line": 48,
+            "source_scan_status": "no_sorry_or_admit_seen",
+            "mapping_confidence": "exact_label_match",
+            "mapping_reason": "exact_label_match"
+          }
+        ]
       },
       "statement_excerpt": "Let $C=$ on any evaluation set $D$ of size $n$, let $m1$, and let $a$ be an agreement threshold with $a^2>(k-1)n$. Then for every received $m$-tuple $U$, \\[ |(C^{ m},\\,1- an,\\,U)| \\ \\ {n\\,(a-k+1)}{a^2-(k-1)n}\\,, \\] where the list is taken in the column distance $_m$. The same bound holds for any code family in which two distinct codewords column-agree on at most $k-1$ coordinates; in particular it holds for interleaved bivariate circle codes with $k$ replaced by $k_c$.",
       "depends_on": [],
@@ -5922,10 +6597,32 @@
       "kind": "proposition",
       "status": "proved_in_tex_or_imported",
       "formalization": {
-        "lean_file": "",
-        "lean_name": "",
-        "statement_status": "not_started",
-        "notes": ""
+        "lean_file": "experimental/lean/cs25_cap_v12/cs25_cap_v12/Scanner.lean",
+        "lean_name": "RSCap.dStar_eq_zero_of_small_field",
+        "statement_status": "lean_statement_present_no_sorry_source_scan",
+        "notes": "Mapped from existing Lean source by update-blueprint-map.py. Primary selected from 2 related declaration(s); source-level scan only, Lake not run.",
+        "mapping_confidence": "exact_label_match",
+        "audit_status": "mapped_source_scanned_not_built",
+        "related_lean": [
+          {
+            "lean_file": "experimental/lean/cs25_cap_v12/cs25_cap_v12/Scanner.lean",
+            "lean_name": "RSCap.dStar_eq_zero_of_small_field",
+            "decl_kind": "theorem",
+            "line": 60,
+            "source_scan_status": "no_sorry_or_admit_seen",
+            "mapping_confidence": "exact_label_match",
+            "mapping_reason": "exact_label_match"
+          },
+          {
+            "lean_file": "experimental/lean/cs25_cap_v12/cs25_cap_v12/Scanner.lean",
+            "lean_name": "RSCap.emca_ge_inv_q",
+            "decl_kind": "theorem",
+            "line": 38,
+            "source_scan_status": "no_sorry_or_admit_seen",
+            "mapping_confidence": "exact_label_match",
+            "mapping_reason": "exact_label_match"
+          }
+        ]
       },
       "statement_excerpt": "Let $C^n$ be any linear code and $q=||$. For every $(0,1)$, $(C,)1/q$. Consequently $^*_C(^*)=0$ whenever $^*<1/q$; in particular every row over a field of size $q<2^{128}$ --- including the deployed QM31 circle rows, $q=p^4<2^{124}$ --- has a degenerate grand-challenge threshold $^*_C(2^{-128})=0$, and the meaningful staircase question there is posed at a larger target such as $^*=2^{-100}$. At equality $1/q=^*$ the construction below gives only a floor meeting the target exactly, not strict unsafety; all degeneracy statements therefore require $1/q>^*$.",
       "depends_on": [],
@@ -5998,10 +6695,50 @@
       "kind": "theorem",
       "status": "proved_in_tex_or_imported",
       "formalization": {
-        "lean_file": "",
-        "lean_name": "",
-        "statement_status": "not_started",
-        "notes": ""
+        "lean_file": "experimental/lean/cs25_cap_v12/cs25_cap_v12/Scanner.lean",
+        "lean_name": "RSCap.scanner_deep_safe_ca",
+        "statement_status": "lean_statement_present_no_sorry_source_scan",
+        "notes": "Mapped from existing Lean source by update-blueprint-map.py. Primary selected from 4 related declaration(s); source-level scan only, Lake not run.",
+        "mapping_confidence": "mixed",
+        "audit_status": "mapped_needs_statement_audit",
+        "related_lean": [
+          {
+            "lean_file": "experimental/lean/cs25_cap_v12/cs25_cap_v12/Scanner.lean",
+            "lean_name": "RSCap.scanner_deep_safe_ca",
+            "decl_kind": "theorem",
+            "line": 91,
+            "source_scan_status": "no_sorry_or_admit_seen",
+            "mapping_confidence": "curated_alias",
+            "mapping_reason": "curated_alias"
+          },
+          {
+            "lean_file": "experimental/lean/cs25_cap_v12/cs25_cap_v12/Scanner.lean",
+            "lean_name": "RSCap.emca_ge_inv_q",
+            "decl_kind": "theorem",
+            "line": 38,
+            "source_scan_status": "no_sorry_or_admit_seen",
+            "mapping_confidence": "exact_label_match",
+            "mapping_reason": "exact_label_match"
+          },
+          {
+            "lean_file": "experimental/lean/cs25_cap_v12/cs25_cap_v12/Scanner.lean",
+            "lean_name": "RSCap.dStar_eq_zero_of_small_field",
+            "decl_kind": "theorem",
+            "line": 60,
+            "source_scan_status": "no_sorry_or_admit_seen",
+            "mapping_confidence": "exact_label_match",
+            "mapping_reason": "exact_label_match"
+          },
+          {
+            "lean_file": "experimental/lean/cs25_cap_v12/cs25_cap_v12/Scanner.lean",
+            "lean_name": "RSCap.scanner_deep_safe",
+            "decl_kind": "theorem",
+            "line": 79,
+            "source_scan_status": "no_sorry_or_admit_seen",
+            "mapping_confidence": "exact_label_match",
+            "mapping_reason": "exact_label_match"
+          }
+        ]
       },
       "statement_excerpt": "Every verdict printed by the scanner of def:scanner is correct: agreements marked unsafe satisfy $(C,1-a/n)>^*$ (resp.\\ list size $>^*q$), agreements marked safe satisfy $(C,1-a/n)^*$ (resp.\\ list size $^*q$, for every $m$), and consequently $a_{ unsafe}<a^*_C a_{ safe}$ in the staircase formulation of prop:onestep.",
       "depends_on": [
@@ -6063,10 +6800,32 @@
       "kind": "definition",
       "status": "definition",
       "formalization": {
-        "lean_file": "",
-        "lean_name": "",
-        "statement_status": "not_started",
-        "notes": ""
+        "lean_file": "experimental/lean/cs25_cap_v12/cs25_cap_v12/ECFFT.lean",
+        "lean_name": "RSCap.RationalSmooth",
+        "statement_status": "lean_statement_present_no_sorry_source_scan",
+        "notes": "Mapped from existing Lean source by update-blueprint-map.py. Primary selected from 2 related declaration(s); source-level scan only, Lake not run.",
+        "mapping_confidence": "exact_label_match",
+        "audit_status": "mapped_source_scanned_not_built",
+        "related_lean": [
+          {
+            "lean_file": "experimental/lean/cs25_cap_v12/cs25_cap_v12/ECFFT.lean",
+            "lean_name": "RSCap.RationalSmooth",
+            "decl_kind": "def",
+            "line": 39,
+            "source_scan_status": "no_sorry_or_admit_seen",
+            "mapping_confidence": "exact_label_match",
+            "mapping_reason": "exact_label_match"
+          },
+          {
+            "lean_file": "experimental/lean/cs25_cap_v12/cs25_cap_v12/BlueprintCommon.lean",
+            "lean_name": "RSCap.DomSmooth",
+            "decl_kind": "def",
+            "line": 62,
+            "source_scan_status": "no_sorry_or_admit_seen",
+            "mapping_confidence": "exact_label_match",
+            "mapping_reason": "exact_label_match"
+          }
+        ]
       },
       "statement_excerpt": "Let $$, let $=f/g$ with $f,g$ coprime, $a:= f>e:= g0$, and let $D$ with $g$ nonvanishing on $D$. The set $D$ is $(,a)$-smooth if every nonempty fiber $^{-1}(w) D$, $w(D)$, has exactly $a$ elements; then $N:=|D|/a=|(D)|$. The FFTree domains of ECFFT BCKL21 are $(,2)$-smooth for the $x$-coordinate map $$ of each $2$-isogeny in the chain, of degree type $(a,e)=(2,1)$.",
       "depends_on": [],
@@ -6095,10 +6854,23 @@
       "kind": "proposition",
       "status": "proved_in_tex_or_imported",
       "formalization": {
-        "lean_file": "",
-        "lean_name": "",
-        "statement_status": "not_started",
-        "notes": ""
+        "lean_file": "experimental/lean/cs25_cap_v12/cs25_cap_v12/ECFFT.lean",
+        "lean_name": "RSCap.prop_rational_floor",
+        "statement_status": "lean_statement_skeleton_sorry_source_scan",
+        "notes": "Mapped from existing Lean source by update-blueprint-map.py. Primary selected from 1 related declaration(s); source-level scan only, Lake not run.",
+        "mapping_confidence": "exact_label_match",
+        "audit_status": "mapped_skeleton_needs_proof",
+        "related_lean": [
+          {
+            "lean_file": "experimental/lean/cs25_cap_v12/cs25_cap_v12/ECFFT.lean",
+            "lean_name": "RSCap.prop_rational_floor",
+            "decl_kind": "theorem",
+            "line": 49,
+            "source_scan_status": "contains_sorry_or_admit",
+            "mapping_confidence": "exact_label_match",
+            "mapping_reason": "exact_label_match"
+          }
+        ]
       },
       "statement_excerpt": "Let $D$ be $(,a)$-smooth of size $n$, with $=f/g$ of degree type $(a,e)$, and let $2 N-1$. Put \\[ k'\\ :=\\ a-2(a-e), u_z\\ :=\\ (f(x)^{}+z\\,f(x)^{-1}g(x))_{x D}^n . \\] Then there exists $z$ with \\[ |(,\\,1-{a}n,\\,u_z)|\\ \\ N{}/|| , \\] i.e.\\ a list at agreement $a=k'+2(a-e)$. For $e=0$ this is lem:phi-fiber(ii) (window $2a$, gap $2/N$); for $e=a-1$ the window is $2$ and the certified agreement is $k'+2$ --- the first staircase step, in accordance with the collapse of rem:ecfft-obstruction.",
       "depends_on": [
@@ -6127,10 +6899,23 @@
       "kind": "corollary",
       "status": "proved_in_tex_or_imported",
       "formalization": {
-        "lean_file": "",
-        "lean_name": "",
-        "statement_status": "not_started",
-        "notes": ""
+        "lean_file": "experimental/lean/cs25_cap_v12/cs25_cap_v12/ECFFT.lean",
+        "lean_name": "RSCap.cor_ecfft_onestep",
+        "statement_status": "lean_statement_skeleton_sorry_source_scan",
+        "notes": "Mapped from existing Lean source by update-blueprint-map.py. Primary selected from 1 related declaration(s); source-level scan only, Lake not run.",
+        "mapping_confidence": "exact_label_match",
+        "audit_status": "mapped_skeleton_needs_proof",
+        "related_lean": [
+          {
+            "lean_file": "experimental/lean/cs25_cap_v12/cs25_cap_v12/ECFFT.lean",
+            "lean_name": "RSCap.cor_ecfft_onestep",
+            "decl_kind": "theorem",
+            "line": 70,
+            "source_scan_status": "contains_sorry_or_admit",
+            "mapping_confidence": "exact_label_match",
+            "mapping_reason": "exact_label_match"
+          }
+        ]
       },
       "statement_excerpt": "Let $D$ be an ECFFT domain that is $(,2)$-smooth (def:rational-smooth) over $$, let $C=$ with $2 k$, $=k/n$, $n<q=||<2^{256}$, and $n2^{12}$. Then, with $=(k+2)/2 N-1$, \\[ {n/2}{(k+2)/2}\\ \\ ||( qk+1), \\] and consequently \\[ (C,\\,1--2n)\\ >\\ 1{2k}(1- nq), (C,)\\ >\\ 1{2k}(1- nq)\\ \\ {for every } so $^*_C(^*)1--2/n$ for every $^*1{2k}(1- nq)$; and, provided $k<2^{128}$, the list challenge is likewise unsafe at that step, since ${n/2}{(k+2)/2}/|| q/k>2^{-128}q$. For odd $k$ the same argument with $= k/2+1$ gives the step at $1--1/n$.",
       "depends_on": [
@@ -6236,10 +7021,32 @@
       "kind": "theorem",
       "status": "proved_in_tex_or_imported",
       "formalization": {
-        "lean_file": "",
-        "lean_name": "",
-        "statement_status": "not_started",
-        "notes": ""
+        "lean_file": "experimental/lean/cs25_cap_v12/cs25_cap_v12/SafeSide.lean",
+        "lean_name": "RSCap.emca_le_max_eca_tangent",
+        "statement_status": "lean_statement_present_no_sorry_source_scan",
+        "notes": "Mapped from existing Lean source by update-blueprint-map.py. Primary selected from 2 related declaration(s); source-level scan only, Lake not run.",
+        "mapping_confidence": "exact_label_match",
+        "audit_status": "mapped_source_scanned_not_built",
+        "related_lean": [
+          {
+            "lean_file": "experimental/lean/cs25_cap_v12/cs25_cap_v12/SafeSide.lean",
+            "lean_name": "RSCap.emca_le_max_eca_tangent",
+            "decl_kind": "theorem",
+            "line": 115,
+            "source_scan_status": "no_sorry_or_admit_seen",
+            "mapping_confidence": "exact_label_match",
+            "mapping_reason": "exact_label_match"
+          },
+          {
+            "lean_file": "experimental/lean/cs25_cap_v12/cs25_cap_v12/SafeSide.lean",
+            "lean_name": "RSCap.mcaBad_close_tangent",
+            "decl_kind": "theorem",
+            "line": 65,
+            "source_scan_status": "no_sorry_or_admit_seen",
+            "mapping_confidence": "exact_label_match",
+            "mapping_reason": "exact_label_match"
+          }
+        ]
       },
       "statement_excerpt": "Let $C^n$ be any $$-linear code of minimum Hamming weight $w$, let $q=||$, let $(0,1)$, and put $r:= n$. Assume \\[ 2r\\ \\ w-1 . \\] Then for every pair $(f_1,f_2)^n^n$: {enumerate}[label=()] if $_2((f_1,f_2),C^{2})$, the pair has no CA-bad slope at radius $$, and at most $r$ MCA-bad slopes at radius $$: writing $(p_1,p_2)$ for a pair of codewords column-agreeing with $(f_1,f_2)$ outside a set $E$ with $|E| r$ and $e_i:=f_i-p_i$, the MCA-bad slopes form a subset of $\\{-e_{1,j}/e_{2,j}:\\ j E,\\ e_{2,j}0\\}$; if $_2((f_1,f_2),C^{2})>$, every MCA-bad slope at radius $$ is CA-bad at radii $(,)$. {enumerate} Consequently \\[ (C,)\\ \\ (\\,(C,),\\ rq\\,). \\] ",
       "depends_on": [],
@@ -6297,10 +7104,41 @@
       "kind": "corollary",
       "status": "target_or_conjectural",
       "formalization": {
-        "lean_file": "",
-        "lean_name": "",
-        "statement_status": "not_started",
-        "notes": ""
+        "lean_file": "experimental/lean/cs25_cap_v12/cs25_cap_v12/SafeSide.lean",
+        "lean_name": "RSCap.emca_le_of_eca_le",
+        "statement_status": "lean_statement_present_no_sorry_source_scan",
+        "notes": "Mapped from existing Lean source by update-blueprint-map.py. Primary selected from 3 related declaration(s); source-level scan only, Lake not run.",
+        "mapping_confidence": "exact_label_match",
+        "audit_status": "mapped_source_scanned_not_built",
+        "related_lean": [
+          {
+            "lean_file": "experimental/lean/cs25_cap_v12/cs25_cap_v12/SafeSide.lean",
+            "lean_name": "RSCap.emca_le_of_eca_le",
+            "decl_kind": "theorem",
+            "line": 137,
+            "source_scan_status": "no_sorry_or_admit_seen",
+            "mapping_confidence": "exact_label_match",
+            "mapping_reason": "exact_label_match"
+          },
+          {
+            "lean_file": "experimental/lean/cs25_cap_v12/cs25_cap_v12/SafeSide.lean",
+            "lean_name": "RSCap.mcaBad_close_tangent",
+            "decl_kind": "theorem",
+            "line": 65,
+            "source_scan_status": "no_sorry_or_admit_seen",
+            "mapping_confidence": "exact_label_match",
+            "mapping_reason": "exact_label_match"
+          },
+          {
+            "lean_file": "experimental/lean/cs25_cap_v12/cs25_cap_v12/SafeSide.lean",
+            "lean_name": "RSCap.emca_le_max_eca_tangent",
+            "decl_kind": "theorem",
+            "line": 115,
+            "source_scan_status": "no_sorry_or_admit_seen",
+            "mapping_confidence": "exact_label_match",
+            "mapping_reason": "exact_label_match"
+          }
+        ]
       },
       "statement_excerpt": "Let $C=$ and let $$ satisfy $2 n n-k$. Then any correlated-agreement bound $(C,)$ implies $(C,)(, n/q)$. In particular, on the agreement subrange $a(n+k)/2$ of the broad band formulation prob:band, the aperiodic band conjecture reduces to its correlated-agreement form: column-close pairs contribute at most $ n$ explicit tangent slopes, and what must be bounded polynomially is only, for each column-far pair, the number of slopes $$ for which $f_1+ f_2$ has an aperiodically witnessed agreement set of size at least $(1-)n$.",
       "depends_on": [
@@ -6622,10 +7460,23 @@
       "kind": "proposition",
       "status": "proved_in_tex_or_imported",
       "formalization": {
-        "lean_file": "",
-        "lean_name": "",
-        "statement_status": "not_started",
-        "notes": ""
+        "lean_file": "experimental/lean/cs25_cap_v12/cs25_cap_v12/ECFFT.lean",
+        "lean_name": "RSCap.prop_graded_rational_floor",
+        "statement_status": "lean_statement_skeleton_sorry_source_scan",
+        "notes": "Mapped from existing Lean source by update-blueprint-map.py. Primary selected from 1 related declaration(s); source-level scan only, Lake not run.",
+        "mapping_confidence": "exact_label_match",
+        "audit_status": "mapped_skeleton_needs_proof",
+        "related_lean": [
+          {
+            "lean_file": "experimental/lean/cs25_cap_v12/cs25_cap_v12/ECFFT.lean",
+            "lean_name": "RSCap.prop_graded_rational_floor",
+            "decl_kind": "theorem",
+            "line": 93,
+            "source_scan_status": "contains_sorry_or_admit",
+            "mapping_confidence": "exact_label_match",
+            "mapping_reason": "exact_label_match"
+          }
+        ]
       },
       "statement_excerpt": "Let $$ be a subfield and let $D$ with $|D|=n$ be $(,a)$-smooth in the sense of def:rational-smooth, with $=f/g$ of degree type $(a,e)$, $a>e0$; put $N:=n/a$ and $Q:=(D)$. Let $1 K n$ and let $m$ satisfy \\[ am\\ \\ K, em\\ \\ K, m\\ \\ N, {and put} w\\ :=\\ {am-K}{a-e}\\ \\ m . \\] Then there is a $$-valued received word $U:D$ with \\[ |(,\\,1-{am}{n},\\,U)| \\ \\ { Nm}{||^{\\,w}} . \\] For $e=0$ this is prop:graded-prefix-floor (then $w=m- K/a$); for $w1$ it recovers the slack-two window of prop:rational-floor.",
       "depends_on": [
@@ -6657,10 +7508,23 @@
       "kind": "corollary",
       "status": "proved_in_tex_or_imported",
       "formalization": {
-        "lean_file": "",
-        "lean_name": "",
-        "statement_status": "not_started",
-        "notes": ""
+        "lean_file": "experimental/lean/cs25_cap_v12/cs25_cap_v12/ECFFT.lean",
+        "lean_name": "RSCap.cor_ecfft_macroscopic",
+        "statement_status": "lean_statement_skeleton_sorry_source_scan",
+        "notes": "Mapped from existing Lean source by update-blueprint-map.py. Primary selected from 1 related declaration(s); source-level scan only, Lake not run.",
+        "mapping_confidence": "exact_label_match",
+        "audit_status": "mapped_skeleton_needs_proof",
+        "related_lean": [
+          {
+            "lean_file": "experimental/lean/cs25_cap_v12/cs25_cap_v12/ECFFT.lean",
+            "lean_name": "RSCap.cor_ecfft_macroscopic",
+            "decl_kind": "theorem",
+            "line": 112,
+            "source_scan_status": "contains_sorry_or_admit",
+            "mapping_confidence": "exact_label_match",
+            "mapping_reason": "exact_label_match"
+          }
+        ]
       },
       "statement_excerpt": "Let $D$ be $(,2)$-smooth over $$ with $$ of degree type $(2,1)$ (def:rational-smooth; in particular every FFTree domain of ECFFT BCKL21), let $C=$ with $:=k/n$, $n2^{14}$, $n<q=||<2^{256}$, and $:=_2||64$. Put $m:=(k+1+2^{-9}n)/2$ and $N:=n/2$. Then \\[ Nm\\ >\\ ||^{\\,2m-k-1}( qk+1) {and} Nm\\ >\\ ||^{\\,2m-k}\\,2^{-128}q , \\] and consequently: {enumerate}[label=()] (MCA/CA cap) $(C,)>1{2k}(1- nq)$ for every integer-admissible $$, and $(C,)$ obeys the same lower bound for every $[1--2^{-9},\\,1-)$; (list cap) there is a $$-valued word $U$ with $|(C,1-{2m}n,U)|>2^{-128}q$, so the grand list challenge is unsafe at target $2^{-128}$ on the same band. {e",
       "depends_on": [
@@ -6727,10 +7591,23 @@
       "kind": "lemma",
       "status": "proved_in_tex_or_imported",
       "formalization": {
-        "lean_file": "",
-        "lean_name": "",
-        "statement_status": "not_started",
-        "notes": ""
+        "lean_file": "experimental/lean/cs25_cap_v12/cs25_cap_v12/CircleCode.lean",
+        "lean_name": "RSCap.lem_stereographic",
+        "statement_status": "lean_statement_skeleton_sorry_source_scan",
+        "notes": "Mapped from existing Lean source by update-blueprint-map.py. Primary selected from 1 related declaration(s); source-level scan only, Lake not run.",
+        "mapping_confidence": "exact_label_match",
+        "audit_status": "mapped_skeleton_needs_proof",
+        "related_lean": [
+          {
+            "lean_file": "experimental/lean/cs25_cap_v12/cs25_cap_v12/CircleCode.lean",
+            "lean_name": "RSCap.lem_stereographic",
+            "decl_kind": "theorem",
+            "line": 109,
+            "source_scan_status": "contains_sorry_or_admit",
+            "mapping_confidence": "exact_label_match",
+            "mapping_reason": "exact_label_match"
+          }
+        ]
       },
       "statement_excerpt": "Let $p34$, let $ D=gH g^{-1}H$ be a twin coset of size $2M$ with $ord(g)2M$ and $4 M$, let $E:=^{-1}( D) C(_p)$, and let $_p$ be any finite field. Define $s(x,y):=y/(1+x)$ and $T:=s(E)$. {enumerate}[label=()] The four torsion points $(1,0),(0,1)$ lie in $^{-1}(H)$ and hence not in $E$; $s$ is injective on $E$ with inverse $s({1-s^2}{1+s^2},{2s}{1+s^2})$; and $T_p\\{0,1\\}$ with $|T|=2M$. (Over $_p$ one has $1+s^20$ throughout, since $p34$.) With the diagonal vector $d:=((1+s(P)^2)^{-w})_{P E}$ and the coordinate bijection $s|_E:E T$, \\[ C_w(,E)\\ =\\ d. \\] Consequently, by lem:diag-invariance, the bivariate circle code on $E$ and $$ have identica",
       "depends_on": [
@@ -6802,10 +7679,50 @@
       "kind": "theorem",
       "status": "proved_in_tex_or_imported",
       "formalization": {
-        "lean_file": "",
-        "lean_name": "",
-        "statement_status": "not_started",
-        "notes": ""
+        "lean_file": "experimental/lean/cs25_cap_v12/cs25_cap_v12/InterleavingTransfer.lean",
+        "lean_name": "RSCap.thm_explicit_head_floor_even",
+        "statement_status": "lean_mixed_proved_and_skeleton_source_scan",
+        "notes": "Mapped from existing Lean source by update-blueprint-map.py. Primary selected from 4 related declaration(s); source-level scan only, Lake not run.",
+        "mapping_confidence": "exact_label_match",
+        "audit_status": "mapped_split_package_needs_statement_audit",
+        "related_lean": [
+          {
+            "lean_file": "experimental/lean/cs25_cap_v12/cs25_cap_v12/InterleavingTransfer.lean",
+            "lean_name": "RSCap.thm_explicit_head_floor_even",
+            "decl_kind": "theorem",
+            "line": 117,
+            "source_scan_status": "contains_sorry_or_admit",
+            "mapping_confidence": "exact_label_match",
+            "mapping_reason": "exact_label_match"
+          },
+          {
+            "lean_file": "experimental/lean/cs25_cap_v12/cs25_cap_v12/InterleavingTransfer.lean",
+            "lean_name": "RSCap.thm_explicit_head_floor_odd",
+            "decl_kind": "theorem",
+            "line": 133,
+            "source_scan_status": "contains_sorry_or_admit",
+            "mapping_confidence": "exact_label_match",
+            "mapping_reason": "exact_label_match"
+          },
+          {
+            "lean_file": "experimental/lean/cs25_cap_v12/cs25_cap_v12/InterleavingTransfer.lean",
+            "lean_name": "RSCap.lem_inter_eca",
+            "decl_kind": "theorem",
+            "line": 41,
+            "source_scan_status": "no_sorry_or_admit_seen",
+            "mapping_confidence": "exact_label_match",
+            "mapping_reason": "exact_label_match"
+          },
+          {
+            "lean_file": "experimental/lean/cs25_cap_v12/cs25_cap_v12/InterleavingTransfer.lean",
+            "lean_name": "RSCap.lem_inter_emca",
+            "decl_kind": "theorem",
+            "line": 91,
+            "source_scan_status": "no_sorry_or_admit_seen",
+            "mapping_confidence": "exact_label_match",
+            "mapping_reason": "exact_label_match"
+          }
+        ]
       },
       "statement_excerpt": "Let $D$ be $(,c)$-smooth over $$ (def:map-smooth) with $N:=n/c$ even, and suppose $Q:=(D)$ satisfies $-Q=Q$ and $0 Q$, so that $Q$ is partitioned into $N/2$ antipodal classes $\\{y,-y\\}$. Let $K n$ and let $m$ satisfy $2 m N-2$ and $cm K-1+2c$. {enumerate}[label=()] If $m$ is even, the pure power word $u:=^m|_D$ satisfies \\[ |(,\\,1-{cm}n,\\,u)|\\ \\ {N/2}{m/2}, \\] the listed codewords being $c_M:=u-_M|_D$ for $M$ a union of $m/2$ antipodal classes. If $m$ is odd, then for every $t Q$ the one-head word $u:=(^m-t\\,^{m-1})|_D$ satisfies \\[ |(,\\,1-{cm}n,\\,u)|\\ \\ {N/2-1}{(m-1)/2}, \\] with $M=\\{t\\}({$(m-1)/2$ antipodal classes distinct from $\\{t,-t\\}$}",
       "depends_on": [
@@ -6869,10 +7786,41 @@
       "kind": "theorem",
       "status": "proved_in_tex_or_imported",
       "formalization": {
-        "lean_file": "",
-        "lean_name": "",
-        "statement_status": "not_started",
-        "notes": ""
+        "lean_file": "experimental/lean/cs25_cap_v12/cs25_cap_v12/InterleavingTransfer.lean",
+        "lean_name": "RSCap.thm_explicit_pairs",
+        "statement_status": "lean_mixed_proved_and_skeleton_source_scan",
+        "notes": "Mapped from existing Lean source by update-blueprint-map.py. Primary selected from 3 related declaration(s); source-level scan only, Lake not run.",
+        "mapping_confidence": "exact_label_match",
+        "audit_status": "mapped_split_package_needs_statement_audit",
+        "related_lean": [
+          {
+            "lean_file": "experimental/lean/cs25_cap_v12/cs25_cap_v12/InterleavingTransfer.lean",
+            "lean_name": "RSCap.thm_explicit_pairs",
+            "decl_kind": "theorem",
+            "line": 156,
+            "source_scan_status": "contains_sorry_or_admit",
+            "mapping_confidence": "exact_label_match",
+            "mapping_reason": "exact_label_match"
+          },
+          {
+            "lean_file": "experimental/lean/cs25_cap_v12/cs25_cap_v12/InterleavingTransfer.lean",
+            "lean_name": "RSCap.lem_inter_eca",
+            "decl_kind": "theorem",
+            "line": 41,
+            "source_scan_status": "no_sorry_or_admit_seen",
+            "mapping_confidence": "exact_label_match",
+            "mapping_reason": "exact_label_match"
+          },
+          {
+            "lean_file": "experimental/lean/cs25_cap_v12/cs25_cap_v12/InterleavingTransfer.lean",
+            "lean_name": "RSCap.lem_inter_emca",
+            "decl_kind": "theorem",
+            "line": 91,
+            "source_scan_status": "no_sorry_or_admit_seen",
+            "mapping_confidence": "exact_label_match",
+            "mapping_reason": "exact_label_match"
+          }
+        ]
       },
       "statement_excerpt": "At the KoalaBear row of cor:deployed, let $u:=X^{k+2^{13}}|_D$ be the pure power word of cor:explicit-deployed(i), let $L_0:=(q-n)/k<2^{166}$, and fix any explicit subfamily of $L_0$ of its listed codewords $P_M_{<k+1}$ (e.g.\\ the lexicographically least $L_0$ antipodal-class sets; $L_0{256}{129}$). For $:= D$ define the explicit pair \\[ f_(x):={u(x)}{x-}, g_(x):=-1{x-} (x D). \\] Then for at least half of all $$, the pair $(f_,g_)$ has at least \\[ {q-n}{3k} \\] distinct CA-bad slopes at radius $=12-2^{-8}$, namely among the explicit values $\\{P_M()\\}$; its CA-bad-slope density exceeds $2^{-21.6}>2^{-22}$ there and at every larger integer-admis",
       "depends_on": [
@@ -7140,10 +8088,23 @@
       "kind": "definition",
       "status": "definition",
       "formalization": {
-        "lean_file": "",
-        "lean_name": "",
-        "statement_status": "not_started",
-        "notes": ""
+        "lean_file": "experimental/lean/staircase_logic/StaircaseLogic/Staircase.lean",
+        "lean_name": "StaircaseLogic.Staircase",
+        "statement_status": "lean_statement_present_no_sorry_source_scan",
+        "notes": "Mapped from existing Lean source by update-blueprint-map.py. Primary selected from 1 related declaration(s); source-level scan only, Lake not run.",
+        "mapping_confidence": "curated_alias",
+        "audit_status": "mapped_source_scanned_not_built",
+        "related_lean": [
+          {
+            "lean_file": "experimental/lean/staircase_logic/StaircaseLogic/Staircase.lean",
+            "lean_name": "StaircaseLogic.Staircase",
+            "decl_kind": "structure",
+            "line": 45,
+            "source_scan_status": "no_sorry_or_admit_seen",
+            "mapping_confidence": "curated_alias",
+            "mapping_reason": "curated_alias"
+          }
+        ]
       },
       "statement_excerpt": "Fix an agreement interval \\[ I=\\{a_{},a_{}+1,,a_{}\\} \\] and a nonincreasing function \\[ N:I Z_{0}. \\] For MCA or line-MCA rows, $N(a)$ is the number of bad sampled parameters at agreement at least $a$; the closed integer Hamming radius is $r=n-a$. For list rows one may use the same agreement coordinate, so the list numerator is nonincreasing in $a$. Given a denominator $Q$ and a target $^*$, put \\[ B_*:={^* Q}. \\] An agreement $a$ is safe if $N(a) B_*$ and unsafe if $N(a)>B_*$.",
       "depends_on": [],
@@ -7167,10 +8128,41 @@
       "kind": "theorem",
       "status": "proved_in_tex_or_imported",
       "formalization": {
-        "lean_file": "",
-        "lean_name": "",
-        "statement_status": "not_started",
-        "notes": ""
+        "lean_file": "experimental/lean/cs25_cap_v13_experimental/cs25_cap_v13_experimental/ThresholdCompilers.lean",
+        "lean_name": "CAP25V13.Threshold.staircase_localization",
+        "statement_status": "lean_statement_present_no_sorry_source_scan",
+        "notes": "Mapped from existing Lean source by update-blueprint-map.py. Primary selected from 3 related declaration(s); source-level scan only, Lake not run.",
+        "mapping_confidence": "curated_alias",
+        "audit_status": "mapped_source_scanned_not_built",
+        "related_lean": [
+          {
+            "lean_file": "experimental/lean/cs25_cap_v13_experimental/cs25_cap_v13_experimental/ThresholdCompilers.lean",
+            "lean_name": "CAP25V13.Threshold.staircase_localization",
+            "decl_kind": "theorem",
+            "line": 59,
+            "source_scan_status": "no_sorry_or_admit_seen",
+            "mapping_confidence": "curated_alias",
+            "mapping_reason": "curated_alias"
+          },
+          {
+            "lean_file": "experimental/lean/staircase_logic/StaircaseLogic/Staircase.lean",
+            "lean_name": "StaircaseLogic.Staircase.firstSafe_unique",
+            "decl_kind": "theorem",
+            "line": 107,
+            "source_scan_status": "no_sorry_or_admit_seen",
+            "mapping_confidence": "curated_alias",
+            "mapping_reason": "curated_alias"
+          },
+          {
+            "lean_file": "experimental/lean/staircase_logic/StaircaseLogic/Staircase.lean",
+            "lean_name": "StaircaseLogic.Staircase.safe_iff_ge_firstSafe",
+            "decl_kind": "theorem",
+            "line": 141,
+            "source_scan_status": "no_sorry_or_admit_seen",
+            "mapping_confidence": "curated_alias",
+            "mapping_reason": "curated_alias"
+          }
+        ]
       },
       "statement_excerpt": "Let $N:I Z_{0}$ be nonincreasing. Exactly one of the following holds: {enumerate}[label=()] every $a I$ is safe; every $a I$ is unsafe; there is a unique first safe agreement $a_* I$ such that the safe set is $\\{a I:a a_*\\}$ and the unsafe set is $\\{a I:a<a_*\\}$. {enumerate} In the interior case, when $a_*>a_{}$, one has \\[ N(a_*-1)>B_* N(a_*). \\]",
       "depends_on": [],
@@ -7202,10 +8194,32 @@
       "kind": "corollary",
       "status": "proved_in_tex_or_imported",
       "formalization": {
-        "lean_file": "",
-        "lean_name": "",
-        "statement_status": "not_started",
-        "notes": ""
+        "lean_file": "experimental/lean/cs25_cap_v13_experimental/cs25_cap_v13_experimental/ThresholdCompilers.lean",
+        "lean_name": "CAP25V13.Threshold.endpoint_radius",
+        "statement_status": "lean_statement_present_no_sorry_source_scan",
+        "notes": "Mapped from existing Lean source by update-blueprint-map.py. Primary selected from 2 related declaration(s); source-level scan only, Lake not run.",
+        "mapping_confidence": "curated_alias",
+        "audit_status": "mapped_source_scanned_not_built",
+        "related_lean": [
+          {
+            "lean_file": "experimental/lean/cs25_cap_v13_experimental/cs25_cap_v13_experimental/ThresholdCompilers.lean",
+            "lean_name": "CAP25V13.Threshold.endpoint_radius",
+            "decl_kind": "theorem",
+            "line": 87,
+            "source_scan_status": "no_sorry_or_admit_seen",
+            "mapping_confidence": "curated_alias",
+            "mapping_reason": "curated_alias"
+          },
+          {
+            "lean_file": "experimental/lean/staircase_logic/StaircaseLogic/Staircase.lean",
+            "lean_name": "StaircaseLogic.Staircase.endpoint_supremum",
+            "decl_kind": "theorem",
+            "line": 177,
+            "source_scan_status": "no_sorry_or_admit_seen",
+            "mapping_confidence": "curated_alias",
+            "mapping_reason": "curated_alias"
+          }
+        ]
       },
       "statement_excerpt": "In the interior case of thm:capf-staircase, the largest safe closed integer radius is \\[ r_{safe}=n-a_*, \\] and the first unsafe closed integer radius above it is $r_{safe}+1$. As a real closed-ball threshold under the convention $a()={(1-)n}$ of sec:prize-program, the supremum of safe radii is \\[ {n-a_*+1}{n}, \\] and this endpoint is not attained when $N(a_*-1)>B_*$.",
       "depends_on": [
@@ -7236,10 +8250,32 @@
       "kind": "theorem",
       "status": "proved_in_tex_or_imported",
       "formalization": {
-        "lean_file": "",
-        "lean_name": "",
-        "statement_status": "not_started",
-        "notes": ""
+        "lean_file": "experimental/lean/cs25_cap_v13_experimental/cs25_cap_v13_experimental/ThresholdCompilers.lean",
+        "lean_name": "CAP25V13.Threshold.corridor_lower",
+        "statement_status": "lean_statement_present_no_sorry_source_scan",
+        "notes": "Mapped from existing Lean source by update-blueprint-map.py. Primary selected from 2 related declaration(s); source-level scan only, Lake not run.",
+        "mapping_confidence": "curated_alias",
+        "audit_status": "mapped_source_scanned_not_built",
+        "related_lean": [
+          {
+            "lean_file": "experimental/lean/cs25_cap_v13_experimental/cs25_cap_v13_experimental/ThresholdCompilers.lean",
+            "lean_name": "CAP25V13.Threshold.corridor_lower",
+            "decl_kind": "theorem",
+            "line": 98,
+            "source_scan_status": "no_sorry_or_admit_seen",
+            "mapping_confidence": "curated_alias",
+            "mapping_reason": "curated_alias"
+          },
+          {
+            "lean_file": "experimental/lean/cs25_cap_v13_experimental/cs25_cap_v13_experimental/ThresholdCompilers.lean",
+            "lean_name": "CAP25V13.Threshold.corridor_upper",
+            "decl_kind": "theorem",
+            "line": 106,
+            "source_scan_status": "no_sorry_or_admit_seen",
+            "mapping_confidence": "curated_alias",
+            "mapping_reason": "curated_alias"
+          }
+        ]
       },
       "statement_excerpt": "Suppose that $L(a) N(a) U(a)$ are certified lower and upper bounds on the same staircase. Define \\[ A_{unsafe}:=\\{a I:L(a)>B_*\\}, A_{safe}:=\\{a I:U(a) B_*\\}. \\] If an interior first safe agreement $a_*$ exists, then \\[ 1+ A_{unsafe} a_* A_{safe}, \\] with the conventions $1+=a_{}$ and $=a_{}$.",
       "depends_on": [],
@@ -7300,10 +8336,41 @@
       "kind": "theorem",
       "status": "proved_in_tex_or_imported",
       "formalization": {
-        "lean_file": "",
-        "lean_name": "",
-        "statement_status": "not_started",
-        "notes": ""
+        "lean_file": "experimental/lean/cs25_cap_v13_experimental/cs25_cap_v13_experimental/ThresholdCompilers.lean",
+        "lean_name": "CAP25V13.Threshold.steepness_disjoint",
+        "statement_status": "lean_statement_present_no_sorry_source_scan",
+        "notes": "Mapped from existing Lean source by update-blueprint-map.py. Primary selected from 3 related declaration(s); source-level scan only, Lake not run.",
+        "mapping_confidence": "curated_alias",
+        "audit_status": "mapped_source_scanned_not_built",
+        "related_lean": [
+          {
+            "lean_file": "experimental/lean/cs25_cap_v13_experimental/cs25_cap_v13_experimental/ThresholdCompilers.lean",
+            "lean_name": "CAP25V13.Threshold.steepness_disjoint",
+            "decl_kind": "theorem",
+            "line": 118,
+            "source_scan_status": "no_sorry_or_admit_seen",
+            "mapping_confidence": "curated_alias",
+            "mapping_reason": "curated_alias"
+          },
+          {
+            "lean_file": "experimental/lean/cs25_cap_v13_experimental/cs25_cap_v13_experimental/ThresholdCompilers.lean",
+            "lean_name": "CAP25V13.Threshold.steepness_unsafe",
+            "decl_kind": "theorem",
+            "line": 126,
+            "source_scan_status": "no_sorry_or_admit_seen",
+            "mapping_confidence": "curated_alias",
+            "mapping_reason": "curated_alias"
+          },
+          {
+            "lean_file": "experimental/lean/cs25_cap_v13_experimental/cs25_cap_v13_experimental/ThresholdCompilers.lean",
+            "lean_name": "CAP25V13.Threshold.steepness_safe",
+            "decl_kind": "theorem",
+            "line": 134,
+            "source_scan_status": "no_sorry_or_admit_seen",
+            "mapping_confidence": "curated_alias",
+            "mapping_reason": "curated_alias"
+          }
+        ]
       },
       "statement_excerpt": "Let $J I$ be an interval of consecutive agreements, let $M(a)>0$ be a positive model count, and suppose a row packet proves \\[ {M(a)}{E} N(a) E M(a)(E1) \\] for every $a J$. For a single adjacent pair $a,a+1 J$, if \\[ {M(a)}{M(a+1)}>E^2, \\] then the two ambiguity intervals \\[ {and} \\] are disjoint, and a fixed budget $B_*$ can lie in at most one of them. If the same separation holds for every adjacent pair in $J$, then the ambiguity intervals are pairwise disjoint in their natural order. Consequently at most one agreement in $J$ can remain undecided by the coarse envelope for a fixed budget $B_*$; every other agreement has a certified safe or ",
       "depends_on": [],
@@ -7473,10 +8540,23 @@
       "kind": "proposition",
       "status": "proved_in_tex_or_imported",
       "formalization": {
-        "lean_file": "",
-        "lean_name": "",
-        "statement_status": "not_started",
-        "notes": ""
+        "lean_file": "experimental/lean/cs25_cap_v13_experimental/cs25_cap_v13_experimental/ThresholdCompilers.lean",
+        "lean_name": "CAP25V13.Threshold.extPole_exists",
+        "statement_status": "lean_statement_present_no_sorry_source_scan",
+        "notes": "Mapped from existing Lean source by update-blueprint-map.py. Primary selected from 1 related declaration(s); source-level scan only, Lake not run.",
+        "mapping_confidence": "curated_alias",
+        "audit_status": "mapped_source_scanned_not_built",
+        "related_lean": [
+          {
+            "lean_file": "experimental/lean/cs25_cap_v13_experimental/cs25_cap_v13_experimental/ThresholdCompilers.lean",
+            "lean_name": "CAP25V13.Threshold.extPole_exists",
+            "decl_kind": "theorem",
+            "line": 148,
+            "source_scan_status": "no_sorry_or_admit_seen",
+            "mapping_confidence": "curated_alias",
+            "mapping_reason": "curated_alias"
+          }
+        ]
       },
       "statement_excerpt": "Let $B F$ be the generated field inside the line field, with $q_{gen}=|B|$ and $q_{line}=|F|$. If $q_{gen}=q_{line}$, then there is no proper extension-only line-parameter cell: \\[ _{ext}^{only}=0. \\] Assume $q_{gen}<q_{line}$, put $m=q_{line}-q_{gen}$, and let $ P$ be a base list of size $L1$. Suppose a pole-conversion certificate assigns to every $P P$ and every pole $ F B$ a finite extension parameter $_(P)$ such that: {enumerate}[label=()] for each fixed pole $$, distinct values among $\\{_(P):P P\\}$ give distinct extension-only bad finite line parameters for the lifted row; for every $P P'$ in $ P$, \\[ \\#\\{ F B:_(P)=_(P')\\} . \\] {enumerat",
       "depends_on": [
@@ -7535,10 +8615,50 @@
       "kind": "theorem",
       "status": "proved_in_tex_or_imported",
       "formalization": {
-        "lean_file": "",
-        "lean_name": "",
-        "statement_status": "not_started",
-        "notes": ""
+        "lean_file": "experimental/lean/cs25_cap_v13_experimental/cs25_cap_v13_experimental/ThresholdCompilers.lean",
+        "lean_name": "CAP25V13.Threshold.budget_unsafe",
+        "statement_status": "lean_statement_present_no_sorry_source_scan",
+        "notes": "Mapped from existing Lean source by update-blueprint-map.py. Primary selected from 4 related declaration(s); source-level scan only, Lake not run.",
+        "mapping_confidence": "curated_alias",
+        "audit_status": "mapped_source_scanned_not_built",
+        "related_lean": [
+          {
+            "lean_file": "experimental/lean/cs25_cap_v13_experimental/cs25_cap_v13_experimental/ThresholdCompilers.lean",
+            "lean_name": "CAP25V13.Threshold.budget_unsafe",
+            "decl_kind": "theorem",
+            "line": 215,
+            "source_scan_status": "no_sorry_or_admit_seen",
+            "mapping_confidence": "curated_alias",
+            "mapping_reason": "curated_alias"
+          },
+          {
+            "lean_file": "experimental/lean/cs25_cap_v13_experimental/cs25_cap_v13_experimental/ThresholdCompilers.lean",
+            "lean_name": "CAP25V13.Threshold.budget_safe",
+            "decl_kind": "theorem",
+            "line": 222,
+            "source_scan_status": "no_sorry_or_admit_seen",
+            "mapping_confidence": "curated_alias",
+            "mapping_reason": "curated_alias"
+          },
+          {
+            "lean_file": "experimental/lean/cs25_cap_v13_experimental/cs25_cap_v13_experimental/ThresholdCompilers.lean",
+            "lean_name": "CAP25V13.Threshold.budget_field_interval",
+            "decl_kind": "theorem",
+            "line": 230,
+            "source_scan_status": "no_sorry_or_admit_seen",
+            "mapping_confidence": "curated_alias",
+            "mapping_reason": "curated_alias"
+          },
+          {
+            "lean_file": "experimental/lean/cs25_cap_v13_experimental/cs25_cap_v13_experimental/ThresholdCompilers.lean",
+            "lean_name": "CAP25V13.Threshold.budget_gmax",
+            "decl_kind": "theorem",
+            "line": 240,
+            "source_scan_status": "no_sorry_or_admit_seen",
+            "mapping_confidence": "curated_alias",
+            "mapping_reason": "curated_alias"
+          }
+        ]
       },
       "statement_excerpt": "Let $N$ be the actual integer numerator for a fixed object, and suppose a certificate gives $L N K$. Put $B(q)={q/2^{128}}$. Then \\[ B(q)<L {certified unsafe}, B(q) K {certified safe for this object}, \\] and the only unresolved budgets are \\[ L B(q)<K. \\] Equivalently, the unresolved field-size interval is \\[ L2^{128} q K2^{128}-1. \\] If the lower proof is $L=K-g$, then the largest tolerable missing mass while still proving unsafety is \\[ g_{}=K-B(q)-1. \\]",
       "depends_on": [],
@@ -7562,10 +8682,23 @@
       "kind": "lemma",
       "status": "proved_in_tex_or_imported",
       "formalization": {
-        "lean_file": "",
-        "lean_name": "",
-        "statement_status": "not_started",
-        "notes": ""
+        "lean_file": "experimental/lean/cs25_cap_v13_experimental/cs25_cap_v13_experimental/ThresholdCompilers.lean",
+        "lean_name": "CAP25V13.Threshold.census_identity",
+        "statement_status": "lean_statement_present_no_sorry_source_scan",
+        "notes": "Mapped from existing Lean source by update-blueprint-map.py. Primary selected from 1 related declaration(s); source-level scan only, Lake not run.",
+        "mapping_confidence": "curated_alias",
+        "audit_status": "mapped_source_scanned_not_built",
+        "related_lean": [
+          {
+            "lean_file": "experimental/lean/cs25_cap_v13_experimental/cs25_cap_v13_experimental/ThresholdCompilers.lean",
+            "lean_name": "CAP25V13.Threshold.census_identity",
+            "decl_kind": "theorem",
+            "line": 259,
+            "source_scan_status": "no_sorry_or_admit_seen",
+            "mapping_confidence": "curated_alias",
+            "mapping_reason": "curated_alias"
+          }
+        ]
       },
       "statement_excerpt": "For every even $N'2$, with $n_1=N'/2$, \\[ A_2(N',n_1+1)={3^{n_1}-1}{2}. \\]",
       "depends_on": [],
@@ -7589,10 +8722,68 @@
       "kind": "theorem",
       "status": "proved_in_tex_or_imported",
       "formalization": {
-        "lean_file": "",
-        "lean_name": "",
-        "statement_status": "not_started",
-        "notes": ""
+        "lean_file": "experimental/lean/cs25_cap_v13_experimental/cs25_cap_v13_experimental/ThresholdCompilers.lean",
+        "lean_name": "CAP25V13.Threshold.census_crossing_relaxed_half",
+        "statement_status": "lean_statement_present_no_sorry_source_scan",
+        "notes": "Mapped from existing Lean source by update-blueprint-map.py. Primary selected from 6 related declaration(s); source-level scan only, Lake not run.",
+        "mapping_confidence": "curated_alias",
+        "audit_status": "mapped_source_scanned_not_built",
+        "related_lean": [
+          {
+            "lean_file": "experimental/lean/cs25_cap_v13_experimental/cs25_cap_v13_experimental/ThresholdCompilers.lean",
+            "lean_name": "CAP25V13.Threshold.census_crossing_relaxed_half",
+            "decl_kind": "theorem",
+            "line": 290,
+            "source_scan_status": "no_sorry_or_admit_seen",
+            "mapping_confidence": "curated_alias",
+            "mapping_reason": "curated_alias"
+          },
+          {
+            "lean_file": "experimental/lean/cs25_cap_v13_experimental/cs25_cap_v13_experimental/ThresholdCompilers.lean",
+            "lean_name": "CAP25V13.Threshold.census_crossing_relaxed_quarter",
+            "decl_kind": "theorem",
+            "line": 296,
+            "source_scan_status": "no_sorry_or_admit_seen",
+            "mapping_confidence": "curated_alias",
+            "mapping_reason": "curated_alias"
+          },
+          {
+            "lean_file": "experimental/lean/cs25_cap_v13_experimental/cs25_cap_v13_experimental/ThresholdCompilers.lean",
+            "lean_name": "CAP25V13.Threshold.census_crossing_relaxed_eighth",
+            "decl_kind": "theorem",
+            "line": 302,
+            "source_scan_status": "no_sorry_or_admit_seen",
+            "mapping_confidence": "curated_alias",
+            "mapping_reason": "curated_alias"
+          },
+          {
+            "lean_file": "experimental/lean/cs25_cap_v13_experimental/cs25_cap_v13_experimental/ThresholdCompilers.lean",
+            "lean_name": "CAP25V13.Threshold.census_crossing_relaxed_sixteenth",
+            "decl_kind": "theorem",
+            "line": 308,
+            "source_scan_status": "no_sorry_or_admit_seen",
+            "mapping_confidence": "curated_alias",
+            "mapping_reason": "curated_alias"
+          },
+          {
+            "lean_file": "experimental/lean/cs25_cap_v13_experimental/cs25_cap_v13_experimental/ThresholdCompilers.lean",
+            "lean_name": "CAP25V13.Threshold.census_crossing_dyadic_half",
+            "decl_kind": "theorem",
+            "line": 314,
+            "source_scan_status": "no_sorry_or_admit_seen",
+            "mapping_confidence": "curated_alias",
+            "mapping_reason": "curated_alias"
+          },
+          {
+            "lean_file": "experimental/lean/cs25_cap_v13_experimental/cs25_cap_v13_experimental/ThresholdCompilers.lean",
+            "lean_name": "CAP25V13.Threshold.census_crossing_dyadic_sixteenth",
+            "decl_kind": "theorem",
+            "line": 320,
+            "source_scan_status": "no_sorry_or_admit_seen",
+            "mapping_confidence": "curated_alias",
+            "mapping_reason": "curated_alias"
+          }
+        ]
       },
       "statement_excerpt": "Let $B_{}=2^{128}-1$. In the relaxed even-scale model, where $N'$ ranges over the even integers with $ N' Z$, the first admissible scales at which $A_2(N', N'+1)>B_{}$ are \\[ {array}{c|cccc} & 1/2 & 1/4 & 1/8 & 1/16\\\\ N'_{relaxed} & 164 & 176 & 248 & 384 . {array} \\] For dyadic quotient orders $N'=2^a$, the corresponding first scales are \\[ {array}{c|cccc} & 1/2 & 1/4 & 1/8 & 1/16\\\\ N'_{dyadic} & 256 & 256 & 256 & 512 . {array} \\] Thus the exact integer quotient endgame at the $2^{-128}$ budget sees only bounded quotient scales, independent of the deployed blocklength, once the row has been reduced to this canonical quotient-count model.",
       "depends_on": [],
@@ -7645,10 +8836,32 @@
       "kind": "proposition",
       "status": "proved_in_tex_or_imported",
       "formalization": {
-        "lean_file": "",
-        "lean_name": "",
-        "statement_status": "not_started",
-        "notes": ""
+        "lean_file": "experimental/lean/cs25_cap_v13_experimental/cs25_cap_v13_experimental/ThresholdCompilers.lean",
+        "lean_name": "CAP25V13.Threshold.qprofile_bounded",
+        "statement_status": "lean_statement_present_no_sorry_source_scan",
+        "notes": "Mapped from existing Lean source by update-blueprint-map.py. Primary selected from 2 related declaration(s); source-level scan only, Lake not run.",
+        "mapping_confidence": "curated_alias",
+        "audit_status": "mapped_source_scanned_not_built",
+        "related_lean": [
+          {
+            "lean_file": "experimental/lean/cs25_cap_v13_experimental/cs25_cap_v13_experimental/ThresholdCompilers.lean",
+            "lean_name": "CAP25V13.Threshold.qprofile_bounded",
+            "decl_kind": "theorem",
+            "line": 331,
+            "source_scan_status": "no_sorry_or_admit_seen",
+            "mapping_confidence": "curated_alias",
+            "mapping_reason": "curated_alias"
+          },
+          {
+            "lean_file": "experimental/lean/cs25_cap_v13_experimental/cs25_cap_v13_experimental/ThresholdCompilers.lean",
+            "lean_name": "CAP25V13.Threshold.qprofile_dyadic",
+            "decl_kind": "theorem",
+            "line": 339,
+            "source_scan_status": "no_sorry_or_admit_seen",
+            "mapping_confidence": "curated_alias",
+            "mapping_reason": "curated_alias"
+          }
+        ]
       },
       "statement_excerpt": "If $ n/256$, then every active scale in $K_Q$ has quotient order $N=n/M<256$; because $N$ is dyadic in def:capf-qprofile, this means $N128$. If $ n/128$, then every active scale has $N<128$, hence dyadically $N64$.",
       "depends_on": [
@@ -7674,10 +8887,23 @@
       "kind": "proposition",
       "status": "proved_in_tex_or_imported",
       "formalization": {
-        "lean_file": "",
-        "lean_name": "",
-        "statement_status": "not_started",
-        "notes": ""
+        "lean_file": "experimental/lean/cs25_cap_v13_experimental/cs25_cap_v13_experimental/ThresholdCompilers.lean",
+        "lean_name": "CAP25V13.Threshold.residual_absorption",
+        "statement_status": "lean_statement_present_no_sorry_source_scan",
+        "notes": "Mapped from existing Lean source by update-blueprint-map.py. Primary selected from 1 related declaration(s); source-level scan only, Lake not run.",
+        "mapping_confidence": "curated_alias",
+        "audit_status": "mapped_source_scanned_not_built",
+        "related_lean": [
+          {
+            "lean_file": "experimental/lean/cs25_cap_v13_experimental/cs25_cap_v13_experimental/ThresholdCompilers.lean",
+            "lean_name": "CAP25V13.Threshold.residual_absorption",
+            "decl_kind": "theorem",
+            "line": 348,
+            "source_scan_status": "no_sorry_or_admit_seen",
+            "mapping_confidence": "curated_alias",
+            "mapping_reason": "curated_alias"
+          }
+        ]
       },
       "statement_excerpt": "Fix a candidate scale and suppose a future theorem bounds an unpaid residual contribution by \\[ n^C(n,q) \\] for some explicit proxy $$. If the verified entropy calculation gives \\[ -_2(n^C(n,q))>0, \\] then the residual integer contribution is zero.",
       "depends_on": [],
@@ -7794,10 +9020,23 @@
       "kind": "corollary",
       "status": "proved_in_tex_or_imported",
       "formalization": {
-        "lean_file": "",
-        "lean_name": "",
-        "statement_status": "not_started",
-        "notes": ""
+        "lean_file": "experimental/lean/cs25_cap_v13_experimental/cs25_cap_v13_experimental/ListSideCompilers.lean",
+        "lean_name": "CAP25V13.ListSide.list_unsafe",
+        "statement_status": "lean_statement_present_no_sorry_source_scan",
+        "notes": "Mapped from existing Lean source by update-blueprint-map.py. Primary selected from 1 related declaration(s); source-level scan only, Lake not run.",
+        "mapping_confidence": "curated_alias",
+        "audit_status": "mapped_source_scanned_not_built",
+        "related_lean": [
+          {
+            "lean_file": "experimental/lean/cs25_cap_v13_experimental/cs25_cap_v13_experimental/ListSideCompilers.lean",
+            "lean_name": "CAP25V13.ListSide.list_unsafe",
+            "decl_kind": "theorem",
+            "line": 305,
+            "source_scan_status": "no_sorry_or_admit_seen",
+            "mapping_confidence": "curated_alias",
+            "mapping_reason": "curated_alias"
+          }
+        ]
       },
       "statement_excerpt": "For a list denominator $q_{list}$ and target $2^{-128}$, the planted quotient-core packet proves a list row unsafe whenever \\[ _M{n/M-1}{k/M}> {{q_{list}}{2^{128}}}, \\] where the maximum ranges over the active divisors of thm:capf-planted.",
       "depends_on": [
@@ -7823,10 +9062,50 @@
       "kind": "proposition",
       "status": "proved_in_tex_or_imported",
       "formalization": {
-        "lean_file": "",
-        "lean_name": "",
-        "statement_status": "not_started",
-        "notes": ""
+        "lean_file": "experimental/lean/cs25_cap_v13_experimental/cs25_cap_v13_experimental/ListSideCompilers.lean",
+        "lean_name": "CAP25V13.ListSide.dyadic_planted_crossing_half",
+        "statement_status": "lean_statement_present_no_sorry_source_scan",
+        "notes": "Mapped from existing Lean source by update-blueprint-map.py. Primary selected from 4 related declaration(s); source-level scan only, Lake not run.",
+        "mapping_confidence": "curated_alias",
+        "audit_status": "mapped_source_scanned_not_built",
+        "related_lean": [
+          {
+            "lean_file": "experimental/lean/cs25_cap_v13_experimental/cs25_cap_v13_experimental/ListSideCompilers.lean",
+            "lean_name": "CAP25V13.ListSide.dyadic_planted_crossing_half",
+            "decl_kind": "theorem",
+            "line": 278,
+            "source_scan_status": "no_sorry_or_admit_seen",
+            "mapping_confidence": "curated_alias",
+            "mapping_reason": "curated_alias"
+          },
+          {
+            "lean_file": "experimental/lean/cs25_cap_v13_experimental/cs25_cap_v13_experimental/ListSideCompilers.lean",
+            "lean_name": "CAP25V13.ListSide.dyadic_planted_crossing_quarter",
+            "decl_kind": "theorem",
+            "line": 284,
+            "source_scan_status": "no_sorry_or_admit_seen",
+            "mapping_confidence": "curated_alias",
+            "mapping_reason": "curated_alias"
+          },
+          {
+            "lean_file": "experimental/lean/cs25_cap_v13_experimental/cs25_cap_v13_experimental/ListSideCompilers.lean",
+            "lean_name": "CAP25V13.ListSide.dyadic_planted_crossing_eighth",
+            "decl_kind": "theorem",
+            "line": 290,
+            "source_scan_status": "no_sorry_or_admit_seen",
+            "mapping_confidence": "curated_alias",
+            "mapping_reason": "curated_alias"
+          },
+          {
+            "lean_file": "experimental/lean/cs25_cap_v13_experimental/cs25_cap_v13_experimental/ListSideCompilers.lean",
+            "lean_name": "CAP25V13.ListSide.dyadic_planted_crossing_sixteenth",
+            "decl_kind": "theorem",
+            "line": 296,
+            "source_scan_status": "no_sorry_or_admit_seen",
+            "mapping_confidence": "curated_alias",
+            "mapping_reason": "curated_alias"
+          }
+        ]
       },
       "statement_excerpt": "For $n=2^m$, $k= n$, and \\[ \\{1/2,\\,1/4,\\,1/8,\\,1/16\\}, \\] the first dyadic quotient orders $N=n/M$ at which the planted count exceeds $2^{128}-1$ are \\[ {array}{c|cccc} & 1/2 & 1/4 & 1/8 & 1/16\\\\ N & 256 & 256 & 256 & 512 , {array} \\] and the exact bit lengths of ${N-1}{ N}$ at the predecessor and first crossing are \\[ {array}{c|cc|cc} & N_{prev} & bits & N_{first} & bits\\\\ 1/2 & 128 & 124 & 256 & 251\\\\ 1/4 & 128 & 100 & 256 & 204\\\\ 1/8 & 128 & 67 & 256 & 136\\\\ 1/16 & 256 & 83 & 512 & 169. {array} \\]",
       "depends_on": [],
@@ -7850,10 +9129,23 @@
       "kind": "corollary",
       "status": "proved_in_tex_or_imported",
       "formalization": {
-        "lean_file": "",
-        "lean_name": "",
-        "statement_status": "not_started",
-        "notes": ""
+        "lean_file": "experimental/lean/cs25_cap_v13_experimental/cs25_cap_v13_experimental/ListSideCompilers.lean",
+        "lean_name": "CAP25V13.ListSide.planted_budget_window",
+        "statement_status": "lean_statement_present_no_sorry_source_scan",
+        "notes": "Mapped from existing Lean source by update-blueprint-map.py. Primary selected from 1 related declaration(s); source-level scan only, Lake not run.",
+        "mapping_confidence": "curated_alias",
+        "audit_status": "mapped_source_scanned_not_built",
+        "related_lean": [
+          {
+            "lean_file": "experimental/lean/cs25_cap_v13_experimental/cs25_cap_v13_experimental/ListSideCompilers.lean",
+            "lean_name": "CAP25V13.ListSide.planted_budget_window",
+            "decl_kind": "theorem",
+            "line": 316,
+            "source_scan_status": "no_sorry_or_admit_seen",
+            "mapping_confidence": "curated_alias",
+            "mapping_reason": "curated_alias"
+          }
+        ]
       },
       "statement_excerpt": "If a planted exact count is $P$ and the certified lower count is $L P$, then the only unresolved list budgets are \\[ L {q_{list}/2^{128}}<P, \\] equivalently $L2^{128} q_{list} P2^{128}-1$.",
       "depends_on": [],
@@ -8212,10 +9504,23 @@
       "kind": "proposition",
       "status": "proved_in_tex_or_imported",
       "formalization": {
-        "lean_file": "",
-        "lean_name": "",
-        "statement_status": "not_started",
-        "notes": ""
+        "lean_file": "experimental/lean/cs25_cap_v13_experimental/cs25_cap_v13_experimental/ListSideCompilers.lean",
+        "lean_name": "CAP25V13.ListSide.fixed_excess_bound",
+        "statement_status": "lean_statement_present_no_sorry_source_scan",
+        "notes": "Mapped from existing Lean source by update-blueprint-map.py. Primary selected from 1 related declaration(s); source-level scan only, Lake not run.",
+        "mapping_confidence": "curated_alias",
+        "audit_status": "mapped_source_scanned_not_built",
+        "related_lean": [
+          {
+            "lean_file": "experimental/lean/cs25_cap_v13_experimental/cs25_cap_v13_experimental/ListSideCompilers.lean",
+            "lean_name": "CAP25V13.ListSide.fixed_excess_bound",
+            "decl_kind": "theorem",
+            "line": 339,
+            "source_scan_status": "no_sorry_or_admit_seen",
+            "mapping_confidence": "curated_alias",
+            "mapping_reason": "curated_alias"
+          }
+        ]
       },
       "statement_excerpt": "For every fixed $E0$, any single certified full-petal atlas satisfying def:capf-full-petal-chart has total size at most \\[ M2 q + 2^M_{e=1}^{E}q^{e+1}, q=|F| , \\] the certified layer bounds being $ M2q$ at $e=0$ and $2^Mq^{e+1}$ at each $e1$.",
       "depends_on": [
@@ -8244,10 +9549,23 @@
       "kind": "corollary",
       "status": "proved_in_tex_or_imported",
       "formalization": {
-        "lean_file": "",
-        "lean_name": "",
-        "statement_status": "not_started",
-        "notes": ""
+        "lean_file": "experimental/lean/cs25_cap_v13_experimental/cs25_cap_v13_experimental/ListSideCompilers.lean",
+        "lean_name": "CAP25V13.ListSide.few_petal_range",
+        "statement_status": "lean_statement_present_no_sorry_source_scan",
+        "notes": "Mapped from existing Lean source by update-blueprint-map.py. Primary selected from 1 related declaration(s); source-level scan only, Lake not run.",
+        "mapping_confidence": "curated_alias",
+        "audit_status": "mapped_source_scanned_not_built",
+        "related_lean": [
+          {
+            "lean_file": "experimental/lean/cs25_cap_v13_experimental/cs25_cap_v13_experimental/ListSideCompilers.lean",
+            "lean_name": "CAP25V13.ListSide.few_petal_range",
+            "decl_kind": "theorem",
+            "line": 329,
+            "source_scan_status": "no_sorry_or_admit_seen",
+            "mapping_confidence": "curated_alias",
+            "mapping_reason": "curated_alias"
+          }
+        ]
       },
       "statement_excerpt": "At the intended L1 lower cutoff, suppose $M=O( n)$, $q n^Q$ for a fixed $Q$, and $E$ is fixed. Then the fixed-excess full-petal contribution certified by prop:capf-fixed-excess is polynomial in $n$.",
       "depends_on": [
@@ -8618,10 +9936,23 @@
       "kind": "lemma",
       "status": "proved_in_tex_or_imported",
       "formalization": {
-        "lean_file": "",
-        "lean_name": "",
-        "statement_status": "not_started",
-        "notes": ""
+        "lean_file": "experimental/lean/cs25_cap_v13_experimental/cs25_cap_v13_experimental/ResidueLineTools.lean",
+        "lean_name": "CAP25V13.ResidueLine.dim_one_voting",
+        "statement_status": "lean_statement_present_no_sorry_source_scan",
+        "notes": "Mapped from existing Lean source by update-blueprint-map.py. Primary selected from 1 related declaration(s); source-level scan only, Lake not run.",
+        "mapping_confidence": "curated_alias",
+        "audit_status": "mapped_source_scanned_not_built",
+        "related_lean": [
+          {
+            "lean_file": "experimental/lean/cs25_cap_v13_experimental/cs25_cap_v13_experimental/ResidueLineTools.lean",
+            "lean_name": "CAP25V13.ResidueLine.dim_one_voting",
+            "decl_kind": "theorem",
+            "line": 78,
+            "source_scan_status": "no_sorry_or_admit_seen",
+            "mapping_confidence": "curated_alias",
+            "mapping_reason": "curated_alias"
+          }
+        ]
       },
       "statement_excerpt": "Assume $j1$. Let $P=((L_0,L_1))$ be a projective line in $K[X]_{ j}$, and assume no $h H$ is a common zero of $L_0$ and $L_1$. Then \\[ |P_j(H)|{{|H|}{j}}. \\]",
       "depends_on": [],
@@ -8676,10 +10007,23 @@
       "kind": "theorem",
       "status": "proved_in_tex_or_imported",
       "formalization": {
-        "lean_file": "",
-        "lean_name": "",
-        "statement_status": "not_started",
-        "notes": ""
+        "lean_file": "experimental/lean/cs25_cap_v13_experimental/cs25_cap_v13_experimental/ResidueLineTools.lean",
+        "lean_name": "CAP25V13.ResidueLine.conjF_fixed_dim",
+        "statement_status": "lean_statement_present_no_sorry_source_scan",
+        "notes": "Mapped from existing Lean source by update-blueprint-map.py. Primary selected from 1 related declaration(s); source-level scan only, Lake not run.",
+        "mapping_confidence": "curated_alias",
+        "audit_status": "mapped_source_scanned_not_built",
+        "related_lean": [
+          {
+            "lean_file": "experimental/lean/cs25_cap_v13_experimental/cs25_cap_v13_experimental/ResidueLineTools.lean",
+            "lean_name": "CAP25V13.ResidueLine.conjF_fixed_dim",
+            "decl_kind": "theorem",
+            "line": 247,
+            "source_scan_status": "no_sorry_or_admit_seen",
+            "mapping_confidence": "curated_alias",
+            "mapping_reason": "curated_alias"
+          }
+        ]
       },
       "statement_excerpt": "Under the hypotheses of lem:capf-concurrency, assume $j2$ and $(W)=2$. Then \\[ |(W)_j(H)| {{|H|}{2}}{j-1}, \\] and if the evaluation lines $E_h$ are pairwise distinct, the sharper bound with denominator $ j2$ holds.",
       "depends_on": [
@@ -8770,10 +10114,23 @@
       "kind": "lemma",
       "status": "proved_in_tex_or_imported",
       "formalization": {
-        "lean_file": "",
-        "lean_name": "",
-        "statement_status": "not_started",
-        "notes": ""
+        "lean_file": "experimental/lean/cs25_cap_v13_experimental/cs25_cap_v13_experimental/ResidueLineTools.lean",
+        "lean_name": "CAP25V13.ResidueLine.gap2_seam",
+        "statement_status": "lean_statement_present_no_sorry_source_scan",
+        "notes": "Mapped from existing Lean source by update-blueprint-map.py. Primary selected from 1 related declaration(s); source-level scan only, Lake not run.",
+        "mapping_confidence": "curated_alias",
+        "audit_status": "mapped_source_scanned_not_built",
+        "related_lean": [
+          {
+            "lean_file": "experimental/lean/cs25_cap_v13_experimental/cs25_cap_v13_experimental/ResidueLineTools.lean",
+            "lean_name": "CAP25V13.ResidueLine.gap2_seam",
+            "decl_kind": "theorem",
+            "line": 51,
+            "source_scan_status": "no_sorry_or_admit_seen",
+            "mapping_confidence": "curated_alias",
+            "mapping_reason": "curated_alias"
+          }
+        ]
       },
       "statement_excerpt": "Let $n,k,A$ be fixed and put $j=n-A$, $t=A-k$, and $r=n-k$, so $j+t=r$. If $M(n,k)$, then $M r$, and hence \\[ M j M t. \\] On such buckets all quotient parameters $n/M,k/M,A/M,j/M,t/M$ are integral. If $M n$ and $M j$ but $M k$, then the support descends but the dimension and window do not: a non-rate-preserving seam.",
       "depends_on": [],
@@ -8797,10 +10154,23 @@
       "kind": "proposition",
       "status": "proved_in_tex_or_imported",
       "formalization": {
-        "lean_file": "",
-        "lean_name": "",
-        "statement_status": "not_started",
-        "notes": ""
+        "lean_file": "experimental/lean/cs25_cap_v13_experimental/cs25_cap_v13_experimental/ResidueLineTools.lean",
+        "lean_name": "CAP25V13.ResidueLine.hankel_det",
+        "statement_status": "lean_statement_present_no_sorry_source_scan",
+        "notes": "Mapped from existing Lean source by update-blueprint-map.py. Primary selected from 1 related declaration(s); source-level scan only, Lake not run.",
+        "mapping_confidence": "curated_alias",
+        "audit_status": "mapped_source_scanned_not_built",
+        "related_lean": [
+          {
+            "lean_file": "experimental/lean/cs25_cap_v13_experimental/cs25_cap_v13_experimental/ResidueLineTools.lean",
+            "lean_name": "CAP25V13.ResidueLine.hankel_det",
+            "decl_kind": "theorem",
+            "line": 303,
+            "source_scan_status": "no_sorry_or_admit_seen",
+            "mapping_confidence": "curated_alias",
+            "mapping_reason": "curated_alias"
+          }
+        ]
       },
       "statement_excerpt": "Let $H F^$ be finite. For a word $w:H F$, define the rectangular syndrome Hankel block \\[ H_{t,s}(w)_{a,b}:=_{x H}w(x)x^{a+b} (0 a<t,\\ 0 b<s). \\] Then \\[ H_{t,s}(w)=V_t(H)^{ T}diag(w(x))V_s(H). \\] If $X=\\{x_0,,x_{m-1}\\}$ is a set of distinct nonzero points and \\[ A_h(X):=V_m(X)^{ T}diag(x^h:x X)\\,V_m(X), \\] then \\[ A_h(X)=(V_m(X))^2_{x X}x^h\\ 0 . \\]",
       "depends_on": [],
@@ -8824,10 +10194,23 @@
       "kind": "proposition",
       "status": "proved_in_tex_or_imported",
       "formalization": {
-        "lean_file": "",
-        "lean_name": "",
-        "statement_status": "not_started",
-        "notes": ""
+        "lean_file": "experimental/lean/cs25_cap_v13_experimental/cs25_cap_v13_experimental/ResidueLineTools.lean",
+        "lean_name": "CAP25V13.ResidueLine.johnson_ball_count",
+        "statement_status": "lean_statement_present_no_sorry_source_scan",
+        "notes": "Mapped from existing Lean source by update-blueprint-map.py. Primary selected from 1 related declaration(s); source-level scan only, Lake not run.",
+        "mapping_confidence": "curated_alias",
+        "audit_status": "mapped_source_scanned_not_built",
+        "related_lean": [
+          {
+            "lean_file": "experimental/lean/cs25_cap_v13_experimental/cs25_cap_v13_experimental/ResidueLineTools.lean",
+            "lean_name": "CAP25V13.ResidueLine.johnson_ball_count",
+            "decl_kind": "theorem",
+            "line": 337,
+            "source_scan_status": "no_sorry_or_admit_seen",
+            "mapping_confidence": "curated_alias",
+            "mapping_reason": "curated_alias"
+          }
+        ]
       },
       "statement_excerpt": "Let $1 j n-1$, and let $J(n,j)$ be the Johnson graph on $j$-subsets of an $n$-set, with degree $d=j(n-j)$. If $ A$ is a family of $j$-subsets of density $$ and $T_1$ is obtained from a uniform $T_0$ by one uniform exchange step, then \\[ ^2+(1-{n}{d})(1-), \\] and point dictators $ A=\\{T:x_0 T\\}$ attain equality.",
       "depends_on": [],
@@ -8851,10 +10234,23 @@
       "kind": "proposition",
       "status": "proved_in_tex_or_imported",
       "formalization": {
-        "lean_file": "",
-        "lean_name": "",
-        "statement_status": "not_started",
-        "notes": ""
+        "lean_file": "experimental/lean/cs25_cap_v13_experimental/cs25_cap_v13_experimental/ResidueLineTools.lean",
+        "lean_name": "CAP25V13.ResidueLine.anticode_packing",
+        "statement_status": "lean_statement_present_no_sorry_source_scan",
+        "notes": "Mapped from existing Lean source by update-blueprint-map.py. Primary selected from 1 related declaration(s); source-level scan only, Lake not run.",
+        "mapping_confidence": "curated_alias",
+        "audit_status": "mapped_source_scanned_not_built",
+        "related_lean": [
+          {
+            "lean_file": "experimental/lean/cs25_cap_v13_experimental/cs25_cap_v13_experimental/ResidueLineTools.lean",
+            "lean_name": "CAP25V13.ResidueLine.anticode_packing",
+            "decl_kind": "theorem",
+            "line": 316,
+            "source_scan_status": "no_sorry_or_admit_seen",
+            "mapping_confidence": "curated_alias",
+            "mapping_reason": "curated_alias"
+          }
+        ]
       },
       "statement_excerpt": "Let $0 s j n$. If a family $ F$ of $j$-subsets of an $n$-set satisfies $|A B|>s$ for all distinct $A,B F$, then \\[ | F| js n{j-s}. \\]",
       "depends_on": [],
@@ -12937,7 +14333,7 @@
         "lean_file": "",
         "lean_name": "",
         "statement_status": "not_started",
-        "notes": "Computation artifacts usually need a Lean statement plus an external certificate checker or reflected arithmetic proof."
+        "notes": ""
       },
       "statement_excerpt": "Computation/artifact mentioned in TeX: gamma_census.py",
       "depends_on": [],
@@ -12962,7 +14358,7 @@
         "lean_file": "",
         "lean_name": "",
         "statement_status": "not_started",
-        "notes": "Computation artifacts usually need a Lean statement plus an external certificate checker or reflected arithmetic proof."
+        "notes": ""
       },
       "statement_excerpt": "Computation/artifact mentioned in TeX: prize_packing.py",
       "depends_on": [],
@@ -12987,7 +14383,7 @@
         "lean_file": "",
         "lean_name": "",
         "statement_status": "not_started",
-        "notes": "Computation artifacts usually need a Lean statement plus an external certificate checker or reflected arithmetic proof."
+        "notes": ""
       },
       "statement_excerpt": "Computation/artifact mentioned in TeX: r1_model.py",
       "depends_on": [],
@@ -13012,7 +14408,7 @@
         "lean_file": "",
         "lean_name": "",
         "statement_status": "not_started",
-        "notes": "Computation artifacts usually need a Lean statement plus an external certificate checker or reflected arithmetic proof."
+        "notes": ""
       },
       "statement_excerpt": "Computation/artifact mentioned in TeX: lattice_check.py",
       "depends_on": [],
@@ -13037,7 +14433,7 @@
         "lean_file": "",
         "lean_name": "",
         "statement_status": "not_started",
-        "notes": "Computation artifacts usually need a Lean statement plus an external certificate checker or reflected arithmetic proof."
+        "notes": ""
       },
       "statement_excerpt": "Computation/artifact mentioned in TeX: lattice_check2.py",
       "depends_on": [],
@@ -13062,7 +14458,7 @@
         "lean_file": "",
         "lean_name": "",
         "statement_status": "not_started",
-        "notes": "Computation artifacts usually need a Lean statement plus an external certificate checker or reflected arithmetic proof."
+        "notes": ""
       },
       "statement_excerpt": "Computation/artifact mentioned in TeX: q_unify_check.py",
       "depends_on": [],
@@ -13087,7 +14483,7 @@
         "lean_file": "",
         "lean_name": "",
         "statement_status": "not_started",
-        "notes": "Computation artifacts usually need a Lean statement plus an external certificate checker or reflected arithmetic proof."
+        "notes": ""
       },
       "statement_excerpt": "Computation/artifact mentioned in TeX: q_smooth_check.py",
       "depends_on": [],
@@ -13295,7 +14691,7 @@
         "lean_file": "",
         "lean_name": "",
         "statement_status": "not_started",
-        "notes": "Leave empty in first pass; decide whether to reflect exact arithmetic in Lean or cite external certificate replay."
+        "notes": ""
       },
       "statement_excerpt": "Exact verifier for active v13 raw adjacent row packets, unsafe lower replay, moved MCA pairs, and dyadic rung audit.",
       "depends_on": [
@@ -13329,7 +14725,7 @@
         "lean_file": "",
         "lean_name": "",
         "statement_status": "not_started",
-        "notes": "Leave empty in first pass; decide whether to reflect exact arithmetic in Lean or cite external certificate replay."
+        "notes": ""
       },
       "statement_excerpt": "Exact verifier for full-extension cell target ceilings and Galois branch ledger; does not pay the open K=F branch.",
       "depends_on": [],
@@ -13361,7 +14757,7 @@
         "lean_file": "",
         "lean_name": "",
         "statement_status": "not_started",
-        "notes": "Leave empty in first pass; decide whether to reflect exact arithmetic in Lean or cite external certificate replay."
+        "notes": ""
       },
       "statement_excerpt": "Four active deployed packet JSON files for KoalaBear MCA/list and Mersenne-31 MCA/list adjacent targets.",
       "depends_on": [
@@ -13395,7 +14791,7 @@
         "lean_file": "",
         "lean_name": "",
         "statement_status": "not_started",
-        "notes": "Leave empty in first pass; decide whether to reflect exact arithmetic in Lean or cite external certificate replay."
+        "notes": ""
       },
       "statement_excerpt": "Exact integer extension-cell target data: zero-dimensional full-orbit branch ceilings 4807520, 4226236, 9, 8.",
       "depends_on": [],
@@ -13427,7 +14823,7 @@
         "lean_file": "",
         "lean_name": "",
         "statement_status": "not_started",
-        "notes": "Leave empty in first pass; decide whether to reflect exact arithmetic in Lean or cite external certificate replay."
+        "notes": ""
       },
       "statement_excerpt": "Exact moved-frontier checker for v13 raw deployed unsafe agreements and adjacent lower-route failure.",
       "depends_on": [
@@ -13461,7 +14857,7 @@
         "lean_file": "",
         "lean_name": "",
         "statement_status": "not_started",
-        "notes": "Leave empty in first pass; decide whether to reflect exact arithmetic in Lean or cite external certificate replay."
+        "notes": ""
       },
       "statement_excerpt": "Exact F_17^*, m=9, w=1 route cut: raw mode-at-null fails; finite Q target is primitive max-orbit flatness.",
       "depends_on": [],
@@ -13491,7 +14887,7 @@
         "lean_file": "",
         "lean_name": "",
         "statement_status": "not_started",
-        "notes": "Leave empty in first pass; decide whether to reflect exact arithmetic in Lean or cite external certificate replay."
+        "notes": ""
       },
       "statement_excerpt": "Toy scanner for full-orbit extension branch; records slack-dependent K=F behavior and falsifier shape.",
       "depends_on": [],
@@ -13521,7 +14917,7 @@
         "lean_file": "",
         "lean_name": "",
         "statement_status": "not_started",
-        "notes": "Leave empty in first pass; decide whether to reflect exact arithmetic in Lean or cite external certificate replay."
+        "notes": ""
       },
       "statement_excerpt": "Identity-scale prefix-frontier certificate package for v13 raw unsafe edges.",
       "depends_on": [
@@ -16702,6 +18098,19 @@
     "Q, BC, SP, finite-adjacent, and full-resolution target nodes are manual first-pass targets extracted from the v13 raw final package and should be refined as statements mature.",
     "Computation nodes are mined from TeX artifact mentions and need curation against actual scripts/certificates before formal proof replay.",
     "Curated computation nodes were added for active frontier-adjacent packet/verifier artifacts even when not explicitly texttt-mentioned in the raw TeX.",
-    "Computations may include a supports field for artifacts that guide or certify a target without being mathematical prerequisites."
-  ]
+    "Computations may include a supports field for artifacts that guide or certify a target without being mathematical prerequisites.",
+    "Lean mapping pass 1 fills existing formalization slots from declarations under experimental/lean; related_lean entries record split theorem packages and skeleton/proved source status.",
+    "Lean mapping is generated by experimental/lean/update-blueprint-map.py; related_lean entries record split theorem packages and source-scan proof status."
+  ],
+  "mapping_policy": {
+    "direction": "Lean-to-blueprint: existing Lean declarations and correspondence notes are mapped into TeX blueprint nodes, not used to create new blueprint nodes.",
+    "verification_scope": "Source-level scan only. statement_status records whether the mapped declaration block visibly contains sorry/admit; no Lake build was run.",
+    "primary_selection": "A primary lean_file/lean_name is selected for convenience. related_lean preserves all matched declarations for split Lean proof packages.",
+    "confidence_values": {
+      "exact_label_match": "Lean doc comment names the exact TeX blueprint label.",
+      "curated_alias": "Explicit alias from local Lean correspondence maps or package headers.",
+      "name_heuristic": "Declaration name normalizes to a blueprint label.",
+      "mixed": "More than one mapping source was used for the node."
+    }
+  }
 }
