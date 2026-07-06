@@ -73,6 +73,18 @@ The reduction is now pinned and numerically verified (`../scripts/b2_bound_mecha
   not per-c, since per-c is useless), or a direct second-moment/energy bound absorbing the cushion;
   (ii) verify the arithmetic at the actual deployed `(n,b,t,q)` — CAP25's finite-certificate check.
 
+> **CORRECTION (2026-07-06, "nail b2" attempt).** The `extras_b ≤ n^3` claim is **REGIME-RESTRICTED** and
+> the toy validation above was in the **WRONG b-regime**. `count_b ~ C(n,b)/q^t`, so `≤ n^3` requires
+> `log2 C(n,b) ≤ t·log2 q + 3 log2 n` — i.e. `b` far from `n/2`. At PRIZE scale (`n=2^41`,
+> `t log2 q ≈ 2.15e12`) the bound holds for `b ≲ n/4` but **FAILS at `b=n/2`** (`count ~ 2^{4.9e10} ≫ n^3`).
+> The toy mechanism tested `b ≈ n/2` (b=13–19 at n=32), which is fine at small `n` (all `b` valid) but is
+> the FAILING region at prize. **The prize-relevant regime is `b ≈ t`** (first moment `≪ 1`, e.g.
+> `2^{-2e12}`), where `≤ n^3` is a **rare-event / large-deviation** bound — and the node itself states
+> *"pure counting can NEVER close it"* there. So b2 is a **crude inverse theorem in the `b ∈ [t, ~n/4]`
+> regime**, NOT the clean L¹-average calculation; the reduction is still valid, but the operative bound
+> must be re-derived in the `b ≈ t` regime (a cleaner toy needs `n ≫ t`, e.g. n=64,t=4,b=5–7, first
+> moment `≪ 1`). The earlier "tractable/verified" status was over-optimistic (small-`n` regime artifact).
+
 ### (b) L1 — SHARP, open; RANK statement, not a moment inequality
 > **Lemma L1 (max-fiber ceiling).** Let `Γ ∈ 𝔽_p[X]`, `Γ(0)=0`, `deg Γ ≤ ℓ−1`, `ℓ` an odd prime with
 > `ℓ | p−1`. Then `E_3 := Σ_C (μ_Γ(C)−2)_+ ≤ ℓ−2`, with equality only for `Γ` in the
