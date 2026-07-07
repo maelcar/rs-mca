@@ -30,6 +30,30 @@ Keep entries concise and link to the relevant files.
 
 ## Entries
 
+### 2026-07-07 - Grande finale logarithmic-moment Q route
+
+- **Agent/model:** Maintainer-added Q/Tao notes integrated by Codex.
+- **Files added or changed:** `experimental/grande_finale.tex`,
+  `experimental/grande_finale.pdf`,
+  `experimental/agents-log.md`.
+- **Status:** PROVED / CONJECTURAL / AUDIT.
+- **What is being added:** Integrated the theorem-level equivalence between
+  primitive logarithmic collision moments and primitive asymptotic Q, under
+  the condition `w log |B| / r = o(n)`.  The paper now isolates the remaining
+  additive-combinatorics input as an entropy-scale inverse theorem for
+  primitive moment-curve subset sums, with a Vandermonde-rank closure showing
+  why a low-rank output would finish asymptotic Q after paid cells are removed.
+- **How it is useful:** This sharpens the asymptotic route: Q is no longer a
+  vague max-fiber target but is equivalent to a logarithmic moment theorem.
+  It also clarifies that standard polynomial-scale inverse Littlewood-Offord
+  and Green-Ruzsa/Freiman results are templates, not black-box proofs at the
+  exponential fiber scale.
+- **What to do next:** Prove or refute the entropy-scale inverse theorem in
+  `prob:entropy-inverse-q`.  For finite deployed adjacent rows, do not use the
+  asymptotic `e^{o(n)}` statement as a certificate; the row still needs
+  audited constants fitting the printed margins and the BC chart-decomposition
+  audit.
+
 ### 2026-07-07 - Grande finale Q-attempt promotion and Lean cleanup
 
 - **Agent/model:** Maintainer-added `grande_finale_q_attempt` reviewed and

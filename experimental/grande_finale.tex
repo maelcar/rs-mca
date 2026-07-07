@@ -63,7 +63,7 @@
 \begin{document}
 
 \begin{abstract}
-This expanded proof-audited note separates genuine theorem-level material from the still-missing dense-frontier upper ledger for smooth-domain Reed--Solomon MCA.  The unsafe side is reduced to exact integer prefix floors and the simple-pole list-to-MCA conversion.  On the safe side the note keeps only statements proved under their displayed hypotheses: broad safe anchors, quotient descent, split-pencil reductions, second-moment identities, unconditional but weak prefix/split-pair ceilings, the exact saturation identity for MCA codeword rays, and the theorem that the shift-pair ledger is downstream from Q once Q is stated as a max-fiber bound.  This revision also fixes endpoint and notation issues found in the audit, expands the finite-arithmetic tables, adds line-ray saturation bookkeeping, and prints the remaining proof obligations explicitly.  It does not claim the adjacent deployed safe rows: an attempted Q closure is added below and shows that the active quantitative task is still the row-sharp prefix atom theorem, together with the finite audit that every residual balanced-core split-pencil chart reduces to the one-parameter moving-root theorem proved here.
+This expanded proof-audited note separates genuine theorem-level material from the still-missing dense-frontier upper ledger for smooth-domain Reed--Solomon MCA.  The unsafe side is reduced to exact integer prefix floors and the simple-pole list-to-MCA conversion.  On the safe side the note keeps only statements proved under their displayed hypotheses: broad safe anchors, quotient descent, split-pencil reductions, second-moment identities, unconditional but weak prefix/split-pair ceilings, the exact saturation identity for MCA codeword rays, and the theorem that the shift-pair ledger is downstream from Q once Q is stated as a max-fiber bound.  This revision also fixes endpoint and notation issues found in the audit, expands the finite-arithmetic tables, adds line-ray saturation bookkeeping, proves the logarithmic-moment equivalence for primitive asymptotic Q, and prints the remaining proof obligations explicitly.  It does not claim the adjacent deployed safe rows: an attempted Q closure is added below and shows that the active quantitative task is still the row-sharp prefix atom theorem, together with the finite audit that every residual balanced-core split-pencil chart reduces to the one-parameter moving-root theorem proved here.
 \end{abstract}
 
 \maketitle
@@ -748,6 +748,119 @@ For the finite statement, take logarithms base \(2\) in the same inequality:
 \]
 To prove \(R\le2^\Delta\), the numerator must be at most \(r\Delta\).
 \end{proof}
+
+\begin{definition}[primitive logarithmic collision moment]\label{def:primitive-logmoment}
+After all first-match paid cells have been removed, let \(N^{\rm prim}(s)\) be the number of remaining primitive prefix-boundary supports with prefix value \(s\).  Put
+\[
+        \overline N=\binom nm|\B|^{-w},
+        \qquad
+        R^{\rm prim}(s)=\frac{N^{\rm prim}(s)}{\overline N},
+        \qquad
+        M_{\rm prim}=\max_sR^{\rm prim}(s),
+\]
+and for an integer \(r\ge2\),
+\[
+        \Gamma_r^{\rm prim}
+        =
+        |\B|^{-w}\sum_s R^{\rm prim}(s)^r .
+\]
+\end{definition}
+
+\begin{theorem}[logarithmic moments are equivalent to primitive asymptotic Q]\label{thm:logmoment-equivalence}
+Let \(r=r(n)\to\infty\) and assume
+\[
+        \frac{w\log|\B|}{r}=o(n).
+\]
+Then the following two asymptotic statements are equivalent:
+\[
+        \Gamma_r^{\rm prim}\le\exp(o(n)r)
+        \qquad\Longleftrightarrow\qquad
+        M_{\rm prim}\le\exp(o(n)).
+\]
+Thus primitive asymptotic Q is exactly a logarithmic-order collision-moment theorem.  For fixed-bit base fields, \(r=\lceil\log n\rceil\) is enough whenever \(w=O(n)\).  If \(\log|\B|=O(\log n)\), one may take \(r=(\log n)^2\); more generally any \(r\to\infty\) with \(w\log|\B|/r=o(n)\) suffices.
+\end{theorem}
+
+\begin{proof}
+First suppose \(\Gamma_r^{\rm prim}\le\exp(o(n)r)\).  Since
+\[
+        M_{\rm prim}^r
+        \le
+        \sum_sR^{\rm prim}(s)^r
+        =
+        |\B|^w\Gamma_r^{\rm prim},
+\]
+we have
+\[
+        \log M_{\rm prim}
+        \le
+        \frac{w\log|\B|+\log\Gamma_r^{\rm prim}}{r}
+        =
+        o(n).
+\]
+This proves \(M_{\rm prim}\le\exp(o(n))\).
+
+Conversely, suppose \(M_{\rm prim}\le\exp(o(n))\).  Since the primitive family is a subfamily of all \(m\)-subsets,
+\[
+        \sum_sR^{\rm prim}(s)
+        =
+        \frac{\sum_sN^{\rm prim}(s)}{\binom nm|\B|^{-w}}
+        \le
+        |\B|^w .
+\]
+Therefore
+\[
+        \Gamma_r^{\rm prim}
+        =
+        |\B|^{-w}\sum_sR^{\rm prim}(s)^r
+        \le
+        M_{\rm prim}^{r-1}
+        \le
+        \exp(o(n)r),
+\]
+as required.
+\end{proof}
+
+\begin{problem}[entropy-scale inverse theorem for primitive moment-curve sums]\label{prob:entropy-inverse-q}
+Prove the following inverse theorem, or identify the new obstruction cell that replaces it.  Let
+\[
+        V=\{v_y=(\rho(y),\rho(y)y,\ldots,\rho(y)y^{R-1}):y\in T\}\subseteq\B^R,
+        \qquad
+        \rho(y)^2=y,
+\]
+be the primitive leaf moment-curve column system after quotient, planted, tangent, extension, Chebyshev, differential-locator, and saturated first-match cells have been removed.  Let \(X\) be a fixed-density singleton or signed-profile selector on \(T\).  If, for some \(r\le(\log n)^A\),
+\[
+        \Gamma_r^{\rm prim}\ge\exp(\eta nr)
+\]
+with fixed \(\eta>0\), then a positive-rate set \(U\subseteq T\) is contained in a proper generalized arithmetic progression or coset progression whose affine span has rank \(o(n)\), unless the excess is carried by one of the paid cells: quotient pullback, Chebyshev pullback, planted common block, tangent/common-code-line, extension-valued descent, differential-locator low-defect, or saturation.
+\end{problem}
+
+\begin{remark}[why standard inverse theorems do not plug in directly]\label{rem:standard-inverse-gap}
+The intended proof route follows the Tao--Vu inverse Littlewood--Offord and Green--Ruzsa/Freiman template \cite{TaoVu09,GreenRuzsa07}; the bounded-torsion PFR theorem of Gowers--Green--Manners--Tao \cite{GGMT24} is also relevant once an entropy-small-doubling object has been extracted.  The missing point is the scale.  Standard inverse Littlewood--Offord theorems are usually triggered by polynomial concentration, while the random prefix-fiber scale here is \(|\B|^{-w}=\exp(-\Theta(n))\).  A Q failure may be only \(\exp(\eta n)|\B|^{-w}\), still exponentially small.  The needed input is therefore a Renyi-entropy or logarithmic-moment inverse theorem for primitive moment-curve subset sums, not a black-box invocation of the polynomial-concentration inverse theorem.
+\end{remark}
+
+\begin{proposition}[Vandermonde rank kills the inverse output]\label{prop:vandermonde-kills-low-rank}
+Let \(y_1,\ldots,y_t\) be distinct elements of \(T\), with \(t\le R\) and all \(\rho(y_i)\ne0\).  Then the columns
+\[
+        v_{y_i}=(\rho(y_i),\rho(y_i)y_i,\ldots,\rho(y_i)y_i^{R-1})
+\]
+are linearly independent.  Consequently, if \(R=\Theta(n)\), no affine subspace of rank \(o(n)\) contains a positive-density subset of the primitive moment-curve columns.
+\end{proposition}
+
+\begin{proof}
+Multiply the column \(v_{y_i}\) by \(\rho(y_i)^{-1}\).  The resulting \(t\times t\) leading minor is the Vandermonde matrix \((y_i^{j})_{0\le j<t}\), whose determinant is \(\prod_{i<j}(y_j-y_i)\ne0\).  Hence any \(t\le R\) distinct columns are independent.  A set of \(cn\) columns has affine span of dimension at least \(cn-1\) as long as \(cn\le R\), which is incompatible with affine rank \(o(n)\) for fixed \(c>0\) and large \(n\).
+\end{proof}
+
+\begin{corollary}[asymptotic Q from the entropy inverse theorem]\label{cor:asymp-q-from-entropy-inverse}
+If \cref{prob:entropy-inverse-q} holds for the primitive first-match residual families, then primitive asymptotic Q holds.  Consequently the Q cell is absorbed in the entropy--subfield frontier argument at every reserve larger than the logarithmic transition scale.
+\end{corollary}
+
+\begin{proof}
+If primitive asymptotic Q failed, then by \cref{thm:logmoment-equivalence} there would be a logarithmic moment order \(r\) with \(\Gamma_r^{\rm prim}\ge\exp(\eta nr)\) along a subsequence for some \(\eta>0\).  Applying \cref{prob:entropy-inverse-q} gives either a paid cell, contrary to first-match removal, or a positive-density primitive subset in affine rank \(o(n)\).  The latter is impossible by \cref{prop:vandermonde-kills-low-rank} in the moment-curve range \(R=\Theta(n)\).  Thus \(M_{\rm prim}\le\exp(o(n))\), which is primitive asymptotic Q.
+\end{proof}
+
+\begin{remark}[proof skeleton for \cref{prob:entropy-inverse-q}]\label{rem:entropy-inverse-skeleton}
+The expected proof has six steps.  First, a large \(\Gamma_r^{\rm prim}\) dyadically extracts popular fibers with normalized size \(\exp(\Omega(n))\) above random.  Second, comparing supports inside a popular fiber to a base support produces signed trades satisfying the first \(w\) moment equations.  Third, Tao's cyclic-prime uncertainty principle and the BCH/Vandermonde barrier \cite{Tao05} remove low-support primitive trades.  Fourth, an entropy Balog--Szemeredi--Gowers step should convert the logarithmic collision excess into an entropy-small-doubling population of trades.  Fifth, Green--Ruzsa/PFR-type structuralization should produce a low-rank coset progression.  Sixth, a slice-derivative lemma must push this structure back from trade sums to many individual moment-curve columns, after which \cref{prop:vandermonde-kills-low-rank} forces the excess into a paid cell.  The fifth and sixth steps are the nonstandard parts; this note records them as the remaining theorem, not as a completed proof.
+\end{remark}
 
 \begin{remark}[why finite adjacent Q needs high order]\label{rem:finite-moment-order}
 At the deployed frontier depths, \(w\log_2|\B|\) is on the order of \(10^5\) to \(10^6\) bits, while the adjacent margins are \(22.2,22.0,3.3,3.1\) bits.  Thus a finite adjacent proof using only \cref{thm:moment-q} needs either very high moment order \(r\), an exchange-compression theorem after quotient routing, or a direct max-fiber certificate.  Fixed second or third moments can be asymptotically useful evidence, but they cannot by themselves fit the printed adjacent margins.  The raw mode-at-null shortcut is false by \cref{prop:mode-null-false}.
@@ -2007,7 +2120,7 @@ The new unconditional packing theorem \cref{thm:q-proper} is valid but, by \cref
 
 \section{Conclusion}
 
-This version contains no Q, BC, or SP certificate theorem.  The unsafe side is exact and the broad safe anchors are unconditional in their stated ranges.  The former SP input is now a theorem downstream from Q; the raw BC support count is replaced by exact saturation and line-ray identities; and primitive one-parameter BC pencils are paid by the moving-root theorem.  The full entropy--subfield equality and the adjacent safe inequalities are still not asserted.  The attempted Q closure in \cref{prop:q-exact-target,prop:q-moment-order-floor,prop:bc-not-q,prop:q-not-closed} identifies the exact missing atom theorem and rules out the current shortcuts: packing is far too weak, fixed moments cannot fit the finite rows, SP is downstream from Q rather than upstream, and the paid BC theorem applies to one-parameter pencils rather than the high-dimensional boundary-Q slice.  A closed adjacent theorem still requires a row-sharp Q atom bound together with the BC chart-decomposition audit required by \cref{prob:saturated-bc}.
+This version contains no finite Q, BC, or SP certificate theorem.  The unsafe side is exact and the broad safe anchors are unconditional in their stated ranges.  The former SP input is now a theorem downstream from Q; the raw BC support count is replaced by exact saturation and line-ray identities; and primitive one-parameter BC pencils are paid by the moving-root theorem.  On the asymptotic side, \cref{thm:logmoment-equivalence} proves that primitive Q is exactly a logarithmic collision-moment theorem under \(w\log|\B|/r=o(n)\), and \cref{cor:asymp-q-from-entropy-inverse} reduces the remaining asymptotic frontier proof to the entropy-scale inverse theorem \cref{prob:entropy-inverse-q}.  The full entropy--subfield equality and the adjacent safe inequalities are still not asserted.  The attempted Q closure in \cref{prop:q-exact-target,prop:q-moment-order-floor,prop:bc-not-q,prop:q-not-closed,prob:entropy-inverse-q} identifies the exact missing atom theorem and rules out the current shortcuts: packing is far too weak, fixed moments cannot fit the finite rows, standard polynomial-scale inverse Littlewood--Offord does not directly apply at exponential fiber scale, SP is downstream from Q rather than upstream, and the paid BC theorem applies to one-parameter pencils rather than the high-dimensional boundary-Q slice.  A closed adjacent theorem still requires a row-sharp Q atom bound together with the BC chart-decomposition audit required by \cref{prob:saturated-bc}.
 
 \begin{thebibliography}{BCHKS25}
 
@@ -2065,6 +2178,30 @@ Y.~V. Linnik.
 A.~Weil.
 \newblock On some exponential sums.
 \newblock \emph{Proceedings of the National Academy of Sciences of the United States of America}, 34(5):204--207, 1948.
+
+\bibitem[Tao05]{Tao05}
+T.~Tao.
+\newblock An uncertainty principle for cyclic groups of prime order.
+\newblock \emph{Mathematical Research Letters}, 12(1):121--127, 2005.
+\newblock Preprint: \url{https://arxiv.org/abs/math/0308286}.
+
+\bibitem[TV09]{TaoVu09}
+T.~Tao and V.~Vu.
+\newblock A sharp inverse Littlewood--Offord theorem.
+\newblock \emph{Random Structures \& Algorithms}, 37(4):525--539, 2010.
+\newblock Preprint: \url{https://arxiv.org/abs/0902.2357}.
+
+\bibitem[GR07]{GreenRuzsa07}
+B.~Green and I.~Z. Ruzsa.
+\newblock Freiman's theorem in an arbitrary abelian group.
+\newblock \emph{Journal of the London Mathematical Society}, 75(1):163--175, 2007.
+\newblock Preprint: \url{https://arxiv.org/abs/math/0505198}.
+
+\bibitem[GGMT24]{GGMT24}
+W.~T. Gowers, B.~Green, F.~Manners, and T.~Tao.
+\newblock Marton's conjecture in abelian groups with bounded torsion.
+\newblock Preprint, 2024.
+\newblock \url{https://arxiv.org/abs/2404.02244}.
 
 \end{thebibliography}
 
