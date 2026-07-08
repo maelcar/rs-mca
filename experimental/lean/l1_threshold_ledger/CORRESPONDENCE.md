@@ -58,6 +58,22 @@ Source notes: `experimental/notes/l1/l1_residual_excess_w3_collapse_edge_lean.md
 | Therefore each dangerous case has alternate contribution `<= 1`. | `collapseEdgeCase0Contribution` ... `collapseEdgeCase5Contribution`; bundled by `collapseEdgeAllCaseContributionsLeOne`. | "head dangerous pattern forces alternate collapse." | Lean-certified finite graph check (`decide`, axiom-free) |
 | The alternate contribution is exactly `1` in each of the six stored cases. | `collapseEdgeAllAlternateContributionsExact`. | Collapse-edge finite graph certificate. | Lean-certified finite graph check (`decide`, axiom-free) |
 
+## W3 collapse-edge structural wrapper — `L1Threshold.CollapseEdgeStructuralLemma`
+
+| Mathematical / certificate statement | Lean theorem / definition | Source artifact | Verification status |
+|---|---|---|---|
+| For every stored dangerous `(missing,stray)=(2,1)` case, the alternate contribution is `<= 1`. | `dangerousPatternForcesAlternateCollapse`. | Repackaging of `CollapseEdgeCertificate`. | Lean-certified finite graph implication (`decide`, axiom-free) |
+| The unique large alternate survivor in every stored dangerous case is the coset-37 triple `[17,36,130]`. | `dangerousPatternForcesUniqueCoset37Survivor`. | Repackaging of `CollapseEdgeCertificate`. | Lean-certified finite graph implication (`decide`, axiom-free) |
+| The six-case structural packet combines the dangerous antecedent, alternate-collapse bound, and unique-survivor conclusion. | `dangerousPatternStructuralPacketOK`. | Repackaging of `CollapseEdgeCertificate`. | Lean-certified finite graph implication (`decide`, axiom-free) |
+
+## W3 collapse-edge graph mechanism — `L1Threshold.CollapseEdgeGraphMechanism`
+
+| Mathematical / certificate statement | Lean theorem / definition | Source artifact | Verification status |
+|---|---|---|---|
+| Every non-survivor alternate graph is matching-only in the six stored cases. | `allNonSurvivorAlternatesMatchingOnly`; rule-derived form `allNonSurvivorRuleAlternatesMatchingOnly`. | Pattern-signature packet. | Lean-certified finite graph/rule check (`decide`, axiom-free) |
+| The only large survivor is the coset-37 triangle `[17,36,130]`; the rule-derived graph has no boundary edge from it. | `allCasesHaveUniqueSurvivorTriangle`; rule-derived form `allCasesHaveRuleSurvivorTriangle`. | Pattern-signature packet. | Lean-certified finite graph/rule check (`decide`, axiom-free) |
+| The graph mechanism explains exact alternate contribution `[1,1,1,1,1,1]` for the six stored cases. | `allGraphMechanismsCertified`; `allEdgeRuleMechanismsCertified`; `graphMechanismAlternateContributionsExact`. | Pattern-signature packet. | Lean-certified finite graph/rule check (`decide`, axiom-free) |
+
 ## W3 collapse-edge compact origin summary — `L1Threshold.CollapseEdgeOriginSummary`
 
 Source note: `experimental/notes/l1/l1_residual_excess_w3_collapse_edge_origin.md`.
@@ -68,11 +84,31 @@ Source note: `experimental/notes/l1/l1_residual_excess_w3_collapse_edge_origin.m
 | The compact origin-audit summary accounts for `6528` edge rules with zero mismatches. | `originSummaryEdgeRulesAudited`; `originSummaryNoMismatches`; bundled by `originSummaryAllCasesOK`. | Compact origin-audit summary. | Lean-certified metadata/count check (`decide`, axiom-free) |
 | All six compact origin summaries share the same eight-coset rule-count pattern. | `originSummaryRepeatedCosetPattern`. | Compact origin-audit summary. | Lean-certified metadata/count check (`decide`, axiom-free) |
 
+## W3 collapse-edge compact edge-origin arithmetic — `L1Threshold.CollapseEdgeOriginArithmetic`
+
+Source data:
+`experimental/data/certificates/l1-residual-excess-classifier/w3_collapse_edge_origin_arithmetic_compact_combo012_sizes10_2_3.json`.
+
+| Claim consumed by the note | Lean certificate | Source claim | Status |
+| --- | --- | --- | --- |
+| Each of the `6528` compact edge-origin rows has the stored rule kind certified by the modular affine equation `intercept + shift*slope = 0 mod 137`: `always` has slope/intercept zero, `never` has zero slope and nonzero intercept, and `at_shift` has nonzero slope and vanishes at the stored shift. | `edgeOriginArithmeticAllRowsOK`. | Compact arithmetic-origin packet. | Lean-certified finite modular arithmetic check (`decide`, axiom-free); does not reconstruct the W3 dot products that produced `(intercept,slope)`. |
+| The arithmetic packet contains `6528` rows, split evenly across the six stored cases. | `edgeOriginArithmeticRowCount`; `edgeOriginArithmeticCaseCounts`. | Compact arithmetic-origin packet. | Lean-certified finite count check (`decide`, axiom-free) |
+
+## W3 collapse-edge compact dot-product origin — `L1Threshold.CollapseEdgeOriginDot`
+
+Source data:
+`experimental/data/certificates/l1-residual-excess-classifier/w3_collapse_edge_origin_dot_compact_combo012_sizes10_2_3.json`.
+
+| Claim consumed by the note | Lean certificate | Source claim | Status |
+| --- | --- | --- | --- |
+| Each compact dot-product row has `intercept = <v(a)-v(b), quotient_base>` and `slope = <v(a)-v(b), seed_coords>` over `F_137`, using the supplied four-coordinate endpoint evaluations. | `edgeOriginDotAllRowsOK`. | Compact dot-origin packet. | Lean-certified finite modular dot-product check (`decide`, axiom-free); does not reconstruct the W3 basis polynomials that produced endpoint evaluations. |
+| The dot packet contains `6528` rows, split evenly across the six stored cases. | `edgeOriginDotRowCount`; `edgeOriginDotCaseCounts`. | Compact dot-origin packet. | Lean-certified finite count check (`decide`, axiom-free) |
+
 ## W3 collapse-edge compact packet aggregate — `L1Threshold.CollapseEdgeCompactPacket`
 
 | Claim consumed by the note | Lean certificate | Source claim | Status |
 | --- | --- | --- | --- |
-| The compact packet passes both machine-checked layers: the finite graph checker and the compact origin-summary metadata/count checker. It also records `6528` audited rules, zero summary mismatches, and exact alternate contribution `[1,1,1,1,1,1]`. | `compactPacketOK`. | Compact PR packet. | Lean-certified aggregate finite check (`decide`, axiom-free); still not a per-edge `GF(137)` replay. |
+| The compact packet passes the machine-checked layers: finite graph checker, structural wrapper, graph mechanism, compact origin-summary metadata/count checker, compact dot-product origin checker, and compact modular edge-origin arithmetic checker. It also records `6528` audited rules, zero summary mismatches, and exact alternate contribution `[1,1,1,1,1,1]`. | `compactPacketOK`. | Compact PR packet. | Lean-certified aggregate finite check (axiom-free); still not a symbolic W3 reconstruction. |
 
 ## Typed Targets And Non-Claims
 

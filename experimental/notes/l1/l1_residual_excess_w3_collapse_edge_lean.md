@@ -32,6 +32,31 @@ The contribution-only theorem is:
 L1Threshold.CollapseEdgeCertificate.collapseEdgeAllCaseContributionsLeOne
 ```
 
+The proof-facing structural wrapper is:
+
+```lean
+L1Threshold.CollapseEdgeStructuralLemma.dangerousPatternForcesAlternateCollapse
+L1Threshold.CollapseEdgeStructuralLemma.dangerousPatternForcesUniqueCoset37Survivor
+L1Threshold.CollapseEdgeStructuralLemma.dangerousPatternStructuralPacketOK
+```
+
+It repackages the finite graph certificate as:
+
+- every stored case has `(missing,stray)=(2,1)`;
+- that dangerous head pattern forces alternate contribution `<= 1`;
+- the only large alternate survivor is the coset-37 triple `[17,36,130]`.
+
+The matching/triangle graph mechanism is:
+
+```lean
+L1Threshold.CollapseEdgeGraphMechanism.allGraphMechanismsCertified
+L1Threshold.CollapseEdgeGraphMechanism.allEdgeRuleMechanismsCertified
+L1Threshold.CollapseEdgeGraphMechanism.graphMechanismAlternateContributionsExact
+```
+
+It records that non-survivor alternate cosets are matching-only, and that the
+unique large survivor is the coset-37 triangle `[17,36,130]`.
+
 The pattern-exposing theorems are:
 
 ```lean
@@ -53,7 +78,9 @@ The one-line compact-packet aggregate theorem is:
 L1Threshold.CollapseEdgeCompactPacket.compactPacketOK
 ```
 
-It combines the finite graph checker with the compact origin-summary checker.
+It combines the finite graph checker, the compact origin-summary checker, the
+structural wrapper, the graph-mechanism checker, the compact dot-product origin
+checker, and the compact modular edge-origin arithmetic checker.
 
 ## Scope
 
@@ -62,9 +89,17 @@ It only certifies the finite graph implication after the raw edge rules have
 been generated.  A companion Lean module,
 `L1Threshold.CollapseEdgeOriginSummary`, checks the compact origin-audit
 metadata/count summary, but it also does not replay the omitted per-edge affine
-arithmetic.  `L1Threshold.CollapseEdgeCompactPacket` combines those two finite
-checks into a single reviewer-facing gate.  The compact PR records the raw source hash in the origin-audit
-summary, but does not include the 45k-line raw edge-rule JSON.
+arithmetic.  A second companion module,
+`L1Threshold.CollapseEdgeOriginArithmetic`, checks the compact per-edge modular
+classification rows `(intercept,slope)` over modulus `137`.  A third companion
+module, `L1Threshold.CollapseEdgeOriginDot`, checks that those intercept/slope
+values are dot products of supplied endpoint evaluations against the quotient
+and seed vectors.  `L1Threshold.CollapseEdgeStructuralLemma` and
+`L1Threshold.CollapseEdgeGraphMechanism` expose the finite dangerous-pattern and
+matching/triangle mechanism.
+`L1Threshold.CollapseEdgeCompactPacket` combines these finite checks into a
+single reviewer-facing gate.  The compact packet records the raw source hash in
+the origin-audit summary, but does not include the 45k-line raw edge-rule JSON.
 
 This is not a symbolic W3 lemma, not a global L1 theorem, and not MCA/protocol
 evidence.

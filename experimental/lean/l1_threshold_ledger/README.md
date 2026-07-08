@@ -98,6 +98,42 @@ The last two expose the pattern-level finite fact: all six dangerous shifts have
 the same unique alternate survivor, the coset-37 triple `[17,36,130]`, and exact
 alternate contribution `1`.
 
+### `L1Threshold.CollapseEdgeStructuralLemma` — proof-facing wrapper
+
+This module imports the finite graph checker and restates its output as the
+short structural implication used by the W3 memo:
+
+- every stored case has the dangerous head antecedent `(missing,stray)=(2,1)`;
+- each dangerous case forces alternate contribution `<= 1`;
+- each dangerous case has the same unique large alternate survivor, the
+  coset-37 triple `[17,36,130]`.
+
+The main wrapper theorems are:
+
+- `dangerousPatternForcesAlternateCollapse`
+- `dangerousPatternForcesUniqueCoset37Survivor`
+- `dangerousPatternStructuralPacketOK`
+
+This is still a finite graph wrapper, not a reconstruction of the `GF(137)`
+edge arithmetic.
+
+### `L1Threshold.CollapseEdgeGraphMechanism` — matching/triangle mechanism
+
+This module exposes the smaller graph mechanism behind the six W3 cases: every
+non-survivor alternate coset is matching-only, while coset `37` contains the
+unique triangle `[17,36,130]` and no boundary edge from that triangle. The
+rule-derived checks recompute active edges from the stored `always / never /
+atShift` rules at the certified shifts.
+
+The main certificates are:
+
+- `allGraphMechanismsCertified`
+- `allEdgeRuleMechanismsCertified`
+- `graphMechanismAlternateContributionsExact`
+
+This is also finite-data only. It identifies the pattern a future symbolic W3
+lemma should explain.
+
 ### `L1Threshold.CollapseEdgeOriginSummary` — compact origin-audit metadata
 
 Note: `experimental/notes/l1/l1_residual_excess_w3_collapse_edge_origin.md`.
@@ -120,16 +156,66 @@ The main certificates are:
 These are also kernel-checked by `decide` and print with no axioms in
 `lake build`.
 
+### `L1Threshold.CollapseEdgeOriginArithmetic` — compact modular edge-origin check
+
+Data:
+`experimental/data/certificates/l1-residual-excess-classifier/w3_collapse_edge_origin_arithmetic_compact_combo012_sizes10_2_3.json`.
+
+This generated module checks the compact per-edge arithmetic-origin packet. For
+each of the `6528` stored edge rules, Lean verifies that the stored rule kind is
+compatible with the modular affine equation
+
+```text
+intercept + shift * slope = 0 mod 137.
+```
+
+The checker proves:
+
+- `edgeOriginArithmeticAllRowsOK`
+- `edgeOriginArithmeticRowCount`
+- `edgeOriginArithmeticCaseCounts`
+
+This moves the per-edge arithmetic classification into Lean, but it still does
+not symbolically reconstruct the W3 geometry, bases, or dot products that
+produced the compact `(intercept,slope)` rows.
+
+### `L1Threshold.CollapseEdgeOriginDot` — compact dot-product origin check
+
+Data:
+`experimental/data/certificates/l1-residual-excess-classifier/w3_collapse_edge_origin_dot_compact_combo012_sizes10_2_3.json`.
+
+This generated module checks one layer below the modular edge-kind
+classification. For each of the `6528` compact rows, Lean verifies:
+
+```text
+intercept = <v(a)-v(b), quotient_base> mod 137
+slope     = <v(a)-v(b), seed_coords>   mod 137
+```
+
+using the supplied four-coordinate endpoint evaluations `v(a),v(b)` and the
+stored quotient/seed vectors. The checker proves:
+
+- `edgeOriginDotAllRowsOK`
+- `edgeOriginDotRowCount`
+- `edgeOriginDotCaseCounts`
+
+This still does not reconstruct the W3 basis polynomials that produced the
+endpoint evaluations.
+
 ### `L1Threshold.CollapseEdgeCompactPacket` — reviewer-facing aggregate
 
-This module imports both collapse-edge modules and exposes one compact gate:
+This module imports the collapse-edge certificate modules and exposes one
+compact gate:
 
 - `compactPacketOK`
 
 It checks, in one theorem, that the finite graph checker passes, the compact
-origin-summary checker passes, the summary accounts for `6528` edge rules with
-zero mismatches, and the six alternate contributions are exactly
-`[1,1,1,1,1,1]`. It is still not a per-edge `GF(137)` arithmetic replay.
+origin-summary checker passes, the structural wrapper and graph mechanism pass,
+the compact dot-product checker passes, the compact arithmetic-origin checker
+passes, the summary accounts for `6528` edge rules with zero mismatches, the
+arithmetic/dot packets contain `6528` checked rows, and the six alternate
+contributions are exactly `[1,1,1,1,1,1]`. It is still not a symbolic W3
+reconstruction.
 
 ## Build
 
@@ -152,12 +238,26 @@ no mathlib**. Each module ends with `#print axioms`:
   `collapseEdgeAllActualSurvivorsSame` /
   `collapseEdgeAllAlternateContributionsExact`: **no axioms**. These are finite
   graph checks over the stored certificate data.
+- `CollapseEdgeStructuralLemma.dangerousPatternStructuralPacketOK`: **no
+  axioms**. This is a proof-facing wrapper around the finite graph certificate.
+- `CollapseEdgeGraphMechanism.allGraphMechanismsCertified` /
+  `allEdgeRuleMechanismsCertified`: **no axioms**. These certify the
+  matching-only plus survivor-triangle mechanism over the stored finite cases.
 - `CollapseEdgeOriginSummary.originSummaryAllCasesOK` /
   `originSummaryEdgeRulesAudited` /
   `originSummaryTwoFamilies`: **no axioms**. These are compact metadata/count
   checks over the origin-audit summary, not a `GF(137)` arithmetic replay.
+- `CollapseEdgeOriginArithmetic.edgeOriginArithmeticAllRowsOK` /
+  `edgeOriginArithmeticRowCount` /
+  `edgeOriginArithmeticCaseCounts`: **no axioms**. These check the compact
+  per-edge modular arithmetic classifications.
+- `CollapseEdgeOriginDot.edgeOriginDotAllRowsOK` /
+  `edgeOriginDotRowCount` /
+  `edgeOriginDotCaseCounts`: **no axioms**. These check the compact dot-product
+  origin rows for intercept/slope.
 - `CollapseEdgeCompactPacket.compactPacketOK`: **no axioms**. This is the
-  aggregate compact-packet gate combining the graph and origin-summary checks.
+  aggregate compact-packet gate combining the graph, structural, mechanism,
+  origin-summary, origin-dot, and origin-arithmetic checks.
 
 ## Scope (honest)
 

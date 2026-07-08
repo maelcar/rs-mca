@@ -30,6 +30,48 @@ Keep entries concise and link to the relevant files.
 
 ## Entries
 
+### 2026-07-08 - Reviewed PR integration for Q, BC, L1, and Lean packets
+
+- **Agent/model:** DannyExperiments/Gia via PRs #389, #409, #411, and #413;
+  Holm Buar/Claude Fable 5 via PRs #392, #393, #395, #396, #399, #400,
+  #403, #407, #408, #410, and #412; AllenGrahamHart/Claude Opus 4.8 via PRs
+  #404, #405, and #406; Scott Hughes via PRs #390, #391, #398, #401, and
+  #402; Vadim Avdeev via PR #397; Codex for review, selective integration,
+  deconflicting overlapping Lean updates, and logging.
+- **Files added or changed:** Added threshold/Q/BC audit notes under
+  `experimental/notes/thresholds/`; L1 notes under `experimental/notes/l1/`;
+  route-cut notes under `experimental/notes/roadmaps/`; certificate/data
+  packets under `experimental/data/`; verifier/evidence scripts under
+  `experimental/scripts/`; Lean packages and modules under
+  `experimental/lean/grande_finale/`, `experimental/lean/l1_threshold_ledger/`,
+  and `experimental/lean/powersum_rigidity/`; updated
+  `experimental/grande_finale.tex` with a mass-aware logmoment caveat.
+- **Status:** PROVED / CONDITIONAL / EXPERIMENTAL / AUDIT / COUNTEREXAMPLE.
+- **What is being added:** Integrated the reviewed PR packets without importing
+  their individual log edits.  The batch adds Q route-cut audits
+  (`p^{w/2}` concentration floor, signed-`e_m` masked residual audit,
+  logmoment mass-awareness, moment-floor reconciliation, popular-fiber probe
+  confound), row-sharp Q atom reductions and calibration, an independent replay
+  of the four v13 adjacent pairs, a toy complete adjacent list-staircase
+  certificate, BC L4 chart/second-moment reductions, L1 k3 and m=19 packets,
+  the x4b moment-column subproblem packet, and Lean/finite-data certificates
+  for Grande Finale composite-prefix descent and the L1 W3 collapse-edge
+  mechanism.  The overlapping L1 Lean PRs were combined so the compact gate now
+  includes origin summary, structural wrapper, graph mechanism, origin-dot, and
+  origin-arithmetic checks.
+- **How it is useful:** The Q material narrows the current bottleneck by ruling
+  out several shortcut proof routes and by identifying the masked residual
+  signed-prefix atom as the right target.  The v13 adjacent replay and toy
+  staircase packet improve the certificate-scanner workflow.  The BC/L1 packets
+  provide scoped reductions and counterexamples that help prevent overclaiming.
+  The Lean additions improve formalization coverage for two high-priority
+  tracks, but remain partial and do not prove Q or the adjacent safe rows.
+- **What to do next:** Do not promote any of these packets into Paper D without
+  a separate audit.  Run the lightweight verifiers individually before citing a
+  certificate; run Lake only in a controlled Mathlib-enabled environment.  The
+  open mathematical task remains row-sharp Q with finite constants, plus the
+  finite BC chart-decomposition audit needed for the adjacent deployed rows.
+
 ### 2026-07-07 - Grande finale logarithmic-moment Q route
 
 - **Agent/model:** Maintainer-added Q/Tao notes integrated by Codex.
