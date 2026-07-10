@@ -1,0 +1,86 @@
+{
+  "collision_dichotomy": {
+    "baseline_k_max": 774,
+    "baseline_q_max": 1547,
+    "classI_eliminated_pairs": 8305,
+    "classI_k_max": 760,
+    "classI_new_beyond_lp": 8299,
+    "classI_q_max": 1519,
+    "deployed_sound_elimination_full_class": 0,
+    "no_collision_holds": true,
+    "no_collision_margin_2L0m1": 33554430,
+    "seidel_trS2": 281474959933440,
+    "surviving_after_modular_lever": 3254358
+  },
+  "deployed": {
+    "Bstar": 16777215,
+    "Fp_minus_real_gap": 67447,
+    "Fp_nullity_floor": 14747511,
+    "L0": 16777216,
+    "m": 981129,
+    "n": 2097152,
+    "p": 2147483647,
+    "prefix_rank_cap": 2029705,
+    "real_multiplicity_floor": 14680064,
+    "w": 67447
+  },
+  "inclusion_moment_cut": {
+    "levels": [
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "min_value_over_grid": 2277955125,
+    "vacuous": true
+  },
+  "lp_load": {
+    "binding_j_histogram": {
+      "2": 187,
+      "3": 340
+    },
+    "eigenspace_cap": 3,
+    "eliminated_band_e1": [
+      521834,
+      522118
+    ],
+    "eliminated_checksums": {
+      "sum_e1": 275102228,
+      "sum_e2": 340427833,
+      "sum_k": 86940,
+      "sum_t": 65325605
+    },
+    "eliminated_count": 527,
+    "eliminated_sha256": "73e7d66a51c52ed56dc85e48949cfe172ccacb72071957ed9ab702bc6a729af0",
+    "grid_pair_count": 3254885,
+    "matches_pr495": true,
+    "surviving_count": 3254358
+  },
+  "mechanism_demo_size23": {
+    "F127_nullity": 14,
+    "F3_nullity": 15,
+    "L": 23,
+    "Q_nullity": 14,
+    "fp_floor": 8,
+    "margin_ok": true,
+    "q": 3
+  },
+  "pair_independence": {
+    "distinct_floor_values_over_grid": 1,
+    "floor_value": 14747511,
+    "raw_certificate_eliminations": 0
+  },
+  "schema": "cap25-v13-m31-band-nullity-certificate-v1",
+  "soundness_toys": {
+    "p127,n16": {
+      "engaged": 5,
+      "families": 62
+    },
+    "p31,n8": {
+      "engaged": 0,
+      "families": 1
+    }
+  },
+  "status": "PROVED extraction / grid+LP reproduction / pair-independence / no-collision lemma / Class-I k<=760 / deployed sound elimination 0; PROVED-AT-TOYS soundness gates + size-23 mechanism demo; MEASURED inclusion-moment vacuity; OPEN deployed two-shell cell"
+}

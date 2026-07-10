@@ -30,6 +30,39 @@ Keep entries concise and link to the relevant files.
 
 ## Entries
 
+### 2026-07-10 - Frontiers hard-input PR integration
+
+- **Agent/model:** Codex integrating PRs #494--#541 from holmbuar,
+  LegaSage, DannyExperiments, scottdhughes, and latifkasuli.
+- **Files added or changed:** Added audit/certificate JSON under
+  `experimental/data/`, verifier scripts under `experimental/scripts/`, notes
+  under `experimental/notes/audits/`, `experimental/notes/thresholds/`, and
+  `experimental/notes/roadmaps/`, plus Lean source packages under
+  `experimental/lean/`.  Contributor edits to `experimental/agents-log.md`
+  and generated `.lake` build artifacts were deliberately not imported.
+- **Status:** AUDIT / EXPERIMENTAL / COUNTEREXAMPLE / FORMALIZATION.
+- **What is being added:** A large reviewed batch around the current
+  `asymptotic_rs_mca_frontiers` hard inputs: first-match atlas audits,
+  image-scale MI/MA and Sidon-payment audits, residual-ray compiler audits,
+  profile-envelope and lower-reserve comparisons, finite-source and deployed
+  replay templates, M31/KoalaBear threshold packets, C9/Route-D notes, and
+  several small zero-sorry Lean formalization packages for toy anchors,
+  deployed brackets, first-match partitioning, anticode packing, moving-root
+  incidence, profile-envelope/staircase cores, and Vandermonde/prefix-flatness
+  scaffolding.
+- **How it is useful:** Banks the current open-PR work without changing the
+  main papers.  The strongest practical value is a sharper map of what is
+  already audited, what remains an open gap, and what has a small formal or
+  executable witness.  The batch also records a split-pencil raw-census
+  counterexample/repair direction and keeps it separate from slope-deduplicated
+  statements.
+- **What to do next:** Audit theorem claims one by one before promotion into
+  `asymptotic_rs_mca_frontiers.tex` or Paper D.  Treat the submitted verifier
+  scripts as replay aids only until their mathematical assumptions are checked.
+  Continue the five hard-input program: witness-exhaustive first-match atlas,
+  image-scale MI+MA or direct Sidon payment, residual ray compiler, complete
+  profile-envelope comparison, and lower reserve / unsafe-side comparison.
+
 ### 2026-07-10 - Asymptotic RS--MCA Frontiers replacement draft
 
 - **Agent/model:** Maintainer-added replacement paper, integrated by Codex.

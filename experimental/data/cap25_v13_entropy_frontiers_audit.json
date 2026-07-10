@@ -1,0 +1,197 @@
+{
+  "audit": "rs_mca_entropy_frontiers.tex submission-track audit (upstream tip 2b1a7e2)",
+  "targets": [
+    "experimental/rs_mca_entropy_frontiers.tex"
+  ],
+  "cross_refs": [
+    "experimental/asymptotic_rs_mca.tex",
+    "experimental/cap25_cap_v13_raw.tex",
+    "experimental/grande_finale.tex"
+  ],
+  "condition_counts": {
+    "PF": 29,
+    "MA": 39,
+    "RC": 30,
+    "FI": 12
+  },
+  "env_census": {
+    "theorem": 31,
+    "proposition": 43,
+    "lemma": 40,
+    "corollary": 10,
+    "definition": 36,
+    "remark": 18,
+    "hypothesis": 1
+  },
+  "gates": [
+    {
+      "name": "I1 named-condition counts PF/MA/RC/FI",
+      "pass": true,
+      "detail": "PF=29 MA=39 RC=30 FI=12"
+    },
+    {
+      "name": "I2 sole hypothesis env is (RC) hyp:ray-compiler",
+      "pass": true,
+      "detail": "n_hypothesis_env=1 labels=['hyp:ray-compiler']"
+    },
+    {
+      "name": "I3 theorem-environment census",
+      "pass": true,
+      "detail": "census={'theorem': 31, 'proposition': 43, 'lemma': 40, 'corollary': 10, 'definition': 36, 'remark': 18, 'hypothesis': 1} total=179"
+    },
+    {
+      "name": "I4 five-class anchor labels present",
+      "pass": true,
+      "detail": "missing=[]"
+    },
+    {
+      "name": "I5 conditional vs unconditional titles",
+      "pass": true,
+      "detail": "titles found"
+    },
+    {
+      "name": "C1 unconditional ingredients proved in-paper",
+      "pass": true,
+      "detail": "thm:collision-aware-pole=True; prop:exact-prefix-list=True; thm:exact-quotient-remainder-normal-form=True; thm:syndrome-secant-exact=True; thm:smooth-quotient-obstruction=True; prop:split-pencil-payment=True; lem:second-moment-identity=True; thm:prefix-to-line-hardness=True; prop:universal-tangent-floor=True"
+    },
+    {
+      "name": "C2 no external thm-number citation; Cho26 bibitems present",
+      "pass": true,
+      "detail": "ext_thm_refs=0 bib=True"
+    },
+    {
+      "name": "C3 asymptotic_rs_mca anchors exist; thm:primitive-q Sidon input stays a hypothesis",
+      "pass": true,
+      "detail": "asym_anchor_ok=True primitive_q_supposes=True"
+    },
+    {
+      "name": "C4 C9 circularity guard: primitive by named exclusions; Sidon payment separate",
+      "pass": true,
+      "detail": "named_exclusions=True sidon_payment_separate=True"
+    },
+    {
+      "name": "C5 RC non-inference guard present",
+      "pass": true,
+      "detail": "prop:q-sp-no-ray + RC guard text"
+    },
+    {
+      "name": "C6 (PF)/(MA) labeled as inputs, not proved",
+      "pass": true,
+      "detail": "MA_disclaimer=True scope_disclaimer=True"
+    },
+    {
+      "name": "X1 submission frontier is conditional",
+      "pass": true,
+      "detail": "conditional framing present"
+    },
+    {
+      "name": "X2 asymptotic_rs_mca frontier is conditional (no regression)",
+      "pass": true,
+      "detail": "asym conditional markers present"
+    },
+    {
+      "name": "X3 obstructions stated as obstructions (not assumed away)",
+      "pass": true,
+      "detail": "countertheorem + sidon-necessity present"
+    },
+    {
+      "name": "T1 collision-aware pole M(L)",
+      "pass": true,
+      "detail": "GA5=True algebra=True mono=True lim=True instance(best=5>=M(L)=4)=True"
+    },
+    {
+      "name": "T2 slope elimination <=1 slope/noncommon support",
+      "pass": true,
+      "detail": "trials=720 violations=0 explained_iff_checks=120"
+    },
+    {
+      "name": "T3 prefix-flatness fiber bound + cycle-index identity",
+      "pass": true,
+      "detail": "cycle_index=True maxfiber=7 <= bound=11 (Lam=2) => True"
+    },
+    {
+      "name": "T4 square-quotient obstruction scale separation",
+      "pass": true,
+      "detail": "sep_grows=True (1/n)lnBsq=0.1700->h/4=0.1683 conv=True subexp=True"
+    }
+  ],
+  "tamper": [
+    {
+      "name": "I1",
+      "pass": true
+    },
+    {
+      "name": "I2",
+      "pass": true
+    },
+    {
+      "name": "I3",
+      "pass": true
+    },
+    {
+      "name": "I4",
+      "pass": true
+    },
+    {
+      "name": "I5",
+      "pass": true
+    },
+    {
+      "name": "C1",
+      "pass": true
+    },
+    {
+      "name": "C2",
+      "pass": true
+    },
+    {
+      "name": "C3",
+      "pass": true
+    },
+    {
+      "name": "C4",
+      "pass": true
+    },
+    {
+      "name": "C5",
+      "pass": true
+    },
+    {
+      "name": "C6",
+      "pass": true
+    },
+    {
+      "name": "X1",
+      "pass": true
+    },
+    {
+      "name": "X2",
+      "pass": true
+    },
+    {
+      "name": "X3",
+      "pass": true
+    },
+    {
+      "name": "T1",
+      "pass": true
+    },
+    {
+      "name": "T2",
+      "pass": true
+    },
+    {
+      "name": "T3",
+      "pass": true
+    },
+    {
+      "name": "T4",
+      "pass": true
+    }
+  ],
+  "gates_pass": 18,
+  "gates_total": 18,
+  "tamper_pass": 18,
+  "tamper_total": 18,
+  "result": "PASS"
+}

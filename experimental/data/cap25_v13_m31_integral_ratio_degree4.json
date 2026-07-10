@@ -1,0 +1,120 @@
+{
+  "deployed": {
+    "Bstar": 16777215,
+    "L0": 16777216,
+    "m": 981129,
+    "n": 2097152,
+    "p": 2147483647,
+    "w": 67447
+  },
+  "grid": {
+    "pair_count": 3254885
+  },
+  "inclusion_moment_cut": {
+    "levels": [
+      2,
+      3,
+      4
+    ],
+    "min_value_over_grid": 2277955125,
+    "vacuous": true
+  },
+  "johnson_lp": {
+    "all_eliminated_canonical_sha256": "73e7d66a51c52ed56dc85e48949cfe172ccacb72071957ed9ab702bc6a729af0",
+    "binding_j_histogram": {
+      "2": 187,
+      "3": 340
+    },
+    "checksums": {
+      "sum_e1": 275102228,
+      "sum_e2": 340427833,
+      "sum_k": 86940,
+      "sum_t": 65325605
+    },
+    "eigenspace_cap": 6,
+    "escalation_canonical_bytes": 8478,
+    "escalation_canonical_sha256": "0261e06bb072411c7f25317bf17049d653d55869941ce6fa39e5a0dafbaedbad",
+    "escalation_new_count": 340,
+    "first_five_escalated": [
+      [
+        3,
+        260917,
+        521834,
+        782751,
+        3
+      ],
+      [
+        3,
+        260918,
+        521836,
+        782754,
+        3
+      ],
+      [
+        3,
+        260919,
+        521838,
+        782757,
+        3
+      ],
+      [
+        3,
+        260920,
+        521840,
+        782760,
+        3
+      ],
+      [
+        3,
+        260921,
+        521842,
+        782763,
+        3
+      ]
+    ],
+    "j2_eliminated_count": 187,
+    "last_five_escalated": [
+      [
+        7,
+        87015,
+        522090,
+        609105,
+        3
+      ],
+      [
+        7,
+        87016,
+        522096,
+        609112,
+        3
+      ],
+      [
+        7,
+        87017,
+        522102,
+        609119,
+        3
+      ],
+      [
+        7,
+        87018,
+        522108,
+        609126,
+        3
+      ],
+      [
+        7,
+        87019,
+        522114,
+        609133,
+        3
+      ]
+    ],
+    "max_binding_j": 3,
+    "pr481_degree2_count": 187,
+    "surviving_count": 3254358,
+    "total_eliminated_count": 527
+  },
+  "schema": "cap25-v13-m31-integral-ratio-degree4-v1",
+  "status": "PROVED Johnson-scheme Delsarte LP escalation of the #481 degree-two cut / OPEN residual integral-ratio grid"
+}

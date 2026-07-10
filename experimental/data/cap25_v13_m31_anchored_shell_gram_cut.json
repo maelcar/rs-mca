@@ -1,0 +1,84 @@
+{
+  "anchored_gram_cut": {
+    "all_cut_sha256": "d0aee9adbf972674d42e496d10584340e2208d27bb5bc234c29cbcf322a4e91b",
+    "cut_by_kappa": {
+      "2": 82659,
+      "3": 14503
+    },
+    "cut_count": 97162,
+    "cut_intervals": {
+      "2": [
+        407906,
+        490564
+      ],
+      "3": [
+        246557,
+        261059
+      ]
+    },
+    "first_failure_margins": {
+      "2,407905": -22079255,
+      "2,407906": 45029609,
+      "3,246556": -16606014,
+      "3,246557": 134388930
+    },
+    "necessary_inequality": "8*n*kappa^2*t <= (9*kappa+7)*m*(n-m)"
+  },
+  "comparison_to_pr495": {
+    "baseline": "open PR #495 exact Johnson LP scan through j<=6",
+    "baseline_surviving_count": 3254358,
+    "new_cut_count": 97019,
+    "new_cut_sha256": "0c58ac156c4a147c09712a818e409d475295b7f3a082686bfdf4c801a75d32c6",
+    "overlap_binding_levels": {
+      "3": 143
+    },
+    "overlap_count": 143,
+    "overlap_interval": [
+      260917,
+      261059
+    ],
+    "overlap_sha256": "b1e2031439a297f233e5f359999561944f4ddfe0727a801f384b53edfd614ee6",
+    "surviving_after_both": 3157339
+  },
+  "deployed": {
+    "Bstar": 16777215,
+    "L0": 16777216,
+    "a_plus": 1116023,
+    "m": 981129,
+    "m_times_n_minus_m": 1094962529967,
+    "n": 2097152,
+    "one_shell_clique_cap": 2029705,
+    "p": 2147483647,
+    "w": 67447
+  },
+  "grid": {
+    "first_row": [
+      2,
+      67448,
+      67448,
+      134896
+    ],
+    "last_row": [
+      774,
+      675,
+      521775,
+      522450
+    ],
+    "pair_count": 3254885
+  },
+  "nonclaims": {
+    "full_m31_row_paid": false,
+    "many_shell_residual_paid": false,
+    "row_sharp_q_proved": false,
+    "union_of_shell_pair_cells_paid": false
+  },
+  "schema": "cap25-v13-m31-anchored-shell-gram-cut-v1",
+  "status": "PROVED anchored two-shell Gram/Turan obstruction and exact deployed cut; OPEN remaining two-shell grid and full M31 row",
+  "turan": {
+    "complement_edges_min": 61148348,
+    "forced_e2_degree_min": 8,
+    "quotient": 8,
+    "remainder": 539576,
+    "twice_edges_minus_7L0": 4856184
+  }
+}

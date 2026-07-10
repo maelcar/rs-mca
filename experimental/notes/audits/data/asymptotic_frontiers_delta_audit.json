@@ -1,0 +1,72 @@
+{
+  "audit": "asymptotic_frontiers_delta_audit",
+  "status": "AUDIT",
+  "new_draft": {
+    "file": "experimental/asymptotic_rs_mca_frontiers.tex",
+    "commit": "4e3c4ee",
+    "lines": 7913,
+    "sections": 39,
+    "env": {"theorem": 45, "proposition": 50, "lemma": 48, "corollary": 16,
+            "definition": 39, "hypothesis": 1, "remark": 25},
+    "thmlike_total": 159,
+    "env_total": 224,
+    "MI_token_count": 28
+  },
+  "old_draft": {
+    "file": "experimental/rs_mca_entropy_frontiers.tex",
+    "commit": "2b1a7e2",
+    "lines": 5940,
+    "sections": 39,
+    "env": {"theorem": 31, "proposition": 43, "lemma": 40, "corollary": 10,
+            "definition": 36, "hypothesis": 1, "remark": 18},
+    "thmlike_total": 124,
+    "env_total": 179,
+    "MI_token_count": 0
+  },
+  "delta": {
+    "lines": 1973,
+    "sections": 0,
+    "env": {"theorem": 14, "proposition": 7, "lemma": 8, "corollary": 6,
+            "definition": 3, "hypothesis": 0, "remark": 7},
+    "env_total": 45,
+    "note": "pure body expansion: same 39 top-level sections, same order/labels; hypothesis count unchanged at 1 (RC sole formal hypothesis)"
+  },
+  "five_hard_inputs": {
+    "1_witness_atlas": {"anchor": "def:admissible-sequence(A2)", "label_line": 896,
+      "consumer": "lem:first-match-bound@1526, prop:numerator-bound@6084",
+      "verdict": "OPEN GAP", "falsifiable": true,
+      "partial_discharge": "thm:small-effective-dual-closure@3027 (when Omega=binom(D,a))"},
+    "2_image_scale_MI_MA_or_sidon": {"anchor": "def:aggregate-minor-payment(MI)@3082 + def:major-arc-aggregate(MA)@2985 + def:sidon-paid-cell@5130",
+      "consumer": "def:admissible-sequence(A4)@896, thm:main-smooth-circle@957",
+      "verdict": "OPEN GAP", "falsifiable": true,
+      "rewrite_change": "SPLIT into (MI)+(MA); (PF) demoted to a sufficient certificate for (MI); prop:effective-mi-ma-flatness@3098 proves MI+MA=>flatness; thm:small-effective-dual-closure@3027 discharges unconditionally when log A=o(|T|)"},
+    "3_ray_compiler": {"anchor": "hyp:ray-compiler(RC)@6033", "label_line": 6033,
+      "consumer": "def:admissible-sequence(A6)@896, prop:q-implies-sp@6059, prop:numerator-bound@6084",
+      "verdict": "OPEN GAP", "falsifiable": true,
+      "non_inference": "prop:q-sp-no-ray (Q,SP alone cannot determine rays); higher-dim balanced core routed here per rem:balanced-core-exhaustion@4763"},
+    "4_profile_envelope_comparison": {"anchor": "def:admissible-sequence(A7)@896 + cor:intro-identity-frontier@1011 premise",
+      "consumer": "cor:intro-identity-frontier@1011, thm:main-ledger",
+      "verdict": "OPEN GAP", "falsifiable": true,
+      "note": "identity-dominance comparison is an explicit premise; FALSE in general (thm:smooth-quotient-obstruction), so genuinely conditional"},
+    "5_lower_reserve": {"anchor": "sec:frontier@6103, prop:simple-pole-lower@6180, thm:unconditional-support-envelope-bracket@6212",
+      "consumer": "thm:unconditional-support-envelope-bracket(SB2)@6212, thm:intro-asymptotic-rs-mca@989",
+      "verdict": "NO ISSUE (statement) / AUDIT (P realizability)", "falsifiable": true,
+      "note": "SB2 is the literal target reserve, placeholder-free; upper leg U unconditional (prop:exact-support-upper@1361); lower leg P inherits pole-construction realizability from prop:simple-pole-lower"}
+  },
+  "input_softness_ranking": [
+    {"rank": 1, "input": "3_ray_compiler", "reason": "isolated sole hypothesis, sharply quantified incidence inequality J*m/H=e^{o(n)}, higher-dim balanced core the one genuinely open object -- softest for a direct proof/counterexample attack"},
+    {"rank": 2, "input": "1_witness_atlas", "reason": "exhaustiveness (A2) is unfalsifiable-by-construction until a missing-witness family is exhibited; low-A regime discharges it only when Omega=binom(D,a)"},
+    {"rank": 3, "input": "2_image_scale_MI_MA_or_sidon", "reason": "now three precise falsifiable inequalities (MI,MA,Sidon) with a proved MI+MA=>flatness bridge and an unconditional low-boundary-entropy discharge -- attackable but sharply stated"},
+    {"rank": 4, "input": "4_profile_envelope_comparison", "reason": "explicit premise, known false in general; the real content is which windows are identity-dominant, a comparison not an existence claim"},
+    {"rank": 5, "input": "5_lower_reserve", "reason": "least soft: unconditional finite bracket (SB2) already realizes the crossing with literal binomial constants; only the pole-construction realizability of P is worth a spot-check"}
+  ],
+  "absorption_of_494": {
+    "G-1_primitive_residual_wording": "UNADDRESSED (self-referential phrase still inside def:primitive-first-match-residual@1501; exclusion list still one paragraph later @1523-1524)",
+    "F-1_target_reserve_defined": "STILL FIXED (defined in sec:frontier@6135; also SB2 called the literal target reserve)",
+    "F-2_open_problem_citation": "STILL FIXED (self-contained; no external theorem-number citation on load-bearing steps)",
+    "RC_sole_hypothesis": "PRESERVED (exactly one \\begin{hypothesis}; still hyp:ray-compiler)",
+    "inventory_classes": "GREW not shifted: +45 environments, all new thm-like are unconditional-finite or proved-implications; the only input-surface refinement is (A4) naming new (MI) and demoting (PF)"
+  },
+  "verifier": {"file": "experimental/scripts/verify_frontiers_delta_audit.py",
+    "checks": 937, "result": "PASS", "stdlib_only": true}
+}
