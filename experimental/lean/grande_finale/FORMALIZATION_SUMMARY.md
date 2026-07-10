@@ -20,6 +20,10 @@ This package is a partial Lean formalization of
   `prop:q-moment-order-floor`, including exact integer inputs, budget-ratio
   truncations, printed-margin rounding, and the real-average versus
   ceiling-average moment-floor convention split.
+- `GrandeFinale/SyndromeLine.lean`: supported-error syndrome spans, the exact
+  support-wise syndrome-line normal form, fixed-support uniqueness,
+  deduplicated finite-family incidence, and the exact MCA/syndrome numerator
+  equality for a surjective syndrome map.
 - `GrandeFinale/BC.lean`: theorem-level reductions around the BC split-pencil
   ledger, including one-parameter moving-root and saturation kernels.
 - `GrandeFinale/SP.lean`: theorem-level reductions around the SP ledger,
@@ -48,6 +52,12 @@ This is not a proof of the row-sharp Q atom: the bit margins and moment floors
 remain audited inputs rather than formal derivations of transcendental
 logarithms or enormous binomial values.  The entropy-scale inverse
 Littlewood-Offord / Balog-Szemeredi-Gowers step remains open.
+
+The syndrome-line module is independent of Q.  It proves the generic
+linear-code compiler behind `prop:syndrome-line-normal-form` and
+`thm:syndrome-secant-exact` in the frontiers paper.  The Reed--Solomon
+parity-check construction, rational-normal-curve interpretation, and reduction
+from threshold witnesses to exact-cardinality supports remain separate.
 
 ## Build Note
 

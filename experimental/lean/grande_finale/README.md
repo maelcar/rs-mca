@@ -16,9 +16,15 @@ The package root is `GrandeFinale`, with additional modules under
 - `GrandeFinale/QFiniteTables.lean` pins the four finite Q table rows and
   kernel-checks their exact integer inputs, budget-ratio truncations, printed
   margin rounding, and moment-floor convention split.
+- `GrandeFinale/SyndromeLine.lean` formalizes the frontiers paper's exact
+  syndrome-line normal form, deduplicated transverse secant compiler, and the
+  resulting numerator equality for a surjective syndrome map.
 - `GrandeFinale/BC.lean`, `GrandeFinale/SP.lean`, and
   `GrandeFinale/Frontier.lean` formalize theorem-level reductions around the
   BC, SP, and frontier ledgers.
+
+The theorem-by-theorem scope of the syndrome module is recorded in
+`SYNDROME_LINE_CORRESPONDENCE.md`.
 
 The central open mathematical target remains Q: the primitive entropic inverse
 theorem / row-sharp prefix-fiber bound needed by `grande_finale.tex`.  The

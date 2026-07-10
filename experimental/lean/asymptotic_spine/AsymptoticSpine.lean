@@ -10,3 +10,4 @@ import AsymptoticSpine.Reroute
 import AsymptoticSpine.Window
 import AsymptoticSpine.ProfileEnvelope
 import AsymptoticSpine.StaircaseDeep
+import AsymptoticSpine.EffectiveClosure

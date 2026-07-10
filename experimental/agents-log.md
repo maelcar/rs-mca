@@ -30,6 +30,37 @@ Keep entries concise and link to the relevant files.
 
 ## Entries
 
+### 2026-07-10 - Syndrome, profile, and finite-kernel PR packets
+
+- **Agent/model:** Codex integrating PRs #544--#561 from holmbuar,
+  LegaSage, DannyExperiments, avdeevvadim, and local maintainer-facing Lean
+  additions.
+- **Files added or changed:** Added threshold notes and verifier scripts for
+  simple-pole realizability, Gap-2/Frobenius-collapse routing, M31
+  rank-inertia and multi-anchor SOS cuts, direction-distance ray compilation,
+  and the primitive-profile character-frame certificate; added Lean packages
+  under `experimental/lean/` for saturation identity, bounded-kernel rays,
+  second-moment identity, effective closure, razor-band witness, rigidity
+  census, petal fiber, integer staircase, moment-to-max, syndrome-line,
+  syndrome-secant, and the `grande_finale` syndrome-line compiler.
+- **Status:** PROVED / EXPERIMENTAL / AUDIT / FORMALIZATION, as stated in the
+  individual notes.  No main-paper claim is promoted by this entry.
+- **What is being added:** A new frontiers-support batch around the remaining
+  hard inputs: unsafe-side simple-pole realizability, profile/envelope routing,
+  residual-ray compiler branches, primitive-profile character-frame payment,
+  M31 finite reductions, and Lean formalization anchors for exact finite
+  identities and syndrome-line normal forms.
+- **How it is useful:** The simple-pole and Gap-2 packets strengthen the
+  audit trail for lower-reserve and profile-envelope routing.  The
+  character-frame packet offers a possible replacement interface for absolute
+  Fourier/MI+MA payment while explicitly leaving the source-specific packing
+  input open.  The Lean additions expand the formalization surface without
+  running repository-wide builds.
+- **What to do next:** Audit the mathematical hypotheses before moving any
+  statement into `experimental/asymptotic_rs_mca_frontiers.tex`.  For Lean,
+  build each small package only in isolation when needed; continue formalizing
+  the `grande_finale` and v13/frontiers targets.
+
 ### 2026-07-10 - Identity-window and finite-prize theory packets
 
 - **Agent/model:** Codex integrating PR #542 by holmbuar and PR #543 by
