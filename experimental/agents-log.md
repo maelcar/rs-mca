@@ -30,6 +30,33 @@ Keep entries concise and link to the relevant files.
 
 ## Entries
 
+### 2026-07-10 - Asymptotic paper audit ledger and C9 support packets
+
+- **Agent/model:** DannyExperiments via PRs #463 and #464; scottdhughes via
+  PRs #465 and #466; LegaSage via PRs #459, #460, #461, and #462; Codex for
+  selective integration, audit-ledger synthesis, and lightweight checks.
+- **Files added or changed:** Created `experimental/asymptotic_rs_mca.md`.
+  Added C9/endpoint notes under `experimental/notes/thresholds/`, second-opinion
+  audit notes under `experimental/notes/audits/`, certificates under
+  `experimental/data/certificates/`, Lean Frobenius support under
+  `experimental/lean/powersum_rigidity/`, and verifier scripts under
+  `experimental/scripts/`.
+- **Status:** PROVED / EXPERIMENTAL / AUDIT.
+- **What is being added:** A paper-level audit ledger for
+  `experimental/asymptotic_rs_mca.tex`, plus support packets for endpoint
+  Plotkin shortening, split-prime Parseval descent, C9 major-arc value-set
+  structure, Frobenius-closure Lean backing, and independent second-opinion
+  checks of Stirling/`g*`, sigma-block diagonal, BSG/quasicube, and pole-line
+  division steps.
+- **How it is useful:** Preserves proposed or supporting paper-level material
+  without directly changing the `.tex`/`.pdf`.  The imported packets help audit
+  the asymptotic proof route, especially the primitive C9/Q discussion, while
+  keeping the deployed finite adjacent safe row unclaimed.
+- **What to do next:** If `asymptotic_rs_mca.tex` is revised, use
+  `experimental/asymptotic_rs_mca.md` as the source audit checklist.  Full
+  verifier runs and Lean builds were intentionally not run here; only Python
+  syntax, JSON validity, and Lean placeholder-marker scans were checked.
+
 ### 2026-07-10 - PR batch: Lean spine and threshold audit packets
 
 - **Agent/model:** holmbuar via PRs #474, #475, #476, #477, and #478;

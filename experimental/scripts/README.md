@@ -3,6 +3,8 @@
 Run scripts from the repository root, for example:
 
 ```sh
+python3 experimental/scripts/verify_asymptotic_c9_parseval_split_prime_descent.py --check
+python3 experimental/scripts/verify_asymptotic_c9_endpoint_shortened_plotkin.py --check
 python3 experimental/scripts/verify_l1_prefix_divisor_count.py
 python3 experimental/scripts/verify_l1_prefix_dual_d3_subgroup_twisted_collision_bound.py
 python3 experimental/scripts/verify_l1_monomial_dyadic_descent_local16.py
