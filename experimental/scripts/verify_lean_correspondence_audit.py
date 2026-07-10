@@ -8,9 +8,10 @@ Lean: experimental/lean/grande_finale/{GrandeFinale.lean, GrandeFinale/*.lean}
 
 Zero-arg, stdlib-only, exit 0 = PASS.  Discharges the maintainer's asked step
 ("Audit correspondence between the Lean declaration docstrings and the labels in
-experimental/grande_finale.tex"): a TEXTUAL audit only.  lake build is NOT run
-here (Mathlib-pinned toolchain unavailable; the package README forbids casual
-builds); native_decide constants are numerically cross-checked, not re-executed.
+experimental/grande_finale.tex"): a TEXTUAL audit only.  This script does not
+run `lake build`; the separate finite-Q follow-up records the controlled
+exact-pin build.  Native-decide constants are numerically cross-checked here,
+not re-executed.
 
 Gate groups and claim labels mirror the note:
 
@@ -66,6 +67,7 @@ LEAN_REL = "experimental/lean/grande_finale"
 ALL_LEAN = [
     "GrandeFinale.lean", "Main.lean",
     "GrandeFinale/BC.lean", "GrandeFinale/SP.lean", "GrandeFinale/Frontier.lean",
+    "GrandeFinale/QFiniteTables.lean",
     "GrandeFinale/QEntropyInverse.lean", "GrandeFinale/QFourierTao.lean",
     "GrandeFinale/QPrimitiveCollision.lean",
 ]
@@ -139,6 +141,12 @@ DECL_COUNTS = {
     "GrandeFinale/QPrimitiveCollision.lean": 5,
 }
 DECL_TOTAL = 112
+
+# Follow-up declarations are checked separately so the original 112-row audit
+# census remains stable.
+FOLLOWUP_DECL_COUNTS = {
+    "GrandeFinale/QFiniteTables.lean": 10,
+}
 
 # 12 native_decide literals: (name, value, lean file, tex-window or None=anywhere).
 # The field primes pKB/pM31 are symbolic in the tex, so excluded.
@@ -240,6 +248,9 @@ def part_decl_counts():
         total += got
         gate(f"{rel} declarations == {want}", got == want, f"got={got}")
     gate(f"total audited declarations == {DECL_TOTAL}", total == DECL_TOTAL, f"got={total}")
+    for rel, want in FOLLOWUP_DECL_COUNTS.items():
+        got = sum(1 for ln in read_lean(rel).splitlines() if DECL_RE.match(ln))
+        gate(f"{rel} follow-up declarations == {want}", got == want, f"got={got}")
 
 
 def part_native_decide(tex, tex_lines):

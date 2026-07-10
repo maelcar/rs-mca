@@ -78,6 +78,10 @@ PIN = {
     # the exact 4-decimal printed margins that #384 used as Delta inputs
     "delta_printed": {"KB-MCA": "22.1969", "KB-list": "22.0109",
                       "M31-MCA": "3.2589", "M31-list": "3.0730"},
+    # high-precision real-average margins rounded to twelve decimal places;
+    # these are the decimal pins consumed by GrandeFinale/QFiniteTables.lean
+    "delta_real_12": {"KB-MCA": "22.196861707683", "KB-list": "22.010942080645",
+                      "M31-MCA": "3.258852879362", "M31-list": "3.072999568105"},
     # #384 also fed the printed margin at the other two rows; there the coarse
     # input happens to land on the exact answer (robust rows)
     "r_384_all": {"KB-MCA": 94196, "KB-list": 94992, "M31-MCA": 641584, "M31-list": 680397},
@@ -261,9 +265,14 @@ def check(comp60, comp140, r384, pin):
         rec(f"{name}: #384 replay == pinned r_384_all {pin['r_384_all'][name]}",
             r384[name] == pin["r_384_all"][name])
 
-    # 5. exact real-avg Delta_Q rounds to the 4-decimal printed margin
+    # 5. exact real-avg Delta_Q matches the 12-decimal Lean pin and rounds to
+    #    the 4-decimal printed margin
     for name, *_ in ROWS:
         d = comp140[name]["D_real"]
+        pinned12 = Decimal(pin["delta_real_12"][name])
+        rounded12 = d.quantize(Decimal("0.000000000001"))
+        rec(f"{name}: round(Delta_real,12)={rounded12} == Lean pin {pinned12}",
+            rounded12 == pinned12)
         printed = Decimal(pin["delta_printed"][name])
         rounded = d.quantize(Decimal("0.0001"))
         rec(f"{name}: round(Delta_real,4)={rounded} == printed {printed}",
@@ -319,8 +328,8 @@ def print_table(comp, r384):
 
 # --------------------------------------------------------------------------
 def tamper_selftest():
-    """Perturb every pinned integer (and each M31-MCA fractional-part digit
-    string) by one; confirm the checker then reports a mismatch (CAUGHT)."""
+    """Perturb every pinned integer, 12-decimal margin, and M31-MCA
+    fractional-part string; confirm the checker reports a mismatch (CAUGHT)."""
     comp60 = recompute(60)
     comp140 = recompute(140)
     r384 = replay_384(140)
@@ -358,6 +367,11 @@ def tamper_selftest():
 
     try_pin("maintainer_convention -> ceil-avg",
             lambda p: p.__setitem__("maintainer_convention", "ceil-avg"))
+
+    for name, *_ in ROWS:
+        try_pin(f"delta_real_12[{name}] += 1e-12",
+                lambda p, n=name: p["delta_real_12"].__setitem__(
+                    n, format(Decimal(p["delta_real_12"][n]) + Decimal("1e-12"), ".12f")))
 
     def flip(s):
         i = 10

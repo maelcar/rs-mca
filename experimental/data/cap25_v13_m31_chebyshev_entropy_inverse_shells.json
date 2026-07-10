@@ -1,0 +1,83 @@
+{
+  "schema": "cap25-v13-m31-chebyshev-entropy-inverse-shells-v1",
+  "status": "PROVED few-shell Chebyshev entropy-inverse subregime; PROVED-AT-TOYS + COUNTEREXAMPLE primitive-PR witness; CONJECTURAL unrestricted deployed bound",
+  "rung": 1,
+  "certificate": {
+    "deployed_m31": {
+      "p": 2147483647,
+      "n": 2097152,
+      "k": 1048576,
+      "a_plus": 1116023,
+      "m": 981129,
+      "w": 67447,
+      "Bstar": 16777215,
+      "avg_ceil": 1993678,
+      "kernel_dimension": 2029704,
+      "one_shell_cap": 2029705,
+      "one_shell_headroom": 14747510,
+      "K_minus_1_numerator": 14783537,
+      "K_denominator": 1993678
+    },
+    "finite_multishell_obligation": {
+      "selected_size": 16777216,
+      "clique_cap": 2029705,
+      "quotient": 8,
+      "remainder": 539576,
+      "nonminimal_pair_floor": 61148348,
+      "anchor_neighbor_floor": 8,
+      "minimum_exchange": 67448,
+      "higher_exchange": 67449
+    },
+    "shell_toy_p31": {
+      "domain": [2, 5, 10, 11, 20, 21, 26, 29],
+      "occupied_fibers": 69,
+      "collision_key": [0, 2],
+      "collision_size": 2,
+      "collision_shells": [4],
+      "affine_cap": 6
+    },
+    "shell_toy_p127_n16": {
+      "zero_fiber_size": 132,
+      "zero_fiber_shells": [2, 3, 4, 5, 6, 8],
+      "affine_cap": 38760
+    },
+    "primitive_pr_counterexample": {
+      "p": 127,
+      "n": 32,
+      "m": 15,
+      "w": 2,
+      "domain": [2, 5, 9, 19, 22, 23, 26, 27, 32, 38, 39, 42, 45, 50, 53, 62, 65, 74, 77, 82, 85, 88, 89, 95, 100, 101, 104, 105, 108, 118, 122, 125],
+      "subset_count": 565722720,
+      "syndrome_count": 16129,
+      "average_floor": 35074,
+      "nonempty_fibers": 16129,
+      "min_fiber": 34139,
+      "max_fiber": 36079,
+      "max_syndromes": [[38, 0], [89, 0]],
+      "sum_fiber_squares": 19846266349238,
+      "normalized_max_numerator": 581918191,
+      "normalized_max_denominator": 565722720,
+      "primitive_direction_count": 16002,
+      "Q_primitive": 649241132046,
+      "Q_quotient": 57584781529256,
+      "Q_raw": 58234022661302,
+      "A": 6615676,
+      "A_squared": 43767168936976,
+      "PR_lower_numerator": 21883584468488,
+      "PR_lower_denominator": 324620566023,
+      "excess_over_55_cross_product": 8058906674446,
+      "nu_ref_numerator": 218552966230369,
+      "nu_ref_denominator": 3974751967684,
+      "excess_over_nu_ref_cross_product": 32070065644787419800378610,
+      "quotient_energy_numerator": 28792390764628,
+      "quotient_energy_denominator": 29117011330651,
+      "Q_s_count": 127,
+      "Q_s_ascii_bytes": 1347,
+      "Q_s_sha256": "fa7d7d93f0f812e2094b6b546c8ec28661d3d2c8e32cc1a95223507db74503c1",
+      "Q_s_sum_squares": 16155812469253054999196,
+      "Q_s_weighted_sum": 41844768125384,
+      "Q_s_first8": [492675458, 566860984, 3898791582, 2998912254, 2204676352, 4917089266, 376248716, 22290911262],
+      "Q_s_last8": [719009778, 22290911262, 376248716, 4917089266, 2204676352, 2998912254, 3898791582, 566860984]
+    }
+  }
+}

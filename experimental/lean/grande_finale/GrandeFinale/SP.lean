@@ -5,13 +5,10 @@ import GrandeFinale
 # The SP program: primitive shift-pair control (`grande_finale.tex`, `\S`"Proved Prefix and Split-Pencil Reductions")
 
 This file formalizes the *theorem-level*, self-contained parts of the SP program
-of the manuscript — the proved reductions that surround the open conjecture SP
-(`conj:SP`, "primitive shift-pair control").  SP itself is a genuinely open
-research conjecture: it is an asymptotic `e^{o(n)}` statement about a primitive
-shift-pair census, together with finite constants at four deployed rows resting on
-external certificate packets, and it is *not* a self-contained theorem.  What is
-proved here are the surrounding reductions that the manuscript records as already
-theorem-level:
+of the manuscript.  In the current manuscript Q discharges the full
+off-diagonal shift-pair ledger (`thm:q-implies-sp`), while unconditional
+stratum bounds are recorded in `thm:sp-proper`.  These reductions do not prove
+the open row-sharp Q input.  What is proved here is:
 
 * the exact quotient-pullback depth transformation (`prop:sp-pullback`,
   `thm:coeff-quotient-extract`);
@@ -22,6 +19,8 @@ theorem-level:
 * the locator factorization `ℓ_M - ℓ_{M'} = ℓ_R·(A - B)` and the prefix-collision
   rigidity `|M∖M'| ≥ w+1` (`prop:prefix-rigidity`), the structural fact that makes
   the primitive shift-pair census sharply structured;
+* the sharp Q-implies-SP inequality, including its diagonal subtraction
+  (`thm:q-implies-sp`);
 * the abstract `Γ₂` ledger split into diagonal, quotient, and primitive parts
   (`prop:gamma2-ledger`).
 
@@ -202,13 +201,11 @@ theorem prefix_rigidity (m w : ℕ) (M M' : Finset F)
   · by_cases h : ( locator ( M \ M' ) - locator ( M' \ M ) ) = 0 <;> simp_all +decide [ locator_monic ];
     simp_all +decide [ sub_eq_zero, locator_injective.eq_iff ]
 
-/-! ## SP from Q: prefix flatness controls the primitive shift-pair census (`conj:Q` ⟹ `conj:SP`)
+/-! ## SP from Q: prefix flatness controls the primitive shift-pair census (`thm:q-implies-sp`)
 
-The manuscript records that SP "controls the primitive part of the collision
-ledger needed to make Q worst-case rather than average-case" and that in the
-asymptotic closure "the prefix boundary cell is paid by Q ... and the primitive
-second-moment cell by SP" (`conj:SP`, `thm:asymptotic`).  We make the precise
-implication **Q ⟹ SP** into a proved theorem.
+The manuscript proves that a max-fiber Q bound controls the full off-diagonal
+shift-pair ledger (`thm:q-implies-sp`).  We formalize that precise implication,
+including the subtraction of the diagonal contribution.
 
 Recall the exact second-moment ledger (`prop:second-moment`, `prop:gamma2-ledger`):
 with `f z = |Φ_w⁻¹(z)|` the primitive-fiber sizes over the prefix values `z`, the
@@ -233,46 +230,46 @@ theorem pair_census_le_of_max_fiber {ι : Type*} (s : Finset ι) (f : ι → ℕ
   rw [ Finset.sum_mul _ _ _ ];
   exact Finset.sum_le_sum fun x hx => Nat.mul_le_mul_left _ ( Nat.sub_le_sub_right ( hB x hx ) _ )
 
-/-
-**Q ⟹ SP** (density form).  Let `f z ≥ 0` be the primitive-fiber sizes over the
+/--
+**Q ⟹ SP** (density form, `thm:q-implies-sp`).  Let `f z ≥ 0` be the primitive-fiber sizes over the
 prefix values `s`, with total `∑_z f z = Nsub` (the number of primitive
 `m`-subsets, `binom(n,m)`) and `Bw > 0` the number of prefix values (`|B|ʷ`).
 The prefix-flatness bound Q, `f z ≤ R_Q · Nsub / Bw` for all `z`, implies the SP
-bound: the primitive shift-pair census `∑_z f z (f z - 1)` is at most the
-quotient-normalized density prediction `Nsub² / Bw` times `R_SP = R_Q`.
-(The positivity of `Bw = |B|ʷ` is not needed for this inequality and is omitted.)
+bound with the diagonal retained explicitly:
+`∑_z f z (f z - 1) ≤ R_Q · Nsub² / Bw - Nsub`.
+(The positivity of `Bw = |B|ʷ` is not needed for this algebraic inequality and
+is omitted.)
 -/
 theorem sp_from_q {ι : Type*} (s : Finset ι) (f : ι → ℝ)
     (Nsub Bw RQ : ℝ) (hf : ∀ z ∈ s, 0 ≤ f z)
     (hsum : ∑ z ∈ s, f z = Nsub)
     (hQ : ∀ z ∈ s, f z ≤ RQ * Nsub / Bw) :
-    ∑ z ∈ s, f z * (f z - 1) ≤ RQ * (Nsub ^ 2 / Bw) := by
+    ∑ z ∈ s, f z * (f z - 1) ≤ RQ * (Nsub ^ 2 / Bw) - Nsub := by
   have h_sum : ∑ z ∈ s, f z * (f z - 1) ≤ ∑ z ∈ s, f z * (RQ * Nsub / Bw - 1) :=
     Finset.sum_le_sum fun z hz => mul_le_mul_of_nonneg_left (sub_le_sub_right (hQ z hz) _) (hf z hz)
-  have hNsub : 0 ≤ Nsub := hsum ▸ Finset.sum_nonneg hf
   rw [← Finset.sum_mul, hsum] at h_sum
   have key : Nsub * (RQ * Nsub / Bw - 1) = RQ * (Nsub ^ 2 / Bw) - Nsub := by ring
-  linarith [h_sum, key.le, hNsub]
+  rwa [key] at h_sum
 
 /--
-**Q ⟹ SP** (normalized `Γ₂` form).  In the normalization of `prop:gamma2-ledger`,
+**Q ⟹ SP** (normalized `Γ₂` form, `thm:q-implies-sp`).  In the normalization of `prop:gamma2-ledger`,
 the primitive shift-pair contribution to `Γ₂`, namely
-`Bw · (∑_z f z (f z - 1)) / Nsub²`, is at most `R_SP = R_Q`.  This is exactly the
-statement that the primitive shift-pair strata contribute no more than the
-quotient-normalized density prediction times `R_SP` (`conj:SP`), with the SP
-factor equal to the Q factor.
+`Bw · (∑_z f z (f z - 1)) / Nsub²`, is at most
+`R_Q - Bw/Nsub`.  This is the normalized form of the manuscript's exact
+diagonal subtraction.
 -/
 theorem sp_from_q_normalized {ι : Type*} (s : Finset ι) (f : ι → ℝ)
     (Nsub Bw RQ : ℝ) (hf : ∀ z ∈ s, 0 ≤ f z)
     (hBw : 0 < Bw) (hN : 0 < Nsub) (hsum : ∑ z ∈ s, f z = Nsub)
     (hQ : ∀ z ∈ s, f z ≤ RQ * Nsub / Bw) :
-    Bw * ((∑ z ∈ s, f z * (f z - 1)) / Nsub ^ 2) ≤ RQ := by
+    Bw * ((∑ z ∈ s, f z * (f z - 1)) / Nsub ^ 2) ≤ RQ - Bw / Nsub := by
   have h := sp_from_q s f Nsub Bw RQ hf hsum hQ
   have hpos : (0 : ℝ) < Nsub ^ 2 := by positivity
   have hstep : Bw * ((∑ z ∈ s, f z * (f z - 1)) / Nsub ^ 2)
-      ≤ Bw * (RQ * (Nsub ^ 2 / Bw) / Nsub ^ 2) :=
+      ≤ Bw * ((RQ * (Nsub ^ 2 / Bw) - Nsub) / Nsub ^ 2) :=
     mul_le_mul_of_nonneg_left (by gcongr) hBw.le
-  have heq : Bw * (RQ * (Nsub ^ 2 / Bw) / Nsub ^ 2) = RQ := by
+  have heq : Bw * ((RQ * (Nsub ^ 2 / Bw) - Nsub) / Nsub ^ 2)
+      = RQ - Bw / Nsub := by
     field_simp
   linarith [hstep, heq.ge]
 

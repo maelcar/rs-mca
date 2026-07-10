@@ -1,0 +1,1687 @@
+{
+  "claims": {
+    "imports_unrestricted_second_moment": false,
+    "is_counterexample": false,
+    "proves_deployed_mixed_orbit_bound": false,
+    "proves_disjoint_pte_count_law": false,
+    "proves_exact_coset_energy_decomposition": true,
+    "proves_folding_lemma": true,
+    "proves_raw_signed_em_inverse": false,
+    "proves_split_bound_beats_cs_at_toys": true,
+    "refutes_popular_sum_as_heavy_predictor": true
+  },
+  "cross_check_475": {
+    "expected_linear_energy": 488790592,
+    "expected_mixed_energy": 50213717213843458304,
+    "expected_quadratic_energy": 207138020418762144,
+    "point": [
+      193,
+      64,
+      30
+    ],
+    "recomputed_linear_energy": 488790592,
+    "recomputed_mixed_energy": 50213717213843458304,
+    "recomputed_quadratic_energy": 207138020418762144
+  },
+  "date": "2026-07-10",
+  "dead_second_moment_margin_bits": "1045396.58",
+  "deployed_reference": {
+    "B_star": 274980728111395087,
+    "a_plus": 1116048,
+    "k": 1048576,
+    "m": 981104,
+    "n": 2097152,
+    "p": 2130706433,
+    "subgroup_index": 1016,
+    "w": 67471
+  },
+  "folding": [
+    {
+      "folding_floor_nover2_plus1": 7,
+      "folding_holds": true,
+      "m": 6,
+      "n": 12,
+      "p": 13,
+      "value_set_max": 7,
+      "value_set_min": 7
+    },
+    {
+      "folding_floor_nover2_plus1": 11,
+      "folding_holds": true,
+      "m": 10,
+      "n": 20,
+      "p": 41,
+      "value_set_max": 16,
+      "value_set_min": 15
+    }
+  ],
+  "heavy_amp_resonance": {
+    "A0_exact": 114037737322042,
+    "abs_E_sq_measured": "2.586862E+11",
+    "amp_over_sqrtC_measured": "40.8372",
+    "autocorr_reldiff_measured": "4.657E-12",
+    "folded_pairs": 2,
+    "m": 15,
+    "mult_profile_head": [
+      2,
+      2,
+      1,
+      1,
+      1,
+      1
+    ],
+    "n": 30,
+    "p": 211,
+    "s": 42,
+    "t1": 13,
+    "t2": 65,
+    "value_set_size": 28
+  },
+  "ladder": [
+    {
+      "exact": {
+        "C": 20,
+        "CS_ceiling": 129,
+        "E_heavy": 456,
+        "E_kappa_heavy": [
+          456
+        ],
+        "E_light": 0,
+        "E_linear": 6,
+        "E_mix": 456,
+        "E_quadratic": 216,
+        "E_total": 678,
+        "N_light": 0,
+        "beta1": {
+          "decimal": "1.000000000000E+0",
+          "denominator": 1,
+          "numerator": 1
+        },
+        "beta_topK": {
+          "decimal": "1.000000000000E+0",
+          "denominator": 1,
+          "numerator": 1
+        },
+        "concentration_cosets": {
+          "1/2": 1,
+          "9/10": 1,
+          "99/100": 1
+        },
+        "full_coset_sum_checked": true,
+        "gain": {
+          "decimal": "1.000000000000E+0",
+          "denominator": 1,
+          "numerator": 1
+        },
+        "heavy_K": 1,
+        "heavy_cosets": [
+          0
+        ],
+        "index": 1,
+        "m": 3,
+        "mix_over_Csq": {
+          "decimal": "1.140000000000E+0",
+          "denominator": 50,
+          "numerator": 57
+        },
+        "mixed_orbits": 6,
+        "n": 6,
+        "orbits_per_coset": 6,
+        "p": 7,
+        "split_ceiling": 129,
+        "w": 2
+      },
+      "measured": {
+        "CS_over_Smix_slack": "1.014937",
+        "S_mix": "1.271015E+02",
+        "amp_energy_reldiff": "0.000E+00",
+        "beta1_decimal": "1.000000",
+        "gain_decimal": "1.000000",
+        "sqrt_index": "1.000000"
+      }
+    },
+    {
+      "exact": {
+        "C": 20,
+        "CS_ceiling": 604,
+        "E_heavy": 2532,
+        "E_kappa_heavy": [
+          1656,
+          876
+        ],
+        "E_light": 0,
+        "E_linear": 42,
+        "E_mix": 2532,
+        "E_quadratic": 744,
+        "E_total": 3318,
+        "N_light": 0,
+        "beta1": {
+          "decimal": "6.540284360190E-1",
+          "denominator": 211,
+          "numerator": 138
+        },
+        "beta_topK": {
+          "decimal": "1.000000000000E+0",
+          "denominator": 1,
+          "numerator": 1
+        },
+        "concentration_cosets": {
+          "1/2": 1,
+          "9/10": 2,
+          "99/100": 2
+        },
+        "full_coset_sum_checked": true,
+        "gain": {
+          "decimal": "1.010033444816E+0",
+          "denominator": 299,
+          "numerator": 302
+        },
+        "heavy_K": 2,
+        "heavy_cosets": [
+          1,
+          0
+        ],
+        "index": 2,
+        "m": 3,
+        "mix_over_Csq": {
+          "decimal": "6.330000000000E+0",
+          "denominator": 100,
+          "numerator": 633
+        },
+        "mixed_orbits": 24,
+        "n": 6,
+        "orbits_per_coset": 12,
+        "p": 13,
+        "split_ceiling": 598,
+        "w": 2
+      },
+      "measured": {
+        "CS_over_Smix_slack": "1.289764",
+        "S_mix": "4.683027E+02",
+        "amp_energy_reldiff": "0.000E+00",
+        "beta1_decimal": "0.654028",
+        "gain_decimal": "1.010033",
+        "sqrt_index": "1.414214"
+      }
+    },
+    {
+      "exact": {
+        "C": 20,
+        "CS_ceiling": 3998,
+        "E_heavy": 12888,
+        "E_kappa_heavy": [
+          5784,
+          3924,
+          3180
+        ],
+        "E_light": 4872,
+        "E_linear": 654,
+        "E_mix": 17760,
+        "E_quadratic": 2328,
+        "E_total": 20742,
+        "N_light": 60,
+        "beta1": {
+          "decimal": "3.256756756757E-1",
+          "denominator": 740,
+          "numerator": 241
+        },
+        "beta_topK": {
+          "decimal": "7.256756756757E-1",
+          "denominator": 740,
+          "numerator": 537
+        },
+        "concentration_cosets": {
+          "1/2": 2,
+          "9/10": 4,
+          "99/100": 5
+        },
+        "full_coset_sum_checked": true,
+        "gain": {
+          "decimal": "1.013691683570E+0",
+          "denominator": 1972,
+          "numerator": 1999
+        },
+        "heavy_K": 3,
+        "heavy_cosets": [
+          3,
+          0,
+          1
+        ],
+        "index": 5,
+        "m": 3,
+        "mix_over_Csq": {
+          "decimal": "4.440000000000E+1",
+          "denominator": 5,
+          "numerator": 222
+        },
+        "mixed_orbits": 150,
+        "n": 6,
+        "orbits_per_coset": 30,
+        "p": 31,
+        "split_ceiling": 3944,
+        "w": 2
+      },
+      "measured": {
+        "CS_over_Smix_slack": "1.345956",
+        "S_mix": "2.970380E+03",
+        "amp_energy_reldiff": "0.000E+00",
+        "beta1_decimal": "0.325676",
+        "gain_decimal": "1.013692",
+        "sqrt_index": "2.236068"
+      }
+    },
+    {
+      "exact": {
+        "C": 20,
+        "CS_ceiling": 16412,
+        "E_heavy": 30864,
+        "E_kappa_heavy": [
+          13704,
+          10044,
+          7116
+        ],
+        "E_light": 43956,
+        "E_linear": 1674,
+        "E_mix": 74820,
+        "E_quadratic": 4968,
+        "E_total": 81462,
+        "N_light": 420,
+        "beta1": {
+          "decimal": "1.831595829992E-1",
+          "denominator": 6235,
+          "numerator": 1142
+        },
+        "beta_topK": {
+          "decimal": "4.125100240577E-1",
+          "denominator": 6235,
+          "numerator": 2572
+        },
+        "concentration_cosets": {
+          "1/2": 4,
+          "9/10": 9,
+          "99/100": 10
+        },
+        "full_coset_sum_checked": true,
+        "gain": {
+          "decimal": "1.009969230769E+0",
+          "denominator": 8125,
+          "numerator": 8206
+        },
+        "heavy_K": 3,
+        "heavy_cosets": [
+          8,
+          0,
+          2
+        ],
+        "index": 10,
+        "m": 3,
+        "mix_over_Csq": {
+          "decimal": "1.870500000000E+2",
+          "denominator": 20,
+          "numerator": 3741
+        },
+        "mixed_orbits": 600,
+        "n": 6,
+        "orbits_per_coset": 60,
+        "p": 61,
+        "split_ceiling": 16250,
+        "w": 2
+      },
+      "measured": {
+        "CS_over_Smix_slack": "1.363600",
+        "S_mix": "1.203579E+04",
+        "amp_energy_reldiff": "0.000E+00",
+        "beta1_decimal": "0.183160",
+        "gain_decimal": "1.009969",
+        "sqrt_index": "3.162278"
+      }
+    },
+    {
+      "exact": {
+        "C": 20,
+        "CS_ceiling": 73443,
+        "E_heavy": 72048,
+        "E_kappa_heavy": [
+          31128,
+          23508,
+          17412
+        ],
+        "E_light": 267696,
+        "E_linear": 3918,
+        "E_mix": 339744,
+        "E_quadratic": 10776,
+        "E_total": 354438,
+        "N_light": 2268,
+        "beta1": {
+          "decimal": "9.162192709805E-2",
+          "denominator": 14156,
+          "numerator": 1297
+        },
+        "beta_topK": {
+          "decimal": "2.120655552416E-1",
+          "denominator": 7078,
+          "numerator": 1501
+        },
+        "concentration_cosets": {
+          "1/2": 10,
+          "9/10": 19,
+          "99/100": 21
+        },
+        "full_coset_sum_checked": true,
+        "gain": {
+          "decimal": "1.005338589791E+0",
+          "denominator": 24351,
+          "numerator": 24481
+        },
+        "heavy_K": 3,
+        "heavy_cosets": [
+          11,
+          0,
+          1
+        ],
+        "index": 21,
+        "m": 3,
+        "mix_over_Csq": {
+          "decimal": "8.493600000000E+2",
+          "denominator": 25,
+          "numerator": 21234
+        },
+        "mixed_orbits": 2646,
+        "n": 6,
+        "orbits_per_coset": 126,
+        "p": 127,
+        "split_ceiling": 73053,
+        "w": 2
+      },
+      "measured": {
+        "CS_over_Smix_slack": "1.364163",
+        "S_mix": "5.383742E+04",
+        "amp_energy_reldiff": "0.000E+00",
+        "beta1_decimal": "0.091622",
+        "gain_decimal": "1.005339",
+        "sqrt_index": "4.582576"
+      }
+    },
+    {
+      "exact": {
+        "C": 20,
+        "CS_ceiling": 436673,
+        "E_heavy": 184368,
+        "E_kappa_heavy": [
+          78648,
+          60228,
+          45492
+        ],
+        "E_light": 1852056,
+        "E_linear": 10038,
+        "E_mix": 2036424,
+        "E_quadratic": 26616,
+        "E_total": 2073078,
+        "N_light": 14688,
+        "beta1": {
+          "decimal": "3.862064088815E-2",
+          "denominator": 84851,
+          "numerator": 3277
+        },
+        "beta_topK": {
+          "decimal": "9.053517342165E-2",
+          "denominator": 84851,
+          "numerator": 7682
+        },
+        "concentration_cosets": null,
+        "full_coset_sum_checked": false,
+        "gain": {
+          "decimal": "1.002288397800E+0",
+          "denominator": 435676,
+          "numerator": 436673
+        },
+        "heavy_K": 3,
+        "heavy_cosets": [
+          15,
+          0,
+          36
+        ],
+        "index": 51,
+        "m": 3,
+        "mix_over_Csq": {
+          "decimal": "5.091060000000E+3",
+          "denominator": 50,
+          "numerator": 254553
+        },
+        "mixed_orbits": 15606,
+        "n": 6,
+        "orbits_per_coset": 306,
+        "p": 307,
+        "split_ceiling": 435676,
+        "w": 2
+      },
+      "measured": {
+        "CS_over_Smix_slack": "1.365524",
+        "S_mix": "3.197843E+05",
+        "amp_energy_reldiff": "0.000E+00",
+        "beta1_decimal": "0.038621",
+        "gain_decimal": "1.002288",
+        "sqrt_index": "7.141428"
+      }
+    },
+    {
+      "exact": {
+        "C": 20,
+        "CS_ceiling": 1683586,
+        "E_heavy": 367824,
+        "E_kappa_heavy": [
+          156264,
+          120204,
+          91356
+        ],
+        "E_light": 7505676,
+        "E_linear": 20034,
+        "E_mix": 7873500,
+        "E_quadratic": 52488,
+        "E_total": 7946022,
+        "N_light": 58200,
+        "beta1": {
+          "decimal": "1.984682796723E-2",
+          "denominator": 656125,
+          "numerator": 13022
+        },
+        "beta_topK": {
+          "decimal": "4.671670794437E-2",
+          "denominator": 656125,
+          "numerator": 30652
+        },
+        "concentration_cosets": null,
+        "full_coset_sum_checked": false,
+        "gain": {
+          "decimal": "1.001179231959E+0",
+          "denominator": 1681603,
+          "numerator": 1683586
+        },
+        "heavy_K": 3,
+        "heavy_cosets": [
+          2,
+          0,
+          4
+        ],
+        "index": 100,
+        "m": 3,
+        "mix_over_Csq": {
+          "decimal": "1.968375000000E+4",
+          "denominator": 4,
+          "numerator": 78735
+        },
+        "mixed_orbits": 60000,
+        "n": 6,
+        "orbits_per_coset": 600,
+        "p": 601,
+        "split_ceiling": 1681603,
+        "w": 2
+      },
+      "measured": {
+        "CS_over_Smix_slack": "1.366086",
+        "S_mix": "1.232416E+06",
+        "amp_energy_reldiff": "0.000E+00",
+        "beta1_decimal": "0.019847",
+        "gain_decimal": "1.001179",
+        "sqrt_index": "10.000000"
+      }
+    },
+    {
+      "exact": {
+        "C": 924,
+        "CS_ceiling": 2808,
+        "E_heavy": 54744,
+        "E_kappa_heavy": [
+          54744
+        ],
+        "E_light": 0,
+        "E_linear": 12,
+        "E_mix": 54744,
+        "E_quadratic": 5082,
+        "E_total": 59838,
+        "N_light": 0,
+        "beta1": {
+          "decimal": "1.000000000000E+0",
+          "denominator": 1,
+          "numerator": 1
+        },
+        "beta_topK": {
+          "decimal": "1.000000000000E+0",
+          "denominator": 1,
+          "numerator": 1
+        },
+        "concentration_cosets": {
+          "1/2": 1,
+          "9/10": 1,
+          "99/100": 1
+        },
+        "full_coset_sum_checked": true,
+        "gain": {
+          "decimal": "1.000000000000E+0",
+          "denominator": 1,
+          "numerator": 1
+        },
+        "heavy_K": 1,
+        "heavy_cosets": [
+          0
+        ],
+        "index": 1,
+        "m": 6,
+        "mix_over_Csq": {
+          "decimal": "6.411986282116E-2",
+          "denominator": 35574,
+          "numerator": 2281
+        },
+        "mixed_orbits": 12,
+        "n": 12,
+        "orbits_per_coset": 12,
+        "p": 13,
+        "split_ceiling": 2808,
+        "w": 2
+      },
+      "measured": {
+        "CS_over_Smix_slack": "1.413132",
+        "S_mix": "1.987076E+03",
+        "amp_energy_reldiff": "3.987E-16",
+        "beta1_decimal": "1.000000",
+        "gain_decimal": "1.000000",
+        "sqrt_index": "1.000000"
+      }
+    },
+    {
+      "exact": {
+        "C": 924,
+        "CS_ceiling": 26506,
+        "E_heavy": 542088,
+        "E_kappa_heavy": [
+          289032,
+          129192,
+          123864
+        ],
+        "E_light": 0,
+        "E_linear": 924,
+        "E_mix": 542088,
+        "E_quadratic": 484218,
+        "E_total": 1027230,
+        "N_light": 0,
+        "beta1": {
+          "decimal": "5.331828042679E-1",
+          "denominator": 22587,
+          "numerator": 12043
+        },
+        "beta_topK": {
+          "decimal": "1.000000000000E+0",
+          "denominator": 1,
+          "numerator": 1
+        },
+        "concentration_cosets": {
+          "1/2": 1,
+          "9/10": 3,
+          "99/100": 3
+        },
+        "full_coset_sum_checked": true,
+        "gain": {
+          "decimal": "1.020953701564E+0",
+          "denominator": 12981,
+          "numerator": 13253
+        },
+        "heavy_K": 3,
+        "heavy_cosets": [
+          1,
+          2,
+          0
+        ],
+        "index": 3,
+        "m": 6,
+        "mix_over_Csq": {
+          "decimal": "6.349300050599E-1",
+          "denominator": 11858,
+          "numerator": 7529
+        },
+        "mixed_orbits": 108,
+        "n": 12,
+        "orbits_per_coset": 36,
+        "p": 37,
+        "split_ceiling": 25962,
+        "w": 2
+      },
+      "measured": {
+        "CS_over_Smix_slack": "1.664385",
+        "S_mix": "1.592540E+04",
+        "amp_energy_reldiff": "4.295E-16",
+        "beta1_decimal": "0.533183",
+        "gain_decimal": "1.020954",
+        "sqrt_index": "1.732051"
+      }
+    },
+    {
+      "exact": {
+        "C": 924,
+        "CS_ceiling": 91028,
+        "E_heavy": 1915656,
+        "E_kappa_heavy": [
+          870840,
+          544368,
+          500448
+        ],
+        "E_light": 386016,
+        "E_linear": 9252,
+        "E_mix": 2301672,
+        "E_quadratic": 1322826,
+        "E_total": 3633750,
+        "N_light": 120,
+        "beta1": {
+          "decimal": "3.783510421989E-1",
+          "denominator": 95903,
+          "numerator": 36285
+        },
+        "beta_topK": {
+          "decimal": "8.322888752177E-1",
+          "denominator": 95903,
+          "numerator": 79819
+        },
+        "concentration_cosets": {
+          "1/2": 2,
+          "9/10": 4,
+          "99/100": 5
+        },
+        "full_coset_sum_checked": true,
+        "gain": {
+          "decimal": "1.041522214213E+0",
+          "denominator": 87399,
+          "numerator": 91028
+        },
+        "heavy_K": 3,
+        "heavy_cosets": [
+          3,
+          1,
+          4
+        ],
+        "index": 5,
+        "m": 6,
+        "mix_over_Csq": {
+          "decimal": "2.695873390679E+0",
+          "denominator": 35574,
+          "numerator": 95903
+        },
+        "mixed_orbits": 300,
+        "n": 12,
+        "orbits_per_coset": 60,
+        "p": 61,
+        "split_ceiling": 87399,
+        "w": 2
+      },
+      "measured": {
+        "CS_over_Smix_slack": "1.959486",
+        "S_mix": "4.645503E+04",
+        "amp_energy_reldiff": "0.000E+00",
+        "beta1_decimal": "0.378351",
+        "gain_decimal": "1.041522",
+        "sqrt_index": "2.236068"
+      }
+    },
+    {
+      "exact": {
+        "C": 924,
+        "CS_ceiling": 347230,
+        "E_heavy": 4933224,
+        "E_kappa_heavy": [
+          2204232,
+          1367112,
+          1361880
+        ],
+        "E_light": 5403552,
+        "E_linear": 102372,
+        "E_mix": 10336776,
+        "E_quadratic": 3035562,
+        "E_total": 13474710,
+        "N_light": 648,
+        "beta1": {
+          "decimal": "2.132417303035E-1",
+          "denominator": 430699,
+          "numerator": 91843
+        },
+        "beta_topK": {
+          "decimal": "4.772497730434E-1",
+          "denominator": 430699,
+          "numerator": 205551
+        },
+        "concentration_cosets": {
+          "1/2": 4,
+          "9/10": 8,
+          "99/100": 9
+        },
+        "full_coset_sum_checked": true,
+        "gain": {
+          "decimal": "1.013703669103E+0",
+          "denominator": 171268,
+          "numerator": 173615
+        },
+        "heavy_K": 3,
+        "heavy_cosets": [
+          0,
+          1,
+          6
+        ],
+        "index": 9,
+        "m": 6,
+        "mix_over_Csq": {
+          "decimal": "1.210712880193E+1",
+          "denominator": 35574,
+          "numerator": 430699
+        },
+        "mixed_orbits": 972,
+        "n": 12,
+        "orbits_per_coset": 108,
+        "p": 109,
+        "split_ceiling": 342536,
+        "w": 2
+      },
+      "measured": {
+        "CS_over_Smix_slack": "2.080293",
+        "S_mix": "1.669140E+05",
+        "amp_energy_reldiff": "1.802E-16",
+        "beta1_decimal": "0.213242",
+        "gain_decimal": "1.013704",
+        "sqrt_index": "3.000000"
+      }
+    },
+    {
+      "exact": {
+        "C": 924,
+        "CS_ceiling": 763411,
+        "E_heavy": 9502536,
+        "E_kappa_heavy": [
+          5079144,
+          2271984,
+          2151408
+        ],
+        "E_light": 14445312,
+        "E_linear": 176772,
+        "E_mix": 23947848,
+        "E_quadratic": 4748298,
+        "E_total": 28872918,
+        "N_light": 1560,
+        "beta1": {
+          "decimal": "2.120918756458E-1",
+          "denominator": 997827,
+          "numerator": 211631
+        },
+        "beta_topK": {
+          "decimal": "3.968012491143E-1",
+          "denominator": 997827,
+          "numerator": 395939
+        },
+        "concentration_cosets": null,
+        "full_coset_sum_checked": false,
+        "gain": {
+          "decimal": "1.023056635835E+0",
+          "denominator": 746206,
+          "numerator": 763411
+        },
+        "heavy_K": 3,
+        "heavy_cosets": [
+          12,
+          0,
+          10
+        ],
+        "index": 13,
+        "m": 6,
+        "mix_over_Csq": {
+          "decimal": "2.804933378310E+1",
+          "denominator": 11858,
+          "numerator": 332609
+        },
+        "mixed_orbits": 2028,
+        "n": 12,
+        "orbits_per_coset": 156,
+        "p": 157,
+        "split_ceiling": 746206,
+        "w": 2
+      },
+      "measured": {
+        "CS_over_Smix_slack": "2.169118",
+        "S_mix": "3.519453E+05",
+        "amp_energy_reldiff": "0.000E+00",
+        "beta1_decimal": "0.212092",
+        "gain_decimal": "1.023057",
+        "sqrt_index": "3.605551"
+      }
+    },
+    {
+      "exact": {
+        "C": 924,
+        "CS_ceiling": 1873685,
+        "E_heavy": 17971128,
+        "E_kappa_heavy": [
+          7054632,
+          5620200,
+          5296296
+        ],
+        "E_light": 42978408,
+        "E_linear": 496788,
+        "E_mix": 60949536,
+        "E_quadratic": 7745586,
+        "E_total": 69191910,
+        "N_light": 4080,
+        "beta1": {
+          "decimal": "1.157454586693E-1",
+          "denominator": 2539564,
+          "numerator": 293943
+        },
+        "beta_topK": {
+          "decimal": "2.948525809942E-1",
+          "denominator": 2539564,
+          "numerator": 748797
+        },
+        "concentration_cosets": null,
+        "full_coset_sum_checked": false,
+        "gain": {
+          "decimal": "1.016173652815E+0",
+          "denominator": 1843863,
+          "numerator": 1873685
+        },
+        "heavy_K": 3,
+        "heavy_cosets": [
+          5,
+          14,
+          7
+        ],
+        "index": 20,
+        "m": 6,
+        "mix_over_Csq": {
+          "decimal": "7.138820486872E+1",
+          "denominator": 17787,
+          "numerator": 1269782
+        },
+        "mixed_orbits": 4800,
+        "n": 12,
+        "orbits_per_coset": 240,
+        "p": 241,
+        "split_ceiling": 1843863,
+        "w": 2
+      },
+      "measured": {
+        "CS_over_Smix_slack": "2.217168",
+        "S_mix": "8.450802E+05",
+        "amp_energy_reldiff": "2.445E-16",
+        "beta1_decimal": "0.115745",
+        "gain_decimal": "1.016174",
+        "sqrt_index": "4.472136"
+      }
+    },
+    {
+      "exact": {
+        "C": 924,
+        "CS_ceiling": 3213932,
+        "E_heavy": 25656648,
+        "E_kappa_heavy": [
+          11441832,
+          7618224,
+          6596592
+        ],
+        "E_light": 80455272,
+        "E_linear": 870228,
+        "E_mix": 106111920,
+        "E_quadratic": 10314690,
+        "E_total": 117296838,
+        "N_light": 7176,
+        "beta1": {
+          "decimal": "1.078279612696E-1",
+          "denominator": 4421330,
+          "numerator": 476743
+        },
+        "beta_topK": {
+          "decimal": "2.417885568370E-1",
+          "denominator": 4421330,
+          "numerator": 1069027
+        },
+        "concentration_cosets": null,
+        "full_coset_sum_checked": false,
+        "gain": {
+          "decimal": "1.015409978083E+0",
+          "denominator": 3165157,
+          "numerator": 3213932
+        },
+        "heavy_K": 3,
+        "heavy_cosets": [
+          20,
+          22,
+          0
+        ],
+        "index": 26,
+        "m": 6,
+        "mix_over_Csq": {
+          "decimal": "1.242854331815E+2",
+          "denominator": 17787,
+          "numerator": 2210665
+        },
+        "mixed_orbits": 8112,
+        "n": 12,
+        "orbits_per_coset": 312,
+        "p": 313,
+        "split_ceiling": 3165157,
+        "w": 2
+      },
+      "measured": {
+        "CS_over_Smix_slack": "2.242308",
+        "S_mix": "1.433314E+06",
+        "amp_energy_reldiff": "0.000E+00",
+        "beta1_decimal": "0.107828",
+        "gain_decimal": "1.015410",
+        "sqrt_index": "5.099020"
+      }
+    },
+    {
+      "exact": {
+        "C": 184756,
+        "CS_ceiling": 420989,
+        "E_heavy": 110769800,
+        "E_kappa_heavy": [
+          81384640,
+          29385160
+        ],
+        "E_light": 0,
+        "E_linear": 18760,
+        "E_mix": 110769800,
+        "E_quadratic": 30401810,
+        "E_total": 141190370,
+        "N_light": 0,
+        "beta1": {
+          "decimal": "7.347186688068E-1",
+          "denominator": 2769245,
+          "numerator": 2034616
+        },
+        "beta_topK": {
+          "decimal": "1.000000000000E+0",
+          "denominator": 1,
+          "numerator": 1
+        },
+        "concentration_cosets": {
+          "1/2": 1,
+          "9/10": 2,
+          "99/100": 2
+        },
+        "full_coset_sum_checked": true,
+        "gain": {
+          "decimal": "1.030605625148E+0",
+          "denominator": 408487,
+          "numerator": 420989
+        },
+        "heavy_K": 2,
+        "heavy_cosets": [
+          1,
+          0
+        ],
+        "index": 2,
+        "m": 10,
+        "mix_over_Csq": {
+          "decimal": "3.245071493231E-3",
+          "denominator": 4266847442,
+          "numerator": 13846225
+        },
+        "mixed_orbits": 80,
+        "n": 20,
+        "orbits_per_coset": 40,
+        "p": 41,
+        "split_ceiling": 408487,
+        "w": 2
+      },
+      "measured": {
+        "CS_over_Smix_slack": "2.762459",
+        "S_mix": "1.523965E+05",
+        "amp_energy_reldiff": "1.345E-16",
+        "beta1_decimal": "0.734719",
+        "gain_decimal": "1.030606",
+        "sqrt_index": "1.414214"
+      }
+    },
+    {
+      "exact": {
+        "C": 184756,
+        "CS_ceiling": 3971777,
+        "E_heavy": 1436917600,
+        "E_kappa_heavy": [
+          1027359440,
+          290907840,
+          118650320
+        ],
+        "E_light": 140583040,
+        "E_linear": 1272780,
+        "E_mix": 1577500640,
+        "E_quadratic": 571465250,
+        "E_total": 2150238670,
+        "N_light": 200,
+        "beta1": {
+          "decimal": "6.512577009161E-1",
+          "denominator": 19718758,
+          "numerator": 12841993
+        },
+        "beta_topK": {
+          "decimal": "9.108824196737E-1",
+          "denominator": 9859379,
+          "numerator": 8980735
+        },
+        "concentration_cosets": {
+          "1/2": 1,
+          "9/10": 3,
+          "99/100": 5
+        },
+        "full_coset_sum_checked": true,
+        "gain": {
+          "decimal": "1.156865092403E+0",
+          "denominator": 3433224,
+          "numerator": 3971777
+        },
+        "heavy_K": 3,
+        "heavy_cosets": [
+          3,
+          1,
+          2
+        ],
+        "index": 5,
+        "m": 10,
+        "mix_over_Csq": {
+          "decimal": "4.621388101647E-2",
+          "denominator": 2133423721,
+          "numerator": 98593790
+        },
+        "mixed_orbits": 500,
+        "n": 20,
+        "orbits_per_coset": 100,
+        "p": 101,
+        "split_ceiling": 3433224,
+        "w": 2
+      },
+      "measured": {
+        "CS_over_Smix_slack": "4.303108",
+        "S_mix": "9.230020E+05",
+        "amp_energy_reldiff": "0.000E+00",
+        "beta1_decimal": "0.651258",
+        "gain_decimal": "1.156865",
+        "sqrt_index": "2.236068"
+      }
+    },
+    {
+      "exact": {
+        "C": 184756,
+        "CS_ceiling": 10443620,
+        "E_heavy": 2395460560,
+        "E_kappa_heavy": [
+          1423839440,
+          622726200,
+          348894920
+        ],
+        "E_light": 970872680,
+        "E_linear": 2015220,
+        "E_mix": 3366333240,
+        "E_quadratic": 1721158650,
+        "E_total": 5089507110,
+        "N_light": 1080,
+        "beta1": {
+          "decimal": "4.229644953391E-1",
+          "denominator": 84158331,
+          "numerator": 35595986
+        },
+        "beta_topK": {
+          "decimal": "7.115934131346E-1",
+          "denominator": 84158331,
+          "numerator": 59886514
+        },
+        "concentration_cosets": null,
+        "full_coset_sum_checked": false,
+        "gain": {
+          "decimal": "1.103811522504E+0",
+          "denominator": 2365354,
+          "numerator": 2610905
+        },
+        "heavy_K": 3,
+        "heavy_cosets": [
+          1,
+          5,
+          2
+        ],
+        "index": 9,
+        "m": 10,
+        "mix_over_Csq": {
+          "decimal": "9.861886573633E-2",
+          "denominator": 4266847442,
+          "numerator": 420791655
+        },
+        "mixed_orbits": 1620,
+        "n": 20,
+        "orbits_per_coset": 180,
+        "p": 181,
+        "split_ceiling": 9461416,
+        "w": 2
+      },
+      "measured": {
+        "CS_over_Smix_slack": "3.440597",
+        "S_mix": "3.035410E+06",
+        "amp_energy_reldiff": "2.833E-16",
+        "beta1_decimal": "0.422964",
+        "gain_decimal": "1.103812",
+        "sqrt_index": "3.000000"
+      }
+    },
+    {
+      "exact": {
+        "C": 184756,
+        "CS_ceiling": 47836608,
+        "E_heavy": 4523460600,
+        "E_kappa_heavy": [
+          2140357600,
+          1443050680,
+          940052320
+        ],
+        "E_light": 9778670560,
+        "E_linear": 22142220,
+        "E_mix": 14302131160,
+        "E_quadratic": 13964860090,
+        "E_total": 28289133470,
+        "N_light": 6800,
+        "beta1": {
+          "decimal": "1.496530535244E-1",
+          "denominator": 357553279,
+          "numerator": 53508940
+        },
+        "beta_topK": {
+          "decimal": "3.162787803716E-1",
+          "denominator": 357553279,
+          "numerator": 113086515
+        },
+        "concentration_cosets": null,
+        "full_coset_sum_checked": false,
+        "gain": {
+          "decimal": "1.023334756491E+0",
+          "denominator": 23372903,
+          "numerator": 23918304
+        },
+        "heavy_K": 3,
+        "heavy_cosets": [
+          3,
+          13,
+          2
+        ],
+        "index": 20,
+        "m": 10,
+        "mix_over_Csq": {
+          "decimal": "4.189899965493E-1",
+          "denominator": 4266847442,
+          "numerator": 1787766395
+        },
+        "mixed_orbits": 8000,
+        "n": 20,
+        "orbits_per_coset": 400,
+        "p": 401,
+        "split_ceiling": 46745806,
+        "w": 2
+      },
+      "measured": {
+        "CS_over_Smix_slack": "3.227960",
+        "S_mix": "1.481946E+07",
+        "amp_energy_reldiff": "1.334E-16",
+        "beta1_decimal": "0.149653",
+        "gain_decimal": "1.023335",
+        "sqrt_index": "4.472136"
+      }
+    },
+    {
+      "exact": {
+        "C": 155117520,
+        "CS_ceiling": 294183,
+        "E_heavy": 96159180,
+        "E_kappa_heavy": [
+          96159180
+        ],
+        "E_light": 0,
+        "E_linear": 30,
+        "E_mix": 96159180,
+        "E_quadratic": 2318520,
+        "E_total": 98477730,
+        "N_light": 0,
+        "beta1": {
+          "decimal": "1.000000000000E+0",
+          "denominator": 1,
+          "numerator": 1
+        },
+        "beta_topK": {
+          "decimal": "1.000000000000E+0",
+          "denominator": 1,
+          "numerator": 1
+        },
+        "concentration_cosets": {
+          "1/2": 1,
+          "9/10": 1,
+          "99/100": 1
+        },
+        "full_coset_sum_checked": true,
+        "gain": {
+          "decimal": "1.000000000000E+0",
+          "denominator": 1,
+          "numerator": 1
+        },
+        "heavy_K": 1,
+        "heavy_cosets": [
+          0
+        ],
+        "index": 1,
+        "m": 15,
+        "mix_over_Csq": {
+          "decimal": "3.996400879342E-9",
+          "denominator": 401024083515840,
+          "numerator": 1602653
+        },
+        "mixed_orbits": 30,
+        "n": 30,
+        "orbits_per_coset": 30,
+        "p": 31,
+        "split_ceiling": 294183,
+        "w": 2
+      },
+      "measured": {
+        "CS_over_Smix_slack": "1.113828",
+        "S_mix": "2.641189E+05",
+        "amp_energy_reldiff": "4.649E-16",
+        "beta1_decimal": "1.000000",
+        "gain_decimal": "1.000000",
+        "sqrt_index": "1.000000"
+      }
+    },
+    {
+      "exact": {
+        "C": 155117520,
+        "CS_ceiling": 6806772,
+        "E_heavy": 12870039960,
+        "E_kappa_heavy": [
+          7041460020,
+          5828579940
+        ],
+        "E_light": 0,
+        "E_linear": 253050,
+        "E_mix": 12870039960,
+        "E_quadratic": 27917160,
+        "E_total": 12898210170,
+        "N_light": 0,
+        "beta1": {
+          "decimal": "5.471202919249E-1",
+          "denominator": 214500666,
+          "numerator": 117357667
+        },
+        "beta_topK": {
+          "decimal": "1.000000000000E+0",
+          "denominator": 1,
+          "numerator": 1
+        },
+        "concentration_cosets": {
+          "1/2": 1,
+          "9/10": 2,
+          "99/100": 2
+        },
+        "full_coset_sum_checked": true,
+        "gain": {
+          "decimal": "1.001114396631E+0",
+          "denominator": 6799195,
+          "numerator": 6806772
+        },
+        "heavy_K": 2,
+        "heavy_cosets": [
+          0,
+          1
+        ],
+        "index": 2,
+        "m": 15,
+        "mix_over_Csq": {
+          "decimal": "5.348822547500E-7",
+          "denominator": 66837347252640,
+          "numerator": 35750111
+        },
+        "mixed_orbits": 120,
+        "n": 30,
+        "orbits_per_coset": 60,
+        "p": 61,
+        "split_ceiling": 6799195,
+        "w": 2
+      },
+      "measured": {
+        "CS_over_Smix_slack": "2.723471",
+        "S_mix": "2.499300E+06",
+        "amp_energy_reldiff": "4.446E-16",
+        "beta1_decimal": "0.547120",
+        "gain_decimal": "1.001114",
+        "sqrt_index": "1.414214"
+      }
+    },
+    {
+      "exact": {
+        "C": 155117520,
+        "CS_ceiling": 114927532,
+        "E_heavy": 567911197560,
+        "E_kappa_heavy": [
+          282548349540,
+          219709938120,
+          65652909900
+        ],
+        "E_light": 19126023240,
+        "E_linear": 226701750,
+        "E_mix": 587037220800,
+        "E_quadratic": 83098326960,
+        "E_total": 670362249510,
+        "N_light": 300,
+        "beta1": {
+          "decimal": "4.813124952366E-1",
+          "denominator": 9783953680,
+          "numerator": 4709139159
+        },
+        "beta_topK": {
+          "decimal": "9.674194027869E-1",
+          "denominator": 4891976840,
+          "numerator": 4732593313
+        },
+        "concentration_cosets": {
+          "1/2": 2,
+          "9/10": 3,
+          "99/100": 4
+        },
+        "full_coset_sum_checked": true,
+        "gain": {
+          "decimal": "1.179839450307E+0",
+          "denominator": 97409467,
+          "numerator": 114927532
+        },
+        "heavy_K": 3,
+        "heavy_cosets": [
+          4,
+          3,
+          2
+        ],
+        "index": 5,
+        "m": 15,
+        "mix_over_Csq": {
+          "decimal": "2.439742170650E-5",
+          "denominator": 5012801043948,
+          "numerator": 122299421
+        },
+        "mixed_orbits": 750,
+        "n": 30,
+        "orbits_per_coset": 150,
+        "p": 151,
+        "split_ceiling": 97409467,
+        "w": 2
+      },
+      "measured": {
+        "CS_over_Smix_slack": "4.957155",
+        "S_mix": "2.318417E+07",
+        "amp_energy_reldiff": "4.159E-16",
+        "beta1_decimal": "0.481312",
+        "gain_decimal": "1.179839",
+        "sqrt_index": "2.236068"
+      }
+    },
+    {
+      "exact": {
+        "C": 155117520,
+        "CS_ceiling": 861121015,
+        "E_heavy": 16526947869000,
+        "E_kappa_heavy": [
+          15526920013860,
+          590814137820,
+          409213717320
+        ],
+        "E_light": 287777797080,
+        "E_linear": 111885450,
+        "E_mix": 16814725666080,
+        "E_quadratic": 316617019080,
+        "E_total": 17131454570610,
+        "N_light": 840,
+        "beta1": {
+          "decimal": "9.234120331313E-1",
+          "denominator": 280245427768,
+          "numerator": 258782000231
+        },
+        "beta_topK": {
+          "decimal": "9.828853706688E-1",
+          "denominator": 140122713884,
+          "numerator": 137724565575
+        },
+        "concentration_cosets": null,
+        "full_coset_sum_checked": false,
+        "gain": {
+          "decimal": "1.689454300449E+0",
+          "denominator": 101940729,
+          "numerator": 172224203
+        },
+        "heavy_K": 3,
+        "heavy_cosets": [
+          1,
+          3,
+          2
+        ],
+        "index": 7,
+        "m": 15,
+        "mix_over_Csq": {
+          "decimal": "6.988244329643E-4",
+          "denominator": 2179478714760,
+          "numerator": 1523072977
+        },
+        "mixed_orbits": 1470,
+        "n": 30,
+        "orbits_per_coset": 210,
+        "p": 211,
+        "split_ceiling": 509703645,
+        "w": 2
+      },
+      "measured": {
+        "CS_over_Smix_slack": "12.190659",
+        "S_mix": "7.063778E+07",
+        "amp_energy_reldiff": "2.323E-16",
+        "beta1_decimal": "0.923412",
+        "gain_decimal": "1.689454",
+        "sqrt_index": "2.645751"
+      }
+    },
+    {
+      "exact": {
+        "C": 32247603683100,
+        "CS_ceiling": 7131488845,
+        "E_heavy": 5518460626938720,
+        "E_kappa_heavy": [
+          5517523171916256,
+          937455022464
+        ],
+        "E_light": 0,
+        "E_linear": 1411590624,
+        "E_mix": 5518460626938720,
+        "E_quadratic": 7773508790424,
+        "E_total": 5526235547319768,
+        "N_light": 0,
+        "beta1": {
+          "decimal": "9.998301238179E-1",
+          "denominator": 57483964863945,
+          "numerator": 57474199707461
+        },
+        "beta_topK": {
+          "decimal": "1.000000000000E+0",
+          "denominator": 1,
+          "numerator": 1
+        },
+        "concentration_cosets": null,
+        "full_coset_sum_checked": false,
+        "gain": {
+          "decimal": "1.396135403961E+0",
+          "denominator": 5108020916,
+          "numerator": 7131488845
+        },
+        "heavy_K": 2,
+        "heavy_cosets": [
+          1,
+          0
+        ],
+        "index": 2,
+        "m": 24,
+        "mix_over_Csq": {
+          "decimal": "5.306681867834E-12",
+          "denominator": 481438862639946613530375,
+          "numerator": 2554842882842
+        },
+        "mixed_orbits": 192,
+        "n": 48,
+        "orbits_per_coset": 96,
+        "p": 97,
+        "split_ceiling": 5108020916,
+        "w": 2
+      },
+      "measured": {
+        "CS_over_Smix_slack": "8.251413",
+        "S_mix": "8.642748E+08",
+        "amp_energy_reldiff": "5.436E-16",
+        "beta1_decimal": "0.999830",
+        "gain_decimal": "1.396135",
+        "sqrt_index": "1.414214"
+      }
+    },
+    {
+      "exact": {
+        "C": 1946939425648112,
+        "CS_ceiling": 18927390083,
+        "E_heavy": 30713828473698984,
+        "E_kappa_heavy": [
+          30484040922094536,
+          229787551604448
+        ],
+        "E_light": 0,
+        "E_linear": 470995722,
+        "E_mix": 30713828473698984,
+        "E_quadratic": 5420703816,
+        "E_total": 30713834365398522,
+        "N_light": 0,
+        "beta1": {
+          "decimal": "9.925184334541E-1",
+          "denominator": 142193650341199,
+          "numerator": 141129819083771
+        },
+        "beta_topK": {
+          "decimal": "1.000000000000E+0",
+          "denominator": 1,
+          "numerator": 1
+        },
+        "concentration_cosets": null,
+        "full_coset_sum_checked": false,
+        "gain": {
+          "decimal": "1.306133324646E+0",
+          "denominator": 14491162369,
+          "numerator": 18927390083
+        },
+        "heavy_K": 2,
+        "heavy_cosets": [
+          1,
+          0
+        ],
+        "index": 2,
+        "m": 27,
+        "mix_over_Csq": {
+          "decimal": "8.102687230532E-15",
+          "denominator": 473821640892875029331406145568,
+          "numerator": 3839228559212373
+        },
+        "mixed_orbits": 216,
+        "n": 54,
+        "orbits_per_coset": 108,
+        "p": 109,
+        "split_ceiling": 14491162369,
+        "w": 2
+      },
+      "measured": {
+        "CS_over_Smix_slack": "6.967515",
+        "S_mix": "2.716520E+09",
+        "amp_energy_reldiff": "1.954E-15",
+        "beta1_decimal": "0.992518",
+        "gain_decimal": "1.306133",
+        "sqrt_index": "1.414214"
+      }
+    },
+    {
+      "exact": {
+        "C": 1620288010530347424,
+        "CS_ceiling": 1360543447073,
+        "E_heavy": 50213717213843458304,
+        "E_kappa_heavy": [
+          50195242501409403264,
+          14045030933453824,
+          4429681500601216
+        ],
+        "E_light": 0,
+        "E_linear": 488790592,
+        "E_mix": 50213717213843458304,
+        "E_quadratic": 207138020418762144,
+        "E_total": 50420855234751011040,
+        "N_light": 0,
+        "beta1": {
+          "decimal": "9.996320783750E-1",
+          "denominator": 392294665733152018,
+          "numerator": 392150332042260963
+        },
+        "beta_topK": {
+          "decimal": "1.000000000000E+0",
+          "denominator": 1,
+          "numerator": 1
+        },
+        "concentration_cosets": null,
+        "full_coset_sum_checked": false,
+        "gain": {
+          "decimal": "1.688269300065E+0",
+          "denominator": 805880582571,
+          "numerator": 1360543447073
+        },
+        "heavy_K": 3,
+        "heavy_cosets": [
+          2,
+          1,
+          0
+        ],
+        "index": 3,
+        "m": 30,
+        "mix_over_Csq": {
+          "decimal": "1.912660705500E-17",
+          "denominator": 10255207957298403299861097148997796,
+          "numerator": 196147332866576009
+        },
+        "mixed_orbits": 576,
+        "n": 64,
+        "orbits_per_coset": 192,
+        "p": 193,
+        "split_ceiling": 805880582571,
+        "w": 2
+      },
+      "measured": {
+        "CS_over_Smix_slack": "14.733595",
+        "S_mix": "9.234294E+10",
+        "amp_energy_reldiff": "4.079E-15",
+        "beta1_decimal": "0.999632",
+        "gain_decimal": "1.688269",
+        "sqrt_index": "1.732051"
+      }
+    }
+  ],
+  "method_ceiling": {
+    "dead_second_moment_margin_bits": "1045396.58",
+    "deployed_index": 1016,
+    "max_gain_bits": "4.994342",
+    "max_gain_sqrt_index": "31.874755",
+    "statement": "coset refinement of Cauchy-Schwarz improves the mixed-orbit L1 bound by at most sqrt(index); at the deployed row this is ~5 bits, negligible vs the ~1.045e6-bit second-moment deficit"
+  },
+  "packet": "cap25_v13_kb_mixed_orbit_index_ladder",
+  "rH_coset_invariance": {
+    "n": 12,
+    "p": 61,
+    "rH_constant_on_cosets": true
+  },
+  "status": {
+    "coset_energy_identity": "PROVED",
+    "deployed_transfer": "OPEN",
+    "folding_lemma": "PROVED",
+    "index_ladder_measurement": "MEASURED",
+    "popular_sum_predictor": "REFUTED",
+    "split_bound": "PROVED"
+  }
+}

@@ -30,6 +30,34 @@ Keep entries concise and link to the relevant files.
 
 ## Entries
 
+### 2026-07-10 - PR batch: Lean spine and threshold audit packets
+
+- **Agent/model:** holmbuar via PRs #474, #475, #476, #477, and #478;
+  LegaSage via PRs #469, #470, #471, #472, and #473; holmbuar via PRs #467
+  and #468; Codex for selective integration, lightweight review, and log
+  consolidation.
+- **Files added or changed:** Added the new
+  `experimental/lean/asymptotic_spine/` package and updated
+  `experimental/lean/grande_finale/` with `QFiniteTables` and the sharper
+  `SP` diagonal-subtraction formulation. Added audit/certificate packets under
+  `experimental/notes/audits/`, `experimental/notes/thresholds/`, and
+  `experimental/data/`, with corresponding verifier scripts under
+  `experimental/scripts/`.
+- **Status:** PROVED / CONDITIONAL / EXPERIMENTAL / AUDIT.
+- **What is being added:** The batch records formalization support for the
+  asymptotic spine and Grande Finale finite Q tables, plus small certificate
+  packets for first-match, entropy-threshold, Fourier/Sidon, Boolean-prefix,
+  bad-line-strata, Route-D sparse-arc, KoalaBear mixed-orbit, Mersenne-31
+  Chebyshev/signed-`e_m`, and KoalaBear signed-`e_m` scaled-toy audits.
+- **How it is useful:** These packets support the current `asymptotic_rs_mca`
+  and v13/Grande Finale proof program without changing the paper TeX/PDFs.
+  They mostly sharpen audit infrastructure, formalization maps, and local
+  threshold evidence; none is promoted here as a deployed adjacent safe row.
+- **What to do next:** Review the mathematical claims before paper promotion,
+  especially the Q/BC/SP safe-side uses. Full verifier runs and Lean builds were
+  intentionally not run in this integration pass; only Python syntax, JSON
+  validity, and Lean `sorry`/`admit`/`axiom` marker scans were checked.
+
 ### 2026-07-09 - Asymptotic RS MCA closed-ledger proof paper
 
 - **Agent/model:** Codex.

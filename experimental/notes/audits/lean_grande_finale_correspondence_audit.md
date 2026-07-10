@@ -5,9 +5,8 @@ Status: `AUDIT` (textual Lean↔tex correspondence over 112 declarations at
 `Frontier.lean`, 78 declarations, zero discrepancies) / `DRIFT-FOUND` (§3 —
 `QEntropyInverse.lean` + `QFourierTao.lean` cite labels and a manuscript file
 that exist nowhere in the repo; the underlying math is real and retargeted
-below) / `WEAKER-THAN-STATED` (§4 — `SP.lean`'s `sp_from_q` / `sp_from_q_normalized`
-state a bound provably weaker than their own proof establishes; fix
-recommended, not applied).
+below) / `WEAKER-THAN-STATED` at the audited snapshot (§4 — subsequently
+resolved by the finite-Q correspondence follow-up).
 
 **Motivation.** The maintainer's `2026-07-08` agents-log entry for
 `b99b2c4` ("Grande Finale Lean package normalization") names this as the next
@@ -19,12 +18,20 @@ step, verbatim:
 
 This note discharges the audit half. The extension half is scoped in §7.
 
+**2026-07-09 follow-up.**
+`experimental/notes/audits/lean_grande_finale_finite_q_tables.md` records the
+kernel-checked finite-table extension and the applied Q-to-SP repair.  The
+112-row census and headline counts below remain the baseline audit at
+`b99b2c4`; the new 10-declaration table module is tracked separately.  The SP
+summary-row arithmetic is corrected here from the original inconsistent
+`16 F / 2 D` rendering to `15 F / 3 D`.
+
 ## 0. Scope `AUDIT`
 
-- **Textual only.** `lake build` was **not** run. The package requires a
-  Mathlib-pinned toolchain that is unavailable here, and the package's own
-  `README.md` / `FORMALIZATION_SUMMARY.md` forbid casual builds. Every verdict
-  is from reading `.lean` and `.tex` side by side. No proof was kernel-checked.
+- **Baseline audit textual only.** `lake build` was **not** run for the
+  `b99b2c4` audit. Every baseline verdict is from reading `.lean` and `.tex`
+  side by side.  The 2026-07-09 follow-up was separately kernel-checked with
+  the exact pinned Lean/Mathlib environment; see the follow-up note.
 - **`native_decide` constants** were cross-checked by hand against the tex's
   printed decimals (all 12 match, §6). They were **not** re-executed.
 - Per-claim status labels throughout: **F** FAITHFUL, **D** DRIFT (label or
@@ -40,7 +47,7 @@ This note discharges the audit half. The extension half is scoped in §7.
 | `GrandeFinale.lean` | 39 | all F — `VERIFIED-CLEAN` |
 | `GrandeFinale/BC.lean` | 25 | all F — `VERIFIED-CLEAN` (`conj:BC` in file header only) |
 | `GrandeFinale/Frontier.lean` | 14 | all F — `VERIFIED-CLEAN` (phantom sibling file in header only) |
-| `GrandeFinale/SP.lean` | 19 | 16 F, 1 S (`prefix_rigidity`), 2 D+W (`sp_from_q`, `sp_from_q_normalized`) |
+| `GrandeFinale/SP.lean` | 19 | 15 F, 1 S (`prefix_rigidity`), 3 D (`pair_census_le_of_max_fiber`, `sp_from_q`, `sp_from_q_normalized`); the latter two also W |
 | `GrandeFinale/QEntropyInverse.lean` | 5 | all D — `DRIFT-FOUND`, systemic |
 | `GrandeFinale/QFourierTao.lean` | 5 | all D — `DRIFT-FOUND`, systemic |
 | `GrandeFinale/QPrimitiveCollision.lean` | 5 | 5 N — honest; file header phantom |
@@ -113,7 +120,7 @@ header only** (it too names `q_fourier_tao_finish_patch.tex` and
 at the theorem level; they describe themselves against the informal six-step
 `rem:entropy-inverse-skeleton` sketch or against `SP.prefix_rigidity`.
 
-## 4. `WEAKER-THAN-STATED` — `SP.lean` `sp_from_q` / `sp_from_q_normalized`
+## 4. `WEAKER-THAN-STATED` at baseline — resolved in the follow-up
 
 This is the one non-cosmetic finding. Both theorems state a conclusion
 **strictly weaker** than what their own proof establishes.
@@ -128,27 +135,20 @@ This is the one non-cosmetic finding. Both theorems state a conclusion
 - The header cites `` `conj:Q` ``, `` `conj:SP` ``, `` `thm:asymptotic` `` —
   all phantom. The real label `thm:q-implies-sp` is cited **nowhere** in `SP.lean`.
 
-**Recommended fix (RECOMMENDED, NOT APPLIED here).** Tighten the stated
-conclusion to the sharp form the proof already produces, and retarget the
-citation:
+**Applied follow-up.** The statement is tightened to the sharp form the proof
+already produced, and its citation is retargeted:
 
 ```
     ∑ z ∈ s, f z * (f z - 1) ≤ RQ * (Nsub ^ 2 / Bw) - Nsub
 ```
 
-with the docstring citing `thm:q-implies-sp` (tex L1889) in place of the three
-phantom labels; propagate the same `- Nsub` tightening through
-`sp_from_q_normalized`. Not applied in this packet: a statement change forces
-kernel re-elaboration, and no Mathlib-pinned build environment is available
-(the package `README.md` forbids casual builds). The numeric gap is negligible
-at the deployed rows (`Nsub ≪ Nsub² / Bw` per `prop:proper-q-gap`), but it is a
-real mismatch against the literal printed statement. `pair_census_le_of_max_fiber`
-shares the same phantom section header (`D`), but its content is faithful.
+The docstrings now cite `thm:q-implies-sp` (tex L1889), and
+`sp_from_q_normalized` retains the corresponding `- Bw/Nsub` term.  The full
+exact-pin build succeeds.  `pair_census_le_of_max_fiber` is now under the same
+real-label section header; its content was already faithful.
 
-`SP.lean`'s top-of-file module docstring never mentions the Q⟹SP section at
-all, though that section is ~70 lines of the file — an independent
-documentation-drift symptom consistent with the section being bolted on after
-the header was last edited.
+`SP.lean`'s top-of-file module docstring now includes the sharp Q⟹SP inequality
+and cites the real manuscript label.
 
 `prefix_rigidity` (`S`, STRONGER-THAN-TEX) is a separate, honest item: the tex
 states rigidity for two `m`-subsets; the Lean docstring explicitly notes the
@@ -161,11 +161,13 @@ omitted." A flagged generalization, not drift.
 grep -rnE '\bsorry\b|\badmit\b|\baxiom\b' experimental/lean/grande_finale --include=*.lean
 ```
 
-**Zero matches** across all 8 files (`GrandeFinale.lean`, `Main.lean`, and the
-six `GrandeFinale/*.lean` modules). No `sorry`, no bare `admit`, no custom
-`axiom`. 12 declarations use `native_decide` (a trusted computational-reflection
-tactic, distinct from `sorry`, but a different trust boundary than pure term
-reduction). The 12 numeric claims are cross-checked in §6.
+**Zero matches** across the original 8 files (`GrandeFinale.lean`, `Main.lean`,
+and the six original `GrandeFinale/*.lean` modules).  The follow-up scan covers
+9 files after adding `QFiniteTables.lean` and also has zero matches.  No
+`sorry`, no bare `admit`, no custom `axiom`.  The baseline has 12 declarations
+using `native_decide`; the follow-up adds 9 table certificates, for 21 total.
+The 12 baseline numeric claims are cross-checked in §6, and the finite-Q values
+are recorded in the follow-up note.
 
 ## 6. `native_decide` numeric constants — 12 / 12 match the tex `AUDIT`
 
@@ -194,12 +196,15 @@ excluded from the digit cross-check.
 Substantive tex results within the package's scope with no Lean counterpart.
 Survey-only / analytic items expected to stay unformalized are listed last.
 
-1. **`prop:q-moment-order-floor` / `prop:q-exact-target` (L2061–2118)** — the
+1. **RESOLVED AS A PINNED-TABLE FOLLOW-UP:**
+   **`prop:q-moment-order-floor` / `prop:q-exact-target` (L2061–2118)** — the
    finite row-sharp Q constant tables (moment-order floors
    `94196` / `94991` / `641593` / `680397`; bit margins
    `22.1969` / `22.0109` / `3.2589` / `3.0730`). Trivial `native_decide`
    arithmetic, the cheapest gap, and the maintainer's stated "finite row-sharp
-   Q constants" frontier.
+   Q constants" frontier.  `QFiniteTables.lean` now certifies the table
+   transcription and integer arithmetic.  The logarithm/binomial derivation
+   remains explicitly outside its proof boundary.
 2. **`thm:gf-deep-mca` / `prop:exact-tangent-cell` / `thm:gf-mca-from-ca` /
    `thm:subfield-confinement` (L434–546)** — four self-contained combinatorial
    "broad safe anchor" theorems, same elementary Hamming-distance style already
@@ -208,9 +213,11 @@ Survey-only / analytic items expected to stay unformalized are listed last.
 3. **`thm:head-flatness` / `cor:head-q` (L1095–1150)** — the proved Weil-bound
    partial progress toward Q (`w ≤ 21–22` unconditional). The maintainer's
    "extend toward the Q inverse theorem" frontier.
-4. **`thm:q-implies-sp` / `prop:q-sp-frontier-closure` (L1889–1925, L2277–2295)**
-   — nearly covered; the §4 `sp_from_q` tightening + citation fix closes it
-   almost for free.
+4. **PARTIALLY RESOLVED:** **`thm:q-implies-sp` /
+   `prop:q-sp-frontier-closure` (L1889–1925, L2277–2295)** — the §4
+   `sp_from_q` tightening and citation fix are applied and kernel-checked.  A
+   separately named Lean counterpart of the asymptotic frontier proposition
+   remains absent.
 5. **`prop:lattice-split` (L1336–1348)** — the `(W,N)`-module bijection under
    the whole BC program. `BC.lean` currently black-boxes it via an assumed
    injective map (`bc_dimension_bound`'s `hφ : Set.InjOn φ census`); formalizing
@@ -226,7 +233,7 @@ Reasonable to skip (need heavy external input): `thm:no-old-band` (Linnik),
 `§Conditional Asymptotic Closure` chain (asymptotic; its antecedent
 `prob:entropy-inverse-q` is the central open problem, honestly left open).
 
-## 8. Full 112-row correspondence table
+## 8. Full 112-row baseline correspondence table
 
 Legend: **F** FAITHFUL, **D** DRIFT, **S** STRONGER, **W** WEAKER,
 **N** NO-TEX-COUNTERPART.

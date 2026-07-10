@@ -1,0 +1,90 @@
+{
+  "schema": "cap25-v13-m31-signed-em-inverse-v1",
+  "status": "PARTIAL: reformulation transfers to the M31 Chebyshev domain + one new proved structural lemma (Chebyshev-fold self-similarity) + faithful-toy measurements + exact dead-route margins; the inverse bound itself stays OPEN (the crux). No counterexample found at faithful toys.",
+  "object": "The signed-e_m max-fiber inverse at the binding Mersenne-31 list deployed row (a_+ = 1116023), viewed on its ACTUAL domain -- the Chebyshev / twin-coset (norm-one torus), NOT a multiplicative subgroup mu_n. Target: PR(Rhat) <= nu*_ref ~ 55, equivalently (STAR): sum_{t!=0}|e_m(v_t)| <= (K-1) C(n,a_+). Rhat(t)=e_m(v_t), v_t=(e_p(f_t(x)))_{x in D}, f_t(x)=sum_{i=1}^w t_i x^i, D the M31 Chebyshev domain.",
+  "binding_row_M31_list": {
+    "p": 2147483647,
+    "p_formula": "2^31 - 1 (Mersenne-31 prime, p = 3 mod 4)",
+    "n": 2097152,
+    "K_listdim": 1048576,
+    "a_plus": 1116023,
+    "w": 67447,
+    "m": 981129,
+    "avg_ceil": 1993678,
+    "avg_ceil_formula": "ceil(C(n,a_+) / p^w)",
+    "Bstar": 16777215,
+    "Bstar_formula": "floor((2^31-1)^4 / 2^100) = 2^24 - 1",
+    "budget_ratio_K": 8.415207972400760,
+    "budget_ratio_K_formula": "B* / ceil(avg) = 16777215 / 1993678",
+    "bit_margin_DeltaQ": 3.072998926581202,
+    "log2_ndir": 2090856.99995,
+    "log2_ndir_formula": "log2(p^w - 1); ~ w*log2(2^31-1)",
+    "source": "grande_finale.tex prop:q-exact-target (L2061; Mersenne-31 list row); cap25_v13_m31_chebyshev_fixed_remainder_floor.md (constants + Domain correction); cap25_v13_qfin_rung_audit_m31.md (Chebyshev/circle geometry)"
+  },
+  "target_nu_ref": {
+    "nu_ref": 54.98530927395577,
+    "nu_ref_formula": "(K-1)^2 at the Gamma2-1 = 1 reference (K = B*/ceil(avg))",
+    "log2_nu_ref": 5.780974312276492,
+    "reading": "row-sharp Q at M31-list FOLLOWS once the signed-e_m spectrum has effective (Fourier) support at most ~55 directions out of 2^2090857, calibrated by its own L^2 energy. The sharpest, most concrete standalone (STAR)-route target in the program.",
+    "caveat": "nu_ref is the Gamma2-1 = 1 REFERENCE; the true budget is nu* = (K-1)^2/(Gamma2-1), sufficient whenever true Gamma2-1 <= 1. nu_ref is the RAW-spectrum target; the masked-residual variant PR(E_Q on P_Q) (O416) is the tighter, and at M31 the raw route is potentially overstrong (masked-residual audit)."
+  },
+  "four_row_nu_ref_context": [
+    {"row": "KoalaBear MCA",  "a_plus": 1116048, "w": 67471, "K": 4807520.9295, "log2_nu_ref": 44.394, "log2_ndir": 2090837.54, "domain": "multiplicative coset alpha*mu_n < F_p^*"},
+    {"row": "KoalaBear list", "a_plus": 1116047, "w": 67471, "K": 4226236.5253, "log2_nu_ref": 44.022, "log2_ndir": 2090837.54, "domain": "multiplicative coset alpha*mu_n < F_p^*"},
+    {"row": "Mersenne-31 MCA",  "a_plus": 1116024, "w": 67447, "K": 9.5722, "log2_nu_ref": 6.199, "log2_ndir": 2090857.00, "domain": "Chebyshev / twin-coset (norm-one torus)"},
+    {"row": "Mersenne-31 list", "a_plus": 1116023, "w": 67447, "K": 8.4152, "log2_nu_ref": 5.781, "log2_ndir": 2090857.00, "domain": "Chebyshev / twin-coset (norm-one torus)", "binding": true}
+  ],
+  "dead_route_margins_M31_list": {
+    "L2_pw2_floor_bits": 1045425.61,
+    "L2_pw2_floor_formula": "(w/2)*log2(p) - log2(K-1); trivial-(full-)support Cauchy-Schwarz on the spectrum",
+    "half_w_log2_p": 1045428.5,
+    "Linf_perdirection_bits": 2090854.11,
+    "Linf_perdirection_formula": "log2(p^w-1) - log2(K-1); a uniform |e_m|/C <= beta* must beat beta*=(K-1)/(p^w-1)",
+    "note": "Both routes DEAD at the M31-list row (even deader than KB: KB L2 floor 1045396.58, KB L-inf 2090815.35). The win can come only from sparsity (effective support) + cancellation -- the participation-ratio target -- not from any single-direction or second-moment inequality."
+  },
+  "reduction": {
+    "statement": "(STAR)  <=>  PR(Rhat) <= nu* := (K-1)^2/(Gamma2-1).",
+    "derivation": "Divide (STAR)^2 by the fixed number ||Rhat||_2^2 = C^2(Gamma2-1) (Parseval, prop:fourier-audit). PR(Rhat) = ||Rhat||_1^2/||Rhat||_2^2 is the Fourier participation ratio = effective spectral support size.",
+    "domain_agnostic": true,
+    "note": "This equivalence is pure algebra on the spectrum and holds for ANY domain D, including the M31 Chebyshev twin-coset. Imported from cap25_v13_q_em_inverse_participation_ratio.md (integrated e83962ae, was PR #414); re-verified here at the M31 domain via faithful-toy Parseval."
+  },
+  "chebyshev_fold_lemma": {
+    "name": "Chebyshev-fold self-similarity (the faithful M31 analog of the packet's mu_n lemma L2)",
+    "statement": "If f_t is constant on the T_c-fibers of the M31 Chebyshev domain D (c | n; i.e. f_t(x) = g(T_c(x)) as a function on D), then T_c is exactly c-to-1 on D, the value multiset {f_t(x): x in D} is c copies of {g(y): y in D_c=T_c(D)}, and e_m(v_t) = [T^m]( E_g(T) )^c, E_g(T)=prod_{y in D_c}(1 + T e_p(g(y))) = sum_j e_j(w_g) T^j.",
+    "status": "PROVED (elementary; uses only that the T_2-tower is exactly 2-to-1, which the twin-coset construction guarantees) -- toy-verified to 2e-14 over 960 c=2 quotient directions at p=31,n=8.",
+    "contrast_with_mu_n": "The mu_n packet used x->x^c (multiplicative). At M31 the self-similarity is the Dickson/Chebyshev map T_c, and the clean descent identity lives in the CHEBYSHEV basis, not the monomial basis (ordinary power sums p_i do not vanish off multiples of c for a symmetric M -- cap25_v13_qfin_rung_audit_m31.md, identity (*_T)). The fiber-count identity is basis-independent (invertible triangular change of basis, char > w)."
+  },
+  "faithful_toy_measurements": {
+    "note": "Exhaustive enumeration, stdlib-only, ulimit -v 2097152. The Chebyshev toy is the x-projection of a standard-position twin coset gH U g^{-1}H (chi = Re, 2-to-1) of a 2-power subgroup of the circle group over F_{p^2}, p = 2^e - 1 a small Mersenne prime -- the exact toy analog of the deployed row (p'+1 = 2^31 a pure 2-group). Chebyshev T_2-tower verified n, n/2, ..., 1.",
+    "faithful_regime_avg_gg_1": {
+      "chebyshev": {"p": 127, "n": 16, "m": 8, "w": 1, "avg": 101.339, "R_true": 1.3026, "Gamma2_minus_1": 0.0109, "L1_over_C": 0.4298, "max_e_over_C": 0.04459, "PR": 16.941, "ndir": 126, "prim_share": 1.000, "raw_PR_le_nu_ref": true, "L1_le_Km1": true, "R_le_K": true},
+      "multiplicative_mu_n_reference": {"p": 97, "n": 16, "m": 8, "w": 1, "avg": 132.68, "R_true": 1.4923, "Gamma2_minus_1": 0.0137, "L1_over_C": 0.5302, "max_e_over_C": 0.02914, "PR": 20.50, "source": "cap25_v13_q_em_inverse_participation_ratio.md Sec.5 (was PR #414)"},
+      "reading": "In the deployment-faithful (avg >> 1, w=1) regime the Chebyshev domain behaves essentially like the multiplicative domain: sparse spectrum (PR ~ 17 << 55 = nu_ref), raw (STAR) satisfied with large room (L1/C ~ 0.43 << 7.42 = K-1), atom easily holds (R ~ 1.30 << 8.42 = K). The inverse is almost certainly TRUE at M31-list; the wall is proof-method (consistent with kappa <= 1.221, O407)."
+    },
+    "offset_robustness": {"p": 127, "n": 16, "m": 8, "w": 1, "goffsets": [1, 3, 5, 7], "L1_over_C": [0.4298, 0.3980, 0.3980, 0.4298], "PR": [16.941, 16.416, 16.416, 16.941], "note": "faithful measurement is robust across twin-coset offsets; not a single-coset artifact."},
+    "non_faithful_avg_ll_1_rows": [
+      {"p": 31, "n": 8, "m": 4, "w": 2, "avg": 0.073, "R_true": 27.457, "Gamma2_minus_1": 13.121, "L1_over_C": 73.515, "PR": 411.90, "prim_share": 0.905},
+      {"p": 127, "n": 16, "m": 8, "w": 2, "avg": 0.798, "R_true": 10.026, "Gamma2_minus_1": 1.530, "L1_over_C": 46.825, "PR": 1432.68, "prim_share": 0.922}
+    ],
+    "falsification_guard": "Near-bound / above-bound spikes (raw PR > nu_ref, L1/C > K-1) occur ONLY in the avg << 1 regime, where the ATOM ITSELF fails (R > K) -- so they are not counterexamples to inverse => atom, and not the deployment regime. The primitive stratum carries 90-98% of the L^1 mass in every w>=2 Chebyshev toy (faithful analog of the mu_n packet's 83-93%), so the wall is the PRIMITIVE spectrum, exactly as at KB. No near-nu_ref primitive spike without the conjectured (approximately-quotient) structure was found in the faithful regime."
+  },
+  "verdict": "PARTIAL. Established at the M31 Chebyshev domain: (1) target statement + provenance; (2) exact reproduction of nu_ref = 2^5.781 ~ 55; (3) the (STAR) <=> PR <= nu* reduction (transfers, domain-agnostic); (4) L1 value-distribution reduction (general); (5) NEW Chebyshev-fold self-similarity lemma (PROVED, toy-verified); (6) the L^2 (p^{w/2}) floor and L-infinity per-direction routes DEAD with exact M31 margins (1045425.61 / 2090854.11 bits); (7) faithful-toy instrumentation showing the inverse holds with large room and behaves like the mu_n domain. OPEN (the crux): the bound PR <= nu_ref itself. No counterexample at faithful toys.",
+  "obstruction": "The finite-row primitive effective-support bound on the Chebyshev value-sequence (f_t(x))_{x in D}: the M31/Chebyshev counterpart of the open structural steps 4-6 of prob:entropy-inverse-q's rem:entropy-inverse-skeleton (entropy-BSG -> PFR/Green-Ruzsa -> slice-derivative, or the free-energy decay alternative), now with the Dickson/Chebyshev self-similarity in place of the multiplicative one. No single-direction (L-infinity) or second-moment (L^2) inequality can reach it (both dead by > 10^6 bits at this row).",
+  "nonclaims": [
+    "does NOT prove U(1116023) <= B* or any deployed safe row",
+    "does NOT close prob:row-sharp-q (grande_finale.tex L2177) or def:q-row-atom (L2043)",
+    "does NOT prove the signed-e_m inverse / PR <= nu_ref at M31-list (the crux stays OPEN)",
+    "does NOT touch DannyExperiments' CAP25-V13-M31-C1024-PAIRED-PREFIX-PRIMITIVE-Q object (his; a different route)",
+    "the faithful toys are all w=1 (only way to reach avg >> 1 at small n,p); deployment has w=67447 -- the toy evidence is w=1 evidence, honestly extrapolated, exactly as in the mu_n packet"
+  ],
+  "provenance": {
+    "parent_participation_ratio": "experimental/notes/thresholds/cap25_v13_q_em_inverse_participation_ratio.md (integrated e83962ae, was PR #414): the (STAR)<=>PR<=nu* reduction and the four-row nu_ref table (mu_n structural lemmas + toys).",
+    "parent_concentration_floor": "experimental/notes/thresholds/cap25_v13_q_pw2_concentration_floor.md (integrated e83962ae, was PR #412): the p^{w/2} second-moment floor (crux named there).",
+    "masked_residual_audit": "experimental/notes/thresholds/cap25_v13_signed_em_masked_residual_audit.md (was PR #413): (STAR) is sufficient but possibly overstrong; the masked E_Q on P_Q is the tighter variant.",
+    "eq_masked_participation": "experimental/notes/thresholds/cap25_v13_q_eq_masked_participation_ratio.md (was PR #416) + cap25_v13_liftclass_cost_model_refuted.md (was PR #417): the M31 masked route (tau=0.4107) is conditional on an unpaid lift-class removal, which #417 refutes.",
+    "m31_domain": "experimental/notes/thresholds/cap25_v13_qfin_rung_audit_m31.md and experimental/notes/thresholds/20260709_m31_chebyshev_fixed_remainder_floor/cap25_v13_m31_chebyshev_fixed_remainder_floor.md: the Chebyshev/circle domain correction and the T_c fold. cap25_cap_v13_raw.tex sec:circle-geometry, thm:fiber-descent, lem:cheb-fibers.",
+    "barrier_map": "experimental/notes/thresholds/cap25_v13_route_d_barrier_map.md (open PR #431, thresholds-route-d-barrier-map): node O414 / M31-list single-lemma frontier item #1 -- this packet fills in that node's Chebyshev-domain content.",
+    "hughes_identity": "the Fourier identity E(t)=e_m(v_t) is Hughes's observation (PR #397 thread); consumed as provenance, re-verified Parseval-exact.",
+    "danny_chebyshev": "DannyExperiments PRs #424/#426 (M31 moment-order + Chebyshev fixed-remainder floors); his C1024 paired-prefix object is untouched."
+  }
+}

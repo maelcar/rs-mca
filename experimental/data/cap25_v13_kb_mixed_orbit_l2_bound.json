@@ -1,0 +1,78 @@
+{
+  "claims": {
+    "is_counterexample": false,
+    "proves_deployed_mixed_orbit_bound": false,
+    "proves_exact_mixed_l2_energy_for_toy_cosets": true,
+    "proves_masked_transfer": false,
+    "proves_mixed_orbit_l1_bound_for_toy_cosets": true,
+    "proves_raw_signed_em_inverse": false
+  },
+  "coset_check": {
+    "all_coordinate_permutations_match": true,
+    "distinct_cosets": 3,
+    "per_coset_match": [
+      true,
+      true,
+      true
+    ]
+  },
+  "date": "2026-07-10",
+  "deployed_reference": {
+    "a_plus": 1116048,
+    "n": 2097152,
+    "p": 2130706433,
+    "subgroup_index": 1016
+  },
+  "exact": {
+    "all_fibers_nonempty": true,
+    "fiber_max": 43498834049408,
+    "fiber_min": 43498831840209,
+    "fiber_sum": 1620288010530347424,
+    "first_marginal_sum_squares": 13602762886364721475463424200166976,
+    "joint_sum_squares": 70480636716915656666898335657184,
+    "linear_nonzero_energy": 488790592,
+    "mixed_energy": 50213717213843458304,
+    "mixed_energy_share": {
+      "decimal": "9.958918185750092300E-1",
+      "denominator": 1575651726085969095,
+      "numerator": 1569178662932608072
+    },
+    "mixed_l1_over_C_bound_ceiling": {
+      "decimal": "0.000000839692349898",
+      "scale": 1000000000000000000,
+      "units": 839692349898
+    },
+    "mixed_l1_over_C_bound_squared": {
+      "decimal": "7.050832424755927189E-13",
+      "denominator": 284866887702733424996141587472161,
+      "numerator": 200854868855373833216
+    },
+    "quadratic_nonzero_energy": 207138020418762144,
+    "second_marginal_sum_squares": 13602762886364721476536678189441440,
+    "subset_count": 1620288010530347424,
+    "total_nonzero_energy": 50420855234751011040
+  },
+  "packet": "cap25_v13_kb_mixed_orbit_l2_bound",
+  "parameters": {
+    "coset_representatives": [
+      1,
+      5,
+      25
+    ],
+    "m": 30,
+    "mixed_modes": 36864,
+    "mixed_twist_orbits": 576,
+    "n": 64,
+    "p": 193,
+    "primitive_root": 5,
+    "subgroup_index": 3,
+    "twist_orbit_size": 64,
+    "w": 2
+  },
+  "status": {
+    "deployed_transfer": "OPEN",
+    "interpretation": "ANALYSIS",
+    "mixed_orbit_bound": "PROVED",
+    "toy_replay": "MEASURED"
+  }
+}

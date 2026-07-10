@@ -1,0 +1,92 @@
+{
+  "schema": "cap25-v13-kb-signed-em-scaled-toy-audit-v1",
+  "status": "AUDIT/MEASURED",
+  "deployed_kb_mca_reference": {
+    "p": 2130706433,
+    "n": 2097152,
+    "k": 1048576,
+    "a_plus": 1116048,
+    "m": 981104,
+    "w": 67471,
+    "Bstar": 274980728111395087,
+    "t_times_p_reservation": 143763024447376,
+    "Brem": 274836965086947711,
+    "avg_floor": 57198030365,
+    "avg_ceil": 57198030366,
+    "Kraw_floor": 4807520,
+    "Krem": 4805007,
+    "target_floor": 274836936291722953,
+    "nu_ref": 23088082660036,
+    "primitive_orbit_budget_num": 5772020665009,
+    "primitive_orbit_budget_den": 524288,
+    "primitive_orbit_budget": 11009255.723970413,
+    "primitive_orbit_budget_log2": 23.392213603628644
+  },
+  "fourier_orbit_corollary": {
+    "status": "PROVED",
+    "statement": "For the raw full-family signed-e_m spectrum on D=alpha*mu_n, E((h^i t_i)_i)=E(t). On the primitive mode stratum every orbit has length n, hence PR(Rhat_prim)=n*PR(orbit amplitudes).",
+    "novelty_scope": "Fourier-side participation-ratio specialization of the existing twist-orbit constancy/moment machinery; not a new discovery of twist symmetry.",
+    "masked_caveat": "The same factorization for a masked residual requires the mask to be stable under M->hM. No such invariance is asserted for the current first-match residual."
+  },
+  "scaled_toy": {
+    "p": 193,
+    "n": 64,
+    "m": 30,
+    "w": 2,
+    "subgroup_index": 3,
+    "C": 1620288010530347424,
+    "frequency_space": 37249,
+    "nonzero_modes": 37248,
+    "avg": 43498832466115.796875,
+    "log2_avg": 45.306041912,
+    "fiber_min": 43498831840209,
+    "fiber_max": 43498834049408,
+    "Rmax": 1.000000036398,
+    "Gamma2_minus_1": 1.92055067611e-17,
+    "L1_over_C": 5.9246e-8,
+    "PR": 182.765769449915,
+    "normalized_PR": 0.004906727058,
+    "primitive_PR": 169.819296027248,
+    "primitive_orbit_PR": 2.653426500426,
+    "primitive_L1_share": 0.961949273138,
+    "triangle_over_true_max": 1.000000022848,
+    "orbit_count": 585,
+    "primitive_orbit_count": 579,
+    "quotient_orbit_count": 6
+  },
+  "mode_classification": {
+    "linear": {
+      "L1_share": 0.000002278292,
+      "L2_share": 1.0e-11
+    },
+    "mixed_primitive": {
+      "L1_share": 0.961946994846,
+      "L2_share": 0.995891818575
+    },
+    "quadratic_quotient": {
+      "L1_share": 0.038050726862,
+      "L2_share": 0.004108181415
+    },
+    "top_two_mixed_orbits_L2_share": 0.993360183338
+  },
+  "mass_concentration": [
+    {"fraction": 0.50, "L1_orbits": 2, "L1_modes": 128, "L2_orbits": 2, "L2_modes": 128},
+    {"fraction": 0.90, "L1_orbits": 6, "L1_modes": 352, "L2_orbits": 2, "L2_modes": 128},
+    {"fraction": 0.99, "L1_orbits": 52, "L1_modes": 3232, "L2_orbits": 2, "L2_modes": 128}
+  ],
+  "scope_limits": {
+    "deployed_subgroup_index": 1016,
+    "geometry_faithful": false,
+    "finite_space_sanity_is_automatic": true,
+    "reason": "The toy has only 37248 nonzero modes, already below the deployed nu_ref=23088082660036. It tests spectral shape, exact flatness, and the w>=2/avg>>1 regime; it cannot certify the deployed inverse."
+  },
+  "verdict": "AUDIT/MEASURED: #414 already states the KB inverse. This packet adds the exact Fourier-side primitive twist-orbit PR factorization and the first w>=2, avg>>1 density/prefix-depth scaled KB subgroup toy. The toy is strongly flat and spectrally sparse, but its mass is mixed-primitive rather than monomial-led. The deployed signed-e_m inverse remains OPEN.",
+  "next_atomic_statement": "After quotient routing, bound the participation ratio of the heavy primitive mixed twist-orbit amplitudes by at most 5772020665009/524288 at the Gamma2-1=1 reference, with an explicit compatible budget for any quotient contribution and with mask invariance proved if the masked residual is used.",
+  "nonclaims": [
+    "does not prove U(1116048) <= Bstar or any deployed adjacent safe row",
+    "does not prove the raw or masked signed-e_m inverse at the deployed KB-MCA row",
+    "does not refute the monomial-collapse lemma; mixed-mode dominance is measured only at p=193,n=64,m=30,w=2",
+    "does not transfer the toy across subgroup index 3 to deployed index 1016",
+    "does not assert dual twist-orbit invariance for a first-match mask unless that mask is proved twist-stable"
+  ]
+}
