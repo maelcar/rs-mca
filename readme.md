@@ -13,7 +13,11 @@ The repo is meant for people and AI agents who want to help turn that corrected 
 
 ## Repository contents
 
-The core repo consists of four main papers, one prize-facing theorem note, and two guide files. .tex versions are in tex folder, .pdf are in the root folder and Python scripts for heuristics are in scripts folder.
+The core repo consists of four main papers, one prize-facing theorem note, one
+experimental asymptotic submission draft, and two guide files. `.tex` versions
+of the main papers are in `tex/`, experimental manuscripts are in
+`experimental/`, and Python scripts for heuristics and certificates are in
+`scripts/` or `experimental/scripts/`.
 
 | File | Short name | Role |
 |---|---|---|
@@ -22,6 +26,7 @@ The core repo consists of four main papers, one prize-facing theorem note, and t
 | `cs25_cap_v12.tex` | **Paper D: two-sided cap, safe-side pincer, and certificate grammar** | This is the main Proximity Prize submission reference. It keeps the self-contained cap route and adds the safe-side pincer, deployed-row two-sided intervals, map/rational smooth extensions, circle/genus-one transports, explicit witness machinery, optimized failure profile, and certificate grammar v2. |
 | `snarks_v5.tex` | **Paper C: SNARK ledger** | Turns the corrected theory into a protocol-facing certificate and adds a theorem-backed high-agreement ledger compiler for line/list/curve coding numerators. |
 | `towards-prize.tex` | **Towards Prize: sparse threshold note** | Compact prize-facing note. It packages the `delta^*` staircase viewpoint, deployed KoalaBear pincer, and the new sparse residual reduction `emca = max(eca, sigma_C/q)` into the current execution target. |
+| `experimental/asymptotic_rs_mca_frontiers.tex` | **Asymptotic RS--MCA Frontiers** | Current self-contained asymptotic submission draft. It consolidates exact finite-row geometry, profile-envelope compilers, quotient/remainder obstructions, Sidon/BSG primitive analysis, smooth/circle interfaces, finite certificate interfaces, and the remaining hard inputs. |
 | `README.md` | Repo overview | Explains what the papers do, how they depend on each other, and what the project is trying to prove. |
 | `AGENTS.md` | Research-agent guide | Gives AI agents and new contributors a prioritized list of proof targets, toy cases, scripts, and “do not confuse these” rules. |
 
@@ -81,15 +86,14 @@ delta = 15331/32768 ~= 0.467865.
 The remaining task is to close the open band below that edge, ideally by
 adjacent staircase certificates.
 
-The active experimental v13/grande-finale program splits this into two proof
-problems:
+The active experimental program now splits this into two proof problems:
 
 1. **Finite deployed one-step resolution.**  For each deployed row, prove an
    adjacent certificate `U(a0+1) <= B* < L(a0)`, where `L` is the exact unsafe
    staircase, `U` is the complete safe upper ledger, and `B*` is the integer
    challenge budget.  The unsafe side is supplied by exact certificate claims
-   in the v13 raw sources; the adjacent safe side still needs row-sharp `Q`,
-   finite BC chart-decomposition, and quotient/rung audits with constants.
+   in the v13/frontiers sources; the adjacent safe side still needs exact
+   constants for the complete upper ledger.
 2. **Asymptotic frontier resolution.**  Prove or refute the entropy-subfield
    envelope
 
@@ -97,9 +101,12 @@ problems:
    delta*_C(epsilon*) = 1 - rho - g*(rho, log2 |B|) + o(1).
    ```
 
-   Here polynomial or `e^{o(n)}` losses may be acceptable once the reserve is
-   larger than `O(log n)`, but they do not by themselves prove the finite
-   deployed adjacent rows.
+   The current self-contained draft is
+   `experimental/asymptotic_rs_mca_frontiers.tex`.  The remaining hard inputs
+   are: a witness-exhaustive first-match atlas; image-scale `MI` + `MA`, or a
+   direct Sidon payment; a residual ray compiler for higher-dimensional
+   balanced cores; complete profile-envelope comparison with the target; and
+   the lower reserve / unsafe-side comparison.
 
 These are protocol-relevant because many proximity/SNARK reductions have a soundness term schematically like
 
@@ -153,6 +160,10 @@ The version changes matter for the website and scanner as follows:
   role is to state the `delta^*` staircase problem compactly, record the
   deployed KoalaBear pincer, and reduce the remaining MCA task to the sparse
   residual layer plus CA/list certificates.
+- **`experimental/asymptotic_rs_mca_frontiers.tex`** is the current
+  self-contained asymptotic RS-MCA submission draft. It supersedes the earlier
+  `experimental/rs_mca_entropy_frontiers.tex` filename and should be the main
+  target for proof audit, Lean formalization, and clean write-up work.
 - **`experimental/rs_mca_proximity_prize_status.md`** is an experimental
   committee-facing status memo for the v12/v13 raw picture. It summarizes the
   entropy-subfield-envelope thesis, the current exact unsafe certificates, and
@@ -290,7 +301,7 @@ A rough status map:
 | Map/rational smooth, circle, and genus-one extensions | Proved in Paper D v12 under its stated model hypotheses; these are high-priority audit targets. |
 | Certificate grammar and printed deployed certificates | Stated in Paper D v12; every "verified exactly" inequality should have a reproducible script or printed integer certificate. |
 | Finite deployed adjacent threshold resolution | Open/experimental. v13 raw gives exact unsafe-side certificate claims; the adjacent safe side needs row-sharp `Q`, finite BC chart decomposition, and quotient/rung audits with constants. |
-| Asymptotic entropy-subfield envelope | Open. The target is `delta*_C(epsilon*) = 1 - rho - g*(rho, log2 |B|) + o(1)`; the main missing input is asymptotic `Q`/prefix-fiber flatness, with BC/SP handled or reduced in the grande-finale route. |
+| Asymptotic entropy-subfield envelope | Active submission draft in `experimental/asymptotic_rs_mca_frontiers.tex`. The remaining hard inputs are a witness-exhaustive first-match atlas, image-scale `MI` + `MA` or direct Sidon payment, residual ray compiler for higher-dimensional balanced cores, complete profile-envelope comparison with the target, and lower reserve / unsafe-side comparison. |
 | Generated-field locator local limit above all floors | Open. Main list-side positive theorem target. |
 | Corrected MCA / residue-line local limit above all floors | Open. Main MCA-side positive theorem target. |
 | Line-decoding formulation of corrected MCA | Open. Important for protocols. |
@@ -312,9 +323,11 @@ Good first contributions include:
 5. **Hankel certificates.** Use `scripts/aperiodic_eliminant_schema.json` to
    package exact-agreement eliminants, empty chart certificates, or named
    residual obstructions for the Paper D v12 certificate grammar.
-6. **Finite/asymptotic threshold work.** Attack row-sharp `Q`, finite BC
-   chart-decomposition, quotient/rung audits, or the asymptotic
-   entropy-subfield-envelope theorem.
+6. **Finite/asymptotic threshold work.** Attack the five current hard inputs:
+   witness-exhaustive first-match atlas; image-scale `MI` + `MA` or direct
+   Sidon payment; residual ray compiler for higher-dimensional balanced cores;
+   complete profile-envelope comparison with the target; and lower
+   reserve/unsafe-side comparison.
 7. **New bounds.** Attack the local-limit conjectures, interleaved-list constants, extension-line MCA, or domain-shattering alternatives.
 8. **Protocol rewrites.** Rewrite FRI, WHIR, or other proximity reductions in the exact ledger format of Paper C.
 

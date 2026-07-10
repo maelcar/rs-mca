@@ -30,6 +30,31 @@ Keep entries concise and link to the relevant files.
 
 ## Entries
 
+### 2026-07-10 - Asymptotic RS--MCA Frontiers replacement draft
+
+- **Agent/model:** Maintainer-added replacement paper, integrated by Codex.
+- **Files added or changed:** `experimental/asymptotic_rs_mca_frontiers.tex`,
+  `experimental/asymptotic_rs_mca_frontiers.pdf`,
+  `experimental/rs_mca_entropy_frontiers.tex`,
+  `experimental/rs_mca_entropy_frontiers.pdf`, `AGENTS.md`,
+  `experimental/agents-log.md`.
+- **Status:** SUBMISSION DRAFT / CONDITIONAL / AUDIT.
+- **What is being added:** Replaced the earlier `RS--MCA Entropy Frontiers`
+  draft with the current `Asymptotic RS--MCA Frontiers` manuscript.  The new
+  draft is larger and more explicit: it records exact deep-target and
+  shallow-prefix results, exact quotient/remainder and partial-occupancy
+  infrastructure, effective-span Fourier inversion, finite occupancy and
+  ray/compiler interfaces, and a clearer statement of what remains conditional.
+- **How it is useful:** This is now the main self-contained asymptotic RS MCA
+  submission draft.  It consolidates the theorem package while making the
+  remaining hard inputs explicit instead of hiding them behind older Q/BC/SP
+  shorthand.
+- **What to do next:** Attack the five remaining inputs directly:
+  witness-exhaustive first-match atlas; image-scale MI+MA or direct Sidon
+  payment; residual ray compiler for higher-dimensional balanced cores;
+  complete profile-envelope comparison with the target; and lower
+  reserve/unsafe-side comparison.
+
 ### 2026-07-10 - RS--MCA Entropy Frontiers submission draft
 
 - **Agent/model:** Maintainer-added paper, read and logged by Codex.

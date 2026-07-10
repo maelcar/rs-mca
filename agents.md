@@ -15,75 +15,90 @@ snarks_v5.tex           Paper C: SNARK / protocol ledger
 
 Use logical order **A → B → D → C** unless you are working specifically on protocol ledgers.
 
-## Current focus: asymptotic RS MCA proof
+## Current focus: self-contained asymptotic RS MCA submission
 
-The current compact proof target is:
-
-```text
-experimental/asymptotic_rs_mca.tex       compact asymptotic proof
-experimental/asymptotic_rs_mca.pdf       compiled proof note
-```
-
-This paper states the asymptotic RS-MCA threshold as the entropy-subfield
-frontier:
+The active submission draft is:
 
 ```text
-delta*_C(epsilon) = 1 - rho - g*(rho, log2 |B|) + o(1),
-g*(rho, beta) = sup { g : H2(rho + g) >= beta g }.
+experimental/asymptotic_rs_mca_frontiers.tex       self-contained frontiers paper
+experimental/asymptotic_rs_mca_frontiers.pdf       compiled frontiers paper
 ```
 
-In plain terms: the asymptotic threshold is where the entropy of agreement
-sets balances the number of base-field prefix constraints.  The proof uses the
-closed paid-ledger package from:
+This paper is the current place to work on the asymptotic RS-MCA submission.
+It replaces the older compact draft as the main experimental manuscript.  The
+older files remain useful for audit comparison:
 
 ```text
-experimental/cap25_cap_v13_raw.tex          long v13 working ledger
-experimental/grande_finale.tex              compact final-ledger note
-experimental/rs_mca_moduli_ledger_final.tex moduli/additive-combinatorics note
+experimental/asymptotic_rs_mca.tex       compact predecessor / audit reference
+experimental/cap25_cap_v13_raw.tex       long v13 working ledger
+experimental/grande_finale.tex           compact final-ledger note
 ```
 
-The proof strategy is now:
+The frontiers paper contains the current best theorem package: exact deep
+frontier results, shallow-prefix error exponents, quotient/remainder
+obstructions, partial-occupancy add-back, profile-envelope compilers,
+Sidon/BSG primitive analysis, smooth/circle interfaces, and finite certificate
+interfaces.
 
-1. organize all bad MCA lines into explicit structured cases;
-2. cite the v13 raw / Grande Finale results paying those cases;
-3. reduce the remaining primitive case to fixed-size subsets under a
-   Vandermonde moment map;
-4. split large fibers into Fourier/Sidon-heavy or high-energy cases;
-5. pay Fourier/Sidon-heavy cases by major-arc routing and Fourier flatness;
-6. rule out high-energy Boolean fibers by Balog--Szemeredi--Gowers plus
-   quasicube difference growth.
+The remaining hard inputs are still exactly:
 
-Agents should now treat `experimental/asymptotic_rs_mca.tex` as the active
-compact proof to formalize, audit, and polish.  Do not silently replace it with
-older Q/BC/SP language unless you are auditing a specific dependency.
+```text
+witness-exhaustive first-match atlas;
+image-scale MI + MA, or a direct Sidon payment;
+residual ray compiler for higher-dimensional balanced cores;
+complete profile-envelope comparison with the target;
+lower reserve / unsafe-side comparison.
+```
+
+Agents should treat those five items as the current proof checklist.  Work that
+does not reduce, audit, formalize, or falsify one of them is secondary.
+
+The expected submission strategy is:
+
+1. keep the exact finite-row and deep-frontier theorems self-contained;
+2. make every conditional compiler input visible in theorem statements;
+3. prove or explicitly assume the five hard inputs above;
+4. use the Sidon/Fourier split and BSG/quasicube argument only after the
+   image-scale MI/MA or direct Sidon payment is available;
+5. compare the complete profile envelope, not only the identity prefix term,
+   against the actual target and lower reserve.
+
+Do not silently replace this with older Q/BC/SP shorthand.  If Q/BC/SP language
+is useful, translate it into the current frontiers-paper vocabulary: image-scale
+MI/MA or Sidon payment, balanced-core residual ray compiler, and complete
+profile-envelope comparison.
 
 ## Highest priority now
 
-1. **Lean formalization.**  Formalize the asymptotic proof and its dependencies
+1. **Lean formalization.**  Formalize the frontiers paper and its dependencies
    under `experimental/lean/`.  Highest priority tracks are:
 
    ```text
+   experimental/asymptotic_rs_mca_frontiers.tex
    experimental/lean/grande_finale/
    experimental/lean/cap25_cap_v13_raw_compact/
    ```
 
-   Add a new package or module for `experimental/asymptotic_rs_mca.tex` only if
+   Add a new package or module for the frontiers paper only if
    it is integrated coherently under `experimental/lean/`.  The formalization
-   should cover the MCA staircase definition, first-match disjointization,
-   closed-ledger statement, primitive Boolean slice, moment-to-max equivalence,
-   Sidon split, BSG/quasicube step, Q-to-SP bound, and entropy-frontier
-   conclusion.
+   should prioritize the MCA staircase definition, exact deep-regime theorem,
+   syndrome-line incidence, first-match disjointization, profile-envelope
+   definitions, primitive Boolean slice, moment-to-max equivalence, Sidon split,
+   BSG/quasicube step, and target-aware threshold bracket.
 
 2. **Adversarial proof audit.**  Use independent LLM agents or human reviewers
    to attack the proof.  Assign them specific failure modes:
 
    ```text
-   missing cell in the bad-line classification
+   missing witness in the first-match atlas
+   incorrect image-scale normalization for MI/MA or Sidon payment
+   unsupported major-arc aggregate
+   residual higher-dimensional balanced core without ray compiler
+   incomplete profile-envelope comparison with the target
+   unsafe-side lower reserve not actually crossing the target
    incorrect first-match disjointization
    wrong field denominator or base/extension-field ledger
-   unsupported Fourier/Sidon payment
    misuse of BSG or quasicube growth
-   entropy-frontier algebra error
    mismatch between asymptotic proof and finite deployed rows
    ```
 
@@ -96,11 +111,11 @@ older Q/BC/SP language unless you are auditing a specific dependency.
    threshold.  These examples are for auditing and exposition, not for replacing
    the proof.
 
-4. **Clean write-up.**  Turn the compact experimental proof into the next clean
-   paper version.  The write-up should avoid internal shorthand where possible,
-   explain Reed--Solomon/MCA for external readers, cite the paid structured
-   cases by theorem labels, and separate asymptotic proof claims from finite
-   adjacent deployed claims.
+4. **Clean write-up.**  Polish `experimental/asymptotic_rs_mca_frontiers.tex`
+   as the self-contained submission paper.  The write-up should avoid internal
+   shorthand where possible, explain Reed--Solomon/MCA for external readers,
+   cite paid structured cases by theorem labels, and separate proved statements
+   from the five remaining hard inputs.
 
 Finite adjacent rows remain important, but they are now a separate constants
 and certificate project, not the main asymptotic proof bottleneck.
@@ -124,17 +139,16 @@ The project now has three different targets.  Keep them separate.
    targets, but more exact adjacent examples are useful when they stress-test
    the same Q/BC ledger and expose the constants.
 
-2. **Asymptotic frontier resolution.**  Formalize and audit the compact proof
+2. **Asymptotic frontier resolution.**  Formalize and audit the frontiers paper
 
    ```text
    delta*_C(epsilon*) = 1 - rho - g*(rho, log2 |B|) + o(1)
    ```
 
-   in `experimental/asymptotic_rs_mca.tex`.  The proof imports the closed paid
-   ledger from v13 raw / Grande Finale and then proves the primitive
-   combinatorial part using the Sidon/Fourier split, BSG, and quasicube
-   difference growth.  The main work is now Lean formalization, adversarial
-   audit, and clean exposition.
+   where the stated hypotheses permit that identity-dominant specialization.
+   The active manuscript is `experimental/asymptotic_rs_mca_frontiers.tex`.
+   The main work is proving, auditing, or clearly isolating the five hard inputs
+   listed above.
 
 3. **Protocol resolution.**  Feed the finite/asymptotic theorem into the Paper C
    ledger.  Generated field, line field, challenge field, list denominator,
@@ -179,22 +193,24 @@ The asymptotic theorem is:
 delta*_C(epsilon*) = 1 - rho - g*(rho, log2 |B|) + o(1).
 ```
 
-The compact proof in `experimental/asymptotic_rs_mca.tex` is the current source
-for this statement.  Finite deployed rows require exact constants and remain a
-separate certificate project.
+The frontiers paper in `experimental/asymptotic_rs_mca_frontiers.tex` is the
+current source for this statement and its limitations.  Finite deployed rows
+require exact constants and remain a separate certificate project.
 
 ## What counts as progress now
 
 Highest-value contributions are:
 
-1. Lean formalization of `experimental/asymptotic_rs_mca.tex` and its imported
-   v13 raw / Grande Finale dependencies;
-2. adversarial proof audits that try to break the closed-ledger package,
-   Fourier/Sidon payment, BSG/quasicube step, or entropy-frontier conclusion;
-3. a clean paper rewrite with theorem labels replacing informal references to
-   the v13 raw / Grande Finale ledgers;
-4. final computations and examples illustrating the bad-line classification,
-   primitive Boolean prefix fibers, and entropy threshold;
+1. Lean formalization of `experimental/asymptotic_rs_mca_frontiers.tex` and its
+   imported v13 raw / Grande Finale dependencies;
+2. adversarial proof audits focused on the five remaining hard inputs:
+   witness-exhaustive atlas, image-scale MI/MA or Sidon payment, residual ray
+   compiler, profile-envelope target comparison, and lower reserve;
+3. proofs, counterexamples, or exact certificate packets for any one of those
+   five inputs;
+4. final computations and examples illustrating bad-line moduli strata,
+   primitive Boolean prefix fibers, image-scale Fourier/Sidon cuts, and target
+   reserves;
 5. finite adjacent certificates for the deployed rows, with exact constants and
    replayable packets;
 6. only after the threshold theorem is stable, a Paper C protocol ledger
