@@ -178,6 +178,12 @@ quasicube growth, the low-energy/Sidon payment, a large-fiber-to-high-energy
 implication, max-fiber control, C9, an asymptotic `o(n)` estimate, a character
 frame theorem, or profile-atlas exhaustiveness.
 
+The companion note `boolean_energy_cubed_direct.md` now gives a self-contained
+mathematical proof of the weaker rational-power input
+`E(F)^3 <= |F|^8` consumed by `hsharp`.  The Lean declaration remains
+conditional until that proof is translated into the kernel; the sharper
+`log_2 6` exponent remains an external published theorem.
+
 ## Build and trust audit
 
 From `experimental/lean/asymptotic_spine/`:

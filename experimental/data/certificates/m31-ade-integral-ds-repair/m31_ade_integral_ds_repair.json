@@ -1,0 +1,450 @@
+{
+  "M31_consumer": {
+    "all_pass": true,
+    "boundary": {
+      "delivered_rank_gap": 15,
+      "eight_less_than_rho_0_less_than_17_over_2": true,
+      "fixed_parameter_application": "||zeta||^2<=rho(t)<=rho_0 for t>=t0",
+      "minimum_determinant_gap": 11,
+      "rank_floor": 2029720,
+      "rank_gap_margin": 4,
+      "rho_0_denominator": 70500333905,
+      "rho_0_numerator": 582731431936,
+      "rho_successive_difference_positive_numerator": 2296302859645353984
+    },
+    "classifier_band": "(2,t,t,2t), 277868<=t<=391731",
+    "counts": {
+      "classifier": 212697,
+      "grid": 3254885,
+      "new_exclusions": 113864,
+      "new_residual": 2987412,
+      "old_residual": 3101276
+    },
+    "role": "consumer/certificate pin only; PR #648 independently regenerated the census, while this verifier changes no classifier arithmetic",
+    "seven_unchanged_sha256": {
+      "base_integrated": "49576339b6755e90f6f1997b294bad5d178aa9bc5c25c44aab345d9ccefd99da",
+      "classifier": "4801bb6740b214cf90590eafa827437fbb6b04da899db970c5f799af74b4750f",
+      "new_exclusions": "b5f1a8c3d2916dd5077d641eef1dffcb2ae9385fd4707364a62ea37b01808a79",
+      "new_residual": "2dcc296964f1a131428baf100f2e5a1c6291c91778fe533655255a5b7e8dce35",
+      "new_union": "842d33d8258fd69c14f6b69ca3a9d5a8880df46225f142f0ea8cdd8daa5bb973",
+      "old_residual": "40925c2c5a3c3928a42f6d92775de87608c7e260bf3c3ff7eda36b5e02193956",
+      "old_union": "2f57a0a5379a4222869d4e6ab79aad39d7b352df6c0227996ab2da7ec10483a4"
+    }
+  },
+  "address_space_cap_bytes": 1073741824,
+  "all_pass": true,
+  "all_rank_symbolic_envelope": {
+    "all_pass": true,
+    "conclusion": "|S_C|<8s<rho_0*s because rho_0>8",
+    "k_range": [
+      1,
+      8
+    ],
+    "proof_role": "all-rank arithmetic closure after the written support argument; unlike the finite sign catalogues, this is theorem-bearing",
+    "rows": [
+      {
+        "affine_coefficients_left": [
+          8,
+          -8
+        ],
+        "affine_coefficients_right": [
+          8,
+          -8
+        ],
+        "gap_below_8s": 8,
+        "identity": "8(s-k)+binom(k,2)=8s-k(17-k)/2",
+        "internal_support_bound": 0,
+        "k": 1,
+        "strict_for_every_rank_s_at_least_k": true,
+        "zero_support_bound_per_coordinate": 8
+      },
+      {
+        "affine_coefficients_left": [
+          8,
+          -15
+        ],
+        "affine_coefficients_right": [
+          8,
+          -15
+        ],
+        "gap_below_8s": 15,
+        "identity": "8(s-k)+binom(k,2)=8s-k(17-k)/2",
+        "internal_support_bound": 1,
+        "k": 2,
+        "strict_for_every_rank_s_at_least_k": true,
+        "zero_support_bound_per_coordinate": 8
+      },
+      {
+        "affine_coefficients_left": [
+          8,
+          -21
+        ],
+        "affine_coefficients_right": [
+          8,
+          -21
+        ],
+        "gap_below_8s": 21,
+        "identity": "8(s-k)+binom(k,2)=8s-k(17-k)/2",
+        "internal_support_bound": 3,
+        "k": 3,
+        "strict_for_every_rank_s_at_least_k": true,
+        "zero_support_bound_per_coordinate": 8
+      },
+      {
+        "affine_coefficients_left": [
+          8,
+          -26
+        ],
+        "affine_coefficients_right": [
+          8,
+          -26
+        ],
+        "gap_below_8s": 26,
+        "identity": "8(s-k)+binom(k,2)=8s-k(17-k)/2",
+        "internal_support_bound": 6,
+        "k": 4,
+        "strict_for_every_rank_s_at_least_k": true,
+        "zero_support_bound_per_coordinate": 8
+      },
+      {
+        "affine_coefficients_left": [
+          8,
+          -30
+        ],
+        "affine_coefficients_right": [
+          8,
+          -30
+        ],
+        "gap_below_8s": 30,
+        "identity": "8(s-k)+binom(k,2)=8s-k(17-k)/2",
+        "internal_support_bound": 10,
+        "k": 5,
+        "strict_for_every_rank_s_at_least_k": true,
+        "zero_support_bound_per_coordinate": 8
+      },
+      {
+        "affine_coefficients_left": [
+          8,
+          -33
+        ],
+        "affine_coefficients_right": [
+          8,
+          -33
+        ],
+        "gap_below_8s": 33,
+        "identity": "8(s-k)+binom(k,2)=8s-k(17-k)/2",
+        "internal_support_bound": 15,
+        "k": 6,
+        "strict_for_every_rank_s_at_least_k": true,
+        "zero_support_bound_per_coordinate": 8
+      },
+      {
+        "affine_coefficients_left": [
+          8,
+          -35
+        ],
+        "affine_coefficients_right": [
+          8,
+          -35
+        ],
+        "gap_below_8s": 35,
+        "identity": "8(s-k)+binom(k,2)=8s-k(17-k)/2",
+        "internal_support_bound": 21,
+        "k": 7,
+        "strict_for_every_rank_s_at_least_k": true,
+        "zero_support_bound_per_coordinate": 8
+      },
+      {
+        "affine_coefficients_left": [
+          8,
+          -36
+        ],
+        "affine_coefficients_right": [
+          8,
+          -36
+        ],
+        "gap_below_8s": 36,
+        "identity": "8(s-k)+binom(k,2)=8s-k(17-k)/2",
+        "internal_support_bound": 28,
+        "k": 8,
+        "strict_for_every_rank_s_at_least_k": true,
+        "zero_support_bound_per_coordinate": 8
+      }
+    ]
+  },
+  "checks": {
+    "M31_consumer_and_boundary_pins_pass": true,
+    "address_space_at_most_one_GiB": true,
+    "all_rank_symbolic_envelope_passes": true,
+    "internal_support_catalogue_passes": true,
+    "printed_hypotheses_and_promotion_scope_pass": true,
+    "semantic_negative_controls_pass": true,
+    "zero_coordinate_catalogue_passes": true
+  },
+  "hypothesis_audit": {
+    "all_pass": true,
+    "printed_hypotheses_used": [
+      "standard D_s roots +/-e_i+/-e_j",
+      "integral coordinate branch of zeta in D_s dual",
+      "common height one",
+      "distinct selected-root inner products in {0,1}",
+      "component norm Z_C at most fixed rho_0",
+      "8<rho_0<17/2"
+    ],
+    "promotion_gate": "independent audit before any frontiers-TeX move",
+    "repair_scope_markers": [
+      "finite sign catalogues are local checks, not the all-rank proof",
+      "parameter `rho=rho_0`",
+      "No paper TeX is changed"
+    ],
+    "silently_stronger_hypotheses_used": [],
+    "source_markers": [
+      "distinct pairwise inner products in `{0,1}`",
+      "also places `zeta` in the dual lattice",
+      "|S intersect D_s| <= 8(s-k)+binom(k,2)",
+      "8<rho0<17/2"
+    ],
+    "tex_consumer_hits": []
+  },
+  "internal_support_sign_catalogue": {
+    "all_pass": true,
+    "coordinate_bound": "nonzero integral |z_i|<=2 because Z_C<=8",
+    "maximum_height_one_signings_per_internal_support": 1,
+    "ordered_coordinate_pairs_checked": 16,
+    "rows": [
+      {
+        "height_one_signings": [],
+        "z_i": -2,
+        "z_j": -2
+      },
+      {
+        "height_one_signings": [
+          [
+            -1,
+            1
+          ]
+        ],
+        "z_i": -2,
+        "z_j": -1
+      },
+      {
+        "height_one_signings": [
+          [
+            -1,
+            -1
+          ]
+        ],
+        "z_i": -2,
+        "z_j": 1
+      },
+      {
+        "height_one_signings": [],
+        "z_i": -2,
+        "z_j": 2
+      },
+      {
+        "height_one_signings": [
+          [
+            1,
+            -1
+          ]
+        ],
+        "z_i": -1,
+        "z_j": -2
+      },
+      {
+        "height_one_signings": [],
+        "z_i": -1,
+        "z_j": -1
+      },
+      {
+        "height_one_signings": [],
+        "z_i": -1,
+        "z_j": 1
+      },
+      {
+        "height_one_signings": [
+          [
+            1,
+            1
+          ]
+        ],
+        "z_i": -1,
+        "z_j": 2
+      },
+      {
+        "height_one_signings": [
+          [
+            -1,
+            -1
+          ]
+        ],
+        "z_i": 1,
+        "z_j": -2
+      },
+      {
+        "height_one_signings": [],
+        "z_i": 1,
+        "z_j": -1
+      },
+      {
+        "height_one_signings": [],
+        "z_i": 1,
+        "z_j": 1
+      },
+      {
+        "height_one_signings": [
+          [
+            -1,
+            1
+          ]
+        ],
+        "z_i": 1,
+        "z_j": 2
+      },
+      {
+        "height_one_signings": [],
+        "z_i": 2,
+        "z_j": -2
+      },
+      {
+        "height_one_signings": [
+          [
+            1,
+            1
+          ]
+        ],
+        "z_i": 2,
+        "z_j": -1
+      },
+      {
+        "height_one_signings": [
+          [
+            1,
+            -1
+          ]
+        ],
+        "z_i": 2,
+        "z_j": 1
+      },
+      {
+        "height_one_signings": [],
+        "z_i": 2,
+        "z_j": 2
+      }
+    ]
+  },
+  "nonclaims": [
+    "The finite sign catalogues are local checks, not the all-rank proof.",
+    "No census row, threshold, rank floor, or audited census hash is changed.",
+    "No kappa other than the existing kappa=2 classifier is addressed.",
+    "No complete M31 upper ledger or deployed CAP25 solution is claimed.",
+    "No statement is promoted to the frontiers TeX."
+  ],
+  "payload_sha256": "469e21269d2d8fde90408e373049342e8bed4bc7a0337e3759da4ab445426627",
+  "provenance": {
+    "audit_PR648_artifact_pins_role": "remote provenance, not a local replay dependency",
+    "audit_PR648_head": "0c84a8f91331e2d35d9de9c69aa873e26aa1c71a",
+    "audit_PR648_note_sha256": "4eb93aaf0202baba5d809105b7e0a51e417dd2e62964aeacdc453062f146b554",
+    "audit_PR648_verifier_sha256": "5456bfb600aba2d2e9dd6de1919614fc85cc9f728e97aa2ba818c19718a30bf3",
+    "integrated_base_commit": "5c9aab794e6575d815541e0a5dd8534d03d400aa",
+    "original_PR637_commit": "178fec2363e276fa1dde4541673f5a3b2a2c01f2",
+    "pre_repair_source_note_sha256": "1c577650b65df78ce447368cee0d515d2fca69670d8f7e81956e7246f23eae27",
+    "unchanged_source_certificate_sha256": "db8218f5b97fc8b8f211f9cc2e40629bb5cc57575cb40b2c0d86fb068d88220a",
+    "unchanged_source_verifier_sha256": "4cc59c557dfe964aae96863c062bc66df18f8b01e807abcdae53edbc9147df95"
+  },
+  "role": "proof-completeness repair for PR #637's integral-coordinate D_s count, resolving PR #648's sole open gap; no new classifier or TeX claim",
+  "schema": "m31_ade_integral_ds_repair.v1",
+  "semantic_negative_controls": {
+    "all_pass": true,
+    "permit_inner_product_minus_one": {
+      "k": 8,
+      "maximum": 16,
+      "violates_eight_root_cap": true
+    },
+    "permit_norm_cap_nine_and_k_nine": {
+      "k": 9,
+      "maximum": 9,
+      "violates_eight_root_cap": true
+    },
+    "purpose": "show both load-bearing local hypotheses fail when weakened"
+  },
+  "source_pins_sha256": {
+    "experimental/data/cap25_v13_m31_k2_common_height_ade_cut.json": "db8218f5b97fc8b8f211f9cc2e40629bb5cc57575cb40b2c0d86fb068d88220a",
+    "experimental/notes/thresholds/cap25_v13_m31_k2_common_height_ade_cut.md": "99791710842e065fc82d7e37ce75001d531c1aec51457c8846b80e979891d86e",
+    "experimental/notes/thresholds/m31_ade_integral_ds_repair.md": "63c9df5a61b93091d6926d09dd71736a01a7429249cfa0694ca5b62cdd5ebef2",
+    "experimental/scripts/verify_m31_ade_integral_ds_repair.py": "d4ab187c81e709689b329245f2cb107bed3aaf631bd73b7e845c714bb03d54ea",
+    "experimental/scripts/verify_m31_k2_common_height_ade_cut.py": "4cc59c557dfe964aae96863c062bc66df18f8b01e807abcdae53edbc9147df95"
+  },
+  "status": "PROVED_PR648_INTEGRAL_DS_OPEN_GAP_FIXED",
+  "verification": {
+    "artifact_tamper_mutations": 8,
+    "check": "python3 experimental/scripts/verify_m31_ade_integral_ds_repair.py --check",
+    "semantic_negative_controls": 2,
+    "tamper_selftest": "python3 experimental/scripts/verify_m31_ade_integral_ds_repair.py --tamper-selftest",
+    "write": "python3 experimental/scripts/verify_m31_ade_integral_ds_repair.py --write",
+    "zero_argument_mode": "--check"
+  },
+  "zero_coordinate_sign_catalogue": {
+    "all_pass": true,
+    "global_upper_used": 8,
+    "model": "roots sign(z_i)e_i +/- e_j at one zero coordinate j",
+    "pairwise_condition": "distinct-root inner product belongs to {0,1}",
+    "rows": [
+      {
+        "claimed_max_2_or_anchor_count": 0,
+        "eligible_root_count": 0,
+        "maximum_pairwise_nonnegative_count": 0,
+        "unit_anchor_count": 0
+      },
+      {
+        "claimed_max_2_or_anchor_count": 2,
+        "eligible_root_count": 2,
+        "maximum_pairwise_nonnegative_count": 2,
+        "unit_anchor_count": 1
+      },
+      {
+        "claimed_max_2_or_anchor_count": 2,
+        "eligible_root_count": 4,
+        "maximum_pairwise_nonnegative_count": 2,
+        "unit_anchor_count": 2
+      },
+      {
+        "claimed_max_2_or_anchor_count": 3,
+        "eligible_root_count": 6,
+        "maximum_pairwise_nonnegative_count": 3,
+        "unit_anchor_count": 3
+      },
+      {
+        "claimed_max_2_or_anchor_count": 4,
+        "eligible_root_count": 8,
+        "maximum_pairwise_nonnegative_count": 4,
+        "unit_anchor_count": 4
+      },
+      {
+        "claimed_max_2_or_anchor_count": 5,
+        "eligible_root_count": 10,
+        "maximum_pairwise_nonnegative_count": 5,
+        "unit_anchor_count": 5
+      },
+      {
+        "claimed_max_2_or_anchor_count": 6,
+        "eligible_root_count": 12,
+        "maximum_pairwise_nonnegative_count": 6,
+        "unit_anchor_count": 6
+      },
+      {
+        "claimed_max_2_or_anchor_count": 7,
+        "eligible_root_count": 14,
+        "maximum_pairwise_nonnegative_count": 7,
+        "unit_anchor_count": 7
+      },
+      {
+        "claimed_max_2_or_anchor_count": 8,
+        "eligible_root_count": 16,
+        "maximum_pairwise_nonnegative_count": 8,
+        "unit_anchor_count": 8
+      }
+    ]
+  }
+}

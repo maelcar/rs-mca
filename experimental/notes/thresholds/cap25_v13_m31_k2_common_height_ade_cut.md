@@ -168,10 +168,37 @@ with squared dual height `Z_C` contains at most `H Z_C` selected roots.
 For `A_s`, this is at most `(s+1)Z_C<=rho*s+Z_C`. The `E` components have
 `H<=30`, giving at most `rho*r_E+30Z_E` in total.
 
-For `D_s`, use roots `+/-e_i+/-e_j`. If the dual coordinates are integral,
-at most eight are nonzero because `Z_C<=rho<9`. Counting supports meeting a
-nonzero coordinate, with pairwise nonnegativity, gives fewer than `rho*s`
-selected roots. If the coordinates are half-integral, then `s<=4Z_C`.
+For `D_s`, use roots `+/-e_i+/-e_j`. The standard-coordinate description of
+the dual lattice has either all coordinates integral or all coordinates
+half-integral. In the integral case write `z=(z_1,...,z_s)` and
+`Z_C=sum_i z_i^2`. Since `Z_C` is an integer and
+`Z_C<=rho<17/2`, in fact `Z_C<=8`. Let
+
+```text
+K={i:z_i!=0},  k=|K|<=8.
+```
+
+If `k=0`, there is no height-one root. For a zero coordinate `j notin K`, a
+height-one root on the support `{i,j}` forces `|z_i|=1` and is
+`sign(z_i)e_i +/- e_j`. If two different anchors `i` occur at `j`, pairwise
+nonnegativity forces their `e_j`-signs to agree, and then no anchor can occur
+with both signs. With only one anchor there are at most two roots. Thus each
+zero coordinate supports at most eight selected roots, for at most
+`8(s-k)` in total. On a support `{i,j}` contained in `K`, there is at most one
+height-one root: two nonopposite signings differ in one sign, and subtracting
+their height equations would force the corresponding coordinate of `z` to
+vanish; opposite roots have heights `1` and `-1`. Hence the remaining roots
+number at most `binom(k,2)`, and for `1<=k<=8`,
+
+```text
+|S intersect D_s| <= 8(s-k)+binom(k,2)
+                  = 8s-k(17-k)/2
+                  < 8s < rho*s.                          (D-int)
+```
+
+This proves the integral-coordinate sub-case directly from the printed
+height, norm, duality, and pairwise-inner-product hypotheses. If the
+coordinates are half-integral, then `s<=4Z_C`.
 There is at most one selected root on each coordinate support. A matching of
 size `q` gives `q` orthogonal roots, so Bessel and the height-one condition
 give `q/2<=Z_C<17/2`, hence `q<=16`. A graph on `s` vertices with matching

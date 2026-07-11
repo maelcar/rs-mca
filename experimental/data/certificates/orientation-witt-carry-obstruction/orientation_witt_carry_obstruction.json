@@ -1,0 +1,1849 @@
+{
+  "address_space_cap_bytes": 1073741824,
+  "affine_F3_root_set_towers": {
+    "all_pass": true,
+    "fields": [
+      {
+        "all_pass": true,
+        "levels": [
+          {
+            "a": 13,
+            "affine_coset_elements_encoded": [
+              3,
+              4,
+              5
+            ],
+            "affine_coset_exponents_mod_q_minus_1": [
+              1,
+              3,
+              9
+            ],
+            "affine_coset_locator_nonzero_degrees": [
+              0,
+              1,
+              3
+            ],
+            "all_pass": true,
+            "alpha_encoded": 3,
+            "base_mask": 0,
+            "base_prefix_through_h": [
+              12,
+              17,
+              26
+            ],
+            "checks": {
+              "all_odd_moments_through_h_equal": true,
+              "alpha_not_in_subspace": true,
+              "coset_avoids_zero": true,
+              "coset_has_h_points": true,
+              "coset_is_orientation_compatible": true,
+              "cut_is_inside_legal_window": true,
+              "hamming_distance_is_h": true,
+              "locator_c_h_splits": true,
+              "locator_equal_through_h_minus_1": true,
+              "subspace_has_dimension_s": true,
+              "translated_locator_is_affine_linearized": true
+            },
+            "common_odd_moments_through_h": [
+              24,
+              21
+            ],
+            "flipped_positions": [
+              1,
+              3,
+              9
+            ],
+            "h": 3,
+            "other_mask": 522,
+            "other_prefix_through_h": [
+              12,
+              17,
+              24
+            ],
+            "q": 27,
+            "r": 3,
+            "s": 1,
+            "subspace": "span_F3(1,t,...,t^(s-1))",
+            "subspace_elements_encoded": [
+              0,
+              1,
+              2
+            ]
+          },
+          {
+            "a": 13,
+            "affine_coset_elements_encoded": [
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15,
+              16,
+              17
+            ],
+            "affine_coset_exponents_mod_q_minus_1": [
+              2,
+              4,
+              6,
+              7,
+              10,
+              11,
+              12,
+              18,
+              21
+            ],
+            "affine_coset_locator_nonzero_degrees": [
+              0,
+              1,
+              3,
+              9
+            ],
+            "all_pass": true,
+            "alpha_encoded": 9,
+            "base_mask": 288,
+            "base_prefix_through_h": [
+              2,
+              2,
+              2,
+              2,
+              0,
+              1,
+              2,
+              0,
+              2
+            ],
+            "checks": {
+              "all_odd_moments_through_h_equal": true,
+              "alpha_not_in_subspace": true,
+              "coset_avoids_zero": true,
+              "coset_has_h_points": true,
+              "coset_is_orientation_compatible": true,
+              "cut_is_inside_legal_window": true,
+              "hamming_distance_is_h": true,
+              "locator_c_h_splits": true,
+              "locator_equal_through_h_minus_1": true,
+              "subspace_has_dimension_s": true,
+              "translated_locator_is_affine_linearized": true
+            },
+            "common_odd_moments_through_h": [
+              1,
+              1,
+              2,
+              0,
+              1
+            ],
+            "flipped_positions": [
+              2,
+              4,
+              5,
+              6,
+              7,
+              8,
+              10,
+              11,
+              12
+            ],
+            "h": 9,
+            "other_mask": 7380,
+            "other_prefix_through_h": [
+              2,
+              2,
+              2,
+              2,
+              0,
+              1,
+              2,
+              0,
+              0
+            ],
+            "q": 27,
+            "r": 3,
+            "s": 2,
+            "subspace": "span_F3(1,t,...,t^(s-1))",
+            "subspace_elements_encoded": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8
+            ]
+          }
+        ],
+        "q": 27,
+        "r": 3,
+        "subspaces_are_nested": true
+      },
+      {
+        "all_pass": true,
+        "levels": [
+          {
+            "a": 40,
+            "affine_coset_elements_encoded": [
+              3,
+              4,
+              5
+            ],
+            "affine_coset_exponents_mod_q_minus_1": [
+              1,
+              44,
+              53
+            ],
+            "affine_coset_locator_nonzero_degrees": [
+              0,
+              1,
+              3
+            ],
+            "all_pass": true,
+            "alpha_encoded": 3,
+            "base_mask": 8208,
+            "base_prefix_through_h": [
+              38,
+              7,
+              20
+            ],
+            "checks": {
+              "all_odd_moments_through_h_equal": true,
+              "alpha_not_in_subspace": true,
+              "coset_avoids_zero": true,
+              "coset_has_h_points": true,
+              "coset_is_orientation_compatible": true,
+              "cut_is_inside_legal_window": true,
+              "hamming_distance_is_h": true,
+              "locator_c_h_splits": true,
+              "locator_equal_through_h_minus_1": true,
+              "subspace_has_dimension_s": true,
+              "translated_locator_is_affine_linearized": true
+            },
+            "common_odd_moments_through_h": [
+              73,
+              16
+            ],
+            "flipped_positions": [
+              1,
+              4,
+              13
+            ],
+            "h": 3,
+            "other_mask": 2,
+            "other_prefix_through_h": [
+              38,
+              7,
+              77
+            ],
+            "q": 81,
+            "r": 4,
+            "s": 1,
+            "subspace": "span_F3(1,t,...,t^(s-1))",
+            "subspace_elements_encoded": [
+              0,
+              1,
+              2
+            ]
+          },
+          {
+            "a": 40,
+            "affine_coset_elements_encoded": [
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15,
+              16,
+              17
+            ],
+            "affine_coset_exponents_mod_q_minus_1": [
+              2,
+              8,
+              17,
+              24,
+              26,
+              34,
+              45,
+              54,
+              59
+            ],
+            "affine_coset_locator_nonzero_degrees": [
+              0,
+              1,
+              3,
+              9
+            ],
+            "all_pass": true,
+            "alpha_encoded": 9,
+            "base_mask": 540704,
+            "base_prefix_through_h": [
+              43,
+              42,
+              72,
+              32,
+              2,
+              49,
+              54,
+              74,
+              69
+            ],
+            "checks": {
+              "all_odd_moments_through_h_equal": true,
+              "alpha_not_in_subspace": true,
+              "coset_avoids_zero": true,
+              "coset_has_h_points": true,
+              "coset_is_orientation_compatible": true,
+              "cut_is_inside_legal_window": true,
+              "hamming_distance_is_h": true,
+              "locator_c_h_splits": true,
+              "locator_equal_through_h_minus_1": true,
+              "subspace_has_dimension_s": true,
+              "translated_locator_is_affine_linearized": true
+            },
+            "common_odd_moments_through_h": [
+              77,
+              44,
+              53,
+              71,
+              77
+            ],
+            "flipped_positions": [
+              2,
+              5,
+              8,
+              14,
+              17,
+              19,
+              24,
+              26,
+              34
+            ],
+            "h": 9,
+            "other_mask": 17263886596,
+            "other_prefix_through_h": [
+              43,
+              42,
+              72,
+              32,
+              2,
+              49,
+              54,
+              74,
+              46
+            ],
+            "q": 81,
+            "r": 4,
+            "s": 2,
+            "subspace": "span_F3(1,t,...,t^(s-1))",
+            "subspace_elements_encoded": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8
+            ]
+          },
+          {
+            "a": 40,
+            "affine_coset_elements_encoded": [
+              27,
+              28,
+              29,
+              30,
+              31,
+              32,
+              33,
+              34,
+              35,
+              36,
+              37,
+              38,
+              39,
+              40,
+              41,
+              42,
+              43,
+              44,
+              45,
+              46,
+              47,
+              48,
+              49,
+              50,
+              51,
+              52,
+              53
+            ],
+            "affine_coset_exponents_mod_q_minus_1": [
+              3,
+              7,
+              9,
+              10,
+              11,
+              18,
+              22,
+              23,
+              25,
+              27,
+              29,
+              32,
+              35,
+              46,
+              52,
+              55,
+              56,
+              60,
+              61,
+              68,
+              70,
+              71,
+              73,
+              76,
+              77,
+              78,
+              79
+            ],
+            "affine_coset_locator_nonzero_degrees": [
+              0,
+              1,
+              3,
+              9,
+              27
+            ],
+            "all_pass": true,
+            "alpha_encoded": 27,
+            "base_mask": 1042874994752,
+            "base_prefix_through_h": [
+              0,
+              0,
+              33,
+              0,
+              14,
+              41,
+              53,
+              40,
+              0,
+              17,
+              38,
+              77,
+              61,
+              0,
+              0,
+              0,
+              0,
+              73,
+              0,
+              0,
+              1,
+              0,
+              6,
+              1,
+              46,
+              26,
+              18
+            ],
+            "checks": {
+              "all_odd_moments_through_h_equal": true,
+              "alpha_not_in_subspace": true,
+              "coset_avoids_zero": true,
+              "coset_has_h_points": true,
+              "coset_is_orientation_compatible": true,
+              "cut_is_inside_legal_window": true,
+              "hamming_distance_is_h": true,
+              "locator_c_h_splits": true,
+              "locator_equal_through_h_minus_1": true,
+              "subspace_has_dimension_s": true,
+              "translated_locator_is_affine_linearized": true
+            },
+            "common_odd_moments_through_h": [
+              0,
+              0,
+              14,
+              67,
+              0,
+              2,
+              28,
+              11,
+              77,
+              2,
+              61,
+              67,
+              38,
+              0
+            ],
+            "flipped_positions": [
+              3,
+              6,
+              7,
+              9,
+              10,
+              11,
+              12,
+              15,
+              16,
+              18,
+              20,
+              21,
+              22,
+              23,
+              25,
+              27,
+              28,
+              29,
+              30,
+              31,
+              32,
+              33,
+              35,
+              36,
+              37,
+              38,
+              39
+            ],
+            "h": 27,
+            "other_mask": 39372197512,
+            "other_prefix_through_h": [
+              0,
+              0,
+              33,
+              0,
+              14,
+              41,
+              53,
+              40,
+              0,
+              17,
+              38,
+              77,
+              61,
+              0,
+              0,
+              0,
+              0,
+              73,
+              0,
+              0,
+              1,
+              0,
+              6,
+              1,
+              46,
+              26,
+              26
+            ],
+            "q": 81,
+            "r": 4,
+            "s": 3,
+            "subspace": "span_F3(1,t,...,t^(s-1))",
+            "subspace_elements_encoded": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15,
+              16,
+              17,
+              18,
+              19,
+              20,
+              21,
+              22,
+              23,
+              24,
+              25,
+              26
+            ]
+          }
+        ],
+        "q": 81,
+        "r": 4,
+        "subspaces_are_nested": true
+      }
+    ],
+    "scope_guard": "the root sets are affine F3 cosets; locator/Witt fibers above the first digit are nonlinear and are not claimed affine"
+  },
+  "all_pass": true,
+  "checks": {
+    "address_space_at_most_one_GiB": true,
+    "affine_coset_towers_pass": true,
+    "depth_three_fourier_passes": true,
+    "finite_censuses_pass": true,
+    "symbolic_precision_passes": true
+  },
+  "depth_three_W2_fourier_bound": {
+    "all_pass": true,
+    "character_classes": "1 trivial, q-1 nontrivial characters killed by 3, and q^2-q characters of exact additive order 9",
+    "checks": {
+      "all_character_counts_exact": true,
+      "cosine_bracket_inside_zero_one": true,
+      "cosine_bracket_is_directed": true,
+      "q27_exact_max_below_bound": true
+    },
+    "cos_pi_over_9_directed_bracket": {
+      "lower": "9.3969262078590838405410927732473146993620813426446463309028666277422121099588945894974588883794806746E-1",
+      "upper_used_for_all_bounds": "9.3969262078590838405410927732473146993620813426446463309028666277422121099588945894974589083794806746E-1"
+    },
+    "formula": "Delta_2=(q-1)2^(-q/3)+(q^2-q)cos(pi/9)^(q/3); M_3<=2^a/q^2*(1+Delta_2)",
+    "rows": [
+      {
+        "Delta_2": "6.0743401522439052738921900975535499376555239250281090186875479789807945E+1",
+        "a": 4,
+        "base_2^a_over_q^2": "1.9753086419753086419753086419753086419753086419753086419753086419753086E-1",
+        "character_count_with_trivial": 81,
+        "character_counts_sum_to_q_squared": true,
+        "depth_3_inside_packet_legal_window": false,
+        "nontrivial_order_dividing_3_character_count": 8,
+        "order_9_character_count": 72,
+        "q": 9,
+        "term_(q-1)2^(-q/3)": "1.0000000000000000000000000000000000000000000000000000000000000000000000E+0",
+        "term_(q^2-q)cos(pi/9)^(q/3)": "5.9743401522439052738921900975535499376555239250281090186875479789807945E+1",
+        "upper_2^a_over_q^2_times_(1+Delta_2)": "1.2196227461222528936083338464303308518825726271660462259135897242431199E+1"
+      },
+      {
+        "Delta_2": "4.0111088342238594290533115015626524182948983716535424612719486593430746E+2",
+        "a": 13,
+        "base_2^a_over_q^2": "1.1237311385459533607681755829903978052126200274348422496570644718792867E+1",
+        "character_count_with_trivial": 729,
+        "character_counts_sum_to_q_squared": true,
+        "depth_3_inside_packet_legal_window": true,
+        "exact_census_maximum_depth_3_locator_fiber": 28,
+        "exact_max_is_below_fourier_upper": true,
+        "nontrivial_order_dividing_3_character_count": 26,
+        "order_9_character_count": 702,
+        "q": 27,
+        "term_(q-1)2^(-q/3)": "5.0781250000000000000000000000000000000000000000000000000000000000000000E-2",
+        "term_(q^2-q)cos(pi/9)^(q/3)": "4.0106010217238594290533115015626524182948983716535424612719486593430746E+2",
+        "upper_2^a_over_q^2_times_(1+Delta_2)": "4.5186452084995687850212246667765773128493563046071083460548427184277732E+3"
+      },
+      {
+        "Delta_2": "1.2083480624695096129248349066299392658897554943802804886212135251480971E+3",
+        "a": 40,
+        "base_2^a_over_q^2": "1.6758293366499009297363206828227404359091601889955799420819996951684194E+8",
+        "character_count_with_trivial": 6561,
+        "character_counts_sum_to_q_squared": true,
+        "depth_3_inside_packet_legal_window": true,
+        "nontrivial_order_dividing_3_character_count": 80,
+        "order_9_character_count": 6480,
+        "q": 81,
+        "term_(q-1)2^(-q/3)": "5.9604644775390625000000000000000000000000000000000000000000000000000000E-7",
+        "term_(q^2-q)cos(pi/9)^(q/3)": "1.2083480618734631651709286566299392658897554943802804886212135251480971E+3",
+        "upper_2^a_over_q^2_times_(1+Delta_2)": "2.0266609613071212450471954222294612051432152668628285633277901675355150E+11"
+      },
+      {
+        "Delta_2": "3.8130523819958734683263950680491138829285961707910330212173118542289159E+2",
+        "a": 121,
+        "base_2^a_over_q^2": "4.5021185652082706664085998417597066029907365069687886331690629815915596E+31",
+        "character_count_with_trivial": 59049,
+        "character_counts_sum_to_q_squared": true,
+        "depth_3_inside_packet_legal_window": true,
+        "nontrivial_order_dividing_3_character_count": 242,
+        "order_9_character_count": 58806,
+        "q": 243,
+        "term_(q-1)2^(-q/3)": "1.0008885411891634865944045174046550528146326541900634765625000000000000E-22",
+        "term_(q^2-q)cos(pi/9)^(q/3)": "3.8130523819958734683263940671605726937651095763865156165622590395962617E+2",
+        "upper_2^a_over_q^2_times_(1+Delta_2)": "1.7211835104747323362456468290211005450329785793463156270214171900121077E+34"
+      },
+      {
+        "Delta_2": "1.4468126698770048168858121229609148987770672675909932449019663529888677E-1",
+        "a": 364,
+        "base_2^a_over_q^2": "7.0707155308644481035960133953965524748769704976720121201255935361621223E+103",
+        "character_count_with_trivial": 531441,
+        "character_counts_sum_to_q_squared": true,
+        "depth_3_inside_packet_legal_window": true,
+        "nontrivial_order_dividing_3_character_count": 728,
+        "order_9_character_count": 530712,
+        "q": 729,
+        "term_(q-1)2^(-q/3)": "5.1504174760826926590208115966924315752631896189416348453251122186508164E-71",
+        "term_(q^2-q)cos(pi/9)^(q/3)": "1.4468126698770048168858121229609148987770672675909932449019663529888671E-1",
+        "upper_2^a_over_q^2_times_(1+Delta_2)": "8.0937156123795276653333313757602482982135607914646983252311695005733497E+103"
+      },
+      {
+        "Delta_2": "9.6863270285165977887063251807054340029281733545098416697527023446100555E-14",
+        "a": 1093,
+        "base_2^a_over_q^2": "2.2186443730240206339366422893513990385134830853292702283686785174122056E+322",
+        "character_count_with_trivial": 4782969,
+        "character_counts_sum_to_q_squared": true,
+        "depth_3_inside_packet_legal_window": true,
+        "nontrivial_order_dividing_3_character_count": 2186,
+        "order_9_character_count": 4780782,
+        "q": 2187,
+        "term_(q-1)2^(-q/3)": "7.7407549394689861204548706843620825500283547809953104796216951344887864E-217",
+        "term_(q^2-q)cos(pi/9)^(q/3)": "9.6863270285165977887063251807054340029281733545098416697527023446100555E-14",
+        "upper_2^a_over_q^2_times_(1+Delta_2)": "2.2186443730242355390862131776707666398391327609886194080499942320518303E+322"
+      }
+    ],
+    "scope_guard": "the formula gives Delta_2=o(1) as q grows; no finite-q sharpness is claimed, and q=9 depth 3 is outside the legal window"
+  },
+  "finite_exact_censuses": [
+    {
+      "a": 4,
+      "all_pass": true,
+      "checks": {
+        "all_depths_pass": true,
+        "all_legal_depths_present": true,
+        "q27_has_exact_c3_c9_splits": true
+      },
+      "depth_rows": [
+        {
+          "E_r_u": 4,
+          "all_pass": true,
+          "bounded_carry_lower_ceil_moment_max_over_q_to_carries": 16,
+          "carry_coordinate_count": 0,
+          "checks": {
+            "all_orientations_partitioned": true,
+            "bounded_carry_pigeonhole_lower_holds": true,
+            "coordinate_count_is_ceil_u_over_2": true,
+            "global_prefix_pigeonhole_lower_holds": true,
+            "primitive_plus_odd_carries_equals_locator_partition": true,
+            "printed_carry_count": true,
+            "printed_primitive_count": true
+          },
+          "global_lower_ceil_2_to_a_over_q_to_ceil_u_over_2": 16,
+          "locator_image_size": 1,
+          "maximum_locator_prefix_fiber": 16,
+          "maximum_locator_subfibers_in_one_moment_fiber": 1,
+          "maximum_primitive_moment_fiber": 16,
+          "moment_image_size": 1,
+          "moment_information_set_bound_2_to_E": 16,
+          "odd_carry_coefficient_indices": [],
+          "primitive_coordinate_count_b_u": 0,
+          "primitive_odd_moment_indices": [],
+          "total_coordinate_count": 0,
+          "u": 0
+        },
+        {
+          "E_r_u": 2,
+          "all_pass": true,
+          "bounded_carry_lower_ceil_moment_max_over_q_to_carries": 2,
+          "carry_coordinate_count": 0,
+          "checks": {
+            "all_orientations_partitioned": true,
+            "bounded_carry_pigeonhole_lower_holds": true,
+            "coordinate_count_is_ceil_u_over_2": true,
+            "global_prefix_pigeonhole_lower_holds": true,
+            "primitive_plus_odd_carries_equals_locator_partition": true,
+            "printed_carry_count": true,
+            "printed_primitive_count": true
+          },
+          "global_lower_ceil_2_to_a_over_q_to_ceil_u_over_2": 2,
+          "locator_image_size": 8,
+          "maximum_locator_prefix_fiber": 2,
+          "maximum_locator_subfibers_in_one_moment_fiber": 1,
+          "maximum_primitive_moment_fiber": 2,
+          "moment_image_size": 8,
+          "moment_information_set_bound_2_to_E": 4,
+          "odd_carry_coefficient_indices": [],
+          "primitive_coordinate_count_b_u": 1,
+          "primitive_odd_moment_indices": [
+            1
+          ],
+          "total_coordinate_count": 1,
+          "u": 1
+        },
+        {
+          "E_r_u": 2,
+          "all_pass": true,
+          "bounded_carry_lower_ceil_moment_max_over_q_to_carries": 2,
+          "carry_coordinate_count": 0,
+          "checks": {
+            "all_orientations_partitioned": true,
+            "bounded_carry_pigeonhole_lower_holds": true,
+            "coordinate_count_is_ceil_u_over_2": true,
+            "global_prefix_pigeonhole_lower_holds": true,
+            "primitive_plus_odd_carries_equals_locator_partition": true,
+            "printed_carry_count": true,
+            "printed_primitive_count": true
+          },
+          "global_lower_ceil_2_to_a_over_q_to_ceil_u_over_2": 2,
+          "locator_image_size": 8,
+          "maximum_locator_prefix_fiber": 2,
+          "maximum_locator_subfibers_in_one_moment_fiber": 1,
+          "maximum_primitive_moment_fiber": 2,
+          "moment_image_size": 8,
+          "moment_information_set_bound_2_to_E": 4,
+          "odd_carry_coefficient_indices": [],
+          "primitive_coordinate_count_b_u": 1,
+          "primitive_odd_moment_indices": [
+            1
+          ],
+          "total_coordinate_count": 1,
+          "u": 2
+        }
+      ],
+      "exact_first_new_carry_split_witnesses": [],
+      "field_modulus_ascending": [
+        1,
+        0,
+        1
+      ],
+      "orientation_count": 16,
+      "primitive_generator_encoded": 4,
+      "q": 9,
+      "r": 2
+    },
+    {
+      "a": 13,
+      "all_pass": true,
+      "checks": {
+        "all_depths_pass": true,
+        "all_legal_depths_present": true,
+        "q27_has_exact_c3_c9_splits": true
+      },
+      "depth_rows": [
+        {
+          "E_r_u": 13,
+          "all_pass": true,
+          "bounded_carry_lower_ceil_moment_max_over_q_to_carries": 8192,
+          "carry_coordinate_count": 0,
+          "checks": {
+            "all_orientations_partitioned": true,
+            "bounded_carry_pigeonhole_lower_holds": true,
+            "coordinate_count_is_ceil_u_over_2": true,
+            "global_prefix_pigeonhole_lower_holds": true,
+            "primitive_plus_odd_carries_equals_locator_partition": true,
+            "printed_carry_count": true,
+            "printed_primitive_count": true
+          },
+          "global_lower_ceil_2_to_a_over_q_to_ceil_u_over_2": 8192,
+          "locator_image_size": 1,
+          "maximum_locator_prefix_fiber": 8192,
+          "maximum_locator_subfibers_in_one_moment_fiber": 1,
+          "maximum_primitive_moment_fiber": 8192,
+          "moment_image_size": 1,
+          "moment_information_set_bound_2_to_E": 8192,
+          "odd_carry_coefficient_indices": [],
+          "primitive_coordinate_count_b_u": 0,
+          "primitive_odd_moment_indices": [],
+          "total_coordinate_count": 0,
+          "u": 0
+        },
+        {
+          "E_r_u": 10,
+          "all_pass": true,
+          "bounded_carry_lower_ceil_moment_max_over_q_to_carries": 304,
+          "carry_coordinate_count": 0,
+          "checks": {
+            "all_orientations_partitioned": true,
+            "bounded_carry_pigeonhole_lower_holds": true,
+            "coordinate_count_is_ceil_u_over_2": true,
+            "global_prefix_pigeonhole_lower_holds": true,
+            "primitive_plus_odd_carries_equals_locator_partition": true,
+            "printed_carry_count": true,
+            "printed_primitive_count": true
+          },
+          "global_lower_ceil_2_to_a_over_q_to_ceil_u_over_2": 304,
+          "locator_image_size": 27,
+          "maximum_locator_prefix_fiber": 304,
+          "maximum_locator_subfibers_in_one_moment_fiber": 1,
+          "maximum_primitive_moment_fiber": 304,
+          "moment_image_size": 27,
+          "moment_information_set_bound_2_to_E": 1024,
+          "odd_carry_coefficient_indices": [],
+          "primitive_coordinate_count_b_u": 1,
+          "primitive_odd_moment_indices": [
+            1
+          ],
+          "total_coordinate_count": 1,
+          "u": 1
+        },
+        {
+          "E_r_u": 10,
+          "all_pass": true,
+          "bounded_carry_lower_ceil_moment_max_over_q_to_carries": 304,
+          "carry_coordinate_count": 0,
+          "checks": {
+            "all_orientations_partitioned": true,
+            "bounded_carry_pigeonhole_lower_holds": true,
+            "coordinate_count_is_ceil_u_over_2": true,
+            "global_prefix_pigeonhole_lower_holds": true,
+            "primitive_plus_odd_carries_equals_locator_partition": true,
+            "printed_carry_count": true,
+            "printed_primitive_count": true
+          },
+          "global_lower_ceil_2_to_a_over_q_to_ceil_u_over_2": 304,
+          "locator_image_size": 27,
+          "maximum_locator_prefix_fiber": 304,
+          "maximum_locator_subfibers_in_one_moment_fiber": 1,
+          "maximum_primitive_moment_fiber": 304,
+          "moment_image_size": 27,
+          "moment_information_set_bound_2_to_E": 1024,
+          "odd_carry_coefficient_indices": [],
+          "primitive_coordinate_count_b_u": 1,
+          "primitive_odd_moment_indices": [
+            1
+          ],
+          "total_coordinate_count": 1,
+          "u": 2
+        },
+        {
+          "E_r_u": 10,
+          "all_pass": true,
+          "bounded_carry_lower_ceil_moment_max_over_q_to_carries": 12,
+          "carry_coordinate_count": 1,
+          "checks": {
+            "all_orientations_partitioned": true,
+            "bounded_carry_pigeonhole_lower_holds": true,
+            "coordinate_count_is_ceil_u_over_2": true,
+            "global_prefix_pigeonhole_lower_holds": true,
+            "primitive_plus_odd_carries_equals_locator_partition": true,
+            "printed_carry_count": true,
+            "printed_primitive_count": true
+          },
+          "global_lower_ceil_2_to_a_over_q_to_ceil_u_over_2": 12,
+          "locator_image_size": 729,
+          "maximum_locator_prefix_fiber": 28,
+          "maximum_locator_subfibers_in_one_moment_fiber": 27,
+          "maximum_primitive_moment_fiber": 304,
+          "moment_image_size": 27,
+          "moment_information_set_bound_2_to_E": 1024,
+          "odd_carry_coefficient_indices": [
+            3
+          ],
+          "primitive_coordinate_count_b_u": 1,
+          "primitive_odd_moment_indices": [
+            1
+          ],
+          "total_coordinate_count": 2,
+          "u": 3
+        },
+        {
+          "E_r_u": 10,
+          "all_pass": true,
+          "bounded_carry_lower_ceil_moment_max_over_q_to_carries": 12,
+          "carry_coordinate_count": 1,
+          "checks": {
+            "all_orientations_partitioned": true,
+            "bounded_carry_pigeonhole_lower_holds": true,
+            "coordinate_count_is_ceil_u_over_2": true,
+            "global_prefix_pigeonhole_lower_holds": true,
+            "primitive_plus_odd_carries_equals_locator_partition": true,
+            "printed_carry_count": true,
+            "printed_primitive_count": true
+          },
+          "global_lower_ceil_2_to_a_over_q_to_ceil_u_over_2": 12,
+          "locator_image_size": 729,
+          "maximum_locator_prefix_fiber": 28,
+          "maximum_locator_subfibers_in_one_moment_fiber": 27,
+          "maximum_primitive_moment_fiber": 304,
+          "moment_image_size": 27,
+          "moment_information_set_bound_2_to_E": 1024,
+          "odd_carry_coefficient_indices": [
+            3
+          ],
+          "primitive_coordinate_count_b_u": 1,
+          "primitive_odd_moment_indices": [
+            1
+          ],
+          "total_coordinate_count": 2,
+          "u": 4
+        },
+        {
+          "E_r_u": 7,
+          "all_pass": true,
+          "bounded_carry_lower_ceil_moment_max_over_q_to_carries": 2,
+          "carry_coordinate_count": 1,
+          "checks": {
+            "all_orientations_partitioned": true,
+            "bounded_carry_pigeonhole_lower_holds": true,
+            "coordinate_count_is_ceil_u_over_2": true,
+            "global_prefix_pigeonhole_lower_holds": true,
+            "primitive_plus_odd_carries_equals_locator_partition": true,
+            "printed_carry_count": true,
+            "printed_primitive_count": true
+          },
+          "global_lower_ceil_2_to_a_over_q_to_ceil_u_over_2": 1,
+          "locator_image_size": 6787,
+          "maximum_locator_prefix_fiber": 3,
+          "maximum_locator_subfibers_in_one_moment_fiber": 27,
+          "maximum_primitive_moment_fiber": 28,
+          "moment_image_size": 729,
+          "moment_information_set_bound_2_to_E": 128,
+          "odd_carry_coefficient_indices": [
+            3
+          ],
+          "primitive_coordinate_count_b_u": 2,
+          "primitive_odd_moment_indices": [
+            1,
+            5
+          ],
+          "total_coordinate_count": 3,
+          "u": 5
+        },
+        {
+          "E_r_u": 7,
+          "all_pass": true,
+          "bounded_carry_lower_ceil_moment_max_over_q_to_carries": 2,
+          "carry_coordinate_count": 1,
+          "checks": {
+            "all_orientations_partitioned": true,
+            "bounded_carry_pigeonhole_lower_holds": true,
+            "coordinate_count_is_ceil_u_over_2": true,
+            "global_prefix_pigeonhole_lower_holds": true,
+            "primitive_plus_odd_carries_equals_locator_partition": true,
+            "printed_carry_count": true,
+            "printed_primitive_count": true
+          },
+          "global_lower_ceil_2_to_a_over_q_to_ceil_u_over_2": 1,
+          "locator_image_size": 6787,
+          "maximum_locator_prefix_fiber": 3,
+          "maximum_locator_subfibers_in_one_moment_fiber": 27,
+          "maximum_primitive_moment_fiber": 28,
+          "moment_image_size": 729,
+          "moment_information_set_bound_2_to_E": 128,
+          "odd_carry_coefficient_indices": [
+            3
+          ],
+          "primitive_coordinate_count_b_u": 2,
+          "primitive_odd_moment_indices": [
+            1,
+            5
+          ],
+          "total_coordinate_count": 3,
+          "u": 6
+        },
+        {
+          "E_r_u": 4,
+          "all_pass": true,
+          "bounded_carry_lower_ceil_moment_max_over_q_to_carries": 1,
+          "carry_coordinate_count": 1,
+          "checks": {
+            "all_orientations_partitioned": true,
+            "bounded_carry_pigeonhole_lower_holds": true,
+            "coordinate_count_is_ceil_u_over_2": true,
+            "global_prefix_pigeonhole_lower_holds": true,
+            "primitive_plus_odd_carries_equals_locator_partition": true,
+            "printed_carry_count": true,
+            "printed_primitive_count": true
+          },
+          "global_lower_ceil_2_to_a_over_q_to_ceil_u_over_2": 1,
+          "locator_image_size": 7983,
+          "maximum_locator_prefix_fiber": 2,
+          "maximum_locator_subfibers_in_one_moment_fiber": 2,
+          "maximum_primitive_moment_fiber": 3,
+          "moment_image_size": 7073,
+          "moment_information_set_bound_2_to_E": 16,
+          "odd_carry_coefficient_indices": [
+            3
+          ],
+          "primitive_coordinate_count_b_u": 3,
+          "primitive_odd_moment_indices": [
+            1,
+            5,
+            7
+          ],
+          "total_coordinate_count": 4,
+          "u": 7
+        },
+        {
+          "E_r_u": 4,
+          "all_pass": true,
+          "bounded_carry_lower_ceil_moment_max_over_q_to_carries": 1,
+          "carry_coordinate_count": 1,
+          "checks": {
+            "all_orientations_partitioned": true,
+            "bounded_carry_pigeonhole_lower_holds": true,
+            "coordinate_count_is_ceil_u_over_2": true,
+            "global_prefix_pigeonhole_lower_holds": true,
+            "primitive_plus_odd_carries_equals_locator_partition": true,
+            "printed_carry_count": true,
+            "printed_primitive_count": true
+          },
+          "global_lower_ceil_2_to_a_over_q_to_ceil_u_over_2": 1,
+          "locator_image_size": 7983,
+          "maximum_locator_prefix_fiber": 2,
+          "maximum_locator_subfibers_in_one_moment_fiber": 2,
+          "maximum_primitive_moment_fiber": 3,
+          "moment_image_size": 7073,
+          "moment_information_set_bound_2_to_E": 16,
+          "odd_carry_coefficient_indices": [
+            3
+          ],
+          "primitive_coordinate_count_b_u": 3,
+          "primitive_odd_moment_indices": [
+            1,
+            5,
+            7
+          ],
+          "total_coordinate_count": 4,
+          "u": 8
+        },
+        {
+          "E_r_u": 4,
+          "all_pass": true,
+          "bounded_carry_lower_ceil_moment_max_over_q_to_carries": 1,
+          "carry_coordinate_count": 2,
+          "checks": {
+            "all_orientations_partitioned": true,
+            "bounded_carry_pigeonhole_lower_holds": true,
+            "coordinate_count_is_ceil_u_over_2": true,
+            "global_prefix_pigeonhole_lower_holds": true,
+            "primitive_plus_odd_carries_equals_locator_partition": true,
+            "printed_carry_count": true,
+            "printed_primitive_count": true
+          },
+          "global_lower_ceil_2_to_a_over_q_to_ceil_u_over_2": 1,
+          "locator_image_size": 8191,
+          "maximum_locator_prefix_fiber": 2,
+          "maximum_locator_subfibers_in_one_moment_fiber": 3,
+          "maximum_primitive_moment_fiber": 3,
+          "moment_image_size": 7073,
+          "moment_information_set_bound_2_to_E": 16,
+          "odd_carry_coefficient_indices": [
+            3,
+            9
+          ],
+          "primitive_coordinate_count_b_u": 3,
+          "primitive_odd_moment_indices": [
+            1,
+            5,
+            7
+          ],
+          "total_coordinate_count": 5,
+          "u": 9
+        },
+        {
+          "E_r_u": 4,
+          "all_pass": true,
+          "bounded_carry_lower_ceil_moment_max_over_q_to_carries": 1,
+          "carry_coordinate_count": 2,
+          "checks": {
+            "all_orientations_partitioned": true,
+            "bounded_carry_pigeonhole_lower_holds": true,
+            "coordinate_count_is_ceil_u_over_2": true,
+            "global_prefix_pigeonhole_lower_holds": true,
+            "primitive_plus_odd_carries_equals_locator_partition": true,
+            "printed_carry_count": true,
+            "printed_primitive_count": true
+          },
+          "global_lower_ceil_2_to_a_over_q_to_ceil_u_over_2": 1,
+          "locator_image_size": 8191,
+          "maximum_locator_prefix_fiber": 2,
+          "maximum_locator_subfibers_in_one_moment_fiber": 3,
+          "maximum_primitive_moment_fiber": 3,
+          "moment_image_size": 7073,
+          "moment_information_set_bound_2_to_E": 16,
+          "odd_carry_coefficient_indices": [
+            3,
+            9
+          ],
+          "primitive_coordinate_count_b_u": 3,
+          "primitive_odd_moment_indices": [
+            1,
+            5,
+            7
+          ],
+          "total_coordinate_count": 5,
+          "u": 10
+        },
+        {
+          "E_r_u": 4,
+          "all_pass": true,
+          "bounded_carry_lower_ceil_moment_max_over_q_to_carries": 1,
+          "carry_coordinate_count": 2,
+          "checks": {
+            "all_orientations_partitioned": true,
+            "bounded_carry_pigeonhole_lower_holds": true,
+            "coordinate_count_is_ceil_u_over_2": true,
+            "global_prefix_pigeonhole_lower_holds": true,
+            "primitive_plus_odd_carries_equals_locator_partition": true,
+            "printed_carry_count": true,
+            "printed_primitive_count": true
+          },
+          "global_lower_ceil_2_to_a_over_q_to_ceil_u_over_2": 1,
+          "locator_image_size": 8191,
+          "maximum_locator_prefix_fiber": 2,
+          "maximum_locator_subfibers_in_one_moment_fiber": 3,
+          "maximum_primitive_moment_fiber": 3,
+          "moment_image_size": 7073,
+          "moment_information_set_bound_2_to_E": 16,
+          "odd_carry_coefficient_indices": [
+            3,
+            9
+          ],
+          "primitive_coordinate_count_b_u": 4,
+          "primitive_odd_moment_indices": [
+            1,
+            5,
+            7,
+            11
+          ],
+          "total_coordinate_count": 6,
+          "u": 11
+        }
+      ],
+      "exact_first_new_carry_split_witnesses": [
+        {
+          "checks": {
+            "c_h_splits": true,
+            "minimum_pair_selected_exhaustively": true,
+            "same_active_primitive_moments": true,
+            "same_prior_locator": true
+          },
+          "coefficient": 3,
+          "common_locator_prefix_before_cut": [
+            12,
+            17
+          ],
+          "common_primitive_moments": [
+            24
+          ],
+          "hamming_distance": 3,
+          "left_c_h": 26,
+          "left_mask": 0,
+          "left_sign_bits": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "right_c_h": 22,
+          "right_mask": 49,
+          "right_sign_bits": [
+            1,
+            0,
+            0,
+            0,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "checks": {
+            "c_h_splits": true,
+            "minimum_pair_selected_exhaustively": true,
+            "same_active_primitive_moments": true,
+            "same_prior_locator": true
+          },
+          "coefficient": 9,
+          "common_locator_prefix_before_cut": [
+            6,
+            18,
+            26,
+            23,
+            0,
+            6,
+            9,
+            17
+          ],
+          "common_primitive_moments": [
+            3,
+            10,
+            7
+          ],
+          "hamming_distance": 9,
+          "left_c_h": 23,
+          "left_mask": 72,
+          "left_sign_bits": [
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "right_c_h": 13,
+          "right_mask": 1845,
+          "right_sign_bits": [
+            1,
+            0,
+            1,
+            0,
+            1,
+            1,
+            0,
+            0,
+            1,
+            1,
+            1,
+            0,
+            0
+          ]
+        }
+      ],
+      "field_modulus_ascending": [
+        1,
+        2,
+        0,
+        1
+      ],
+      "orientation_count": 8192,
+      "primitive_generator_encoded": 3,
+      "q": 27,
+      "r": 3
+    }
+  ],
+  "nonclaims": [
+    "No full fixed-c locator-prefix upper improvement is claimed.",
+    "No locator or Witt fiber is claimed affine.",
+    "The shallow mixing theorem is not simultaneous over all k.",
+    "No prize-relevant received line or C7/FI-field payment is supplied.",
+    "No statement is promoted to the frontiers TeX."
+  ],
+  "payload_sha256": "f485888c184783391fd89cd3e367b524b6e1073b4849bafc7fcec9a4eb41c381",
+  "role": "exact Witt-coordinate replay, bounded-precision obstruction, and shallow W2 mixing calibration; no frontiers-tex promotion, prize-line conclusion, or affine-fiber claim",
+  "schema": "orientation_witt_carry_obstruction.v1",
+  "source_pins_sha256": {
+    "experimental/notes/thresholds/fi_field_discharge.md": "e4aad4065987e7cdf78954eed89026850680f362c5cfa8a0c258124335433bc5",
+    "experimental/notes/thresholds/full_agreement_orientation_saturation.md": "7f0fb772d1025b1960e2c02792c66a26d373f3edb5647736db0f9429cef4244b",
+    "experimental/notes/thresholds/orientation_prefix_phase_transition.md": "5764a829a360d751140571a8937ca12f7b6c01a4a24a37ec489870cbc58e3769",
+    "experimental/notes/thresholds/orientation_witt_carry_obstruction.md": "21a09120570557b4d60a3d3bac60019644653a7829f4124ed6f4f53802ede749",
+    "experimental/scripts/verify_orientation_prefix_phase_transition.py": "c60f02d6860c5191c7771399eee4ec7b99f42e1f91ac83cc0ea6db3f996538a7",
+    "experimental/scripts/verify_orientation_witt_carry_obstruction.py": "37c1b6df348289629dca78a29c946553753e3702766f0b262c4e9c1c3febff9a"
+  },
+  "status": "PROVED_SPECIAL_EXACT_COORDINATES_BOUNDED_PRECISION_OBSTRUCTION_AND_SHALLOW_MIXING",
+  "symbolic_collective_precision": {
+    "all_pass": true,
+    "bounded_carry_lower": "a primitive-moment fiber split by C carry coordinates has a locator subfiber of size at least ceil(moment_fiber/q^C)",
+    "checked_precision_limits": [
+      1,
+      2,
+      3
+    ],
+    "checked_u_range": [
+      0,
+      243
+    ],
+    "collective_precision_identity": "D_L(u)=sum_(primitive odd k<=u) min(s_k,L)",
+    "count_identity": "b(u)+#{odd n<=u:3|n}=ceil(u/2), and sum_k s_k=ceil(u/2)",
+    "critical_samples": [
+      {
+        "component_lengths": {},
+        "precision_rows": [
+          {
+            "D_L": 0,
+            "L": 1,
+            "identity_holds": true,
+            "pigeonhole_image_targets_q_to_D_L": {
+              "q27": 1,
+              "q81": 1
+            },
+            "sum_j_b_floor_u_over_3j": 0,
+            "sum_k_min_s_k_L": 0
+          },
+          {
+            "D_L": 0,
+            "L": 2,
+            "identity_holds": true,
+            "pigeonhole_image_targets_q_to_D_L": {
+              "q27": 1,
+              "q81": 1
+            },
+            "sum_j_b_floor_u_over_3j": 0,
+            "sum_k_min_s_k_L": 0
+          },
+          {
+            "D_L": 0,
+            "L": 3,
+            "identity_holds": true,
+            "pigeonhole_image_targets_q_to_D_L": {
+              "q27": 1,
+              "q81": 1
+            },
+            "sum_j_b_floor_u_over_3j": 0,
+            "sum_k_min_s_k_L": 0
+          }
+        ],
+        "u": 0
+      },
+      {
+        "component_lengths": {
+          "1": 1
+        },
+        "precision_rows": [
+          {
+            "D_L": 1,
+            "L": 1,
+            "identity_holds": true,
+            "pigeonhole_image_targets_q_to_D_L": {
+              "q27": 27,
+              "q81": 81
+            },
+            "sum_j_b_floor_u_over_3j": 1,
+            "sum_k_min_s_k_L": 1
+          },
+          {
+            "D_L": 1,
+            "L": 2,
+            "identity_holds": true,
+            "pigeonhole_image_targets_q_to_D_L": {
+              "q27": 27,
+              "q81": 81
+            },
+            "sum_j_b_floor_u_over_3j": 1,
+            "sum_k_min_s_k_L": 1
+          },
+          {
+            "D_L": 1,
+            "L": 3,
+            "identity_holds": true,
+            "pigeonhole_image_targets_q_to_D_L": {
+              "q27": 27,
+              "q81": 81
+            },
+            "sum_j_b_floor_u_over_3j": 1,
+            "sum_k_min_s_k_L": 1
+          }
+        ],
+        "u": 1
+      },
+      {
+        "component_lengths": {
+          "1": 1
+        },
+        "precision_rows": [
+          {
+            "D_L": 1,
+            "L": 1,
+            "identity_holds": true,
+            "pigeonhole_image_targets_q_to_D_L": {
+              "q27": 27,
+              "q81": 81
+            },
+            "sum_j_b_floor_u_over_3j": 1,
+            "sum_k_min_s_k_L": 1
+          },
+          {
+            "D_L": 1,
+            "L": 2,
+            "identity_holds": true,
+            "pigeonhole_image_targets_q_to_D_L": {
+              "q27": 27,
+              "q81": 81
+            },
+            "sum_j_b_floor_u_over_3j": 1,
+            "sum_k_min_s_k_L": 1
+          },
+          {
+            "D_L": 1,
+            "L": 3,
+            "identity_holds": true,
+            "pigeonhole_image_targets_q_to_D_L": {
+              "q27": 27,
+              "q81": 81
+            },
+            "sum_j_b_floor_u_over_3j": 1,
+            "sum_k_min_s_k_L": 1
+          }
+        ],
+        "u": 2
+      },
+      {
+        "component_lengths": {
+          "1": 2
+        },
+        "precision_rows": [
+          {
+            "D_L": 1,
+            "L": 1,
+            "identity_holds": true,
+            "pigeonhole_image_targets_q_to_D_L": {
+              "q27": 27,
+              "q81": 81
+            },
+            "sum_j_b_floor_u_over_3j": 1,
+            "sum_k_min_s_k_L": 1
+          },
+          {
+            "D_L": 2,
+            "L": 2,
+            "identity_holds": true,
+            "pigeonhole_image_targets_q_to_D_L": {
+              "q27": 729,
+              "q81": 6561
+            },
+            "sum_j_b_floor_u_over_3j": 2,
+            "sum_k_min_s_k_L": 2
+          },
+          {
+            "D_L": 2,
+            "L": 3,
+            "identity_holds": true,
+            "pigeonhole_image_targets_q_to_D_L": {
+              "q27": 729,
+              "q81": 6561
+            },
+            "sum_j_b_floor_u_over_3j": 2,
+            "sum_k_min_s_k_L": 2
+          }
+        ],
+        "u": 3
+      },
+      {
+        "component_lengths": {
+          "1": 2,
+          "5": 1
+        },
+        "precision_rows": [
+          {
+            "D_L": 2,
+            "L": 1,
+            "identity_holds": true,
+            "pigeonhole_image_targets_q_to_D_L": {
+              "q27": 729,
+              "q81": 6561
+            },
+            "sum_j_b_floor_u_over_3j": 2,
+            "sum_k_min_s_k_L": 2
+          },
+          {
+            "D_L": 3,
+            "L": 2,
+            "identity_holds": true,
+            "pigeonhole_image_targets_q_to_D_L": {
+              "q27": 19683,
+              "q81": 531441
+            },
+            "sum_j_b_floor_u_over_3j": 3,
+            "sum_k_min_s_k_L": 3
+          },
+          {
+            "D_L": 3,
+            "L": 3,
+            "identity_holds": true,
+            "pigeonhole_image_targets_q_to_D_L": {
+              "q27": 19683,
+              "q81": 531441
+            },
+            "sum_j_b_floor_u_over_3j": 3,
+            "sum_k_min_s_k_L": 3
+          }
+        ],
+        "u": 5
+      },
+      {
+        "component_lengths": {
+          "1": 2,
+          "5": 1,
+          "7": 1
+        },
+        "precision_rows": [
+          {
+            "D_L": 3,
+            "L": 1,
+            "identity_holds": true,
+            "pigeonhole_image_targets_q_to_D_L": {
+              "q27": 19683,
+              "q81": 531441
+            },
+            "sum_j_b_floor_u_over_3j": 3,
+            "sum_k_min_s_k_L": 3
+          },
+          {
+            "D_L": 4,
+            "L": 2,
+            "identity_holds": true,
+            "pigeonhole_image_targets_q_to_D_L": {
+              "q27": 531441,
+              "q81": 43046721
+            },
+            "sum_j_b_floor_u_over_3j": 4,
+            "sum_k_min_s_k_L": 4
+          },
+          {
+            "D_L": 4,
+            "L": 3,
+            "identity_holds": true,
+            "pigeonhole_image_targets_q_to_D_L": {
+              "q27": 531441,
+              "q81": 43046721
+            },
+            "sum_j_b_floor_u_over_3j": 4,
+            "sum_k_min_s_k_L": 4
+          }
+        ],
+        "u": 8
+      },
+      {
+        "component_lengths": {
+          "1": 3,
+          "5": 1,
+          "7": 1
+        },
+        "precision_rows": [
+          {
+            "D_L": 3,
+            "L": 1,
+            "identity_holds": true,
+            "pigeonhole_image_targets_q_to_D_L": {
+              "q27": 19683,
+              "q81": 531441
+            },
+            "sum_j_b_floor_u_over_3j": 3,
+            "sum_k_min_s_k_L": 3
+          },
+          {
+            "D_L": 4,
+            "L": 2,
+            "identity_holds": true,
+            "pigeonhole_image_targets_q_to_D_L": {
+              "q27": 531441,
+              "q81": 43046721
+            },
+            "sum_j_b_floor_u_over_3j": 4,
+            "sum_k_min_s_k_L": 4
+          },
+          {
+            "D_L": 5,
+            "L": 3,
+            "identity_holds": true,
+            "pigeonhole_image_targets_q_to_D_L": {
+              "q27": 14348907,
+              "q81": 3486784401
+            },
+            "sum_j_b_floor_u_over_3j": 5,
+            "sum_k_min_s_k_L": 5
+          }
+        ],
+        "u": 9
+      },
+      {
+        "component_lengths": {
+          "1": 3,
+          "11": 1,
+          "5": 1,
+          "7": 1
+        },
+        "precision_rows": [
+          {
+            "D_L": 4,
+            "L": 1,
+            "identity_holds": true,
+            "pigeonhole_image_targets_q_to_D_L": {
+              "q27": 531441,
+              "q81": 43046721
+            },
+            "sum_j_b_floor_u_over_3j": 4,
+            "sum_k_min_s_k_L": 4
+          },
+          {
+            "D_L": 5,
+            "L": 2,
+            "identity_holds": true,
+            "pigeonhole_image_targets_q_to_D_L": {
+              "q27": 14348907,
+              "q81": 3486784401
+            },
+            "sum_j_b_floor_u_over_3j": 5,
+            "sum_k_min_s_k_L": 5
+          },
+          {
+            "D_L": 6,
+            "L": 3,
+            "identity_holds": true,
+            "pigeonhole_image_targets_q_to_D_L": {
+              "q27": 387420489,
+              "q81": 282429536481
+            },
+            "sum_j_b_floor_u_over_3j": 6,
+            "sum_k_min_s_k_L": 6
+          }
+        ],
+        "u": 11
+      },
+      {
+        "component_lengths": {
+          "1": 3,
+          "11": 1,
+          "13": 1,
+          "17": 1,
+          "19": 1,
+          "23": 1,
+          "25": 1,
+          "5": 2,
+          "7": 2
+        },
+        "precision_rows": [
+          {
+            "D_L": 9,
+            "L": 1,
+            "identity_holds": true,
+            "pigeonhole_image_targets_q_to_D_L": {
+              "q27": 7625597484987,
+              "q81": 150094635296999121
+            },
+            "sum_j_b_floor_u_over_3j": 9,
+            "sum_k_min_s_k_L": 9
+          },
+          {
+            "D_L": 12,
+            "L": 2,
+            "identity_holds": true,
+            "pigeonhole_image_targets_q_to_D_L": {
+              "q27": 150094635296999121,
+              "q81": 79766443076872509863361
+            },
+            "sum_j_b_floor_u_over_3j": 12,
+            "sum_k_min_s_k_L": 12
+          },
+          {
+            "D_L": 13,
+            "L": 3,
+            "identity_holds": true,
+            "pigeonhole_image_targets_q_to_D_L": {
+              "q27": 4052555153018976267,
+              "q81": 6461081889226673298932241
+            },
+            "sum_j_b_floor_u_over_3j": 13,
+            "sum_k_min_s_k_L": 13
+          }
+        ],
+        "u": 26
+      },
+      {
+        "component_lengths": {
+          "1": 4,
+          "11": 1,
+          "13": 1,
+          "17": 1,
+          "19": 1,
+          "23": 1,
+          "25": 1,
+          "5": 2,
+          "7": 2
+        },
+        "precision_rows": [
+          {
+            "D_L": 9,
+            "L": 1,
+            "identity_holds": true,
+            "pigeonhole_image_targets_q_to_D_L": {
+              "q27": 7625597484987,
+              "q81": 150094635296999121
+            },
+            "sum_j_b_floor_u_over_3j": 9,
+            "sum_k_min_s_k_L": 9
+          },
+          {
+            "D_L": 12,
+            "L": 2,
+            "identity_holds": true,
+            "pigeonhole_image_targets_q_to_D_L": {
+              "q27": 150094635296999121,
+              "q81": 79766443076872509863361
+            },
+            "sum_j_b_floor_u_over_3j": 12,
+            "sum_k_min_s_k_L": 12
+          },
+          {
+            "D_L": 13,
+            "L": 3,
+            "identity_holds": true,
+            "pigeonhole_image_targets_q_to_D_L": {
+              "q27": 4052555153018976267,
+              "q81": 6461081889226673298932241
+            },
+            "sum_j_b_floor_u_over_3j": 13,
+            "sum_k_min_s_k_L": 13
+          }
+        ],
+        "u": 27
+      },
+      {
+        "component_lengths": {
+          "1": 4,
+          "11": 2,
+          "13": 1,
+          "17": 1,
+          "19": 1,
+          "23": 1,
+          "25": 1,
+          "29": 1,
+          "31": 1,
+          "35": 1,
+          "37": 1,
+          "5": 2,
+          "7": 2
+        },
+        "precision_rows": [
+          {
+            "D_L": 13,
+            "L": 1,
+            "identity_holds": true,
+            "pigeonhole_image_targets_q_to_D_L": {
+              "q27": 4052555153018976267,
+              "q81": 6461081889226673298932241
+            },
+            "sum_j_b_floor_u_over_3j": 13,
+            "sum_k_min_s_k_L": 13
+          },
+          {
+            "D_L": 17,
+            "L": 2,
+            "identity_holds": true,
+            "pigeonhole_image_targets_q_to_D_L": {
+              "q27": 2153693963075557766310747,
+              "q81": 278128389443693511257285776231761
+            },
+            "sum_j_b_floor_u_over_3j": 17,
+            "sum_k_min_s_k_L": 17
+          },
+          {
+            "D_L": 18,
+            "L": 3,
+            "identity_holds": true,
+            "pigeonhole_image_targets_q_to_D_L": {
+              "q27": 58149737003040059690390169,
+              "q81": 22528399544939174411840147874772641
+            },
+            "sum_j_b_floor_u_over_3j": 18,
+            "sum_k_min_s_k_L": 18
+          }
+        ],
+        "u": 38
+      }
+    ],
+    "definitions": {
+      "D_L(u)": "sum_(j=0)^(L-1) b(floor(u/3^j))",
+      "b(v)": "ceil(v/2)-floor((v+3)/6)",
+      "s_k": "1+floor(log_3(u/k)) for odd k with 3 not dividing k"
+    }
+  },
+  "verification": {
+    "check": "python3 experimental/scripts/verify_orientation_witt_carry_obstruction.py --check",
+    "semantic_tamper_mutations": 8,
+    "tamper_selftest": "python3 experimental/scripts/verify_orientation_witt_carry_obstruction.py --tamper-selftest",
+    "write": "python3 experimental/scripts/verify_orientation_witt_carry_obstruction.py --write",
+    "zero_argument_mode": "--check"
+  }
+}

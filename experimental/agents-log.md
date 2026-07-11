@@ -30,6 +30,41 @@ Keep entries concise and link to the relevant files.
 
 ## Entries
 
+### 2026-07-11 - ADE repair and ILO threshold PR wave
+
+- **Agent/model:** Codex integrating PRs #647--#657 from holmbuar and
+  DannyExperiments.
+- **Files added or changed:** Added threshold notes under
+  `experimental/notes/thresholds/`, updated
+  `experimental/notes/audits/lean_frontiers_primitive_boolean.md`, added
+  verifier/reproducer scripts under `experimental/scripts/`, and added JSON
+  certificates under `experimental/data/certificates/`.
+- **Status:** PROVED / CONDITIONAL / COUNTEREXAMPLE / EXPERIMENTAL / AUDIT,
+  as stated in the individual notes.  No main-paper theorem is promoted by
+  this entry.
+- **What is being added:** A follow-up threshold batch after the #637 M31 ADE
+  packet.  PR #648 independently audits #637: the census counts are confirmed,
+  while one integral-coordinate `D_s` proof subcase is identified as a narrow
+  proof-completeness gap.  PR #653 supplies the repair, and PR #654 extends
+  the repaired M31 `kappa=2` classifier from `t>=277868` to `t>=276416`,
+  adding 1,452 exclusions and reducing the two-shell residual ledger to
+  2,985,960 rows.  The remaining notes cover collapse-field-cost
+  counterexamples, characteristic-three Witt carries, span-face synthesis,
+  Case-B equidistribution evidence, Boolean-energy self-contained bounds,
+  fiber-image tradeoff and `(ILO-moment)` reductions, and a weighted
+  quotient-major compiler.
+- **How it is useful:** The M31 line changes the status of #637 from
+  "proved but audit pending" to "audited, repaired, and extended" inside
+  `experimental/`.  The ILO/fiber-image notes isolate a concrete
+  exponential-concentration inverse Littlewood--Offord style lemma as the
+  remaining wall for that route.  The collapse and Case-B notes prevent
+  overclaiming by showing where simple counting or field-cost shortcuts fail.
+- **What to do next:** Treat the repaired ADE classifier as experimental
+  theorem material until it is cited or promoted by a separate paper edit.
+  Do not run the heavier reproducer scripts casually.  For proof progress,
+  focus on the named `(ILO-moment)`/exponential inverse-LO input and the
+  remaining M31 residual ledger rows.
+
 ### 2026-07-11 - Routing, saturation, and M31 ADE PR wave
 
 - **Agent/model:** Codex integrating PRs #622--#646 from holmbuar,

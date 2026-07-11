@@ -1,0 +1,1025 @@
+{
+  "A_s_dual_spectrum": {
+    "A_component_excess_coefficient_after_heavy_exclusion": 1,
+    "Q_at_least_10_cases": [
+      {
+        "Q": 10,
+        "j": 4,
+        "m": 2,
+        "strict_n_upper": [
+          4,
+          1
+        ]
+      },
+      {
+        "Q": 11,
+        "j": 4,
+        "m": 3,
+        "strict_n_upper": [
+          9,
+          2
+        ]
+      },
+      {
+        "Q": 10,
+        "j": 3,
+        "m": 4,
+        "strict_n_upper": [
+          16,
+          1
+        ]
+      },
+      {
+        "Q": 12,
+        "j": 4,
+        "m": 4,
+        "strict_n_upper": [
+          16,
+          3
+        ]
+      },
+      {
+        "Q": 11,
+        "j": 3,
+        "m": 5,
+        "strict_n_upper": [
+          25,
+          2
+        ]
+      },
+      {
+        "Q": 13,
+        "j": 4,
+        "m": 5,
+        "strict_n_upper": [
+          25,
+          4
+        ]
+      },
+      {
+        "Q": 10,
+        "j": 2,
+        "m": 6,
+        "strict_n_upper": [
+          36,
+          1
+        ]
+      },
+      {
+        "Q": 12,
+        "j": 3,
+        "m": 6,
+        "strict_n_upper": [
+          12,
+          1
+        ]
+      },
+      {
+        "Q": 14,
+        "j": 4,
+        "m": 6,
+        "strict_n_upper": [
+          36,
+          5
+        ]
+      },
+      {
+        "Q": 11,
+        "j": 2,
+        "m": 7,
+        "strict_n_upper": [
+          49,
+          2
+        ]
+      },
+      {
+        "Q": 13,
+        "j": 3,
+        "m": 7,
+        "strict_n_upper": [
+          49,
+          4
+        ]
+      },
+      {
+        "Q": 15,
+        "j": 4,
+        "m": 7,
+        "strict_n_upper": [
+          49,
+          6
+        ]
+      },
+      {
+        "Q": 10,
+        "j": 1,
+        "m": 8,
+        "strict_n_upper": [
+          64,
+          1
+        ]
+      },
+      {
+        "Q": 12,
+        "j": 2,
+        "m": 8,
+        "strict_n_upper": [
+          64,
+          3
+        ]
+      },
+      {
+        "Q": 14,
+        "j": 3,
+        "m": 8,
+        "strict_n_upper": [
+          64,
+          5
+        ]
+      },
+      {
+        "Q": 16,
+        "j": 4,
+        "m": 8,
+        "strict_n_upper": [
+          64,
+          7
+        ]
+      },
+      {
+        "Q": 11,
+        "j": 1,
+        "m": 9,
+        "strict_n_upper": [
+          81,
+          2
+        ]
+      },
+      {
+        "Q": 13,
+        "j": 2,
+        "m": 9,
+        "strict_n_upper": [
+          81,
+          4
+        ]
+      },
+      {
+        "Q": 15,
+        "j": 3,
+        "m": 9,
+        "strict_n_upper": [
+          27,
+          2
+        ]
+      },
+      {
+        "Q": 17,
+        "j": 4,
+        "m": 9,
+        "strict_n_upper": [
+          81,
+          8
+        ]
+      },
+      {
+        "Q": 10,
+        "j": 0,
+        "m": 10,
+        "strict_n_upper": [
+          100,
+          1
+        ]
+      },
+      {
+        "Q": 12,
+        "j": 1,
+        "m": 10,
+        "strict_n_upper": [
+          100,
+          3
+        ]
+      },
+      {
+        "Q": 14,
+        "j": 2,
+        "m": 10,
+        "strict_n_upper": [
+          20,
+          1
+        ]
+      },
+      {
+        "Q": 16,
+        "j": 3,
+        "m": 10,
+        "strict_n_upper": [
+          100,
+          7
+        ]
+      },
+      {
+        "Q": 18,
+        "j": 4,
+        "m": 10,
+        "strict_n_upper": [
+          100,
+          9
+        ]
+      },
+      {
+        "Q": 11,
+        "j": 0,
+        "m": 11,
+        "strict_n_upper": [
+          121,
+          2
+        ]
+      },
+      {
+        "Q": 13,
+        "j": 1,
+        "m": 11,
+        "strict_n_upper": [
+          121,
+          4
+        ]
+      },
+      {
+        "Q": 15,
+        "j": 2,
+        "m": 11,
+        "strict_n_upper": [
+          121,
+          6
+        ]
+      },
+      {
+        "Q": 17,
+        "j": 3,
+        "m": 11,
+        "strict_n_upper": [
+          121,
+          8
+        ]
+      },
+      {
+        "Q": 19,
+        "j": 4,
+        "m": 11,
+        "strict_n_upper": [
+          121,
+          10
+        ]
+      },
+      {
+        "Q": 12,
+        "j": 0,
+        "m": 12,
+        "strict_n_upper": [
+          48,
+          1
+        ]
+      },
+      {
+        "Q": 14,
+        "j": 1,
+        "m": 12,
+        "strict_n_upper": [
+          144,
+          5
+        ]
+      },
+      {
+        "Q": 16,
+        "j": 2,
+        "m": 12,
+        "strict_n_upper": [
+          144,
+          7
+        ]
+      },
+      {
+        "Q": 18,
+        "j": 3,
+        "m": 12,
+        "strict_n_upper": [
+          16,
+          1
+        ]
+      },
+      {
+        "Q": 20,
+        "j": 4,
+        "m": 12,
+        "strict_n_upper": [
+          144,
+          11
+        ]
+      },
+      {
+        "Q": 13,
+        "j": 0,
+        "m": 13,
+        "strict_n_upper": [
+          169,
+          4
+        ]
+      },
+      {
+        "Q": 15,
+        "j": 1,
+        "m": 13,
+        "strict_n_upper": [
+          169,
+          6
+        ]
+      },
+      {
+        "Q": 17,
+        "j": 2,
+        "m": 13,
+        "strict_n_upper": [
+          169,
+          8
+        ]
+      },
+      {
+        "Q": 19,
+        "j": 3,
+        "m": 13,
+        "strict_n_upper": [
+          169,
+          10
+        ]
+      },
+      {
+        "Q": 21,
+        "j": 4,
+        "m": 13,
+        "strict_n_upper": [
+          169,
+          12
+        ]
+      },
+      {
+        "Q": 14,
+        "j": 0,
+        "m": 14,
+        "strict_n_upper": [
+          196,
+          5
+        ]
+      },
+      {
+        "Q": 16,
+        "j": 1,
+        "m": 14,
+        "strict_n_upper": [
+          28,
+          1
+        ]
+      },
+      {
+        "Q": 18,
+        "j": 2,
+        "m": 14,
+        "strict_n_upper": [
+          196,
+          9
+        ]
+      },
+      {
+        "Q": 20,
+        "j": 3,
+        "m": 14,
+        "strict_n_upper": [
+          196,
+          11
+        ]
+      },
+      {
+        "Q": 22,
+        "j": 4,
+        "m": 14,
+        "strict_n_upper": [
+          196,
+          13
+        ]
+      },
+      {
+        "Q": 15,
+        "j": 0,
+        "m": 15,
+        "strict_n_upper": [
+          75,
+          2
+        ]
+      },
+      {
+        "Q": 17,
+        "j": 1,
+        "m": 15,
+        "strict_n_upper": [
+          225,
+          8
+        ]
+      },
+      {
+        "Q": 19,
+        "j": 2,
+        "m": 15,
+        "strict_n_upper": [
+          45,
+          2
+        ]
+      },
+      {
+        "Q": 21,
+        "j": 3,
+        "m": 15,
+        "strict_n_upper": [
+          75,
+          4
+        ]
+      },
+      {
+        "Q": 23,
+        "j": 4,
+        "m": 15,
+        "strict_n_upper": [
+          225,
+          14
+        ]
+      },
+      {
+        "Q": 16,
+        "j": 0,
+        "m": 16,
+        "strict_n_upper": [
+          256,
+          7
+        ]
+      },
+      {
+        "Q": 18,
+        "j": 1,
+        "m": 16,
+        "strict_n_upper": [
+          256,
+          9
+        ]
+      },
+      {
+        "Q": 20,
+        "j": 2,
+        "m": 16,
+        "strict_n_upper": [
+          256,
+          11
+        ]
+      },
+      {
+        "Q": 22,
+        "j": 3,
+        "m": 16,
+        "strict_n_upper": [
+          256,
+          13
+        ]
+      },
+      {
+        "Q": 24,
+        "j": 4,
+        "m": 16,
+        "strict_n_upper": [
+          256,
+          15
+        ]
+      },
+      {
+        "Q": 17,
+        "j": 0,
+        "m": 17,
+        "strict_n_upper": [
+          289,
+          8
+        ]
+      },
+      {
+        "Q": 19,
+        "j": 1,
+        "m": 17,
+        "strict_n_upper": [
+          289,
+          10
+        ]
+      },
+      {
+        "Q": 21,
+        "j": 2,
+        "m": 17,
+        "strict_n_upper": [
+          289,
+          12
+        ]
+      },
+      {
+        "Q": 23,
+        "j": 3,
+        "m": 17,
+        "strict_n_upper": [
+          289,
+          14
+        ]
+      },
+      {
+        "Q": 25,
+        "j": 4,
+        "m": 17,
+        "strict_n_upper": [
+          289,
+          16
+        ]
+      }
+    ],
+    "Q_at_least_10_maximum_case": {
+      "Q": 10,
+      "j": 0,
+      "m": 10
+    },
+    "Q_at_least_10_maximum_strict_n_upper": [
+      100,
+      1
+    ],
+    "Q_equals_9_cases": [
+      {
+        "j": 4,
+        "m": 1
+      },
+      {
+        "j": 3,
+        "m": 3
+      },
+      {
+        "j": 2,
+        "m": 5
+      },
+      {
+        "j": 1,
+        "m": 7
+      },
+      {
+        "j": 0,
+        "m": 9
+      }
+    ],
+    "all_pass": true,
+    "bounded_falsifier_scope": {
+      "heavy_rows_seen": 5051,
+      "maximum_heavy_n_seen": 1000,
+      "n_range": [
+        2,
+        1000
+      ],
+      "role": "falsifier only; the finite Q algebra is all-rank",
+      "spectrum_rows_checked": 88550
+    },
+    "gap_to_nine": [
+      5473241,
+      64410204497
+    ],
+    "heavy_A_n_upper": 953224,
+    "heavy_A_n_upper_formula": "floor(81/(9-rho_star))",
+    "heavy_allocation": {
+      "conclusion": "every A component has Z<=8",
+      "contradiction": true,
+      "family_size": 16777216,
+      "heavy_A_root_count_strict_upper": 8579016,
+      "remaining_A_root_count_strict_upper": 2097153,
+      "remaining_D_root_count": 0,
+      "remaining_E_root_count_strict_upper": 30,
+      "total_root_count_strict_upper": 10676199
+    },
+    "heavy_window": "8<Z<=rho_star<9",
+    "large_n_forces_Q_equals_9_from": 111,
+    "parameter_bounds": {
+      "j_upper": 4,
+      "m_upper": 17,
+      "reason": "m/2<=Z<9 and 2j<=Z<9"
+    },
+    "spectrum": "Z=m(n-m)/n+2j=Q-m^2/n, Q=m+2j"
+  },
+  "M31_boundary": {
+    "all_pass": true,
+    "common_height_denominator_at_t_star": 64410204497,
+    "common_height_h_squared_positive": true,
+    "component_count_upper": 17,
+    "first_uncertified_row": [
+      2,
+      276415,
+      276415,
+      552830
+    ],
+    "fixed_parameter_application": "||zeta||^2<=rho(t)<=rho_star for every t>=t_star",
+    "gap_to_nine": [
+      5473241,
+      64410204497
+    ],
+    "heavy_A_n_upper": 953224,
+    "heavy_allocation_root_count_strict_upper": 10676199,
+    "minimum_determinant_gap": 12,
+    "rank_gap_over_d0": 67407,
+    "rank_lower": 2097112,
+    "rank_lower_as_N_minus": 40,
+    "rho_is_decreasing_successive_difference_numerator": 2296302859645353984,
+    "rho_previous": [
+      579684270080,
+      64406010193
+    ],
+    "rho_previous_above_9": true,
+    "rho_star": [
+      579686367232,
+      64410204497
+    ],
+    "rho_star_between_8_and_9": true,
+    "source_grid_t_and_weight_nonzero_mod_p": true,
+    "source_grid_t_upper": 490564,
+    "t_star": 276416
+  },
+  "address_space_cap_bytes": 1073741824,
+  "all_pass": true,
+  "checks": {
+    "A_s_dual_spectrum_and_heavy_allocation_pass": true,
+    "address_space_at_most_one_GiB": true,
+    "component_summation_passes": true,
+    "fixed_boundary_and_determinant_pass": true,
+    "hypothesis_and_promotion_scope_pass": true,
+    "parent_PR653_exact_replay_passes": true,
+    "semantic_negative_controls_pass": true,
+    "streamed_old_and_new_census_pass": true
+  },
+  "component_envelopes": {
+    "all_pass": true,
+    "component_bounds": {
+      "A_s": "|S_C|<=8s+Z_C after the heavy-A exclusion",
+      "D_s_half_integral": "|S_C|<=17s<=8s+36Z_C",
+      "D_s_integral": "|S_C|<8s (PR #653 replayed)",
+      "E_6_7_8": "|S_C|<=30Z_C<=8s+30Z_C"
+    },
+    "excess_coefficients": {
+      "A_s": 1,
+      "D_s_half_integral": 36,
+      "D_s_integral": 0,
+      "E_6_7_8": 30
+    },
+    "global_conclusion": "|S|<=8r+36rho_star<8r+324",
+    "half_integral_D_inputs": {
+      "matching_cost": "nu/2<=Z_C<9, hence nu<=17",
+      "rank_cost": "s<=4Z_C",
+      "support_edge_bound": "|S_C|<=nu*s"
+    },
+    "orthogonal_norm_sum": "sum_C Z_C=||zeta||^2<=rho",
+    "parent_D_integral_payload_sha256": "469e21269d2d8fde90408e373049342e8bed4bc7a0337e3759da4ab445426627"
+  },
+  "hypothesis_audit": {
+    "all_pass": true,
+    "note_markers": [
+      "exactly L=8N distinct selected roots",
+      "No lower bound on rho(t)",
+      "2Nt_*-R=64410204497>0",
+      "boundary parameter** rho_*",
+      "This packet deliberately stops at rho<9",
+      "This is a certificate boundary, not a counterexample",
+      "|S| <= 8r+36rho_* < 8r+324"
+    ],
+    "rho_at_least_9_optimization_in_scope": false,
+    "silently_stronger_hypotheses": [],
+    "tex_hits": [],
+    "used_hypotheses": [
+      "exactly L=8N selected roots and real rank at most N",
+      "orthogonal ADE decomposition",
+      "component projections of zeta lie in component duals",
+      "selected roots have norm squared two and common height one",
+      "distinct selected-root inner products belong to {0,1}",
+      "total component norm sum is at most fixed rho_star",
+      "rho_star<9 with its exact positive gap to nine",
+      "positive common-height denominator throughout the classified source grid",
+      "source-grid t and M31 weight are nonzero modulo p",
+      "M31 modular rank is at most d0"
+    ]
+  },
+  "nonclaims": [
+    "No optimization at rho>=9 is claimed.",
+    "The first uncertified row is not claimed to be a counterexample.",
+    "All four non-log PR #653 payload files are byte-identical; the shared agents log gains only the successor entry.",
+    "No kappa other than the existing kappa=2 classifier is addressed.",
+    "No complete M31 upper ledger or deployed CAP25 solution is claimed.",
+    "No statement is promoted to the frontiers TeX."
+  ],
+  "parent_PR653_replay": {
+    "artifact": "experimental/data/certificates/m31-ade-integral-ds-repair/m31_ade_integral_ds_repair.json",
+    "exact_replay": true,
+    "payload_sha256": "469e21269d2d8fde90408e373049342e8bed4bc7a0337e3759da4ab445426627",
+    "status": "PROVED_PR648_INTEGRAL_DS_OPEN_GAP_FIXED"
+  },
+  "payload_sha256": "7439abd7a3c74693b77a788b993594e944b71d1e0b9cec2c8f82af816f2c81bd",
+  "provenance": {
+    "audit_PR648_head": "0c84a8f91331e2d35d9de9c69aa873e26aa1c71a",
+    "four_non_log_parent_payload_files_byte_identical": true,
+    "parent_agents_log_entry_preserved": true,
+    "parent_payload_sha256": "469e21269d2d8fde90408e373049342e8bed4bc7a0337e3759da4ab445426627",
+    "stacked_base_PR653_commit": "8788a2432bd985cc9047fd000e73b98ac91530fb"
+  },
+  "role": "M31-specific rho-below-nine common-height ADE theorem and exact 1452-row M31 refinement, stacked on PR #653 with no TeX promotion",
+  "schema": "m31_ade_component_sensitive_refinement.v1",
+  "semantic_negative_controls": {
+    "all_pass": true,
+    "relax_fixed_rho_star_to_nonstrict_nine": {
+      "8s_plus_Z": [
+        7269104158144,
+        953225
+      ],
+      "Z": [
+        8578944,
+        953225
+      ],
+      "envelope_fails": true,
+      "j": 0,
+      "m": 9,
+      "n": 953225,
+      "nZ": [
+        8578944,
+        1
+      ]
+    },
+    "skip_heavy_A_allocation": {
+      "8s_plus_Z": [
+        7269088906551,
+        953224
+      ],
+      "Z": [
+        8578935,
+        953224
+      ],
+      "envelope_fails": true,
+      "j": 0,
+      "m": 9,
+      "n": 953224,
+      "nZ": [
+        8578935,
+        1
+      ]
+    }
+  },
+  "source_pins_sha256": {
+    "experimental/data/cap25_v13_m31_k2_common_height_ade_cut.json": "db8218f5b97fc8b8f211f9cc2e40629bb5cc57575cb40b2c0d86fb068d88220a",
+    "experimental/data/certificates/m31-ade-integral-ds-repair/m31_ade_integral_ds_repair.json": "b99d1c31a330880f4d481cec94cc17249074c4e68f355b42899d34cde9227c3f",
+    "experimental/notes/thresholds/cap25_v13_m31_k2_common_height_ade_cut.md": "99791710842e065fc82d7e37ce75001d531c1aec51457c8846b80e979891d86e",
+    "experimental/notes/thresholds/m31_ade_component_sensitive_refinement.md": "d79e7d99728e3c76d727a3efaac9ff3dadfc11dee7899032f95bcc9572af37bc",
+    "experimental/notes/thresholds/m31_ade_integral_ds_repair.md": "63c9df5a61b93091d6926d09dd71736a01a7429249cfa0694ca5b62cdd5ebef2",
+    "experimental/scripts/verify_m31_ade_component_sensitive_refinement.py": "73a855d60039f9f3bc3ddb5f685aff7f3fa4a78653ec2b0e7883a425260f150d",
+    "experimental/scripts/verify_m31_ade_integral_ds_repair.py": "d4ab187c81e709689b329245f2cb107bed3aaf631bd73b7e845c714bb03d54ea",
+    "experimental/scripts/verify_m31_k2_common_height_ade_cut.py": "4cc59c557dfe964aae96863c062bc66df18f8b01e807abcdae53edbc9147df95",
+    "experimental/scripts/verify_m31_rank_inertia_anchor_cut.py": "1ea1c6a1188895223dfca82d62f1fb05e2b9c7139b98e1f1b80c2a49d17619db"
+  },
+  "status": "PROVED_COMPONENT_SENSITIVE_ADE_RHO_BELOW_NINE_AND_1452_ROW_DELTA",
+  "streamed_census": {
+    "all_pass": true,
+    "expected_counts": {
+      "incremental_delta": 1452,
+      "integrated": 153605,
+      "new_classifier": 214149,
+      "new_exclusions": 115316,
+      "new_residual": 2985960,
+      "new_union": 268925,
+      "old_classifier": 212697,
+      "old_new_exclusions": 113864,
+      "old_residual": 2987412,
+      "old_union": 267473,
+      "pre637_residual": 3101276,
+      "pre637_union": 153609
+    },
+    "grid_count": 3254885,
+    "method": "canonical kappa,t order; semicolon-delimited row encoding; all sets hashed in one O(1)-memory pass",
+    "new_hashes": {
+      "incremental_delta": "336a42986f9c6abd6347006456a19af960cf52765e6a02ae0679f11aba2ce7e1",
+      "new_classifier": "784b4e9a6516c1ffad5c1c7e6b95962013fb2adb39f10655bb4d95dec09ef8ae",
+      "new_exclusions": "96f444169abec3c3db43c7d8c38b67a989722ce72e1060ca6b39af2cbfad5862",
+      "new_residual": "330cdf74ec81ef3212335482e849e70249d4d66f5b7ce1ceb9611d006782d177",
+      "new_union": "8459f6876821c8da56ab96f4f23733878ae6c3423c385be5998071fb3bf4e9ef"
+    },
+    "new_hashes_hard_pinned": true,
+    "old_hashes_reproduced": {
+      "integrated": "49576339b6755e90f6f1997b294bad5d178aa9bc5c25c44aab345d9ccefd99da",
+      "old_classifier": "4801bb6740b214cf90590eafa827437fbb6b04da899db970c5f799af74b4750f",
+      "old_new_exclusions": "b5f1a8c3d2916dd5077d641eef1dffcb2ae9385fd4707364a62ea37b01808a79",
+      "old_residual": "2dcc296964f1a131428baf100f2e5a1c6291c91778fe533655255a5b7e8dce35",
+      "old_union": "842d33d8258fd69c14f6b69ca3a9d5a8880df46225f142f0ea8cdd8daa5bb973",
+      "pre637_residual": "40925c2c5a3c3928a42f6d92775de87608c7e260bf3c3ff7eda36b5e02193956",
+      "pre637_union": "2f57a0a5379a4222869d4e6ab79aad39d7b352df6c0227996ab2da7ec10483a4"
+    },
+    "records": {
+      "incremental_delta": {
+        "count": 1452,
+        "first": [
+          2,
+          276416,
+          276416,
+          552832
+        ],
+        "last": [
+          2,
+          277867,
+          277867,
+          555734
+        ],
+        "sha256": "336a42986f9c6abd6347006456a19af960cf52765e6a02ae0679f11aba2ce7e1"
+      },
+      "integrated": {
+        "count": 153605,
+        "first": [
+          2,
+          391736,
+          391736,
+          783472
+        ],
+        "last": [
+          773,
+          676,
+          521872,
+          522548
+        ],
+        "sha256": "49576339b6755e90f6f1997b294bad5d178aa9bc5c25c44aab345d9ccefd99da"
+      },
+      "new_classifier": {
+        "count": 214149,
+        "first": [
+          2,
+          276416,
+          276416,
+          552832
+        ],
+        "last": [
+          2,
+          490564,
+          490564,
+          981128
+        ],
+        "sha256": "784b4e9a6516c1ffad5c1c7e6b95962013fb2adb39f10655bb4d95dec09ef8ae"
+      },
+      "new_exclusions": {
+        "count": 115316,
+        "first": [
+          2,
+          276416,
+          276416,
+          552832
+        ],
+        "last": [
+          2,
+          391731,
+          391731,
+          783462
+        ],
+        "sha256": "96f444169abec3c3db43c7d8c38b67a989722ce72e1060ca6b39af2cbfad5862"
+      },
+      "new_residual": {
+        "count": 2985960,
+        "first": [
+          2,
+          67448,
+          67448,
+          134896
+        ],
+        "last": [
+          774,
+          675,
+          521775,
+          522450
+        ],
+        "sha256": "330cdf74ec81ef3212335482e849e70249d4d66f5b7ce1ceb9611d006782d177"
+      },
+      "new_union": {
+        "count": 268925,
+        "first": [
+          2,
+          276416,
+          276416,
+          552832
+        ],
+        "last": [
+          773,
+          676,
+          521872,
+          522548
+        ],
+        "sha256": "8459f6876821c8da56ab96f4f23733878ae6c3423c385be5998071fb3bf4e9ef"
+      },
+      "old_classifier": {
+        "count": 212697,
+        "first": [
+          2,
+          277868,
+          277868,
+          555736
+        ],
+        "last": [
+          2,
+          490564,
+          490564,
+          981128
+        ],
+        "sha256": "4801bb6740b214cf90590eafa827437fbb6b04da899db970c5f799af74b4750f"
+      },
+      "old_new_exclusions": {
+        "count": 113864,
+        "first": [
+          2,
+          277868,
+          277868,
+          555736
+        ],
+        "last": [
+          2,
+          391731,
+          391731,
+          783462
+        ],
+        "sha256": "b5f1a8c3d2916dd5077d641eef1dffcb2ae9385fd4707364a62ea37b01808a79"
+      },
+      "old_residual": {
+        "count": 2987412,
+        "first": [
+          2,
+          67448,
+          67448,
+          134896
+        ],
+        "last": [
+          774,
+          675,
+          521775,
+          522450
+        ],
+        "sha256": "2dcc296964f1a131428baf100f2e5a1c6291c91778fe533655255a5b7e8dce35"
+      },
+      "old_union": {
+        "count": 267473,
+        "first": [
+          2,
+          277868,
+          277868,
+          555736
+        ],
+        "last": [
+          773,
+          676,
+          521872,
+          522548
+        ],
+        "sha256": "842d33d8258fd69c14f6b69ca3a9d5a8880df46225f142f0ea8cdd8daa5bb973"
+      },
+      "pre637_residual": {
+        "count": 3101276,
+        "first": [
+          2,
+          67448,
+          67448,
+          134896
+        ],
+        "last": [
+          774,
+          675,
+          521775,
+          522450
+        ],
+        "sha256": "40925c2c5a3c3928a42f6d92775de87608c7e260bf3c3ff7eda36b5e02193956"
+      },
+      "pre637_union": {
+        "count": 153609,
+        "first": [
+          2,
+          391732,
+          391732,
+          783464
+        ],
+        "last": [
+          773,
+          676,
+          521872,
+          522548
+        ],
+        "sha256": "2f57a0a5379a4222869d4e6ab79aad39d7b352df6c0227996ab2da7ec10483a4"
+      }
+    }
+  },
+  "verification": {
+    "artifact_tamper_mutations": 8,
+    "check": "python3 experimental/scripts/verify_m31_ade_component_sensitive_refinement.py --check",
+    "semantic_negative_controls": 2,
+    "tamper_selftest": "python3 experimental/scripts/verify_m31_ade_component_sensitive_refinement.py --tamper-selftest",
+    "write": "python3 experimental/scripts/verify_m31_ade_component_sensitive_refinement.py --write",
+    "zero_argument_mode": "--check"
+  }
+}

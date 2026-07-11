@@ -1,0 +1,518 @@
+{
+  "base_commit": "5c9aab794e6575d815541e0a5dd8534d03d400aa",
+  "hypothesis_audit": {
+    "PR643_instantiates_uniform_fold": false,
+    "algebraic_major_certified_lift_containment_supplied_generically": false,
+    "algebraic_phase_count_exhausts_extension_trace_band": false,
+    "algebraic_phase_count_exhausts_prime_field_factor_band": true,
+    "all_quotient_scales_overlap_assigned": false,
+    "ambient_FI_or_k_log_field_supplied_generically": false,
+    "canonical_partial_occupancy_subprofiles_supported_by_UF10": false,
+    "full_A4_closed": false,
+    "full_slice_partial_selections_in_complete_fibers_included": true,
+    "generic_A4_active_set_is_fiber_saturated": false,
+    "growing_tail_entropy_verified_for_deployed_sequence": false,
+    "incomplete_active_map_fibers_supported_by_UF10": false,
+    "intermediate_energies_supplied_by_A4_A5": false,
+    "required_consumer_uniformity_supplied_generically": false,
+    "tex_modified": false
+  },
+  "memory_cap_bytes": 1073741824,
+  "note_sha256": "4b924af30dc444ab770620cede6895fca47674e64e97d519ecbfa83bd6939222",
+  "payload_sha256": "e50299232eeb0190533c8a0592ac4aa87e70e6ab11cd7184d8be5efb92c904b0",
+  "prior_art": {
+    "EF7": "exact finite Fourier bookkeeping; not the uniform-fold compiler",
+    "PO3": "exact occupancy generating identity; not an aggregate payment",
+    "PR465": "pure cyclic fixed-degree count and exponential obstruction",
+    "PR643": "negative applicability stress test only",
+    "commit_75e5e32": "multilevel coefficient powers and signed LS wall",
+    "minimal_phase_supplement": "collision and Parseval identity; not the all-degree compiler"
+  },
+  "schema": "a4_quotient_major_compiler.v1",
+  "source_sha256": {
+    "experimental/asymptotic_rs_mca_frontiers.tex": "0e3aa7b1ba79b1065439ae484f4cb989d80cabe18afb68ec63a6b21d1f3370fd",
+    "experimental/notes/roadmaps/b2_l1_crux_milestone.md": "1bae6abe2cf823d2bf9a29d2be21c1f169453d3f27b38c5917669b36d2c231bd",
+    "experimental/notes/roadmaps/b2_l1_reduction_ledger.md": "bd35b82b5cec35639b0bf539e15709b53e3316dae0c2b8e298953db424fb0435",
+    "experimental/notes/thresholds/c9_major_arc_valueset_structure.md": "6fd793af8933749018c109bc7d82d5b4c45972239321c7f469daf3b94e9a15d8",
+    "experimental/notes/thresholds/cap25_v13_qfin_rung_audit.md": "7545779b5ca3454007508b74dd225abab716ae809ad6c7ebe08dcfd716359b25",
+    "experimental/notes/thresholds/cap25_v13_qfin_rung_audit_m31.md": "b038245aa27ee397f67e8821ba64c6f8d766734eb73c7e1afe177e3230f042d7",
+    "experimental/notes/thresholds/minimal_phase_supplement.md": "637057f902d105ad438e31b0b38f95c0d63d54b0716a1bb547e712c602e49c2a",
+    "experimental/notes/thresholds/moment_map_max_fiber.md": "f3d7bbc3f3522a9a1c32f31b28aa3c8b547110cd4ad04f1a8742b1553ce1d245",
+    "experimental/notes/thresholds/pte_cluster_packing_frontier.md": "b99277ea9824acfecfac4d04828dfb05f27c11e43c2617a82c18a5664b4deeb9"
+  },
+  "status": "PROVED_WEIGHTED_GRS_COUNT_AND_ALL_DEGREE_UNIFORM_FOLD_COMPILER",
+  "theorems": {
+    "uniform_fold_compiler": {
+      "common_target": "A_phi=V_g/W_phi",
+      "degrees_proved": "every integer d>=2",
+      "loss": "C_maj<=K_d(m)-1",
+      "records": [
+        {
+          "d": 2,
+          "endpoint_kappa": [
+            8,
+            1
+          ],
+          "group_order": 8,
+          "holder_compositions_checked": 36,
+          "intermediate_weights": [
+            {
+              "FI_loss": [
+                8,
+                1
+              ],
+              "M_j": 1,
+              "Q_loss": [
+                1,
+                1
+              ],
+              "SP_j": 1,
+              "image": 1,
+              "j": 0,
+              "kappa": [
+                8,
+                1
+              ],
+              "max_fiber": 1
+            },
+            {
+              "FI_loss": [
+                8,
+                5
+              ],
+              "M_j": 5,
+              "Q_loss": [
+                1,
+                1
+              ],
+              "SP_j": 5,
+              "image": 5,
+              "j": 1,
+              "kappa": [
+                8,
+                5
+              ],
+              "max_fiber": 1
+            },
+            {
+              "FI_loss": [
+                8,
+                7
+              ],
+              "M_j": 10,
+              "Q_loss": [
+                7,
+                5
+              ],
+              "SP_j": 16,
+              "image": 7,
+              "j": 2,
+              "kappa": [
+                32,
+                25
+              ],
+              "max_fiber": 2
+            },
+            {
+              "FI_loss": [
+                8,
+                7
+              ],
+              "M_j": 10,
+              "Q_loss": [
+                7,
+                5
+              ],
+              "SP_j": 16,
+              "image": 7,
+              "j": 3,
+              "kappa": [
+                32,
+                25
+              ],
+              "max_fiber": 2
+            },
+            {
+              "FI_loss": [
+                8,
+                5
+              ],
+              "M_j": 5,
+              "Q_loss": [
+                1,
+                1
+              ],
+              "SP_j": 5,
+              "image": 5,
+              "j": 4,
+              "kappa": [
+                8,
+                5
+              ],
+              "max_fiber": 1
+            },
+            {
+              "FI_loss": [
+                8,
+                1
+              ],
+              "M_j": 1,
+              "Q_loss": [
+                1,
+                1
+              ],
+              "SP_j": 1,
+              "image": 1,
+              "j": 5,
+              "kappa": [
+                8,
+                1
+              ],
+              "max_fiber": 1
+            }
+          ],
+          "n": 5,
+          "quotient_values": [
+            0,
+            1,
+            2,
+            4,
+            3
+          ],
+          "selected_full_slice": {
+            "M": 252,
+            "all_character_L1": 352,
+            "composition_count": 6,
+            "m": 5,
+            "nontrivial_character_L1": 100,
+            "triangle_component_L1_sum": 352,
+            "weight_numerator_sum": 252
+          }
+        },
+        {
+          "d": 3,
+          "endpoint_kappa": [
+            8,
+            1
+          ],
+          "group_order": 8,
+          "holder_compositions_checked": 125,
+          "intermediate_weights": [
+            {
+              "FI_loss": [
+                8,
+                1
+              ],
+              "M_j": 1,
+              "Q_loss": [
+                1,
+                1
+              ],
+              "SP_j": 1,
+              "image": 1,
+              "j": 0,
+              "kappa": [
+                8,
+                1
+              ],
+              "max_fiber": 1
+            },
+            {
+              "FI_loss": [
+                2,
+                1
+              ],
+              "M_j": 4,
+              "Q_loss": [
+                1,
+                1
+              ],
+              "SP_j": 4,
+              "image": 4,
+              "j": 1,
+              "kappa": [
+                2,
+                1
+              ],
+              "max_fiber": 1
+            },
+            {
+              "FI_loss": [
+                4,
+                3
+              ],
+              "M_j": 6,
+              "Q_loss": [
+                1,
+                1
+              ],
+              "SP_j": 6,
+              "image": 6,
+              "j": 2,
+              "kappa": [
+                4,
+                3
+              ],
+              "max_fiber": 1
+            },
+            {
+              "FI_loss": [
+                2,
+                1
+              ],
+              "M_j": 4,
+              "Q_loss": [
+                1,
+                1
+              ],
+              "SP_j": 4,
+              "image": 4,
+              "j": 3,
+              "kappa": [
+                2,
+                1
+              ],
+              "max_fiber": 1
+            },
+            {
+              "FI_loss": [
+                8,
+                1
+              ],
+              "M_j": 1,
+              "Q_loss": [
+                1,
+                1
+              ],
+              "SP_j": 1,
+              "image": 1,
+              "j": 4,
+              "kappa": [
+                8,
+                1
+              ],
+              "max_fiber": 1
+            }
+          ],
+          "n": 4,
+          "quotient_values": [
+            0,
+            1,
+            2,
+            4
+          ],
+          "selected_full_slice": {
+            "M": 924,
+            "all_character_L1": 984,
+            "composition_count": 19,
+            "m": 6,
+            "nontrivial_character_L1": 60,
+            "triangle_component_L1_sum": 1080,
+            "weight_numerator_sum": 924
+          }
+        },
+        {
+          "d": 4,
+          "endpoint_kappa": [
+            4,
+            1
+          ],
+          "group_order": 4,
+          "holder_compositions_checked": 256,
+          "intermediate_weights": [
+            {
+              "FI_loss": [
+                4,
+                1
+              ],
+              "M_j": 1,
+              "Q_loss": [
+                1,
+                1
+              ],
+              "SP_j": 1,
+              "image": 1,
+              "j": 0,
+              "kappa": [
+                4,
+                1
+              ],
+              "max_fiber": 1
+            },
+            {
+              "FI_loss": [
+                4,
+                3
+              ],
+              "M_j": 3,
+              "Q_loss": [
+                1,
+                1
+              ],
+              "SP_j": 3,
+              "image": 3,
+              "j": 1,
+              "kappa": [
+                4,
+                3
+              ],
+              "max_fiber": 1
+            },
+            {
+              "FI_loss": [
+                4,
+                3
+              ],
+              "M_j": 3,
+              "Q_loss": [
+                1,
+                1
+              ],
+              "SP_j": 3,
+              "image": 3,
+              "j": 2,
+              "kappa": [
+                4,
+                3
+              ],
+              "max_fiber": 1
+            },
+            {
+              "FI_loss": [
+                4,
+                1
+              ],
+              "M_j": 1,
+              "Q_loss": [
+                1,
+                1
+              ],
+              "SP_j": 1,
+              "image": 1,
+              "j": 3,
+              "kappa": [
+                4,
+                1
+              ],
+              "max_fiber": 1
+            }
+          ],
+          "n": 3,
+          "quotient_values": [
+            0,
+            1,
+            2
+          ],
+          "selected_full_slice": {
+            "M": 924,
+            "all_character_L1": 1008,
+            "composition_count": 44,
+            "m": 6,
+            "nontrivial_character_L1": 84,
+            "triangle_component_L1_sum": 1056,
+            "weight_numerator_sum": 924
+          }
+        }
+      ]
+    },
+    "weighted_grs_count": {
+      "configs": [
+        {
+          "N": 16,
+          "R": 3,
+          "ceiling_k_over_d": 2,
+          "constraint_rank": 1,
+          "d": 2,
+          "descended_length": 8,
+          "descended_minimum_distance": 7,
+          "floor_k_over_d": 1,
+          "k": 3,
+          "max_nonzero_lift_zeros": 2,
+          "name": "tight_floor_falsifier",
+          "p": 17,
+          "phase_count": 289,
+          "phase_dimension": 2,
+          "proved_distance_floor": 7,
+          "weight": "monomial:2"
+        },
+        {
+          "N": 12,
+          "R": 5,
+          "ceiling_k_over_d": 2,
+          "constraint_rank": 3,
+          "d": 3,
+          "descended_length": 4,
+          "descended_minimum_distance": 3,
+          "floor_k_over_d": 1,
+          "k": 5,
+          "max_nonzero_lift_zeros": 3,
+          "name": "cubic_fold_tight",
+          "p": 13,
+          "phase_count": 169,
+          "phase_dimension": 2,
+          "proved_distance_floor": 3,
+          "weight": "monomial:2"
+        },
+        {
+          "N": 16,
+          "R": 7,
+          "ceiling_k_over_d": 2,
+          "constraint_rank": 5,
+          "d": 4,
+          "descended_length": 4,
+          "descended_minimum_distance": 3,
+          "floor_k_over_d": 1,
+          "k": 7,
+          "max_nonzero_lift_zeros": 4,
+          "name": "quartic_fold_tight",
+          "p": 17,
+          "phase_count": 289,
+          "phase_dimension": 2,
+          "proved_distance_floor": 3,
+          "weight": "monomial:2"
+        },
+        {
+          "N": 10,
+          "R": 4,
+          "ceiling_k_over_d": 2,
+          "constraint_rank": 2,
+          "d": 2,
+          "descended_length": 5,
+          "descended_minimum_distance": 4,
+          "floor_k_over_d": 2,
+          "k": 4,
+          "max_nonzero_lift_zeros": 2,
+          "name": "nonmonomial_common_weight",
+          "p": 11,
+          "phase_count": 121,
+          "phase_dimension": 2,
+          "proved_distance_floor": 4,
+          "weight": "quadratic_plus_one"
+        }
+      ],
+      "dimension_bound": "floor((k-1)/d)+1=ceil(k/d)",
+      "floor_counterexample": {
+        "R": 3,
+        "d": 2,
+        "factor_dimension": 2,
+        "false_floor": 1,
+        "p": 17,
+        "sharp_ceiling": 2,
+        "weight": "rho(t)=t^2"
+      },
+      "scope": "global_B_valued_phase_factorization_on_every_exact_fiber",
+      "sparse_tail_condition": "log(I_N)+ceil(k/D_N)*log(|B|)=o(N)",
+      "sparse_tail_hypotheses": {
+        "certified_effective_major_lift_containment_required": true,
+        "generic_consumer_supplies_hypotheses": false,
+        "global_every_fiber_factorization": true,
+        "k_log_field_is_O_N_required": true,
+        "log_field_is_o_N_required": true,
+        "log_map_count_is_o_N_required": true,
+        "minimum_degree_tends_to_infinity_required": true,
+        "uniform_over_live_leaves_maps_and_received_lines_required": true
+      }
+    }
+  },
+  "verifier_sha256": "aa233b7815deac1a714c48ca0dae1e4a60334b39672a20bc8cc36e423ea1fa24"
+}
