@@ -3,6 +3,7 @@ import AsymptoticSpine.FirstMatch
 import AsymptoticSpine.Moment
 import AsymptoticSpine.Normalization
 import AsymptoticSpine.AddBack
+import AsymptoticSpine.BooleanFiber
 import AsymptoticSpine.NoHighEnergy
 import AsymptoticSpine.SigmaDiagonal
 import AsymptoticSpine.Averaging
@@ -11,3 +12,5 @@ import AsymptoticSpine.Window
 import AsymptoticSpine.ProfileEnvelope
 import AsymptoticSpine.StaircaseDeep
 import AsymptoticSpine.EffectiveClosure
+import AsymptoticSpine.PrimitiveBoolean
+import AsymptoticSpine.BooleanDifferenceGrowth

@@ -1,0 +1,820 @@
+{
+  "all_pass": true,
+  "base_sha": "e190193cebced1d3752d068a1c24136bc69a85d9",
+  "checks": {
+    "all_exact_rows": true,
+    "all_row_central_bounds": true,
+    "all_row_image_caps": true,
+    "bounded_log_concavity_checks": true,
+    "cube_fixed_c_countergate": true,
+    "elementary_45907_over_32768_is_gt_one": true,
+    "frontiers_labels_pinned": true,
+    "local_63_states": true,
+    "local_64_subsets": true,
+    "local_polynomial": true,
+    "local_polynomial_log_concave": true,
+    "local_unique_collision": true,
+    "near_sidon_semantics_scope": true,
+    "open_pr_interaction_scope": true,
+    "positional_digit_separation": true,
+    "three_block_binomial_derivation": true
+  },
+  "construction": {
+    "active_coordinates_N": "6k",
+    "digit_separation": "max local first digit 138<1000 and max local second digit 3202<1000^2, so equality of global moments is blockwise",
+    "field_choice": "choose a prime p greater than sum_{t in T_k}t^2; all first and second subset moments then have no modular wrap",
+    "field_growth": "Bertrand gives a prime between the no-wrap threshold and twice that threshold, hence log p=2k log B+O(1)=Theta(N)",
+    "fixed_weight_m": "3k",
+    "ground_set": "T_k={(D+u)B^i: 0<=i<k, u in U}",
+    "literal_sidon_floor_ratio": "E/(2f^2-f)=6^k/(2*4^k-2^k), asymptotic to (3/2)^k/2; the construction is TeX-low-energy but not multiplicatively close to the literal Sidon minimum",
+    "local_offsets_U": [
+      0,
+      1,
+      2,
+      4,
+      5,
+      6
+    ],
+    "map": "Phi(S)=(sum_{t in S}t, sum_{t in S}t^2) in F_p^2",
+    "positional_base": 1000,
+    "prouhet_pair": [
+      [
+        0,
+        4,
+        5
+      ],
+      [
+        1,
+        2,
+        6
+      ]
+    ],
+    "shift_D": 20,
+    "target_Delta": "(3/4)^k=exp(-(log(4/3)/6)N)",
+    "target_energy": "6^k",
+    "target_fiber": "choose exactly one of the two Prouhet triples in every block",
+    "target_fiber_size": "2^k",
+    "total_square_sum": "3202*(B^(2k)-1)/(B^2-1)",
+    "weighted_vandermonde_form": "(t,t^2)=rho(t)(1,t) with rho(t)=t!=0"
+  },
+  "elementary_positive_rate_subsequence": {
+    "denominator_derivation": "2^(18r)/8^r=32768^r",
+    "energy_cut": "Delta=(3/4)^(3r)=exp(-(log(4/3)/6)N), so every fixed sigma<log(4/3)/6 eventually includes the target fiber",
+    "full_slice_bound": "M_{3r}=binom(18r,9r)<=2^(18r)",
+    "image_lower_bound": "L_{3r}>=45907^r: in each group of three blocks choose one of the 45907 realized states of total weight 9; positional digits make the r group choices distinct and their total weight is 9r",
+    "moment_accessibility": "L<=63^k gives log(L)/(Nq)<=log(63)/(6q)->0 for every q->infinity",
+    "normalized_ratio_lower_bound": "f/barN=fL/M>=(45907/32768)^r",
+    "positive_rate_per_active_coordinate": "log(45907/32768)/18",
+    "ratio_base": {
+      "denominator": 32768,
+      "numerator": 45907
+    },
+    "sidon_moment_lower_bound": "one target contributes L^{-1}(f/barN)^q, whose normalized logarithmic rate tends to at least log(45907/32768)/18>0",
+    "strictly_greater_than_one": true,
+    "subsequence": "k=3r, hence N=18r and m=9r",
+    "target_fiber_size": "8^r",
+    "three_block_binomial_derivation": {
+      "identity": "[x^9]((1+x)^6-x^3)^3=C(18,9)-3C(12,6)+3C(6,3)-1",
+      "matches_exact_image_count": true,
+      "terms": {
+        "binom_18_9": 48620,
+        "minus_1": -1,
+        "minus_3_binom_12_6": -2772,
+        "plus_3_binom_6_3": 60
+      },
+      "total": 45907
+    },
+    "three_block_image_count": 45907,
+    "three_block_target_fiber_size": 8,
+    "uses_log_concavity": false
+  },
+  "fixed_c_less_than_one_countergate": {
+    "all_checks_pass": true,
+    "claim_audited": "A lower bound Delta(F)>=|F|^{-c} for one fixed c<1 does not, by itself, rule out Delta(F)=exp(-Theta(N)).",
+    "conclusion": "Beating the Sidon exponent 1 by an unspecified fixed c<1 is not the same as an exp(-o(N)) energy floor and is insufficient for the printed every-fixed-sigma Sidon cut without an additional quantified argument.",
+    "exact_formulas": {
+      "Delta": "(3/4)^d",
+      "energy": "6^d",
+      "exponential_decay_rate": "log(4/3)",
+      "power_exponent_c0": "log_2(4/3)",
+      "size": "2^d"
+    },
+    "fixed_c_example": {
+      "bound": "Delta(F_d)>=|F_d|^{-1/2}",
+      "c": "1/2",
+      "coexists_with_fixed_sigma_low_energy": true,
+      "exact_gate": "9^d>=8^d"
+    },
+    "rows": [
+      {
+        "Delta": {
+          "denominator": 4,
+          "numerator": 3
+        },
+        "Delta_squared_ge_1_over_f": true,
+        "brute_energy_if_d_le_6": 6,
+        "brute_energy_matches": true,
+        "dimension": 1,
+        "energy": 6,
+        "equivalent_integer_gate_9_pow_d_ge_8_pow_d": true,
+        "fiber_size": 2
+      },
+      {
+        "Delta": {
+          "denominator": 16,
+          "numerator": 9
+        },
+        "Delta_squared_ge_1_over_f": true,
+        "brute_energy_if_d_le_6": 36,
+        "brute_energy_matches": true,
+        "dimension": 2,
+        "energy": 36,
+        "equivalent_integer_gate_9_pow_d_ge_8_pow_d": true,
+        "fiber_size": 4
+      },
+      {
+        "Delta": {
+          "denominator": 64,
+          "numerator": 27
+        },
+        "Delta_squared_ge_1_over_f": true,
+        "brute_energy_if_d_le_6": 216,
+        "brute_energy_matches": true,
+        "dimension": 3,
+        "energy": 216,
+        "equivalent_integer_gate_9_pow_d_ge_8_pow_d": true,
+        "fiber_size": 8
+      },
+      {
+        "Delta": {
+          "denominator": 4096,
+          "numerator": 729
+        },
+        "Delta_squared_ge_1_over_f": true,
+        "brute_energy_if_d_le_6": 46656,
+        "brute_energy_matches": true,
+        "dimension": 6,
+        "energy": 46656,
+        "equivalent_integer_gate_9_pow_d_ge_8_pow_d": true,
+        "fiber_size": 64
+      },
+      {
+        "Delta": {
+          "denominator": 16777216,
+          "numerator": 531441
+        },
+        "Delta_squared_ge_1_over_f": true,
+        "brute_energy_if_d_le_6": null,
+        "brute_energy_matches": true,
+        "dimension": 12,
+        "energy": 2176782336,
+        "equivalent_integer_gate_9_pow_d_ge_8_pow_d": true,
+        "fiber_size": 4096
+      }
+    ],
+    "witness": "the full Boolean cubes F_d={0,1}^d"
+  },
+  "frontiers_label_pins": {
+    "all_found": true,
+    "labels": {
+      "def:admissible-sequence": {
+        "found": true,
+        "line": 896,
+        "paste": "\\label{def:admissible-sequence}"
+      },
+      "def:primitive-first-match-residual": {
+        "found": true,
+        "line": 1501,
+        "paste": "\\label{def:primitive-first-match-residual}"
+      },
+      "def:primitive-q": {
+        "found": true,
+        "line": 4912,
+        "paste": "\\begin{definition}[Primitive Q]\\label{def:primitive-q}"
+      },
+      "def:sidon-heavy": {
+        "found": true,
+        "line": 5093,
+        "paste": "\\begin{definition}[Sidon-heavy logarithmic moment]\\label{def:sidon-heavy}"
+      },
+      "def:sidon-paid-cell": {
+        "found": true,
+        "line": 5130,
+        "paste": "\\begin{definition}[Sidon moment payment]\\label{def:sidon-paid-cell}"
+      },
+      "eq:exact-power-sum-map": {
+        "found": true,
+        "line": 4819,
+        "paste": "\\tag{9.1}\\label{eq:exact-power-sum-map}"
+      },
+      "eq:full-image-certificate": {
+        "found": true,
+        "line": 4844,
+        "paste": "L\\ge e^{-o(N)}A.                       \\tag{FI}\\label{eq:full-image-certificate}"
+      },
+      "eq:image-ambient-scales": {
+        "found": true,
+        "line": 4837,
+        "paste": "\\tag{9.2}\\label{eq:image-ambient-scales}"
+      },
+      "hyp:ray-compiler": {
+        "found": true,
+        "line": 6033,
+        "paste": "\\begin{hypothesis}[Ray compiler]\\label{hyp:ray-compiler}"
+      },
+      "prop:high-energy-impossible": {
+        "found": true,
+        "line": 5537,
+        "paste": "\\begin{proposition}[High-energy Boolean fibers are small]\\label{prop:high-energy-impossible}"
+      },
+      "thm:intro-sidon-heavy-repair": {
+        "found": true,
+        "line": 1144,
+        "paste": "\\label{thm:intro-sidon-heavy-repair}"
+      },
+      "thm:primitive-q": {
+        "found": true,
+        "line": 5548,
+        "paste": "\\begin{theorem}[Primitive Q after a Sidon moment payment]\\label{thm:primitive-q}"
+      }
+    },
+    "path": "experimental/asymptotic_rs_mca_frontiers.tex"
+  },
+  "full_slice_exact_rows": [
+    {
+      "Delta": {
+        "denominator": 4,
+        "numerator": 3
+      },
+      "N": 6,
+      "all_locators_nonzero_mod_p": true,
+      "barN": {
+        "denominator": 19,
+        "numerator": 20
+      },
+      "bertrand_upper_bound_p_lt_2_times_square_sum": true,
+      "central_average_bound": {
+        "holds": true,
+        "lhs_L_times_6k_plus_1": 133,
+        "rhs_63_pow_k": 63
+      },
+      "checks": {
+        "delta_is_3_over_4_pow_k": true,
+        "energy_is_6_pow_k": true,
+        "energy_routes_agree": true,
+        "field_model_is_exact": true,
+        "full_slice_count": true,
+        "image_polynomial_matches_enumeration": true,
+        "image_size_at_most_slice_size": true,
+        "target_fiber_is_exact_product": true
+      },
+      "density": "1/2",
+      "energy_difference_counter": 6,
+      "energy_expected_6_pow_k": 6,
+      "energy_four_tuple": 6,
+      "energy_over_universal_sidon_floor": {
+        "denominator": 1,
+        "numerator": 1
+      },
+      "enumerated_full_slice_size": 20,
+      "field_prime": 3203,
+      "field_prime_is_64bit_prime": true,
+      "full_slice_size_M": 20,
+      "image_cap_gate": {
+        "L_le_p_squared": true,
+        "f_over_barN_le_p_squared_cross_multiplied": true
+      },
+      "k": 1,
+      "m": 3,
+      "modular_image_equals_integer_image": true,
+      "no_wrap": true,
+      "normalized_target_ratio_f_over_barN": {
+        "denominator": 10,
+        "numerator": 19
+      },
+      "prime_test_range_below_2_pow_64": true,
+      "realized_image_size_L": 19,
+      "realized_image_size_from_polynomial": 19,
+      "target": {
+        "square_sum": 1601,
+        "sum": 69
+      },
+      "target_fiber_expected_size": 2,
+      "target_fiber_size": 2,
+      "total_ground_square_sum": 3202,
+      "universal_sidon_floor": {
+        "denominator": 4,
+        "numerator": 3
+      }
+    },
+    {
+      "Delta": {
+        "denominator": 16,
+        "numerator": 9
+      },
+      "N": 12,
+      "all_locators_nonzero_mod_p": true,
+      "barN": {
+        "denominator": 295,
+        "numerator": 308
+      },
+      "bertrand_upper_bound_p_lt_2_times_square_sum": true,
+      "central_average_bound": {
+        "holds": true,
+        "lhs_L_times_6k_plus_1": 11505,
+        "rhs_63_pow_k": 3969
+      },
+      "checks": {
+        "delta_is_3_over_4_pow_k": true,
+        "energy_is_6_pow_k": true,
+        "energy_routes_agree": true,
+        "field_model_is_exact": true,
+        "full_slice_count": true,
+        "image_polynomial_matches_enumeration": true,
+        "image_size_at_most_slice_size": true,
+        "target_fiber_is_exact_product": true
+      },
+      "density": "1/2",
+      "energy_difference_counter": 36,
+      "energy_expected_6_pow_k": 36,
+      "energy_four_tuple": 36,
+      "energy_over_universal_sidon_floor": {
+        "denominator": 7,
+        "numerator": 9
+      },
+      "enumerated_full_slice_size": 924,
+      "field_prime": 3202003241,
+      "field_prime_is_64bit_prime": true,
+      "full_slice_size_M": 924,
+      "image_cap_gate": {
+        "L_le_p_squared": true,
+        "f_over_barN_le_p_squared_cross_multiplied": true
+      },
+      "k": 2,
+      "m": 6,
+      "modular_image_equals_integer_image": true,
+      "no_wrap": true,
+      "normalized_target_ratio_f_over_barN": {
+        "denominator": 77,
+        "numerator": 295
+      },
+      "prime_test_range_below_2_pow_64": true,
+      "realized_image_size_L": 885,
+      "realized_image_size_from_polynomial": 885,
+      "target": {
+        "square_sum": 1601001601,
+        "sum": 69069
+      },
+      "target_fiber_expected_size": 4,
+      "target_fiber_size": 4,
+      "total_ground_square_sum": 3202003202,
+      "universal_sidon_floor": {
+        "denominator": 16,
+        "numerator": 7
+      }
+    },
+    {
+      "Delta": {
+        "denominator": 64,
+        "numerator": 27
+      },
+      "N": 18,
+      "all_locators_nonzero_mod_p": true,
+      "barN": {
+        "denominator": 45907,
+        "numerator": 48620
+      },
+      "bertrand_upper_bound_p_lt_2_times_square_sum": true,
+      "central_average_bound": {
+        "holds": true,
+        "lhs_L_times_6k_plus_1": 872233,
+        "rhs_63_pow_k": 250047
+      },
+      "checks": {
+        "delta_is_3_over_4_pow_k": true,
+        "energy_is_6_pow_k": true,
+        "energy_routes_agree": true,
+        "field_model_is_exact": true,
+        "full_slice_count": true,
+        "image_polynomial_matches_enumeration": true,
+        "image_size_at_most_slice_size": true,
+        "target_fiber_is_exact_product": true
+      },
+      "density": "1/2",
+      "energy_difference_counter": 216,
+      "energy_expected_6_pow_k": 216,
+      "energy_four_tuple": 216,
+      "energy_over_universal_sidon_floor": {
+        "denominator": 5,
+        "numerator": 9
+      },
+      "enumerated_full_slice_size": 48620,
+      "field_prime": 3202003202003227,
+      "field_prime_is_64bit_prime": true,
+      "full_slice_size_M": 48620,
+      "image_cap_gate": {
+        "L_le_p_squared": true,
+        "f_over_barN_le_p_squared_cross_multiplied": true
+      },
+      "k": 3,
+      "m": 9,
+      "modular_image_equals_integer_image": true,
+      "no_wrap": true,
+      "normalized_target_ratio_f_over_barN": {
+        "denominator": 12155,
+        "numerator": 91814
+      },
+      "prime_test_range_below_2_pow_64": true,
+      "realized_image_size_L": 45907,
+      "realized_image_size_from_polynomial": 45907,
+      "target": {
+        "square_sum": 1601001601001601,
+        "sum": 69069069
+      },
+      "target_fiber_expected_size": 8,
+      "target_fiber_size": 8,
+      "total_ground_square_sum": 3202003202003202,
+      "universal_sidon_floor": {
+        "denominator": 64,
+        "numerator": 15
+      }
+    }
+  ],
+  "generated_by": "experimental/scripts/verify_c9_r2_near_sidon_razor.py",
+  "hypothesis_audit": {
+    "matches_literal_quantitative_interface": [
+      "full fixed-weight slice with m/N=1/2",
+      "two nontrivial power sums over an odd prime field",
+      "nonzero weighted Vandermonde columns with rho(t)=t",
+      "actual realized-image normalization barN=M/L",
+      "torsion-free additive energy on incidence vectors in Z^T",
+      "logarithmic-moment accessibility",
+      "a fixed-sigma exponentially low-energy fiber",
+      "positive-exponential max-fiber ratio and Sidon moment"
+    ],
+    "not_supplied_or_not_claimed": [
+      "T_k is not a smooth multiplicative coset or circle domain",
+      "the visible six-point block/Prouhet product has not survived a formal first-match atlas",
+      "no exact primitive-residual complement predicate is asserted",
+      "no quotient, folding, planted, or block-profile nonmembership is asserted",
+      "the construction is not a deployed finite RS-MCA row"
+    ],
+    "promotion_boundary": "The certificate settles the unrestricted literal #585 question. A theorem for smooth/circle rows must state the domain class and exact primitive first-match exclusions before this construction can be declared absorbed."
+  },
+  "image_cap_cut": {
+    "R2_codomain_bound": "L<=p^2",
+    "all_exact_row_cap_checks": true,
+    "audit_of_pr_581": "Its p=O(N) rows lie entirely inside this automatic cap. Rows with sampled Omega are additionally bounded by the fixed sample size.",
+    "consequence": "If log p=o(N), then every fiber has f_s/barN<=exp(o(N)) and Gsid<=p^(2q)=exp(o(Nq)); no energy calculation is needed.",
+    "construction_escapes_cap_only_by": "log p=Theta(N)",
+    "exact_identity": "f_s/barN=f_s L/M<=L"
+  },
+  "lineage_and_credit": [
+    {
+      "credit": "avdeevvadim",
+      "pr": 444,
+      "role": "degree-one predecessor: the fixed-weight (|S|,sum t) block-trade literal-interface counterexample and specification floor",
+      "url": "https://github.com/przchojecki/rs-mca/pull/444"
+    },
+    {
+      "credit": "scottdhughes",
+      "pr": 564,
+      "role": "structured-moment-curve toy evidence for the large-doubling / nearly-Sidon framing and against a BSG/Freiman attack",
+      "url": "https://github.com/przchojecki/rs-mca/pull/564"
+    },
+    {
+      "credit": "LegaSage",
+      "pr": 575,
+      "role": "image-normalized Sidon payment reduced to max-fiber control",
+      "url": "https://github.com/przchojecki/rs-mca/pull/575"
+    },
+    {
+      "credit": "LegaSage",
+      "pr": 577,
+      "role": "Newton--Girard injectivity for R>=m",
+      "url": "https://github.com/przchojecki/rs-mca/pull/577"
+    },
+    {
+      "credit": "LegaSage",
+      "pr": 579,
+      "role": "R=2 fixed-m max-fiber bound and localization to linear density",
+      "url": "https://github.com/przchojecki/rs-mca/pull/579"
+    },
+    {
+      "credit": "LegaSage",
+      "pr": 581,
+      "role": "finite R=2 large-fiber/energy sweep audited by this certificate",
+      "url": "https://github.com/przchojecki/rs-mca/pull/581"
+    },
+    {
+      "credit": "LegaSage",
+      "pr": 582,
+      "role": "reduction to beating the Sidon floor; fixed-c claim countergated here",
+      "url": "https://github.com/przchojecki/rs-mca/pull/582"
+    },
+    {
+      "credit": "LegaSage",
+      "pr": 585,
+      "role": "capstone map that printed the exact remaining R=2 razor",
+      "url": "https://github.com/przchojecki/rs-mca/pull/585"
+    },
+    {
+      "credit": "holmbuar",
+      "pr": 614,
+      "role": "proved orthogonality of the image-normalized razor and the span-normalized (S_E) image clause",
+      "url": "https://github.com/przchojecki/rs-mca/pull/614"
+    }
+  ],
+  "local_enumeration": {
+    "collision_fibers": [
+      {
+        "members": [
+          [
+            0,
+            4,
+            5
+          ],
+          [
+            1,
+            2,
+            6
+          ]
+        ],
+        "offset_square_sum": 41,
+        "offset_sum": 9,
+        "weight": 3
+      }
+    ],
+    "common_offset_square_sum": 41,
+    "common_offset_sum": 9,
+    "common_shifted_square_sum": 1601,
+    "common_shifted_sum": 69,
+    "common_weight": 3,
+    "image_polynomial": [
+      1,
+      6,
+      15,
+      19,
+      15,
+      6,
+      1
+    ],
+    "image_polynomial_formula": "(1+x)^6-x^3",
+    "image_polynomial_total": 63,
+    "left_right_equal": true,
+    "left_shifted": [
+      20,
+      24,
+      25
+    ],
+    "left_triple": [
+      0,
+      4,
+      5
+    ],
+    "log_concave": true,
+    "log_concavity_margins": [
+      21,
+      111,
+      136,
+      111,
+      21
+    ],
+    "number_of_distinct_shifted_moment_states": 63,
+    "number_of_subsets": 64,
+    "offsets": [
+      0,
+      1,
+      2,
+      4,
+      5,
+      6
+    ],
+    "only_nontrivial_collision_is_target_pair": true,
+    "positional_digit_separation": {
+      "first_moment_base": 1000,
+      "first_moment_no_carry": true,
+      "max_local_square_sum": 3202,
+      "max_local_sum": 138,
+      "second_moment_base": 1000000,
+      "second_moment_no_carry": true
+    },
+    "right_shifted": [
+      21,
+      22,
+      26
+    ],
+    "right_triple": [
+      1,
+      2,
+      6
+    ],
+    "shifted_collision_fibers": [
+      [
+        [
+          0,
+          4,
+          5
+        ],
+        [
+          1,
+          2,
+          6
+        ]
+      ]
+    ],
+    "state_counts_by_weight": [
+      1,
+      6,
+      15,
+      19,
+      15,
+      6,
+      1
+    ]
+  },
+  "log_concavity_and_central_bound": {
+    "all_bounded_checks_pass": true,
+    "asymptotic_use": "The standard preservation of nonnegative log-concavity under convolution makes the central coefficient maximal; summing the 6k+1 coefficients then gives L_k >= 63^k/(6k+1). The separate k=3r proof below does not rely on this preservation theorem.",
+    "base_is_log_concave": true,
+    "base_log_concavity_margins": [
+      21,
+      111,
+      136,
+      111,
+      21
+    ],
+    "base_polynomial": [
+      1,
+      6,
+      15,
+      19,
+      15,
+      6,
+      1
+    ],
+    "bounded_convolution_check_range": [
+      1,
+      12
+    ],
+    "rows": [
+      {
+        "central_average_bound": true,
+        "central_coefficient": 19,
+        "central_is_maximum": true,
+        "k": 1,
+        "log_concave": true,
+        "symmetric": true
+      },
+      {
+        "central_average_bound": true,
+        "central_coefficient": 885,
+        "central_is_maximum": true,
+        "k": 2,
+        "log_concave": true,
+        "symmetric": true
+      },
+      {
+        "central_average_bound": true,
+        "central_coefficient": 45907,
+        "central_is_maximum": true,
+        "k": 3,
+        "log_concave": true,
+        "symmetric": true
+      },
+      {
+        "central_average_bound": true,
+        "central_coefficient": 2515141,
+        "central_is_maximum": true,
+        "k": 4,
+        "log_concave": true,
+        "symmetric": true
+      },
+      {
+        "central_average_bound": true,
+        "central_coefficient": 142073799,
+        "central_is_maximum": true,
+        "k": 5,
+        "log_concave": true,
+        "symmetric": true
+      },
+      {
+        "central_average_bound": true,
+        "central_coefficient": 8184033861,
+        "central_is_maximum": true,
+        "k": 6,
+        "log_concave": true,
+        "symmetric": true
+      },
+      {
+        "central_average_bound": true,
+        "central_coefficient": 477896432235,
+        "central_is_maximum": true,
+        "k": 7,
+        "log_concave": true,
+        "symmetric": true
+      },
+      {
+        "central_average_bound": true,
+        "central_coefficient": 28187144488773,
+        "central_is_maximum": true,
+        "k": 8,
+        "log_concave": true,
+        "symmetric": true
+      },
+      {
+        "central_average_bound": true,
+        "central_coefficient": 1675345172749711,
+        "central_is_maximum": true,
+        "k": 9,
+        "log_concave": true,
+        "symmetric": true
+      },
+      {
+        "central_average_bound": true,
+        "central_coefficient": 100183605780064705,
+        "central_is_maximum": true,
+        "k": 10,
+        "log_concave": true,
+        "symmetric": true
+      },
+      {
+        "central_average_bound": true,
+        "central_coefficient": 6020452353771675795,
+        "central_is_maximum": true,
+        "k": 11,
+        "log_concave": true,
+        "symmetric": true
+      },
+      {
+        "central_average_bound": true,
+        "central_coefficient": 363272079305766300613,
+        "central_is_maximum": true,
+        "k": 12,
+        "log_concave": true,
+        "symmetric": true
+      }
+    ]
+  },
+  "near_sidon_semantics_gate": {
+    "exact_multiplicative_ratio": "E/(2f^2-f)=(3/2)^k/(2-2^(-k))",
+    "literal_sidon_energy_floor": "2f^2-f",
+    "multiplicatively_near_the_literal_sidon_floor": false,
+    "permitted_language": "#585 fixed-threshold/absolute-o(1) near-Sidon and TeX-low-energy only; never multiplicatively or literally Sidon",
+    "printed_pr_585_property": "For every fixed threshold thr>0, Delta=(3/4)^k<=thr eventually, and Delta-(2f-1)/f^2 tends to zero in absolute value.",
+    "ratio_diverges_exponentially": true,
+    "ratio_formula_verified_on_exact_rows": true,
+    "tex_fixed_sigma_membership": "Delta=exp(-(log(4/3)/6)N), so the fiber lies in every TeX cut Delta<=exp(-sigma N) with fixed sigma<log(4/3)/6."
+  },
+  "nonclaims": [
+    "Not a counterexample to a formally specified smooth multiplicative-domain theorem.",
+    "Not a counterexample to a formally specified circle-domain theorem.",
+    "Not a claim that the block product survives an exact primitive first-match residual.",
+    "Not a refutation of the conditional compiler theorem; it shows that the unrestricted literal Sidon-payment premise can fail.",
+    "Not a finite deployed-row result and not a modification of any TeX draft.",
+    "The phrase near-Sidon here means the printed fixed-sigma exponential-energy cut; the target is exponentially above the literal energy minimum in multiplicative ratio."
+  ],
+  "object": "exact R=2 two-nontrivial-moment near-Sidon razor",
+  "open_pr_interactions": {
+    "pr_564": {
+      "author": "scottdhughes",
+      "bsg_freiman_closure_claimed": false,
+      "evidence_status": "MEASURED / FRAMING",
+      "finding": "Structured-moment-curve toys support the large-doubling / nearly-Sidon framing and show that BSG/Freiman is the wrong tool.",
+      "interaction": "This packet adopts that tool-selection warning, but its exact Prouhet block product is a different construction and is not multiplicatively near the literal Sidon floor.",
+      "prouhet_product_multiplicatively_near_floor": false,
+      "same_construction": false,
+      "url": "https://github.com/przchojecki/rs-mca/pull/564"
+    },
+    "pr_614": {
+      "author": "holmbuar",
+      "evidence_status": "PROVED / INTERFACE",
+      "finding": "The image-normalized razor is orthogonal to the span-normalized (S_E) image clause.",
+      "interaction": "This packet stays entirely on the image-normalized fiber side and makes no span-side consequence claim in either direction.",
+      "normalizations_orthogonal": true,
+      "span_side_consequence_claimed": false,
+      "url": "https://github.com/przchojecki/rs-mca/pull/614"
+    }
+  },
+  "payload_sha256": "4928a6f1a7b5cd2ba93a365f42be0fb7e5ccd2937c5dfaef0016ea451520dc3b",
+  "schema": "c9_r2_near_sidon_razor.v1",
+  "status": "COUNTEREXAMPLE_NEW_FLOOR",
+  "verdict": "COUNTEREXAMPLE_NEW_FLOOR for the unrestricted literal interface; OPEN/SPECIFICATION-GATED for a smooth or circle primitive first-match residual",
+  "verification": {
+    "artifact_path": "experimental/data/certificates/c9-r2-near-sidon-razor/c9_r2_near_sidon_razor.json",
+    "check": "python3 experimental/scripts/verify_c9_r2_near_sidon_razor.py --check",
+    "exact_full_slice_enumeration_k": [
+      1,
+      2,
+      3
+    ],
+    "exact_local_enumeration": true,
+    "independent_energy_routes": [
+      "difference multiplicities",
+      "four-tuple enumeration"
+    ],
+    "regeneration": "python3 experimental/scripts/verify_c9_r2_near_sidon_razor.py --write",
+    "stdlib_only": true,
+    "tamper_selftest": "python3 experimental/scripts/verify_c9_r2_near_sidon_razor.py --tamper-selftest"
+  }
+}

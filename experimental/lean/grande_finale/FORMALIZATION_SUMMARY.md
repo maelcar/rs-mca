@@ -8,6 +8,10 @@ This package is a partial Lean formalization of
 - `GrandeFinale.lean`: core self-contained kernels for integer budgets,
   first-match ledgers, CA/MCA bad-slope monotonicity, moment inequalities, and
   finite packet arithmetic checks.
+- `GrandeFinale/ChallengeIntersection.lean`: exact finite-group
+  translate-intersection averaging, linear-code received-line shear invariance,
+  challenge-restricted MCA numerators, and the ceiling-density transfer from a
+  supplied full-field bad-slope floor.
 - `GrandeFinale/QFourierTao.lean`: log-moment-to-Q reductions, including the
   finite bit-certificate inequality.
 - `GrandeFinale/QEntropyInverse.lean`: deterministic atoms around the entropic
@@ -24,6 +28,9 @@ This package is a partial Lean formalization of
   support-wise syndrome-line normal form, fixed-support uniqueness,
   deduplicated finite-family incidence, and the exact MCA/syndrome numerator
   equality for a surjective syndrome map.
+- `GrandeFinale/ProfileEnvelopeWindow.lean`: exact rational exponent algebra for
+  the corrected per-folding identity-dominance windows, including finite-family
+  intersection/union and the positive-crossing no-field-drop characterization.
 - `GrandeFinale/BC.lean`: theorem-level reductions around the BC split-pencil
   ledger, including one-parameter moving-root and saturation kernels.
 - `GrandeFinale/SP.lean`: theorem-level reductions around the SP ledger,
@@ -59,9 +66,22 @@ linear-code compiler behind `prop:syndrome-line-normal-form` and
 parity-check construction, rational-normal-curve interpretation, and reduction
 from threshold witnesses to exact-cardinality supports remain separate.
 
+The challenge-intersection module is also independent of Q. It kernel-checks
+the proper-challenge outer averaging factor in equation (13.3): a finite
+full-field bad-slope floor `M` yields
+`ceilDiv (|Gamma| * M) |F|` challenge slopes after a received-line shear. The
+Reed--Solomon prefix-list construction and the inner collision-aware
+simple-pole theorem that supply `M` are not formalized there.
+
+The profile-window module is also independent of Q. It proves exponent-level
+dominance only after `h`, `s`, and every actual `(c,lambda)` pair are supplied.
+QR6/QR8 normalization, folding-family exhaustiveness, (A2)/(A4)/(A7), and the
+bridge to the full profile envelope remain explicit outside inputs.
+
 ## Build Note
 
-Do not run `lake build` casually in this repository.  Build only with the
-pinned Lean/Mathlib versions and matching precompiled Mathlib cache.  On
-2026-07-09 the full default target completed successfully in that exact-pin
-environment, including `GrandeFinale.lean` and every `GrandeFinale/*` module.
+Do not run `lake build` casually in this repository. Build only with the
+pinned Lean/Mathlib versions and matching precompiled Mathlib cache.
+Contributor audit notes report direct compilation of
+`GrandeFinale/ChallengeIntersection.lean` and a full pinned build on
+2026-07-11; this integration did not rerun Lake.

@@ -30,6 +30,37 @@ Keep entries concise and link to the relevant files.
 
 ## Entries
 
+### 2026-07-11 - L1/C9/frontiers PR integration wave
+
+- **Agent/model:** Codex integrating PRs #562--#620 from LegaSage,
+  scottdhughes, latifkasuli, avdeevvadim, AllenGrahamHart,
+  DannyExperiments, and holmbuar.
+- **Files added or changed:** Added Lean packages under `experimental/lean/`
+  for exact adjacent rows, first-match atlas bounds, deep-regime upper bounds,
+  threshold brackets, first-occurrence/disjoint-union/sum-of-squares lemmas,
+  Boolean-fiber growth, and `grande_finale` challenge/profile-window modules;
+  added audit/certificate JSON under `experimental/data/`; added threshold,
+  roadmap, DLI, EF, and audit notes under `experimental/notes/`; added verifier
+  and exploratory scripts under `experimental/scripts/`.
+- **Status:** PROVED / CONDITIONAL / COUNTEREXAMPLE / EXPERIMENTAL / AUDIT /
+  FORMALIZATION, as stated in the individual notes.  No main-paper theorem is
+  promoted by this entry.
+- **What is being added:** A large support batch for the current asymptotic and
+  finite-threshold program: L1/B2 max-fiber reduction material, C9/Sidon and
+  packed-flatness packets, first-match atlas exhaustiveness checks, profile
+  window and challenge-intersection formalization, finite F2/F3 guardrail
+  packets, M31/subgroup recursion audits, and new ray/occupancy compiler notes.
+- **How it is useful:** The batch expands the audit trail for the five active
+  hard inputs while keeping unresolved hypotheses explicit.  Several notes
+  sharpen failures or walls rather than closing them; those are integrated as
+  useful counterexample/guardrail material.  The Lean additions increase the
+  reusable formalization surface but were not built during this integration.
+- **What to do next:** Audit each claimed proof before moving anything into
+  `experimental/asymptotic_rs_mca_frontiers.tex` or Paper D.  Some L1/B2
+  literature-search scripts call the TheoremSearch API and were not executed;
+  run them only deliberately.  Continue focusing on the remaining max-fiber,
+  Sidon/payment, profile-envelope, and finite unsafe/safe comparison inputs.
+
 ### 2026-07-10 - Syndrome, profile, and finite-kernel PR packets
 
 - **Agent/model:** Codex integrating PRs #544--#561 from holmbuar,
