@@ -1,0 +1,218 @@
+{
+  "base_commit": "36de5bfcc7d6e0ca44806112acec2f4a1b4a7532",
+  "consumer_audit": {
+    "MI_Q_FI_RC_supplied": false,
+    "PR564_energy_reclaimed": false,
+    "closure_entropy_bound_supplied": false,
+    "complement_payment_supplied": false,
+    "deployed_row_closed": false,
+    "fresh_tex_promotion_audit_required": true,
+    "full_A4_closed": false,
+    "full_MA_closed": false,
+    "generic_nonnested_live_join_compatibility_supplied": false,
+    "generic_partition_family_supplied": false,
+    "other_cell_overlap_assignment_supplied": false,
+    "po3_fixed_statistic_without_markers_supported": false,
+    "primal_first_match_atlas_supplied": false,
+    "selected_quotient_band_overlap_resolved": true,
+    "selected_union_exhausts_effective_majors": false,
+    "stratum_energy_bounds_supplied": false,
+    "subexponential_compiler_sum_supplied": false,
+    "support_level_deletion_supported": false,
+    "tex_modified": false
+  },
+  "files": {
+    "experimental/notes/thresholds/a4_quotient_band_join_compiler.md": "4b8d1927ce6385d15669c2de191fef3d356d7c2c06217866850a5f262e4cdfaa",
+    "experimental/scripts/verify_a4_quotient_band_join_compiler.py": "8dca8f74ef4a3cc676d95e4eab95f99f2592c34dedeed2b9e003f4af68a61e24"
+  },
+  "grandparent_commit": "0aee8592065efacedc9f71679e6eda4f704f2469",
+  "parent_commit": "bc51155206842c2944340ad9b1da429491383dec",
+  "parent_packet": {
+    "certificate_sha256": "ee1cb9d3d4a92e942624f2e0b8fc8c33142dd0cf935086e8680c18699388b0b9",
+    "commit": "bc51155206842c2944340ad9b1da429491383dec",
+    "non_log_files_preserved": true,
+    "note_sha256": "0fb9b0bc1b5706944e07ab02ef10ca67fe9707ff9eab75d54f09055d35725320",
+    "parent_replay_payload": "d9ae52282f690c6ab7c055ded41a44d063e0891f909daf030bc88aff10b2ca67",
+    "verifier_sha256": "578551df31b2dd9568eaf9f8058c878696c4e6940afd05669f1666573966beba"
+  },
+  "payload_sha256": "6ccefdc51c8691fefc8a5139d611ce91b598da92ad0c47997a5a462b3c070170",
+  "schema": "a4_quotient_band_join_compiler.v1",
+  "sources": {
+    "experimental/asymptotic_rs_mca_frontiers.tex": "0e3aa7b1ba79b1065439ae484f4cb989d80cabe18afb68ec63a6b21d1f3370fd",
+    "experimental/data/certificates/a4-nonuniform-centered-compiler/a4_nonuniform_centered_compiler.json": "ee1cb9d3d4a92e942624f2e0b8fc8c33142dd0cf935086e8680c18699388b0b9",
+    "experimental/data/certificates/a4-trace-quotient-rank-centered/a4_trace_quotient_rank_centered_compiler.json": "9163def59f268a4a5759c0cc1fe55d5935d179bbf701aa43c8363a553bc8b6fe",
+    "experimental/notes/thresholds/a4_nonuniform_centered_compiler.md": "0fb9b0bc1b5706944e07ab02ef10ca67fe9707ff9eab75d54f09055d35725320",
+    "experimental/notes/thresholds/a4_quotient_major_compiler.md": "4b924af30dc444ab770620cede6895fca47674e64e97d519ecbfa83bd6939222",
+    "experimental/notes/thresholds/a4_trace_quotient_rank_centered_compiler.md": "1a0a8df519e9e5e5c4b1738ae1d7639d93c38eb88b002351c53130fa97959cd1",
+    "experimental/scripts/verify_a4_nonuniform_centered_compiler.py": "578551df31b2dd9568eaf9f8058c878696c4e6940afd05669f1666573966beba",
+    "experimental/scripts/verify_a4_trace_quotient_rank_centered_compiler.py": "f8dd982e794c9f02303f6b2f5b002fe34b4ea50a3e2e9b84f07eea8285c7d56f"
+  },
+  "status": "PROVED_JOIN_CLOSED_QUOTIENT_BAND_COMPILER",
+  "theorem": {
+    "anchor_in_family_required": true,
+    "anchor_refines_stratum_required": true,
+    "band_identity": "H_join=H_pi_intersection_H_sigma",
+    "cardinality_fallback_supplied": true,
+    "census": {
+      "n4_f2": {
+        "join_identity_checks": 450,
+        "ordered_pairs": 225,
+        "partitions": 15
+      },
+      "n4_f3": {
+        "join_identity_checks": 450,
+        "ordered_pairs": 225,
+        "partitions": 15
+      },
+      "n5_f2": {
+        "join_identity_checks": 5408,
+        "ordered_pairs": 2704,
+        "partitions": 52
+      }
+    },
+    "chain_shell_specialization": true,
+    "common_effective_dual_required": true,
+    "d_star_at_least_two_for_pairwise": true,
+    "deduplicate_kernel_partitions": true,
+    "diamond": {
+      "band_sizes": [
+        4,
+        2,
+        2,
+        1
+      ],
+      "centered_cumulative_sizes": [
+        3,
+        1,
+        1,
+        0
+      ],
+      "chain_distant_mobius": 0,
+      "chain_shell_sizes": [
+        2,
+        1,
+        0
+      ],
+      "degree_two_coefficients": [
+        -2,
+        -2,
+        -2
+      ],
+      "degree_two_normalized_loss": "1/3",
+      "left_anchor_pairwise": "1/3",
+      "right_anchor_pairwise": "1/3",
+      "stratum_sizes": [
+        1,
+        1,
+        1,
+        0
+      ]
+    },
+    "exact_projected_cross_energies_required": true,
+    "falsifiers": {
+      "all_singletons": {
+        "cardinality_fallback_required": true,
+        "d_star": 1,
+        "fake_one_slot_eta": "1/3",
+        "normalized_l1": "1/1",
+        "pairwise_theorem_valid": false
+      },
+      "ambient_mobius": {
+        "ambient_mu": 2,
+        "ambient_printed": 5,
+        "ambient_substitution_valid": false,
+        "chosen_mu": -1,
+        "true_stratum": 2
+      },
+      "anchor_order": {
+        "anchor_must_refine_stratum": true,
+        "in_incomparable_band": false,
+        "left_stratum_character": 2
+      },
+      "closure_entropy": {
+        "closure_size": 8,
+        "generators": 3,
+        "subexponential_automatic": false
+      },
+      "duplicate_bands": {
+        "band_sizes": [
+          2,
+          2,
+          2
+        ],
+        "negative_stratum_created": false,
+        "stratum_sizes": [
+          0,
+          0,
+          1
+        ]
+      },
+      "live_restriction": {
+        "actual_live_join": "1|2",
+        "restricted_full_join": "12",
+        "restriction_commutes_with_join": false
+      },
+      "missing_join": {
+        "join_closed": false,
+        "meet_substitution_valid": false,
+        "nontrivial_intersection": 1,
+        "nontrivial_union": 5,
+        "raw_double_charge": 6
+      },
+      "one_sided_energy": {
+        "exact_cumulative": [
+          3,
+          1,
+          1,
+          0
+        ],
+        "exact_shell": 1,
+        "naive_signed_result": -1,
+        "one_sided_inversion_valid": false,
+        "valid_upper_bounds": [
+          3,
+          2,
+          2,
+          0
+        ]
+      },
+      "po3_markers": {
+        "erasing_markers_valid": false,
+        "one_full_fiber_component": "1/3",
+        "unmarked_pairwise": "1/7"
+      }
+    },
+    "full_fixed_weight_slice_required": true,
+    "join": "least_common_coarsening",
+    "join_closed_family_required": true,
+    "join_identity": "W_join=W_pi+W_sigma",
+    "multi_anchor": {
+      "actual_normalized_loss": "0.2",
+      "coarser_anchor": "1235|4",
+      "coarser_anchor_compiler": "1",
+      "compositionwise_anchor_mixing_allowed": false,
+      "finer_anchor": "123|4|5",
+      "finer_anchor_compiler": "0.4",
+      "stratum_characters": [
+        3
+      ],
+      "values": [
+        2,
+        1,
+        6,
+        0,
+        2
+      ],
+      "weight": 2,
+      "whole_anchor_minimum": "0.4"
+    },
+    "native_partition_energies_mixable": false,
+    "nested_restriction_after_dedup": true,
+    "one_sided_cumulative_inversion_valid": false,
+    "partition_order": "refinement",
+    "same_actual_live_T_required": true,
+    "selected_poset_mobius_required": true,
+    "trivial_character_excluded": true,
+    "whole_anchor_minimization_required": true
+  }
+}

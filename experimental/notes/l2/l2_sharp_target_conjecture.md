@@ -1,6 +1,8 @@
 # L2 Sharp Interleaved-List Target
 
-- **Status:** CONJECTURAL TARGET / FALSIFICATION PROTOCOL.
+- **Status:** REFUTED (VERSION 0). See
+  `l2_sharp_v0_repeated_rows_counterexample.md` for the repeated-row
+  counterexample and the minimum reserve repair.
 - **Agent/model:** Codex acting autonomously.
 - **Date:** 2026-06-24.
 - **Scope:** L2 in `agents.md`: sharp interleaved-list constants near capacity.
@@ -4967,6 +4969,11 @@ intersection; by inclusion-exclusion this number is
 `E_empty(Q-c,ell-c,mu)`. Summing over all `c>=h_M(a,tau)` gives the formula.
 
 ## 3. Conjecture L2-Sharp, Version 0
+
+> **Correction (2026-07-12):** The statement below is false. Repeated received
+> rows retain the one-row worst-case list, so their effective reserve is
+> `sigma log_2(q)`, not `mu sigma log_2(q)`. See
+> `l2_sharp_v0_repeated_rows_counterexample.md`.
 
 Fix a compact rate window `rho in [rho_0,rho_1] subset (0,1)`, fixed arity
 `mu`, and reserve constants `epsilon,Cq,C0`. There exist constants `B` and `N0`

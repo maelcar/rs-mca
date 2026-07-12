@@ -1,0 +1,1501 @@
+{
+  "base_commit": "36de5bfcc7d6e0ca44806112acec2f4a1b4a7532",
+  "consumer_audit": {
+    "PR564_energy_reclaimed": false,
+    "assigned_map_sum_subexponential_required": true,
+    "class_energies_may_be_pooled": false,
+    "class_local_targets_allowed": false,
+    "classwise_energies_supplied": false,
+    "coordinate_restriction_allowed": true,
+    "deployed_row_closed": false,
+    "full_A4_closed": false,
+    "full_MA_closed": false,
+    "full_fixed_weight_slice_required": true,
+    "overlap_assignment_supplied": false,
+    "pairwise_target_weighted_tail_required": true,
+    "po3_fixed_statistic_without_markers_supported": false,
+    "support_level_first_match_deletion_supported": false,
+    "tex_modified": false
+  },
+  "files": {
+    "experimental/notes/thresholds/a4_nonuniform_centered_compiler.md": "0fb9b0bc1b5706944e07ab02ef10ca67fe9707ff9eab75d54f09055d35725320",
+    "experimental/scripts/verify_a4_nonuniform_centered_compiler.py": "578551df31b2dd9568eaf9f8058c878696c4e6940afd05669f1666573966beba"
+  },
+  "parent_commit": "0aee8592065efacedc9f71679e6eda4f704f2469",
+  "parent_packet": {
+    "certificate_sha256": "9163def59f268a4a5759c0cc1fe55d5935d179bbf701aa43c8363a553bc8b6fe",
+    "non_log_files_preserved": true,
+    "note_sha256": "1a0a8df519e9e5e5c4b1738ae1d7639d93c38eb88b002351c53130fa97959cd1",
+    "verifier_sha256": "f8dd982e794c9f02303f6b2f5b002fe34b4ea50a3e2e9b84f07eea8285c7d56f"
+  },
+  "payload_sha256": "d9ae52282f690c6ab7c055ded41a44d063e0891f909daf030bc88aff10b2ca67",
+  "schema": "a4_nonuniform_centered_compiler.v1",
+  "sources": {
+    "experimental/asymptotic_rs_mca_frontiers.tex": "0e3aa7b1ba79b1065439ae484f4cb989d80cabe18afb68ec63a6b21d1f3370fd",
+    "experimental/data/certificates/a4-trace-quotient-rank-centered/a4_trace_quotient_rank_centered_compiler.json": "9163def59f268a4a5759c0cc1fe55d5935d179bbf701aa43c8363a553bc8b6fe",
+    "experimental/notes/thresholds/a4_quotient_major_compiler.md": "4b924af30dc444ab770620cede6895fca47674e64e97d519ecbfa83bd6939222",
+    "experimental/notes/thresholds/a4_trace_quotient_rank_centered_compiler.md": "1a0a8df519e9e5e5c4b1738ae1d7639d93c38eb88b002351c53130fa97959cd1",
+    "experimental/scripts/verify_a4_trace_quotient_rank_centered_compiler.py": "f8dd982e794c9f02303f6b2f5b002fe34b4ea50a3e2e9b84f07eea8285c7d56f"
+  },
+  "status": "PROVED_NONUNIFORM_PAIRWISE_CENTERED_COMPILER",
+  "theorem": {
+    "actual_positive_multiplicities_required": true,
+    "affine_coefficient_factor": "chi_tilde(g(t0))^m",
+    "common_target_required": true,
+    "comparison": "K_pair<=K_symmetric<=K_uncentered-1",
+    "d_star_at_least_two": true,
+    "factor_slots": "D_star=sum_(s:n_s>0)s",
+    "factorization": "prod_t(1+chi(a(t))Y)=prod_s E_(s,chi)(Y)^s",
+    "falsifiers": {
+      "all_singletons": {
+        "eta": "1/3",
+        "h": [
+          0,
+          1,
+          2
+        ],
+        "m": 1,
+        "normalized_nontrivial_l1": "1/1",
+        "pairwise_theorem_valid": false,
+        "target": "F2^2"
+      },
+      "local_targets": {
+        "local_bound": "1/1",
+        "local_target_normalization_valid": false,
+        "target": "F2^2",
+        "true_normalized_l1": "5/3"
+      },
+      "multiplicity_one_three": {
+        "collapsed_class_coefficients": [
+          1,
+          0,
+          -1
+        ],
+        "fake_uniform_two_coefficients": [
+          1,
+          0,
+          -2,
+          0,
+          1
+        ],
+        "true_coefficients": [
+          1,
+          -2,
+          0,
+          2,
+          -1
+        ],
+        "true_identity_requires_all_multiplicity_copies": true
+      },
+      "phase_constancy": {
+        "fake_constant_coefficients": [
+          1,
+          2,
+          1
+        ],
+        "fiber_constant_required": true,
+        "true_coefficients": [
+          1,
+          0,
+          -1
+        ]
+      },
+      "po3_markers": {
+        "erasing_markers_valid": false,
+        "h": [
+          0,
+          0,
+          1
+        ],
+        "linked_profile": "uniform_three_strict",
+        "m": 3,
+        "multiplicity": 3,
+        "one_full_fiber_component_loss": "1/3",
+        "target": "Z/2",
+        "unmarked_pair_bound": "0.142857142857",
+        "unmarked_pair_exact_reference": "1/7"
+      },
+      "pooled_classes": {
+        "Q1": [
+          0,
+          1
+        ],
+        "Q2": [
+          2,
+          3
+        ],
+        "pooled_eta": "0/1",
+        "pooling_valid": false,
+        "target": "F2^2",
+        "true_normalized_l1": "1/3"
+      }
+    },
+    "pair_bound": "Cmaj<=sum_j w_j min_(u<v)sqrt(eta_(u,j_u)eta_(v,j_v))",
+    "pair_chosen_per_composition_not_character": true,
+    "pair_slots_distinct": true,
+    "profiles": [
+      {
+        "aggregate_checks": 15,
+        "allocation_count": 16,
+        "class_sizes": {
+          "1": 1,
+          "3": 1
+        },
+        "classes": [
+          {
+            "eta": [
+              "1/1",
+              "1/1"
+            ],
+            "m_values": [
+              1,
+              1
+            ],
+            "multiplicity": 1,
+            "quotient_points": 1,
+            "sp_values": [
+              1,
+              1
+            ],
+            "values": [
+              0
+            ]
+          },
+          {
+            "eta": [
+              "1/1",
+              "1/1"
+            ],
+            "m_values": [
+              1,
+              1
+            ],
+            "multiplicity": 3,
+            "quotient_points": 1,
+            "sp_values": [
+              1,
+              1
+            ],
+            "values": [
+              1
+            ]
+          }
+        ],
+        "coefficient_checks": 10,
+        "d_star": 4,
+        "live_size": 4,
+        "minimum_pair_margin": "0",
+        "minimum_symmetric_minus_pair": "0",
+        "multiplicities": [
+          1,
+          3
+        ],
+        "name": "one_three",
+        "pair_component_checks": 16,
+        "pair_equals_parent_when_d2": false,
+        "parent_symmetric_recovered": false,
+        "strict_improvements": 0,
+        "symmetric_component_checks": 16,
+        "target": "F2^1",
+        "target_order": 2,
+        "theorem_applicable": true,
+        "translation_checks": 10,
+        "uniform_degree": null,
+        "uniform_profile": false,
+        "weight_checks": 5,
+        "weights": [
+          {
+            "actual": "1",
+            "m": 0,
+            "pair_bound": "1",
+            "symmetric_bound": "1",
+            "uncentered_bound": "2"
+          },
+          {
+            "actual": "0.5",
+            "m": 1,
+            "pair_bound": "1",
+            "symmetric_bound": "1",
+            "uncentered_bound": "2"
+          },
+          {
+            "actual": "0",
+            "m": 2,
+            "pair_bound": "1",
+            "symmetric_bound": "1",
+            "uncentered_bound": "2"
+          },
+          {
+            "actual": "0.5",
+            "m": 3,
+            "pair_bound": "1",
+            "symmetric_bound": "1",
+            "uncentered_bound": "2"
+          },
+          {
+            "actual": "1",
+            "m": 4,
+            "pair_bound": "1",
+            "symmetric_bound": "1",
+            "uncentered_bound": "2"
+          }
+        ]
+      },
+      {
+        "aggregate_checks": 21,
+        "allocation_count": 27,
+        "class_sizes": {
+          "1": 2,
+          "2": 2
+        },
+        "classes": [
+          {
+            "eta": [
+              "3/1",
+              "1/1",
+              "3/1"
+            ],
+            "m_values": [
+              1,
+              2,
+              1
+            ],
+            "multiplicity": 1,
+            "quotient_points": 2,
+            "sp_values": [
+              1,
+              2,
+              1
+            ],
+            "values": [
+              0,
+              1
+            ]
+          },
+          {
+            "eta": [
+              "3/1",
+              "1/1",
+              "3/1"
+            ],
+            "m_values": [
+              1,
+              2,
+              1
+            ],
+            "multiplicity": 2,
+            "quotient_points": 2,
+            "sp_values": [
+              1,
+              2,
+              1
+            ],
+            "values": [
+              1,
+              2
+            ]
+          }
+        ],
+        "coefficient_checks": 28,
+        "d_star": 3,
+        "live_size": 6,
+        "minimum_pair_margin": "0",
+        "minimum_symmetric_minus_pair": "0",
+        "multiplicities": [
+          1,
+          2
+        ],
+        "name": "one_two",
+        "pair_component_checks": 27,
+        "pair_equals_parent_when_d2": false,
+        "parent_symmetric_recovered": false,
+        "strict_improvements": 5,
+        "symmetric_component_checks": 27,
+        "target": "F2^2",
+        "target_order": 4,
+        "theorem_applicable": true,
+        "translation_checks": 28,
+        "uniform_degree": null,
+        "uniform_profile": false,
+        "weight_checks": 7,
+        "weights": [
+          {
+            "actual": "3",
+            "m": 0,
+            "pair_bound": "3",
+            "symmetric_bound": "3",
+            "uncentered_bound": "4"
+          },
+          {
+            "actual": "1",
+            "m": 1,
+            "pair_bound": "1.73205080757",
+            "symmetric_bound": "2.08008382305",
+            "uncentered_bound": "3.17480210394"
+          },
+          {
+            "actual": "0.6",
+            "m": 2,
+            "pair_bound": "1.4",
+            "symmetric_bound": "1.75379965625",
+            "uncentered_bound": "2.81587367983"
+          },
+          {
+            "actual": "0.2",
+            "m": 3,
+            "pair_bound": "1.43923048454",
+            "symmetric_bound": "1.64805029383",
+            "uncentered_bound": "2.70488126236"
+          },
+          {
+            "actual": "0.6",
+            "m": 4,
+            "pair_bound": "1.4",
+            "symmetric_bound": "1.75379965625",
+            "uncentered_bound": "2.81587367983"
+          },
+          {
+            "actual": "1",
+            "m": 5,
+            "pair_bound": "1.73205080757",
+            "symmetric_bound": "2.08008382305",
+            "uncentered_bound": "3.17480210394"
+          },
+          {
+            "actual": "3",
+            "m": 6,
+            "pair_bound": "3",
+            "symmetric_bound": "3",
+            "uncentered_bound": "4"
+          }
+        ]
+      },
+      {
+        "aggregate_checks": 33,
+        "allocation_count": 243,
+        "class_sizes": {
+          "2": 2,
+          "3": 2
+        },
+        "classes": [
+          {
+            "eta": [
+              "3/1",
+              "1/1",
+              "3/1"
+            ],
+            "m_values": [
+              1,
+              2,
+              1
+            ],
+            "multiplicity": 2,
+            "quotient_points": 2,
+            "sp_values": [
+              1,
+              2,
+              1
+            ],
+            "values": [
+              0,
+              1
+            ]
+          },
+          {
+            "eta": [
+              "3/1",
+              "1/1",
+              "3/1"
+            ],
+            "m_values": [
+              1,
+              2,
+              1
+            ],
+            "multiplicity": 3,
+            "quotient_points": 2,
+            "sp_values": [
+              1,
+              2,
+              1
+            ],
+            "values": [
+              1,
+              3
+            ]
+          }
+        ],
+        "coefficient_checks": 44,
+        "d_star": 5,
+        "live_size": 10,
+        "minimum_pair_margin": "0",
+        "minimum_symmetric_minus_pair": "0",
+        "multiplicities": [
+          2,
+          3
+        ],
+        "name": "two_three",
+        "pair_component_checks": 243,
+        "pair_equals_parent_when_d2": false,
+        "parent_symmetric_recovered": false,
+        "strict_improvements": 9,
+        "symmetric_component_checks": 243,
+        "target": "F2^2",
+        "target_order": 4,
+        "theorem_applicable": true,
+        "translation_checks": 44,
+        "uniform_degree": null,
+        "uniform_profile": false,
+        "weight_checks": 11,
+        "weights": [
+          {
+            "actual": "3",
+            "m": 0,
+            "pair_bound": "3",
+            "symmetric_bound": "3",
+            "uncentered_bound": "4"
+          },
+          {
+            "actual": "1",
+            "m": 1,
+            "pair_bound": "1.73205080757",
+            "symmetric_bound": "2.40822468528",
+            "uncentered_bound": "3.48220225318"
+          },
+          {
+            "actual": "0.466666666667",
+            "m": 2,
+            "pair_bound": "1.22222222222",
+            "symmetric_bound": "2.05171737327",
+            "uncentered_bound": "3.1390516738"
+          },
+          {
+            "actual": "0.133333333333",
+            "m": 3,
+            "pair_bound": "1.24401693586",
+            "symmetric_bound": "1.8373052777",
+            "uncentered_bound": "2.92007796543"
+          },
+          {
+            "actual": "0.180952380952",
+            "m": 4,
+            "pair_bound": "1.09523809524",
+            "symmetric_bound": "1.72209676458",
+            "uncentered_bound": "2.79792244172"
+          },
+          {
+            "actual": "0.111111111111",
+            "m": 5,
+            "pair_bound": "1.17429781133",
+            "symmetric_bound": "1.6856697339",
+            "uncentered_bound": "2.75862962952"
+          },
+          {
+            "actual": "0.180952380952",
+            "m": 6,
+            "pair_bound": "1.09523809524",
+            "symmetric_bound": "1.72209676458",
+            "uncentered_bound": "2.79792244172"
+          },
+          {
+            "actual": "0.133333333333",
+            "m": 7,
+            "pair_bound": "1.24401693586",
+            "symmetric_bound": "1.8373052777",
+            "uncentered_bound": "2.92007796543"
+          },
+          {
+            "actual": "0.466666666667",
+            "m": 8,
+            "pair_bound": "1.22222222222",
+            "symmetric_bound": "2.05171737327",
+            "uncentered_bound": "3.1390516738"
+          },
+          {
+            "actual": "1",
+            "m": 9,
+            "pair_bound": "1.73205080757",
+            "symmetric_bound": "2.40822468528",
+            "uncentered_bound": "3.48220225318"
+          },
+          {
+            "actual": "3",
+            "m": 10,
+            "pair_bound": "3",
+            "symmetric_bound": "3",
+            "uncentered_bound": "4"
+          }
+        ]
+      },
+      {
+        "aggregate_checks": 27,
+        "allocation_count": 192,
+        "class_sizes": {
+          "1": 2,
+          "2": 1,
+          "4": 1
+        },
+        "classes": [
+          {
+            "eta": [
+              "3/1",
+              "1/1",
+              "3/1"
+            ],
+            "m_values": [
+              1,
+              2,
+              1
+            ],
+            "multiplicity": 1,
+            "quotient_points": 2,
+            "sp_values": [
+              1,
+              2,
+              1
+            ],
+            "values": [
+              0,
+              1
+            ]
+          },
+          {
+            "eta": [
+              "3/1",
+              "3/1"
+            ],
+            "m_values": [
+              1,
+              1
+            ],
+            "multiplicity": 2,
+            "quotient_points": 1,
+            "sp_values": [
+              1,
+              1
+            ],
+            "values": [
+              1
+            ]
+          },
+          {
+            "eta": [
+              "3/1",
+              "3/1"
+            ],
+            "m_values": [
+              1,
+              1
+            ],
+            "multiplicity": 4,
+            "quotient_points": 1,
+            "sp_values": [
+              1,
+              1
+            ],
+            "values": [
+              2
+            ]
+          }
+        ],
+        "coefficient_checks": 36,
+        "d_star": 7,
+        "live_size": 8,
+        "minimum_pair_margin": "0",
+        "minimum_symmetric_minus_pair": "0",
+        "multiplicities": [
+          1,
+          2,
+          4
+        ],
+        "name": "one_two_four",
+        "pair_component_checks": 192,
+        "pair_equals_parent_when_d2": false,
+        "parent_symmetric_recovered": false,
+        "strict_improvements": 7,
+        "symmetric_component_checks": 192,
+        "target": "F2^2",
+        "target_order": 4,
+        "theorem_applicable": true,
+        "translation_checks": 36,
+        "uniform_degree": null,
+        "uniform_profile": false,
+        "weight_checks": 9,
+        "weights": [
+          {
+            "actual": "3",
+            "m": 0,
+            "pair_bound": "3",
+            "symmetric_bound": "3",
+            "uncentered_bound": "4"
+          },
+          {
+            "actual": "1",
+            "m": 1,
+            "pair_bound": "2.68301270189",
+            "symmetric_bound": "2.89106354993",
+            "uncentered_bound": "3.90572366426"
+          },
+          {
+            "actual": "0.714285714286",
+            "m": 2,
+            "pair_bound": "2.45659320324",
+            "symmetric_bound": "2.81325179988",
+            "uncentered_bound": "3.83838342445"
+          },
+          {
+            "actual": "0.357142857143",
+            "m": 3,
+            "pair_bound": "2.32074150405",
+            "symmetric_bound": "2.76656474985",
+            "uncentered_bound": "3.79797928057"
+          },
+          {
+            "actual": "0.0857142857143",
+            "m": 4,
+            "pair_bound": "2.27545760433",
+            "symmetric_bound": "2.75100239984",
+            "uncentered_bound": "3.7845112326"
+          },
+          {
+            "actual": "0.357142857143",
+            "m": 5,
+            "pair_bound": "2.32074150405",
+            "symmetric_bound": "2.76656474985",
+            "uncentered_bound": "3.79797928057"
+          },
+          {
+            "actual": "0.714285714286",
+            "m": 6,
+            "pair_bound": "2.45659320324",
+            "symmetric_bound": "2.81325179988",
+            "uncentered_bound": "3.83838342445"
+          },
+          {
+            "actual": "1",
+            "m": 7,
+            "pair_bound": "2.68301270189",
+            "symmetric_bound": "2.89106354993",
+            "uncentered_bound": "3.90572366426"
+          },
+          {
+            "actual": "3",
+            "m": 8,
+            "pair_bound": "3",
+            "symmetric_bound": "3",
+            "uncentered_bound": "4"
+          }
+        ]
+      },
+      {
+        "aggregate_checks": 21,
+        "allocation_count": 16,
+        "class_sizes": {
+          "2": 3
+        },
+        "classes": [
+          {
+            "eta": [
+              "3/1",
+              "1/3",
+              "1/3",
+              "3/1"
+            ],
+            "m_values": [
+              1,
+              3,
+              3,
+              1
+            ],
+            "multiplicity": 2,
+            "quotient_points": 3,
+            "sp_values": [
+              1,
+              3,
+              3,
+              1
+            ],
+            "values": [
+              0,
+              1,
+              2
+            ]
+          }
+        ],
+        "coefficient_checks": 28,
+        "d_star": 2,
+        "live_size": 6,
+        "minimum_pair_margin": "0",
+        "minimum_symmetric_minus_pair": "0",
+        "multiplicities": [
+          2
+        ],
+        "name": "uniform_two",
+        "pair_component_checks": 16,
+        "pair_equals_parent_when_d2": true,
+        "parent_symmetric_recovered": true,
+        "strict_improvements": 0,
+        "symmetric_component_checks": 16,
+        "target": "F2^2",
+        "target_order": 4,
+        "theorem_applicable": true,
+        "translation_checks": 28,
+        "uniform_degree": 2,
+        "uniform_profile": true,
+        "weight_checks": 7,
+        "weights": [
+          {
+            "actual": "3",
+            "m": 0,
+            "pair_bound": "3",
+            "symmetric_bound": "3",
+            "uncentered_bound": "4"
+          },
+          {
+            "actual": "1",
+            "m": 1,
+            "pair_bound": "1",
+            "symmetric_bound": "1",
+            "uncentered_bound": "2.30940107676"
+          },
+          {
+            "actual": "0.2",
+            "m": 2,
+            "pair_bound": "0.6",
+            "symmetric_bound": "0.6",
+            "uncentered_bound": "1.7237604307"
+          },
+          {
+            "actual": "0.6",
+            "m": 3,
+            "pair_bound": "0.6",
+            "symmetric_bound": "0.6",
+            "uncentered_bound": "1.6"
+          },
+          {
+            "actual": "0.2",
+            "m": 4,
+            "pair_bound": "0.6",
+            "symmetric_bound": "0.6",
+            "uncentered_bound": "1.7237604307"
+          },
+          {
+            "actual": "1",
+            "m": 5,
+            "pair_bound": "1",
+            "symmetric_bound": "1",
+            "uncentered_bound": "2.30940107676"
+          },
+          {
+            "actual": "3",
+            "m": 6,
+            "pair_bound": "3",
+            "symmetric_bound": "3",
+            "uncentered_bound": "4"
+          }
+        ]
+      },
+      {
+        "aggregate_checks": 30,
+        "allocation_count": 64,
+        "class_sizes": {
+          "3": 3
+        },
+        "classes": [
+          {
+            "eta": [
+              "3/1",
+              "1/3",
+              "1/3",
+              "3/1"
+            ],
+            "m_values": [
+              1,
+              3,
+              3,
+              1
+            ],
+            "multiplicity": 3,
+            "quotient_points": 3,
+            "sp_values": [
+              1,
+              3,
+              3,
+              1
+            ],
+            "values": [
+              0,
+              1,
+              3
+            ]
+          }
+        ],
+        "coefficient_checks": 40,
+        "d_star": 3,
+        "live_size": 9,
+        "minimum_pair_margin": "0",
+        "minimum_symmetric_minus_pair": "0",
+        "multiplicities": [
+          3
+        ],
+        "name": "uniform_three",
+        "pair_component_checks": 64,
+        "pair_equals_parent_when_d2": false,
+        "parent_symmetric_recovered": true,
+        "strict_improvements": 8,
+        "symmetric_component_checks": 64,
+        "target": "F2^2",
+        "target_order": 4,
+        "theorem_applicable": true,
+        "translation_checks": 40,
+        "uniform_degree": 3,
+        "uniform_profile": true,
+        "weight_checks": 10,
+        "weights": [
+          {
+            "actual": "3",
+            "m": 0,
+            "pair_bound": "3",
+            "symmetric_bound": "3",
+            "uncentered_bound": "4"
+          },
+          {
+            "actual": "1",
+            "m": 1,
+            "pair_bound": "1",
+            "symmetric_bound": "1.44224957031",
+            "uncentered_bound": "2.7734450974"
+          },
+          {
+            "actual": "0",
+            "m": 2,
+            "pair_bound": "0.5",
+            "symmetric_bound": "0.88058334834",
+            "uncentered_bound": "2.13561084466"
+          },
+          {
+            "actual": "0.285714285714",
+            "m": 3,
+            "pair_bound": "0.428571428571",
+            "symmetric_bound": "0.660017962083",
+            "uncentered_bound": "1.80764248883"
+          },
+          {
+            "actual": "0.142857142857",
+            "m": 4,
+            "pair_bound": "0.428571428571",
+            "symmetric_bound": "0.568898783119",
+            "uncentered_bound": "1.66542060543"
+          },
+          {
+            "actual": "0.142857142857",
+            "m": 5,
+            "pair_bound": "0.428571428571",
+            "symmetric_bound": "0.568898783119",
+            "uncentered_bound": "1.66542060543"
+          },
+          {
+            "actual": "0.285714285714",
+            "m": 6,
+            "pair_bound": "0.428571428571",
+            "symmetric_bound": "0.660017962083",
+            "uncentered_bound": "1.80764248883"
+          },
+          {
+            "actual": "0",
+            "m": 7,
+            "pair_bound": "0.5",
+            "symmetric_bound": "0.88058334834",
+            "uncentered_bound": "2.13561084466"
+          },
+          {
+            "actual": "1",
+            "m": 8,
+            "pair_bound": "1",
+            "symmetric_bound": "1.44224957031",
+            "uncentered_bound": "2.7734450974"
+          },
+          {
+            "actual": "3",
+            "m": 9,
+            "pair_bound": "3",
+            "symmetric_bound": "3",
+            "uncentered_bound": "4"
+          }
+        ]
+      },
+      {
+        "aggregate_checks": 30,
+        "allocation_count": 64,
+        "class_sizes": {
+          "3": 3
+        },
+        "classes": [
+          {
+            "eta": [
+              "1/1",
+              "1/9",
+              "1/9",
+              "1/1"
+            ],
+            "m_values": [
+              1,
+              3,
+              3,
+              1
+            ],
+            "multiplicity": 3,
+            "quotient_points": 3,
+            "sp_values": [
+              1,
+              5,
+              5,
+              1
+            ],
+            "values": [
+              0,
+              0,
+              1
+            ]
+          }
+        ],
+        "coefficient_checks": 20,
+        "d_star": 3,
+        "live_size": 9,
+        "minimum_pair_margin": "0",
+        "minimum_symmetric_minus_pair": "0",
+        "multiplicities": [
+          3
+        ],
+        "name": "uniform_three_strict",
+        "pair_component_checks": 64,
+        "pair_equals_parent_when_d2": false,
+        "parent_symmetric_recovered": true,
+        "strict_improvements": 8,
+        "symmetric_component_checks": 64,
+        "target": "F2^1",
+        "target_order": 2,
+        "theorem_applicable": true,
+        "translation_checks": 20,
+        "uniform_degree": 3,
+        "uniform_profile": true,
+        "weight_checks": 10,
+        "weights": [
+          {
+            "actual": "1",
+            "m": 0,
+            "pair_bound": "1",
+            "symmetric_bound": "1",
+            "uncentered_bound": "2"
+          },
+          {
+            "actual": "0.333333333333",
+            "m": 1,
+            "pair_bound": "0.333333333333",
+            "symmetric_bound": "0.480749856769",
+            "uncentered_bound": "1.64414138289"
+          },
+          {
+            "actual": "0",
+            "m": 2,
+            "pair_bound": "0.166666666667",
+            "symmetric_bound": "0.29352778278",
+            "uncentered_bound": "1.42473567832"
+          },
+          {
+            "actual": "0.0952380952381",
+            "m": 3,
+            "pair_bound": "0.142857142857",
+            "symmetric_bound": "0.220005987361",
+            "uncentered_bound": "1.29745742794"
+          },
+          {
+            "actual": "0.047619047619",
+            "m": 4,
+            "pair_bound": "0.142857142857",
+            "symmetric_bound": "0.189632927706",
+            "uncentered_bound": "1.23879172115"
+          },
+          {
+            "actual": "0.047619047619",
+            "m": 5,
+            "pair_bound": "0.142857142857",
+            "symmetric_bound": "0.189632927706",
+            "uncentered_bound": "1.23879172115"
+          },
+          {
+            "actual": "0.0952380952381",
+            "m": 6,
+            "pair_bound": "0.142857142857",
+            "symmetric_bound": "0.220005987361",
+            "uncentered_bound": "1.29745742794"
+          },
+          {
+            "actual": "0",
+            "m": 7,
+            "pair_bound": "0.166666666667",
+            "symmetric_bound": "0.29352778278",
+            "uncentered_bound": "1.42473567832"
+          },
+          {
+            "actual": "0.333333333333",
+            "m": 8,
+            "pair_bound": "0.333333333333",
+            "symmetric_bound": "0.480749856769",
+            "uncentered_bound": "1.64414138289"
+          },
+          {
+            "actual": "1",
+            "m": 9,
+            "pair_bound": "1",
+            "symmetric_bound": "1",
+            "uncentered_bound": "2"
+          }
+        ]
+      },
+      {
+        "aggregate_checks": 27,
+        "allocation_count": 81,
+        "class_sizes": {
+          "4": 2
+        },
+        "classes": [
+          {
+            "eta": [
+              "3/1",
+              "1/1",
+              "3/1"
+            ],
+            "m_values": [
+              1,
+              2,
+              1
+            ],
+            "multiplicity": 4,
+            "quotient_points": 2,
+            "sp_values": [
+              1,
+              2,
+              1
+            ],
+            "values": [
+              0,
+              1
+            ]
+          }
+        ],
+        "coefficient_checks": 36,
+        "d_star": 4,
+        "live_size": 8,
+        "minimum_pair_margin": "0",
+        "minimum_symmetric_minus_pair": "0",
+        "multiplicities": [
+          4
+        ],
+        "name": "uniform_four",
+        "pair_component_checks": 81,
+        "pair_equals_parent_when_d2": false,
+        "parent_symmetric_recovered": true,
+        "strict_improvements": 7,
+        "symmetric_component_checks": 81,
+        "target": "F2^2",
+        "target_order": 4,
+        "theorem_applicable": true,
+        "translation_checks": 36,
+        "uniform_degree": 4,
+        "uniform_profile": true,
+        "weight_checks": 9,
+        "weights": [
+          {
+            "actual": "3",
+            "m": 0,
+            "pair_bound": "3",
+            "symmetric_bound": "3",
+            "uncentered_bound": "4"
+          },
+          {
+            "actual": "1",
+            "m": 1,
+            "pair_bound": "1.73205080757",
+            "symmetric_bound": "2.27950705695",
+            "uncentered_bound": "3.36358566101"
+          },
+          {
+            "actual": "1.28571428571",
+            "m": 2,
+            "pair_bound": "1.28571428571",
+            "symmetric_bound": "1.91318640649",
+            "uncentered_bound": "2.99579467835"
+          },
+          {
+            "actual": "1",
+            "m": 3,
+            "pair_bound": "1.31373606039",
+            "symmetric_bound": "1.72897388895",
+            "uncentered_bound": "2.80063055758"
+          },
+          {
+            "actual": "1.17142857143",
+            "m": 4,
+            "pair_bound": "1.17142857143",
+            "symmetric_bound": "1.67340626805",
+            "uncentered_bound": "2.73949288554"
+          },
+          {
+            "actual": "1",
+            "m": 5,
+            "pair_bound": "1.31373606039",
+            "symmetric_bound": "1.72897388895",
+            "uncentered_bound": "2.80063055758"
+          },
+          {
+            "actual": "1.28571428571",
+            "m": 6,
+            "pair_bound": "1.28571428571",
+            "symmetric_bound": "1.91318640649",
+            "uncentered_bound": "2.99579467835"
+          },
+          {
+            "actual": "1",
+            "m": 7,
+            "pair_bound": "1.73205080757",
+            "symmetric_bound": "2.27950705695",
+            "uncentered_bound": "3.36358566101"
+          },
+          {
+            "actual": "3",
+            "m": 8,
+            "pair_bound": "3",
+            "symmetric_bound": "3",
+            "uncentered_bound": "4"
+          }
+        ]
+      },
+      {
+        "aggregate_checks": 30,
+        "allocation_count": 50,
+        "class_sizes": {
+          "1": 1,
+          "2": 4
+        },
+        "classes": [
+          {
+            "eta": [
+              "3/1",
+              "3/1"
+            ],
+            "m_values": [
+              1,
+              1
+            ],
+            "multiplicity": 1,
+            "quotient_points": 1,
+            "sp_values": [
+              1,
+              1
+            ],
+            "values": [
+              0
+            ]
+          },
+          {
+            "eta": [
+              "3/1",
+              "0/1",
+              "1/3",
+              "0/1",
+              "3/1"
+            ],
+            "m_values": [
+              1,
+              4,
+              6,
+              4,
+              1
+            ],
+            "multiplicity": 2,
+            "quotient_points": 4,
+            "sp_values": [
+              1,
+              4,
+              12,
+              4,
+              1
+            ],
+            "values": [
+              0,
+              1,
+              2,
+              3
+            ]
+          }
+        ],
+        "coefficient_checks": 40,
+        "d_star": 3,
+        "live_size": 9,
+        "minimum_pair_margin": "0",
+        "minimum_symmetric_minus_pair": "0",
+        "multiplicities": [
+          1,
+          2
+        ],
+        "name": "zero_eta_class",
+        "pair_component_checks": 50,
+        "pair_equals_parent_when_d2": false,
+        "parent_symmetric_recovered": false,
+        "strict_improvements": 6,
+        "symmetric_component_checks": 50,
+        "target": "F2^2",
+        "target_order": 4,
+        "theorem_applicable": true,
+        "translation_checks": 40,
+        "uniform_degree": null,
+        "uniform_profile": false,
+        "weight_checks": 10,
+        "weights": [
+          {
+            "actual": "3",
+            "m": 0,
+            "pair_bound": "3",
+            "symmetric_bound": "3",
+            "uncentered_bound": "4"
+          },
+          {
+            "actual": "0.333333333333",
+            "m": 1,
+            "pair_bound": "0.333333333333",
+            "symmetric_bound": "0.333333333333",
+            "uncentered_bound": "2.6843040887"
+          },
+          {
+            "actual": "0.333333333333",
+            "m": 2,
+            "pair_bound": "0.333333333333",
+            "symmetric_bound": "0.480749856769",
+            "uncentered_bound": "2.18995818885"
+          },
+          {
+            "actual": "0.142857142857",
+            "m": 3,
+            "pair_bound": "0.142857142857",
+            "symmetric_bound": "0.206035652901",
+            "uncentered_bound": "1.93693118349"
+          },
+          {
+            "actual": "0.142857142857",
+            "m": 4,
+            "pair_bound": "0.142857142857",
+            "symmetric_bound": "0.245722268862",
+            "uncentered_bound": "1.84164503532"
+          },
+          {
+            "actual": "0.142857142857",
+            "m": 5,
+            "pair_bound": "0.142857142857",
+            "symmetric_bound": "0.245722268862",
+            "uncentered_bound": "1.84164503532"
+          },
+          {
+            "actual": "0.142857142857",
+            "m": 6,
+            "pair_bound": "0.142857142857",
+            "symmetric_bound": "0.206035652901",
+            "uncentered_bound": "1.93693118349"
+          },
+          {
+            "actual": "0.333333333333",
+            "m": 7,
+            "pair_bound": "0.333333333333",
+            "symmetric_bound": "0.480749856769",
+            "uncentered_bound": "2.18995818885"
+          },
+          {
+            "actual": "0.333333333333",
+            "m": 8,
+            "pair_bound": "0.333333333333",
+            "symmetric_bound": "0.333333333333",
+            "uncentered_bound": "2.6843040887"
+          },
+          {
+            "actual": "3",
+            "m": 9,
+            "pair_bound": "3",
+            "symmetric_bound": "3",
+            "uncentered_bound": "4"
+          }
+        ]
+      },
+      {
+        "aggregate_checks": 0,
+        "allocation_count": 4,
+        "class_sizes": {
+          "1": 3
+        },
+        "classes": [
+          {
+            "eta": [
+              "3/1",
+              "1/3",
+              "1/3",
+              "3/1"
+            ],
+            "m_values": [
+              1,
+              3,
+              3,
+              1
+            ],
+            "multiplicity": 1,
+            "quotient_points": 3,
+            "sp_values": [
+              1,
+              3,
+              3,
+              1
+            ],
+            "values": [
+              0,
+              1,
+              2
+            ]
+          }
+        ],
+        "coefficient_checks": 16,
+        "d_star": 1,
+        "live_size": 3,
+        "minimum_pair_margin": null,
+        "minimum_symmetric_minus_pair": null,
+        "multiplicities": [
+          1
+        ],
+        "name": "all_singletons",
+        "pair_component_checks": 0,
+        "pair_equals_parent_when_d2": false,
+        "parent_symmetric_recovered": false,
+        "strict_improvements": 0,
+        "symmetric_component_checks": 0,
+        "target": "F2^2",
+        "target_order": 4,
+        "theorem_applicable": false,
+        "translation_checks": 16,
+        "uniform_degree": 1,
+        "uniform_profile": true,
+        "weight_checks": 4,
+        "weights": []
+      },
+      {
+        "aggregate_checks": 15,
+        "allocation_count": 16,
+        "class_sizes": {
+          "1": 1,
+          "3": 1
+        },
+        "classes": [
+          {
+            "eta": [
+              "0/1",
+              "0/1"
+            ],
+            "m_values": [
+              1,
+              1
+            ],
+            "multiplicity": 1,
+            "quotient_points": 1,
+            "sp_values": [
+              1,
+              1
+            ],
+            "values": [
+              0
+            ]
+          },
+          {
+            "eta": [
+              "0/1",
+              "0/1"
+            ],
+            "m_values": [
+              1,
+              1
+            ],
+            "multiplicity": 3,
+            "quotient_points": 1,
+            "sp_values": [
+              1,
+              1
+            ],
+            "values": [
+              0
+            ]
+          }
+        ],
+        "coefficient_checks": 5,
+        "d_star": 4,
+        "live_size": 4,
+        "minimum_pair_margin": "0",
+        "minimum_symmetric_minus_pair": "0",
+        "multiplicities": [
+          1,
+          3
+        ],
+        "name": "trivial_target",
+        "pair_component_checks": 16,
+        "pair_equals_parent_when_d2": false,
+        "parent_symmetric_recovered": false,
+        "strict_improvements": 0,
+        "symmetric_component_checks": 16,
+        "target": "F2^0",
+        "target_order": 1,
+        "theorem_applicable": true,
+        "translation_checks": 0,
+        "uniform_degree": null,
+        "uniform_profile": false,
+        "weight_checks": 5,
+        "weights": [
+          {
+            "actual": "0",
+            "m": 0,
+            "pair_bound": "0",
+            "symmetric_bound": "0",
+            "uncentered_bound": "1"
+          },
+          {
+            "actual": "0",
+            "m": 1,
+            "pair_bound": "0",
+            "symmetric_bound": "0",
+            "uncentered_bound": "1"
+          },
+          {
+            "actual": "0",
+            "m": 2,
+            "pair_bound": "0",
+            "symmetric_bound": "0",
+            "uncentered_bound": "1"
+          },
+          {
+            "actual": "0",
+            "m": 3,
+            "pair_bound": "0",
+            "symmetric_bound": "0",
+            "uncentered_bound": "1"
+          },
+          {
+            "actual": "0",
+            "m": 4,
+            "pair_bound": "0",
+            "symmetric_bound": "0",
+            "uncentered_bound": "1"
+          }
+        ]
+      }
+    ],
+    "repeated_factor_functions_allowed": true,
+    "strict_on_every_instance": false,
+    "translated_effective_phase_required": true,
+    "trivial_character_excluded": true,
+    "uniform_d2_equals_parent": true,
+    "uniform_d_gt_2_can_be_stronger": true
+  }
+}

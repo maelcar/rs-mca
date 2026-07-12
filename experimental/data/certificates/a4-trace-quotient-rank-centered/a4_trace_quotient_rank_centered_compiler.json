@@ -1,0 +1,350 @@
+{
+  "base_commit": "36de5bfcc7d6e0ca44806112acec2f4a1b4a7532",
+  "files": {
+    "experimental/notes/thresholds/a4_trace_quotient_rank_centered_compiler.md": "1a0a8df519e9e5e5c4b1738ae1d7639d93c38eb88b002351c53130fa97959cd1",
+    "experimental/scripts/verify_a4_trace_quotient_rank_centered_compiler.py": "f8dd982e794c9f02303f6b2f5b002fe34b4ea50a3e2e9b84f07eea8285c7d56f"
+  },
+  "hypothesis_audit": {
+    "PR564_energy_reclaimed_as_new": false,
+    "centered_energy_supplied": false,
+    "deployed_row_closed": false,
+    "full_A4_closed": false,
+    "full_MA_closed": false,
+    "generic_A4_active_set_fiber_saturated": false,
+    "generic_A4_target_rank_equals_full_identity_rank": false,
+    "generic_map_entropy_and_logp_over_D_supplied": false,
+    "incomplete_fibers_supported_by_centered_power": false,
+    "other_cell_overlap_assignment_unnecessary": false,
+    "other_fourier_losses_zero": false,
+    "tex_modified": false,
+    "weightwise_effective_targets_allowed": false
+  },
+  "parent_commit": "6a1e520871dd23ab8a536f4dcd423820990feef1",
+  "parent_packet": {
+    "certificate_sha256": "c61e116a2c71b29d37263bf6ac1633ed557659adb04e142ac92451231e7fb91b",
+    "non_log_files_preserved": true,
+    "note_sha256": "4b924af30dc444ab770620cede6895fca47674e64e97d519ecbfa83bd6939222",
+    "verifier_sha256": "aa233b7815deac1a714c48ca0dae1e4a60334b39672a20bc8cc36e423ea1fa24"
+  },
+  "payload_sha256": "29d2b20476f1c95c208f86d597497a4143db78ca19e3cb276ba04344a25691e9",
+  "schema": "a4_trace_quotient_rank_centered_compiler.v1",
+  "sources": {
+    "experimental/asymptotic_rs_mca_frontiers.tex": "0e3aa7b1ba79b1065439ae484f4cb989d80cabe18afb68ec63a6b21d1f3370fd",
+    "experimental/data/certificates/a4-quotient-major-compiler/a4_quotient_major_compiler.json": "c61e116a2c71b29d37263bf6ac1633ed557659adb04e142ac92451231e7fb91b",
+    "experimental/grande_finale.tex": "4e3c3f6a898969e5fad70cd09bf354c6a2a12d54bf94525fb62f457dd17ddbc8",
+    "experimental/notes/roadmaps/b2_l1_reduction_ledger.md": "bd35b82b5cec35639b0bf539e15709b53e3316dae0c2b8e298953db424fb0435",
+    "experimental/notes/thresholds/a4_quotient_major_compiler.md": "4b924af30dc444ab770620cede6895fca47674e64e97d519ecbfa83bd6939222",
+    "experimental/notes/thresholds/cap25_v13_qfin_rung_audit.md": "7545779b5ca3454007508b74dd225abab716ae809ad6c7ebe08dcfd716359b25",
+    "experimental/notes/thresholds/cap25_v13_qfin_rung_audit_m31.md": "b038245aa27ee397f67e8821ba64c6f8d766734eb73c7e1afe177e3230f042d7",
+    "experimental/scripts/verify_a4_quotient_major_compiler.py": "aa233b7815deac1a714c48ca0dae1e4a60334b39672a20bc8cc36e423ea1fa24"
+  },
+  "status": "PROVED_TRACE_RANK_AND_CENTERED_UNIFORM_FOLD_COMPILER",
+  "theorems": {
+    "centered_uniform_fold": {
+      "bound": "Cmaj<=sum_jvec w_jvec prod_s eta_(j_s)^(1/d)",
+      "centered_parseval": "sum_(chi!=1)|e_j(chi)|^2=eta_j*M_j^2",
+      "common_target_required": true,
+      "comparison": "K_centered<=K_uncentered-1",
+      "degrees_proved": "all d>=2",
+      "endpoint_eta": "|A_phi|-1",
+      "eta_definition": "eta_j=kappa_j-1",
+      "exact_uniform_fibers_required": true,
+      "nonuniform_falsifier": {
+        "character_values": [
+          1,
+          -1
+        ],
+        "fake_degree_two_coefficients": [
+          1,
+          0,
+          -2,
+          0,
+          1
+        ],
+        "fiber_multiplicities": [
+          1,
+          3
+        ],
+        "true_coefficients": [
+          1,
+          -2,
+          0,
+          2,
+          -1
+        ],
+        "uniform_fold_identity_valid": false
+      },
+      "records": [
+        {
+          "endpoint_eta": [
+            "3/1",
+            "3/1"
+          ],
+          "eta": [
+            "3/1",
+            "0/1",
+            "1/3",
+            "0/1",
+            "3/1"
+          ],
+          "folds": [
+            {
+              "convolution_checks": 36,
+              "degree": 2,
+              "minimum_centered_margin": "-4.4408920985e-16",
+              "numerical_compiler_checks": 18,
+              "powered_holder_checks": 25
+            },
+            {
+              "convolution_checks": 52,
+              "degree": 3,
+              "minimum_centered_margin": "0",
+              "numerical_compiler_checks": 26,
+              "powered_holder_checks": 125
+            },
+            {
+              "convolution_checks": 68,
+              "degree": 4,
+              "minimum_centered_margin": "-8.881784197e-16",
+              "numerical_compiler_checks": 34,
+              "powered_holder_checks": 625
+            }
+          ],
+          "h": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "name": "surjective_F2_square",
+          "target": "F2^2"
+        },
+        {
+          "endpoint_eta": [
+            "3/1",
+            "3/1"
+          ],
+          "eta": [
+            "3/1",
+            "3/25",
+            "3/25",
+            "3/25",
+            "3/25",
+            "3/1"
+          ],
+          "folds": [
+            {
+              "convolution_checks": 44,
+              "degree": 2,
+              "minimum_centered_margin": "-4.4408920985e-16",
+              "numerical_compiler_checks": 22,
+              "powered_holder_checks": 36
+            },
+            {
+              "convolution_checks": 64,
+              "degree": 3,
+              "minimum_centered_margin": "0",
+              "numerical_compiler_checks": 32,
+              "powered_holder_checks": 216
+            },
+            {
+              "convolution_checks": 84,
+              "degree": 4,
+              "minimum_centered_margin": "-8.881784197e-16",
+              "numerical_compiler_checks": 42,
+              "powered_holder_checks": 1296
+            }
+          ],
+          "h": [
+            0,
+            1,
+            1,
+            2,
+            3
+          ],
+          "name": "repeated_F2_square",
+          "target": "F2^2"
+        }
+      ],
+      "strict_on_every_instance": false,
+      "trivial_character_in_major_set": false
+    },
+    "diagonal_energy_consumer": {
+      "calibrations": [
+        {
+          "b2": "3.855091138975e-9",
+          "center_log2_average": "28.450587711560",
+          "conditional_c_ceiling": "1.24705715810e+15",
+          "conditional_c_ceiling_over_n": "1189286382.77",
+          "diagonal_energy_proved": false,
+          "full_domain_size": 2097152,
+          "j_high": 1048576,
+          "j_low": 67472,
+          "k_raw": 4807520,
+          "log2_b2": "-27.950587886403",
+          "m": 1116048,
+          "mode": 558024,
+          "n_times_b2": "0.00404235604614",
+          "name": "KB",
+          "other_fourier_losses_assigned_zero": false,
+          "p": 2130706433,
+          "quotient_rank": 33735,
+          "quotient_size": 1048576,
+          "row_closed": false,
+          "saddle_scale": "1280.734313623598",
+          "standalone_nontrivial_ceiling": 4807519,
+          "target_order": "2130706433^33735",
+          "term_count": 981105
+        },
+        {
+          "b2": "6.936951892869e-7",
+          "center_log2_average": "20.959194609713",
+          "conditional_c_ceiling": "11532442.6687",
+          "conditional_c_ceiling_over_n": "10.9981943786",
+          "diagonal_energy_proved": false,
+          "full_domain_size": 2097152,
+          "j_high": 1048576,
+          "j_low": 67448,
+          "k_raw": 9,
+          "log2_b2": "-20.459194784554",
+          "m": 1116024,
+          "mode": 558012,
+          "n_times_b2": "0.727392126802",
+          "name": "M31",
+          "other_fourier_losses_assigned_zero": false,
+          "p": 2147483647,
+          "quotient_rank": 33723,
+          "quotient_size": 1048576,
+          "row_closed": false,
+          "saddle_scale": "1280.736207355009",
+          "standalone_nontrivial_ceiling": 8,
+          "target_order": "2147483647^33723",
+          "term_count": 981129
+        }
+      ],
+      "claimed_proved": false,
+      "consequence": "Cmaj<=C_n*B_d(n,m,A_phi)",
+      "hypothesis": "SP_j-M_j^2/|A_phi|<=C_n*M_j",
+      "owner": "PR564_subgroup_VMVT_Poisson_energy_frontier",
+      "status": "OPEN"
+    },
+    "trace_rank": {
+      "algebraic_lift_containment_required": false,
+      "ambient_solution_dimension": "sR-w_phi",
+      "ambient_solution_space": "W_phi^perp",
+      "annihilator_dimension": "sR-v",
+      "characteristic_growth_required": true,
+      "effective_count": "p^(v-w_phi)",
+      "effective_group": "dual(V/W_phi)",
+      "exact_d_fold_bound": "p^(N/d-1)",
+      "extension_degree_enters_bound": false,
+      "fixed_degree_sparse": false,
+      "global_every_block_required": true,
+      "map_family_entropy_required": true,
+      "nonuniform_uses_actual_q": true,
+      "records": [
+        {
+          "N": 6,
+          "ambient_dimension": 4,
+          "ambient_solution_dimension": 3,
+          "annihilator_dimension": 1,
+          "effective_count": 4,
+          "effective_dimension": 2,
+          "enumeration": {
+            "ambient_solutions": 8,
+            "annihilator_multiplicity": 2,
+            "distinct_effective_restrictions": 4
+          },
+          "fiber_sizes": [
+            2,
+            2,
+            2
+          ],
+          "name": "F2_exact_pairs",
+          "p": 2,
+          "q": 3,
+          "q_minus_one_count_bound": 4,
+          "v": 3,
+          "w_phi": 1
+        },
+        {
+          "N": 5,
+          "ambient_dimension": 4,
+          "ambient_solution_dimension": 2,
+          "annihilator_dimension": 2,
+          "effective_count": 1,
+          "effective_dimension": 0,
+          "enumeration": {
+            "ambient_solutions": 9,
+            "annihilator_multiplicity": 9,
+            "distinct_effective_restrictions": 1
+          },
+          "fiber_sizes": [
+            3,
+            1,
+            1
+          ],
+          "name": "F3_nonuniform",
+          "p": 3,
+          "q": 3,
+          "q_minus_one_count_bound": 9,
+          "v": 2,
+          "w_phi": 2
+        },
+        {
+          "N": 4,
+          "ambient_dimension": 3,
+          "ambient_solution_dimension": 1,
+          "annihilator_dimension": 1,
+          "effective_count": 1,
+          "effective_dimension": 0,
+          "enumeration": {
+            "ambient_solutions": 3,
+            "annihilator_multiplicity": 3,
+            "distinct_effective_restrictions": 1
+          },
+          "fiber_sizes": [
+            4
+          ],
+          "name": "F3_single_fiber",
+          "p": 3,
+          "q": 1,
+          "q_minus_one_count_bound": 1,
+          "v": 2,
+          "w_phi": 2
+        },
+        {
+          "N": 16,
+          "ambient_dimension": 16,
+          "ambient_solution_dimension": 8,
+          "annihilator_dimension": 1,
+          "effective_count": 410338673,
+          "effective_dimension": 7,
+          "enumeration": null,
+          "fiber_sizes": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "legal_A5_large_characteristic": true,
+          "name": "F17_weighted_vandermonde_sharp",
+          "p": 17,
+          "q": 8,
+          "q_minus_one_count_bound": 410338673,
+          "sharp": true,
+          "v": 15,
+          "w_phi": 8
+        }
+      ],
+      "restriction_kernel": "V^perp",
+      "sharp_weighted_vandermonde": true,
+      "sparse_tail_condition": "log|I_N|+(N/D_N)log(p_N)=o(N)",
+      "universal_bound": "p^(q-1)"
+    }
+  }
+}

@@ -30,6 +30,47 @@ Keep entries concise and link to the relevant files.
 
 ## Entries
 
+### 2026-07-12 - A6, L2, ILO, B2, and lower-reserve PR wave
+
+- **Agent/model:** Codex integrating PRs #658--#698 from
+  DannyExperiments, holmbuar, avdeevvadim, latifkasuli, and
+  scottdhughes.
+- **Files added or changed:** Added notes under `experimental/notes/`,
+  verifier/reproducer scripts under `experimental/scripts/`, and JSON or
+  text certificates under `experimental/data/certificates/`.  Updated
+  `experimental/notes/l2/l2_sharp_target_conjecture.md` and
+  `experimental/notes/roadmaps/b2_hankel_gauss_reduction.md`.  The B2
+  CHG bridge note was patched during integration to mark the B53 target as
+  refuted by the new B53 packet.
+- **Status:** PROVED / CONDITIONAL / COUNTEREXAMPLE / EXPERIMENTAL / AUDIT,
+  as stated in the individual notes.  No stable paper `.tex` or `.pdf`
+  theorem is promoted by this entry.
+- **What is being added:** A large experimental batch around the active
+  asymptotic and finite-threshold program.  The L2 notes correct the repeated
+  row target, add baseline-plus-excess codegree recursion, and expose the
+  exact low layer before the doubly-high residual.  The A6 notes add
+  projective/descent, completed-Cramer, zero-mask, higher-order mask-rank,
+  and selector-free line-section payments.  The ILO/image-face chain records
+  Fourier/Bohr route cuts, Danny's VC-compression image atom, the
+  unconditional `rho <= log(3/2)` cap, corridor audits, and a new computed
+  champion `rho=0.160847`.  The B2 packets add a twisted Hankel transform and
+  CHG normalization bridge, then the Scott Hughes refutation showing the B53
+  sufficient target is false at reachable rows.  Lower-reserve and profile
+  packets add exact full-field first-row MCA lower bounds, moved-pair dyadic
+  rung audits, and profile-envelope completeness audits.
+- **How it is useful:** Several old walls become sharper: ILO image-size
+  payment is no longer merely conjectural in the stated image atom form;
+  B53 is no longer a live target; the L2 and R1 notes prevent raw support
+  overcounting; and the A6 packets pay additional strict strata while naming
+  the central remaining bands.  The finite lower-reserve notes make the
+  first unsafe rows and moved deployed-pair rung margins more auditable.
+- **What to do next:** Do not cite any of these as Paper-D authority until
+  separately promoted.  For proof progress, reconcile the closed ILO-image
+  atom with the still-open post-atlas block/fiber typing, replace B53 with a
+  viable signed or positive-band B2 target, keep the L2 doubly-high residual
+  explicit, and audit the lower-reserve packets against the current
+  `asymptotic_rs_mca_frontiers.tex`/`cap25` drafts.
+
 ### 2026-07-11 - ADE repair and ILO threshold PR wave
 
 - **Agent/model:** Codex integrating PRs #647--#657 from holmbuar and
