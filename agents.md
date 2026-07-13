@@ -15,30 +15,34 @@ snarks_v5.tex           Paper C: SNARK / protocol ledger
 
 Use logical order **A → B → D → C** unless you are working specifically on protocol ledgers.
 
-## Current focus: self-contained asymptotic RS MCA submission
+## Current focus: exact-threshold RS MCA submission
 
-The active submission draft is:
-
-```text
-experimental/asymptotic_rs_mca_frontiers.tex       self-contained frontiers paper
-experimental/asymptotic_rs_mca_frontiers.pdf       compiled frontiers paper
-```
-
-This paper is the current place to work on the asymptotic RS-MCA submission.
-It replaces the older compact draft as the main experimental manuscript.  The
-older files remain useful for audit comparison:
+The active exact-threshold integration draft is:
 
 ```text
-experimental/asymptotic_rs_mca.tex       compact predecessor / audit reference
-experimental/cap25_cap_v13_raw.tex       long v13 working ledger
-experimental/grande_finale.tex           compact final-ledger note
+experimental/rs_mca_thresholds.tex       coherent exact-threshold paper
+experimental/rs_mca_thresholds.pdf       compiled exact-threshold paper
 ```
 
-The frontiers paper contains the current best theorem package: exact deep
-frontier results, shallow-prefix error exponents, quotient/remainder
-obstructions, partial-occupancy add-back, profile-envelope compilers,
-Sidon/BSG primitive analysis, smooth/circle interfaces, and finite certificate
-interfaces.
+This paper is now the first place to look for self-contained exact MCA
+staircases, certified prize rows, syndrome--secant geometry, quadratic/
+mean-overlap thresholds, half-distance completion, and the target-aware
+certificate formula.  It is more coherent than the older frontiers draft for
+exact threshold work.  The broader frontiers draft remains useful for audit
+comparison and for conditional profile-envelope/cell machinery:
+
+```text
+experimental/asymptotic_rs_mca_frontiers.tex       broad frontiers/audit draft
+experimental/asymptotic_rs_mca.tex                 compact predecessor / audit reference
+experimental/cap25_cap_v13_raw.tex                 long v13 working ledger
+experimental/grande_finale.tex                     compact final-ledger note
+```
+
+The exact-threshold paper contains the current clean theorem package: exact
+deep and quadratic MCA staircases, exact CA/sparse MCA decomposition, a
+self-contained half-Johnson bound, certified Proth prime rows at all four
+official rates, the F_17^32 exact 6/7 gate, smooth/circle transports, and a
+certificate formula for turning matching safe/unsafe rows into delta*.
 
 The remaining hard inputs are still exactly:
 
@@ -70,18 +74,21 @@ profile-envelope comparison.
 
 ## Highest priority now
 
-1. **Lean formalization.**  Formalize the frontiers paper and its dependencies
-   under `experimental/lean/`.  Highest priority tracks are:
+1. **Lean formalization.**  Formalize the exact-threshold paper first, then
+   the broader frontiers dependencies under `experimental/lean/`.  Highest
+   priority tracks are:
 
    ```text
+   experimental/rs_mca_thresholds.tex
    experimental/asymptotic_rs_mca_frontiers.tex
    experimental/lean/grande_finale/
    experimental/lean/cap25_cap_v13_raw_compact/
    ```
 
-   Add a new package or module for the frontiers paper only if
+   Add a new package or module for the thresholds/frontiers papers only if
    it is integrated coherently under `experimental/lean/`.  The formalization
-   should prioritize the MCA staircase definition, exact deep-regime theorem,
+   should prioritize the MCA staircase definition, endpoint conversion, exact
+   CA/sparse decomposition, tangent floor, quadratic mean-overlap theorem,
    syndrome-line incidence, first-match disjointization, profile-envelope
    definitions, primitive Boolean slice, moment-to-max equivalence, Sidon split,
    BSG/quasicube step, and target-aware threshold bracket.
@@ -111,8 +118,7 @@ profile-envelope comparison.
    threshold.  These examples are for auditing and exposition, not for replacing
    the proof.
 
-4. **Clean write-up.**  Polish `experimental/asymptotic_rs_mca_frontiers.tex`
-   as the self-contained submission paper.  The write-up should avoid internal
+4. **Clean write-up.**  Polish `experimental/rs_mca_thresholds.tex` as the coherent exact-threshold paper, while keeping `experimental/asymptotic_rs_mca_frontiers.tex` as the broader audit/frontiers reference.  The write-up should avoid internal
    shorthand where possible, explain Reed--Solomon/MCA for external readers,
    cite paid structured cases by theorem labels, and separate proved statements
    from the five remaining hard inputs.
@@ -146,7 +152,7 @@ The project now has three different targets.  Keep them separate.
    ```
 
    where the stated hypotheses permit that identity-dominant specialization.
-   The active manuscript is `experimental/asymptotic_rs_mca_frontiers.tex`.
+   The active exact-threshold manuscript is `experimental/rs_mca_thresholds.tex`; the broader audit manuscript is `experimental/asymptotic_rs_mca_frontiers.tex`.
    The main work is proving, auditing, or clearly isolating the five hard inputs
    listed above.
 
@@ -193,16 +199,18 @@ The asymptotic theorem is:
 delta*_C(epsilon*) = 1 - rho - g*(rho, log2 |B|) + o(1).
 ```
 
-The frontiers paper in `experimental/asymptotic_rs_mca_frontiers.tex` is the
-current source for this statement and its limitations.  Finite deployed rows
+The exact-threshold paper in `experimental/rs_mca_thresholds.tex` is the
+current clean source for finite thresholds and certificate formulas; the broader
+frontiers paper in `experimental/asymptotic_rs_mca_frontiers.tex` remains the
+source for conditional profile-envelope limitations.  Finite deployed rows
 require exact constants and remain a separate certificate project.
 
 ## What counts as progress now
 
 Highest-value contributions are:
 
-1. Lean formalization of `experimental/asymptotic_rs_mca_frontiers.tex` and its
-   imported v13 raw / Grande Finale dependencies;
+1. Lean formalization of `experimental/rs_mca_thresholds.tex`, then
+   `experimental/asymptotic_rs_mca_frontiers.tex` and imported v13 raw / Grande Finale dependencies;
 2. adversarial proof audits focused on the five remaining hard inputs:
    witness-exhaustive atlas, image-scale MI/MA or Sidon payment, residual ray
    compiler, profile-envelope target comparison, and lower reserve;

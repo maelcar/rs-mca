@@ -38,7 +38,8 @@ of the main papers are in `tex/`, experimental manuscripts are in
 | `cs25_cap_v12.tex` | **Paper D: two-sided cap, safe-side pincer, and certificate grammar** | This is the main Proximity Prize submission reference. It keeps the self-contained cap route and adds the safe-side pincer, deployed-row two-sided intervals, map/rational smooth extensions, circle/genus-one transports, explicit witness machinery, optimized failure profile, and certificate grammar v2. |
 | `snarks_v5.tex` | **Paper C: SNARK ledger** | Turns the corrected theory into a protocol-facing certificate and adds a theorem-backed high-agreement ledger compiler for line/list/curve coding numerators. |
 | `towards-prize.tex` | **Towards Prize: sparse threshold note** | Compact prize-facing note. It packages the `delta^*` staircase viewpoint, deployed KoalaBear pincer, and the new sparse residual reduction `emca = max(eca, sigma_C/q)` into the current execution target. |
-| `experimental/asymptotic_rs_mca_frontiers.tex` | **Asymptotic RS--MCA Frontiers** | Current self-contained asymptotic submission draft. It consolidates exact finite-row geometry, profile-envelope compilers, quotient/remainder obstructions, Sidon/BSG primitive analysis, smooth/circle interfaces, finite certificate interfaces, and the remaining hard inputs. |
+| `experimental/rs_mca_thresholds.tex` | **Reed--Solomon MCA Thresholds** | Current coherent exact-threshold draft. It packages exact deep/quadratic MCA staircases, CA/sparse decomposition, certified Proth prime rows at all four official rates, smooth/circle transports, and target-aware certificate formulas. |
+| `experimental/asymptotic_rs_mca_frontiers.tex` | **Asymptotic RS--MCA Frontiers** | Broader audit/frontiers draft. It retains conditional profile-envelope, quotient/remainder, Sidon/BSG, smooth/circle, and finite-certificate machinery that is not all present in the shorter thresholds paper. |
 | `README.md` | Repo overview | Explains what the papers do, how they depend on each other, and what the project is trying to prove. |
 | `AGENTS.md` | Research-agent guide | Gives AI agents and new contributors a prioritized list of proof targets, toy cases, scripts, and “do not confuse these” rules. |
 
@@ -113,7 +114,8 @@ The active experimental program now splits this into two proof problems:
    delta*_C(epsilon*) = 1 - rho - g*(rho, log2 |B|) + o(1).
    ```
 
-   The current self-contained draft is
+   The current coherent exact-threshold draft is
+   `experimental/rs_mca_thresholds.tex`; the broader audit/frontiers draft is
    `experimental/asymptotic_rs_mca_frontiers.tex`.  The remaining hard inputs
    are: a witness-exhaustive first-match atlas; image-scale `MI` + `MA`, or a
    direct Sidon payment; a residual ray compiler for higher-dimensional
@@ -172,10 +174,12 @@ The version changes matter for the website and scanner as follows:
   role is to state the `delta^*` staircase problem compactly, record the
   deployed KoalaBear pincer, and reduce the remaining MCA task to the sparse
   residual layer plus CA/list certificates.
-- **`experimental/asymptotic_rs_mca_frontiers.tex`** is the current
-  self-contained asymptotic RS-MCA submission draft. It supersedes the earlier
-  `experimental/rs_mca_entropy_frontiers.tex` filename and should be the main
-  target for proof audit, Lean formalization, and clean write-up work.
+- **`experimental/rs_mca_thresholds.tex`** is the current coherent exact-threshold draft. It should be read first for exact staircases, certified Proth rows, and certificate formulas.
+- **`experimental/asymptotic_rs_mca_frontiers.tex`** is the broader
+  self-contained asymptotic RS-MCA audit/frontiers draft. It supersedes the earlier
+  `experimental/rs_mca_entropy_frontiers.tex` filename and remains useful for
+  conditional profile-envelope and cell-budget audits after the exact-threshold
+  paper is checked.
 - **`experimental/rs_mca_proximity_prize_status.md`** is an experimental
   committee-facing status memo for the v12/v13 raw picture. It summarizes the
   entropy-subfield-envelope thesis, the current exact unsafe certificates, and
@@ -313,7 +317,7 @@ A rough status map:
 | Map/rational smooth, circle, and genus-one extensions | Proved in Paper D v12 under its stated model hypotheses; these are high-priority audit targets. |
 | Certificate grammar and printed deployed certificates | Stated in Paper D v12; every "verified exactly" inequality should have a reproducible script or printed integer certificate. |
 | Finite deployed adjacent threshold resolution | Open/experimental. v13 raw gives exact unsafe-side certificate claims; the adjacent safe side needs row-sharp `Q`, finite BC chart decomposition, and quotient/rung audits with constants. |
-| Asymptotic entropy-subfield envelope | Active submission draft in `experimental/asymptotic_rs_mca_frontiers.tex`. The remaining hard inputs are a witness-exhaustive first-match atlas, image-scale `MI` + `MA` or direct Sidon payment, residual ray compiler for higher-dimensional balanced cores, complete profile-envelope comparison with the target, and lower reserve / unsafe-side comparison. |
+| Asymptotic entropy-subfield envelope | Active exact-threshold draft in `experimental/rs_mca_thresholds.tex`, with broader audit material in `experimental/asymptotic_rs_mca_frontiers.tex`. The remaining hard inputs are a witness-exhaustive first-match atlas, image-scale `MI` + `MA` or direct Sidon payment, residual ray compiler for higher-dimensional balanced cores, complete profile-envelope comparison with the target, and lower reserve / unsafe-side comparison. |
 | Generated-field locator local limit above all floors | Open. Main list-side positive theorem target. |
 | Corrected MCA / residue-line local limit above all floors | Open. Main MCA-side positive theorem target. |
 | Line-decoding formulation of corrected MCA | Open. Important for protocols. |

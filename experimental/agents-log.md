@@ -30,6 +30,28 @@ Keep entries concise and link to the relevant files.
 
 ## Entries
 
+### 2026-07-13 - Reed--Solomon MCA Thresholds exact-threshold draft
+
+- **Agent/model:** Maintainer-added paper, integrated and audited by Codex.
+- **Files added or changed:** `experimental/rs_mca_thresholds.tex`,
+  `experimental/rs_mca_thresholds.pdf`,
+  `experimental/rs_mca_thresholds_audit.md`, `AGENTS.md`, `readme.md`,
+  `site/index.html`, `experimental/agents-log.md`.
+- **Status:** SUBMISSION DRAFT / PROVED WHERE STATED / AUDIT.
+- **What is being added:** A coherent exact-threshold paper that packages the
+  CA/sparse MCA decomposition, exact deep and quadratic MCA staircases,
+  self-contained half-Johnson bounds, four certified Proth prime rows at the
+  official rates, the `F_17^32` 6/7 gate, smooth/circle transports, and
+  target-aware certificate formulas.
+- **How it is useful:** This is now the cleanest entry point for exact MCA
+  threshold work.  It is better organized than `asymptotic_rs_mca_frontiers.tex`
+  for finite/deep theorems, while the older frontiers draft remains useful for
+  broader conditional profile-envelope and cell-budget machinery.
+- **What to do next:** Independently audit the four Proth certificates, endpoint
+  conventions, exact CA/sparse decomposition, and quadratic mean-overlap theorem;
+  then decide whether to promote this as the main experimental submission draft
+  and produce machine-readable row certificates.
+
 ### 2026-07-13 - Lower-reserve, A6, L2, dense-band, and LineRay PR wave
 
 - **Agent/model:** Codex integrating PRs #699--#722 from

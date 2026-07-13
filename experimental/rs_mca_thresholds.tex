@@ -1,0 +1,4122 @@
+\documentclass[11pt,a4paper]{amsart}
+
+\usepackage[margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\emergencystretch=3em
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{enumitem}
+\usepackage{float}
+\usepackage{aliascnt}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\usepackage[capitalize,nameinlink]{cleveref}
+
+\numberwithin{equation}{section}
+
+\newtheorem{theorem}{Theorem}[section]
+\newaliascnt{proposition}{theorem}
+\newtheorem{proposition}[proposition]{Proposition}
+\aliascntresetthe{proposition}
+\newaliascnt{lemma}{theorem}
+\newtheorem{lemma}[lemma]{Lemma}
+\aliascntresetthe{lemma}
+\newaliascnt{corollary}{theorem}
+\newtheorem{corollary}[corollary]{Corollary}
+\aliascntresetthe{corollary}
+\newaliascnt{definition}{theorem}
+\newtheorem{definition}[definition]{Definition}
+\aliascntresetthe{definition}
+\theoremstyle{remark}
+\newaliascnt{remark}{theorem}
+\newtheorem{remark}[remark]{Remark}
+\aliascntresetthe{remark}
+
+\crefname{theorem}{Theorem}{Theorems}
+\Crefname{theorem}{Theorem}{Theorems}
+\crefname{proposition}{Proposition}{Propositions}
+\Crefname{proposition}{Proposition}{Propositions}
+\crefname{lemma}{Lemma}{Lemmas}
+\Crefname{lemma}{Lemma}{Lemmas}
+\crefname{corollary}{Corollary}{Corollaries}
+\Crefname{corollary}{Corollary}{Corollaries}
+\crefname{definition}{Definition}{Definitions}
+\Crefname{definition}{Definition}{Definitions}
+\crefname{remark}{Remark}{Remarks}
+\Crefname{remark}{Remark}{Remarks}
+
+\DeclareMathOperator{\RS}{RS}
+\DeclareMathOperator{\MCA}{MCA}
+\DeclareMathOperator{\CA}{CA}
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\Span}{Span}
+\DeclareMathOperator{\Spec}{Spec}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\codim}{codim}
+\DeclareMathOperator{\supp}{supp}
+\DeclareMathOperator{\Fib}{Fib}
+\DeclareMathOperator{\Sym}{Sym}
+\DeclareMathOperator{\Gr}{Gr}
+\DeclareMathOperator{\Ent}{H}
+\DeclareMathOperator{\ord}{ord}
+\DeclareMathOperator{\Tr}{Tr}
+\DeclareMathOperator{\Gal}{Gal}
+\DeclareMathOperator{\Res}{Res}
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\diag}{diag}
+\DeclareMathOperator{\wt}{wt}
+
+\newcommand{\F}{\mathbb F}
+\newcommand{\B}{\mathbb B}
+\newcommand{\K}{\mathbb K}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\A}{\mathbb A}
+\newcommand{\Pj}{\mathbb P}
+\newcommand{\C}{\mathbb C}
+\newcommand{\Prob}{\mathbb P}
+\newcommand{\E}{\mathbb E}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\Omc}{\Omega^{\circ}}
+\newcommand{\Ccal}{\mathcal C}
+\newcommand{\Dcal}{\mathcal D}
+\newcommand{\Ecal}{\mathcal E}
+\newcommand{\Fcal}{\mathcal F}
+\newcommand{\Gcal}{\mathcal G}
+\newcommand{\Hcal}{\mathcal H}
+\newcommand{\Ical}{\mathcal I}
+\newcommand{\Jcal}{\mathcal J}
+\newcommand{\Lcal}{\mathcal L}
+\newcommand{\Mcal}{\mathcal M}
+\newcommand{\Ncal}{\mathcal N}
+\newcommand{\Pcal}{\mathcal P}
+\newcommand{\Qcal}{\mathcal Q}
+\newcommand{\Rcal}{\mathcal R}
+\newcommand{\Scal}{\mathcal S}
+\newcommand{\Tcal}{\mathcal T}
+\newcommand{\Ucal}{\mathcal U}
+\newcommand{\Vcal}{\mathcal V}
+\newcommand{\Wcal}{\mathcal W}
+\newcommand{\Xcal}{\mathcal X}
+\newcommand{\Ycal}{\mathcal Y}
+\newcommand{\Zcal}{\mathcal Z}
+\newcommand{\Gord}{\Gamma^{\rm ord}}
+\newcommand{\Gsid}{\Gamma^{\rm sid}}
+\newcommand{\Gprim}{\Gamma^{\rm prim}}
+\newcommand{\barN}{\overline N}
+\newcommand{\Renyi}{R\'enyi}
+\newcommand{\Hb}{H_2}
+\newcommand{\UU}{\mathbb U}
+\newcommand{\abs}[1]{\lvert #1\rvert}
+\newcommand{\norm}[1]{\lVert #1\rVert}
+\newcommand{\floor}[1]{\left\lfloor #1\right\rfloor}
+\newcommand{\ceil}[1]{\left\lceil #1\right\rceil}
+\newcommand{\defeq}{\coloneqq}
+\newcommand{\one}{\mathbf 1}
+\newcommand{\Fq}{\mathbb F_q}
+
+
+\title{Reed--Solomon MCA Thresholds}
+\author{Przemek Chojecki}
+\hypersetup{pdftitle={Reed--Solomon MCA Thresholds},pdfauthor={Przemek Chojecki}}
+\subjclass[2020]{94B35, 11T71, 05B40}
+\keywords{Reed--Solomon codes, mutual correlated agreement, Proximity Prize,
+syndrome geometry, MDS codes, circle codes, prime density}
+\date{July 2026}
+
+\begin{document}
+
+\begin{abstract}
+We determine exact finite thresholds in broad regimes and rigorous asymptotic threshold compilers for affine support-wise mutual correlated agreement of Reed--Solomon codes.  If \(C\) has parameters \([n,k]\), \(\Gamma\) is a nonempty challenge set, and the integer \(0\le r\le n-k-1\) satisfies \((n-r)^2\ge n(k+r)\), then \(B_{C,\Gamma}^{\rm MCA}(n-r)=\min\{|\Gamma|,r+1\}\); the same upper bound holds for every linear MDS code.  An exact CA--sparse decomposition, together with the cited lossless unique-decoding theorem, extends the staircase asymptotically through every fixed relative radius below half the minimum distance, while syndrome--secant geometry and locator-prefix pole lines give independent finite upper and lower mechanisms.  We obtain exact target compilers, four certified multiplicative rows at target \(2^{-128}\), a shallow-prefix asymptotic exponent, and the formula \(\delta^*=1-\rho-g+o(1)\) whenever matching certificates meet at agreement \(k+1+gn+o(n)\).  Generalized Reed--Solomon and explicitly diagonalized circle codes inherit the finite conclusions, but no unrestricted near-capacity smooth/circle claim is made.
+\end{abstract}
+
+\maketitle
+
+\section{Introduction and main results}\label{sec:introduction}
+
+By a finite Reed--Solomon \emph{row} we mean data
+\((\F,D,k)\), where \(\F\) is a finite field,
+\(D\subseteq\F\) is an \emph{evaluation domain} of size \(n\), and
+\(1\le k<n\).  The associated code
+\(C=\RS_\F(D,k)\subseteq\F^D\) consists of the evaluations on \(D\) of
+polynomials of degree less than \(k\).  Thus a support is simply a subset
+of the coordinate set \(D\).  A word \(u\in\F^D\) is
+\emph{explained on a support} \(S\subseteq D\) if its restriction to
+\(S\) agrees with one such degree-less-than-\(k\) polynomial.
+When the evaluation points lie in a designated coefficient subfield, we
+write \(D\subseteq\B\subseteq\F\); \(\B\) controls locator coefficients
+and domain structure, while \(\F\) controls codeword coefficients and
+slopes.
+Throughout,
+\(h(x)=-x\log x-(1-x)\log(1-x)\) denotes binary entropy in natural
+units, and \(H_2(x)=h(x)/\log 2\) denotes binary entropy in bits, with the
+usual convention \(0\log0=0\).
+
+A received pair \(r=(r_0,r_1)\in(\F^D)^2\) determines the
+\emph{received line} \(\{r_0+\gamma r_1:\gamma\in\F\}\).  The pair is
+simultaneously explained on \(S\) if each of the two received words has an explanation
+there, possibly by different polynomials.  A finite slope \(\gamma\) is
+\emph{support-wise MCA-bad at agreement \(a\)} if some support
+\(S\subseteq D\), \(\abs S\ge a\), explains
+\(r_0+\gamma r_1\) but does not simultaneously explain the pair.  The
+same support is used in both tests; this is the support-wise convention.
+A tuple \((\gamma,S,h)\), where \(\deg h<k\) and
+\(h|_S=(r_0+\gamma r_1)|_S\), is a \emph{witness} to that bad slope when
+the pair is not simultaneously explained on \(S\), or equivalently is
+\emph{support-wise nontrivial} there.  Finally,
+\(B_C^{\rm MCA}(a)\) is the maximum, over all received pairs, of the
+number of distinct bad slopes.  It counts slopes, not witnesses or
+supports.
+
+This is exactly the affine-line definition used by the Proximity Prize
+\cite{ProximityPrize} and by Arnon--Boneh--Fenzi
+\cite[Definition~4.3]{ABF26}: for a real radius \(\delta\), a witnessing
+support has size at least \((1-\delta)n\).  Since support size is integral,
+put
+\[
+ r(\delta)=\floor{\delta n},\qquad a(\delta)=n-r(\delta).
+\]
+Thus the error is a right-continuous integer staircase.  In particular, a
+statement about a ``largest'' real radius needs an endpoint convention;
+in the exact rows below the safe set is half open and has a supremum but no
+largest element.
+
+Here is the asymptotic formulation used throughout.  If
+\(\varnothing\ne\Gamma\subseteq\F\) is the \emph{challenge set}, meaning
+the set of slopes allowed in the test, let
+\(B_{C,\Gamma}^{\rm MCA}(a)\) denote the same maximum with
+\(\gamma\in\Gamma\), and at the radius grid point \(\delta=1-a/n\) put
+\[
+ e_{\rm MCA,\Gamma}(C,\delta)
+   =\frac{B_{C,\Gamma}^{\rm MCA}(a)}{\abs\Gamma}.
+ \tag{1.1}\label{eq:intro-normalized-mca}
+\]
+For the standard full-field challenge we abbreviate
+\[
+ e_{\rm MCA}(C,1-a/n)=\frac{B_C^{\rm MCA}(a)}{\abs\F},
+ \qquad
+ \delta_{C,\mathrm{sup}}^*(\eps)=
+ \sup\{0\le\delta<1-k/n:e_{\rm MCA}(C,\delta)\le\eps\},
+\]
+where the error at an arbitrary real radius is evaluated at
+\(a(\delta)=n-\floor{\delta n}\).  We set this supremum to zero when the
+safe set is empty.  We separately write
+\[
+ \delta_{C,\mathrm{grid}}^*(\eps)=
+ \max\left\{\frac rn:0\le r\le n-k-1,
+       e_{\rm MCA}(C,r/n)\le\eps\right\}
+\]
+when this set is nonempty.  If the first unsafe integer radius is \(r_0\),
+then
+\(\delta_{C,\mathrm{grid}}^*=(r_0-1)/n\) while
+\(\delta_{C,\mathrm{sup}}^*=r_0/n\), and the latter endpoint is unsafe.
+Taking
+\(\Gamma=\F\) in \eqref{eq:intro-normalized-mca} gives exactly this
+customary formulation.
+By a \emph{row sequence} we mean a family
+\(C_n=\RS_{\F_n}(D_n,k_n)\) indexed so that \(\abs{D_n}=n\); the fields,
+domains, and dimensions may all vary with \(n\).  Every claimed upper
+bound is uniform over received pairs, whereas a lower construction need
+only exhibit the stated received pair.  For such a sequence,
+challenge sets
+\(\Gamma_n\), and targets \(0\le\eps_n\le1\), define
+\[
+ \begin{split}
+ B_n^*&=\floor{\eps_n\abs{\Gamma_n}},\\
+ a_n^*&=\min\{a\in\{k_n+1,\ldots,n\}:
+              B_{C_n,\Gamma_n}^{\rm MCA}(a)\le B_n^*\},
+ \qquad
+ \delta_n^*=1-\frac{a_n^*}{n},
+ \end{split}
+ \tag{1.2}\label{eq:intro-asymptotic-threshold}
+\]
+whenever the set defining \(a_n^*\) is nonempty.  Here \(\delta_n^*\)
+denotes the largest safe \emph{grid} radius; the corresponding continuous
+supremum is one grid step to the right whenever \(a_n^*-1\) is the first
+unsafe agreement.  Thus the asymptotic RS--MCA problem is to determine
+\(\delta_n^*\), or equivalently the first
+\emph{safe agreement}: agreement \(a\) is safe when its bad-slope
+numerator is at most \(B_n^*\), and unsafe otherwise.  Since the numerator
+is nonincreasing in \(a\), the resulting safe/unsafe boundary is the
+\emph{MCA frontier}.  This formulation retains the target and challenge
+size; replacing them by a zero-exponent slogan loses real information when
+the target is small.
+
+\paragraph{Position relative to current work.}
+A proximity-gap theorem says, roughly, that an affine line which is not
+entirely close to the code contains only a controlled number of close
+points.  For a rate-\(\rho\) Reed--Solomon code, the unconditional
+positive theory for arbitrary prescribed domains reaches the Johnson
+radius \(1-\sqrt{\rho}\), with recent refinements and MCA conversions
+\cite{BCIKS20,BCHKS25,BordageChiesaGuanManzur25,Habock25}.  Capacity-level positive results concern
+folded, multiplicity, subspace-design, or random-evaluation models
+\cite{GoyalGuruswami25,GoyalGuruswamiSunWootters26}, while fixed smooth
+subgroups have explicit near-capacity obstructions
+\cite{CS25,KKH26,Kambire26}.  Two priority distinctions are essential.
+First, the two-radius theorem \cite[Thm.~1.3]{BCHKS25}, the below-half
+equality of the global CA and MCA errors
+\cite[Lem.~4.10]{WHIR} (restated as \cite[Lem.~4.6]{ABF26}), and the
+matching perturbation already imply the exact \(r+1\) numerator for
+constant-rate RS rows through almost half their minimum distance.  The
+exact CA/sparse decomposition proved here is a self-contained refinement
+that also retains restricted challenge sets.  Thus neither the
+constant-rate consequence of the quadratic theorem nor the four large
+Proth-row applications below is claimed as a new consequence.  Second, the
+syndrome-space viewpoint also occurs independently in \cite{YuanZhu26}.
+
+We are unaware of a prior finite MDS statement of the following form: the
+quadratic overlap argument applies without a large-length hypothesis,
+gives an MDS upper bound, and covers parameter pockets not certified by
+the specialized BCHKS estimate used below.  We make the literature implication integral,
+transport it exactly to standard circle codes admitting the displayed
+stereographic or diagonal presentation, and record positive-density
+families without promoting any of these statements to a near-capacity
+theorem.  The unrestricted smooth/circle frontier beyond half distance
+still requires new information about lists or received-line incidence.
+
+\begin{theorem}[Self-contained quadratic target theorem]
+\label{thm:intro-unconditional-asymptotic-deep}
+Let \(C_n=\RS_{\F_n}(D_n,k_n)\) be any Reed--Solomon row sequence over
+arbitrary characteristics, let
+\(\varnothing\ne\Gamma_n\subseteq\F_n\), and put
+\(B_n^*=\floor{\eps_n\abs{\Gamma_n}}\) as in
+\eqref{eq:intro-asymptotic-threshold}.
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=*]
+\item If \(B_n^*=0\), no agreement is safe and the set defining
+      \(a_n^*\) is empty.
+\item If \(B_n^*=\abs{\Gamma_n}\), then \(a_n^*=k_n+1\).
+\item Suppose eventually
+\[
+ 1\le B_n^*<\abs{\Gamma_n},\qquad
+ B_n^*\le n-k_n-1,\qquad
+ (B_n^*-1)^2\ge
+ n\bigl(3(B_n^*-1)-(n-k_n)\bigr).                  \tag{1.3}
+ \label{eq:intro-unconditional-asymptotic-deep}
+\]
+Then the threshold exists and is exactly
+\[
+ a_n^*=n-B_n^*+1,\qquad
+ \delta_n^*=\frac{B_n^*-1}{n}.                    \tag{1.4}
+ \label{eq:intro-unconditional-asymptotic-deep-answer}
+\]
+In particular, if \(k_n/n\to\rho\),
+\[
+ \frac{B_n^*}{n}\longrightarrow b<
+ \alpha_\rho\defeq\frac{3-\sqrt{5+4\rho}}2,
+\]
+and
+\(1\le B_n^*<\abs{\Gamma_n}\) eventually, then
+\(\delta_n^*\to b\).  This conclusion applies, without a smoothness,
+odd-characteristic, Fourier, atlas, or ray-compiler hypothesis, to every
+multiplicative smooth RS row and to every circle code that has been proved
+diagonally agreement-equivalent to an RS presentation.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+If \(B_n^*=0\), the universal tangent floor at agreement \(n\) is one,
+so no grid point is safe.  If \(B_n^*=\abs{\Gamma_n}\), the numerator is
+always at most the size of the challenge set, so the first grid point
+\(k_n+1\) is safe.  In the remaining case put
+\(a_0=n-B_n^*+1\).  Then \(n-a_0=B_n^*-1\), and the last inequality in
+\eqref{eq:intro-unconditional-asymptotic-deep} places \(a_0\) in the
+mean-overlap range.  The exact numerator of
+\cref{cor:mean-overlap-exact} is
+\(\min\{\abs{\Gamma_n},B_n^*\}=B_n^*\), so \(a_0\) is safe.  The second
+inequality in \eqref{eq:intro-unconditional-asymptotic-deep} puts
+\(a_0-1\) on the admissible grid, and
+\cref{prop:universal-tangent-floor} gives at least
+\(\min\{\abs{\Gamma_n},B_n^*+1\}=B_n^*+1\) bad slopes there.  Hence
+\(a_0-1\) is unsafe, and monotonicity proves
+\eqref{eq:intro-unconditional-asymptotic-deep-answer}.  The asymptotic
+specialization follows because, after division by \(n^2\), its strict
+limiting margin is \(b^2-3b+1-\rho>0\).  Moreover
+\(\alpha_\rho<1-\rho\) for \(0<\rho<1\), since this is equivalent to
+\(\sqrt{5+4\rho}>1+2\rho\).  Thus \(B_n^*\le n-k_n-1\) eventually,
+and hence
+\eqref{eq:intro-unconditional-asymptotic-deep} holds for all sufficiently
+large \(n\).
+\end{proof}
+
+\begin{theorem}[Positive-density exact MCA staircase]
+\label{thm:intro-positive-density}
+Let \(C=\RS_\F(D,k)\), put \(R=n-k\), and let
+\(\varnothing\ne\Gamma\subseteq\F\).
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=*]
+\item If \(r\in\Z\) and
+\[
+ 3r\ge R+1,\qquad 2r<R,\qquad
+ n(R-r)<r(r+2)(R-2r),                          \tag{1.5}
+ \label{eq:intro-literature-completion}
+\]
+then
+\[
+ B_{C,\Gamma}^{\rm MCA}(n-r)=\min\{\abs\Gamma,r+1\}. \tag{1.6}
+ \label{eq:intro-literature-exact}
+\]
+Together with the quadratic theorem, this gives an exact finite
+staircase from radius zero through the union of the two displayed ranges.
+\item If \(k_n/n\to\rho\in(0,1)\) and the integers
+\(r_n\) satisfy \(r_n/n\to\tau\) with
+\(0<\tau<(1-\rho)/2\), then
+\[
+ B_{C_n,\Gamma_n}^{\rm MCA}(n-r_n)
+   =\min\{\abs{\Gamma_n},r_n+1\}
+\]
+for every RS row sequence and every nonempty challenge sequence, once
+\(n\) is sufficiently large.  Hence exact radii have normalized lower
+density at least \((1-\rho)/2\) among all Hamming radii and relative density one
+inside the unique-decoding interval.
+\item For every fixed dyadic \(n\), the multiplicative smooth conclusion
+holds over a set of primes of relative prime density
+\(1/\varphi(n)\).  Standard bivariate circle codes of odd dimension
+over \(\F_{p^2}\), indexed by base primes \(p\), occur over a prime set
+of density \(1/\varphi(2n)\), and
+Chebyshev-smooth circle \(x\)-domain RS rows occur over a prime set of
+density \(1/\varphi(4n)\).  These are fixed-length densities, not a
+positive-density growing prime-field family.
+\item At \(n=32,k=15,r=6\), the quadratic inequality is strict enough to
+give \(B^{\rm MCA}_{C,\Gamma}(26)=\min\{\abs\Gamma,7\}\), although
+\(3r>R\) and the specialized estimate \eqref{eq:bchks-specialized}
+does not certify this value.  In
+particular it gives smooth subgroup rows for every
+\(p\equiv1\pmod {32}\), a prime set of density \(1/16\), and standard
+circle cosets for every \(p\equiv-1\pmod {64}\), a prime set of density
+\(1/32\).
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+Part~\textup{(i)} is \cref{thm:literature-integral-completion};
+part~\textup{(ii)} is \cref{cor:positive-radius-density}; and
+parts~\textup{(iii)}--\textup{(iv)} are
+\cref{thm:fixed-length-prime-density,cor:circle-32-family}.
+\end{proof}
+
+\begin{remark}[Meaning and limitation of density]
+The word ``density'' in \cref{thm:intro-positive-density} is used in two
+explicit senses: normalized density of radii in part~\textup{(ii)} and
+relative density inside the primes in part~\textup{(iii)}.  It does not
+assert that a positive proportion of slopes is bad near capacity.
+Neither the presently available profile-envelope estimates nor the
+literature currently supplies such an all-received-line near-capacity
+theorem.  Moreover the fixed-length prime densities tend to zero with
+\(n\); \cref{prop:no-growing-prime-density} proves that this loss cannot
+be removed for growing dyadic prime-field domains.
+\end{remark}
+
+\begin{theorem}[Certified Proximity-Prize rows at all four rates]
+\label{thm:intro-prize-rows}
+Fix the affine MCA sampler of \cite{ABF26}, in which
+\(\gamma\) is uniform in \(\F\), and the target
+\(\eps^*=2^{-128}\).  For each
+\(\rho\in\{1/2,1/4,1/8,1/16\}\) there is an explicitly certified prime
+\(p<2^{256}\), a power of two \(n\), and the multiplicative subgroup
+\(D\le\F_p^*\) of order \(n\), such that \(k=\rho n=2^{40}\) and the
+complete real-radius safe set of
+\(C=\RS_{\F_p}(D,k)\) is
+\[
+ \{\delta\in[0,1]:e_{\rm MCA}(C,\delta)\le2^{-128}\}
+       =\left[0,\frac Bn\right),
+ \qquad B=\floor{p\,2^{-128}}.
+ \tag{P1}\label{eq:intro-prize-safe-set}
+\]
+The endpoint \(B/n\) is unsafe.  Equivalently, the largest safe integer
+radius is \(B-1\), the first unsafe integer radius is \(B\), and
+\[
+ B_C^{\rm MCA}(n-B+1)=B,
+ \qquad B_C^{\rm MCA}(n-B)\ge B+1.
+ \tag{P2}\label{eq:intro-prize-adjacent}
+\]
+The four transition numerators are
+\[
+\begin{array}{c|c|c|c}
+ \rho&n&B&\delta_{C,\mathrm{sup}}^*(2^{-128})\\ \hline
+ 1/2&2^{41}&389500552609&389500552609/2^{41}\\
+ 1/4&2^{42}&1210584858040&1210584858040/2^{42}\\
+ 1/8&2^{43}&2879806199253&2879806199253/2^{43}\\
+ 1/16&2^{44}&6233898019554&6233898019554/2^{44}.
+\end{array}
+\tag{P3}\label{eq:intro-prize-table}
+\]
+These are smooth-domain rows in the literal sense of the challenge: the
+evaluation group has power-of-two order, the dimension is at the stated
+upper limit, and the field has fewer than \(2^{256}\) elements.
+The numerical consequences are also implied by
+\cite[Cor.~1.4]{BCHKS25} together with the below-half decomposition;
+their role here is to provide
+independent exact certificates and target bookkeeping, not a priority
+claim.
+\end{theorem}
+
+\begin{proof}
+The mean-overlap staircase
+\cref{thm:prize-rate-overlap} gives the exact safe numerator
+\(B=r_\rho(n)+1\) at radius \(B-1\), while the universal tangent
+floor gives at least \(B+1\) slopes at radius \(B\).  The explicit primes,
+their Proth certificates, and the exact budget divisions are given and
+checked in \cref{tab:prize-proth-rows,prop:proth-row-check}.  Monotonicity
+and \(r(\delta)=\floor{\delta n}\) then give
+\eqref{eq:intro-prize-safe-set}.  The displayed fractions are the four
+values of \(B/n\).
+\end{proof}
+
+\begin{corollary}[An extension-field smooth row]
+\label{cor:intro-f17-row}
+Let \(D\le\F_{17^{32}}^*\) have order \(512\) and let
+\(C=\RS_{\F_{17^{32}}}(D,256)\).  At target \(2^{-128}\),
+\[
+ \{\delta\in[0,1]:e_{\rm MCA}(C,\delta)\le2^{-128}\}
+   =[0,3/256),
+\]
+the largest safe integer radius is \(5\), and radius \(6\) is the first
+unsafe one.  In particular the supremal transition is \(3/256\), and it
+is not itself safe.
+\end{corollary}
+
+\begin{proof}
+Here
+\(17^{32}=2367911594760467245844106297320951247361\) and
+\(\floor{17^{32}2^{-128}}=6\).  Since
+\(3(6-1)\le512-256\),
+\cref{cor:exact-deep-numerator} gives numerator \(6\) at radius \(5\),
+while \cref{prop:universal-tangent-floor} gives at least \(7\) bad slopes
+at radius \(6\).  The endpoint statement follows from the closed
+integer-ball convention.
+\end{proof}
+
+\begin{theorem}[Certificate threshold formula]\label{thm:intro-delta-formula}
+Let \(C_n=\RS_{\F_n}(D_n,k_n)\), let
+\(\varnothing\ne\Gamma_n\subseteq\F_n\), and suppose \(k_n/n\to\rho\).
+Let \(B_n^*=\lfloor\eps_n|\Gamma_n|\rfloor\), and assume the first safe
+agreement \(a_n^*\) in \eqref{eq:intro-asymptotic-threshold} exists.
+Suppose there is a sequence \(g_n\in[0,1-k_n/n]\) such that, for every
+fixed \(\eta>0\), all admissible integer agreements
+\[
+ a\ge k_n+1+(g_n+\eta)n
+\]
+are eventually safe and all admissible integer agreements
+\[
+ a\le k_n+1+(g_n-\eta)n
+\]
+are eventually unsafe.  Then
+\[
+ a_n^*=k_n+1+g_n n+o(n),
+ \qquad
+ \delta_n^*=1-\rho-g_n+o(1).
+ \tag{1.7}\label{eq:intro-delta-formula}
+\]
+
+Assume in addition that \(D_n\subseteq\B_n\subseteq\F_n\) with
+\(\B_n\) a finite subfield and \(\log|\B_n|=o(n)\), and put
+\(\beta_n=\log_2|\B_n|\) and
+\(\tau_n=n^{-1}\log_2(1+B_n^*)\), and define the target-adjusted
+identity crossing
+\[
+ g_{T,n}=\sup\Bigl(
+ \{g\in[0,1-k_n/n]:
+ H_2(k_n/n+g)-\beta_ng\ge\tau_n\}\cup\{0\}\Bigr).
+ \tag{1.8}\label{eq:intro-target-crossing}
+\]
+If matching upper and lower certificates satisfy the preceding safe and
+unsafe conditions with \(g_n=g_{T,n}+o(1)\), then
+\[
+ \delta_n^*=1-\rho-g_{T,n}+o(1).
+ \tag{1.9}\label{eq:intro-identity-formula}
+\]
+When \(\tau_n=o(1)\) and \(\rho_n=k_n/n\to\rho\in(0,1)\), put
+\[
+ g_{0,n}=\sup\{g\in[0,1-\rho_n]:
+ H_2(\rho_n+g)\ge\beta_ng\}.
+ \tag{1.10}\label{eq:intro-zero-target-crossing}
+\]
+Then \(g_{T,n}=g_{0,n}+o(1)\), so
+\(\delta_n^*=1-\rho-g_{0,n}+o(1)\).
+\end{theorem}
+
+\begin{proof}
+For every fixed \(\eta>0\), monotonicity places the first safe agreement
+between
+\[
+ k_n+1+(g_n-\eta)n+O(1)
+ \quad\text{and}\quad
+ k_n+1+(g_n+\eta)n+O(1).
+\]
+Divide by \(n\), let \(n\to\infty\), and then let \(\eta\downarrow0\).
+Since \(\delta_n^*=1-a_n^*/n\), this proves
+\eqref{eq:intro-delta-formula}.  The second assertion is the same
+argument with the displayed crossing substituted for \(g_n\).
+
+For completeness, the identity-prefix mean at
+\(a=k_n+1+gn+O(1)\) is
+\[
+ \binom na|\B_n|^{-(a-k_n-1)}.
+\]
+Stirling's formula gives its normalized logarithm as
+\[
+ \frac1n\log_2\!\left(
+ \binom na|\B_n|^{-(a-k_n-1)}\right)
+ =H_2(\rho_n+g)-\beta_ng+o(1),
+\]
+uniformly on compact subintervals of \(0<\rho_n+g<1\).  This explains
+\eqref{eq:intro-target-crossing}; it does not supply the assumed upper
+certificate.  Finally,
+\(f_n(g)=H_2(\rho_n+g)-\beta_ng\) is strictly concave,
+\(f_n(0)=H_2(\rho_n)>0\), and \(f_n(1-\rho_n)<0\).  Eventually
+\(\tau_n<f_n(0)\).  Hence the \(\tau_n\)-superlevel set is an interval
+containing zero, with right endpoint \(g_{T,n}\), whereas the
+zero-superlevel set has right endpoint \(g_{0,n}\); in particular,
+\(0\le g_{0,n}-g_{T,n}\).  Fix \(\eta>0\).  If \(g_{0,n}<\eta\), this
+difference is already less than \(\eta\).  Otherwise, if
+\(g_{0,n}-g_{T,n}\ge\eta\), concavity on \([0,g_{0,n}]\) gives
+\[
+ f_n(g_{0,n}-\eta)
+ \ge \frac{\eta}{g_{0,n}}f_n(0)
+ \ge \eta H_2(\rho_n).
+\]
+The left side is at most \(\tau_n\), by the definition of the right
+\(\tau_n\)-crossing, while the right side is bounded away from zero.
+This contradicts \(\tau_n=o(1)\).  Hence
+\(g_{T,n}=g_{0,n}+o(1)\).
+\end{proof}
+
+\begin{remark}[Scope of the entropy crossing]\label{rem:intro-delta-scope}
+The first part of \cref{thm:intro-delta-formula} is unconditional once
+matching certificates have been proved.  The identity crossing in
+\eqref{eq:intro-identity-formula} is a specialization, not an
+identity-only theorem for every smooth or circle domain.  Quotient,
+subfield, planted, and determinant-ray profiles can have a larger
+realized-image scale; in such a row \(g_n\) is the crossing of the full
+certified profile envelope.  Support or support-pair estimates also require
+a separate projection to distinct slopes.  These are precisely the two
+points at which an unrestricted near-capacity claim would need additional
+input.
+\end{remark}
+
+
+
+\section{MCA witnesses and exact support reduction}\label{sec:witnesses}
+
+Throughout this section \(\F\) is a finite field, \(D\subseteq\F\) has
+size \(n\), and \(C=\RS_\F(D,k)\).  Write
+\(\F[X]_{<k}=\{f\in\F[X]:\deg f<k\}\), and let
+\(\operatorname{ev}_S:\F[X]_{<k}\to\F^S\) be restriction of the
+evaluation map.
+
+\begin{definition}[Explanation and support-wise nontriviality]
+\label{def:explanation}
+For \(u\in\F^D\) and \(S\subseteq D\), an \emph{explanation of \(u\) on
+\(S\)} is a polynomial \(f\in\F[X]_{<k}\) with
+\(\operatorname{ev}_S(f)=u|_S\).  We write
+\(\operatorname{Expl}_C(u;S)\) when such an \(f\) exists.  A pair
+\(r=(r_0,r_1)\) is \emph{simultaneously explained on \(S\)} when
+\(\operatorname{Expl}_C(r_0;S)\) and
+\(\operatorname{Expl}_C(r_1;S)\) both hold, with no requirement that the
+two explaining polynomials coincide.  It is \emph{support-wise
+nontrivial on \(S\)} when it is not simultaneously explained there.
+We denote this last condition by \(\operatorname{NT}_C(r;S)\).
+\end{definition}
+
+Thus support-wise nontriviality is a condition on the same support that
+explains the affine combination.  It does not mean that both coordinates
+are individually unexplained; failure of either explanation is enough.
+
+\begin{definition}[MCA-bad slope]\label{def:mca-bad}
+Let \(r=(r_0,r_1)\in(\F^D)^2\) and let \(a\) be an agreement threshold.
+A finite slope \(\gamma\in\F\) is support-wise MCA-bad at agreement \(a\)
+if there are \(S\subseteq D\), \(\abs S\ge a\), and
+\(h\in\F[X]_{<k}\) such that
+\(\operatorname{ev}_S(h)=(r_0+\gamma r_1)|_S\) and
+\(\operatorname{NT}_C(r;S)\) holds.  Define
+\[
+        B_C^{\rm MCA}(a)
+        =\max_{r\in(\F^D)^2}\abs{\{\gamma\in\F:
+          \gamma\text{ is MCA-bad for }r\text{ at }a\}}.
+\]
+\end{definition}
+
+The official MCA maximum mixes two logically different sources: received
+pairs that are globally far from every codeword pair, and pairs that are
+close to one codeword pair but fail on a slope-dependent support.  The
+following definitions and theorem separate them exactly.
+
+\begin{definition}[CA numerator and sparse mutual numerator]
+\label{def:ca-sparse-numerators}
+Assume \(0\le a\le n\) and put \(t=n-a\).  A received pair
+\((r_0,r_1)\) is \emph{column-far at
+agreement \(a\)} if it is not simultaneously explained on any support of
+size at least \(a\).  Let \(B_C^{\rm CA}(a)\) be the maximum, over
+column-far pairs, of the number of slopes \(\gamma\) for which
+\(r_0+\gamma r_1\) is explained on some support of size at least \(a\).
+If there is no column-far pair, this maximum is defined to be zero.
+Define the \emph{sparse mutual numerator}
+\[
+ \sigma_C(a)=\max\left\{
+ \#\{\gamma:\gamma\text{ is MCA-bad for }(e_0,e_1)\}:
+ \abs{\supp(e_0)\cup\supp(e_1)}\le t\right\}.
+ \tag{SP1}\label{eq:sparse-mutual-numerator}
+\]
+Thus \(B_C^{\rm CA}(a)/\abs\F\) is the ordinary affine-line correlated
+agreement error on the integer grid, while \(\sigma_C(a)\) records the
+purely mutual obstruction after translation by a nearby codeword pair.
+\end{definition}
+
+\begin{theorem}[Exact sparsification of the mutual layer]
+\label{thm:exact-sparsification}
+For every linear code \(C\subseteq\F^D\) and every agreement threshold
+\(0\le a\le n\),
+\[
+ B_C^{\rm MCA}(a)=
+ \max\{B_C^{\rm CA}(a),\sigma_C(a)\}.              \tag{SP2}
+\label{eq:exact-sparsification}
+\]
+Equivalently, after division by \(\abs\F\), the official MCA error is the
+maximum of the CA error and the sparse mutual error.
+\end{theorem}
+
+\begin{proof}
+Both quantities on the right are obtained by maximizing the MCA-bad set
+over restricted classes of pairs, so the left side is at least their
+maximum.  Conversely fix a received pair.  If it is column-far, every
+support that explains a line point necessarily fails to explain the pair;
+its MCA-bad set is therefore its CA-bad set and has size at most
+\(B_C^{\rm CA}(a)\).
+
+Otherwise choose codewords \(c_0,c_1\in C\) and a common support of size
+at least \(a\), and put \(e_i=r_i-c_i\).  The union of the supports of
+\(e_0,e_1\) has size at most \(n-a=t\).  At each slope, translation sends
+an explaining codeword \(h\) to
+\(h-c_0-\gamma c_1\), and is a bijection between witness supports for
+\((r_0,r_1)\) and for \((e_0,e_1)\).  It also preserves simultaneous
+explanation on that support.  Hence the two pairs have exactly the same
+MCA-bad slopes, and their number is at most \(\sigma_C(a)\).
+\end{proof}
+
+For a nonempty challenge set \(\Gamma\subseteq\F\), write
+\(B_{C,\Gamma}^{\rm CA}(a)\) and \(\sigma_{C,\Gamma}(a)\) for the same
+maxima with the bad slopes restricted to \(\Gamma\).  The proof just given
+is unchanged after intersecting every bad-slope set with \(\Gamma\), and
+therefore gives the exact challenge-restricted identity
+\[
+ B_{C,\Gamma}^{\rm MCA}(a)
+ =\max\{B_{C,\Gamma}^{\rm CA}(a),\sigma_{C,\Gamma}(a)\}.
+ \tag{SP3}\label{eq:challenge-sparsification}
+\]
+
+\begin{theorem}[Exact mutual layer below half the distance]
+\label{thm:exact-half-distance-sparse}
+Let \(C\subseteq\F^D\) be a linear code of minimum distance
+\(d_{\min}\), let \(\varnothing\ne\Gamma\subseteq\F\), and let
+\(0\le r\le n\) satisfy \(2r\le d_{\min}-1\).  Then
+\[
+ \sigma_{C,\Gamma}(n-r)=\min\{\abs\Gamma,r\},
+ \qquad
+ B_{C,\Gamma}^{\rm MCA}(n-r)
+ =\max\left\{B_{C,\Gamma}^{\rm CA}(n-r),
+              \min\{\abs\Gamma,r\}\right\}.       \tag{HD1}
+\label{eq:exact-half-distance-sparse}
+\]
+For a Reed--Solomon row the hypothesis is \(2r\le n-k\).
+\end{theorem}
+
+\begin{proof}
+Fix a sparse pair \((e_0,e_1)\) whose support union \(E\) has size at
+most \(r\), and let \(\gamma\) be bad on a support \(S\) of size at least
+\(n-r\), explained there by a codeword \(c\in C\).  On \(S\setminus E\)
+the sparse line point is zero, so
+\(\supp(c)\subseteq E\cup(D\setminus S)\) has size at most \(2r<d_{\min}\).
+Thus \(c=0\).  If \(S\cap E\) contained no nonzero pair coordinate, the
+zero codeword pair would simultaneously explain \((e_0,e_1)\) on \(S\),
+contrary to badness.  Hence some \(x\in S\cap E\) satisfies
+\[
+ (e_0(x),e_1(x))\ne(0,0),\qquad e_0(x)+\gamma e_1(x)=0.
+\]
+Necessarily \(e_1(x)\ne0\), and this coordinate determines the single
+slope \(-e_0(x)/e_1(x)\).  Therefore every sparse pair has at most
+\(\min\{\abs\Gamma,\abs E\}\le\min\{\abs\Gamma,r\}\) bad slopes.
+
+For the reverse bound put \(t=\min\{\abs\Gamma,r\}\), choose distinct
+\(x_1,\ldots,x_t\in D\) and distinct
+\(\gamma_1,\ldots,\gamma_t\in\Gamma\), and set
+\(e_1(x_i)=1\), \(e_0(x_i)=-\gamma_i\), with both words zero elsewhere.
+For \(S_i=D\setminus\{x_j:j\ne i\}\), the line point of slope
+\(\gamma_i\) is zero on \(S_i\), and
+\(\abs{S_i}=n-t+1\ge n-r\).  The restriction of \(e_1\) to \(S_i\)
+cannot be explained by a codeword: such a codeword would be nonzero at
+\(x_i\) and zero on \(n-t\) coordinates, hence would have weight at most
+\(t<d_{\min}\).  Thus every \(\gamma_i\) is MCA-bad and equality holds.
+The second formula is \eqref{eq:challenge-sparsification}; an RS code has
+\(d_{\min}=n-k+1\).
+\end{proof}
+
+\begin{lemma}[Pair-interleaved Johnson bound]
+\label{lem:pair-interleaved-johnson}
+Let \(C=\RS_\F(D,k)\), let \(1\le A\le n\), and suppose
+\(A^2>(k-1)n\).  For every received pair \(y\in(\F^D)^2\), the number
+of codeword pairs \((p_0,p_1)\in C^2\) simultaneously agreeing with
+\(y\) on at least \(A\) coordinates is at most
+\[
+ J_2(A)=\floor{
+   \frac{n(A-k+1)}{A^2-(k-1)n}}.                  \tag{HD2}
+ \label{eq:pair-johnson}
+\]
+\end{lemma}
+
+\begin{proof}
+Let the list have size \(L\), and for every member retain exactly \(A\)
+agreement coordinates.  If \(d_x\) is the number of retained sets
+containing \(x\), then \(\sum_xd_x=LA\).  Two distinct codeword pairs
+can agree coordinatewise on at most \(k-1\) points, since at least one
+nonzero difference polynomial has degree less than \(k\).  Therefore
+\[
+ \frac{L^2A^2/n-LA}{2}
+ \le\sum_{x\in D}\binom{d_x}{2}
+ \le\binom L2(k-1),
+\]
+where the first inequality is Cauchy--Schwarz.  Rearrangement gives
+\(L(A^2-(k-1)n)\le n(A-k+1)\), and integrality gives
+\eqref{eq:pair-johnson}.
+\end{proof}
+
+\begin{theorem}[Self-contained half-Johnson CA and MCA bound]
+\label{thm:self-contained-half-johnson}
+Let \(C=\RS_\F(D,k)\), let \(\varnothing\ne\Gamma\subseteq\F\), and
+let \(r\) be an integer with \(0\le r\le n\).  Put \(A=n-2r\).  If
+\(A>0\) and \(A^2>(k-1)n\), then
+\[
+ B_{C,\Gamma}^{\rm CA}(n-r)
+ \le\min\{\abs\Gamma,1+(r+1)J_2(A)\}.             \tag{HD3}
+ \label{eq:half-johnson-ca}
+\]
+If in addition \(2r\le n-k\), the same upper bound holds for
+\(B_{C,\Gamma}^{\rm MCA}(n-r)\).
+\end{theorem}
+
+\begin{proof}
+Fix a column-far received pair and let \(Z\subseteq\Gamma\) be its
+CA-bad set.  The assertion is immediate when \(\abs Z\le1\), so fix an
+anchor \(\gamma_0\in Z\).  For every
+\(\gamma\in Z\setminus\{\gamma_0\}\), choose explaining codewords
+\(c_{\gamma_0},c_\gamma\) and agreement sets of size at least \(n-r\),
+and define
+\[
+ P_1=\frac{c_{\gamma_0}-c_\gamma}{\gamma_0-\gamma},
+ \qquad P_0=c_{\gamma_0}-\gamma_0P_1.
+\]
+On the intersection of the two agreement sets, of size at least
+\(n-2r=A\), the codeword pair \((P_0,P_1)\) agrees with the received
+pair.  Hence all such pairs lie in a list of size at most \(J_2(A)\) by
+\cref{lem:pair-interleaved-johnson}.
+
+Fix one pair in that list and let \(E\) be its column-error set, of size
+\(e\).  Column-farness gives \(e\ge r+1\).  If a slope \(\gamma\) rides
+this pair, meaning its explaining codeword is \(P_0+\gamma P_1\), then
+the nonzero affine coordinate errors vanish at at least \(e-r\)
+coordinates of \(E\).  Each coordinate vanishes for at most one finite
+slope, so double counting gives at most
+\(e/(e-r)\le r+1\) riders.  Summing over the pair list and adding the
+anchor proves \eqref{eq:half-johnson-ca}.  Under \(2r\le n-k\),
+\cref{thm:exact-half-distance-sparse} says that the other branch of MCA
+has only \(\min\{\abs\Gamma,r\}\) slopes.  Since
+\(n(A-k+1)-(A^2-(k-1)n)=A(n-A)\ge0\), one has \(J_2(A)\ge1\), so this
+tangent term is no larger than the displayed CA bound.
+\end{proof}
+
+\begin{remark}[The exact remaining prize certificate]
+\label{rem:exact-prize-certificate}
+At a proposed safe agreement \(a_+\), an unrestricted finite-row proof
+must establish both
+\[
+ B_C^{\rm CA}(a_+)\le B^*,\qquad
+ \sigma_C(a_+)\le B^*,\qquad
+ B^*=\floor{2^{-128}\abs\F}.
+\]
+An unsafe construction at \(a_+-1\) does not prove either upper bound.
+This identity is the shortest exact description of what remains for the
+near-capacity rows not covered by
+\cref{cor:half-distance-window-compiler}; the older quadratic compiler
+\cref{cor:prize-window-compiler} is a self-contained subrange.
+\end{remark}
+
+The finite-slope restriction costs at most the point at infinity, which may
+also be treated by exchanging the two coordinates.  The support-wise
+condition is essential: explanation and nontriviality are tested on the
+same set.
+
+\begin{definition}[Exact-agreement witness incidence]
+\label{def:exact-witness-incidence}
+Assume \(k+1\le a\le n\).  For a received line \(r=(r_0,r_1)\), its
+exact-\(a\) witness incidence is
+\[
+ \Wcal_a(r)=\left\{(\gamma,S,h):
+ \begin{array}{l}
+   \gamma\in\F,\quad S\in\binom Da,\quad h\in\F[X]_{<k},\\
+   \operatorname{ev}_S(h)=(r_0+\gamma r_1)|_S,\quad
+   \operatorname{NT}_C(r;S)
+ \end{array}\right\}.
+ \tag{2.1}\label{eq:exact-witness-incidence}
+\]
+Its slope projection is
+\(\pi_\gamma(\gamma,S,h)=\gamma\), and its exact bad-slope set is
+\(Z_a(r)=\pi_\gamma(\Wcal_a(r))\subseteq\F\).
+\end{definition}
+
+\begin{lemma}[Reduction to exact agreement]
+\label{lem:exact-agreement-reduction}
+For \(a\ge k+1\), the set \(Z_a(r)\) is precisely the set of slopes that
+are MCA-bad at threshold \(a\) in \cref{def:mca-bad}.
+\end{lemma}
+
+\begin{proof}
+An exact-\(a\) witness is a threshold-\(a\) witness.  Conversely, let
+\((\gamma,S,h)\) witness badness with \(\abs S\ge a\).  At least one of
+\(r_0|_S,r_1|_S\) is outside
+\(\operatorname{ev}_S(\F[X]_{<k})\); call it \(u|_S\).  Interpolate \(u\)
+on any fixed \(k\)-subset \(K\subseteq S\).  If the resulting polynomial
+agreed with \(u\) at every point of \(S\setminus K\), it would explain
+\(u\) on \(S\), a contradiction.  Hence some \(x\in S\setminus K\)
+makes \(u\) unexplained on \(K\cup\{x\}\).  Extend this set to an
+\(a\)-subset \(S'\subseteq S\).  Non-explanation persists on supersets,
+while the same \(h\) explains \(r_0+\gamma r_1\) on \(S'\).
+\end{proof}
+
+\begin{proposition}[Exact support-atlas upper bound]
+\label{prop:exact-support-upper}
+For every Reed--Solomon row, every nonempty challenge set
+\(\Gamma\subseteq\F\), and every \(k+1\le a\le n\),
+\[
+ B_{C,\Gamma}^{\rm MCA}(a)
+ \le\min\left\{\abs\Gamma,\binom na\right\}.        \tag{2.2}
+\]
+This is a literal finite-row bound: it has no polynomial or
+subexponential loss.
+\end{proposition}
+
+\begin{proof}
+By \cref{lem:exact-agreement-reduction}, choose one noncommon exact-\(a\)
+support for every bad slope.  One noncommon support carries at most one
+slope, since two distinct explained slopes would separately explain the
+two received words on that support.  The chosen-support map is therefore
+injective.  Intersect with the challenge set.
+\end{proof}
+
+\section{Exact syndrome geometry and the deep regime}
+\label{sec:syndrome-exact}
+
+The \emph{syndrome} of a word is the result of applying a parity-check
+matrix; it vanishes exactly on codewords.  Thus syndrome space forgets the
+part of a received word already lying in the code and retains only its error
+class.  This description separates possible error supports from distinct
+line parameters.  Put \(R=n-k\), the redundancy (and syndrome-space
+dimension), and choose the generalized Vandermonde parity-check matrix
+\(H\) with columns
+\[
+ h_x=\lambda_x(1,x,\ldots,x^{R-1})^{\mathsf T},\qquad
+ \lambda_x=\left(\prod_{y\in D\setminus\{x\}}(x-y)\right)^{-1}.
+ \tag{3.1}\label{eq:parity-columns}
+\]
+Lagrange interpolation gives
+\(\sum_{x\in D}\lambda_xx^j=0\) for \(0\le j\le n-2\), so this matrix
+annihilates every degree-less-than-\(k\) evaluation.  Every set of at most
+\(R\) columns is independent.  For \(E\subseteq D\), write
+\(V_E=\Span\{h_x:x\in E\}\); it is exactly the set of syndromes of words
+supported on \(E\).  We write \(s(u)=Hu^{\mathsf T}\) for the syndrome of
+\(u\).
+
+\begin{proposition}[Syndrome-line normal form]
+\label{prop:syndrome-line-normal-form}
+Let \(S=D\setminus E\).  A word \(u\) is explained on \(S\) if and only if
+\(s(u)\in V_E\).  Consequently \(\gamma\) is MCA-bad on \(S\) for a pair
+\((u_0,u_1)\) if and only if
+\[
+ s(u_0)+\gamma s(u_1)\in V_E,
+ \qquad
+ \{s(u_0),s(u_1)\}\not\subseteq V_E.
+ \tag{3.2}\label{eq:syndrome-line}
+\]
+For fixed \(E\), there is at most one such finite slope.
+\end{proposition}
+
+\begin{proof}
+If \(u=c+e\), where \(c\in C\) and \(e\) is supported on \(E\), then
+\(s(u)=s(e)\in V_E\).  Conversely, if
+\(s(u)=\sum_{x\in E}e_xh_x\), subtract the word supported on \(E\) with
+values \(e_x\); the result has zero syndrome and belongs to \(C\).  Apply
+this equivalence to the line point and to both coordinates.  Passing
+\eqref{eq:syndrome-line} to \(\F^R/V_E\) shows that two distinct solutions
+would put both projected syndromes at zero, contradicting badness.
+\end{proof}
+
+Since \(\lambda_x\ne0\), one has
+\([h_x]=[1:x:\cdots:x^{R-1}]\); these are the points of the rational
+normal curve in projective syndrome space, while the weights
+\(\lambda_x\) merely choose vector representatives.  A \emph{secant span} is the linear span
+\(V_E\) of a selected set of those points.  We call the meeting of a
+syndrome line with \(V_E\) \emph{transverse} when the entire line is not
+contained in \(V_E\), equivalently when its two generators are not both in
+\(V_E\).  The next result is a \emph{compiler} in the sense that it
+translates the bad-slope problem, exactly and in both directions, into this
+line--secant incidence problem.  A \emph{ray} means a one-dimensional
+direction in syndrome or coefficient space; different raw witnesses may
+represent the same ray and hence the same slope.
+
+\begin{theorem}[Exact syndrome--secant compiler]
+\label{thm:syndrome-secant-exact}
+Put \(t=n-a\), and for a syndrome line
+\(\ell_{y_0,y_1}=\{y_0+\gamma y_1:\gamma\in\F\}\) define
+\[
+ \Theta_t(y_0,y_1)=
+ \abs{\{\gamma\in\F:\exists E\subseteq D,\ \abs E\le t,
+ y_0+\gamma y_1\in V_E,
+ \ \{y_0,y_1\}\not\subseteq V_E\}}.
+ \tag{3.3}\label{eq:transverse-secant-count}
+\]
+Then
+\[
+ B_C^{\rm MCA}(a)=\max_{y_0,y_1\in\F^{n-k}}
+                    \Theta_t(y_0,y_1).
+ \tag{3.4}\label{eq:exact-secant-numerator}
+\]
+For each fixed \(E\), the affine line has at most one transverse
+intersection parameter with \(V_E\).  For a Reed--Solomon code the
+spaces \(V_E\) are the spans of at most \(t\) points of the weighted
+rational normal curve in \eqref{eq:parity-columns}.  Thus the
+higher-dimensional ray problem is exactly a transverse line--secant
+incidence problem, with repeated intersection parameters deduplicated.
+\end{theorem}
+
+\begin{proof}
+Apply \cref{prop:syndrome-line-normal-form} with \(S=D\setminus E\), and
+take the union over \(\abs E\le t\).  The syndrome map is surjective, so
+maximizing over received pairs is the same as maximizing over
+\((y_0,y_1)\).  In the quotient \(\F^{n-k}/V_E\), a transverse
+intersection solves
+\(\overline y_0+\gamma\overline y_1=0\) with the two projected vectors
+not both zero, and therefore has at most one finite solution.  The last
+assertion is the Vandermonde description of the parity columns.
+\end{proof}
+
+A \emph{parity-column circuit} is a minimally linearly dependent set of
+columns of \(H\).  The next lemma says that many distinct transverse rays
+cannot all be supported inside an independent union of columns.
+
+\begin{lemma}[Independent-union ray bound]
+\label{lem:independent-union-rays}
+Let every set of at most \(R\) parity columns be independent, put
+\(t<R\), and fix a syndrome line.  For each slope in a transverse set
+\(Z\), choose an error set \(E_\gamma\), \(\abs{E_\gamma}\le t\),
+witnessing \eqref{eq:transverse-secant-count}.  If
+\(U=\bigcup_{\gamma\in Z}E_\gamma\) has size at most \(R\), then
+\(\abs Z\le t+1\).  Consequently, more than \(t+1\) transverse slopes
+force the witness union to contain a parity-column circuit.
+\end{lemma}
+
+\begin{proof}
+If \(\abs Z\le1\), there is nothing to prove; assume that \(Z\) contains
+two distinct slopes.  Two distinct line points lie in \(V_U\), hence
+\(y_0,y_1\in V_U\).
+Column independence gives unique coefficient lifts
+\(e_0,e_1\in\F^U\), and every chosen lift is
+\(e_\gamma=e_0+\gamma e_1\).  Let \(U'\) be the set of \(s\) coordinates
+where the pair \((e_0,e_1)\) is nonzero.  If \(s\le t\) and
+\(E_\gamma\) contained all of \(U'\), then
+\(y_0,y_1\in V_{U'}\subseteq V_{E_\gamma}\), contradicting the
+transversality of this particular witness.  Hence some
+\(x\in U'\setminus E_\gamma\) exists, and uniqueness of the lift gives
+\(e_0(x)+\gamma e_1(x)=0\).  Each nonzero affine coordinate function has
+at most one root, so \(\abs Z\le s\le t\).  If \(s>t\), every chosen lift of
+weight at most \(t\) has at least \(s-t\) zero coordinates.  Double
+counting the pairs \((\gamma,x)\) with
+\(e_0(x)+\gamma e_1(x)=0\) gives
+\(\abs Z(s-t)\le s\), whence
+\(\abs Z\le\floor{s/(s-t)}\le t+1\).  If \(\abs U\le R\), independence
+holds; the contrapositive proves the circuit assertion.
+\end{proof}
+
+\begin{theorem}[Bounded residual-kernel ray compiler]
+\label{thm:bounded-residual-kernel-ray}
+Let \(H\) be a parity-check matrix over \(\F\), let \(U\) be a set of
+columns, and put
+\[
+ \kappa(U)=\dim_\F\ker(H_U:\F^U\longrightarrow\F^{n-k}).
+\]
+Fix a syndrome line \(y_0+\gamma y_1\), an integer \(t\ge0\), and a set
+\(Z\) of finite transverse slopes.  Suppose that for every \(\gamma\in Z\)
+there is \(E_\gamma\subseteq U\), \(\abs{E_\gamma}\le t\), such that
+\[
+ y_0+\gamma y_1\in V_{E_\gamma},\qquad
+ \{y_0,y_1\}\not\subseteq V_{E_\gamma}.
+\]
+Then
+\[
+                  \abs Z\le(t+1)\abs{\F}^{\kappa(U)}. \tag{RC$_{\rm ker}$}
+\]
+For a Reed--Solomon parity check of redundancy \(R=n-k\),
+\(\kappa(U)=\max\{0,\abs U-R\}\).  Hence a certified residual chart with
+\((\abs U-R)_+\log\abs\F=o(n)\) has a direct subexponential ray payment
+with the displayed exact finite loss.
+\end{theorem}
+
+\begin{proof}
+The assertion is immediate when \(\abs Z\le1\).  Otherwise two line
+points belong to \(V_U\), so \(y_0,y_1\in V_U\).  Choose lifts
+\(b_0,b_1\in\F^U\) with \(H_Ub_i=y_i\).  For every \(\gamma\), choose a
+lift \(c_\gamma\) supported in \(E_\gamma\) and put
+\(z_\gamma=c_\gamma-b_0-\gamma b_1\in\ker H_U\).
+
+Fix \(z\in\ker H_U\), and consider the slopes for which
+\(z_\gamma=z\).  Put
+\[
+ U_z=\{x\in U:(b_0(x)+z(x),b_1(x))\ne(0,0)\},
+ \qquad s=\abs{U_z}.
+\]
+Every active coordinate is a nonzero affine function of \(\gamma\), and
+therefore vanishes for at most one slope.  Hence the total number of active
+zero incidences in this kernel class is at most \(s\).  If \(s>t\), the
+weight bound on \(c_\gamma\) forces at least \(s-t\) active zeros, so
+\[
+ \abs{Z_z}(s-t)\le s,\qquad
+ \abs{Z_z}\le\floor{s/(s-t)}\le t+1.
+\]
+If \(s\le t\), transversality forces
+at least one active zero: without one,
+\(U_z=\supp c_\gamma\subseteq E_\gamma\), while both \(b_0+z\) and
+\(b_1\) are supported in \(U_z\), putting \(y_0,y_1\) in
+\(V_{E_\gamma}\).  Thus this kernel class contains at most \(s\le t\)
+slopes.  Summing over the \(\abs{\F}^{\kappa(U)}\) kernel elements proves
+the bound.  The MDS column property gives the Reed--Solomon formula for
+\(\kappa(U)\).
+\end{proof}
+
+\begin{theorem}[Single MDS-circuit ray compiler]
+\label{thm:single-mds-circuit-ray}
+Let \(H\) be a Reed--Solomon parity check of redundancy \(R\), let
+\(U\subseteq D\) have size \(R+1\), put \(t<R\), and fix a syndrome line
+\(y_0+\gamma y_1\).  If every slope in a transverse set \(Z\) has a witnessing error set
+\(E_\gamma\subseteq U\) of size at most \(t\), then
+\[
+                         \abs Z\le\binom{R+1}{2}.   \tag{RC$_{\rm circ}$}
+\]
+Thus one fixed MDS-circuit profile has a field-independent polynomial ray
+payment.
+\end{theorem}
+
+\begin{proof}
+There is nothing to prove when \(\abs Z\le1\).  Otherwise two distinct
+line points lie in \(V_U\); subtracting them and solving for the constant
+term gives \(y_0,y_1\in V_U\).  Choose lifts
+\(b_0,b_1\in\F^U\).  The circuit kernel is generated by a vector
+\(z\) whose coordinates are all nonzero, since a zero coordinate would
+give a proper dependent subset of the minimal circuit \(U\).  For each slope choose
+\(c_\gamma\in\F\) so that
+\(e_\gamma=b_0+\gamma b_1+c_\gamma z\) is supported in
+\(E_\gamma\).  For \(x\in U\), set
+\[
+             f_x(\gamma)=-(b_0(x)+\gamma b_1(x))/z(x).
+\]
+A zero coordinate is an equality \(c_\gamma=f_x(\gamma)\), and at least
+\(R+1-t\ge2\) such equalities hold.
+
+Every transverse slope makes two nonidentical functions \(f_x,f_{x'}\)
+equal.  Indeed, otherwise all vanishing coordinates belong to one class
+\(C\) of identical affine functions, say
+\(f_x=\alpha+\beta\gamma\) on \(C\), and no function outside \(C\) has
+that value at \(\gamma\).  Then
+\(\supp e_\gamma=U\setminus C\subseteq E_\gamma\), while
+\(b_0+\alpha z\) and \(b_1+\beta z\) are also supported in
+\(U\setminus C\).  This puts both \(y_0,y_1\) in \(V_{E_\gamma}\), a
+contradiction.  Two nonidentical affine functions agree at at most one
+finite slope.  Charging each slope to one unordered pair proves the
+displayed bound.
+\end{proof}
+
+
+
+\section{The mean-overlap regime}\label{sec:mean-overlap}
+
+For a fixed received line, the exact bad-slope set is therefore the set of
+unique cancelling line parameters contributed by the transverse quotient
+equations.  For each \(E\), \(\abs E\le n-a\), project the two
+syndromes to \(\F^R/V_E\).  If the second projection is nonzero and the
+first is a scalar multiple of it, record the unique cancelling scalar;
+otherwise record nothing.  Deduplicating these scalars gives the numerator.
+In particular, the number of supports, the number of pairs of supports, and
+the number of distinct slopes are three different quantities.
+
+We call \(3(n-a)\le d-1\) the \emph{deep regime}: the allowed error
+radius \(n-a\) is so small relative to the minimum codeword weight \(d\)
+that the union of three permitted error supports still cannot contain a
+nonzero codeword support.
+
+\begin{theorem}[Deep-regime upper bound]\label{thm:deep-regime-upper}
+Let \(C\subseteq\F^n\) be linear with minimum nonzero weight \(d\), let
+\(0\le a\le n\), put \(r=n-a\), and assume \(3r\le d-1\).  Then
+\[
+ B_C^{\rm MCA}(a)\le r+1.
+ \tag{3.5}\label{eq:deep-upper}
+\]
+\end{theorem}
+
+\begin{proof}
+Fix \((u_0,u_1)\), and let \(Z\) be the slopes for which \(u_0+\gamma u_1\)
+is within distance \(r\) of \(C\).  If \(\abs Z\le r+1\), there is nothing
+to prove.  Otherwise choose distinct \(\gamma_1,\gamma_2\in Z\), codewords
+\(p_1,p_2\), and error sets \(E_1,E_2\), each of size at most \(r\), such
+that \(u_0+\gamma_i u_1=p_i\) off \(E_i\).  Solving the two affine
+equations gives \(c_0,c_1\in C\) for which the error pair
+\(e_i=u_i-c_i\) is supported on \(T=E_1\cup E_2\), \(\abs T\le2r\).
+
+For any \(\gamma\in Z\), let \(p\) be a closest explaining codeword.  The
+codeword \(p-(c_0+\gamma c_1)\) is supported on at most \(3r\le d-1\)
+positions and is zero.  Thus \(\wt(e_0+\gamma e_1)\le r\).  Let \(T'\) be
+the support of the error pair.  If \(\abs{T'}\ge r+1\), every
+\(\gamma\in Z\) makes at least \(\abs{T'}-r\) nonzero affine coordinate
+functions \(e_{0,x}+\gamma e_{1,x}\) vanish.  Each coordinate has at most
+one root, so \(\abs Z(\abs{T'}-r)\le\abs{T'}\) and \(\abs Z\le r+1\).
+
+It remains that \(\abs{T'}\le r\).  If \(\gamma\) is MCA-bad on a set
+\(S\), \(\abs S\ge n-r\), its explaining codeword equals
+\(c_0+\gamma c_1\), since their difference would otherwise have weight at
+most \(2r\le d-1\).  The set \(S\) must meet \(T'\), and at a point of
+\(S\cap T'\) the nonzero pair satisfies
+\(e_{0,x}+\gamma e_{1,x}=0\).  Such a point determines \(\gamma\), giving
+at most \(\abs{T'}\le r\) bad slopes.
+\end{proof}
+
+Recall that for a nonempty challenge set \(\Gamma\subseteq\F\),
+\(B_{C,\Gamma}^{\rm MCA}(a)\) denotes the same maximum with slopes restricted to
+\(\Gamma\).
+
+The following ``tangent floor'' is an elementary family of neighboring
+coordinate-span intersections.  The name does not assert a hidden
+differentiability or multiplicity condition.
+
+\begin{proposition}[Universal tangent floor]\label{prop:universal-tangent-floor}
+For every Reed--Solomon code, every \(a\ge k+1\), and every nonempty
+\(\Gamma\subseteq\F\),
+\[
+ B_{C,\Gamma}^{\rm MCA}(a)
+ \ge\min\{\abs\Gamma,n-a+1\}.
+ \tag{3.6}\label{eq:tangent-floor}
+\]
+\end{proposition}
+
+\begin{proof}
+Put \(j=n-a\), \(t=\min\{\abs\Gamma,j+1\}\), and choose distinct
+\(\gamma_1,\ldots,\gamma_t\in\Gamma\) and independent parity columns
+\(h_{x_1},\ldots,h_{x_t}\).  Define
+\(s_1=\sum_i h_{x_i}\) and \(s_0=-\sum_i\gamma_i h_{x_i}\), and lift them
+to received words.  For \(E_i=\{x_\ell:\ell\ne i\}\),
+\(s_0+\gamma_i s_1\in V_{E_i}\), whereas \(s_1\notin V_{E_i}\).
+\Cref{prop:syndrome-line-normal-form} makes every \(\gamma_i\) bad on
+\(D\setminus E_i\), which has size at least \(a\).
+\end{proof}
+
+\begin{corollary}[Exact deep numerator]\label{cor:exact-deep-numerator}
+If \(C=\RS_\F(D,k)\), \(1\le k<n\), \(k+1\le a\le n\),
+\(\varnothing\ne\Gamma\subseteq\F\), and \(3(n-a)\le n-k\), then
+\[
+ B_{C,\Gamma}^{\rm MCA}(a)
+ =\min\{\abs\Gamma,n-a+1\}.
+\]
+\end{corollary}
+
+\begin{proof}
+The upper bound is \cref{thm:deep-regime-upper}, intersected with
+\(\Gamma\).  The hypotheses imply \(a\ge k+1\), so
+\cref{prop:universal-tangent-floor} gives equality.
+\end{proof}
+
+\begin{remark}[The zero-radius normalization]
+Under the formal affine sampler, \cref{cor:exact-deep-numerator} at
+\(a=n\) gives \(B_C^{\rm MCA}(n)=1\), and hence
+\(e_{\rm MCA}(C,0)=1/\abs\F\) for every proper Reed--Solomon code.  This
+also follows directly: in \(\F^D/C\), a noncontained affine line meets
+the zero coset in at most one parameter, and the bound is attained by a
+line through the zero coset.  A value \(2/\abs\F\) belongs to a different
+or loose convention and must not be imported into the affine definition
+of \cite{ABF26}.
+\end{remark}
+
+The next lemma isolates the deterministic mechanism behind both extensions
+of the deep range.
+
+\begin{lemma}[Large-overlap collapse]
+\label{lem:large-overlap-collapse}
+Fix a received pair and an exact agreement \(a=n-r\ge k+1\).  Choose one
+noncommon exact witness support \(S_z\) and explaining polynomial \(p_z\)
+for every slope \(z\) in its bad set \(Z\).  If two distinct chosen
+supports satisfy
+\[
+                    \abs{S_z\cap S_w}\ge k+r,       \tag{MO1}
+\label{eq:large-overlap-collapse}
+\]
+then \(\abs Z\le r+1\).
+\end{lemma}
+
+\begin{proof}
+Put
+\[
+ c_1=\frac{p_z-p_w}{z-w},\qquad c_0=p_z-zc_1.
+\]
+On \(S_z\cap S_w\), the two line equations imply that the received pair
+equals \((c_0,c_1)\).  Let \(C_0\) be the full common support of this
+codeword pair and write \(c=\abs{C_0}\ge k+r\).  For every \(u\in Z\),
+\(\abs{S_u\cap C_0}\ge a+c-n\ge k\), so the explaining polynomial
+\(p_u\) equals \(c_0+uc_1\).
+
+Subtract this codeword pair from the received pair.  At every coordinate
+outside \(C_0\) at least one of the two residual values is nonzero, and a
+coordinate can cancel at at most one finite slope.  A noncommon witness
+for \(u\) must contain at least \(\max\{1,a-c\}\) such cancellations:
+the support-size condition gives \(a-c\), and one is still necessary when
+\(a\le c\).  Double counting therefore gives
+\[
+ \abs Z\le
+ \floor{\frac{n-c}{\max\{1,a-c\}}}\le r+1.        \tag{MO2}
+\label{eq:large-overlap-count}
+\]
+Indeed, for \(c\ge a\) the numerator is at most \(r\); for \(c=a-1\)
+it is \(r+1\); and, with \(x=a-c\ge2\), the quotient is
+\((r+x)/x\le r+1\).
+\end{proof}
+
+\begin{theorem}[Quadratic mean-overlap theorem]
+\label{thm:quadratic-mean-overlap}
+Let \(C=\RS_\F(D,k)\), put \(R=n-k\), let
+\(0\le r\le R-1\), and let \(\varnothing\ne\Gamma\subseteq\F\).  If
+\[
+ (n-r)^2\ge n(k+r),
+ \qquad\text{equivalently}\qquad
+ r^2\ge n(3r-R),                                  \tag{MO3}
+\label{eq:quadratic-overlap-condition}
+\]
+then
+\[
+ B_{C,\Gamma}^{\rm MCA}(n-r)=\min\{\abs\Gamma,r+1\}. \tag{MO4}
+\label{eq:quadratic-overlap-exact}
+\]
+The same upper bound holds for every linear \([n,k]\) MDS code.
+\end{theorem}
+
+\begin{proof}
+The universal tangent construction gives the lower bound.  For the upper
+bound, fix a received pair and its challenge-restricted bad set \(Z\).
+If \(\abs Z\le r+1\) there is nothing to prove.  Otherwise choose
+\(r+2\) slopes and distinct exact witness supports
+\(S_1,\ldots,S_{r+2}\), each of size \(a=n-r\).  Suppose every pair had
+intersection at most \(k+r-1\), and put
+\(d_x=\#\{i:x\in S_i\}\).  Then
+\[
+ \sum_x\binom{d_x}{2}\le\binom{r+2}{2}(k+r-1),    \tag{MO5}
+\]
+whereas Cauchy--Schwarz and \(a^2/n\ge k+r\) give
+\[
+ \sum_x\binom{d_x}{2}
+ \ge\frac{(r+2)^2a^2/n-(r+2)a}{2}
+ \ge\frac{(r+2)^2(k+r)-(r+2)a}{2}.                \tag{MO6}
+\]
+The last lower bound exceeds the upper bound in \textup{(MO5)} by
+\[
+ \frac{r+2}{2}\bigl(k+3r-n+1\bigr).
+\]
+When \(3r>R\) this is positive.  When \(3r\le R\), the exact deep theorem
+already gives the desired upper bound.  Thus in the remaining case some
+pair satisfies \eqref{eq:large-overlap-collapse}, and
+\cref{lem:large-overlap-collapse} contradicts \(\abs Z\ge r+2\).
+The exact-support reduction and large-overlap lemma use only the MDS
+information-set property, proving the stated extension.
+\end{proof}
+
+\begin{corollary}[Exact quadratic staircase]
+\label{cor:mean-overlap-exact}
+Put
+\[
+ r_{\rm quad}(n,k)=
+ \floor{\frac{3n-\sqrt{n(5n+4k)}}2}.
+ \tag{MO7}\label{eq:quadratic-radius}
+\]
+For every \(0\le r\le r_{\rm quad}(n,k)\) and every nonempty challenge
+set \(\Gamma\),
+\[
+ B_{C,\Gamma}^{\rm MCA}(n-r)=\min\{\abs\Gamma,r+1\}.
+\]
+If \(k/n\to\rho\), then
+\(r_{\rm quad}(n,k)/n\to
+\alpha_\rho=(3-\sqrt{5+4\rho})/2\).
+\end{corollary}
+
+\begin{proof}
+The smaller root of \(r^2-3nr+n(n-k)=0\) is the real number inside the
+floor in \eqref{eq:quadratic-radius}.  Apply
+\cref{thm:quadratic-mean-overlap}; the limiting formula follows by
+division by \(n\).
+\end{proof}
+
+\begin{proposition}[Limit of pairwise-overlap information]
+\label{prop:pairwise-overlap-limit}
+Let \(k/n\to\rho\in(0,1)\), \(r/n\to\alpha\in(0,1)\), and suppose
+\[
+ \alpha^2<3\alpha-(1-\rho).
+ \tag{MO8}\label{eq:pairwise-overlap-limit}
+\]
+For all sufficiently large \(n\), there are \(r+2\) distinct
+\(r\)-subsets \(T_i\) such that, whenever
+\(j=3r-(n-k)\le r\),
+\(\abs{T_i\cap T_\ell}\le j-1\) for every \(i\ne\ell\).  If \(j>r\),
+that intersection condition is automatic.  Hence pairwise support overlap
+alone cannot extend the exact theorem past the quadratic boundary; further
+progress must use the syndrome, determinant, or fiber incidence.  This is
+a limitation of the method, not a construction of an MCA-bad line.
+\end{proposition}
+
+\begin{proof}
+When \(j\le r\), choose \(r+2\) independent uniform \(r\)-subsets.
+The intersection of a fixed pair is hypergeometric with mean
+\(r^2/n=(\alpha^2+o(1))n\), whereas
+\(j=(3\alpha-(1-\rho)+o(1))n\).  More explicitly,
+\[
+ \Pr(\abs{T_1\cap T_2}=s)
+ =\frac{\binom rs\binom{n-r}{r-s}}{\binom nr}.
+\]
+After writing \(s=xn\), Stirling's formula gives the exponent
+\[
+ \alpha h(x/\alpha)+(1-\alpha)
+ h((\alpha-x)/(1-\alpha))-h(\alpha),
+\]
+which is strictly concave and has its unique maximum zero at
+\(x=\alpha^2\).  The strict gap in
+\eqref{eq:pairwise-overlap-limit}, followed by summing at most \(n+1\)
+terms, therefore gives probability \(e^{-\Omega(n)}\) that one fixed
+intersection reaches \(j\).  A union bound over \(O(n^2)\) pairs is
+smaller than one.  A
+successful family is automatically distinct, because equal members have
+intersection \(r\ge j\).  When \(j>r\), choose any \(r+2\) distinct
+\(r\)-sets.
+\end{proof}
+
+The following complementary theorem can be stronger when the overlap
+defect \(j=3r-R\) is small.  Its only new input is a packing inequality;
+in particular it uses no smoothness or Fourier estimate.
+
+\begin{theorem}[Exact overlap--packing criterion]
+\label{thm:overlap-packing-exact}
+Let \(C=\RS_\F(D,k)\), put \(R=n-k\), and fix an integer
+\(0\le r\le R-1\).  Set \(a=n-r\) and \(j=3r-R\).  If either
+\[
+ j\le0,
+ \tag{OP0}\label{eq:op-deep}
+\]
+or
+\[
+ 1\le j\le r,
+ \qquad
+ \binom nj\le(r+1)\binom rj,
+ \tag{OP}\label{eq:op-packing}
+\]
+then
+\[
+                    B_C^{\rm MCA}(n-r)=r+1.       \tag{OP$'$}
+\label{eq:op-exact}
+\]
+The same upper bound holds for every linear \([n,k]\) MDS code; the
+matching lower bound holds whenever the field contains at least \(r+1\)
+distinct slope parameters.
+\end{theorem}
+
+\begin{proof}
+Condition \eqref{eq:op-deep} is
+\cref{cor:exact-deep-numerator}, so assume
+\eqref{eq:op-packing}.  Fix an arbitrary received pair \((f,g)\), let
+\(Z\) be its bad-slope set, and use
+\cref{lem:exact-agreement-reduction} to choose, for every \(z\in Z\), an
+exact witness support \(S_z\), \(\abs{S_z}=a\), and an explaining
+polynomial \(p_z\in\F[X]_{<k}\).  A single noncommon support cannot carry
+two distinct slopes, so the supports chosen for distinct elements of
+\(Z\) are distinct.
+
+For the stated MDS extension, the same exact-support reduction is
+available: interpolate the unexplained component on any \(k\)-subset of
+the original witness support; because every \(k\)-subset is an information
+set, nonexplanation is detected at one further coordinate, and that
+\((k+1)\)-set can be enlarged to size \(a\).
+
+First suppose that two of them have a large intersection:
+\[
+ \abs{S_z\cap S_w}\ge n+k-a=k+r
+ \qquad(z\ne w).
+ \tag{OP1}\label{eq:op-large-overlap}
+\]
+Then \cref{lem:large-overlap-collapse} gives \(\abs Z\le r+1\).
+
+It remains to consider the complementary case, in which every pair of
+chosen supports satisfies
+\(\abs{S_z\cap S_w}\le n+k-a-1\).  Put
+\(T_z=D\setminus S_z\), so \(\abs{T_z}=r\).  For distinct slopes,
+\[
+ \abs{T_z\cap T_w}
+ =n-2a+\abs{S_z\cap S_w}
+ \le3r-R-1=j-1.                                  \tag{OP3}
+\label{eq:op-small-overlap}
+\]
+No \(j\)-subset of \(D\) can therefore lie in two different \(T_z\)'s.
+Counting pairs \((z,J)\) with \(J\in\binom{T_z}{j}\) yields
+\[
+                 \abs Z\binom rj\le\binom nj\le
+                 (r+1)\binom rj,
+\]
+and hence \(\abs Z\le r+1\).  The universal tangent construction gives
+the reverse inequality.  The proof used only linearity, the fact that
+agreement of two codewords on \(k\) coordinates forces equality, and the
+exact-support reduction; these are MDS properties.  The coordinate
+tangent construction gives the stated MDS lower bound.
+\end{proof}
+
+\begin{proposition}[General overlap--packing upper bound]
+\label{prop:general-overlap-packing-upper}
+For \(1\le j=3r-(n-k)\le r\), let \(A(n,r,j)\) be the largest size of a
+family of \(r\)-subsets of an \(n\)-set whose distinct members intersect
+in at most \(j-1\) points.  Then
+\[
+ B_{C,\Gamma}^{\rm MCA}(n-r)
+ \le\min\left\{\abs\Gamma,
+     \max\left(r+1,A(n,r,j)\right)\right\}          \tag{OP5}
+\label{eq:general-overlap-packing-upper}
+\]
+and
+\[
+ A(n,r,j)\le
+ \floor{\frac{\binom nj}{\binom rj}}.              \tag{OP6}
+\label{eq:packing-number-bound}
+\]
+\end{proposition}
+
+\begin{proof}
+For a fixed received pair, either two chosen exact witness supports have
+intersection at least \(k+r\), in which case
+\cref{lem:large-overlap-collapse} gives at most \(r+1\) slopes, or every
+pair of complementary \(r\)-sets intersects in at most \(j-1\) points.
+The latter family has size at most \(A(n,r,j)\).  Finally, no \(j\)-subset
+can lie in two members of such a packing, so counting contained
+\(j\)-subsets proves \eqref{eq:packing-number-bound}.
+\end{proof}
+
+\begin{corollary}[Quadratic staircase at the official rates]
+\label{thm:prize-rate-overlap}
+Let \(n=2^e\), let
+\(\rho=k/n\in\{1/2,1/4,1/8,1/16\}\), and put
+\[
+ r_\rho(n)=\floor{
+ n\frac{3-\sqrt{5+4\rho}}2}.
+\]
+For every \(n\)-point Reed--Solomon domain over every field,
+\[
+ B_C^{\rm MCA}(n-r)=r+1
+ \qquad(0\le r\le r_\rho(n)).                     \tag{OP4}
+\label{eq:prize-rate-staircase}
+\]
+\end{corollary}
+
+\begin{proof}
+This is \cref{cor:mean-overlap-exact}, since the displayed integer is
+\(r_{\rm quad}(n,k)\).
+\end{proof}
+
+\begin{corollary}[Self-contained quadratic-range target compiler]
+\label{cor:prize-window-compiler}
+In the setting of \cref{thm:prize-rate-overlap}, put
+\(q=\abs\F\) and \(B=\floor{q/2^{128}}\).  If
+\[
+ 1\le B\le M_\rho(n)
+ \defeq\min\{r_\rho(n)+1,n-k-1\},
+\]
+then
+\[
+ e_{\rm MCA}(C,\delta)\le2^{-128}
+ \quad\Longleftrightarrow\quad
+ \floor{\delta n}\le B-1.                        \tag{PW}
+\label{eq:prize-window-iff}
+\]
+Thus every such row is solved throughout the field window
+\(2^{128}\le q<2^{128}(M_\rho(n)+1)\): its largest safe grid radius is
+\((B-1)/n\), while its real transition supremum is \(B/n\) and that
+endpoint is unsafe.  If \(q<2^{128}\), even radius zero is unsafe.
+\end{corollary}
+
+\begin{proof}
+For \(r\le B-1\), \cref{thm:prize-rate-overlap} gives the exact
+numerator \(r+1\le B\le q/2^{128}\).  At \(r=B\), the tangent floor
+applies because \(B\le n-k-1\), and gives at least
+\(B+1>q/2^{128}\) slopes.  Monotonicity proves the
+equivalence and the endpoint statements.  If \(B=0\), the tangent floor
+at \(r=0\) gives the exact numerator one.
+\end{proof}
+
+
+\section{Literature completion to positive relative radius}
+\label{sec:literature-completion}
+
+The quadratic theorem is self-contained and useful at finite parameters,
+but it is not the largest known RS range at constant rate.  We now make
+the relevant implication of \cite{BCHKS25} explicit at the integer
+numerator level.  This section is deliberately separated from
+\cref{sec:mean-overlap}: the input below belongs to the literature,
+whereas \cref{thm:quadratic-mean-overlap} is the finite MDS argument of
+this paper.
+
+Put \(q=\abs\F\).  For a word \(u\) and a received pair \((u_0,u_1)\), write
+\(d(u,C)\) and \(d_2((u_0,u_1),C^2)\) for their relative Hamming and
+relative column distances from \(C\) and \(C^2\), respectively.  For
+\(0\le\alpha<\beta<1\), define the two-radius correlated-agreement error
+by
+\[
+ e_{\rm CA}(C,\alpha,\beta)
+ =\frac1q\max_{\substack{u_0,u_1\in\F^D\\
+                  d_2((u_0,u_1),C^2)>\beta}}
+   \#\{\gamma\in\F:d(u_0+\gamma u_1,C)\le\alpha\}.       \tag{LC0}
+ \label{eq:two-radius-ca}
+\]
+The one-radius notation \(e_{\rm CA}(C,\alpha)\) means that the far-pair
+radius is also \(\alpha\).
+
+\begin{theorem}[BCHKS two-radius bound]
+\label{thm:bchks-two-radius}
+Let \(C=\RS_\F(D,k)\), put \(q=\abs\F\),
+\(\rho=k/n\), and \(\Delta=(n-k+1)/n\).  If
+\(\Delta/3\le\alpha<(1-\rho)/2\) and
+\(\alpha<\beta<1\), then
+\[
+ e_{\rm CA}(C,\alpha,\beta)
+ \le \frac1q\max\left\{
+   \frac{1-\rho-\alpha}{\alpha(1-\rho-2\alpha)},
+   \frac{\beta}{\beta-\alpha}
+                         \right\}.              \tag{BCHKS}
+ \label{eq:bchks-two-radius}
+\]
+\end{theorem}
+
+This is \cite[Thm.~1.3]{BCHKS25}, in the two-radius normalization
+restated as \cite[Thm.~4.9\textup{(2)}]{ABF26}.  We have written only
+the strict subrange needed below, so all displayed denominators are
+positive.
+
+\begin{theorem}[Integral BCHKS completion]
+\label{thm:literature-integral-completion}
+Let \(C=\RS_\F(D,k)\), let \(q=\abs\F\), put \(R=n-k\), and let
+\(r\in\Z\) satisfy
+\[
+ 3r\ge R+1,\qquad 2r<R.                           \tag{LC1}
+ \label{eq:literature-range}
+\]
+Then
+\[
+ B_C^{\rm MCA}(n-r)
+ \le
+ \floor{\max\left\{
+       \frac{n(R-r)}{r(R-2r)},\ r+1
+                  \right\}}.                    \tag{LC2}
+ \label{eq:literature-integral-upper}
+\]
+Consequently, if
+\[
+             n(R-r)<r(r+2)(R-2r),                \tag{LC3}
+ \label{eq:literature-integral-condition}
+\]
+then, for every nonempty \(\Gamma\subseteq\F\),
+\[
+ B_{C,\Gamma}^{\rm MCA}(n-r)=\min\{\abs\Gamma,r+1\}.
+ \tag{LC4}\label{eq:literature-integral-exact}
+\]
+\end{theorem}
+
+\begin{proof}
+Put \(\delta_{\rm fld}=r/n\) and, for \(0<\theta<1\), put
+\(\delta_{\rm int}=(r+\theta)/n\).  Hamming distances belong to
+\(\{0,1/n,\ldots,1\}\), so replacing the far-pair radius
+\(\delta_{\rm fld}\) by \(\delta_{\rm int}\) does not change the
+far-pair condition; this is the grid observation of
+\cite[Rem.~4.10]{ABF26}.  The hypotheses in
+\eqref{eq:literature-range} give
+\(\Delta/3\le\delta_{\rm fld}<(1-k/n)/2\), and
+\(\delta_{\rm fld}<\delta_{\rm int}<1\).  Hence
+\cref{thm:bchks-two-radius} gives
+\[
+ q\,e_{\rm CA}(C,r/n)
+ \le \max\left\{
+  \frac{n(R-r)}{r(R-2r)},\frac{r+\theta}{\theta}
+               \right\}.                        \tag{LC5}
+ \label{eq:bchks-specialized}
+\]
+On the integer grid,
+\(q e_{\rm CA}(C,r/n)=B_C^{\rm CA}(n-r)\).  The second inequality in
+\eqref{eq:literature-range} also places the radius below
+\(d_{\min}/(2n)\), because \(d_{\min}=R+1\).  By
+\cref{thm:exact-half-distance-sparse},
+\[
+ B_C^{\rm MCA}(n-r)
+   =\max\{B_C^{\rm CA}(n-r),\min\{q,r\}\}.
+\]
+The right side of \eqref{eq:bchks-specialized} is strictly larger than
+\(r\), because \((r+\theta)/\theta>r\).  It therefore bounds both
+branches of this maximum and hence bounds the integer
+\(B_C^{\rm MCA}(n-r)\).
+For the full-field maximum one may alternatively invoke the known
+below-half equality \cite[Lem.~4.6]{ABF26}; the sparse decomposition is
+kept here because it is exact before maximizing over a restricted
+challenge set.
+
+Letting \(\theta\to1^-\) proves that this integer is at most the real
+maximum in \eqref{eq:literature-integral-upper}, and taking the floor
+proves \eqref{eq:literature-integral-upper}.  Under
+\eqref{eq:literature-integral-condition} the first entry of that maximum
+is strictly less than \(r+2\).  Since \(r+1\) is integral, the floor in
+\eqref{eq:literature-integral-upper} is at most \(r+1\), so the
+full-field numerator is at most \(r+1\).
+Restriction to \(\Gamma\) gives the upper bound
+\(\min\{\abs\Gamma,r+1\}\), and
+\cref{prop:universal-tangent-floor} gives the reverse bound.
+\end{proof}
+
+\begin{remark}[Priority]
+The substance of the upper bound in
+\cref{thm:literature-integral-completion} is prior work.  In particular,
+\cite[Cor.~1.4]{BCHKS25} states a sharp lossless conclusion under broad
+finite hypotheses and \cite[Rem.~2.5]{BCHKS25} discusses the matching
+perturbation construction.  Formula \eqref{eq:bchks-specialized} is
+included to expose the integer limit and to make the challenge-subset and
+target compilers below completely transparent.
+\end{remark}
+
+\begin{corollary}[Positive density of exact radii]
+\label{cor:positive-radius-density}
+Let \(k_n/n\to\rho\in(0,1)\), let \(r_n\in\Z\) satisfy
+\(r_n/n\to\tau\), and suppose
+\(0<\tau<(1-\rho)/2\).  For every RS row sequence and every sequence of
+nonempty challenge sets,
+\[
+ B_{C_n,\Gamma_n}^{\rm MCA}(n-r_n)
+ =\min\{\abs{\Gamma_n},r_n+1\}                   \tag{LC6}
+ \label{eq:positive-radius-exact}
+\]
+for all sufficiently large \(n\).  More uniformly, for every
+\(\eta>0\), equality holds throughout
+\[
+ 0\le r\le\left(\frac{1-\rho}{2}-\eta\right)n
+\]
+for every sufficiently large row whose rate tends to \(\rho\).
+Consequently the exact staircase contains an initial interval of
+normalized length \((1-\rho)/2-o(1)\), has lower density at least
+\((1-\rho)/2\) in the full Hamming-radius interval, and has asymptotic
+relative density one in the unique-decoding interval.
+\end{corollary}
+
+\begin{proof}
+The quadratic theorem covers every sequence whose limiting radius lies
+below \(\alpha_\rho=(3-\sqrt{5+4\rho})/2\).  In the remaining compact
+subinterval of \((0,(1-\rho)/2)\), the hypotheses
+\eqref{eq:literature-range} hold for large \(n\), while
+\[
+ \frac{n(R-r)}{r(R-2r)}=O_{\rho,\eta}(1)
+ \quad\text{and}\quad r+1=\Theta_{\rho,\eta}(n).
+\]
+Thus \eqref{eq:literature-integral-condition} holds and
+\cref{thm:literature-integral-completion} applies.  The uniform statement
+follows by the same compactness argument, using the deep theorem near
+radius zero.  Counting integer radii gives the density assertions.
+\end{proof}
+
+\begin{corollary}[Official-rate staircase]
+\label{cor:official-rate-half-staircase}
+Let \(n=2^e\ge128\), \(k=\rho n\), and
+\(\rho\in\{1/2,1/4,1/8,1/16\}\).  Define
+\[
+ r_\rho^\sharp=\begin{cases}
+ n/4-3,&\rho=1/2,\\
+ 3n/8-2,&\rho=1/4,\\
+ 7n/16-2,&\rho=1/8,\\
+ 15n/32-2,&\rho=1/16.
+ \end{cases}                                      \tag{LC7}
+ \label{eq:official-half-endpoints}
+\]
+Then for every RS domain and every nonempty \(\Gamma\subseteq\F\),
+\[
+ B_{C,\Gamma}^{\rm MCA}(n-r)=\min\{\abs\Gamma,r+1\}
+ \qquad(0\le r\le r_\rho^\sharp).              \tag{LC8}
+ \label{eq:official-half-staircase}
+\]
+\end{corollary}
+
+\begin{proof}
+Put \(F(r)=r(r+1)(R-2r)-n(R-r)\), where \(R=n-k\), and
+\(L=\ceil{(R+1)/3}\).  The deep theorem covers \(r<L\).  On the
+positive real axis, \(F'(r)=-6r^2+2(R-2)r+(R+n)\) has exactly one
+positive zero, so the minimum of \(F\) on \([L,r_\rho^\sharp]\) occurs
+at an endpoint.  Since \(R\ge n/2\ge64\),
+\[
+ F(L)\ge
+ \frac{(R+1)(R+4)(R-8)-9n(2R-1)}{27}>0;
+\]
+indeed the numerator is at least
+\(R\{R(R-4)-18n\}>0\).  Direct substitution at the other endpoint gives,
+in the order of the four rates,
+\[
+ \frac{n^2-84n+288}{8},\quad
+ \frac{3n^2-104n+128}{16},\quad
+ \frac{21n^2-464n+512}{64},\quad
+ \frac{105n^2-1952n+2048}{256},
+\]
+all positive for \(n\ge128\).  Therefore \(F(r)\ge0\) throughout the
+remaining integer interval.  Since \(r>0\) and \(R-2r>0\) there,
+\[
+ r(r+2)(R-2r)-n(R-r)=F(r)+r(R-2r)>0,
+\]
+which is \eqref{eq:literature-integral-condition}.  Apply
+\cref{thm:literature-integral-completion}.
+\end{proof}
+
+\begin{corollary}[Almost-half-distance target compiler]
+\label{cor:half-distance-window-compiler}
+In the setting of \cref{cor:official-rate-half-staircase}, put
+\(B=\floor{\eps\abs\Gamma}\).  If
+\[
+ 1\le B<\abs\Gamma,\qquad B\le r_\rho^\sharp+1,
+\]
+then the complete safe set is
+\[
+ \{\delta:e_{\rm MCA,\Gamma}(C,\delta)\le\eps\}
+       =[0,B/n),                                   \tag{LC9}
+ \label{eq:half-distance-safe-set}
+\]
+and the endpoint is unsafe.  For the full-field target \(2^{-128}\),
+this applies throughout
+\(2^{128}\le q<2^{128}(r_\rho^\sharp+2)\).
+\end{corollary}
+
+\begin{proof}
+At every radius \(r\le B-1\),
+\cref{cor:official-rate-half-staircase} gives numerator
+\(r+1\le B\).  At radius \(B\), the tangent floor gives at least
+\(B+1\) bad slopes.  Monotonicity and
+\(r(\delta)=\floor{\delta n}\) prove the assertion.
+\end{proof}
+
+
+\section{Exact thresholds for explicit prize rows}\label{sec:prize-rows}
+
+\begin{table}[H]
+\centering
+\caption{Explicit maximal-dimension prize-admissible rows.  In each row
+\(k=2^{40}\), \(B=\floor{p/2^{128}}=r_\rho(n)+1\), and \((s,a_0)\) is part of
+the Proth certificate in \cref{prop:proth-row-check}.}
+\label{tab:prize-proth-rows}
+\small
+\begin{tabular}{@{}ccrrc@{}}
+\hline
+rate & length & \(B\) & bits of \(p\) & \((s,a_0)\)\\
+\hline
+\(1/2\)  & \(2^{41}\) & \(389500552609\)  & 167 & \((92,3)\)\\
+\(1/4\)  & \(2^{42}\) & \(1210584858040\) & 169 & \((93,13)\)\\
+\(1/8\)  & \(2^{43}\) & \(2879806199253\) & 170 & \((95,5)\)\\
+\(1/16\) & \(2^{44}\) & \(6233898019554\) & 171 & \((97,5)\)\\
+\hline
+\end{tabular}
+\end{table}
+
+For completeness, the four field orders are
+\begin{align*}
+p_{1/2}&=132540169958804033333249306710494641010898987122689,\\
+p_{1/4}&=411940680852499481698306614369841346700408394874881,\\
+p_{1/8}&=979947269755402568812854322316630667196565607677953,\\
+p_{1/16}&=2121285573237585848299875619011192262679065433997313.
+\end{align*}
+Their odd Proth coefficients \(u\), in the same order, are
+\begin{align*}
+u_{1/2}&=26766274163673319604503,
+&u_{1/4}&=41595378994516821279015,\\
+u_{1/8}&=24737346889219389259839,
+&u_{1/16}&=13387194060291799253121.
+\end{align*}
+For \(F_{n,k}(r)=r^2-n(3r-(n-k))\), the exact boundary checks are
+\[
+\begin{array}{c|r|r}
+ \rho&F_{n,k}(B-1)&F_{n,k}(B)\\ \hline
+ 1/2&5154112775168&-663955886271\\
+ 1/4&7590647904465&-3182321912768\\
+ 1/8&13908181940112&-6720484728007\\
+ 1/16&19335616403905&-20973145690236.
+\end{array}                                                    \tag{PC0}
+\label{eq:quadratic-row-certificates}
+\]
+
+\begin{proposition}[Exact arithmetic and primality certificates]
+\label{prop:proth-row-check}
+For the four rows in \cref{tab:prize-proth-rows}, the displayed integer
+\(p\) satisfies
+\[
+ p=u\,2^s+1,\qquad u\text{ odd},\qquad u<2^s,\qquad
+ a_0^{(p-1)/2}\equiv-1\pmod p.                  \tag{PC1}
+\label{eq:proth-certificates}
+\]
+Consequently every \(p\) is prime.  Moreover
+\[
+ n\mid p-1,\qquad p<2^{256},\qquad
+ B\,2^{128}\le p<(B+1)2^{128},                  \tag{PC2}
+\label{eq:prize-row-arithmetic}
+\]
+where \(n\) and \(B\) are the corresponding entries of the table.
+They also satisfy \(F_{n,k}(B-1)\ge0>F_{n,k}(B)\).  Since
+\(F_{n,k}'(r)=2r-3n<0\) on \([0,n]\), these two signs locate its smaller
+root and give \(B-1=r_\rho(n)=r_{\rm quad}(n,k)\).
+Thus \(\F_p^*\) contains a subgroup of order \(n\), and each code in
+\cref{thm:intro-prize-rows} exists with the asserted slope budget.
+\end{proposition}
+
+\begin{proof}
+All identities and inequalities in
+\eqref{eq:quadratic-row-certificates}--\eqref{eq:prize-row-arithmetic}
+are direct
+integer calculations; the values of \((s,a_0)\), \(u\), \(p\), \(n\),
+and \(B\) have all been printed above so that the calculation is
+independently reproducible.  We recall why the certificate proves
+primality.  If a prime \(\ell\) divides \(p\), then
+\(a_0^{u2^{s-1}}\equiv-1\pmod\ell\), whereas
+\(a_0^{u2^s}\equiv1\pmod\ell\).  The multiplicative order of \(a_0\)
+modulo \(\ell\) therefore has exact \(2\)-part \(2^s\), so
+\(2^s\mid\ell-1\).  Since \(u<2^s\), one has \(2^s>\sqrt p\); hence a
+composite \(p\) would have a prime divisor both at most \(\sqrt p\) and
+at least \(2^s+1\), a contradiction.  This is Proth's theorem in the
+special form used here.  Finally \(s\ge\log_2 n\) gives \(n\mid p-1\),
+and cyclicity of \(\F_p^*\) gives the required subgroup.
+\end{proof}
+
+\begin{theorem}[Exact first adjacent row over a separating field]
+\label{thm:exact-first-adjacent-row}
+Let \(C=\RS_\F(D,k)\), put \(R=n-k\) and
+\(M=\binom n{R-1}=\binom n{k+1}\), and define
+\[
+                    Q_{\rm sep}(M)=\max\left\{M,\binom M2\right\}.
+\]
+If \(\abs\F>Q_{\rm sep}(M)\), then for the full-field challenge
+\[
+                         B_C^{\rm MCA}(k+1)=M.      \tag{AD1}
+\]
+If \(R\ge2\) and \(b=\floor{\eps\abs\F}\), the exact target threshold
+therefore satisfies
+\[
+ \begin{array}{ll}
+ b\ge M &\Longrightarrow\quad a^*=k+1,\\[2mm]
+ \displaystyle\binom n{R-2}\le b<M
+   &\Longrightarrow\quad a^*=k+2.
+ \end{array}                                       \tag{AD2}
+\]
+Thus the first finite adjacent comparison has literal binomial constants;
+no \(e^{o(n)}\) or unspecified polynomial factor occurs.
+\end{theorem}
+
+\begin{proof}
+The upper bound in \textup{(AD1)} is
+\cref{prop:exact-support-upper}.  For the reverse inequality use the
+Reed--Solomon parity check of redundancy \(R\).  For every
+\((R-1)\)-set \(E\subseteq D\), its column span \(V_E\) is a hyperplane
+in \(\F^R\), and distinct sets give distinct hyperplanes: otherwise the
+union of two distinct \((R-1)\)-sets would contain at least \(R\) columns
+in one \((R-1)\)-space, contradicting the MDS column property.
+
+Every proper linear hyperplane in \(\F^R\) has
+\(\abs{\F}^{R-1}\) points.  Since \(M<\abs\F\), the union of the \(M\)
+spaces \(V_E\) has fewer than \(\abs{\F}^{R}\) points; choose \(y_1\)
+outside it.  For each \(E\),
+choose a nonzero linear functional \(\ell_E\) with kernel \(V_E\).
+The line \(y_0+\gamma y_1\) meets \(V_E\) at
+\[
+                 \gamma_E=-\ell_E(y_0)/\ell_E(y_1).
+\]
+For \(E\ne E'\), equality \(\gamma_E=\gamma_{E'}\) cuts out a proper
+hyperplane in the variable \(y_0\), because the normalized functionals
+\(\ell_E/\ell_E(y_1)\) and
+\(\ell_{E'}/\ell_{E'}(y_1)\) are distinct.  There are at most
+\(\binom M2<\abs\F\) collision hyperplanes; their union also has fewer
+than \(\abs{\F}^{R}\) points, so choose \(y_0\) outside it.  Since
+\(y_1\notin V_E\), the line is not contained in \(V_E\), and every
+intersection is transverse.  The \(M\) parameters \(\gamma_E\) are then
+finite and pairwise distinct.  Syndrome surjectivity and
+\cref{thm:syndrome-secant-exact} realize them as \(M\) bad slopes at
+agreement \(k+1\), proving \textup{(AD1)}.
+
+If \(b\ge M\), the support upper bound makes the first allowed agreement
+safe.  If \(\binom n{R-2}\le b<M\), equality \textup{(AD1)} makes
+\(k+1\) unsafe, whereas
+\cref{prop:exact-support-upper} makes \(k+2\) safe.  Monotonicity proves
+\textup{(AD2)}.
+\end{proof}
+
+\begin{theorem}[Subfield confinement]\label{thm:subfield-confinement-full}
+Let \(\B\subseteq\F\), \(D\subseteq\B\), and let \(u_0,u_1\in\B^D\).  If
+\(\gamma\in\F\setminus\B\) and \(u_0+\gamma u_1\) is explained on \(S\),
+then the pair is explained on the same \(S\).  Hence every MCA-bad slope of
+a \(\B\)-valued received line lies in \(\B\).
+\end{theorem}
+
+\begin{proof}
+Choose a \(\B\)-basis \(1,\beta_1,\ldots\) of \(\F\).  Decompose the
+coefficients of the explaining polynomial and of \(\gamma\) in this basis.
+Because \(D\subseteq\B\), comparison of basis components on \(S\) gives a
+codeword explaining \(u_1\) from any nonzero nonbase component of
+\(\gamma\), and then a codeword explaining \(u_0\) from the base component.
+\end{proof}
+
+\section{Exact locator prefixes and collision-aware pole lines}
+\label{sec:exact-prefix-pole}
+
+Assume \(D\subseteq\B\subseteq\F\).  For an \(m\)-set \(S\subseteq D\),
+write
+\[
+ Q_S(X)=\prod_{x\in S}(X-x)
+       =X^m+c_1(S)X^{m-1}+\cdots+c_m(S),
+ \qquad
+ \Phi_w(S)=(c_1(S),\ldots,c_w(S)).
+\]
+
+The monic polynomial \(Q_S\), whose simple roots are precisely the points
+of \(S\), is the \emph{support locator}.  Its \emph{depth-\(w\) locator
+prefix} is the vector of the first \(w\) coefficients below the leading
+coefficient.  For \(z\in\B^w\), the inverse image
+\(\Phi_w^{-1}(z)\) is the \emph{prefix fiber over \(z\)}: the family of
+all \(m\)-element supports having that same prefix.  Thus ``fiber'' in this
+paper always refers to the inverse image of a displayed map.
+
+\begin{proposition}[Exact prefix-list bijection]\label{prop:exact-prefix-list}
+Let \(1\le K\le m\le n\), put \(w=m-K\), and set
+\(U_z(X)=X^m+\sum_{i=1}^wz_iX^{m-i}\) for \(z\in\B^w\).  The codewords of
+\(\RS_\F(D,K)\) agreeing with \(U_z|_D\) on at least \(m\) points are
+exactly
+\[
+        (U_z-Q_S)|_D,\qquad S\in\Phi_w^{-1}(z).
+ \tag{4.1}\label{eq:prefix-bijection}
+\]
+No such codeword agrees on more than \(m\) points.  In particular, some
+received word has list size at least
+\(\lceil\binom nm\abs\B^{-w}\rceil\).
+\end{proposition}
+
+\begin{proof}
+For \(S\in\Phi_w^{-1}(z)\), the leading term and next \(w\) coefficients
+cancel, so \(\deg(U_z-Q_S)<m-w=K\).  Conversely, if \(P\), \(\deg P<K\),
+agrees with \(U_z\) at \(m\) points, then \(U_z-P\) is monic of degree
+\(m\) with those \(m\) roots and equals their locator.  Coefficient
+comparison gives the prefix.  A nonzero degree-\(m\) polynomial has no
+additional root.  Pigeonhole the \(\binom nm\) supports over
+\(\abs\B^w\) prefixes.
+\end{proof}
+
+The \emph{simple-pole conversion} chooses an auxiliary point
+\(\alpha\notin D\) and divides coordinatewise by \(X-\alpha\).  This
+turns one list of nearby polynomials into points on a received affine line
+for the dimension-\(k\) code.  A \emph{collision} is an equality
+\(P_i(\alpha)=P_j(\alpha)\) for two distinct listed polynomials; the next
+formula pays such equalities rather than assuming all slopes are distinct.
+
+\begin{theorem}[Collision-aware simple-pole conversion]
+\label{thm:collision-aware-pole}
+Let \(C=\RS_\F(D,k)\), \(C^+=\RS_\F(D,k+1)\), \(1\le k<n\), and
+\(q=\abs\F>n\).  If a word has \(L\) distinct codewords of \(C^+\)
+agreeing on at least \(m\ge k+1\) points, then one received line for \(C\)
+has at least
+\[
+ M(L)=\left\lceil
+ \frac{L(q-n)}{q-n+k(L-1)}
+ \right\rceil
+ \tag{4.2}\label{eq:collision-aware-pole}
+\]
+distinct MCA-bad slopes at agreement \(m\).
+\end{theorem}
+
+\begin{proof}
+Let the received word be \(U\in\F^D\), and let the listed polynomials be
+\(P_1,\ldots,P_L\), each of degree at most \(k\).  For
+\(\alpha\in\F\setminus D\), define the word coordinatewise by
+\(f_\alpha(x)=U(x)/(x-\alpha)\) and set
+\(g_\alpha(x)=-1/(x-\alpha)\).  On an agreement set for \(P_i\), the line
+point of slope \(P_i(\alpha)\) equals
+\((P_i(x)-P_i(\alpha))/(x-\alpha)\), a degree-less-than-\(k\) evaluation.
+The pair is not simultaneously explained on \(k+1\) points: an explanation
+of \(g_\alpha\) by \(G\), \(\deg G<k\), would make
+\((X-\alpha)G(X)+1\) vanish at \(k+1\) points although its degree is at
+most \(k\) and its value at \(\alpha\) is \(1\).
+
+For \(i\ne j\), the equality \(P_i(\alpha)=P_j(\alpha)\) holds at at most
+\(k\) poles.  Some pole has at most \(k\binom L2/(q-n)\) colliding pairs.
+If its value multiplicities are \(m_1,\ldots,m_M\), then
+\(\sum m_i^2\le L+kL(L-1)/(q-n)\).  Cauchy--Schwarz gives
+\(L^2\le M\sum m_i^2\), which yields \eqref{eq:collision-aware-pole}.
+\end{proof}
+
+\begin{corollary}[Exact good-pole reservoir]
+\label{cor:exact-good-pole-reservoir}
+In \cref{thm:collision-aware-pole}, let \(Q=q-n\), and for
+\(\alpha\in\F\setminus D\) let \(C_\alpha\) be the number of unordered
+pairs \(\{i,j\}\) with \(P_i(\alpha)=P_j(\alpha)\).  For every integer
+\(T\ge0\), at least
+\[
+ \max\left\{0,Q-
+   \floor{\frac{k\binom L2}{T+1}}\right\}          \tag{PR1}
+\label{eq:good-pole-count}
+\]
+poles satisfy \(C_\alpha\le T\), and every such pole produces at least
+\[
+                     \ceil{\frac{L^2}{L+2T}}       \tag{PR2}
+\label{eq:good-pole-slopes}
+\]
+distinct MCA-bad slopes.  In particular at least
+\(\max\{0,Q-k\binom L2\}\) poles are fully separating.
+\end{corollary}
+
+\begin{proof}
+Every nonzero difference \(P_i-P_j\) has at most \(k\) roots, so
+\[
+                 \sum_{\alpha\in\F\setminus D}C_\alpha
+                    \le k\binom L2.
+\]
+Every pole with \(C_\alpha>T\) contributes at least \(T+1\) to this
+sum, which gives \eqref{eq:good-pole-count}.  At a good
+pole let \(m_1,\ldots,m_M\) be the multiplicities of the distinct list
+values.  Then
+\(\sum_im_i=L\) and
+\(\sum_im_i^2=L+2C_\alpha\le L+2T\).  Cauchy--Schwarz yields
+\(M\ge L^2/(L+2T)\), proving \eqref{eq:good-pole-slopes}; \(T=0\)
+gives the last assertion.
+\end{proof}
+
+\begin{remark}[One pole, one received line]
+The reservoir in \cref{cor:exact-good-pole-reservoir} fixes the same pole
+when counting collisions, because different poles define different
+received lines.  A cross-pole equation
+\(P_i(\alpha)=P_j(\alpha')\) is one equation in two variables and
+generically defines a curve; a Bezout degree bound does not turn it into a
+finite collision set.  Such cross-line collisions are neither controlled
+by the simple-pole argument nor needed by it.
+\end{remark}
+
+\begin{corollary}[Identity-prefix MCA floor]\label{cor:identity-prefix-floor}
+For \(m\ge k+1\), put \(w=m-k-1\) and
+\(L_m=\lceil\binom nm\abs\B^{-w}\rceil\).  If \(q>n\), then
+\[
+ B_C^{\rm MCA}(m)\ge M(L_m).
+ \tag{4.3}\label{eq:identity-prefix-floor}
+\]
+\end{corollary}
+
+For equal-size sets, the \emph{Johnson distance} is
+\(d_J(S,T)=\abs{S\setminus T}=\abs{T\setminus S}\).  It counts the
+number of point replacements required to turn one support into the other.
+
+\begin{proposition}[Prefix rigidity and its packing limit]
+\label{prop:prefix-rigidity-full}
+Two distinct \(m\)-sets in one depth-\(w\) prefix fiber have Johnson
+distance at least \(w+1\).  Consequently, with
+\(t=\floor{w/2}\), every fiber has size at most
+\[
+ \frac{\binom nm}{\sum_{i=0}^t\binom mi\binom{n-m}{i}}.
+ \tag{4.4}\label{eq:packing-fiber-cap}
+\]
+At \(w\asymp n/\log\abs\B\), this packing loss is only
+\(e^{o(n)}\) and does not supply the random factor \(\abs\B^{-w}\).
+\end{proposition}
+
+Prefix rigidity says that sharing many leading locator coefficients forces
+distinct supports to be far apart in this metric.  Here the
+\emph{polynomial-field regime} means \(\abs\B=n^{O(1)}\), equivalently
+\(\log\abs\B=O(\log n)\).
+
+\begin{proof}
+If \(S,T\) have Johnson distance \(j\le w\), factor the locator of their
+intersection, of degree \(m-j\), from \(Q_S-Q_T\).  The residual factor is
+nonzero, so the difference has degree at least \(m-j\ge m-w\), whereas the
+common prefix makes its degree at most \(m-w-1\), a contradiction.  Radius
+\(t\) Johnson balls about the fiber members are disjoint and each has the
+denominator in \eqref{eq:packing-fiber-cap}.  For
+\(w=n/\log\abs\B\), the logarithm of that ball volume is
+\(O(w\log(n/w))=o(n)\) in the polynomial-field regime.
+\end{proof}
+
+\begin{theorem}[Prefix fibers embed in received lines]
+\label{thm:prefix-to-line-hardness}
+Let \(\mathcal G\subseteq\Phi_w^{-1}(z)\) be a fiber of \(N\) many
+\(m\)-sets, with \(0\le w\le m-2\), and put \(k=m-w-1\).  Every finite
+extension \(\F/\B\) satisfying
+\[
+        \abs\F-n>k\binom N2
+        \tag{4.5}\label{eq:extension-separation}
+\]
+admits one received line for \(\RS_\F(D,k)\) with at least \(N\) distinct
+MCA-bad slopes furnished by \(\mathcal G\).
+\end{theorem}
+
+\begin{proof}
+For distinct \(S,T\in\mathcal G\), the polynomial \(Q_S-Q_T\) is nonzero
+of degree at most \(k\).  Condition \eqref{eq:extension-separation} leaves a
+pole \(\alpha\in\F\setminus D\) avoiding the roots of all these
+differences.  Thus the values \(Q_S(\alpha)\) are pairwise distinct.  By
+\cref{prop:exact-prefix-list}, the polynomials \(U_z-Q_S\) form one list for
+the dimension-\(k+1\) code; the pole line makes their values, and hence the
+resulting MCA slopes, pairwise distinct.
+\end{proof}
+
+\begin{theorem}[Exact list--line bijection at a separating pole]
+\label{thm:exact-list-line-bijection}
+Let \(D\subseteq\B\subseteq\F\), let \(1\le k<n\), let \(m\ge k+1\),
+and let \(U\in\B^D\).  Write
+\[
+ \Lcal_m(U)=\{P\in\B[X]:\deg P\le k,
+       \ \abs{\{x\in D:U(x)=P(x)\}}\ge m\}.
+\]
+Suppose \(\alpha\in\F\setminus D\) and the evaluation map
+\(P\mapsto P(\alpha)\) is injective on \(\Lcal_m(U)\).  Define
+\[
+ f_\alpha(x)=\frac{U(x)}{x-\alpha},\qquad
+ g_\alpha(x)=-\frac1{x-\alpha}\qquad(x\in D).
+\]
+Then \(P\mapsto P(\alpha)\) is a bijection from \(\Lcal_m(U)\) onto
+the set of finite MCA-bad slopes of the received line
+\((f_\alpha,g_\alpha)\) for \(\RS_\F(D,k)\) at agreement \(m\).  The
+corresponding explaining polynomial is
+\[
+       h_P(X)=\frac{P(X)-P(\alpha)}{X-\alpha},
+\]
+and its agreement set with
+\(f_\alpha+P(\alpha)g_\alpha\) is exactly the agreement set of \(P\)
+with \(U\).
+
+If \(L=\abs{\Lcal_m(U)}\), such a pole exists in every finite extension
+satisfying
+\[
+       \abs\F>n+k\binom L2.                         \tag{4.6}
+\]
+\end{theorem}
+
+\begin{proof}
+For \(P\in\Lcal_m(U)\), the polynomial \(h_P\) has degree less than
+\(k\), and on every point where \(U=P\) one has
+\[
+ f_\alpha+P(\alpha)g_\alpha
+   =\frac{P-P(\alpha)}{X-\alpha}=h_P.
+\]
+The word \(g_\alpha\) cannot be explained by a polynomial \(G\) of degree
+less than \(k\) on \(k+1\) points, since then
+\((X-\alpha)G+1\) would have degree at most \(k\), at least \(k+1\)
+roots, and value one at \(\alpha\).  Thus every displayed slope is
+MCA-bad.
+
+Conversely, suppose \(f_\alpha+\gamma g_\alpha\) is explained by
+\(h\in\F[X]_{<k}\) on at least \(m\) points.  Then
+\(P(X)=(X-\alpha)h(X)+\gamma\) has degree at most \(k\) and agrees with
+\(U\) there.  Interpolation on any \(k+1\) of those points uses a
+Vandermonde system over \(\B\) with right-hand side in \(\B\), so
+\(P\in\B[X]\).  Hence \(P\in\Lcal_m(U)\) and
+\(\gamma=P(\alpha)\).  Injectivity proves the bijection, and the same
+calculation proves equality of the agreement sets.
+
+For distinct \(P,Q\in\Lcal_m(U)\), the nonzero polynomial \(P-Q\) has
+degree at most \(k\), and therefore at most \(k\) roots.  The union of
+\(D\) and the root sets of all \(\binom L2\) differences has size at most
+\(n+k\binom L2\); a larger extension contains an admissible pole.
+\end{proof}
+
+\begin{corollary}[Exact prefix-fiber ray realization]
+\label{cor:exact-prefix-ray-realization}
+Let \(0\le w\le m-2\), put \(k=m-w-1\), and let
+\(\Fcal_z=\Phi_w^{-1}(z)\) be a complete depth-\(w\) fiber of
+\(m\)-subsets of \(D\).  If \(\alpha\) separates the values
+\(Q_S(\alpha)\), \(S\in\Fcal_z\), then the pole line associated with
+\(U_z=X^m+\sum_{i=1}^wz_iX^{m-i}\) has exactly
+\(\abs{\Fcal_z}\) MCA-bad slopes at agreement \(m\).  The maps
+\[
+ S\longmapsto U_z(\alpha)-Q_S(\alpha)
+ \longmapsto
+ \left(U_z(\alpha)-Q_S(\alpha),S,
+ \frac{U_z-Q_S-(U_z(\alpha)-Q_S(\alpha))}{X-\alpha}\right)
+\]
+are bijections between the prefix fiber, the bad-slope set, and the
+exact-\(m\) witness incidence.  In particular, the complete prefix fiber,
+its bad-slope set, and its exact-agreement witness incidence have the same
+cardinality.
+\end{corollary}
+
+\begin{proof}
+The exact prefix-list bijection identifies \(\Fcal_z\) with the complete
+dimension-\((k+1)\) list for \(U_z\).  Apply
+\cref{thm:exact-list-line-bijection}.  Since
+\(U_z-(U_z-Q_S)=Q_S\) has precisely the roots in \(S\), every agreement
+is exactly \(m\) and supplies exactly that support.
+\end{proof}
+
+
+
+\section{Further exact constructions}\label{sec:further-exact}
+
+The main threshold theorem needs only the syndrome correspondence and the
+mean-overlap argument.  This section records complementary exact
+constructions that clarify the support-to-slope projection and the
+structured domains used in the examples.  Every statement is a finite
+identity, inequality, or construction; no equidistribution or inverse
+theorem is assumed.
+
+\subsection{Determinantal ray normalization}\label{drc:sec-determinantal-ray}
+
+The final projection from supports to slopes can be made explicit without
+postulating a support-pair multiplicity.  The construction below applies to
+every Reed--Solomon row, in every characteristic.  It also identifies the
+exact additional boundary maps that would govern extensions beyond the
+proved overlap range.  No estimate for those maps is used in the main
+threshold theorem.
+
+The folding atlas is stated for agreement supports
+\(S\in\binom Da\), whereas this subsection uses their complementary error
+supports \(E=D\setminus S\in\binom D{n-a}\).  Complementation is a
+bijection.  On a degree-\(c\) complete fold it sends a fiber occupied in
+\(j\) agreement points to one occupied in \(c-j\) error points, so
+\(\nu^E_{\pi,j}=\nu^S_{\pi,c-j}\); it also complements the recorded subset
+of the bounded exceptional set.  Hence the joint-signature census and its
+exact support add-back transfer to the error-support slices without loss.
+
+Let \(C=\RS_\F(D,k)\), put \(R=n-k\), and use the weighted Vandermonde
+parity-check columns
+\[
+ h_x=\lambda_x(1,x,\ldots,x^{R-1})^{\mathsf T},
+ \qquad \lambda_x\ne0,
+\]
+as in the syndrome--secant normal form.  For \(E\subseteq D\), write
+\(V_E=\Span\{h_x:x\in E\}\).  Fix an exact agreement \(a\ge k+1\), and set
+\[
+             t=n-a,\qquad d=R-t=a-k.
+             \tag{DR0}\label{drc:eq-depth}
+\]
+In particular, \(d-1=a-k-1\) is precisely the identity locator-prefix
+depth.  For \(E\in\binom Dt\), write its error locator in ascending order as
+\[
+ Q_E(X)=\prod_{x\in E}(X-x)=\sum_{\ell=0}^{t}q_\ell(E)X^\ell,
+ \qquad q_t(E)=1.
+\]
+For \(y=(\eta_0,\ldots,\eta_{R-1})\in\F^R\), define the
+\emph{locator-recurrence boundary}
+\[
+ \mathcal A_E(y)=
+ \left(\sum_{\ell=0}^{t}q_\ell(E)\eta_{j+\ell}\right)_{0\le j<d}
+ \in\F^d.
+ \tag{DR1}\label{drc:eq-recurrence-boundary}
+\]
+If \(f(X)=\sum_{i=0}^{R-1}f_iX^i\), we use the coefficient pairing
+\(
+ \langle y,f\rangle=\sum_{i=0}^{R-1}y_if_i
+\).
+
+\begin{lemma}[Locator recurrence and a secant span]
+\label{drc:lem-locator-recurrence}
+For every \(E\in\binom Dt\) and \(y\in\F^R\),
+\[
+                         y\in V_E
+             \quad\Longleftrightarrow\quad
+                         \mathcal A_E(y)=0.
+             \tag{DR2}\label{drc:eq-recurrence-membership}
+\]
+\end{lemma}
+
+\begin{proof}
+Identify a polynomial of degree less than \(R\) with its coefficient
+vector in \(\F^R\).  Since
+\(
+ \langle h_x,f\rangle=\lambda_xf(x)
+\), every coefficient vector of a polynomial in
+\(Q_E\F[X]_{<d}\) annihilates \(V_E\).  The MDS column property gives
+\(\dim V_E=t\), while multiplication by the nonzero monic polynomial
+\(Q_E\) gives
+\(\dim Q_E\F[X]_{<d}=d=R-t\).  Consequently
+\[
+ V_E^\perp=
+ \{\operatorname{coeff}(Q_EP):P\in\F[X]_{<d}\}.
+\]
+Testing against the basis \(1,X,\ldots,X^{d-1}\) of
+\(\F[X]_{<d}\) gives exactly the \(d\) coordinates in
+\eqref{drc:eq-recurrence-boundary}.
+\end{proof}
+
+For a syndrome pair \(y_0,y_1\in\F^R\), and a support family
+\(\Omega\subseteq\binom Dt\), define its support-restricted finite bad-slope
+set by
+\[
+ Z_\Omega(y_0,y_1)=
+ \left\{\gamma\in\F:\begin{array}{l}
+   \text{there is \(E\in\Omega\) with }
+       y_0+\gamma y_1\in V_E,\\[-1mm]
+   \{y_0,y_1\}\not\subseteq V_E
+ \end{array}\right\}.
+ \tag{DR3}\label{drc:eq-restricted-rays}
+\]
+For \(E\in\Omega\), abbreviate
+\[
+              u_E=\mathcal A_E(y_0),\qquad
+              v_E=\mathcal A_E(y_1).
+\]
+Let \(\mathcal P_j(y_1)\) be the universal pivot locus on which \(j\) is
+the first nonzero coordinate of \(v_E\), and put
+\(\Omega_j=\Omega\cap\mathcal P_j(y_1)\):
+\[
+ \begin{aligned}
+ \mathcal P_j(y_1)
+   &=\{E\in\tbinom Dt:
+          v_{E,i}=0\ \text{for }0\le i<j,\quad v_{E,j}\ne0\},\\
+ \Omega_j&=\Omega\cap\mathcal P_j(y_1),
+       &&0\le j<d.
+ \end{aligned}
+ \tag{DR4}\label{drc:eq-pivot-chart}
+\]
+On this chart define the \emph{determinantal ray boundary}
+\[
+ \Delta_j(E)=
+ \bigl(v_{E,j}u_{E,\ell}-u_{E,j}v_{E,\ell}\bigr)_
+       {\substack{0\le\ell<d\\ \ell\ne j}}
+ \in\F^{d-1}.
+ \tag{DR5}\label{drc:eq-pivot-boundary}
+\]
+When \(d=1\), the target in \eqref{drc:eq-pivot-boundary} is the trivial
+group and the displayed tuple is empty.
+
+\begin{theorem}[Exact determinantal ray compiler]
+\label{drc:thm-exact-compiler}
+With the notation above, an error support \(E\in\Omega\) supplies a finite
+transverse slope if and only if
+\[
+ v_E\ne0,
+ \qquad
+ \rank\begin{pmatrix}u_E\\v_E\end{pmatrix}\le1.
+ \tag{DR6}\label{drc:eq-rank-one-condition}
+\]
+On the pivot chart \(\Omega_j\), this is equivalent to
+\(\Delta_j(E)=0\), and its unique slope is
+\(
+ \gamma_E=-u_{E,j}/v_{E,j}
+\).  Consequently
+\[
+ Z_\Omega(y_0,y_1)=
+ \bigcup_{j=0}^{d-1}
+ \left\{-\frac{u_{E,j}}{v_{E,j}}:
+       E\in\Omega_j,\ \Delta_j(E)=0\right\},
+ \tag{DR7}\label{drc:eq-exact-ray-union}
+\]
+and
+\[
+ \abs{Z_\Omega(y_0,y_1)}
+ \le
+ \sum_{j=0}^{d-1}
+ \abs{\Omega_j\cap\Delta_j^{-1}(0)}.
+ \tag{DRC}\label{drc:eq-direct-compiler}
+\]
+The construction uses \(d\le n\) pivot charts and contains no unnamed
+finite or asymptotic multiplicity.
+\end{theorem}
+
+\begin{proof}
+By \cref{drc:lem-locator-recurrence}, \(E\) supports the line parameter
+\(\gamma\) precisely when
+\[
+                         u_E+\gamma v_E=0.
+                         \tag{DR8}\label{drc:eq-vector-slope}
+\]
+If \(v_E=0\), a solution of \eqref{drc:eq-vector-slope} forces \(u_E=0\),
+so \(y_0,y_1\in V_E\) and the intersection is common rather than
+transverse.  If \(v_E\ne0\), equation
+\eqref{drc:eq-vector-slope} has a solution if and only if \(u_E\) is a
+scalar multiple of \(v_E\), which is
+\eqref{drc:eq-rank-one-condition}; the scalar, and therefore the finite
+slope, is unique.  The charts \(\Omega_j\) partition the locus
+\(v_E\ne0\).  On \(\Omega_j\), vanishing of all \(2\)-by-\(2\) minors
+using the pivot column \(j\) is equivalent to proportionality, and the
+proportionality factor is \(-u_{E,j}/v_{E,j}\).  This proves
+\eqref{drc:eq-exact-ray-union}.  Taking the cardinality of a union and then
+forgetting the slope projection gives \eqref{drc:eq-direct-compiler}.
+\end{proof}
+
+\begin{proposition}[Exact slope-incidence linearization]
+\label{drc:prop-exact-slope-linearization}
+With the notation of \cref{drc:thm-exact-compiler}, put
+\[
+ \Ical_\Omega=
+ \{(\gamma,E)\in\F\times\Omega:
+                 u_E+\gamma v_E=0,\ v_E\ne0\}.
+ \tag{DRC1}\label{drc:eq-slope-incidence}
+\]
+Projection \(\Ical_\Omega\to\Omega\) is injective, its slope projection
+is \(Z_\Omega(y_0,y_1)\), and
+\[
+ \abs{Z_\Omega(y_0,y_1)}
+ \le\abs{\Ical_\Omega}
+ =\sum_{\gamma\in\F}
+   \abs{\{E\in\Omega:u_E+\gamma v_E=0,\ v_E\ne0\}}. \tag{DRC2}
+\label{drc:eq-slope-sum}
+\]
+Thus a fixed-slope zero-fiber estimate must be aggregated over all slopes.
+If every fixed-slope zero fiber were bounded by \(\abs\Omega/q^d\),
+summing over the \(q\) slopes would give \(\abs\Omega/q^{d-1}\), not
+\(\abs\Omega/q^d\).
+\end{proposition}
+
+\begin{proof}
+For \(v_E\ne0\), the vector equation determines at most one
+\(\gamma\), proving injectivity.  The exact determinantal compiler says
+that its slope image is precisely the transverse bad-slope set.  Counting
+the incidence first by \(E\) and then by \(\gamma\) gives
+\eqref{drc:eq-slope-sum}; the final scale is the corresponding uniform
+fiber calculation.
+\end{proof}
+
+\begin{proposition}[The recurrence boundary is not pointwise additive]
+\label{drc:prop-recurrence-nonadditive}
+The exact proportionality condition above does not, by itself, turn the
+locator-recurrence boundary into a subset-sum map.  Already for
+\(E=\{x,y\}\), one coordinate of \(\mathcal A_E(\eta)\) is
+\[
+ F(x,y)=\eta_jxy-\eta_{j+1}(x+y)+\eta_{j+2}.       \tag{DRC3}
+\label{drc:eq-mixed-boundary}
+\]
+If \(\eta_j\ne0\), this function cannot be written as
+\(c+g(x)+g(y)\) whenever the four admissible two-sets
+\(\{x,y\},\{x',y\},\{x,y'\},\{x',y'\}\) lie in the chart and
+\((x-x')(y-y')\ne0\).
+Consequently, a proposed Fourier reduction to additive maps
+\(E\mapsto\sum_{t\in E}g_\gamma(t)\) requires a separate coordinate
+theorem; it is not a consequence of slope linearization.
+\end{proposition}
+
+\begin{proof}
+For a two-set,
+\(Q_E(X)=X^2-(x+y)X+xy\), which gives
+\eqref{drc:eq-mixed-boundary}.  Its mixed difference is
+\[
+ F(x,y)-F(x',y)-F(x,y')+F(x',y')
+   =\eta_j(x-x')(y-y').
+\]
+Every function \(c+g(x)+g(y)\) has zero mixed difference, proving the
+claim whenever the displayed product is nonzero.
+\end{proof}
+
+The maps in \eqref{drc:eq-pivot-boundary} are explicit quadratic maps in
+the locator coefficients.  They depend on the received syndrome pair, as
+they must in a worst-line theorem, but their number and degree are literal.
+The next corollary shows how they replace the abstract ray interface.
+
+
+\begin{theorem}[Fixed-core determinacy ray compiler]
+\label{thm:fixed-core-determinacy-ray}
+Let \(C_0\subseteq D\) have size \(c\le k\), let \(a\ge k+1\), and
+fix a received line \(r=(r_0,r_1)\).  Suppose that for every
+\(\gamma\) in a set \(Z\) of distinct finite MCA-bad slopes we have
+chosen an exact-\(a\) noncommon witness
+\((\gamma,S_\gamma,h_\gamma)\) with \(C_0\subseteq S_\gamma\).  Then
+\[
+             \abs Z\le \binom{n-c}{k-c+1}.          \tag{RC$_{\rm core}$}
+\]
+In particular, a fixed-core cell with \(k-c=o(n)\) has a direct
+subexponential ray payment.  This statement is uniform in the received
+line and valid in every characteristic.
+\end{theorem}
+
+\begin{proof}
+Put \(d=k-c\), let
+\(Q_{C_0}(X)=\prod_{x\in C_0}(X-x)\), and choose
+\(g_0,g_1\in\F[X]_{<k}\) interpolating \(r_0,r_1\), respectively, on
+\(C_0\).  Write \(e_i=r_i-\operatorname{ev}_D(g_i)\).  Since
+\(h_\gamma-g_0-\gamma g_1\) vanishes on \(C_0\), there is a unique
+\(P_\gamma\in\F[X]_{<d}\) such that
+\[
+ h_\gamma=g_0+\gamma g_1+Q_{C_0}P_\gamma .
+\]
+For \(x\in D\setminus C_0\), the witness equation is
+\[
+ e_0(x)+\gamma e_1(x)-Q_{C_0}(x)P_\gamma(x)=0.     \tag{*}
+\]
+Homogenize the parameters as
+\([z:\gamma:p_0:\cdots:p_{d-1}]\in\Pj^{d+1}\), and let the row
+indexed by \(x\in D\setminus C_0\) be the linear functional
+\[
+ z e_0(x)+\gamma e_1(x)
+   -Q_{C_0}(x)\sum_{j=0}^{d-1}p_jx^j.
+\]
+The rows indexed by \(S_\gamma\setminus C_0\) have rank exactly
+\(d+1\).  Indeed, the displayed witness parameter is a nonzero kernel
+vector, so the rank is at most \(d+1\).  If the rank were at most \(d\),
+the kernel would contain an independent vector.  Subtracting a multiple
+of the witness vector gives a nonzero kernel vector with \(z=0\).  Its
+\(\gamma\)-coordinate cannot vanish: otherwise a nonzero polynomial of
+degree less than \(d\) would vanish at all
+\(a-c\ge d+1\) points of \(S_\gamma\setminus C_0\).  Adding a nonzero
+multiple of this kernel vector to the witness vector therefore produces a
+second finite slope explained on the same support.  By fixed-support slope
+uniqueness that support would be common, contrary to the witness
+hypothesis.
+
+Choose, in a fixed order, the first \((d+1)\)-subset
+\(T_\gamma\subseteq S_\gamma\setminus C_0\) on which the rows have rank
+\(d+1\).  Their common projective kernel is the single witness parameter,
+so \(T_\gamma\) determines \(\gamma\).  Hence
+\(\gamma\mapsto T_\gamma\) is injective into
+\(\binom{D\setminus C_0}{d+1}\), proving the bound.  If
+\(d=o(n)\), then
+\(\log\binom{n-c}{d+1}=o(n)\).
+\end{proof}
+
+\begin{remark}[Cores are internal unless their census is small]
+The theorem pays one fixed core.  It does not permit an atlas to use every
+positive-density subset \(C_0\) as a separate profile: that census can be
+exponential.  A complete atlas either routes only an algebraically
+specified subexponential family of cores or keeps the actual core internal
+to a coarse intersection-size profile.
+\end{remark}
+
+\subsection{Sharpness of support-only ray bounds}
+\begin{theorem}[Aperiodic ray obstruction below the profile frontier]
+\label{thm:aperiodic-ray-obstruction}
+There is a sequence of smooth multiplicative rows
+\[
+ D_n=\B_n^\times\subseteq\F_n^\times,
+ \qquad \log\abs{\B_n}=O(\log n)=o(n),
+\]
+in characteristic two, with rates tending to \(1/2\), and agreements
+\(m_n=k_n+O(n/\log n)\), for which one received line has
+\(2^{\Omega(n)}\) distinct finite MCA-bad slopes.  Every threshold-
+\(m_n\) witness support of that line has trivial multiplicative
+stabilizer, and after enlarging \(\F_n\) with only
+\(\log\abs{\F_n}=O(n)\), the bad slopes and exact-agreement supports are
+in bijection.  Thus smoothness, quotient-aperiodicity, Q/SP support data,
+and exact agreement do not force retained-support occupancy greater than
+one.  This is a sharpness result for occupancy-based compilers, not a
+counterexample to a direct distinct-slope theorem at the correctly
+normalized profile scale.
+\end{theorem}
+
+\begin{proof}
+Let \(q_r=2^r\), put \(\B_r=\F_{q_r}\),
+\(D_r=\B_r^\times\), and \(n_r=q_r-1\).  Set
+\[
+ m_r=2^{r-1}-1=\frac{n_r-1}{2}.
+\]
+Fix \(0<\eta<\log2\), take
+\(w_r=\floor{\eta n_r/\log q_r}\), and put
+\(k_r=m_r-w_r-1\).  Then \(k_r/n_r\to1/2\) and
+\(m_r-k_r=w_r+1=O(n_r/\log n_r)\).
+
+Pigeonholing the \(m_r\)-set locators over their \(q_r^{w_r}\) prefixes
+gives a fiber \(\Fcal_r\) satisfying
+\[
+ \log\abs{\Fcal_r}
+ \ge \log\binom{n_r}{m_r}-w_r\log q_r
+ \ge(\log2-\eta)n_r-o(n_r).
+\]
+Moreover
+\[
+ \gcd(m_r,n_r)=
+ \gcd(2^{r-1}-1,2^r-1)=2^{\gcd(r-1,r)}-1=1.
+\]
+If an \(m_r\)-support were invariant under a nontrivial subgroup of
+\(D_r\) of order \(c>1\), it would be a union of \(c\)-element orbits,
+forcing \(c\mid m_r\) and \(c\mid n_r\), a contradiction.  Thus every
+member of \(\Fcal_r\) is aperiodic.
+
+Choose a finite extension \(\F_r/\B_r\) with
+\[
+ \abs{\F_r}>n_r+k_r\binom{\abs{\Fcal_r}}2.
+\]
+Since \(\abs{\Fcal_r}\le2^{n_r}\), the least extension degree meeting
+this inequality has \(\log\abs{\F_r}=O(n_r)\).  By
+\cref{cor:exact-prefix-ray-realization}, a separating pole gives exactly
+\(\abs{\Fcal_r}=\exp(\Omega(n_r))\) distinct bad slopes, one for each
+aperiodic support, and every occupancy equals one.
+\end{proof}
+
+\begin{remark}[Scope of the aperiodic obstruction]
+The construction lies below the entropy--profile crossing: its natural
+prefix scale is itself exponential.  It therefore does not contradict a
+profile-envelope upper bound proved at the correct scale.  It does rule
+out a field-independent polynomial ray bound, division of SP by the full
+support slice without a retained multiplicity theorem, and the assertion
+that quotient-aperiodicity alone forces ray collisions.
+\end{remark}
+
+The opposite projection extreme occurs over the coefficient field itself.
+It shows that a large aperiodic prefix fiber need not supply a lower
+reserve after first-match saturation.
+
+\begin{theorem}[Aperiodic one-ray saturation]
+\label{thm:aperiodic-one-ray-saturation}
+For an integer \(\nu\ge5\), put
+\[
+ q=2^\nu,\quad D=\F_q^\times,\quad n=q-1,\quad
+ m=2^{\nu-1}-1,\quad w=\floor{n/\nu^2},\quad k=m-w-1.
+\]
+Refine the depth-\(w\) prefix by the locator constant coefficient:
+\[
+ \Psi_\nu(S)=\bigl(c_1(S),\ldots,c_w(S),c_m(S)\bigr)
+ \qquad\left(S\in\binom Dm\right).
+\]
+There are \(z\in\F_q^w\) and \(c\in\F_q^\times\) for which
+\[
+ \Gcal_{z,c}=\{S:\Psi_\nu(S)=(z,c)\},
+ \qquad
+ \abs{\Gcal_{z,c}}
+ \ge\ceil{\binom nm q^{-(w+1)}}
+ =\exp\bigl((\log2-o(1))n\bigr).                  \tag{SAT1}
+\label{eq:one-ray-large-fiber}
+\]
+Every support in \(\Gcal_{z,c}\) has trivial multiplicative stabilizer,
+but all witnesses arising from the exact prefix list project at the pole
+\(\alpha=0\) in the coefficient field \(\F_q\) to the single MCA slope \(-c\) for
+\(\RS_{\F_q}(D,k)\).
+
+More precisely, if \(\Fcal_z=\Phi_w^{-1}(z)\) and
+\(\Ccal_d=\{S\in\Fcal_z:c_m(S)=d\}\), then the nonempty
+\(\Ccal_d\), \(d\in\F_q^\times\), partition the supports of all
+exact-\(m\) witnesses of this pole line, and the witnesses supported on
+\(\Ccal_d\) have slope image exactly \(\{-d\}\).  Thus at most
+\(q-1=\exp(o(n))\) explicit saturation cells
+pay the complete line even though one cell contains exponentially many
+aperiodic supports.
+\end{theorem}
+
+\begin{proof}
+The map \(\Psi_\nu\) has at most \(q^{w+1}\) values, so pigeonholing
+proves the first inequality in \eqref{eq:one-ray-large-fiber}.  Moreover
+\[
+ \log\binom nm=n\log2-O(\log n),\qquad
+ (w+1)\log q\le(n/\nu+\nu)\log2=o(n),
+\]
+which proves its asymptotic form.  Also
+\[
+ \gcd(m,n)=\gcd(2^{\nu-1}-1,2^\nu-1)
+           =2^{\gcd(\nu-1,\nu)}-1=1.
+\]
+An invariant support would be a union of orbits of a nontrivial subgroup
+whose order divides both \(m\) and \(n\), so every \(m\)-support is
+multiplicatively aperiodic.
+
+Let \(U_z=X^m+\sum_{i=1}^wz_iX^{m-i}\) and
+\(P_S=U_z-Q_S\).  Prefix cancellation gives \(\deg P_S\le k\), and
+\(U_z-P_S=Q_S\) shows that \(P_S\) agrees with \(U_z\) exactly on \(S\).
+At the only pole of the coefficient field outside \(D\), namely zero,
+\[
+                     P_S(0)=U_z(0)-Q_S(0)=-c_m(S).
+\]
+The pole-line calculation therefore maps every \(\Ccal_d\) to \(-d\).
+Conversely, an exact-\(m\) explanation on this line gives a polynomial
+\(P=Xh+\gamma\) of degree at most \(k\) agreeing with \(U_z\) on
+\(m\) points.  The exact prefix-list bijection makes it the unique
+\(P_S=U_z-Q_S\) for some \(S\in\Fcal_z\), and then
+\(\gamma=P(0)=-c_m(S)\).  This proves coverage and the asserted
+one-slope images.
+\end{proof}
+
+\begin{remark}[Two incompatible aperiodic inferences]
+\label{rem:two-aperiodic-ray-extremes}
+\Cref{thm:aperiodic-ray-obstruction} makes a separating extension pole
+inject an exponentially large aperiodic fiber into distinct slopes, while
+\cref{thm:aperiodic-one-ray-saturation} makes a coefficient-field pole collapse
+such a refined fiber to one slope.  Aperiodicity alone therefore implies
+neither ray expansion nor ray collision.  A lower compiler needs a
+separating-pole estimate or a quantitative exclusion of earlier saturation
+cells; an upper compiler needs an actual determinant or ray-image bound.
+\end{remark}
+
+\subsection{Smooth and circle evaluation domains}\label{sec:smooth-circle-domains}
+
+This subsection records the domain geometry behind the exact quotient
+constructions.  The multiplicative and circle cases are treated simultaneously through
+uniform-fiber folding maps.  The point is not merely that such maps exist,
+but that their fibers are complete inside the evaluation domain and their
+locators have a \emph{lacunary} top part, meaning that prescribed gaps occur
+among the highest-degree coefficients.  These two facts make quotient
+families visible in the witness moduli and keep their locator prefixes
+stable under planted cores.
+
+\begin{definition}[Complete-fiber folding map and smooth multiplicative coset]
+\label{def:structured-folding}
+Let \(D\subseteq\B\) be finite.  A polynomial map
+\(\varphi:D\to Q:=\varphi(D)\) is a \emph{\(c\)-fold
+complete-fiber folding map} if every \(y\in Q\) has exactly \(c\)
+preimages in \(D\).  A support is \emph{complete at this folding scale}
+if it is a union of whole fibers, equivalently if it is
+\(\varphi^{-1}(E)\) for some \(E\subseteq Q\).  Passing from \(D\) to
+\(Q\), and from a complete support to \(E\), is the corresponding
+\emph{quotient} or \emph{folding}.
+
+A \emph{multiplicative coset} is a set \(D=\theta H\subseteq\B^\times\),
+where \(H\le\B^\times\) is a subgroup and \(\theta\in\B^\times\).
+For every divisor \(c\mid\abs H\), the restriction
+\[
+             \pi_c:D\longrightarrow D^{(c)},\qquad
+             \pi_c(x)=x^c,\qquad
+             D^{(c)}=\{x^c:x\in D\},
+\]
+is a \(c\)-fold complete-fiber folding map.  We call \(D\)
+\emph{smooth at scale \(c\)} when this power folding is among the
+quotients retained by the row, and \emph{smooth} for a family of scales
+when it is smooth at every scale in that family.  Thus the adjective
+\emph{smooth} here is an explicit uniform-fiber property, not a claim
+about nonsingularity of an algebraic variety.  The locator of a complete
+support is \(V_E(X^c)\); its nonleading terms occur only in degree gaps
+divisible by \(c\).  This controlled pattern of missing top coefficients
+is what \emph{lacunary} means in this section.
+\end{definition}
+
+\begin{definition}[Circle domain and circle code]
+\label{def:circle-domain-code}
+Let \(\B_0\) have odd characteristic and let
+\(\mathcal C/\B_0\) be the affine conic
+\(\mathcal C:x^2+y^2=1\).  A \emph{standard circle domain} is a finite
+set \(E\subseteq\mathcal C(\B_0)\).  If \(\F\supseteq\B_0\), the
+degree-\(w\) \emph{circle code} on \(E\) is
+\[
+ \mathcal C_w(\F,E)
+ =\{(f(P))_{P\in E}:
+      f\in\operatorname{im}(\F[x,y]_{\le w}
+          \to\F[x,y]/(x^2+y^2-1))\}.
+\]
+The degree is the total-degree filtration before passage to the quotient
+ring.  A \emph{circle \(x\)-domain} is instead a set of first
+coordinates obtained from the torus construction below; an RS code on
+that \(x\)-domain and a bivariate circle code are different presentations
+until a diagonal equivalence such as
+\cref{lem:circle-uniformization} has been exhibited.
+\end{definition}
+
+\begin{definition}[Norm-one torus, twin coset, and Chebyshev domain]
+\label{def:circle-twin-domain}
+Following the circle-domain geometry of \cite{HLP24}, let
+\(p\equiv3\pmod4\), choose \(i\in\F_{p^2}\) with \(i^2=-1\), and
+write
+\[
+ \UU=\ker\!\left(N_{\F_{p^2}/\F_p}:\F_{p^2}^{\times}
+                      \to\F_p^\times\right)
+     =\{u\in\F_{p^2}^{\times}:u^{p+1}=1\}.
+\]
+The algebraic kernel of the norm morphism is the
+\emph{norm-one torus}; \(\UU\) is its cyclic group of
+\(\F_p\)-rational points.  Put
+\(\chi(u)=(u+u^{-1})/2\in\F_p\).  If \(H\le\UU\) and
+\(g\in\UU\) satisfies \(g^2\notin H\), then
+\[
+ \Dcal(g,H)=gH\sqcup g^{-1}H
+\]
+is a disjoint union exchanged by \(u\mapsto u^{-1}\); it is called a
+\emph{twin coset}.  Its projected set
+\[
+             D(g,H)=\chi(\Dcal(g,H))\subseteq\F_p
+\]
+has cardinality \(\abs H\) and is the \emph{Chebyshev twin-coset
+\(x\)-domain}.
+
+For \(c\ge1\), let \(T_c\) be the Chebyshev polynomial normalized by
+\[
+       T_c\!\left(\frac{u+u^{-1}}2\right)
+       =\frac{u^c+u^{-c}}2 .
+\]
+Thus \(T_c\circ\chi=\chi\circ(u\mapsto u^c)\).  Whenever
+\(c\mid\abs H\) and the two image cosets remain disjoint, the restriction
+of \(T_c\) to \(D(g,H)\) is the \emph{Chebyshev folding map}; a
+Chebyshev twin-coset domain equipped with these complete-fiber maps is
+the circle analogue of a smooth multiplicative coset.
+\end{definition}
+
+\begin{definition}[Map-smooth domain]\label{def:map-smooth}
+Let \(\B\subseteq\F\) be finite fields, let \(\varphi\in\B[X]\) have
+degree \(c\ge1\), and let \(D\subseteq\B\) have size \(n\).  The set
+\(D\) is \((\varphi,c)\)-smooth if every nonempty fiber
+\(\varphi^{-1}(y)\cap D\), \(y\in\varphi(D)\), has exactly \(c\)
+elements.  We write \(Q=\varphi(D)\) and \(N=n/c\).
+\end{definition}
+
+A multiplicative coset \(D=\theta H\subseteq\B^\times\) is \((X^a,a)\)-smooth for every divisor \(a\mid\abs H\).  The circle case uses Chebyshev maps rather than power maps; see \cref{lem:cheb-smooth}.  The following lemma is the common quotient-support construction.  It is included because it produces explicit large lists and because the same lacunarity controls their locator prefixes.
+
+\begin{lemma}[Map-smooth fiber construction]\label{lem:map-smooth-fiber}
+Let \(D\) be \((\varphi,a)\)-smooth, \(\abs D=n\), and \(C^+=\RS_\F(D,k+1)\).  Put \(\ell=\lfloor k/a\rfloor+2\) and \(A=a\ell\).  If \(\ell\le N-1\), then there is \(z\in\B\) and a word \(u_z\in\B^D\) such that \(u_z\) has at least \(\binom N\ell/\abs\B\) distinct codewords of \(C^+\) agreeing with it on at least \(A\) positions.  Moreover \(k+a+1\le A\le k+2a\), with equality \(A=k+2a\) if \(a\mid k\).
+\end{lemma}
+
+\begin{proof}
+For each \(\ell\)-subset \(E\subseteq Q\), let \(P_E(Y)=\prod_{b\in E}(Y-b)=Y^\ell-e_1(E)Y^{\ell-1}+R_E(Y)\), with \(\deg R_E\le\ell-2\).  The composed locator \(P_E(\varphi(X))\) vanishes on the union of the \(a\)-point fibers above \(E\), hence on \(A=a\ell\) points of \(D\).  Set \(z_E=-e_1(E)\) and \(c_E=-R_E(\varphi)\).  Since \(\deg c_E\le a(\ell-2)\le k\), the word \(c_E\) lies in \(C^+\), and it agrees on that fiber union with \(u_{z_E}(x)=\varphi(x)^\ell+z_E\varphi(x)^{\ell-1}\).  Among the \(\binom N\ell\) subsets \(E\), some value of \(z_E\in\B\) occurs at least \(\binom N\ell/\abs\B\) times.  If two such subsets with the same \(z\) gave the same codeword, then \(R_E(\varphi)=R_{E'}(\varphi)\), hence \(R_E=R_{E'}\) because composition with a nonconstant polynomial is injective, and then \(P_E=P_{E'}\).  Thus the codewords are distinct.  The bounds on \(A\) follow from \(\ell=\lfloor k/a\rfloor+2\).
+\end{proof}
+
+\begin{proposition}[Collision-aware lower cap for map-smooth domains]\label{prop:map-smooth-cap}
+Let \(D\) be \((\varphi,a)\)-smooth, \(n<\abs\F=q\), and let
+\(C=\RS_\F(D,k)\).  With \(\ell,A\) as in
+\cref{lem:map-smooth-fiber}, assume \(\ell\le N-1\), and put
+\[
+ L=\left\lceil\binom N\ell\abs\B^{-1}\right\rceil.
+\]
+Then for every integer threshold \(k+1\le m\le A\),
+\[
+ B_C^{\rm MCA}(m)\ge
+ \left\lceil\frac{L(q-n)}{q-n+k(L-1)}\right\rceil .
+\]
+\end{proposition}
+
+\begin{proof}
+The list in \cref{lem:map-smooth-fiber} has size at least \(L\) at
+agreement \(A\).  Apply the collision-aware pole conversion
+\cref{thm:collision-aware-pole}.  Its line pair is not simultaneously
+explained on any \(k+1\) points, so an agreement set of size \(A\) also
+witnesses badness for every threshold \(m\) in the displayed range.
+\end{proof}
+
+We now verify the complete-fiber property for the construction in
+\cref{def:circle-twin-domain}.  Thus
+\(\Dcal=gH\sqcup g^{-1}H\subseteq\UU\),
+\(D=\chi(\Dcal)\), and \(T_a(\chi(u))=\chi(u^a)\).
+
+\begin{lemma}[Chebyshev smoothness]\label{lem:cheb-smooth}
+Let \(\Dcal=gH\cup g^{-1}H\subseteq\UU\) be a twin coset, let \(D=\chi(\Dcal)\), and let \(a\mid\abs H\).  If \(g^{2a}\notin H^{(a)}=\{h^a:h\in H\}\), then \(D\) is \((T_a,a)\)-smooth.  If \(\ord(g)\nmid2\abs H\), this holds for all \(a\mid\abs H\).
+\end{lemma}
+
+\begin{proof}
+The map \(u\mapsto u^a\) has kernel of size \(a\) on \(\UU\), and that kernel lies in \(H\).  Hence it maps \(gH\) and \(g^{-1}H\) onto \(g^aH^{(a)}\) and \(g^{-a}H^{(a)}\), respectively, with fibers of size \(a\).  The hypothesis says these image cosets are disjoint, so the image is again a twin coset.  Since \(\chi\) is exactly two-to-one on both twin cosets and identifies only inverse points, the equation \(T_a(x)=y\) on \(D\) has exactly \(a\) solutions for each \(y\in T_a(D)\).  Taking \(a=\abs H\) shows that the all-scale condition is equivalent to \(g^{2\abs H}\ne1\), and the implication to every smaller divisor follows by raising to \(\abs H/a\).
+\end{proof}
+
+\begin{lemma}[Diagonal uniformization of circle codes]\label{lem:circle-uniformization}
+Assume \(\F\supseteq\F_{p^2}\).  Let
+\(E\subseteq\{(x,y)\in\F_p^2:x^2+y^2=1\}\), define
+\(\iota(x,y)=x+iy\), put \(E'=\iota(E)\subseteq\UU\), and let
+\(\Ccal_w(\F,E)\) be the circle code of
+\cref{def:circle-domain-code}.  Under the coordinate bijection \(\iota\)
+and the diagonal multiplier \(t_u=u^{-w}\), the code
+\(\Ccal_w(\F,E)\) is \(t\circ\RS_\F(E',2w+1)\).
+Consequently list sizes, ordinary correlated-agreement (CA) numerators,
+and mutual-correlated-agreement (MCA) numerators are preserved.
+\end{lemma}
+
+\begin{proof}
+The map \(u=x+iy\) identifies \(\F[x,y]/(x^2+y^2-1)\) with \(\F[u,u^{-1}]\).  The subspace of total degree at most \(w\) maps to \(u^{-w}\F[u]_{\le2w}\), and both spaces have dimension \(2w+1\).  Multiplication by the nonzero diagonal vector \((u^{-w})_{u\in E'}\) preserves coordinatewise equality and hence every agreement notion used here.  Therefore it preserves list, CA, and MCA counts exactly.
+\end{proof}
+
+The preceding uniformization is convenient when \(i\) belongs to the
+challenge field.  The following form works over every odd-characteristic
+field and will also be used for scalar extensions of odd degree.
+
+\begin{lemma}[Invariance under monomial equivalence]
+\label{lem:monomial-mca-invariance}
+Let \(C\subseteq\F^D\), let \(\pi:D'\to D\) be a bijection, and let
+\((d_x)_{x\in D'}\in(\F^\times)^{D'}\).  Define
+\[
+ C'=\{(d_xc_{\pi(x)})_{x\in D'}:c\in C\}.
+\]
+The same coordinate permutation and diagonal multiplication give a
+bijection between received pairs for \(C\) and \(C'\), preserving the
+bad-slope set on every support and for every challenge set.  In
+particular \(B_{C,\Gamma}^{\rm MCA}(a)=B_{C',\Gamma}^{\rm MCA}(a)\).
+\end{lemma}
+
+\begin{proof}
+For every word \(u\), codeword \(c\), and support \(S\), equality
+\(u|_S=c|_S\) is equivalent after the displayed coordinate change to
+equality on \(\pi^{-1}(S)\).  The transformation is \(\F\)-linear, so it
+commutes with \(r_0+\gamma r_1\).  It therefore preserves both the
+single-line-point explanation and simultaneous explanation of the pair
+on the corresponding support, slope by slope.
+\end{proof}
+
+\begin{corollary}[Generalized Reed--Solomon rows]
+\label{cor:grs-transfer}
+Every generalized Reed--Solomon code obtained from \(\RS_\F(D,k)\) by
+a coordinate permutation and nonzero column multipliers has exactly the
+same CA and MCA numerators as that RS code.  In particular all exact
+staircases and target compilers in this paper transfer verbatim.
+\end{corollary}
+
+\begin{proof}
+This is \cref{lem:monomial-mca-invariance} applied to the defining
+monomial equivalence.
+\end{proof}
+
+\begin{proposition}[Stereographic circle equivalence]
+\label{prop:stereographic-circle-equivalence}
+Let \(\F\) have odd characteristic, let
+\(E\subseteq\{(x,y)\in\F^2:x^2+y^2=1\}\) avoid \((-1,0)\), and put
+\[
+ t=\frac{y}{1+x},\qquad T=t(E).
+\]
+If \(2w+1\le\abs E\), then
+\[
+ \Ccal_w(\F,E)
+  =\diag\bigl((1+t^2)^{-w}\bigr)_{t\in T}
+       \RS_\F(T,2w+1)                             \tag{SC1}
+ \label{eq:stereographic-code-equivalence}
+\]
+after the coordinate bijection \(E\to T\).  Hence every list, CA, and
+support-wise MCA bad-slope set is preserved exactly.
+\end{proposition}
+
+\begin{proof}
+The inverse parametrization is
+\[
+ x=\frac{1-t^2}{1+t^2},\qquad
+ y=\frac{2t}{1+t^2},
+\]
+and \(1+t^2=2/(1+x)\ne0\) on \(E\).  Modulo the circle equation, the
+degree-at-most-\(w\) filtered space is
+\[
+ \{f_0(x)+yf_1(x):\deg f_0\le w,\ \deg f_1\le w-1\},
+\]
+with dimension \(2w+1\).  After substitution and multiplication by
+\((1+t^2)^w\), every such function becomes a polynomial of degree at
+most \(2w\).  The substitution is injective in the localized coordinate
+ring and the dimensions agree, so all of \(\F[t]_{\le2w}\) occurs.
+Equation \eqref{eq:stereographic-code-equivalence} follows, and
+\cref{lem:monomial-mca-invariance} proves the last assertion.
+\end{proof}
+
+\begin{corollary}[Exact circle staircase]
+\label{cor:exact-circle-staircase}
+Let \(E,w\) be as in \cref{prop:stereographic-circle-equivalence}, put
+\(n=\abs E\) and \(k=2w+1<n\).  For every nonempty
+\(\Gamma\subseteq\F\) and every \(0\le r\le n-k-1\),
+\[
+ (n-r)^2\ge n(k+r)
+ \quad\Longrightarrow\quad
+ B_{\Ccal_w(\F,E),\Gamma}^{\rm MCA}(n-r)
+      =\min\{\abs\Gamma,r+1\}.                  \tag{SC2}
+\]
+The same equality holds under the hypotheses of
+\cref{thm:literature-integral-completion}.  Consequently standard circle
+codes admitting such a projection chart have the positive-relative-radius staircase of
+\cref{cor:positive-radius-density}.
+\end{corollary}
+
+\begin{proof}
+Apply \cref{lem:monomial-mca-invariance} and then
+\cref{thm:quadratic-mean-overlap,thm:literature-integral-completion} to
+the RS presentation in
+\eqref{eq:stereographic-code-equivalence}.
+\end{proof}
+
+For a set \(\Pcal\) of primes, its \emph{relative prime density} is
+\[
+\operatorname{dens}_{\rm pr}(\Pcal)=
+ \lim_{X\to\infty}\frac{\#\{p\le X:p\in\Pcal\}}{\pi(X)},
+\]
+when the limit exists.  The prime number theorem in arithmetic
+progressions gives density \(1/\varphi(M)\) to every reduced residue
+class modulo \(M\) \cite{Davenport}.
+We write \(\overline{\operatorname{dens}}_{\rm pr}\) for the same
+expression with \(\limsup\) in place of the limit.
+
+\begin{theorem}[Fixed-length positive-density prime families]
+\label{thm:fixed-length-prime-density}
+Fix \(n=2^m\), \(m\ge2\).
+\begin{enumerate}[label=\textup{(\alph*)},leftmargin=*]
+\item The primes \(p\equiv1\pmod n\), of relative prime density
+\(1/\varphi(n)=2/n\), support the unique subgroup
+\(H\le\F_p^\times\) of order \(n\).  Every exact RS conclusion of
+\cref{thm:quadratic-mean-overlap,thm:literature-integral-completion}
+holds on \(H\) and on each of its multiplicative cosets.
+\item The primes \(p\equiv-1\pmod {2n}\), of density
+\(1/\varphi(2n)=1/n\), support a standard circle coset \(E\) of size
+\(n\).  For every odd \(k=2w+1<n\), the circle code
+\(\Ccal_w(\F_{p^2},E)\) has both exact staircases.
+\item The primes \(p\equiv-1\pmod {4n}\), of density
+\(1/\varphi(4n)=1/(2n)\), support a Chebyshev-smooth circle
+\(x\)-domain \(D\subseteq\F_p\) of size \(n\), and
+\(\RS_{\F_p}(D,k)\) has both exact staircases for every \(k<n\).
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+Part~\textup{(a)} follows from cyclicity of \(\F_p^\times\).  For
+part~\textup{(b)}, let \(\UU\le\F_{p^2}^\times\) be the norm-one group,
+of order \(p+1\), choose \(g\in\UU\) of order \(2n\), and put
+\(H=\langle g^2\rangle\).  The coset \(E'=gH\) has size \(n\), is
+stable under inversion, and avoids \(-1\).  Its inverse image under
+\(u=x+iy\) consists of \(n\) points of the circle over \(\F_p\).
+\Cref{lem:circle-uniformization} identifies its circle code with a
+diagonal translate of \(\RS_{\F_{p^2}}(E',2w+1)\).
+
+For part~\textup{(c)}, choose \(g\in\UU\) of order \(4n\), put
+\(H=\langle g^4\rangle\), and use the twin coset
+\(gH\sqcup g^{-1}H\).  Its \(\chi\)-image has size \(n\), and
+\(\ord(g)=4n\nmid2n\), so \cref{lem:cheb-smooth} proves smoothness at
+every dyadic scale.  The density assertions are the prime number theorem
+in the three displayed reduced residue classes.
+\end{proof}
+
+\begin{corollary}[Finite smooth and circle families beyond the prior window]
+\label{cor:circle-32-family}
+Let \(n=32,k=15,r=6\).  For every prime
+\(p\equiv1\pmod {32}\), let \(H\le\F_p^\times\) have order \(32\)
+and put \(C_p^+=\RS_{\F_p}(H,15)\).  For every prime
+\(p\equiv-1\pmod {64}\), construct the circle coset \(E\) of
+\cref{thm:fixed-length-prime-density}\textup{(b)} and put
+\(C_p^-=\Ccal_7(\F_{p^2},E)\).  Then
+\[
+ B_{C_p^+}^{\rm MCA}(26)=B_{C_p^-}^{\rm MCA}(26)=7. \tag{SC3}
+\]
+At targets \(6/p\) and \(6/p^2\), respectively, both complete safe
+sets are \([0,3/16)\), with unsafe endpoint.  The two supporting prime
+sets have relative densities \(1/16\) and \(1/32\).
+\end{corollary}
+
+\begin{proof}
+Here \(R=17\) and
+\[
+ (n-r)^2=26^2=676>672=32(15+6).
+\]
+Thus \cref{thm:quadratic-mean-overlap,cor:exact-circle-staircase} give
+the numerator seven for the smooth and circle rows.  Radius five is in
+the deep range and has numerator six; the tangent floor at radius six and
+monotonicity give the stated safe sets.  This example lies
+beyond the elementary one-third range because \(3r=18>R\).  It is not
+certified by the specialized BCHKS estimate
+\eqref{eq:bchks-specialized}, whose first term is \(176/15>7\).  The respective densities
+are \(1/\varphi(32)=1/16\) and \(1/\varphi(64)=1/32\).
+\end{proof}
+
+\begin{corollary}[Concrete Mersenne-31 circle rows]
+\label{cor:mersenne-circle-rows}
+Let \(p=2^{31}-1\), the Mersenne prime used in \cite{HLP24}, and let
+\(\UU\) be its norm-one circle group.
+Choose a generator \(g\), put \(H_0=\langle g^2\rangle\), and let
+\(E\subseteq\{(x,y)\in\F_p^2:x^2+y^2=1\}\) be the circle domain
+corresponding to \(gH_0\), so \(\abs E=2^{30}\).  This domain avoids
+\((-1,0)\).  Over \(\F_{p^5}\), the circle code with
+\(w=2^{28}\) and \(k=2^{29}+1\) has, at target \(2^{-128}\),
+the exact safe set
+\[
+\left[0,\frac18-2^{-30}\right).                 \tag{SC4}
+\label{eq:mersenne-circle-safe}
+\]
+Moreover, if \(H=\langle g^4\rangle\), the Chebyshev twin-coset
+\(gH\sqcup g^{-1}H=gH_0\) has \(x\)-domain
+\(D=\chi(gH_0)\) of size \(2^{29}\), and
+\(\RS_{\F_{p^5}}(D,2^{27})\) has exact safe set
+\[
+\left[0,\frac14-2^{-29}\right).                 \tag{SC5}
+\label{eq:mersenne-x-safe}
+\]
+The first code has rate slightly above \(1/2\); the second has exact
+rate \(1/4\) but is a circle-smooth \(x\)-domain rather than a literal
+multiplicative-domain Prize row.
+\end{corollary}
+
+\begin{proof}
+The group \(\UU\) has order \(p+1=2^{31}\).  Since
+\(-1=g^{2^{30}}\in H_0\), neither \(1\) nor \(-1\) belongs to the
+disjoint coset \(gH_0\); in particular \(E\) avoids the pole
+\((-1,0)\) of the stereographic chart.  Also
+\(gH_0=gH\sqcup g^{-1}H\).  Inversion acts freely on this coset and
+\(\chi(u)=(u+u^{-1})/2\) identifies precisely the pairs
+\(\{u,u^{-1}\}\), proving \(\abs D=2^{29}\).  The relation
+\(T_a\circ\chi=\chi\circ(u\mapsto u^a)\) and
+\cref{lem:cheb-smooth} give the asserted dyadic smoothness.
+
+Binomial expansion gives
+\(B=\floor{p^5/2^{128}}=2^{27}-1\).  At radius \(B-1\), the quadratic
+margin \((n-r)^2-n(k+r)\) for the bivariate row is
+\(162129591417176068>0\), so
+\cref{cor:exact-circle-staircase} and the tangent floor give
+\eqref{eq:mersenne-circle-safe}.  Here \(p^5\equiv3\pmod4\), so
+\(i\notin\F_{p^5}\); the applicable equivalence is the stereographic
+one in \cref{prop:stereographic-circle-equivalence}, not torus
+uniformization.  For the \(x\)-domain row the same budget lies inside
+the quadratic staircase at rate \(1/4\), since its margin at radius
+\(B-1\) is \(18014401193836548>0\).  The identical target argument gives
+\eqref{eq:mersenne-x-safe}.
+\end{proof}
+
+\begin{corollary}[Every odd-characteristic extension-field tower]
+\label{cor:density-one-extension-towers}
+Fix an odd prime \(p\), put \(n_e=2^e\) and \(q_e=p^{n_e}\), and assume
+\(e\ge7\).  Then \(4n_e\mid q_e-1\).  Over \(\F_{q_e}\) there exist
+both a multiplicative subgroup RS row of length \(n_e\) and a
+Chebyshev-smooth circle \(x\)-domain row of that length.  At every
+official rate and every \(0\le r\le r_\rho^\sharp\), both satisfy
+\[
+ e_{\rm MCA}(C_e,r/n_e)=\frac{r+1}{q_e}.           \tag{SC6}
+\]
+Thus the construction exists in every odd characteristic and beats every
+fixed error target throughout every compact subinterval below half the
+minimum distance for large \(e\).
+\end{corollary}
+
+\begin{proof}
+The lifting-the-exponent identity gives
+\[
+ v_2(p^{2^e}-1)=v_2(p-1)+v_2(p+1)+e-1\ge e+2.
+\]
+Cyclicity produces the multiplicative subgroup and an element of order
+\(4n_e\).  Since \(n_e\) is even, \(q_e\equiv1\pmod4\); choose
+\(i\in\F_{q_e}\) with \(i^2=-1\).  The map
+\[
+ u\longmapsto
+ \left(\frac{u+u^{-1}}2,\frac{u-u^{-1}}{2i}\right)
+\]
+identifies \(\F_{q_e}^\times\) with the split circle over
+\(\F_{q_e}\).  If \(g\) has order \(4n_e\) and
+\(H=\langle g^4\rangle\), the twin coset
+\(gH\sqcup g^{-1}H\) projects to an \(n_e\)-point \(x\)-domain.
+The proof of \cref{lem:cheb-smooth}, which uses only cyclicity and
+\(T_a\circ\chi=\chi\circ(u\mapsto u^a)\), applies verbatim and proves
+Chebyshev smoothness at every dyadic scale.
+Apply \cref{cor:official-rate-half-staircase}.  Since
+\(q_e=p^{n_e}\), the normalized error tends to zero exponentially.
+\end{proof}
+
+\begin{proposition}[No growing positive-density prime-field family]
+\label{prop:no-growing-prime-density}
+Let \(\Pcal\) be a set of primes and assign a dyadic integer
+\(n_p\to\infty\) along \(\Pcal\).  If \(n_p\mid p-1\) for every
+\(p\in\Pcal\), or \(n_p\mid p+1\) for every \(p\in\Pcal\), then
+\(\Pcal\) has upper relative prime density zero.  If in addition
+\(p/n_p\) is bounded, there are only \(O(\log X)\) possible primes of
+the indicated form below \(X\).
+\end{proposition}
+
+\begin{proof}
+For every fixed \(E\), all sufficiently large assigned lengths are
+divisible by \(2^E\).  Hence the primes eventually lie in the single
+class \(1\pmod {2^E}\), or the single class \(-1\pmod {2^E}\), whose
+relative prime density is \(1/\varphi(2^E)=2^{1-E}\).  Letting
+\(E\to\infty\) proves the first assertion.  Under the bounded-ratio
+hypothesis, \(p\mp1=a2^e\) with \(a\) in a fixed finite set; there are
+only \(O(\log X)\) choices of \((a,e)\) below \(X\).
+\end{proof}
+
+\begin{remark}[Prize scope]
+The prime-density statements fix \(n\); their densities tend to zero as
+\(n\) grows.  The extension towers have exponential field size and soon
+leave the \(q<2^{256}\) Prize box.  Finally the target \(6/p^2\) in
+\cref{cor:circle-32-family} varies with \(p\).  None of these facts may be
+rephrased as a positive-density growing prime-field solution at the fixed
+target \(2^{-128}\).
+\end{remark}
+
+\subsection{Quotient--remainder profiles and partial occupancy}
+\label{sec:quotient-obstruction}
+
+The quotient and remainder variables can be separated exactly at the
+locator-prefix level.  This removes a spurious factor coming from summing
+over marked remainder sets, but it also exposes a genuine scaled quotient-
+coefficient-field term which prevents an unrestricted comparison with the
+identity profile.
+
+\begin{definition}[Quotient/remainder profile and field drop]
+\label{def:quotient-remainder-profile}
+Let \(\phi:D\to Q\) be a \(c\)-fold complete-fiber folding map in the
+sense of \cref{def:structured-folding}.  A
+\emph{complete-fiber-plus-remainder support} is
+\[
+                  S=\phi^{-1}(E)\sqcup R,
+\]
+where \(E\subseteq Q\) and
+\(R\subseteq D\setminus\phi^{-1}(E)\).  The set \(R\) is the
+\emph{support remainder}: it records the selected points in fibers that
+are not declared complete.  A \emph{quotient/remainder profile} fixes
+\(\phi\), its degree \(c\), the size \(r=\abs R\), the relevant
+coefficient field, and any planted remainder data, while \(E\) and the
+unfixed part of \(R\) range subject to the displayed disjointness.
+A fixed-\(R\) profile is the subprofile in which the remainder support
+itself is part of the label.  The adjective \emph{Euclidean} used below
+refers to separating the locator factor of degree \(r<c\) from the
+composed quotient locator; it does not mean that an arbitrary support
+remainder has size less than \(c\).
+
+We call \(\B_\phi\subseteq\B\) a \emph{scaled quotient coefficient
+field} when, for some \(\eta\in\B^\times\),
+\[
+                         Q=\phi(D)\subseteq\eta\B_\phi .
+\]
+When this field is recorded in a profile, it is taken minimal among the
+subfields with this property.
+Then the \(j\)-th elementary quotient coefficient lies in
+\(\eta^j\B_\phi\).  A \emph{field drop} is the use of a proper such
+subfield.  It is a \emph{positive-rate field drop} along a sequence when
+\[
+       1-\frac{\log\abs{\B_\phi}}{\log\abs\B}
+\]
+stays bounded away from zero and a positive-density number on the
+entropy scale of quotient-prefix slots is live.  A field drop changes the number of available coefficient values and is therefore recorded explicitly.
+\end{definition}
+
+\begin{definition}[Balanced quotient core]
+\label{def:balanced-quotient-core}
+A \emph{split locator} is a monic squarefree polynomial all of whose roots
+lie in the evaluation domain \(D\).
+After common locator factors, fixed quotient data, and planted remainder
+points have been removed, let \(A\) and \(B\) be two monic split
+locators of the same degree \(e\).  They form a
+\emph{depth-\(w\) balanced core} if they have the same first \(w\)
+nonleading coefficients, equivalently
+\[
+                         \deg(A-B)\le e-w-1.
+\]
+It is a \emph{balanced quotient core} when the remaining locator factors
+are pullbacks through the same folding map \(\phi\).  The word
+\emph{balanced} records equality of degree and leading normalization;
+the \emph{core} consists of the roots still allowed to move after common
+and planted factors are removed.  If the resulting projective locator
+family is one-dimensional it is a split pencil
+\(Q_0+\lambda Q_1\); in higher dimension this definition by itself
+supplies no distinct-ray bound.  The exact determinant-pivot compiler
+still applies, but its boundary maps require the analytic payment stated
+in \textup{(A6)}.
+\end{definition}
+
+For a monic polynomial
+\[
+ A(X)=X^d+a_1X^{d-1}+\cdots+a_d
+\]
+and an integer $0\le u\le d$, write
+\(\operatorname{pref}_u(A)=(a_1,\ldots,a_u)\).  Equivalently, if
+\(A^\vee(Z):=Z^dA(Z^{-1})\), then
+\(\operatorname{pref}_u(A)\) is the coefficient vector of
+\(A^\vee(Z)\bmod Z^{u+1}\), with its constant coefficient omitted.
+
+\begin{theorem}[Exact quotient--remainder prefix normal form]
+\label{thm:exact-quotient-remainder-normal-form}
+Let $\B\subseteq\F$ be finite fields, let $D\subseteq\B$ have $n$
+distinct elements, and let $\phi\in\B[X]$ be monic of degree $c\ge2$.
+Assume that the restriction
+\[
+             \phi:D\longrightarrow Q:=\phi(D)
+\]
+has complete fibers of size $c$; in particular, $N:=|Q|=n/c$.
+Fix integers $m,r$ with $0\le r<c$ and $cm+r\le n$.  For
+\[
+ E\in\binom Qm,
+ \qquad
+ R\in\binom{D\setminus\phi^{-1}(E)}r,
+\]
+put
+\[
+ \begin{split}
+ V_E(Y)&:=\prod_{y\in E}(Y-y)
+       =Y^m+\sum_{j=1}^m v_j(E)Y^{m-j},\\
+ P_R(X)&:=\prod_{x\in R}(X-x)
+       =X^r+\sum_{i=1}^r p_i(R)X^{r-i},\\
+ L_{E,R}(X)&:=P_R(X)V_E(\phi(X)).
+ \end{split}                                      \tag{QR1}\label{eq:qr-locators}
+\]
+Then $L_{E,R}$ is the monic locator of the support
+\(\phi^{-1}(E)\sqcup R\), of degree $A=cm+r$.
+
+Let $0\le w\le A$ and put $d=\lfloor w/c\rfloor$.
+
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=*]
+\item If $w\ge r$, every nonempty fiber of
+      \((E,R)\mapsto\operatorname{pref}_w(L_{E,R})\) determines $R$
+      uniquely and, after $R$ is recovered, is exactly one quotient-prefix
+      fiber.  More precisely, for every prefix value $z$ there are unique
+      data $R_z$ and $\eta_z\in\B^d$, whenever the fiber is nonempty, such
+      that
+      \[
+      \begin{split}
+       &\{(E,R):\operatorname{pref}_w(L_{E,R})=z\}\\
+       &\quad=
+       \{(E,R_z): E\in\tbinom{Q\setminus\phi(R_z)}m,
+           \ \operatorname{pref}_d(V_E)=\eta_z\}.
+      \end{split}                                  \tag{QR2}\label{eq:qr-fiber-exact}
+      \]
+      Thus no factor counting possible remainder sets occurs in a fixed
+      global prefix fiber.
+
+\item If $w<r$, then necessarily $w<c$, and the quotient set $E$ is
+      invisible to the first $w$ coefficients.  There is a fixed
+      unitriangular bijection $T_{\phi,m,w}:\B^w\to\B^w$ such that
+      \[
+          \operatorname{pref}_w(L_{E,R})
+          =T_{\phi,m,w}(\operatorname{pref}_w(P_R))                 \tag{QR3}
+      \]
+      for every admissible $(E,R)$.  Consequently, with the convention
+      \(\binom uv=0\) for $v>u$,
+      \[
+      \begin{split}
+       &\#\{(E,R):\operatorname{pref}_w(L_{E,R})=z\}\\
+       &\quad=
+       \sum_{\substack{R\in\binom Dr\\
+          \operatorname{pref}_w(P_R)=T_{\phi,m,w}^{-1}(z)}}
+          \binom{N-|\phi(R)|}{m}.
+      \end{split}                                  \tag{QR4}\label{eq:qr-shallow-remainder}
+      \]
+      Thus this case is a remainder-prefix problem, multiplied by the
+      number of quotient sets still available after $R$ is fixed.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+For a monic degree-$e$ polynomial $A$, set
+\(A^\vee(Z)=Z^eA(Z^{-1})\).  Also set
+\[
+       \Phi(Z):=Z^c\phi(Z^{-1})
+       =1+\phi_1Z+\cdots+\phi_cZ^c.
+\]
+Taking reciprocal polynomials in \eqref{eq:qr-locators} gives the exact
+formal-power-series identity
+\[
+ L_{E,R}^\vee(Z)=P_R^\vee(Z)
+ \left(
+   \Phi(Z)^m+
+   \sum_{j=1}^m v_j(E)Z^{cj}\Phi(Z)^{m-j}
+ \right).                                          \tag{QR5}\label{eq:qr-infinity}
+\]
+All factors on the right have constant coefficient one except for the
+displayed scalar coefficients $v_j(E)$.
+
+Suppose first that $w\ge r$.  Since $r<c$, no term containing a $v_j$
+occurs below degree $c$.  For $1\le i\le r$, the coefficient of $Z^i$
+on the right of \eqref{eq:qr-infinity} is
+\(p_i(R)\) plus an expression depending only on
+\(p_1(R),\ldots,p_{i-1}(R)\), on $m$, and on $\Phi$.  The first $r$
+coefficients therefore recover $p_1(R),\ldots,p_r(R)$ successively.
+They recover the monic polynomial $P_R$, hence its root set $R$, uniquely.
+
+We may now divide \(L_{E,R}^\vee\) by the unit
+\(P_R^\vee\) modulo $Z^{w+1}$.  In the remaining factor of
+\eqref{eq:qr-infinity}, the coefficient of $Z^{cj}$ is
+\(v_j(E)\) plus an expression depending only on
+\(v_1(E),\ldots,v_{j-1}(E)\), on $m$, and on $\Phi$.  Hence the
+coefficients at degrees $c,2c,\ldots,dc$ recover
+\(v_1(E),\ldots,v_d(E)\) successively.  Conversely, $P_R$ and these $d$
+coefficients determine the right side of \eqref{eq:qr-infinity} modulo
+$Z^{w+1}$, because every term containing $v_j$ with $j>d$ starts in degree
+$cj>w$.  This proves \eqref{eq:qr-fiber-exact}; admissibility of $E$ is
+exactly the condition $E\cap\phi(R)=\varnothing$.
+
+If $w<r<c$, every term involving a $v_j$ starts in degree at least
+$c>w$, so modulo $Z^{w+1}$ the bracket in \eqref{eq:qr-infinity} is the
+fixed unit $\Phi(Z)^m$.  Multiplication by this unit sends the first $w$
+coefficients of $P_R^\vee$ to the first $w$ coefficients of
+$L_{E,R}^\vee$ by a unitriangular transformation.  It is independent of
+$E$ and invertible.  For a fixed $R$, the admissible $E$ are precisely the
+$m$-subsets of $Q\setminus\phi(R)$, of which there are
+\(\binom{N-|\phi(R)|}{m}\).  Summing over the indicated remainder-prefix
+fiber proves \eqref{eq:qr-shallow-remainder}.
+\end{proof}
+
+\begin{proposition}[Complete support factorization and its limitation]
+\label{prop:complete-support-factorization}
+Under the complete-fiber hypotheses of
+\cref{thm:exact-quotient-remainder-normal-form}, every support
+\(S\subseteq D\) has the unique decomposition
+\[
+ E(S)=\{y\in Q:\phi^{-1}(y)\subseteq S\},\qquad
+ R(S)=S\setminus\phi^{-1}(E(S)),
+ \tag{QR5a}\label{eq:complete-support-factorization}
+\]
+and
+\(Q_S(X)=P_{R(S)}(X)V_{E(S)}(\phi(X))\).  The remainder meets every
+nonfull \(\phi\)-fiber in at most \(c-1\) points, but its total size may
+be \(\Theta(n)\).  The reciprocal identity \eqref{eq:qr-infinity} remains
+valid for this arbitrary remainder.  When \(\abs{R(S)}\ge c\), however,
+the quotient coefficients and the remainder coefficients begin to
+interlace at degree \(c\), so the triangular recovery theorem above does
+not give a comparison without an additional partial-occupancy atlas.
+\end{proposition}
+
+\begin{proof}
+A fiber is put into \(E(S)\) exactly when all of its points lie in \(S\);
+all other selected points form \(R(S)\).  This proves existence,
+disjointness, the occupancy bound, and uniqueness.  Multiplying the
+corresponding linear factors gives the locator identity.  The reciprocal
+calculation used for \eqref{eq:qr-infinity} is purely multiplicative and
+does not require \(\deg P_R<c\).  If \(\deg P_R\ge c\), both
+\(p_c(R)\) and \(v_1(E)\) occur in degree \(c\), which proves the stated
+limitation of the triangular separation.
+\end{proof}
+
+\begin{theorem}[Exact partial-occupancy disintegration]
+\label{thm:exact-partial-occupancy}
+Let \(D=D_0\sqcup X\), where \(\abs X=b\), and let
+\(\phi:D_0\twoheadrightarrow Q\) have exactly \(N=\abs Q\) fibers, each
+of cardinality \(c\).  For \(S\subseteq D\), put
+\[
+ X_S=S\cap X,\qquad
+ E(S)=\{y\in Q:\phi^{-1}(y)\subseteq S\},\qquad
+ R(S)=(S\cap D_0)\setminus\phi^{-1}(E(S)).
+\]
+Write
+\[
+ t=\abs{X_S},\qquad m=\abs{E(S)},\qquad
+ p=\abs{\phi(R(S))},\qquad r=\abs{R(S)}.
+\]
+Then this datum is unique, every fiber meeting \(R(S)\) contains between
+one and \(c-1\) points of \(R(S)\), and \(\abs S=t+cm+r\).  If
+\(\Omega_{t,m,p,r}\) denotes the family of supports with these four
+parameters, then
+\[
+ \abs{\Omega_{t,m,p,r}}
+ =\binom bt\binom Np\binom{N-p}m
+   [x^r]\bigl((1+x)^c-1-x^c\bigr)^p.                 \tag{PO1}
+\]
+Consequently the nonempty families \(\Omega_{t,m,p,r}\) partition
+\(\binom Da\), and their exact add-back is
+\[
+ \sum_{\substack{t,m,p,r\\t+cm+r=a}}\abs{\Omega_{t,m,p,r}}
+ =\binom{cN+b}{a}.                                   \tag{PO2}
+\]
+If \(\phi\) is the restriction of a monic degree-\(c\) polynomial and
+every fiber \(\phi^{-1}(y)\) is the complete simple root set in \(D_0\)
+of \(\phi(X)-y\), then their locators satisfy
+\[
+             Q_S=Q_{X_S}P_{R(S)}V_{E(S)}(\phi).
+\]
+\end{theorem}
+
+\begin{proof}
+Full fibers, partial fibers, and empty fibers are mutually exclusive, so
+the displayed decomposition is canonical.  Choose the \(t\) exceptional
+points, the \(p\) partial fibers, and the \(m\) full fibers in
+\(\binom bt\binom Np\binom{N-p}m\) ways.  On one partial fiber the
+weight enumerator of the allowed nonempty proper subsets is
+\((1+x)^c-1-x^c\); hence the coefficient in \textup{(PO1)} counts the
+choices having total partial weight \(r\).  Summing \textup{(PO1)} and
+extracting the coefficient of \(x^a\) gives
+\[
+ [x^a](1+x)^b
+ \left(1+x^c+\bigl((1+x)^c-1-x^c\bigr)\right)^N
+ =[x^a](1+x)^{b+cN}=\binom{b+cN}{a}.
+\]
+Multiplying the linear factors belonging to the three disjoint parts of
+the support proves the locator identity.
+\end{proof}
+
+\begin{proposition}[Partial-occupancy Fourier factorization]
+\label{prop:partial-occupancy-fourier}
+In the setting of \cref{thm:exact-partial-occupancy}, let \(G\) be a
+finite abelian group, let \(g:D\to G\), and put
+\(\Phi(S)=\sum_{x\in S}g(x)\).  For a character
+\(\chi\in\widehat G\) and a regular fiber \(F_y=\phi^{-1}(y)\), define
+\[
+ A_y(\chi)=\prod_{x\in F_y}\chi(g(x)),\qquad
+ P_y(\chi;z)=
+ \prod_{x\in F_y}\bigl(1+z\chi(g(x))\bigr)-1-z^cA_y(\chi).
+\]
+Then
+\[
+ \sum_{S\in\Omega_{t,m,p,r}}\chi(\Phi(S))
+ =[u^tv^m\zeta^pz^r]
+ \prod_{x\in X}\bigl(1+u\chi(g(x))\bigr)
+ \prod_{y\in Q}
+ \bigl(1+vA_y(\chi)+\zeta P_y(\chi;z)\bigr).          \tag{PO3}
+\]
+Consequently, for every \(s\in G\),
+\[
+ \abs{\{S\in\Omega_{t,m,p,r}:\Phi(S)=s\}}
+ =\frac1{\abs G}\sum_{\chi\in\widehat G}
+   \overline{\chi(s)}
+   \sum_{S\in\Omega_{t,m,p,r}}\chi(\Phi(S)).         \tag{PO4}
+\]
+At the trivial character, \textup{(PO3)} is exactly the support count
+\textup{(PO1)}.  Thus support add-back is unconditional, while a finite
+flatness theorem is exactly a bound for the nontrivial-character sum in
+\textup{(PO4)}.
+\end{proposition}
+
+\begin{proof}
+For a fixed regular fiber the three terms in the second product encode,
+respectively, an empty fiber, a full fiber, and a nonempty proper subset.
+The variables \(v,\zeta,z\) record the numbers \(m,p,r\), while \(u\)
+records the exceptional weight \(t\).  Multiplicativity of \(\chi\) turns
+the character of the support sum into the product of its selected-point
+characters, proving \textup{(PO3)} by coefficient extraction.
+Formula \textup{(PO4)} is character orthogonality on \(G\).
+\end{proof}
+
+\begin{remark}[Effective normalization of a partial-occupancy slice]
+Fix a nonempty slice \(\Omega_\lambda=\Omega_{t,m,p,r}\), choose
+\(S_0\in\Omega_\lambda\), and let
+\[
+ G_\lambda=
+ \left\langle\Phi(S)-\Phi(S_0):S\in\Omega_\lambda\right\rangle
+ \le G.
+\]
+The attained boundary values lie in the affine coset
+\(\Phi(S_0)+G_\lambda\), and the effective inversion is
+\[
+ \abs{\{S\in\Omega_\lambda:\Phi(S)=s\}}
+ =\frac1{\abs{G_\lambda}}
+   \sum_{\chi\in\widehat{G_\lambda}}
+   \overline{\chi(s-\Phi(S_0))}
+   \sum_{S\in\Omega_\lambda}
+      \chi(\Phi(S)-\Phi(S_0)).                       \tag{PO5}
+\]
+Every character of \(G_\lambda\) extends to the ambient finite abelian
+group, so the inner sum may be evaluated from \textup{(PO3)} after
+multiplication by the fixed factor
+\(\overline{\chi(\Phi(S_0))}\).  Different extensions agree on support
+differences.  Equivalently, ambient characters group by their restriction
+to \(G_\lambda\), and the annihilator multiplicity cancels exactly against
+the ambient denominator.  This identifies the correct Fourier denominator;
+it does not assert that the realized image fills the affine group.
+\end{remark}
+
+\begin{remark}[What partial-occupancy add-back does and does not prove]
+The exponentially many local proper-subset choices are already contained
+inside the coarse slices \(\Omega_{t,m,p,r}\); they incur no separate
+profile-count loss in \textup{(PO2)}.  The theorem does not bound the
+nontrivial Fourier terms in \textup{(PO4)}, the size of a realized
+boundary image, or the projection of a witness cell to distinct slopes.
+Those are separate analytic and ray payments.
+\end{remark}
+
+
+\subsection{Asymptotic and finite regimes}\label{sec:complementary}
+
+
+\begin{theorem}[Unconditional shallow-prefix RS--MCA exponent]
+\label{thm:unconditional-asymptotic-rs-mca}
+Let \(C_n=\RS_{\F_n}(D_n,k_n)\), where
+\(D_n\subseteq\B_n\subseteq\F_n\), \(\abs{D_n}=n\), and
+\(k_n/n\to\rho\in(0,1)\).  Let \(a_n\ge k_n+1\), put
+\(w_n=a_n-k_n-1\), and assume
+\[
+ \frac{a_n}{n}\to\alpha\in(0,1),\qquad
+ w_n\log\abs{\B_n}=o(n),                           \tag{AS1}
+\]
+\(\abs{\F_n}>n\), and, for some finite \(\phi\ge0\),
+\[
+ \frac1n\log\abs{\F_n}\to\phi,
+ \qquad
+ \frac1n\log(\abs{\F_n}-n)\to\phi.               \tag{AS2}
+\]
+For the full-field challenge,
+\[
+ \frac1n\log B_{C_n}^{\rm MCA}(a_n)
+   =\min\{h(\alpha),\phi\}+o(1),                   \tag{AS3}
+\]
+and therefore
+\[
+ \frac1n\log e_{\rm MCA}
+   \left(C_n,1-\frac{a_n}{n}\right)
+   =-\bigl(\phi-h(\alpha)\bigr)_++o(1).            \tag{AS4}
+\]
+Because \(\abs{\B_n}\ge n\), condition \textup{(AS1)} forces
+\(\alpha=\rho\).  No smoothness, Fourier estimate, or auxiliary ray
+hypothesis is assumed.
+\end{theorem}
+
+\begin{proof}
+Put \(M_n=\binom n{a_n}\) and
+\(L_n=\ceil{M_n\abs{\B_n}^{-w_n}}\).  Exact-agreement reduction and
+fixed-support slope uniqueness give the unconditional upper bound
+\[
+ B_{C_n}^{\rm MCA}(a_n)\le\min\{\abs{\F_n},M_n\}.  \tag{AS5}
+\]
+The exact locator-prefix list and collision-aware pole compiler give
+\[
+ B_{C_n}^{\rm MCA}(a_n)\ge
+ \left\lceil
+ \frac{L_n(\abs{\F_n}-n)}
+ {\abs{\F_n}-n+k_n(L_n-1)}
+ \right\rceil.                                     \tag{AS6}
+\]
+By Stirling's formula and \textup{(AS1)},
+\(\log L_n=h(\alpha)n+o(n)\).  For positive \(x,y\),
+\(xy/(x+k_ny)\ge\frac12\min\{y,x/k_n\}\); hence
+\textup{(AS2)}, \(\log k_n=o(n)\), and the ceiling show that the
+right side of \textup{(AS6)} has logarithm
+\(n\min\{h(\alpha),\phi\}+o(n)\).  The upper bound
+\textup{(AS5)} has the same exponent, proving \textup{(AS3)}; subtracting
+\(\log\abs{\F_n}\) proves \textup{(AS4)}.  Finally
+\(w_n\log n=o(n)\), so \((a_n-k_n)/n\to0\) and
+\(\alpha=\rho\).
+\end{proof}
+
+\begin{corollary}[Unconditional large-challenge RS--MCA threshold]
+\label{cor:unconditional-rs-mca-capacity}
+Under the row hypotheses of
+\cref{thm:unconditional-asymptotic-rs-mca}, let the full-field target
+satisfy \(\eps_n=\exp(-\lambda n+o(n))\) for a finite
+\(\lambda\ge0\).  If
+\[
+                         \lambda<\phi-h(\rho),      \tag{AS7}
+\]
+then, for every sufficiently large \(n\),
+\[
+ a_n^*=k_n+1,\qquad
+ \delta_n^*=1-\frac{k_n+1}{n}=1-\rho+o(1).         \tag{AS8}
+\]
+Conversely, if \(\lambda>(\phi-h(\rho))_+\), every agreement sequence
+satisfying \((a_n-k_n-1)\log\abs{\B_n}=o(n)\) is unsafe.  The critical
+boundary \(\lambda=(\phi-h(\rho))_+\) is governed by the
+exact finite constants and is not decided by exponent asymptotics.  This
+is a large scalar-extension regime.  If \(\abs{\F_n}\) is polynomial in
+\(n\), then \(\phi=0\) and \textup{(AS7)} cannot hold; the corollary does
+not settle that Proximity-Prize parameter regime.
+\end{corollary}
+
+\begin{proof}
+At \(a=k_n+1\), \textup{(AS5)} is
+\(B_{C_n}^{\rm MCA}(a)\le\binom n{k_n+1}
+=\exp(h(\rho)n+o(n))\).  Under \textup{(AS7)},
+\(\eps_n\abs{\F_n}=\exp((\phi-\lambda)n+o(n))\) has strictly larger
+exponent, and taking the integer floor does not change the comparison.
+Thus the first permitted agreement is safe
+and \textup{(AS8)} follows.  The converse follows from \textup{(AS4)}
+and the strict reverse exponential inequality.
+\end{proof}
+
+
+\begin{corollary}[Exact binary additive-domain examples]
+\label{cor:binary-additive-examples}
+Let \(k=2^{40}\), let \(D\) be any \(\F_2\)-linear subspace of the
+indicated field having the indicated size, and take the target
+\(2^{-128}\).  The four rows
+\[
+\begin{array}{c|c|c|c}
+ k/n&\F&n&\delta_{C,\mathrm{sup}}^*\\ \hline
+ 1/2&\F_{2^{166}}&2^{41}&1/8\\
+ 1/4&\F_{2^{168}}&2^{42}&1/4\\
+ 1/8&\F_{2^{169}}&2^{43}&1/4\\
+ 1/16&\F_{2^{170}}&2^{44}&1/4
+\end{array}
+\]
+have exactly the displayed supremal MCA transitions, and every endpoint
+is unsafe.
+\end{corollary}
+
+\begin{proof}
+For \(q=2^m\), the slope budget is
+\(B=\floor{q2^{-128}}=2^{m-128}\).  In the four rows this is respectively
+\(2^{38},2^{40},2^{41},2^{42}\), and
+\(3(B-1)\le n-k\).  Apply
+\cref{thm:intro-unconditional-asymptotic-deep} and translate the largest
+safe grid radius \(B-1\) to the real closed-ball supremum \(B/n\).
+\end{proof}
+
+\begin{proposition}[Exact unsafe test]\label{prop:simple-pole-lower}
+Let
+\[
+ L_n=\left\lceil
+ \binom n{a_n}\abs{\B_n}^{-(a_n-k_n-1)}
+ \right\rceil,
+ \qquad q_n=\abs{\F_n}>n.
+\]
+If
+\[
+ \left\lceil \frac{\abs{\Gamma_n}}{q_n}
+ \left\lceil
+ \frac{L_n(q_n-n)}{q_n-n+k_n(L_n-1)}
+ \right\rceil\right\rceil>B_n^*,
+ \tag{13.3}\label{eq:exact-unsafe-budget}
+\]
+then agreement \(a_n\) is unsafe at the target.  The same statement holds
+with \(L_n\) replaced by any larger identity, quotient, Chebyshev, or
+remainder-profile list proved for the dimension-\(k_n+1\) code.
+\end{proposition}
+
+\begin{proof}
+The identity list is \cref{prop:exact-prefix-list}, and
+\cref{thm:collision-aware-pole} produces a bad-slope set \(Z\subseteq\F_n\)
+of the inner-ceiling size.  Replacing a line \((r_0,r_1)\) by
+\((r_0+\delta r_1,r_1)\) translates \(Z\) by \(-\delta\).  Averaging over
+\(\delta\in\F_n\) gives \(\abs Z\abs{\Gamma_n}/q_n\) challenge slopes, so
+some translate has at least the outer-ceiling number.  The profile variants
+use the same conversion after their list sizes have been established.
+\end{proof}
+
+\begin{theorem}[Unconditional exact support-envelope bracket]
+\label{thm:unconditional-support-envelope-bracket}
+Let \(C=\RS_\F(D,k)\), let \(D\subseteq\B\subseteq\F\), put
+\(q=\abs\F>n\), fix \(\varnothing\ne\Gamma\subseteq\F\), and let
+\(B^*=\floor{\eps\abs\Gamma}\).  For \(k+1\le a\le n\), define
+\[
+ \begin{split}
+ L(a)&=\ceil{\binom na\abs\B^{-(a-k-1)}},\\
+ P(a)&=\left\lceil\frac{\abs\Gamma}{q}
+       \left\lceil\frac{L(a)(q-n)}
+       {q-n+k(L(a)-1)}\right\rceil\right\rceil,\\
+ U(a)&=\min\left\{\abs\Gamma,\binom na\right\}.
+ \end{split}                                       \tag{SB1}
+\]
+If \(a_-<a_+\) satisfy
+\[
+                         P(a_-)>B^*,\qquad U(a_+)\le B^*, \tag{SB2}
+\]
+then the global target threshold exists and
+\[
+                         a_-<a^*\le a_+.            \tag{SB3}
+\]
+If \(a_+=a_-+1\), then \(a^*=a_+\) exactly.  In particular,
+\[
+                  \binom n{k+1}\le B^*\quad\Longrightarrow\quad
+                  a^*=k+1.                         \tag{SB4}
+\]
+These are unconditional finite comparisons; \textup{(SB2)} is the
+literal target reserve and contains no asymptotic placeholder.
+\end{theorem}
+
+\begin{proof}
+The exact prefix list and pole-line construction give
+\(B_{C,\Gamma}^{\rm MCA}(a)\ge P(a)\) by
+\cref{prop:simple-pole-lower}.  The exact support atlas gives
+\(B_{C,\Gamma}^{\rm MCA}(a)\le U(a)\) by
+\cref{prop:exact-support-upper}.  Thus \(a_-\) is unsafe and \(a_+\) is
+safe; monotonicity proves \textup{(SB3)} and the adjacent conclusion.
+For \textup{(SB4)}, the first permitted agreement is already safe.
+\end{proof}
+
+
+
+\section{Conclusion}\label{sec:conclusion}
+
+The finite content of the paper is the quadratic mean-overlap theorem: a
+tangent construction supplies \(r+1\) slopes, and a line--secant overlap
+argument proves that no received line supplies more.  We are unaware of
+a prior finite MDS theorem of this form, and its small parameter pockets
+are not certified by the specialized estimate
+\eqref{eq:bchks-specialized}.  The example
+\((n,k,r)=(32,15,6)\), propagated to positive-density smooth and circle
+prime families, isolates this finite contribution.
+
+At constant relative radius the prior BCHKS CA theorem, combined with
+the below-half equality of ACFY/WHIR, already gives the stronger global
+conclusion; the exact sparse decomposition here supplies a self-contained
+and challenge-restricted route.  Making the literature implication
+integral completes the exact staircase through every compact subinterval
+below half the minimum distance and widens the target compiler
+correspondingly.  The circle statements add no hidden coding assumption:
+monomial and stereographic equivalences preserve each bad-slope set, not
+only its cardinality.
+
+The target comparison remains genuinely discrete.  If
+\(b=\floor{\eps\abs\Gamma}\), the largest safe grid point is
+\((b-1)/n\), while the real-radius safe set can be half open with unsafe
+supremum \(b/n\).  The certified Proth and Mersenne-31 rows illustrate
+this endpoint bookkeeping, but the four Proth thresholds are not claimed
+as new consequences.
+
+No theorem here reaches the unrestricted near-capacity smooth/circle
+frontier.  The fixed-length prime families have positive density only
+with length held fixed, and growing dyadic prime-field families
+necessarily have density zero.  Progress beyond half distance still
+requires new received-line or list-decoding information; no computational
+certificate, profile ledger, or unproved equidistribution statement has
+been promoted to such an input in this paper.
+
+\appendix
+\section{Verification details}\label{sec:verification-details}
+
+This appendix records the elementary coding-theoretic and integer
+calculations used above in a form that can be checked independently of the
+geometric proofs.  Some of these facts are standard, but including their
+short derivations fixes all normalization conventions and makes the four
+large finite rows reproducible from the decimal data printed in the paper.
+
+\subsection{Reed--Solomon and MDS conventions}
+
+Let \(D=\{x_1,\ldots,x_n\}\subseteq\F\) consist of distinct points and
+let \(1\le k<n\).  Evaluation on \(D\) is injective on
+\(\F[X]_{<k}\): a nonzero polynomial of degree below \(k\) cannot vanish
+at the \(n\ge k\) distinct points of \(D\).  It follows that
+\(\RS_\F(D,k)\) has dimension \(k\).  If two codewords are distinct,
+their difference is the evaluation of a nonzero polynomial of degree at
+most \(k-1\), hence has at most \(k-1\) zero coordinates and at least
+\(n-k+1\) nonzero coordinates.  Conversely, the evaluation of
+\(\prod_{i=1}^{k-1}(X-x_i)\) has exactly \(k-1\) zero coordinates.
+Thus the minimum distance is
+\[
+                         d_{\min}=n-k+1.
+\]
+This proves directly that the code is MDS.
+
+For \(x\in D\), put
+\[
+ \lambda_x=\left(\prod_{y\in D\setminus\{x\}}(x-y)\right)^{-1}.
+\]
+The Lagrange interpolation formula for a polynomial \(f\) of degree at
+most \(n-1\) shows that its leading coefficient is
+\(\sum_{x\in D}\lambda_x f(x)\).  Applying this to
+\(f(X)=X^j\), \(0\le j\le n-2\), gives
+\[
+                         \sum_{x\in D}\lambda_xx^j=0.
+\]
+Let \(R=n-k\) and let \(H\) be the \(R\)-by-\(n\) matrix whose column at
+\(x\) is
+\[
+                    h_x=\lambda_x(1,x,\ldots,x^{R-1})^{\mathsf T}.
+\]
+If \(P\in\F[X]_{<k}\), then the \(j\)-th entry of
+\(H(P(x))_{x\in D}^{\mathsf T}\) is
+\(\sum_x\lambda_xx^jP(x)=0\), because \(j+\deg P\le n-2\).
+Thus \(H\) annihilates the code.  Every \(R\)-by-\(R\) submatrix of
+\(H\) is a nonzero diagonal scaling of a Vandermonde matrix, so it is
+invertible.  Hence \(H\) has rank \(R\), its kernel has dimension \(k\),
+and its kernel is exactly \(\RS_\F(D,k)\).
+
+The same Vandermonde calculation proves that every set of at most \(R\)
+columns is linearly independent.  In particular, for
+\(E\subseteq D\), \(|E|\le R\), the space
+\(V_E=\Span\{h_x:x\in E\}\) has dimension \(|E|\).  A word \(u\) agrees
+with a codeword outside \(E\) if and only if its syndrome lies in \(V_E\).
+Indeed, writing \(u=c+e\) with \(e\) supported on \(E\) gives one
+direction.  Conversely, if
+\(Hu^{\mathsf T}=\sum_{x\in E}e_xh_x\), subtracting the word whose
+coordinates on \(E\) are \(e_x\) leaves zero syndrome and therefore a
+codeword.  This is the precise error-support form of the syndrome
+normalization used in \cref{prop:syndrome-line-normal-form}.
+
+For completeness, the fixed-support slope uniqueness used repeatedly in
+the paper is also an MDS-free linear observation.  Suppose a support
+\(S\) explains \(u_0+\gamma u_1\) and \(u_0+\gamma' u_1\) for distinct
+\(\gamma,\gamma'\).  Subtracting the two explaining codewords and dividing
+by \(\gamma-\gamma'\) explains \(u_1\) on \(S\); subtracting
+\(\gamma\) times this explanation from the first explains \(u_0\) there.
+Thus \(S\) is common.  Consequently a noncommon support contributes at
+most one finite MCA-bad slope.
+
+\begin{lemma}[Monotonicity and exact endpoint conversion]
+\label{lem:appendix-endpoint}
+For fixed \(C\) and \(\Gamma\), the integer numerator
+\(B_{C,\Gamma}^{\rm MCA}(a)\) is nonincreasing in \(a\).  Let
+\(B^*=\floor{\eps|\Gamma|}\), and suppose \(a_0\) is the first safe
+agreement, while \(a_0-1\) is unsafe.  Then the largest safe grid radius is
+\(1-a_0/n\), whereas the safe real radii form
+\[
+                 \left[0,\frac{n-a_0+1}{n}\right),
+\]
+so their supremum is one grid step larger and is not attained.
+\end{lemma}
+
+\begin{proof}
+Every witness at agreement at least \(a+1\) is also a witness at
+agreement at least \(a\), proving monotonicity.  For a real radius
+\(\delta\), the closed Hamming ball permits precisely
+\(r=\floor{\delta n}\) errors and therefore requires agreement
+\(n-r\).  The condition \(n-\floor{\delta n}\ge a_0\) is equivalent to
+\(\floor{\delta n}\le n-a_0\), or
+\(\delta<(n-a_0+1)/n\).  The largest grid point in that interval is
+\((n-a_0)/n=1-a_0/n\).
+\end{proof}
+
+This lemma explains the half-open intervals in the main theorem.  In
+particular, at target \(2^{-128}\), writing
+\(B=\floor{q/2^{128}}\), exact numerator \(B\) at error radius \(B-1\)
+and numerator at least \(B+1\) at radius \(B\) give the safe set
+\([0,B/n)\), rather than a closed interval.
+
+\subsection{The quadratic boundary}
+
+Put \(R=n-k\) and
+\[
+                  F_{n,k}(r)=r^2-n(3r-R).
+\]
+The mean-overlap hypothesis is \(F_{n,k}(r)\ge0\).  Its two roots are
+\[
+       \frac{3n\pm\sqrt{9n^2-4nR}}2
+       =\frac{3n\pm\sqrt{n(5n+4k)}}2.
+\]
+Since \(F_{n,k}(0)=nR>0\) and
+\(F'_{n,k}(r)=2r-3n<0\) for \(0\le r\le n\), the admissible initial
+interval ends at
+\[
+ r_{\rm quad}(n,k)=
+ \floor{\frac{3n-\sqrt{n(5n+4k)}}2}.
+\]
+If \(k/n\to\rho\), division by \(n\) gives
+\[
+ \frac{r_{\rm quad}(n,k)}n
+ \longrightarrow
+ \alpha_\rho=\frac{3-\sqrt{5+4\rho}}2.
+\]
+The derivative observation also shows that checking
+\(F_{n,k}(B-1)\ge0>F_{n,k}(B)\) proves the exact identity
+\(r_{\rm quad}(n,k)=B-1\); no floating-point approximation is involved.
+
+At the four challenge rates the limiting constants are, for orientation,
+\[
+\begin{array}{c|c|c}
+ \rho&\alpha_\rho&\text{decimal value}\\ \hline
+ 1/2&(3-\sqrt7)/2&0.1771243444\ldots\\
+ 1/4&(3-\sqrt6)/2&0.2752551286\ldots\\
+ 1/8&(6-\sqrt{22})/4&0.3273960600\ldots\\
+ 1/16&(6-\sqrt{21})/4&0.3543560762\ldots
+\end{array}
+\]
+The decimals are not used in any proof; the exact signs in
+\eqref{eq:quadratic-row-certificates} locate the finite boundaries.
+
+\subsection{Proth certificates and budget divisions}
+
+We spell out the certificate format.  Suppose
+\(p=u2^s+1\), where \(u\) is odd and \(u<2^s\), and suppose an integer
+\(a_0\) satisfies
+\[
+                         a_0^{(p-1)/2}\equiv-1\pmod p.
+\]
+If a prime \(\ell\) divides \(p\), then the order of \(a_0\) modulo
+\(\ell\) has exact \(2\)-part \(2^s\).  Hence \(2^s\mid\ell-1\), so
+\(\ell\ge2^s+1\).  The inequality \(u<2^s\) gives
+\(p=u2^s+1<2^{2s}+1\), and therefore \(2^s>\sqrt p-1\).
+If \(p\) were composite it would have a prime divisor at most
+\(\sqrt p\), contradicting the lower bound \(\ell\ge2^s+1>\sqrt p\).
+Thus \(p\) is prime.  This is Proth's theorem in exactly the form needed
+here.
+
+All certificate inputs are collected below.  The equality in the last
+column is a residue equality modulo the corresponding \(p\).
+\[
+\begin{array}{c|r|r|r|r|r}
+ \rho&s&u&a_0&\operatorname{bits}(p)&
+ a_0^{(p-1)/2}\bmod p\\ \hline
+ 1/2&92&26766274163673319604503&3&167&p-1\\
+ 1/4&93&41595378994516821279015&13&169&p-1\\
+ 1/8&95&24737346889219389259839&5&170&p-1\\
+ 1/16&97&13387194060291799253121&5&171&p-1
+\end{array}
+\]
+Together with the decimal values of \(p\) printed before
+\cref{prop:proth-row-check}, this table is a complete Proth certificate:
+the reader checks the single exact identity \(p-1=u2^s\), the parity and
+size of \(u\), and one modular exponentiation.  Modular exponentiation is
+an integer operation and does not rely on a probabilistic primality test.
+
+For a completely mechanical check, first compute
+\(t=a_0^u\bmod p\) by binary square-and-multiply, then square \(t\)
+exactly \(s-1\) times modulo \(p\).  The certificate accepts precisely
+when the result is \(p-1\).  The algorithm uses
+\(O(\log u+s)\) modular multiplications.  The remaining row checks use
+only division with remainder.  Writing
+\[
+                         p=B2^{128}+r_p,
+\]
+the four exact remainders are
+\[
+\begin{array}{c|r}
+ \rho&r_p\\ \hline
+ 1/2&1381541083842484386787422633985\\
+ 1/4&2921538492713497448761933168641\\
+ 1/8&2495687119199326634196634435585\\
+ 1/16&20440865928680199099134339186689
+\end{array}
+\]
+and each lies strictly between \(0\) and
+\(2^{128}=340282366920938463463374607431768211456\).  Therefore the
+displayed \(B\) is exactly \(\floor{p/2^{128}}\).
+
+Finally, \(n=2^e\) with \(e=41,42,43,44\), respectively, while
+\(s=92,93,95,97\).  Thus \(n\mid2^s\mid p-1\), and the cyclic group
+\(\F_p^\times\) contains a unique subgroup of order \(n\).  Each field
+has the printed bit length, all smaller than \(256\), and
+\(k=2^{40}\) gives the required four rates.  The exact boundary signs are
+\[
+\begin{array}{c|r|r}
+ \rho&F_{n,k}(B-1)&F_{n,k}(B)\\ \hline
+ 1/2&5154112775168&-663955886271\\
+ 1/4&7590647904465&-3182321912768\\
+ 1/8&13908181940112&-6720484728007\\
+ 1/16&19335616403905&-20973145690236
+\end{array}
+\]
+and hence \(B-1=r_{\rm quad}(n,k)\) in every row.
+
+\begin{proposition}[Independent certificate verification]
+\label{prop:appendix-certificate-verification}
+The data in \cref{tab:prize-proth-rows} define four prime fields, four
+power-of-two multiplicative subgroups of the stated lengths, and slope
+budgets \(B=\floor{p2^{-128}}\).  In every row the exact safe set is
+\([0,B/n)\), and the endpoint is unsafe.
+\end{proposition}
+
+\begin{proof}
+The Proth calculation proves primality, the divisibility calculation
+produces the subgroup, and the remainder calculation gives the target
+budget.  The two signs locate the quadratic boundary at \(B-1\).
+Apply \cref{cor:prize-window-compiler} and then
+\cref{lem:appendix-endpoint}.  Every step is an equality or inequality
+between the printed integers.
+\end{proof}
+
+\begin{thebibliography}{GGSW26}
+
+\bibitem[ABF26]{ABF26}
+G. Arnon, D. Boneh, and G. Fenzi,
+\newblock Open problems in list decoding and correlated agreement,
+\newblock IACR Cryptology ePrint Archive, Report 2026/680, 2026,
+revised July 6, 2026.
+
+\bibitem[BCHKS25]{BCHKS25}
+E. Ben-Sasson, D. Carmon, U. Hab\"ock, S. Kopparty, and S. Saraf,
+\newblock On proximity gaps for Reed--Solomon codes,
+\newblock IACR Cryptology ePrint Archive, Report 2025/2055, 2025.
+
+\bibitem[BCIKS20]{BCIKS20}
+E. Ben-Sasson, D. Carmon, Y. Ishai, S. Kopparty, and S. Saraf,
+\newblock Proximity gaps for Reed--Solomon codes,
+\newblock \emph{J. ACM} 70 (2023), no.~5, 1--57,
+\newblock doi:10.1145/3614423; conference version in
+\emph{61st IEEE Symposium on Foundations of Computer Science
+(FOCS 2020)} and extended version, IACR ePrint 2020/654.
+
+\bibitem[BCGM25]{BordageChiesaGuanManzur25}
+S. Bordage, A. Chiesa, Z. Guan, and I. Manzur,
+\newblock All polynomial generators preserve distance with mutual
+correlated agreement,
+\newblock IACR Cryptology ePrint Archive, Report 2025/2051, 2025,
+ revised May 2026; conference version in CCC 2026.
+
+\bibitem[CS25]{CS25}
+E. Crites and A. Stewart,
+\newblock On Reed--Solomon proximity gaps conjectures,
+\newblock IACR Cryptology ePrint Archive, Report 2025/2046, 2025.
+
+\bibitem[Dav00]{Davenport}
+H. Davenport,
+\newblock \emph{Multiplicative Number Theory}, third ed.,
+\newblock Graduate Texts in Mathematics 74, Springer, New York, 2000.
+
+\bibitem[GG25]{GoyalGuruswami25}
+R. Goyal and V. Guruswami,
+\newblock Optimal proximity gaps for subspace-design codes and (random)
+Reed--Solomon codes,
+\newblock IACR Cryptology ePrint Archive, Report 2025/2054, 2025,
+revised March 2026.
+
+\bibitem[GGSW26]{GoyalGuruswamiSunWootters26}
+R. Goyal, V. Guruswami, Y. Sun, and M. Wootters,
+\newblock Locality of curve-decoding and improved proximity gaps,
+\newblock arXiv:2607.08516, 2026.
+
+\bibitem[HLP24]{HLP24}
+U. Hab\"ock, D. Levit, and S. Papini,
+\newblock Circle STARKs,
+\newblock IACR Cryptology ePrint Archive, Report 2024/278, 2024.
+
+\bibitem[Kam26]{Kambire26}
+A. Kambir\'e,
+\newblock Proximity gaps conjecture fails near capacity over prime fields,
+\newblock arXiv:2604.09724, 2026.
+
+\bibitem[KKH26]{KKH26}
+D. Krachun, S. Kazanin, and U. Hab\"ock,
+\newblock Failure of proximity gaps close to capacity,
+\newblock IACR Cryptology ePrint Archive, Report 2026/782, 2026.
+
+\bibitem[ACFY25]{WHIR}
+G. Arnon, A. Chiesa, G. Fenzi, and E. Yogev,
+\newblock WHIR: Reed--Solomon proximity testing with super-fast verification,
+\newblock in \emph{EUROCRYPT 2025}, 214--243;
+IACR ePrint 2024/1586.
+
+\bibitem[Hab25]{Habock25}
+U. Hab\"ock,
+\newblock A note on mutual correlated agreement for Reed--Solomon codes,
+\newblock IACR Cryptology ePrint Archive, Report 2025/2110, 2025.
+
+\bibitem[PP26]{ProximityPrize}
+{Ethereum Foundation},
+\newblock The Proximity Prize: \$1M Reed--Solomon Challenge,
+\newblock preliminary version, 2026,
+\newblock \url{https://proximityprize.org/}, accessed July 11, 2026.
+
+\bibitem[YZ26]{YuanZhu26}
+C. Yuan and R. Zhu,
+\newblock A syndrome-space approach to proximity gaps and correlated
+agreement for random linear codes,
+\newblock arXiv:2605.07595, 2026.
+
+\end{thebibliography}
+
+\end{document}
