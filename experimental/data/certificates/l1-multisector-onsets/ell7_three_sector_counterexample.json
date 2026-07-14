@@ -1,0 +1,1079 @@
+{
+  "exceptional_state_audit": {
+    "exceptional_rows": [
+      {
+        "completeness": "If Gamma has no triple fiber then S6<=12.  Otherwise input rescaling moves one triple coset to H and root translation moves its root set to one of the five representatives, so one of these 100 projective states has the same full spectrum.",
+        "exact_S6_if_six_labels_exist": null,
+        "maximum_row": {
+          "active_support": [
+            1,
+            3,
+            5
+          ],
+          "gamma_normalized": [
+            1,
+            18,
+            1
+          ],
+          "root_triple_orbit": [
+            0,
+            1,
+            3
+          ],
+          "spectrum_histogram": [
+            [
+              2,
+              2
+            ],
+            [
+              3,
+              2
+            ]
+          ]
+        },
+        "maximum_triple_cosets": 2,
+        "p": 29,
+        "quotient_size": 4,
+        "state_rows": 100
+      },
+      {
+        "completeness": "If Gamma has no triple fiber then S6<=12.  Otherwise input rescaling moves one triple coset to H and root translation moves its root set to one of the five representatives, so one of these 100 projective states has the same full spectrum.",
+        "exact_S6_if_six_labels_exist": 14,
+        "maximum_row": {
+          "active_support": [
+            1,
+            3,
+            5
+          ],
+          "gamma_normalized": [
+            1,
+            63,
+            27
+          ],
+          "root_triple_orbit": [
+            0,
+            1,
+            4
+          ],
+          "spectrum_histogram": [
+            [
+              1,
+              4
+            ],
+            [
+              2,
+              4
+            ],
+            [
+              3,
+              2
+            ]
+          ]
+        },
+        "maximum_triple_cosets": 2,
+        "p": 71,
+        "quotient_size": 10,
+        "state_rows": 100
+      },
+      {
+        "completeness": "If Gamma has no triple fiber then S6<=12.  Otherwise input rescaling moves one triple coset to H and root translation moves its root set to one of the five representatives, so one of these 100 projective states has the same full spectrum.",
+        "exact_S6_if_six_labels_exist": 14,
+        "maximum_row": {
+          "active_support": [
+            1,
+            3,
+            5
+          ],
+          "gamma_normalized": [
+            1,
+            67,
+            75
+          ],
+          "root_triple_orbit": [
+            0,
+            1,
+            3
+          ],
+          "spectrum_histogram": [
+            [
+              1,
+              10
+            ],
+            [
+              2,
+              4
+            ],
+            [
+              3,
+              2
+            ]
+          ]
+        },
+        "maximum_triple_cosets": 2,
+        "p": 113,
+        "quotient_size": 16,
+        "state_rows": 100
+      },
+      {
+        "completeness": "If Gamma has no triple fiber then S6<=12.  Otherwise input rescaling moves one triple coset to H and root translation moves its root set to one of the five representatives, so one of these 100 projective states has the same full spectrum.",
+        "exact_S6_if_six_labels_exist": 14,
+        "maximum_row": {
+          "active_support": [
+            1,
+            3,
+            5
+          ],
+          "gamma_normalized": [
+            1,
+            128,
+            154
+          ],
+          "root_triple_orbit": [
+            0,
+            1,
+            4
+          ],
+          "spectrum_histogram": [
+            [
+              1,
+              26
+            ],
+            [
+              2,
+              6
+            ],
+            [
+              3,
+              2
+            ]
+          ]
+        },
+        "maximum_triple_cosets": 2,
+        "p": 239,
+        "quotient_size": 34,
+        "state_rows": 100
+      },
+      {
+        "completeness": "If Gamma has no triple fiber then S6<=12.  Otherwise input rescaling moves one triple coset to H and root translation moves its root set to one of the five representatives, so one of these 100 projective states has the same full spectrum.",
+        "exact_S6_if_six_labels_exist": 14,
+        "maximum_row": {
+          "active_support": [
+            1,
+            3,
+            5
+          ],
+          "gamma_normalized": [
+            1,
+            21,
+            53
+          ],
+          "root_triple_orbit": [
+            0,
+            1,
+            5
+          ],
+          "spectrum_histogram": [
+            [
+              1,
+              54
+            ],
+            [
+              2,
+              4
+            ],
+            [
+              3,
+              2
+            ]
+          ]
+        },
+        "maximum_triple_cosets": 2,
+        "p": 421,
+        "quotient_size": 60,
+        "state_rows": 100
+      },
+      {
+        "completeness": "If Gamma has no triple fiber then S6<=12.  Otherwise input rescaling moves one triple coset to H and root translation moves its root set to one of the five representatives, so one of these 100 projective states has the same full spectrum.",
+        "exact_S6_if_six_labels_exist": 14,
+        "maximum_row": {
+          "active_support": [
+            1,
+            3,
+            5
+          ],
+          "gamma_normalized": [
+            1,
+            1168,
+            1535
+          ],
+          "root_triple_orbit": [
+            0,
+            1,
+            3
+          ],
+          "spectrum_histogram": [
+            [
+              1,
+              218
+            ],
+            [
+              2,
+              6
+            ],
+            [
+              3,
+              2
+            ]
+          ]
+        },
+        "maximum_triple_cosets": 2,
+        "p": 1583,
+        "quotient_size": 226,
+        "state_rows": 100
+      }
+    ],
+    "strict_bound_controls": [
+      {
+        "completeness": "If Gamma has no triple fiber then S6<=12.  Otherwise input rescaling moves one triple coset to H and root translation moves its root set to one of the five representatives, so one of these 100 projective states has the same full spectrum.",
+        "exact_S6_if_six_labels_exist": 13,
+        "maximum_row": {
+          "active_support": [
+            1,
+            2,
+            5
+          ],
+          "gamma_normalized": [
+            1,
+            362,
+            176
+          ],
+          "root_triple_orbit": [
+            0,
+            1,
+            5
+          ],
+          "spectrum_histogram": [
+            [
+              1,
+              56
+            ],
+            [
+              2,
+              7
+            ],
+            [
+              3,
+              1
+            ]
+          ]
+        },
+        "maximum_triple_cosets": 2,
+        "p": 449,
+        "quotient_size": 64,
+        "state_rows": 100
+      },
+      {
+        "completeness": "If Gamma has no triple fiber then S6<=12.  Otherwise input rescaling moves one triple coset to H and root translation moves its root set to one of the five representatives, so one of these 100 projective states has the same full spectrum.",
+        "exact_S6_if_six_labels_exist": 13,
+        "maximum_row": {
+          "active_support": [
+            1,
+            3,
+            4
+          ],
+          "gamma_normalized": [
+            1,
+            429,
+            205
+          ],
+          "root_triple_orbit": [
+            0,
+            1,
+            2
+          ],
+          "spectrum_histogram": [
+            [
+              1,
+              59
+            ],
+            [
+              2,
+              6
+            ],
+            [
+              3,
+              1
+            ]
+          ]
+        },
+        "maximum_triple_cosets": 2,
+        "p": 463,
+        "quotient_size": 66,
+        "state_rows": 100
+      }
+    ],
+    "total_projective_state_rows": 800
+  },
+  "four_root_resultant_sieve": {
+    "admissible_bad_primes": [],
+    "conclusion": "A four-point fiber would make one normalized 4x4 minor vanish. Its characteristic must divide 1 or 8.  Every p=1 mod 7 is odd, so every exact-three-sector fiber has size at most three.",
+    "normalized_4x4_minors": 700,
+    "quotient_norm_counts": {
+      "1": 588,
+      "8": 112
+    },
+    "quotient_norm_values": [
+      1,
+      8
+    ]
+  },
+  "full_global_counterexample": {
+    "D": 0,
+    "H_stabilizer": [
+      1
+    ],
+    "active_nonzero_DFT_sectors": [
+      1,
+      3,
+      5
+    ],
+    "codeword_coefficients_ascending": [
+      26,
+      95,
+      0,
+      37,
+      0,
+      6,
+      0,
+      50,
+      99,
+      0,
+      79,
+      0,
+      80,
+      0,
+      75,
+      4,
+      0,
+      42,
+      0,
+      74,
+      0,
+      83,
+      64,
+      0,
+      107,
+      0,
+      54,
+      0,
+      64,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      61,
+      1,
+      0,
+      67,
+      0,
+      75
+    ],
+    "core_locator_coefficients_ascending": [
+      15,
+      0,
+      112,
+      0,
+      98,
+      0,
+      1
+    ],
+    "core_quotient_indices": [
+      0,
+      8,
+      4,
+      6,
+      12,
+      14
+    ],
+    "core_representatives": [
+      1,
+      7,
+      81,
+      51,
+      2,
+      18
+    ],
+    "core_retained_profile": [
+      3,
+      3,
+      2,
+      2,
+      2,
+      2
+    ],
+    "degree": 40,
+    "degree_bound": 42,
+    "ell": 7,
+    "exact_missed_core": [
+      2,
+      4,
+      7,
+      8,
+      13,
+      14,
+      18,
+      22,
+      25,
+      28,
+      30,
+      51,
+      53,
+      56,
+      57,
+      60,
+      62,
+      83,
+      85,
+      88,
+      91,
+      95,
+      99,
+      100,
+      105,
+      106,
+      109,
+      111
+    ],
+    "exact_missed_core_size": 28,
+    "g0_u_v": [
+      61,
+      0
+    ],
+    "gamma_coefficients_X1_through_X6": [
+      1,
+      0,
+      67,
+      0,
+      75,
+      0
+    ],
+    "generator": 3,
+    "kernel_quotient_degree": 26,
+    "lambda_map_rank": 6,
+    "listed": true,
+    "listing_threshold": 49,
+    "m": 6,
+    "minimal": true,
+    "minimality_negative_control": [
+      1
+    ],
+    "missed_core_traces": [
+      4,
+      4,
+      5,
+      5,
+      5,
+      5
+    ],
+    "p": 113,
+    "petal_constant_values": [
+      38,
+      72,
+      92,
+      51,
+      15
+    ],
+    "petal_quotient_indices": [
+      1,
+      2,
+      3,
+      5,
+      7
+    ],
+    "petal_representatives": [
+      3,
+      9,
+      27,
+      17,
+      40
+    ],
+    "petal_scalars": [
+      51,
+      69,
+      91,
+      20,
+      66
+    ],
+    "phi_coefficients_ascending": [
+      95,
+      99,
+      4,
+      64,
+      0,
+      1
+    ],
+    "primitive": true,
+    "retained_core": 14,
+    "single_point_deletions": [],
+    "spectrum_histogram": [
+      [
+        1,
+        10
+      ],
+      [
+        2,
+        4
+      ],
+      [
+        3,
+        2
+      ]
+    ],
+    "target_modal_levels": [
+      30,
+      83,
+      22,
+      39,
+      91,
+      74
+    ],
+    "tau": 5,
+    "top_six": 14,
+    "total_agreement": 49,
+    "w_coefficients_ascending": [
+      107,
+      0,
+      57,
+      21,
+      64
+    ],
+    "zeta": 49
+  },
+  "next_obligation": "Use common-root deficit theorem on the first D>0 exact-three-sector rows, where the new inputs are a robust partial-support live cap c and the proportional S_h threshold.  Alternatively classify exact four active sectors at ell=7; compare theorem-scale payoff before starting another finite orbit census.",
+  "nonclaims": [
+    "S_6(p)=14 is not asserted for every prime; exact state audit gives S_6=13 at p=449 and p=463.",
+    "No vacancy or classification is claimed for four, five, or six active sectors.",
+    "No extension-field theorem is claimed.",
+    "The upstream all-six-sector witnesses are compatible and distinct from the new exact-three-sector word."
+  ],
+  "operation_counts": {
+    "blind_three_coefficient_searches": 0,
+    "exceptional_and_control_projective_state_rows": 800,
+    "full_witness_point_evaluations": 77,
+    "normalized_4x4_minors": 700,
+    "triple_invariant_collision_rows": 200
+  },
+  "proof": [
+    "The normalized integer 4x4 Fourier-minor quotient norms are exactly {1,8}; hence no odd p=1 mod 7 admits a four-point fiber and every coset multiplicity is at most three.",
+    "Every triple fiber belongs to one of five translation orbits. Its active coefficient state has the invariant I=(B_s/B_r)^(t-r)/(B_t/B_r)^(s-r), constant along the global core-label monomial curve.",
+    "Exact cyclotomic norms separate invariant orbits away from six admissible primes. Characteristic-zero duplicate orbits and the kernel gcd contribute at most two triple cosets. Exact 100-state audits at every exceptional prime also give at most two.",
+    "A spectrum with cap three and at most two triple cosets has top-six at most 3+3+2+2+2+2=14.",
+    "At p=113 the explicit {1,3,5}-sector Gamma has spectrum 3^2 2^4 1^10 and a lambda-free full-petal reconstruction at equality, proving sharpness and nonvacancy."
+  ],
+  "scope": "Prime fields, ell=7, tau=5, m=6, D=0, background-free full petals, and exactly three active nonzero DFT sectors.  The uniform spectrum theorem applies to every such three-sector support.  The explicit nonvacancy statement is at F_113.",
+  "status": "COUNTEREXAMPLE_WITH_UNIFORM_THRESHOLD_THEOREM",
+  "title": "ell=7 exact-three-sector proportional threshold and counterexample",
+  "triple_invariant_sieve": {
+    "active_coefficient_norms": [
+      343,
+      2744
+    ],
+    "collision_norm_counts": {
+      "0": 2,
+      "1026755661930223127180359375": 2,
+      "12527991386282671313395042283804224": 6,
+      "14860381374496395065842367": 12,
+      "1586484177062470477654681": 6,
+      "2111665713154376275735732072312": 12,
+      "2243607800697813279050111": 12,
+      "2313975722630748029": 12,
+      "3619209488497327957942465481677": 12,
+      "43406276662336": 6,
+      "4747561509943": 4,
+      "47904312163016490221726847": 2,
+      "5106705043047168064": 12,
+      "5332088831783924445608632": 12,
+      "5425784582792": 12,
+      "558545864083284007": 4,
+      "5635894421666727058095941822703": 2,
+      "600798741609456275561536": 6,
+      "65712362363534280139543": 2,
+      "678223072849": 18,
+      "7730993719707444524137094407": 2,
+      "79792266297612001": 24,
+      "863033152274971402816": 6,
+      "928823674039137263542756628041": 6,
+      "9387480337647754305649": 6
+    },
+    "collision_norm_factorizations": {
+      "1026755661930223127180359375": {
+        "5": 6,
+        "7": 27
+      },
+      "12527991386282671313395042283804224": {
+        "2": 6,
+        "421": 2,
+        "7": 32
+      },
+      "14860381374496395065842367": {
+        "1583": 1,
+        "7": 26
+      },
+      "1586484177062470477654681": {
+        "13": 2,
+        "7": 26
+      },
+      "2111665713154376275735732072312": {
+        "2": 3,
+        "239": 1,
+        "7": 32
+      },
+      "2243607800697813279050111": {
+        "239": 1,
+        "7": 26
+      },
+      "2313975722630748029": {
+        "29": 1,
+        "7": 20
+      },
+      "3619209488497327957942465481677": {
+        "113": 1,
+        "29": 1,
+        "7": 32
+      },
+      "43406276662336": {
+        "2": 6,
+        "7": 14
+      },
+      "4747561509943": {
+        "7": 15
+      },
+      "47904312163016490221726847": {
+        "3": 6,
+        "7": 27
+      },
+      "5106705043047168064": {
+        "2": 6,
+        "7": 20
+      },
+      "5332088831783924445608632": {
+        "2": 3,
+        "7": 26,
+        "71": 1
+      },
+      "5425784582792": {
+        "2": 3,
+        "7": 14
+      },
+      "558545864083284007": {
+        "7": 21
+      },
+      "5635894421666727058095941822703": {
+        "3": 6,
+        "7": 33
+      },
+      "600798741609456275561536": {
+        "2": 6,
+        "7": 26
+      },
+      "65712362363534280139543": {
+        "7": 27
+      },
+      "678223072849": {
+        "7": 14
+      },
+      "7730993719707444524137094407": {
+        "7": 33
+      },
+      "79792266297612001": {
+        "7": 20
+      },
+      "863033152274971402816": {
+        "13": 2,
+        "2": 6,
+        "7": 20
+      },
+      "928823674039137263542756628041": {
+        "29": 2,
+        "7": 32
+      },
+      "9387480337647754305649": {
+        "7": 26
+      }
+    },
+    "distinct_collision_norms": 25,
+    "exact_duplicate_rows": [
+      {
+        "active_support": [
+          1,
+          2,
+          4
+        ],
+        "triple_orbits": [
+          1,
+          3
+        ]
+      },
+      {
+        "active_support": [
+          3,
+          5,
+          6
+        ],
+        "triple_orbits": [
+          1,
+          3
+        ]
+      }
+    ],
+    "exceptional_admissible_primes": [
+      29,
+      71,
+      113,
+      239,
+      421,
+      1583
+    ],
+    "generic_maximum_triple_cosets": 2,
+    "invariant": "I=(B_s/B_r)^(t-r)/(B_t/B_r)^(s-r).  Along core labels B_e=gamma_e b^e, I is independent of b.  Equal invariants are necessary for one Gamma to hit two root-triple orbits.",
+    "invariant_collision_rows": 200,
+    "representatives": [
+      [
+        0,
+        1,
+        2
+      ],
+      [
+        0,
+        1,
+        3
+      ],
+      [
+        0,
+        1,
+        4
+      ],
+      [
+        0,
+        1,
+        5
+      ],
+      [
+        0,
+        2,
+        4
+      ]
+    ],
+    "root_triple_translation_orbits": 5,
+    "support_rows": [
+      {
+        "active_support": [
+          1,
+          2,
+          3
+        ],
+        "collision_norm_values": [
+          678223072849,
+          4747561509943
+        ],
+        "gap_gcd": 1,
+        "generic_triple_coset_bound": 1,
+        "maximum_exact_invariant_multiplicity": 1
+      },
+      {
+        "active_support": [
+          1,
+          2,
+          4
+        ],
+        "collision_norm_values": [
+          0,
+          5106705043047168064,
+          863033152274971402816
+        ],
+        "gap_gcd": 1,
+        "generic_triple_coset_bound": 2,
+        "maximum_exact_invariant_multiplicity": 2
+      },
+      {
+        "active_support": [
+          1,
+          2,
+          5
+        ],
+        "collision_norm_values": [
+          600798741609456275561536,
+          5332088831783924445608632,
+          47904312163016490221726847
+        ],
+        "gap_gcd": 1,
+        "generic_triple_coset_bound": 1,
+        "maximum_exact_invariant_multiplicity": 1
+      },
+      {
+        "active_support": [
+          1,
+          2,
+          6
+        ],
+        "collision_norm_values": [
+          928823674039137263542756628041,
+          3619209488497327957942465481677,
+          5635894421666727058095941822703
+        ],
+        "gap_gcd": 1,
+        "generic_triple_coset_bound": 1,
+        "maximum_exact_invariant_multiplicity": 1
+      },
+      {
+        "active_support": [
+          1,
+          3,
+          4
+        ],
+        "collision_norm_values": [
+          79792266297612001,
+          558545864083284007,
+          2313975722630748029
+        ],
+        "gap_gcd": 1,
+        "generic_triple_coset_bound": 1,
+        "maximum_exact_invariant_multiplicity": 1
+      },
+      {
+        "active_support": [
+          1,
+          3,
+          5
+        ],
+        "collision_norm_values": [
+          9387480337647754305649,
+          2243607800697813279050111,
+          1026755661930223127180359375
+        ],
+        "gap_gcd": 2,
+        "generic_triple_coset_bound": 2,
+        "maximum_exact_invariant_multiplicity": 1
+      },
+      {
+        "active_support": [
+          1,
+          3,
+          6
+        ],
+        "collision_norm_values": [
+          7730993719707444524137094407,
+          2111665713154376275735732072312,
+          12527991386282671313395042283804224
+        ],
+        "gap_gcd": 1,
+        "generic_triple_coset_bound": 1,
+        "maximum_exact_invariant_multiplicity": 1
+      },
+      {
+        "active_support": [
+          1,
+          4,
+          5
+        ],
+        "collision_norm_values": [
+          65712362363534280139543,
+          1586484177062470477654681,
+          14860381374496395065842367
+        ],
+        "gap_gcd": 1,
+        "generic_triple_coset_bound": 1,
+        "maximum_exact_invariant_multiplicity": 1
+      },
+      {
+        "active_support": [
+          1,
+          4,
+          6
+        ],
+        "collision_norm_values": [
+          7730993719707444524137094407,
+          2111665713154376275735732072312,
+          12527991386282671313395042283804224
+        ],
+        "gap_gcd": 1,
+        "generic_triple_coset_bound": 1,
+        "maximum_exact_invariant_multiplicity": 1
+      },
+      {
+        "active_support": [
+          1,
+          5,
+          6
+        ],
+        "collision_norm_values": [
+          928823674039137263542756628041,
+          3619209488497327957942465481677,
+          5635894421666727058095941822703
+        ],
+        "gap_gcd": 1,
+        "generic_triple_coset_bound": 1,
+        "maximum_exact_invariant_multiplicity": 1
+      },
+      {
+        "active_support": [
+          2,
+          3,
+          4
+        ],
+        "collision_norm_values": [
+          4747561509943,
+          5425784582792,
+          43406276662336
+        ],
+        "gap_gcd": 1,
+        "generic_triple_coset_bound": 1,
+        "maximum_exact_invariant_multiplicity": 1
+      },
+      {
+        "active_support": [
+          2,
+          3,
+          5
+        ],
+        "collision_norm_values": [
+          79792266297612001,
+          558545864083284007
+        ],
+        "gap_gcd": 1,
+        "generic_triple_coset_bound": 1,
+        "maximum_exact_invariant_multiplicity": 1
+      },
+      {
+        "active_support": [
+          2,
+          3,
+          6
+        ],
+        "collision_norm_values": [
+          65712362363534280139543,
+          1586484177062470477654681,
+          14860381374496395065842367
+        ],
+        "gap_gcd": 1,
+        "generic_triple_coset_bound": 1,
+        "maximum_exact_invariant_multiplicity": 1
+      },
+      {
+        "active_support": [
+          2,
+          4,
+          5
+        ],
+        "collision_norm_values": [
+          79792266297612001,
+          558545864083284007
+        ],
+        "gap_gcd": 1,
+        "generic_triple_coset_bound": 1,
+        "maximum_exact_invariant_multiplicity": 1
+      },
+      {
+        "active_support": [
+          2,
+          4,
+          6
+        ],
+        "collision_norm_values": [
+          9387480337647754305649,
+          2243607800697813279050111,
+          1026755661930223127180359375
+        ],
+        "gap_gcd": 2,
+        "generic_triple_coset_bound": 2,
+        "maximum_exact_invariant_multiplicity": 1
+      },
+      {
+        "active_support": [
+          2,
+          5,
+          6
+        ],
+        "collision_norm_values": [
+          600798741609456275561536,
+          5332088831783924445608632,
+          47904312163016490221726847
+        ],
+        "gap_gcd": 1,
+        "generic_triple_coset_bound": 1,
+        "maximum_exact_invariant_multiplicity": 1
+      },
+      {
+        "active_support": [
+          3,
+          4,
+          5
+        ],
+        "collision_norm_values": [
+          4747561509943,
+          5425784582792,
+          43406276662336
+        ],
+        "gap_gcd": 1,
+        "generic_triple_coset_bound": 1,
+        "maximum_exact_invariant_multiplicity": 1
+      },
+      {
+        "active_support": [
+          3,
+          4,
+          6
+        ],
+        "collision_norm_values": [
+          79792266297612001,
+          558545864083284007,
+          2313975722630748029
+        ],
+        "gap_gcd": 1,
+        "generic_triple_coset_bound": 1,
+        "maximum_exact_invariant_multiplicity": 1
+      },
+      {
+        "active_support": [
+          3,
+          5,
+          6
+        ],
+        "collision_norm_values": [
+          0,
+          5106705043047168064,
+          863033152274971402816
+        ],
+        "gap_gcd": 1,
+        "generic_triple_coset_bound": 2,
+        "maximum_exact_invariant_multiplicity": 2
+      },
+      {
+        "active_support": [
+          4,
+          5,
+          6
+        ],
+        "collision_norm_values": [
+          678223072849,
+          4747561509943
+        ],
+        "gap_gcd": 1,
+        "generic_triple_coset_bound": 1,
+        "maximum_exact_invariant_multiplicity": 1
+      }
+    ]
+  },
+  "uniform_theorem": "For every prime p congruent to 1 mod 7 and every constant-free Gamma with exactly three active nonzero monomials among X,...,X^6, the sum S_6 of its six largest mu_7-coset fibers satisfies S_6<=14 whenever six quotient labels exist.  The bound is sharp globally but S_6(p) need not equal 14 for each p.",
+  "upstream": {
+    "collision": "Upstream has a compatible listed witness in the same (tau,m,ell) cell, but explicitly with all six nonconstant DFT sectors active.  It has no exact-three-sector threshold theorem and no {1,3,5}-sector witness. This certificate separates that new stratum and does not rebrand the upstream six-sector word.",
+    "sources": [
+      "experimental/notes/l1/l1_prime_ell_pv_refutation.md",
+      "experimental/notes/l1/l1_general_reconstruction_collapse.md",
+      "experimental/data/prize-dag/prize_dag.json"
+    ]
+  },
+  "verdict": "PASS_WITH_ELL7_EXACT_THREE_SECTOR_COUNTEREXAMPLE"
+}

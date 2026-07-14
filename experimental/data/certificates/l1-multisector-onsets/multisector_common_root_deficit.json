@@ -1,0 +1,651 @@
+{
+  "finite_field_audit": {
+    "configuration_count": 12,
+    "configurations": [
+      {
+        "D": 0,
+        "active_sector_count": 2,
+        "active_sectors": [
+          1,
+          2
+        ],
+        "bounds": {
+          "compiler": 9,
+          "listing": 14,
+          "nonsaturated": 7,
+          "saturated": 9,
+          "surplus_bound": -5
+        },
+        "branch": "z_equals_D",
+        "cofactor_degrees": [
+          0,
+          0
+        ],
+        "common_dead_core_labels_z": 0,
+        "ell": 7,
+        "m": 6,
+        "name": "D0_T2",
+        "p": 127,
+        "partial_sector_death_labels_in_full_quotient": 0,
+        "pass": true,
+        "proportional_spectrum": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          2,
+          2,
+          1,
+          1,
+          1,
+          2,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "proportional_top": 9,
+        "retained_core_envelope": 6,
+        "robust_observed_live_cap": 2,
+        "tau": 5
+      },
+      {
+        "D": 0,
+        "active_sector_count": 3,
+        "active_sectors": [
+          1,
+          2,
+          3
+        ],
+        "bounds": {
+          "compiler": 9,
+          "listing": 14,
+          "nonsaturated": 7,
+          "saturated": 9,
+          "surplus_bound": -5
+        },
+        "branch": "z_equals_D",
+        "cofactor_degrees": [
+          0,
+          0,
+          0
+        ],
+        "common_dead_core_labels_z": 0,
+        "ell": 7,
+        "m": 6,
+        "name": "D0_T3",
+        "p": 127,
+        "partial_sector_death_labels_in_full_quotient": 0,
+        "pass": true,
+        "proportional_spectrum": [
+          1,
+          1,
+          1,
+          2,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          2,
+          1,
+          1,
+          1,
+          2,
+          1
+        ],
+        "proportional_top": 9,
+        "retained_core_envelope": 7,
+        "robust_observed_live_cap": 2,
+        "tau": 5
+      },
+      {
+        "D": 0,
+        "active_sector_count": 4,
+        "active_sectors": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "bounds": {
+          "compiler": 7,
+          "listing": 14,
+          "nonsaturated": 7,
+          "saturated": 7,
+          "surplus_bound": -7
+        },
+        "branch": "z_equals_D",
+        "cofactor_degrees": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "common_dead_core_labels_z": 0,
+        "ell": 7,
+        "m": 6,
+        "name": "D0_T4",
+        "p": 127,
+        "partial_sector_death_labels_in_full_quotient": 0,
+        "pass": true,
+        "proportional_spectrum": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          2,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "proportional_top": 7,
+        "retained_core_envelope": 6,
+        "robust_observed_live_cap": 2,
+        "tau": 5
+      },
+      {
+        "D": 1,
+        "active_sector_count": 2,
+        "active_sectors": [
+          1,
+          2
+        ],
+        "bounds": {
+          "compiler": 15,
+          "listing": 21,
+          "nonsaturated": 12,
+          "saturated": 15,
+          "surplus_bound": -6
+        },
+        "branch": "z_equals_D",
+        "cofactor_degrees": [
+          1,
+          1
+        ],
+        "common_dead_core_labels_z": 1,
+        "ell": 7,
+        "m": 6,
+        "name": "saturated_D1_T2",
+        "p": 127,
+        "partial_sector_death_labels_in_full_quotient": 0,
+        "pass": true,
+        "proportional_spectrum": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          2,
+          2,
+          1,
+          1,
+          1,
+          2,
+          1,
+          1,
+          1,
+          1
+        ],
+        "proportional_top": 8,
+        "retained_core_envelope": 12,
+        "robust_observed_live_cap": 2,
+        "tau": 4
+      },
+      {
+        "D": 1,
+        "active_sector_count": 3,
+        "active_sectors": [
+          1,
+          2,
+          3
+        ],
+        "bounds": {
+          "compiler": 12,
+          "listing": 21,
+          "nonsaturated": 6,
+          "saturated": 12,
+          "surplus_bound": -9
+        },
+        "branch": "z_equals_D",
+        "cofactor_degrees": [
+          1,
+          1,
+          1
+        ],
+        "common_dead_core_labels_z": 1,
+        "ell": 7,
+        "m": 6,
+        "name": "saturated_D1_T3",
+        "p": 127,
+        "partial_sector_death_labels_in_full_quotient": 0,
+        "pass": true,
+        "proportional_spectrum": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "proportional_top": 5,
+        "retained_core_envelope": 12,
+        "robust_observed_live_cap": 1,
+        "tau": 4
+      },
+      {
+        "D": 1,
+        "active_sector_count": 4,
+        "active_sectors": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "bounds": {
+          "compiler": 13,
+          "listing": 21,
+          "nonsaturated": 12,
+          "saturated": 13,
+          "surplus_bound": -8
+        },
+        "branch": "z_equals_D",
+        "cofactor_degrees": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "common_dead_core_labels_z": 1,
+        "ell": 7,
+        "m": 6,
+        "name": "saturated_D1_T4",
+        "p": 127,
+        "partial_sector_death_labels_in_full_quotient": 0,
+        "pass": true,
+        "proportional_spectrum": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          2
+        ],
+        "proportional_top": 6,
+        "retained_core_envelope": 12,
+        "robust_observed_live_cap": 2,
+        "tau": 4
+      },
+      {
+        "D": 2,
+        "active_sector_count": 2,
+        "active_sectors": [
+          1,
+          2
+        ],
+        "bounds": {
+          "compiler": 21,
+          "listing": 28,
+          "nonsaturated": 17,
+          "saturated": 21,
+          "surplus_bound": -7
+        },
+        "branch": "z_equals_D",
+        "cofactor_degrees": [
+          2,
+          2
+        ],
+        "common_dead_core_labels_z": 2,
+        "ell": 7,
+        "m": 6,
+        "name": "saturated_D2_T2",
+        "p": 127,
+        "partial_sector_death_labels_in_full_quotient": 0,
+        "pass": true,
+        "proportional_spectrum": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          2,
+          2,
+          1,
+          1,
+          1,
+          2,
+          1,
+          1,
+          1,
+          1
+        ],
+        "proportional_top": 7,
+        "retained_core_envelope": 18,
+        "robust_observed_live_cap": 2,
+        "tau": 3
+      },
+      {
+        "D": 2,
+        "active_sector_count": 3,
+        "active_sectors": [
+          1,
+          2,
+          3
+        ],
+        "bounds": {
+          "compiler": 18,
+          "listing": 28,
+          "nonsaturated": 12,
+          "saturated": 18,
+          "surplus_bound": -10
+        },
+        "branch": "z_equals_D",
+        "cofactor_degrees": [
+          2,
+          2,
+          2
+        ],
+        "common_dead_core_labels_z": 2,
+        "ell": 7,
+        "m": 6,
+        "name": "saturated_D2_T3",
+        "p": 127,
+        "partial_sector_death_labels_in_full_quotient": 0,
+        "pass": true,
+        "proportional_spectrum": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "proportional_top": 4,
+        "retained_core_envelope": 18,
+        "robust_observed_live_cap": 1,
+        "tau": 3
+      },
+      {
+        "D": 2,
+        "active_sector_count": 4,
+        "active_sectors": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "bounds": {
+          "compiler": 19,
+          "listing": 28,
+          "nonsaturated": 17,
+          "saturated": 19,
+          "surplus_bound": -9
+        },
+        "branch": "z_equals_D",
+        "cofactor_degrees": [
+          2,
+          2,
+          2,
+          2
+        ],
+        "common_dead_core_labels_z": 2,
+        "ell": 7,
+        "m": 6,
+        "name": "saturated_D2_T4",
+        "p": 127,
+        "partial_sector_death_labels_in_full_quotient": 0,
+        "pass": true,
+        "proportional_spectrum": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          2
+        ],
+        "proportional_top": 5,
+        "retained_core_envelope": 18,
+        "robust_observed_live_cap": 2,
+        "tau": 3
+      },
+      {
+        "D": 1,
+        "active_sector_count": 3,
+        "active_sectors": [
+          1,
+          2,
+          3
+        ],
+        "bounds": {
+          "compiler": 42,
+          "listing": 21,
+          "nonsaturated": 12,
+          "saturated": 42,
+          "surplus_bound": 21
+        },
+        "branch": "z_less_than_D",
+        "cofactor_degrees": [
+          1,
+          1,
+          1
+        ],
+        "common_dead_core_labels_z": 0,
+        "ell": 7,
+        "m": 6,
+        "name": "nonsaturated_boundary_D1_T3",
+        "p": 127,
+        "partial_sector_death_labels_in_full_quotient": 3,
+        "pass": true,
+        "proportional_spectrum": null,
+        "proportional_top": 35,
+        "retained_core_envelope": 8,
+        "robust_observed_live_cap": 2,
+        "tau": 4
+      },
+      {
+        "D": 2,
+        "active_sector_count": 3,
+        "active_sectors": [
+          1,
+          2,
+          3
+        ],
+        "bounds": {
+          "compiler": 42,
+          "listing": 28,
+          "nonsaturated": 17,
+          "saturated": 42,
+          "surplus_bound": 14
+        },
+        "branch": "z_less_than_D",
+        "cofactor_degrees": [
+          2,
+          2,
+          2
+        ],
+        "common_dead_core_labels_z": 1,
+        "ell": 7,
+        "m": 6,
+        "name": "nonsaturated_boundary_D2_T3",
+        "p": 127,
+        "partial_sector_death_labels_in_full_quotient": 3,
+        "pass": true,
+        "proportional_spectrum": null,
+        "proportional_top": 28,
+        "retained_core_envelope": 12,
+        "robust_observed_live_cap": 2,
+        "tau": 3
+      },
+      {
+        "D": 2,
+        "active_sector_count": 4,
+        "active_sectors": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "bounds": {
+          "compiler": 42,
+          "listing": 28,
+          "nonsaturated": 17,
+          "saturated": 42,
+          "surplus_bound": 14
+        },
+        "branch": "z_less_than_D",
+        "cofactor_degrees": [
+          0,
+          2,
+          2,
+          2
+        ],
+        "common_dead_core_labels_z": 0,
+        "ell": 7,
+        "m": 6,
+        "name": "lower_degree_and_partial_death_D2_T4",
+        "p": 127,
+        "partial_sector_death_labels_in_full_quotient": 4,
+        "pass": true,
+        "proportional_spectrum": null,
+        "proportional_top": 28,
+        "retained_core_envelope": 7,
+        "robust_observed_live_cap": 2,
+        "tau": 3
+      }
+    ],
+    "ell": 7,
+    "field": "F_127",
+    "quotient_labels": 18
+  },
+  "guards": {
+    "bad_characteristic": "Sparse Fourier uncertainty is not imported.  c and S_h are external theorem/certificate inputs and may depend on the characteristic and exponent support.",
+    "lower_degree": "If any cofactor has degree d<D then z<=d<=D-1, so only the nonsaturated branch can occur; the displayed bound is safe and the exact deficit hierarchy can sharpen it.",
+    "partial_sector_death": "A label where some but not all g_a vanish is live.  Its remaining support can have a larger fiber cap than the full support, so c must be robust over all such nonzero specializations."
+  },
+  "multisector_scope": {
+    "algebraic_extension": "The compiler extends verbatim to every T>=2 because the common-root and proportionality arguments are simultaneous across all active cofactors.",
+    "conditionality": "Usefulness does not extend automatically: c must cover labels where only some sectors vanish, and S_h must be proved for the full proportional family.  No generic finite-characteristic Fourier cap c=T or c=T-1 is used.",
+    "first_high_impact_application": "Attack the first exact-three-active-sector cell at ell=7, tau=5, m=6, D=0.  common-root deficit theorem reduces it purely to the prime-uniform proportional condition S_6<14 (or an explicit proportional listing witness).  This is a 4-column Fourier-minor/resultant problem and is higher impact than extending another two-sector finite census."
+  },
+  "next_obligation": "ell=7 three-sector result should decide the ell=7,D=0 exact-three-sector proportional spectrum S_6 across all prime characteristics p congruent to 1 mod 7, using normalized 4x4 Fourier minors, integer resultants, and exact exceptional-prime rank audits.",
+  "operation_counts": {
+    "D0_boundary_rows": 118565,
+    "blind_cofactor_coefficient_searches": 0,
+    "branch_checks": 3201255,
+    "compiler_grid_rows": 829955,
+    "deficit_hierarchy_checks": 2489865,
+    "finite_configurations": 12
+  },
+  "proof": [
+    "Every common-dead core label is a root of every nonzero g_a, hence z<=min_a deg(g_a)<=D.",
+    "A dead coset retains at most ell points. On a live coset the sector-zero value merely chooses a fiber of the nonzero active-sector function, so retained points are at most c.",
+    "For fixed z, R_core<=z ell+c(m-z). Since c<=ell this increases with z. If z<=D-1, substitute z=D-1 and m=tau+1+D.",
+    "If z=D, the locator Q of those D distinct labels divides every nonzero degree-<=D cofactor. Therefore every g_a=c_a Q simultaneously, with c_a nonzero. On nondead labels Q(beta) is a common nonzero scalar and does not change fiber multiplicities, leaving tau+1 live labels controlled by S_(tau+1).",
+    "Subtract the core listing target (D+2)ell to obtain the surplus compiler and the two strict vacancy criteria."
+  ],
+  "status": "THEOREM_COMPILER",
+  "symbolic_audit": {
+    "D0_boundary_rows": 118565,
+    "branch_checks": 3201255,
+    "compiler_grid_rows": 829955,
+    "deficit_hierarchy_checks": 2489865
+  },
+  "theorem": {
+    "D0_boundary": "For D=0 all nonzero cofactors are constants, z=0, and the exact bound is R_core<=S_(tau+1).  The unified max formula remains safe but need not be sharp.",
+    "bound": "For D>=1, R_core<=max((D-1)ell+c(tau+2), D ell+S_(tau+1)).  Equivalently the listing surplus is at most max(c(tau+2)-3ell, S_(tau+1)-2ell).",
+    "deficit_hierarchy": "More exactly, if q=D-z>=1 then R_core<=(D-q)ell+c(tau+1+q), whose listing surplus is at most c(tau+1+q)-(q+2)ell.",
+    "inputs": "Let c<=ell bound every live-coset fiber for every nonzero coefficient specialization that can occur, including proper support subsets.  Let S_h bound the sum of the h largest fibers in the proportional family g_a=c_a Q.",
+    "setting": "For a background-free full-petal word with T>=2 active nonzero DFT sectors A, write their nonzero quotient cofactors g_a with deg(g_a)<=D=m-tau-1.  Let z be the number of distinct core labels common to every zero set."
+  },
+  "title": "Common-root deficit compiler for active DFT sectors",
+  "upstream": {
+    "collision": "Upstream contains the underlying sector-dead degree budget and general cofactor machinery, but no equality-frontier compiler that isolates z=D, forces simultaneous proportionality, and substitutes a proportional-spectrum top envelope. This certificate packages that deduction; it does not claim the upstream dead-coset budget as new.",
+    "sources": [
+      "experimental/notes/l1/l1_coset_mixed_vacancy_threshold.md",
+      "experimental/notes/l1/l1_full_list_quotient_proof_program.md",
+      "experimental/data/prize-dag/prize_dag.json"
+    ]
+  },
+  "vacancy_criteria": {
+    "D_positive": [
+      "c(tau+2)<3ell",
+      "S_(tau+1)<2ell"
+    ],
+    "D_zero": [
+      "S_(tau+1)<2ell"
+    ],
+    "strictness_guard": "Listing permits equality, so both relevant inequalities must be strict."
+  },
+  "verdict": "PASS_WITH_COMMON_ROOT_DEFICIT_COMPILER"
+}

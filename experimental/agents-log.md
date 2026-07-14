@@ -61,6 +61,24 @@ Keep entries concise and link to the relevant files.
   a dedicated environment; decide whether the rank-15/16 and axis-g-damping
   packets should be summarized in `asymptotic_rs_mca.md` or `grande_finale.tex`.
 
+### 2026-07-14 - Multisector onset classification
+
+- **Agent/model:** Manuel E. Rey-Álvarez Zafiria (contributor).
+- **Files added or changed:**
+  `experimental/notes/l1/l1_multisector_onset_classification.md`, seven
+  Python verifiers and two C++ exceptional-state verifiers under
+  `experimental/scripts/`, and
+  `experimental/data/certificates/l1-multisector-onsets/`.
+- **Status:** PROVED / COUNTEREXAMPLE.
+- **What is being added:** A common-root deficit theorem, exact-three-sector
+  `D>0` onset classifications for `ell=11,13,17,19`, and exact-three/four
+  counterexamples in the unique `ell=7` cell.
+- **How it is useful:** Resolves the next Fourier-support stratum after two
+  sectors and proves that the sharp onset is arithmetic and nonmonotone in
+  the orbit length.
+- **What to do next:** Classify exact-four-sector `D>0` rows beginning at
+  `ell=11`, using six-root Fourier-minor compression and proportional
+  spectrum envelopes.
 ### 2026-07-13 - Threshold, C9, LineRay, Lean, and audit PR wave
 
 - **Agent/model:** Codex integrating PRs #723--#741 from holmbuar and

@@ -1,0 +1,699 @@
+{
+  "five_root_resultant_sieve": {
+    "admissible_bad_primes": [],
+    "conclusion": "Every 5x5 evaluation determinant has norm 7^10 times one. For p=1 mod 7, p is not 7, so no determinant vanishes and no exact-four-sector Gamma has a five-point mu_7 fiber.",
+    "five_subset_AGL_orbits": 1,
+    "normalized_5x5_minors": 441,
+    "quotient_norm_counts": {
+      "1": 441
+    },
+    "representative": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "vandermonde_norm": 282475249
+  },
+  "full_global_counterexample": {
+    "D": 0,
+    "H_stabilizer": [
+      1
+    ],
+    "active_nonzero_DFT_sectors": [
+      1,
+      2,
+      3,
+      5
+    ],
+    "codeword_coefficients_ascending": [
+      60,
+      20,
+      10,
+      81,
+      0,
+      3,
+      0,
+      86,
+      86,
+      43,
+      107,
+      0,
+      51,
+      0,
+      103,
+      20,
+      10,
+      81,
+      0,
+      3,
+      0,
+      20,
+      92,
+      46,
+      17,
+      0,
+      90,
+      0,
+      14,
+      111,
+      119,
+      113,
+      0,
+      23,
+      0,
+      122,
+      1,
+      64,
+      112,
+      0,
+      70
+    ],
+    "core_locator_coefficients_ascending": [
+      59,
+      58,
+      60,
+      56,
+      7,
+      13,
+      1
+    ],
+    "core_quotient_indices": [
+      0,
+      1,
+      3,
+      8,
+      9,
+      14
+    ],
+    "core_representatives": [
+      1,
+      3,
+      27,
+      84,
+      125,
+      22
+    ],
+    "core_retained_profile": [
+      4,
+      2,
+      2,
+      2,
+      2,
+      2
+    ],
+    "degree": 40,
+    "degree_bound": 42,
+    "ell": 7,
+    "exact_missed_core": [
+      2,
+      3,
+      6,
+      11,
+      12,
+      16,
+      21,
+      24,
+      27,
+      32,
+      41,
+      42,
+      49,
+      69,
+      77,
+      82,
+      84,
+      88,
+      89,
+      95,
+      96,
+      98,
+      102,
+      108,
+      111,
+      119,
+      123,
+      126
+    ],
+    "exact_missed_core_size": 28,
+    "exact_nonzero_sector_support_from_codeword": [
+      1,
+      2,
+      3,
+      5
+    ],
+    "g0_u_v": [
+      122,
+      0
+    ],
+    "gamma_coefficients_X1_through_X6": [
+      1,
+      64,
+      112,
+      0,
+      70,
+      0
+    ],
+    "generator": 3,
+    "kernel_quotient_degree": 26,
+    "lambda_map_rank": 6,
+    "listed": true,
+    "listing_threshold": 49,
+    "m": 6,
+    "minimal": true,
+    "minimality_negative_control": [
+      1
+    ],
+    "missed_core_traces": [
+      3,
+      5,
+      5,
+      5,
+      5,
+      5
+    ],
+    "p": 127,
+    "petal_constant_values": [
+      45,
+      29,
+      42,
+      69,
+      110
+    ],
+    "petal_quotient_indices": [
+      2,
+      4,
+      5,
+      6,
+      7
+    ],
+    "petal_representatives": [
+      9,
+      81,
+      116,
+      94,
+      28
+    ],
+    "petal_scalars": [
+      102,
+      88,
+      22,
+      36,
+      69
+    ],
+    "phi_coefficients_ascending": [
+      20,
+      86,
+      20,
+      92,
+      111,
+      1
+    ],
+    "primitive": true,
+    "retained_core": 14,
+    "single_point_deletions": [],
+    "spectrum_histogram": [
+      [
+        1,
+        11
+      ],
+      [
+        2,
+        6
+      ],
+      [
+        4,
+        1
+      ]
+    ],
+    "target_modal_levels": [
+      120,
+      47,
+      113,
+      26,
+      39,
+      1
+    ],
+    "tau": 5,
+    "top_six": 14,
+    "total_agreement": 49,
+    "w_coefficients_ascending": [
+      33,
+      8,
+      76,
+      99,
+      61
+    ],
+    "zeta": 4
+  },
+  "next_obligation": "Either return to ell=17 exact-three onset with an arithmetic classifier that compresses its 23 exceptional primes, or feed the new robust cap c=4 and exact-four F_127 anchor into common-root deficit theorem to test the first D>0 rows.",
+  "nonclaims": [
+    "No uniform S_6<=14 theorem is claimed for every exact-four-sector Gamma; the norm-one argument gives only the uniform fiber cap four.",
+    "The 75-state p=127 census covers Gamma having a four-point fiber, not all exact-four coefficient vectors without one.",
+    "The ell=17 exact-three onset conjecture is deferred, not refuted.",
+    "No D>0 or extension-field classification is claimed.",
+    "The upstream all-six-sector witnesses are compatible and distinct from the new exact-four-sector word."
+  ],
+  "operation_counts": {
+    "F127_projective_four_fiber_states": 75,
+    "blind_four_coefficient_searches": 0,
+    "ell17_normalized_orbit_minors": 130,
+    "ell7_normalized_5x5_minors": 441,
+    "full_witness_point_evaluations": 77
+  },
+  "projective_four_state_census_F127": {
+    "exact_four_active_supports": 15,
+    "four_root_translation_orbits": 5,
+    "maximum_rows": [
+      {
+        "active_support": [
+          1,
+          2,
+          3,
+          5
+        ],
+        "normalized_active_gamma": [
+          1,
+          64,
+          112,
+          70
+        ],
+        "root_orbit": [
+          0,
+          1,
+          3,
+          5
+        ],
+        "spectrum_histogram": [
+          [
+            1,
+            11
+          ],
+          [
+            2,
+            6
+          ],
+          [
+            4,
+            1
+          ]
+        ]
+      },
+      {
+        "active_support": [
+          1,
+          2,
+          4,
+          6
+        ],
+        "normalized_active_gamma": [
+          1,
+          70,
+          123,
+          44
+        ],
+        "root_orbit": [
+          0,
+          1,
+          2,
+          5
+        ],
+        "spectrum_histogram": [
+          [
+            1,
+            11
+          ],
+          [
+            2,
+            6
+          ],
+          [
+            4,
+            1
+          ]
+        ]
+      },
+      {
+        "active_support": [
+          1,
+          2,
+          5,
+          6
+        ],
+        "normalized_active_gamma": [
+          1,
+          93,
+          118,
+          2
+        ],
+        "root_orbit": [
+          0,
+          1,
+          3,
+          4
+        ],
+        "spectrum_histogram": [
+          [
+            1,
+            11
+          ],
+          [
+            2,
+            6
+          ],
+          [
+            4,
+            1
+          ]
+        ]
+      },
+      {
+        "active_support": [
+          1,
+          2,
+          5,
+          6
+        ],
+        "normalized_active_gamma": [
+          1,
+          94,
+          107,
+          4
+        ],
+        "root_orbit": [
+          0,
+          1,
+          3,
+          5
+        ],
+        "spectrum_histogram": [
+          [
+            1,
+            11
+          ],
+          [
+            2,
+            6
+          ],
+          [
+            4,
+            1
+          ]
+        ]
+      },
+      {
+        "active_support": [
+          1,
+          3,
+          4,
+          6
+        ],
+        "normalized_active_gamma": [
+          1,
+          22,
+          104,
+          1
+        ],
+        "root_orbit": [
+          0,
+          1,
+          2,
+          4
+        ],
+        "spectrum_histogram": [
+          [
+            1,
+            12
+          ],
+          [
+            2,
+            5
+          ],
+          [
+            4,
+            1
+          ]
+        ]
+      },
+      {
+        "active_support": [
+          1,
+          3,
+          4,
+          6
+        ],
+        "normalized_active_gamma": [
+          1,
+          52,
+          88,
+          2
+        ],
+        "root_orbit": [
+          0,
+          1,
+          2,
+          5
+        ],
+        "spectrum_histogram": [
+          [
+            1,
+            12
+          ],
+          [
+            2,
+            5
+          ],
+          [
+            4,
+            1
+          ]
+        ]
+      },
+      {
+        "active_support": [
+          1,
+          3,
+          4,
+          6
+        ],
+        "normalized_active_gamma": [
+          1,
+          41,
+          84,
+          4
+        ],
+        "root_orbit": [
+          0,
+          1,
+          3,
+          5
+        ],
+        "spectrum_histogram": [
+          [
+            1,
+            11
+          ],
+          [
+            2,
+            6
+          ],
+          [
+            4,
+            1
+          ]
+        ]
+      },
+      {
+        "active_support": [
+          1,
+          3,
+          5,
+          6
+        ],
+        "normalized_active_gamma": [
+          1,
+          75,
+          74,
+          52
+        ],
+        "root_orbit": [
+          0,
+          1,
+          2,
+          4
+        ],
+        "spectrum_histogram": [
+          [
+            1,
+            11
+          ],
+          [
+            2,
+            6
+          ],
+          [
+            4,
+            1
+          ]
+        ]
+      },
+      {
+        "active_support": [
+          2,
+          4,
+          5,
+          6
+        ],
+        "normalized_active_gamma": [
+          1,
+          89,
+          49,
+          88
+        ],
+        "root_orbit": [
+          0,
+          1,
+          3,
+          5
+        ],
+        "spectrum_histogram": [
+          [
+            1,
+            11
+          ],
+          [
+            2,
+            6
+          ],
+          [
+            4,
+            1
+          ]
+        ]
+      }
+    ],
+    "prime": 127,
+    "projective_state_rows": 75,
+    "scope_guard": "This 75-state census locates and audits the witness.  It is not a global p=127 S_6 upper bound for exact-four Gamma having no four-point fiber.",
+    "top_six_counts": {
+      "10": 12,
+      "11": 17,
+      "12": 14,
+      "13": 14,
+      "14": 9,
+      "9": 9
+    },
+    "top_six_maximum_among_four_fiber_states": 14
+  },
+  "proof": [
+    "There is one AGL(1,7) orbit of five-subsets. More strongly, all 21^2 exponent/root normalized 5x5 Fourier minors were evaluated exactly.",
+    "Every determinant divided by its root Vandermonde has cyclotomic norm one; the Vandermonde norm is 7^10. Thus no p=1 mod 7 can annihilate a five-point evaluation determinant.",
+    "At p=127 the exact 75-row projective four-fiber census locates Gamma=X+64X^2+112X^3+70X^5 with spectrum 4^1 2^6 1^11 and S_6=14.",
+    "The six selected modal levels [4,2,2,2,2,2] admit a rank-six lambda-free lift. Pointwise petal/core checks give agreement 49 at degree 40<=42.",
+    "Kernel division, all 28 one-point deletion tests, the positive negative control, and the trivial mu_7 stabilizer certify divisibility minimality and primitivity."
+  ],
+  "route_comparison": {
+    "admissible_bad_primes_before_state_audit": [
+      103,
+      137,
+      239,
+      307,
+      443,
+      613,
+      647,
+      919,
+      953,
+      1327,
+      2551,
+      3061,
+      3299,
+      3877,
+      4217,
+      4523,
+      5441,
+      6733,
+      9623,
+      13907,
+      88469,
+      126583,
+      659941
+    ],
+    "candidate": "ell=17 exact-three-sector onset",
+    "decision": "DEFER_NOT_REFUTE: the 11x11 exact table has 23 admissible exceptional primes before the required row-specific state and availability audits.  The suggested ell=17 onset law is left open; the norm-one ell=7 exact-four route is theorem-cleaner.",
+    "distinct_four_by_four_quotient_norms": [
+      1,
+      103,
+      137,
+      256,
+      307,
+      443,
+      613,
+      647,
+      953,
+      1327,
+      2551,
+      3061,
+      3299,
+      3877,
+      4217,
+      4489,
+      4523,
+      5441,
+      6733,
+      9623,
+      10201,
+      10609,
+      13907,
+      14111,
+      18769,
+      28561,
+      32743,
+      60691,
+      63139,
+      65536,
+      73441,
+      88469,
+      125903,
+      126583,
+      407389,
+      659941
+    ],
+    "four_by_four_table_shape": [
+      11,
+      11
+    ],
+    "four_subset_AGL_orbits": 11,
+    "three_by_three_quotient_norm_table": [
+      [
+        1,
+        1,
+        1
+      ],
+      [
+        1,
+        239,
+        103
+      ],
+      [
+        1,
+        103,
+        1361
+      ]
+    ],
+    "three_subset_AGL_orbits": 3
+  },
+  "scope": "Prime fields, ell=7, tau=5, m=6, D=0, background-free full petals, and exactly four active nonzero DFT sectors.  The fiber cap theorem is prime-uniform; explicit nonvacancy is over F_127.",
+  "status": "COUNTEREXAMPLE_WITH_UNIFORM_FIBER_CAP_THEOREM",
+  "title": "ell=7 exact-four-sector norm-one obstruction and counterexample",
+  "uniform_theorem": "For every prime p congruent to 1 mod 7 and every constant-free Gamma with exactly four active nonzero monomials among X,...,X^6, every mu_7-coset fiber has size at most four.",
+  "upstream": {
+    "collision": "Upstream has a compatible witness in the same (tau,m,ell) cell, explicitly with all six nonconstant DFT sectors active. It has neither the exact-four norm-one theorem nor the {1,2,3,5}-sector F_127 word. This is a distinct stratum.",
+    "sources": [
+      "experimental/notes/l1/l1_prime_ell_pv_refutation.md",
+      "experimental/notes/l1/l1_general_reconstruction_collapse.md",
+      "experimental/data/prize-dag/prize_dag.json"
+    ]
+  },
+  "verdict": "PASS_WITH_ELL7_EXACT_FOUR_SECTOR_COUNTEREXAMPLE"
+}
