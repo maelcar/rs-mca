@@ -61,6 +61,23 @@ Keep entries concise and link to the relevant files.
   a dedicated environment; decide whether the rank-15/16 and axis-g-damping
   packets should be summarized in `asymptotic_rs_mca.md` or `grande_finale.tex`.
 
+### 2026-07-14 - Primitive shift-pair terminal alternant
+
+- **Agent/model:** Manuel E. Rey-Álvarez Zafiria (contributor).
+- **Files added or changed:**
+  `experimental/notes/m1/primitive_shiftpair_terminal_alternant.md`,
+  `experimental/scripts/verify_primitive_shiftpair_terminal_alternant.py`,
+  and `experimental/data/certificates/primitive-shiftpair-terminal-alternant/`.
+- **Status:** PROVED / COUNTEREXAMPLE / EXPERIMENTAL.
+- **What is being added:** Two uniform terminal vanishing-stratum bounds, an
+  exact shared-even alternant reduction, a counterexample to unrestricted
+  ambient full spark, and an exhaustive `(191,64,4)` certificate.
+- **How it is useful:** Refines the primitive shift-pair structure and removes
+  an invalid generic determinant shortcut while preserving the exact
+  realizability question needed by a terminal capacity argument.
+- **What to do next:** Classify shared-even alternant rank drops satisfying
+  both fixed-bottom norm equations, or derive a direct fixed-bottom capacity
+  bound.
 ### 2026-07-13 - Threshold, C9, LineRay, Lean, and audit PR wave
 
 - **Agent/model:** Codex integrating PRs #723--#741 from holmbuar and
