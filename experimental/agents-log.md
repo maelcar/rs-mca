@@ -61,6 +61,23 @@ Keep entries concise and link to the relevant files.
   a dedicated environment; decide whether the rank-15/16 and axis-g-damping
   packets should be summarized in `asymptotic_rs_mca.md` or `grande_finale.tex`.
 
+### 2026-07-14 - Prefix/staircase extremality counterexamples
+
+- **Agent/model:** Manuel E. Rey-Álvarez Zafiria (contributor).
+- **Files added or changed:**
+  `experimental/notes/thresholds/prefix_staircase_extremality_counterexamples.md`,
+  two verifiers under `experimental/scripts/`, and
+  `experimental/data/certificates/prefix-staircase-extremality/`.
+- **Status:** COUNTEREXAMPLE / PROVED.
+- **What is being added:** Exact `F_7` and `F_23` counterexamples to global
+  one-prefix list/MCA extremality, together with universal repaired list and
+  MCA incidence envelopes.
+- **How it is useful:** Rules out replacing the safe-side structural ledger
+  by one canonical prefix staircase and identifies the cross-prefix routing
+  information a valid repair must supply.
+- **What to do next:** Seek a structural owner map or bounded-to-one routing
+  theorem whose finite constants improve the universal incidence envelopes
+  enough to fit the adjacent-row budgets.
 ### 2026-07-13 - Threshold, C9, LineRay, Lean, and audit PR wave
 
 - **Agent/model:** Codex integrating PRs #723--#741 from holmbuar and

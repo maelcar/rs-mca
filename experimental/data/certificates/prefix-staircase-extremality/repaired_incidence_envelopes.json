@@ -1,0 +1,60 @@
+{
+  "active_list": {
+    "KoalaBear_list": {
+      "agreement": 1116047,
+      "budget": 274980728111395087,
+      "certified_envelope_lower_bound": 340906412957980610,
+      "r": 64
+    },
+    "Mersenne31_list": {
+      "agreement": 1116023,
+      "budget": 16777215,
+      "certified_envelope_lower_bound": 24936335,
+      "r": 27
+    }
+  },
+  "active_mca": {
+    "KoalaBear_MCA": {
+      "a_minus_k": 67472,
+      "agreement": 1116048,
+      "budget": 274980728111395087,
+      "q": 93571093019388561295270373781649880353786165192103559169,
+      "small_binomial_quotient": 1281263064760791573455387992015131136989861512155475723735,
+      "small_t": 11,
+      "universal_mca_envelope": 93571093019388561295270373781649880353786165192103559169
+    },
+    "Mersenne31_MCA": {
+      "a_minus_k": 67448,
+      "agreement": 1116024,
+      "budget": 16777215,
+      "q": 21267647892944572736998860269687930881,
+      "small_binomial_quotient": 137576378584499828391747397785739544924774,
+      "small_t": 8,
+      "universal_mca_envelope": 21267647892944572736998860269687930881
+    }
+  },
+  "active_parameters": {
+    "budget_KoalaBear": 274980728111395087,
+    "budget_Mersenne31": 16777215,
+    "k": 1048576,
+    "n": 2097152,
+    "p_KoalaBear": 2130706433,
+    "p_Mersenne31": 2147483647,
+    "q_KoalaBear": 93571093019388561295270373781649880353786165192103559169,
+    "q_Mersenne31": 21267647892944572736998860269687930881
+  },
+  "certificate_checks": {
+    "F23": {
+      "list_count": 11,
+      "list_incidence_envelope": 41,
+      "mca_count": 11,
+      "mca_incidence_envelope": 23
+    },
+    "F7": {
+      "list_count": 4,
+      "list_incidence_envelope": 5,
+      "mca_count": 4,
+      "mca_incidence_envelope": 7
+    }
+  }
+}
