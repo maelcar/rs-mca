@@ -1,0 +1,217 @@
+{
+  "schema": "rank15-common-root-hyperplane-slicing-v1",
+  "status": "PROVED_NARROW_THEOREM_CONDITIONAL_RESIDUAL_CONSUMER",
+  "provenance": {
+    "base_commit": "9262f63cf093a7510a2df435f220390f59e2bcd5",
+    "worker_model": "native gpt-5.6-sol ultra hostile integration worker",
+    "worker_return_sha256": "d9f28077534f9d9aab30f9a7b69b9df57c40cbf3bb45843b72a10e97b2c213a7",
+    "conditional_r13_commit": "0e776db208da795930d343dca4343f815f258c28",
+    "conditional_r13_status": "NOT_UPSTREAM_CONSUMER_ONLY"
+  },
+  "source_imports": [
+    {
+      "path": "experimental/notes/l2/affine_section_one_row_rank_reduction.md",
+      "sha256": "3d2c7c3687d2fa4b6202e8de87f64f4e619d427183e23d91a2f1cde9b6451c31",
+      "role": "load-bearing integrated rank-14 recurrence theorem"
+    },
+    {
+      "path": "experimental/scripts/verify_affine_section_one_row_rank.py",
+      "sha256": "b17b9c74cd849bd2c2cbbd367c9bfe26ffd3657d099559f9fb431406715196c1",
+      "role": "existing source replay"
+    },
+    {
+      "path": "experimental/notes/l2/affine_interleaved_shell_compression.md",
+      "sha256": "739fc8bc75839086deb3561aa07104f7a427a1aecb225d2cf43ff5654861efdb",
+      "role": "integrated target reduction and object ledger"
+    }
+  ],
+  "field_ledger": {
+    "base_field_prime": 2130706433,
+    "base_field_formula": "2^31-2^24+1",
+    "evaluation_domain_size": 2097152,
+    "code_dimension": 1048576,
+    "agreement_threshold": 1116047,
+    "subgroup_index": 1016,
+    "subgroup_generator": 1213133211,
+    "extension_degree": 6,
+    "list_denominator": 93571093019388561295270373781649880353786165192103559169,
+    "budget_denominator": 340282366920938463463374607431768211456,
+    "budget": 274980728111395087,
+    "shell_denominator": 2129725328,
+    "one_row_target": 274854110496187592
+  },
+  "theorem": {
+    "name": "R15-HYP14-ROOT-SLICE",
+    "state_definitions": {
+      "N": "n-u",
+      "a": "m-u",
+      "k_A": "K-u-c"
+    },
+    "c_min": 0,
+    "c_max": 152,
+    "affine_rank": 15,
+    "hyperplane_dimension": 14,
+    "paid_quotient_ceiling": 4985,
+    "root_trigger": "r_J >= k_A-4985",
+    "fiber_count": 2130706433,
+    "rank14_fiber_bound": 20008483,
+    "list_bound": 42632203442671139,
+    "target_slack": 232221907053516453,
+    "violator_root_cap": "r_J <= k_A-4986",
+    "violator_root_cap_constant": 1043590,
+    "boundary_scan": {
+      "paid_ceiling": 4985,
+      "paid_max": 20008483,
+      "paid_argmax_c": 0,
+      "paid_shifted_state": 1043591,
+      "tamper_ceiling": 4986,
+      "tamper_max": 290933620,
+      "tamper_argmax_c": 0,
+      "tamper_shifted_state": 1043590,
+      "tamper_product": 619894135709977460,
+      "tamper_excess_over_target": 345040025213789868
+    }
+  },
+  "ownership_ledger": {
+    "nullity_min": 1,
+    "nullity_max": 14,
+    "mobius_formula": "sum_j (-1)^j p^(j(j-1)/2) [s choose j]_p = 0",
+    "projective_line_formula": "A_s=(p^s-1)/(p-1)",
+    "projective_lines_nullity_14": 18655505543855076173051281507835148948133897313976697647355004502028942208827858988228827455801108637563665580574155735054,
+    "integral_owner_status": "REQUIRES_AN_ARBITRARY_TOTAL_ORDER"
+  },
+  "conditional_residual_consumer": {
+    "status": "CONDITIONAL_ON_UNPUBLISHED_R13_RECURRENCE",
+    "c_le_151": {
+      "u_min": 1042375,
+      "u_max": 1043582,
+      "c_min": 0,
+      "c_max": 151,
+      "u_plus_c_max": 1043588,
+      "state_count": 173031,
+      "e14_floor": 4986,
+      "e15_floor": 4987,
+      "alternant_defect_floor": 9946,
+      "nullity_14_empty_u_plus_c_min": 1043576
+    },
+    "c_152": {
+      "states": [1043403, 1043404, 1043405, 1043406],
+      "e14_floor": 5010,
+      "e15_floor": 5017,
+      "alternant_defect_floor": 10000,
+      "common_root_caps": [35, 34, 33, 32]
+    },
+    "unpaid_nullities": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+  },
+  "scalar_route_cut": {
+    "test_list_size": 274854110496187593,
+    "inequality": "M*C(a,t) <= C(N,t)+C(M,2)*C(e15,t)",
+    "c_le_151_degree_floor_envelope": 4987,
+    "c_le_151_minimum_t1_slack": 188370914058257997774318657802052693917,
+    "c_le_151_minimum_t15_slack": 386242437123153995744635441380151300823492215375917507473244365317144618847448,
+    "c_le_151_minimum_table_sha256": "cbf513b131ec9c5d4801fe6cf40e645e7bc2e76149ac346a4acd0b2fd1686655",
+    "c_le_151_minimum_baseline_t16_slack": 102299617521666695635180302935214543229533401125480618311404559696608496083337903981,
+    "c_152_degree_floor_envelope": 5017,
+    "c_152_minimum_t1_slack": 189504085789107755534450620546397729333,
+    "c_152_minimum_t15_slack": 847562948718324556103768135717704752672442482865809008843134087625420666388264,
+    "c_152_minimum_table_sha256": "2018e9fe37731696572a2a94a1506a8e7fd48b77ed0713d78215ca075ad283ab",
+    "c_152_minimum_baseline_t16_slack": 102551940865568435454416798783752654069048908959935234237059824048610465276160780959,
+    "scope": "route cut for the scalar degree-cap first-owner/pair-owner inequality only"
+  },
+  "construction": {
+    "state": {
+      "u": 1043576,
+      "c": 0,
+      "N": 1053576,
+      "a": 72471,
+      "k_A": 5000
+    },
+    "evaluation_domain": "H={omega^i:0<=i<n}",
+    "Z_exponent_interval": [0, 1043576],
+    "R_exponent_interval": [1043576, 1048562],
+    "agreement_block_start": 1048562,
+    "agreement_block_size": 67485,
+    "agreement_block_count": 15,
+    "used_exponent_end": 2060837,
+    "unused_coordinates": 36315,
+    "listed_scalars": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
+    "pivot_degrees": [0, 4986, 4987, 4988, 4989, 4990, 4991, 4992, 4993, 4994, 4995, 4996, 4997, 4998, 4999],
+    "e14": 4998,
+    "e15": 4999,
+    "alternant_defect": 69790,
+    "common_root_cluster_size": 4986,
+    "each_exact_agreement": 1116047,
+    "listed_points_certified": 15,
+    "rank_one_15_subsets": 21909367009365612697041153239017239432249840,
+    "dependent_incidence": 328640505140484190455617298585258591483747600,
+    "first_owner_excess": 306731138131118577758576145346241352051497760,
+    "overcount_factor": 18655505543855076173051281507835148948133897313976697647355004502028942208827858988228827455801108637563665580574155735054
+  },
+  "live_overlap": {
+    "checked_date": "2026-07-13",
+    "maximum_pull_ref": 741,
+    "pulls": [
+      {
+        "number": 733,
+        "head": "db323972ea22dca0fecda4d2da6ebcb4c664b574",
+        "relation": "cross-credit: adjacent rank-15 M=218 locator degree floor d>=4828; no common-root slicing overlap"
+      },
+      {
+        "number": 734,
+        "head": "fbcb0b53e010e7dcbb53d07ef3dbf9127217da5a",
+        "relation": "MCA one-deeper prefix anti-host compiler; no overlap"
+      },
+      {
+        "number": 735,
+        "head": "f94d8706ae95e99462038e6d462a34332865be02",
+        "relation": "heavy prefix planted/saturation precursors; no overlap"
+      },
+      {
+        "number": 736,
+        "head": "97e2713f880c856ed4dace2440567cc11740ac57",
+        "relation": "pay-per-bit ledger audit and board classification; no common-root theorem overlap"
+      },
+      {
+        "number": 737,
+        "head": "8fcd4152709889da768ec1453d05ec09bccfb41a",
+        "relation": "global and nested affine-core set-pair charges for retained LineRay pairs; no common-root slicing overlap"
+      },
+      {
+        "number": 738,
+        "head": "72f559a5822ef00508a6fc7f8f772dfb14a31ed0",
+        "relation": "conditional 86-bit pay-per-bit branch hypothesis audit across deployed rows; no common-root slicing overlap"
+      },
+      {
+        "number": 739,
+        "head": "1e8b9871de0f89c87c0d7339218e619fb6d57ae5",
+        "relation": "Sidon-paired staircase-concentration route cut; no common-root slicing overlap"
+      },
+      {
+        "number": 740,
+        "head": "0c7e2bec70bc1aef1c49e20f4341a43a6d85e991",
+        "relation": "deployed C9 full-slice odd-axis Fourier certificate; no common-root slicing overlap"
+      },
+      {
+        "number": 741,
+        "head": "299e8160b51d8b45d205ae6978b3b97696dcb83f",
+        "relation": "all-LineRay direction-distance extension; no common-root slicing overlap"
+      }
+    ]
+  },
+  "publication_gate": {
+    "decision": "NARROW_PR_CANDIDATE_ONLY",
+    "publishable_object": "R15-HYP14-ROOT-SLICE plus exact supporting certificates",
+    "refuse_broader_claim": true,
+    "score": "0/2"
+  },
+  "nonclaims": [
+    "no rank-15 bound",
+    "no paid (u,c) state",
+    "no c=152 closure",
+    "no canonical order-independent owner",
+    "no extension-field factor-p claim",
+    "no unsigned-Mobius upper bound",
+    "no target-sized counterexample",
+    "no score movement"
+  ]
+}

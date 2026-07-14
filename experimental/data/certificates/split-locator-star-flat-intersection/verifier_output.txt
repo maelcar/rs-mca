@@ -1,0 +1,19 @@
+SPLIT_LOCATOR_STAR_FLAT_INTERSECTION
+BASE_COMMIT=9262f63cf093a7510a2df435f220390f59e2bcd5
+THEOREM_ID=split-locator-star-flat-intersection-v1
+RECURRENCE: transverse=286 contained=286 PASS
+BOUNDARIES: d0=91 k0=13 N_eq_k=91 d_eq_k=91 PASS
+SHARPNESS: parameter_cases=455 PASS
+COORDINATE: F_3 N=3 k=0 d=0 flats=1 locators=1 max=1 bound=1 sharp=1 maximizers=1 PASS
+COORDINATE: F_3 N=3 k=2 d=0 flats=13 locators=3 max=1 bound=1 sharp=1 maximizers=3 PASS
+COORDINATE: F_3 N=3 k=2 d=1 flats=13 locators=3 max=2 bound=2 sharp=2 maximizers=3 PASS
+COORDINATE: F_3 N=3 k=2 d=2 flats=1 locators=3 max=3 bound=3 sharp=3 maximizers=1 PASS
+COORDINATE: F_5 N=3 k=3 d=2 flats=156 locators=1 max=1 bound=1 sharp=1 maximizers=31 PASS
+COORDINATE: F_5 N=5 k=2 d=1 flats=31 locators=10 max=4 bound=4 sharp=4 maximizers=5 PASS
+COORDINATE: F_5 N=5 k=3 d=1 flats=806 locators=10 max=3 bound=3 sharp=3 maximizers=10 PASS
+COORDINATE: F_5 N=5 k=3 d=2 flats=156 locators=10 max=6 bound=6 sharp=6 maximizers=5 PASS
+COORDINATE: F_7 N=6 k=3 d=1 flats=2850 locators=20 max=4 bound=4 sharp=4 maximizers=15 PASS
+COORDINATE: F_7 N=6 k=3 d=2 flats=400 locators=20 max=10 bound=10 sharp=10 maximizers=6 PASS
+certificate_sha256=a065f799579ff42417237a7c1c49c45b2c4fd7058ba01e24b078d006069c81ea
+SCOPE: abstract locator configuration only; no RS source bridge; no common-star attainment 28; no average Johnson degree <=60; no deployed or prize claim
+RESULT: PASS

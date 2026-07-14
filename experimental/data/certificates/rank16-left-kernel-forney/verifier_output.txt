@@ -1,0 +1,23 @@
+RANK16_LEFT_KERNEL_FORNEY_ROUTE_CUT
+fixture_sha256=673bd22b58aba1f30c37b0ceff310a61dc325b7fd3a9640a4361460d68a5d716
+field=31 domain=30 K=15 m=16 sigma=1 t=16
+full_list_size=4691055
+supports=16 union=30 zero_sum=16 exact_agreement=16
+affine_rank=15 affine_determinant_mod_31=2
+common_syndrome_nonzero_degree=13 common_syndrome_value=1
+complement_locator_span=14 h=1
+macaulay_D1=rank14,nullity2
+macaulay_D2=rank16,nullity16
+macaulay_D3=rank17,nullity31
+matrix_rows=226 matrix_columns=225 matrix_rank=224
+right_nullity=1 left_nullity=2
+forney_profile=0x2,1x12,2x1
+deployed_sigma=67471 deployed_radius=981105
+deployed_rows_at_full_union=15759600 deployed_columns=15728640
+deployed_rank_if_h1=15728639
+deployed_row_surplus=30960 deployed_forced_left_nullity=30961
+deployed_forced_mu_max_at_least=67472
+tamper_checks=3/3_rejected
+certificate_sha256=f7c01124b5d1053bb03b37a4de70d77d7b72dfd41606b811a95d53e3404ef17e
+official_score=0/2
+RESULT: PASS

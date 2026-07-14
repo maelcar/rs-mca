@@ -1,0 +1,32 @@
+V10_DETERMINANTS
+  10: 7 * 11^2 * 13 * 19^2 * 239^2; square_after_prefactor=False
+  7+3: 2^2 * 7^3 * 17 * 3121^2; square_after_prefactor=False
+  6+4: 2^10 * 3^2 * 5^2 * 7^3 * 13^2 * 17; square_after_prefactor=False
+  5+5: 7 * 11^4 * 17 * 19^4; square_after_prefactor=False
+  4+3+3: 2^4 * 3^2 * 5^2 * 7^5 * 13 * 17^2; square_after_prefactor=False
+COST6_SKELETON_ENUMERATION
+  A1_3K6_types=3311; determinant_square_survivors=0
+  A2_K7_K6_K5_types=78; determinant_square_survivors=0
+  A3_2K7_U4_types=1; graph_degree_survivors=0
+  B1_2K7_2K6_types=6204; determinant_square_survivors=0
+  B2_3K7_K5_types=454; determinant_square_survivors=0
+  C_4K7_K6_types=1125; determinant_square_survivors=0
+  D_6K7_multigraphs=100135; determinant_square_survivors=675; hasse7_failures=675
+SHARPENED_CLIQUE_AND_PENCIL_LEDGER
+  eta_min=248
+  delta_max_global=201
+  delta_max_at_r151=28
+  degE_max_global=201
+  degE_max_at_r151=28
+  C_max_global=1253
+  C_max_at_r151=1080
+  perfect_fibers_min_global=17
+  perfect_fibers_min_at_r151=190
+FINITE_PARAMETER_COUNTS
+  old_r_delta_pairs=22973
+  new_r_delta_pairs=17589
+  removed_r_delta_pairs=5384
+  old_r_delta_eta_triples=13502312
+  new_r_delta_eta_triples=8469896
+  removed_r_delta_eta_triples=5032416
+PASS

@@ -9,7 +9,8 @@ with subexponential census?
 
 Note:     `experimental/notes/thresholds/heavy_fiber_planted_emission.md`.
 Verifier: `experimental/scripts/verify_heavy_fiber_planted_emission.py`
-          (155/155, tamper 4/4, ~2.8s).
+          (138/138, tamper 4/4, full B=10 replay).
+Repair:   `experimental/scripts/verify_heavy_fiber_planted_emission_hypothesis_repair.py`.
 
 HONEST NONCLAIM.  The emission theorems and the exhaustive census (the
 no-counterexample scan, the F_p precursor battery, the l^q-free structural
@@ -20,7 +21,7 @@ are pure integer / F_p combinatorics:
 1. THM 1 saturation-forcing: the recursive Johnson constant-weight-code bound
    `cwBound n d w` and the strict drop `A(n,2(R+2),a) < A(n,2(R+1),a)` that makes
    "heavier than the non-saturating ceiling => must saturate" go through;
-2. THM 2 involution twin-pair: the emitted fiber size `W = C(B,B/2)` (planted
+2. THM 2a involution twin-pair: the emitted fiber size `W = C(B,B/2)` (planted
    template on B/2 of B pairs) and Johnson saturation exponent `a-2`;
 3. THM 3 multiplicative folding: an order-d multiplicative-subgroup coset has
    vanishing power sums `p_1 = ... = p_{d-1} = 0 mod p`, so coset-union supports
@@ -38,12 +39,15 @@ def binom : Nat → Nat → Nat
   | 0,     _ + 1 => 0
   | n + 1, k + 1 => binom n k + binom n (k + 1)
 
-/-! ## 1. THM 2 -- involution twin-pair emitted fiber size `W = C(B,B/2)`.
+/-! ## 1. THM 2a -- involution twin-pair emitted fiber size `W = C(B,B/2)`.
 
-For `T = P u (c-P)` with `P` a Sidon (distinct-subset-sum) set, `a = B`, the
-central fiber is EXACTLY the `C(B,B/2)` complete-twin-pair unions (choose B/2 of
-the B pairs, take both elements of each).  These are the planted-template
-supports; `a-2` is the Johnson agreement they saturate. -/
+For `T = P u (c-P)` with `P` a positive-integer distinct-subset-sum
+(dissociated) set, even `a = B`, and `c > max(sum P, 2 max P)`, the central fiber is EXACTLY the
+`C(B,B/2)` complete-twin-pair unions (choose B/2 of the B pairs, take both
+elements of each).  These are the planted-template supports; `a-2` is the
+Johnson agreement they saturate.  The stronger conclusion of exponential
+heaviness additionally uses 2-dissociativity and `c > 2 sum P`; it is not
+formalized here. -/
 
 def twinCount (B : Nat) : Nat := binom B (B / 2)
 

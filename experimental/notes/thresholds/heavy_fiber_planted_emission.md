@@ -4,8 +4,10 @@
 
 ```text
 Status: PROVED saturation-forcing lemma (general depth R, all n,a) + PROVED
-        depth-1 involution-planted emission theorem (any Sidon P, generalizing
-        #732/#728 off superincreasing) + PROVED depth-R multiplicative-folding
+        depth-1 involution-planted structural theorem (dissociated P under a
+        sufficient center bound, generalizing #732/#728 off superincreasing) + PROVED
+        exponential corollary for 2-dissociated P under c > 2 sum(P) + PROVED
+        depth-R multiplicative-folding
         emission (coset-union quotient-support families, census <= sigma(p-1),
         #725) + EXHAUSTIVE CENSUS with NO COUNTEREXAMPLE (every heavy prefix
         fiber over F_p, p in {7,11,13}, |T|<=12, R in {1,2} emits >=1 of #716's
@@ -18,20 +20,26 @@ LANE: hard input 2 (agents.md) -- the SEMANTIC EMISSION clause of avdeevvadim's
         ray-saturation } with subexponential census?
 
 Verdict per sub-question (route-scoped):
-  (1) STRUCTURE OF HEAVY DEPTH-1 FIBERS.  Exponential heaviness of a depth-1
-      (subset-sum) fiber is an ADDITIVE-STRUCTURE phenomenon, and its extremal
-      mechanism is the additive involution x -> c-x.  The #732 twin-pair
+  (1) A PROVED HEAVY DEPTH-1 CONSTRUCTION.  One exact additive-involution family
+      realizes exponential heaviness for depth-1 subset sums under the stronger
+      hypotheses below.  The #732 twin-pair
       instance is NOT special to the superincreasing family: for ANY
-      T = P u (c-P) with P a distinct-subset-sum (Sidon/dissociated) set and
-      a = |P| = B, the central fiber Phi^{-1}((B/2)c) is EXACTLY the C(B,B/2)
+      T = P u (c-P) with P a distinct-subset-sum (dissociated) set,
+      even a = |P| = B, and c > max(sum P, 2 max P), the central fiber
+      Phi^{-1}((B/2)c) is EXACTLY the C(B,B/2)
       complete-twin-pair unions -- verified for an INDEPENDENT non-superincreasing
       Conway-Guy witness (P={3,5,6,7}, {11,17,20,22,23,24}, ...).  It emits a
       repeated planted template (census 1), an involution quotient-fold, and
-      Johnson saturation, simultaneously.  The census's heaviest depth-1 fiber
+      Johnson saturation, simultaneously.  Under the stronger center condition
+      c > 2 sum(P) and the stronger 2-dissociativity condition, its occupied
+      image has size (3^B+1)/2 and the fiber is exponentially heavy.  The
+      census's heaviest depth-1 fiber
       is itself involution-symmetric.  (An arithmetic-progression T gives only
-      a POLYNOMIALLY heavy mode -- Sylvester/Stanley unimodality -- so the AP is
-      the WRONG extremizer for exponential heaviness; the involution is right.)
-      ANSWER: YES, near-extremal T carry planted (twin-pair) structure.
+      a POLYNOMIALLY heavy mode -- Sylvester/Stanley unimodality -- so that AP
+      family does not realize exponential heaviness; the stronger involution
+      construction below does.)
+      PROVED SCOPE: this constructed family and the finite census carry planted
+      twin-pair structure; no general near-extremal classification is claimed.
   (2) DEPTH-R.  The additive twin-pair mechanism does NOT survive to R>=2 on the
       SAME T: the involution preserves only p_1, so a depth-1 twin fiber SHATTERS
       into many depth-2 (p_1,p_2) fibers (verified: 6 twins -> 6 depth-2 fibers).
@@ -52,7 +60,9 @@ Verdict per sub-question (route-scoped):
         constant-weight-code bound A(n,2(R+2),a) MUST saturate Johnson, hence
         emits ray-saturation -- so ray-saturation is the UNIVERSAL precursor of
         sufficiently heavy fibers.
-      Thm 2 (involution-planted, depth 1): the Sidon twin-pair class above.
+      Thm 2a (involution-planted, depth 1): the dissociated twin-pair class above.
+      Cor 2b records #739's exact-profile theorem on the stronger 2-dissociated,
+        stronger-center subclass; it is context, not a new claim here.
       Thm 3 (multiplicative-folding, depth R): the coset-union class above.
       Discriminator: field-descent and rank NEVER fire over prime F_p.
 ```
@@ -61,13 +71,16 @@ Label key (agents.md dialect): **PROVED** / **CONDITIONAL** / **CONJECTURAL** /
 **EXPERIMENTAL** / **AUDIT** / **COUNTEREXAMPLE**.  Every number below is
 recomputed with exact integer / `F_p` / `Z_C` arithmetic by
 `experimental/scripts/verify_heavy_fiber_planted_emission.py` (stdlib only,
-deterministic, `RESULT: PASS (158/158)`, `--tamper-selftest` catches `4/4`,
+deterministic, `RESULT: PASS (138/138)`, `--tamper-selftest` catches `4/4`,
 ~2.8 s).  No enumeration is silently capped: every bound is printed and the
 Johnson sanity + no-counterexample scans run over EVERY fiber.  Machine-readable
 certificate:
 `experimental/data/certificates/heavy-fiber-planted-emission/heavy_fiber_planted_emission.json`.
 Lean statement stub: `experimental/lean/heavy_fiber_planted_emission/`
 (`lake build` succeeds; `native_decide` instances + one honest `sorry` target).
+The hypothesis correction, its integer/modular counterexample, and the repaired
+structural/heavy split are replayed separately by
+`experimental/scripts/verify_heavy_fiber_planted_emission_hypothesis_repair.py`.
 No `.tex`/`.pdf` is edited.
 
 ## Interfaces
@@ -82,8 +95,8 @@ No `.tex`/`.pdf` is edited.
   decides, at census scale and on three proved classes, whether every heavy
   prefix fiber lands in that five-way grammar.  It is written to be consistent
   with his **Section 5 route-stop table**: the positive classes here do NOT use
-  the cheap routes he cuts.  Thm 2 is a SPECIFIC structured T (an involution with
-  a Sidon half), not the generic radius-r trade his Sec 5.1 shows is
+  the cheap routes he cuts.  Thm 2a is a SPECIFIC structured T (an involution with
+  a dissociated half), not the generic radius-r trade his Sec 5.1 shows is
   insufficient; Thm 3 uses a genuine complete-uniform-fiber folding map, not the
   arbitrary rooted secant his **Prop 4.1 / Sec 5.2** guardrail forbids (that
   guardrail is respected -- the quotient test here demands complete uniform
@@ -97,16 +110,20 @@ No `.tex`/`.pdf` is edited.
   Its **Theorem 4.1** (Johnson bound `|S cap S'| <= a-R-1` on depth-R prefix
   fibers) is the input to the saturation-forcing Thm 1 and is independently
   re-verified here on all 17609 census fibers.  Its Sec 7 superincreasing
-  heaviness witness is the R=1 seed that Thm 2 generalizes to arbitrary Sidon P.
+  heaviness witness is the R=1 seed that Thm 2a generalizes to arbitrary
+  dissociated P under the stated center bounds.
 - **#732** (`experimental/notes/thresholds/charge_preserving_split_decomposition.md`).
   Its **first exact emission instance** -- the superincreasing heavy fiber
   `Phi^{-1}(0)` = the C(B,B/2) twin-pair unions, saturating `|S cap S'| = a-2` --
   is exactly the instance this packet asks "how far does it generalize?".
-  Answer: (Sec 1) off superincreasing to any Sidon P at depth 1; (Sec 2) off
+  Answer: (Sec 1) off superincreasing to any dissociated P at depth 1 under the
+  stated center bounds; (Sec 2) off
   additive involutions to (R+1)-fold multiplicative foldings at depth R.  Its
   observation that the true residual is CARDINALITY (max-fiber count) is the
-  boundary this packet respects: per-fiber emission is closed here, the GLOBAL
-  profile count remains #732's open max-fiber question (Nonclaims).
+  boundary this packet originally respected.  Integrated #739 subsequently
+  computes and cuts the natural full-chart concentration profile on the
+  2-dissociated subclass.  The general/source-rooting-restricted dichotomy
+  remains open; this note does not re-open #739's decided full-chart route.
 - **#725** (`experimental/notes/thresholds/c3_planted_divisor_census.md`).  Its
   **coset-type planted census** `|P_coset(N)| = sigma(N) <= N(1+ln N)` is exactly
   the template census of the depth-R multiplicative-folding class (Thm 3): the
@@ -177,10 +194,17 @@ large image `L = e^{Theta(N)}` with one fiber far above `M/L`, which is an
 additive-structure (inverse Littlewood--Offord) phenomenon, not an "AP mode"
 phenomenon.
 
-### Theorem 2 (involution twin-pair emission, depth 1, PROVED)
+### Theorem 2a (involution twin-pair structure, depth 1, PROVED)
 
-Let `P = {A_1,...,A_B}` be a **distinct-subset-sum (Sidon/dissociated) set** over
-`Z` (no two disjoint subsets share a sum), let `c > 2 max P`, and set
+Let `B >= 2` be even.  Let `P = {A_1,...,A_B}` be a **distinct-subset-sum
+(dissociated) set** of positive integers (no two disjoint subsets share a
+sum), let
+
+```text
+c > max(sum P, 2 max P),
+```
+
+and set
 
 ```text
 T = P u (c - P),   |T| = 2B,   a = B,   Phi_1(S) = sum_{t in S} t (over Z_c, c=... or Z).
@@ -197,18 +221,114 @@ Each such support (i) is a **repeated planted template** -- the single pairing
 `{A_i, c-A_i}` evaluated on a `(B/2)`-subset of the `B` pairs, template census
 `= 1` (one involution); (ii) is a **quotient-support** for the complete-uniform-
 fiber folding `x -> c-x` (2-fold, orbits the twin pairs); (iii) **saturates**
-Johnson: `max_{S != S'} |S cap S'| = a-2` (share all but one pair).  It is
-exponentially heavy (`W = C(B,B/2)`, `W L / M -> infinity`).  Field-descent and
-rank do NOT fire.
+Johnson: `max_{S != S'} |S cap S'| = a-2` (share all but one pair).  Field-
+descent and rank do NOT fire.  This structural theorem alone does **not** assert
+exponential heaviness.
 
 **Proof.** Index by pair.  A `B`-subset `S` uses, per pair `i`, one of {A_i only,
 (c-A_i) only, both, neither}; sizes force `#both = #neither` and
 `sum(S) = (#both + #high) c + (sum_{low} A_i - sum_{high} A_j)` where low/high are
-the "A_i-only"/"(c-A_i)-only" index sets (disjoint).  Setting `sum(S) = (B/2)c`
-with `|sum_{low}A - sum_{high}A| <= sum P < c/2` forces both `#both+#high = B/2`
-and `sum_{low}A_i = sum_{high}A_j`.  Distinct subset sums (disjoint low/high)
-give `low = high = empty`, hence `#both = B/2`, `S` = union of `B/2` full pairs.
-Johnson saturation and the quotient/planted readings are then immediate. `square`
+the "A_i-only"/"(c-A_i)-only" index sets (disjoint).  Equality with `(B/2)c`
+over `Z`, or congruence with it over `Z_c`, gives
+
+```text
+sum_{low} A_i - sum_{high} A_j = 0 mod c.
+```
+
+Its absolute value is at most `sum P < c`, so it is zero as an integer.
+Distinct subset sums give `low = high = empty`; then `#both = #neither` and the
+size equation force `#both = B/2`.  Thus `S` is a union of `B/2` full pairs.
+Johnson saturation and the quotient/planted readings are immediate. `square`
+
+### Corollary 2b (exponential heaviness for 2-dissociated halves, PROVED)
+
+This is not a new claim of the present correction.  It is the exact-profile
+Theorem 1 of integrated #739
+(`staircase_concentration_sidon_paired.md`) specialized to its central fiber,
+together with the immediate no-wrap transfer from integers to `Z_c`.  It is
+restated here only to keep the repaired structural theorem's heavy subregime
+explicit.
+
+Under the hypotheses of Theorem 2a, additionally assume that `P` is
+**2-dissociated**, meaning that the map
+
+```text
+{-1,0,1}^B -> Z,   epsilon |-> sum_i epsilon_i A_i
+```
+
+is injective, and strengthen the center condition to
+
+```text
+c > 2 sum P.
+```
+
+For the map on `B`-subsets of `T` over `Z_c`, the occupied image size is exactly
+
+```text
+L = (3^B + 1)/2.
+```
+
+Consequently, with `W = C(B,B/2)` and `M = C(2B,B)`, the exact heaviness ratio is
+
+```text
+W L / M = C(B,B/2) (3^B+1) / (2 C(2B,B))
+        = Theta((3/2)^B).
+```
+
+In particular the central fiber is exponentially heavy.
+
+**Proof.**  A `B`-subset determines a signed vector
+`epsilon in {-1,0,1}^B`: low-only gives `+1`, high-only gives `-1`, and
+both/neither give `0`.  Its nonzero support has even cardinality, and every such
+signed vector is realized by choosing half of its zero coordinates as both and
+half as neither.  The 2-dissociativity hypothesis makes the integer signed sums
+distinct.  Two such sums differ in absolute value by at most `2 sum P < c`, so
+they remain distinct modulo `c`.  The number of signed vectors with even support is
+
+```text
+sum_{m even} C(B,m) 2^m = (3^B+1)/2.
+```
+
+The exact ratio follows from Theorem 2a and the full slice size `M=C(2B,B)`;
+Stirling's formula gives the displayed exponential order. `square`
+
+**Correction of the former hypothesis.**  The earlier condition
+`c > 2 max P` did not imply the bound used in the proof and was false.  Indeed,
+
+```text
+P = {3,5,6,7},   c = 15,   T = {3,5,6,7,8,9,10,12}
+```
+
+has distinct subset sums and satisfies `15 > 2 max P = 14`, but its four-set
+fiber at sum `30` has eight members:
+
+```text
+{3,5,10,12}  {3,6,9,12}  {3,7,8,12}  {3,8,9,10}
+{5,6,7,12}   {5,6,9,10}  {5,7,8,10}  {6,7,8,9}.
+```
+
+Only six are unions of two involution pairs; `{3,8,9,10}` and
+`{5,6,7,12}` are the two extra supports.  The condition in Theorem 2a restores
+both the proof bound `|sum_low-sum_high| < c` and the `2B` distinct coordinates.
+It does not by itself restore exponential heaviness; Corollary 2b uses both
+2-dissociativity and the stronger condition `c > 2 sum P` for that conclusion.
+
+Neither extra condition can be dropped from that corollary as stated.  For
+example, `P_B={1,2,4,...,2^(B-1)}` is distinct-subset-sum but not
+2-dissociated.  With `c=2 sum(P_B)+1=2^(B+1)-1`, the occupied image has
+`L<=c`, and hence
+
+```text
+W L / M <= C(B,B/2) (2^(B+1)-1) / C(2B,B) = O(1),
+```
+
+so this family is not exponentially heavy despite satisfying the stronger
+center inequality.  Conversely, `P={1,3}` is 2-dissociated and `c=8` satisfies
+Theorem 2a's structural center bound, but the modular image has size `L=4`
+rather than `(3^2+1)/2=5`; the strict no-wrap inequality `c>2 sum P` is also
+necessary for the exact image formula as stated.
+The counterexample and repaired witness families are replayed by
+`experimental/scripts/verify_heavy_fiber_planted_emission_hypothesis_repair.py`.
 
 **Independent (non-superincreasing) witness.** #728/#732 used superincreasing
 `P = {5^i}`; the theorem needs only distinct subset sums.  Check (BLOCK C)
@@ -222,7 +342,8 @@ dissociativity, not of the base-5 arithmetic.
 **Extremal census (BLOCK E).** Over `F_p`, `p in {7,11,13}`, the depth-1 `T`
 maximizing `W L / M` is additively **involution-symmetric** (e.g. `p=13`,
 `T={0,1,2,3,6,10}`, `c=3`, `W L / M = 2.6`), and its heaviest fiber fires
-{planted, quotient, saturation}.  Near-extremal `T` carry the twin-pair structure.
+{planted, quotient, saturation}.  No classification of near-extremal `T` is
+claimed from this finite census.
 
 ## 2. Sub-question 2: depth-R (shatter, multiplicative folding, no counterexample)
 
@@ -316,7 +437,7 @@ is the universal precursor of sufficiently heavy fibers.  Verified (BLOCK B):
 all 54 census heavy fibers exceeding `A(n,2(R+2),a)` saturate, 0 exceptions
 (the other 14 saturate too, though not forced by the bound). `square`
 
-### Theorems 2, 3 (Sec 1, Sec 2) -- the two structured emission classes.
+### Theorems 2a/2b, 3 (Sec 1, Sec 2) -- the two structured emission classes.
 
 ### Discriminator (PROVED)
 
@@ -328,7 +449,7 @@ columns `v_t = (t,...,t^R)` of a generic support union have full expected rank, 
 **Combined verdict.** On the census-supported class (heavy prefix fibers over
 prime `F_p`, `R in {1,2}`) and the two proved asymptotic families, every
 exponentially heavy fiber emits `>= 1` of the five precursors -- ray-saturation
-universally (Thm 1), planted+quotient for the involution (Thm 2) and
+universally (Thm 1), planted+quotient for the involution (Thm 2a/2b) and
 multiplicative-folding (Thm 3) extremal classes -- with subexponential census
 (`1` for the involution, `sigma(p-1)` for the folding), while field-descent and
 rank never fire over prime fields.  No counterexample at census scale.
@@ -362,9 +483,10 @@ fiber and flags any all-`False` row (a counterexample); none occur.
 
 - **NOT a proof of the charge-preserving semantic-or-signed dichotomy, the
   primitive Q / max-fiber flatness, A4, or the Proximity Prize.**  Per-fiber
-  emission is decided on the proved classes and at census scale; the GLOBAL
-  count of emitted profiles (max-fiber concentration) is exactly #732's open
-  cardinality residual and is NOT closed here.
+  emission is decided on the proved classes and at census scale.  Integrated
+  #739 decides the natural full-chart concentration profile negatively on the
+  2-dissociated paired class; the general and source-rooting-restricted profile
+  problem remains open.
 - **Ray-saturation's per-fiber census is `1`** (the fiber's own saturation
   profile), which is subexponential; **no claim** that the ledger-wide number of
   saturation profiles is subexponential -- that is the max-fiber question.  The
@@ -374,6 +496,9 @@ fiber and flags any all-`False` row (a counterexample); none occur.
   exhaustive only for `p in {7,11,13}`, `|T|<=12`, `R in {1,2}`, and its absolute
   heaviness ratios are small (`<= 2.82`).  Exponential heaviness lives in the
   asymptotic families (Sec 1-2), which ARE closed-form.
+- **No near-extremal classification is proved.**  Theorem 2a is one exact
+  constructed structural family, Theorem 2b is #739's stronger subclass, and
+  the finite census does not classify all exponentially heavy depth-one fibers.
 - **NOT a refutation of #716 Sec 7.1's possible sixth clause.**  The census shows
   no sixth clause is needed for the STRUCTURED prime-field heavy fibers probed;
   #716's general many-syndrome analytic (signed-minor / #729) residual is a
@@ -396,9 +521,9 @@ fiber and flags any all-`False` row (a counterexample); none occur.
   saturation is identified as the universal per-fiber emitter (Thm 1); the Sec 5
   route-stops for field (5.3) and rank (5.4) are re-confirmed exactly.
 - **#732** (`charge_preserving_split_decomposition.md`): its twin-pair emission
-  instance is generalized off superincreasing (Thm 2, Sidon P) and off depth 1
-  (Thm 3, multiplicative folding); its cardinality residual is respected as the
-  boundary.
+  instance is generalized off superincreasing (Thm 2a, dissociated P) and off depth 1
+  (Thm 3, multiplicative folding).  Its natural full-chart cardinality residual
+  on the 2-dissociated paired class is cut by #739; broader/rooted variants remain.
 - **#725** (`c3_planted_divisor_census.md`): consumed as the emission census of
   Thm 3 -- the coset-union quotient family is a coset-type planted divisor with
   `sigma(p-1)` census.
@@ -416,9 +541,9 @@ fiber and flags any all-`False` row (a counterexample); none occur.
 
 ```bash
 python3 experimental/scripts/verify_heavy_fiber_planted_emission.py
-# -> RESULT: PASS (158/158)
+# -> RESULT: PASS (138/138)
 python3 experimental/scripts/verify_heavy_fiber_planted_emission.py --tamper-selftest
-# -> tamper-selftest: caught 4/4 ; then RESULT: PASS (158/158)
+# -> tamper-selftest: caught 4/4 ; then RESULT: PASS (138/138)
 cd experimental/lean/heavy_fiber_planted_emission && lake build
 # -> Build completed successfully (one 'sorry' warning, by design)
 ```

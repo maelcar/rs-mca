@@ -11,7 +11,7 @@ Note:     `experimental/notes/thresholds/staircase_concentration_sidon_paired.md
 Verifier: `experimental/scripts/verify_staircase_concentration_sidon_paired.py`
           (88/88, tamper 3/3).
 
-Class (#735 Thm 2 / #732 / #728 / #717 Sec 7):
+Class (#735 corrected Thm 2a / #732 / #728 / #717 Sec 7):
   `P` distinct-subset-sum, `|P|=B`, `c > 2 sum P`, `T = P u (c-P)`, `|T|=2B`,
   `a = B`, `Phi(S) = sum_{t in S} t` over `Z`.  A support meets each twin pair
   `{A_i, c-A_i}` as empty / low-only / high-only / both; `s = #unpaired pairs`.
@@ -60,13 +60,13 @@ def levelCount (B s : Nat) : Nat := binom B s * 2 ^ s
 def validS (B : Nat) : List Nat :=
   (List.range (B + 1)).filter (fun s => s % 2 == B % 2)
 
-/-! ## 1. The exact staircase and central fiber (#717 Sec 7 / #735 Thm 2). -/
+/-! ## 1. The exact staircase and central fiber (#717 Sec 7 / corrected #735 Thm 2a). -/
 
 /-- The `B = 8` fiber staircase `C(8-s,(8-s)/2)` for `s = 0,2,4,6,8`. -/
 theorem staircase_B8 :
     (validS 8).map (fun s => fiber 8 s) = [70, 20, 6, 2, 1] := by native_decide
 
-/-- Central fiber `= C(B, B/2)` (= #735 Thm 2's twin-pair-union count). -/
+/-- Central fiber `= C(B, B/2)` (= corrected #735 Thm 2a's twin-pair-union count). -/
 theorem central_B8  : fiber 8  0 = binom 8  4  := by native_decide
 theorem central_B10 : fiber 10 0 = binom 10 5  := by native_decide
 theorem central_B12 : fiber 12 0 = binom 12 6  := by native_decide

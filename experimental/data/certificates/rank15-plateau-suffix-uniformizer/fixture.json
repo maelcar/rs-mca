@@ -1,0 +1,353 @@
+{
+  "artifact_sha256": {
+    "capacity_ledger": "5091510210060595022fcd04a622319d7da054176369ade0ead0e936d40e20a4",
+    "recurrence_ledger": "0c4bd290a03e508ec9b73e2d4f223fadf0b4bcf21040512ff7f686742337ab3c",
+    "verifier": "5d048a7327176b12f8cb1f27f51a9d1c0c13a47aff23080e462d460bb0109fe5"
+  },
+  "capacity_anchors": {
+    "1043770": {
+      "budget_7delta_plus_eta": 3100,
+      "capacity": 15757789,
+      "d": 4805,
+      "margin": 1403,
+      "r": 0,
+      "t_margins": {
+        "210": -8054,
+        "211": -8054,
+        "212": -3249,
+        "213": -3249,
+        "214": -1705,
+        "215": -6510,
+        "216": -6510,
+        "217": -1705,
+        "218": 1403
+      }
+    },
+    "1043771": {
+      "capacity": 15756137,
+      "margin": -31
+    },
+    "1043948": {
+      "capacity": 15569720,
+      "margin": -147862
+    }
+  },
+  "imported_dependency": {
+    "chi8_skeletons": [
+      [
+        18,
+        25,
+        0,
+        2,
+        1,
+        1
+      ],
+      [
+        18,
+        25,
+        1,
+        0,
+        2,
+        1
+      ],
+      [
+        18,
+        25,
+        1,
+        1,
+        0,
+        5
+      ],
+      [
+        26,
+        24,
+        1,
+        3,
+        0,
+        1
+      ],
+      [
+        26,
+        24,
+        2,
+        1,
+        1,
+        1
+      ],
+      [
+        26,
+        24,
+        3,
+        0,
+        0,
+        5
+      ],
+      [
+        34,
+        23,
+        3,
+        2,
+        0,
+        1
+      ],
+      [
+        34,
+        23,
+        4,
+        0,
+        1,
+        1
+      ],
+      [
+        42,
+        22,
+        5,
+        1,
+        0,
+        1
+      ],
+      [
+        50,
+        21,
+        7,
+        0,
+        0,
+        1
+      ]
+    ],
+    "graph_cost_floor": 8,
+    "pending_pr": 746,
+    "skeleton_count": 10
+  },
+  "nonclaims": {
+    "grand_list_solved": false,
+    "grand_mca_solved": false,
+    "official_score": "0/2",
+    "rank_at_least_16_remains": true,
+    "residual_M218_states": 219
+  },
+  "optimizer": {
+    "chi8_arithmetic_cases": 193,
+    "high_profiles": 100947,
+    "high_profiles_sha256": "4b59029a8f931908c5ba19f7dbdcad4e962b3acdd94c40e746e664f707ec7053",
+    "low_optimizer_dp_cases": 2530,
+    "states": 397,
+    "threshold_cases": 1314,
+    "threshold_coefficients": [
+      1,
+      1,
+      1,
+      3,
+      6,
+      21
+    ],
+    "threshold_witnesses": [
+      2,
+      2,
+      2,
+      3,
+      4,
+      7
+    ]
+  },
+  "parameters": {
+    "K": 1048576,
+    "M": 218,
+    "effective_recurrence_c": 0,
+    "m": 1116047,
+    "n": 2097152,
+    "p": 2130706433,
+    "q": 15
+  },
+  "recurrence": [
+    {
+      "base_at_zero": 219,
+      "changed_states": 1043949,
+      "constant_drop_runs": 3,
+      "cut_at_zero": 218,
+      "dimension": 2,
+      "first_changed": 0,
+      "last_changed": 1043948,
+      "maximum_drop": 2,
+      "row_sha256": "e8513f6b1b8ca85ed6a7fdd1a4527307b913a8002d22cc285fc4f167132a88ab",
+      "value_runs": 206
+    },
+    {
+      "base_at_zero": 3185,
+      "changed_states": 1043617,
+      "constant_drop_runs": 1,
+      "cut_at_zero": 3170,
+      "dimension": 3,
+      "first_changed": 0,
+      "last_changed": 1043616,
+      "maximum_drop": 15,
+      "row_sha256": "15bdc0f9d8981e24d0f31ae9684d0c58947b7aceec30334e1af3cfa1045081f1",
+      "value_runs": 519
+    },
+    {
+      "base_at_zero": 46313,
+      "changed_states": 1043594,
+      "constant_drop_runs": 1,
+      "cut_at_zero": 46095,
+      "dimension": 4,
+      "first_changed": 0,
+      "last_changed": 1043593,
+      "maximum_drop": 218,
+      "row_sha256": "0a790114d528ffda94521b99fbc293d7f86e9763ddf175ff237065fcd1a5a502",
+      "value_runs": 542
+    },
+    {
+      "base_at_zero": 673432,
+      "changed_states": 1043593,
+      "constant_drop_runs": 1,
+      "cut_at_zero": 670262,
+      "dimension": 5,
+      "first_changed": 0,
+      "last_changed": 1043592,
+      "maximum_drop": 3170,
+      "row_sha256": "08fc8acd733e8af361e7f896d94ef000d45860195c1de5a5a7bb615ce026fd02",
+      "value_runs": 543
+    },
+    {
+      "base_at_zero": 9792173,
+      "changed_states": 1043592,
+      "constant_drop_runs": 1,
+      "cut_at_zero": 9746079,
+      "dimension": 6,
+      "first_changed": 0,
+      "last_changed": 1043591,
+      "maximum_drop": 46094,
+      "row_sha256": "9f8e7a15f88da98ee7c695252cd1041ebf415e94ab072c6f68fd156d191e7b9d",
+      "value_runs": 544
+    },
+    {
+      "base_at_zero": 142383225,
+      "changed_states": 1043591,
+      "constant_drop_runs": 1,
+      "cut_at_zero": 141712995,
+      "dimension": 7,
+      "first_changed": 0,
+      "last_changed": 1043590,
+      "maximum_drop": 670230,
+      "row_sha256": "0171754e83df52c2392178f949443932b2cf5b416d0caf34b3f27b8bbb464042",
+      "value_runs": 545
+    },
+    {
+      "base_at_zero": 2070298623,
+      "changed_states": 1043590,
+      "constant_drop_runs": 1,
+      "cut_at_zero": 2060553260,
+      "dimension": 8,
+      "first_changed": 0,
+      "last_changed": 1043589,
+      "maximum_drop": 9745363,
+      "row_sha256": "19b005b643a19c433eb96e07d101475d64dfd5d28cec0ec40e282f7edd10fea5",
+      "value_runs": 546
+    },
+    {
+      "base_at_zero": 30102431698,
+      "changed_states": 1043589,
+      "constant_drop_runs": 1,
+      "cut_at_zero": 29960732756,
+      "dimension": 9,
+      "first_changed": 0,
+      "last_changed": 1043588,
+      "maximum_drop": 141698942,
+      "row_sha256": "07dd34f24db4578cca659c3b5cc599b6eb9d81b06f9ceb8a93d20106a7fae284",
+      "value_runs": 547
+    },
+    {
+      "base_at_zero": 437687944409,
+      "changed_states": 1043588,
+      "constant_drop_runs": 1,
+      "cut_at_zero": 435627648441,
+      "dimension": 10,
+      "first_changed": 0,
+      "last_changed": 1043587,
+      "maximum_drop": 2060295968,
+      "row_sha256": "a6858f5d0e525917f4e46fb82994dae325563f9cb8dfbf2e598f5224c87b9694",
+      "value_runs": 548
+    },
+    {
+      "base_at_zero": 6363880388611,
+      "changed_states": 1043587,
+      "constant_drop_runs": 1,
+      "cut_at_zero": 6333924166895,
+      "dimension": 11,
+      "first_changed": 0,
+      "last_changed": 1043586,
+      "maximum_drop": 29956221716,
+      "row_sha256": "c67a4b9d8dec57a6d412d18386bcc31ba1743229e784eeaf19a5f3c1bf8c03d2",
+      "value_runs": 549
+    },
+    {
+      "base_at_zero": 92528143984263,
+      "changed_states": 1043586,
+      "constant_drop_runs": 1,
+      "cut_at_zero": 92092593121126,
+      "dimension": 12,
+      "first_changed": 0,
+      "last_changed": 1043585,
+      "maximum_drop": 435550863137,
+      "row_sha256": "c21163ab259c2500a007488e635c8b1674ece17197099eb4140c1fd2b0ac03e6",
+      "value_runs": 550
+    },
+    {
+      "base_at_zero": 1345303004308571,
+      "changed_states": 1043585,
+      "constant_drop_runs": 1,
+      "cut_at_zero": 1338970359348060,
+      "dimension": 13,
+      "first_changed": 0,
+      "last_changed": 1043584,
+      "maximum_drop": 6332644960511,
+      "row_sha256": "c1fd7226452ecd925ef3bd0f8d1b5e4ba8a0115ebbd33f1fd0b5b88504a3711a",
+      "value_runs": 551
+    },
+    {
+      "base_at_zero": 19559637074221362,
+      "changed_states": 1043584,
+      "constant_drop_runs": 1,
+      "cut_at_zero": 19467565446676642,
+      "dimension": 14,
+      "first_changed": 0,
+      "last_changed": 1043583,
+      "maximum_drop": 92071627544720,
+      "row_sha256": "75f39f854602de852a56ec79aaf4238fcbe7c327e9ab2966d6c7786f51e7f5cb",
+      "value_runs": 552
+    },
+    {
+      "base_at_zero": 284377931860724492,
+      "changed_states": 1043583,
+      "constant_drop_runs": 1,
+      "cut_at_zero": 283039300733528044,
+      "dimension": 15,
+      "first_changed": 0,
+      "last_changed": 1043582,
+      "maximum_drop": 1338631127196448,
+      "row_sha256": "03a97dacfb2d681240029ebab97637a775c7981bf3599c360361aadd9c431fe7",
+      "value_runs": 553
+    }
+  ],
+  "schema": "rank15-plateau-suffix-uniformizer-v1",
+  "status": "PROVED_SOURCE_VALID_THEOREM_WITH_UNPROVED_LEAN_TARGET",
+  "target": {
+    "baseline_gap": 9523821364536900,
+    "cut_gap": 8185190237340452,
+    "value": 274854110496187592
+  },
+  "theorem": {
+    "both_divisorial_branches": true,
+    "ceiling": 217,
+    "proved_state_count": 178,
+    "proved_u_interval": [
+      1043771,
+      1043948
+    ],
+    "residual_state_count": 219,
+    "residual_u_interval": [
+      1043552,
+      1043770
+    ]
+  }
+}

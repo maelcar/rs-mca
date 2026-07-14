@@ -1,0 +1,29 @@
+status=PROVED
+theorem=weighted_2K_K_Kplus1_MDS_coset_packing
+scope=weighted_GRS_or_linear_MDS_with_n_equals_2K
+toy_weighted_grs_cosets=PASS p=11 K=4 sigma=1 minimum_weight=5 max_high_shell=6 max_list=6
+p=2130706433
+n=2097152
+K=1048576
+sigma=67471
+agreement=1116047
+radius=981105
+challenge_budget=274980728111395087
+target=274854110496187592
+high_shell_terms=456817
+ratio_bound=PASS checks=456816 max_delta=262143 max_ratio=206158692352/2473899589632
+packing_depth=913634
+first_numerator_bits=2072019
+first_denominator_bits=354482
+U_high_bits=1717537
+U_high_digits=517030
+U_high_leading30=904729988050617145947819275983
+U_high_trailing30=447267321596643140059698004080
+U_list_bits=1717537
+U_list_digits=517030
+U_list_leading30=904729988050617145947819275983
+U_list_trailing30=447267321596643140059698004081
+floor_U_list_over_target_digits=517013
+floor_U_list_over_target_leading30=329167348604439498924431336018
+comparison=FAILS_TARGET
+nonclaim=no_deployed_closure_no_score_movement

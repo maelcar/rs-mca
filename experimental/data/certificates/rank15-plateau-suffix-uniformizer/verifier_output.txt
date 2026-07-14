@@ -1,0 +1,45 @@
+RANK15_PLATEAU_SUFFIX_UNIFORMIZER: PASS
+field: p=2130706433; positive_characteristic=True
+optimization_safe: explicit failures; no optimization-dependent checks
+high_profiles_checked: 100947
+high_profiles_sha256: 4b59029a8f931908c5ba19f7dbdcad4e962b3acdd94c40e746e664f707ec7053
+threshold_cases_checked: 1314
+threshold_coefficients: H9=1,H10=1,H11=1,H12=3,H13=6,H14=21
+threshold_sharp_witnesses: H9:r=2,H10:r=2,H11:r=2,H12:r=3,H13:r=4,H14:r=7
+low_optimizer_literal_dp_cases: 2530
+imported_pr746_chi8_skeletons: 10
+chi8_unassigned_slack: at_least=2/5_per_required_incidence
+chi8_refinement_states_checked: 193
+plateau: 1043552-1043948; states=397
+raw_G2_218: 1043552-1043906,1043948; states=356
+raw_G2_219: 1043907-1043947; states=41
+proved_M_le_217: 1043771-1043948; states=178
+residual_M218_states: 1043552-1043770; states=219
+capacity_boundary[1043770]: capacity=15757789; margin=1403
+capacity_boundary[1043771]: capacity=15756137; margin=-31
+capacity_boundary[1043948]: capacity=15569720; margin=-147862
+first_residual_t_margins[1043770]: t210=-8054,t211=-8054,t212=-3249,t213=-3249,t214=-1705,t215=-6510,t216=-6510,t217=-1705,t218=1403
+recurrence_change_summaries:
+  d=2; changed_states=1043949; first=0; last=1043948; max_drop=2; runs=3; F_base_0=219; F_cut_0=218
+  d=3; changed_states=1043617; first=0; last=1043616; max_drop=15; runs=1; F_base_0=3185; F_cut_0=3170
+  d=4; changed_states=1043594; first=0; last=1043593; max_drop=218; runs=1; F_base_0=46313; F_cut_0=46095
+  d=5; changed_states=1043593; first=0; last=1043592; max_drop=3170; runs=1; F_base_0=673432; F_cut_0=670262
+  d=6; changed_states=1043592; first=0; last=1043591; max_drop=46094; runs=1; F_base_0=9792173; F_cut_0=9746079
+  d=7; changed_states=1043591; first=0; last=1043590; max_drop=670230; runs=1; F_base_0=142383225; F_cut_0=141712995
+  d=8; changed_states=1043590; first=0; last=1043589; max_drop=9745363; runs=1; F_base_0=2070298623; F_cut_0=2060553260
+  d=9; changed_states=1043589; first=0; last=1043588; max_drop=141698942; runs=1; F_base_0=30102431698; F_cut_0=29960732756
+  d=10; changed_states=1043588; first=0; last=1043587; max_drop=2060295968; runs=1; F_base_0=437687944409; F_cut_0=435627648441
+  d=11; changed_states=1043587; first=0; last=1043586; max_drop=29956221716; runs=1; F_base_0=6363880388611; F_cut_0=6333924166895
+  d=12; changed_states=1043586; first=0; last=1043585; max_drop=435550863137; runs=1; F_base_0=92528143984263; F_cut_0=92092593121126
+  d=13; changed_states=1043585; first=0; last=1043584; max_drop=6332644960511; runs=1; F_base_0=1345303004308571; F_cut_0=1338970359348060
+  d=14; changed_states=1043584; first=0; last=1043583; max_drop=92071627544720; runs=1; F_base_0=19559637074221362; F_cut_0=19467565446676642
+  d=15; changed_states=1043583; first=0; last=1043582; max_drop=1338631127196448; runs=1; F_base_0=284377931860724492; F_cut_0=283039300733528044
+F14_base_0=19559637074221362; F14_cut_0=19467565446676642
+F15_base_0=284377931860724492; F15_cut_0=283039300733528044
+target=274854110496187592; baseline_gap=9523821364536900; cut_gap=8185190237340452
+tamper_controls: threshold+1, low-DP mismatch, interval off-by-one, chi8 slack, recurrence baseline PASS
+verifier_sha256: 5d048a7327176b12f8cb1f27f51a9d1c0c13a47aff23080e462d460bb0109fe5
+capacity_ledger_sha256: 5091510210060595022fcd04a622319d7da054176369ade0ead0e936d40e20a4
+recurrence_ledger_sha256: 0c4bd290a03e508ec9b73e2d4f223fadf0b4bcf21040512ff7f686742337ab3c
+fixture_sha256: fb9966ad9b61c981d9c24e7b09b3609550bba2d0cafbd5dc3461d2741f2bc51c
+nonclaims: residual_M218=219; rank_ge_16=OPEN; Grand_List=OPEN; Grand_MCA=OPEN; score=0/2

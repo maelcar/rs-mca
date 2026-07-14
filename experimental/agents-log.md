@@ -30,6 +30,37 @@ Keep entries concise and link to the relevant files.
 
 ## Entries
 
+### 2026-07-14 - L1/L2 threshold PR integration wave
+
+- **Agent/model:** Codex integrating PRs #742--#754 from DannyExperiments,
+  manifoldcontrol, holmbuar, avdeevvadim, AllenGrahamHart, and scottdhughes.
+- **Files added or changed:** Added L1/L2/threshold/audit notes under
+  `experimental/notes/`, certificate data and verifier transcripts under
+  `experimental/data/certificates/`, verifier scripts under
+  `experimental/scripts/`, and Lean modules/packages under `experimental/lean/`.
+  Rehomed `experimental/rsmca_certificates_notes.md` into
+  `experimental/notes/certificates/`.  Imported the L1 official-row crosswalk
+  as `experimental/notes/l1/l1_official_rows_crosswalk_20260713.md` rather than
+  applying its root `towards-prize.md` promotion text.  Contributor
+  `experimental/agents-log.md` edits were not imported.
+- **Status:** PROVED / CONDITIONAL / COUNTEREXAMPLE / EXPERIMENTAL / AUDIT,
+  as stated in the individual notes. No stable paper `.tex` or `.pdf` theorem
+  is promoted by this entry.
+- **What is being added:** Rank-15 and rank-16 Grand List route cuts, weighted
+  GRS packing and cyclic half-footprint compilers, selector-free exact-weight
+  and LineRay refinements, selected-owner unit-layer equivalence/audit data,
+  the heavy-fiber hypothesis repair, toy-case Lean certificates, an official-row
+  L1 crosswalk, and the deployed axis g-damping lattice sublemma.
+- **How it is useful:** The wave repairs a previously false heavy-fiber center
+  hypothesis, adds several narrow theorem/counterexample packets for the current
+  finite threshold program, and records a potentially important L1 official-row
+  discharge as an experimental crosswalk pending in-repo audit of its external
+  proof trail.
+- **What to do next:** Audit the L1 crosswalk against in-repo proof artifacts
+  before promoting roadmap language; run the verifier scripts and Lean builds in
+  a dedicated environment; decide whether the rank-15/16 and axis-g-damping
+  packets should be summarized in `asymptotic_rs_mca.md` or `grande_finale.tex`.
+
 ### 2026-07-13 - Threshold, C9, LineRay, Lean, and audit PR wave
 
 - **Agent/model:** Codex integrating PRs #723--#741 from holmbuar and

@@ -10,7 +10,7 @@ charge-preserving semantic-or-signed dichotomy (Sec 6) on the Sidon-paired
 depth-1 class -- flagged by #732 Theorem B as its residual "max-fiber /
 staircase-concentration" hypothesis.
 
-Route-scoped class (#735 Thm 2 / #732 / #728 / #717 Sec 7):
+Route-scoped class (#735 corrected Thm 2a / #732 / #728 / #717 Sec 7):
   P     a distinct-subset-sum (dissociated) set over Z, |P| = B
   c     an integer with c > 2*sum(P)      (large-c / no-wraparound regime)
   T     = P  u  (c - P),  |T| = 2B        (twin pairs {A_i, c - A_i})
@@ -32,7 +32,8 @@ Exact combinatorics established here (stdlib only, deterministic, exact ints):
      C(B - s, (B - s)/2), and the C(B, s) syndromes {sigma_R} are DISTINCT.
      Verified for the non-superincreasing Conway-Guy sets {3,5,6,7},
      {11,17,20,22,23,24}, and base 2^i (all distinct-subset-sum, none B[+-2]).
-     The central fiber is C(B, B/2) for ALL of them (re-verifies #735 Thm 2).
+     The central fiber is C(B, B/2) for ALL of them (re-verifies corrected
+     #735 Thm 2a under the stronger no-wrap center used here).
 
   BLOCK C  CONCENTRATION IS DECIDED FALSE.  From the exact formula, for every
      fixed eta in (0, ln(3/2)/2),
@@ -51,8 +52,8 @@ Interfaces: avdeevvadim's #716 (the dichotomy + concentration residual);
   #717 (Johnson depth-R prefix chart, Sec 7 superincreasing witness);
   #729 (density criterion q_+ = 1/(3/2 - logM/logL), layer-cake piece-split);
   #732 (Theorem B: split is #716's decomposition IFF staircase-concentrated;
-        Prop 3.1 cardinality obstruction); #735 (Thm 2: central fiber = twin
-        unions on any Sidon P).
+        Prop 3.1 cardinality obstruction); #735 (corrected Thm 2a: central fiber =
+        twin unions on any distinct-subset-sum P under the displayed center bound).
 
 Usage:
   python3 verify_staircase_concentration_sidon_paired.py            # RESULT: PASS (n/n)

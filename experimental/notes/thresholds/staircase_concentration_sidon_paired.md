@@ -21,7 +21,8 @@ Verdict per sub-question (route-scoped):
       where s = #unpaired twin-pairs of any support in the fiber, and there are
       EXACTLY C(B, s) 2^s syndromes at unpaired-count s (s == B mod 2).  This
       recovers L = (3^B+1)/2 and M = C(2B,B) (#717 Sec 7 / #728) and the central
-      fiber W = C(B, B/2) (#735 Thm 2) as the single s=0 term.
+      fiber W = C(B, B/2) (#735 Thm 2a under its corrected center bound) as the
+      single s=0 term.
   (2) ROBUST LOWER BOUND.  For EVERY distinct-subset-sum P (the general
       "Sidon-paired" class, incl. non-superincreasing Conway-Guy sets), each
       s-subset R of [B] gives a DISTINCT syndrome sigma_R with
@@ -92,9 +93,10 @@ No `.tex`/`.pdf` is edited.
   small-`B` appearance of concentration is a crossover artifact (Sec 4).
 - **#735**
   (`experimental/notes/thresholds/heavy_fiber_planted_emission.md`).  Its
-  **Theorem 2** (central fiber `Phi^{-1}((B/2)c)` = the `C(B,B/2)` complete
-  twin-pair unions, for any distinct-subset-sum `P`) is the `s=0` slice of the
-  exact profile here and is re-verified on all four domains.  Its scope note --
+  corrected **Theorem 2a** (central fiber `Phi^{-1}((B/2)c)` = the
+  `C(B,B/2)` complete twin-pair unions, for any distinct-subset-sum `P` under
+  `c > max(sum P, 2 max P)`) is the `s=0` slice of the exact profile here and is
+  re-verified on all four domains.  Its scope note --
   "per-fiber emission is closed; the GLOBAL profile count remains #732's open
   max-fiber question" -- is exactly the question this packet answers.
 
@@ -175,7 +177,8 @@ remaining `B - s` pairs are `both` (`W`) versus `empty` (`E`).  That is
 `sum_s C(B,s)2^s = 3^B` split by parity `(=> (3^B+1)/2` for `B` even), and
 `sum_{a-subsets} 1 = C(2B,B)`.  `square`
 
-The `s = 0` term is the central fiber `C(B, B/2)` = #735 Thm 2 = #717 Sec 7's
+The `s = 0` term is the central fiber `C(B, B/2)` = corrected #735 Thm 2a =
+#717 Sec 7's
 `W`.  **Verification** (BLOCK A): brute-force enumeration for `A_i in {3^i, 5^i}`,
 `B in {2,4,6,8}`, matches the size-multiplicity table exactly, e.g. `B=6`:
 `{fiber 1: x64, 2: x240, 6: x60, 20: x1}`, `L=365`, `M=924`, central `= 20 =
@@ -216,7 +219,7 @@ are `C(B-s,(B-s)/2)` of them.  Distinctness: `sigma_R = sigma_{R'}` with
 
 **Verification** (BLOCK B): for the Conway--Guy sets `{3,5,6,7}` (`B=4`) and
 `{11,17,20,22,23,24}` (`B=6`) and base `2^i` (all distinct-subset-sum, none
-B[+-2]): the central fiber is `C(B,B/2)` (re-verifies #735 Thm 2), the
+B[+-2]): the central fiber is `C(B,B/2)` (re-verifies corrected #735 Thm 2a), the
 `sigma_R` bound and distinctness hold, and each carries EXTRA intermediate
 fibers above the clean staircase (`{3,5,6,7}` profile
 `{1:x8, 2:x10, 3:x6, 4:x2, 5:x2, 6:x1}`, `L=29 < 41`) -- i.e. LESS concentrated,
@@ -317,7 +320,7 @@ asymptotics reverse it.
 
 The intended payoff was a composition corollary: **#729** (pruned pieces pay the
 signed clause) + **#732** Thm A/B (four-condition decomposition) + **#735**
-Thm 2 (semantic emission on the heavy fibers) + **this packet** (concentration)
+Thm 2a (semantic emission on the heavy fibers) + **this packet** (concentration)
 `=>` the charge-preserving semantic-or-signed dichotomy, PROVED end-to-end on
 the Sidon-paired depth-1 class.  Theorem 3 shows the last link is FALSE:
 
@@ -395,7 +398,7 @@ as semantic packets.  That is outside this packet (Nonclaims).
   evaluated and its open branch (concentration when `L=e^{Theta(N)}`) is
   resolved FALSE for this family; Prop 3.1's obstruction is exhibited as
   realized, and the Sec 3/5 "concentrated" prose is corrected (crossover).
-- **#735** (`heavy_fiber_planted_emission.md`): its Thm 2 central fiber is the
+- **#735** (`heavy_fiber_planted_emission.md`): its corrected Thm 2a central fiber is the
   `s=0` slice of the exact profile; its deferral of "the GLOBAL profile count"
   to #732's max-fiber question is answered (exponential).
 - **#729** (`general_pruned_signed_bound.md`): `q_+ = 4.199` is recomputed; the

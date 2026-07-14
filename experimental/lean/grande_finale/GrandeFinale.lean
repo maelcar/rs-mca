@@ -1,10 +1,16 @@
 import Mathlib
 import GrandeFinale.AllLineRayAffineCore
 import GrandeFinale.AntiHostPrefixCompiler
+import GrandeFinale.AxisGdampingCosGap
 import GrandeFinale.DeployedC9OddMonomialFourierBudget
 import GrandeFinale.DirectionDistanceAllPairs
+import GrandeFinale.ExactWeightAllPairs
 import GrandeFinale.GeneralRConstantWeilCycleFlatness
+import GrandeFinale.Rank15CommonRootHyperplaneSlicing
 import GrandeFinale.Rank15LocatorDegreeFloor
+import GrandeFinale.Rank15PlateauSuffixUniformizer
+import GrandeFinale.Rank16LeftKernelForney
+import GrandeFinale.WeightedCyclicGRSHalfFootprint
 
 /-!
 # Self-contained core of "Final Inputs for RS-MCA" (`grande_finale.tex`)

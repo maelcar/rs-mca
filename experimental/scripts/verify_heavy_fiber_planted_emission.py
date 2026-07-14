@@ -30,13 +30,14 @@ This verifier decides the three sub-questions of the lane at census scale:
            saturate.  Verified: every census fiber above the bound saturates.
 
   BLOCK C  Depth-1 involution-planted class (the provable class, generalizing
-           #732/#728 from superincreasing to ANY Sidon P).  Over Z_C with
-           T = P u (C-P), P a Sidon set (distinct subset sums), a=B: the central
+           #732/#728 from superincreasing to ANY dissociated P).  Over Z_C with
+           T = P u (C-P), P a distinct-subset-sum (dissociated) set, a=B even, and
+           C=2*sum(P)+1: the central
            fiber Phi^{-1}((B/2)C) is EXACTLY the C(B,B/2) complete-twin-pair
            unions -> repeated planted template (census 1) + involution quotient
            folding + Johnson saturation |S cap S'| = a-2.  Checked for
            superincreasing P (5^i) AND independent non-superincreasing
-           Conway-Guy Sidon P.
+           Conway-Guy dissociated P.
 
   BLOCK D  Depth-R multiplicative-folding class (the depth-R generalization).
            The additive involution preserves only p_1 (depth 1) and SHATTERS at
@@ -311,7 +312,7 @@ def johnson_cw_bound(n, d, w):
     return rec(n, w)
 
 # ---------------------------------------------------------------------------
-# Sidon set (distinct subset sums) generator: Conway-Guy (non-superincreasing)
+# Distinct-subset-sum (dissociated) generator: Conway-Guy (non-superincreasing)
 # ---------------------------------------------------------------------------
 def has_distinct_subset_sums(P):
     sums = set()
@@ -336,7 +337,7 @@ def conway_guy_set(B):
     """Conway-Guy distinct-subset-sum set of size B (Guy, Unsolved Problems in
     Number Theory C8; OEIS A005318).  For B>=4 this set is NOT superincreasing,
     giving an INDEPENDENT witness that the twin-pair theorem needs only distinct
-    subset sums (Sidon/dissociativity), not the superincreasing hypothesis of
+    subset sums (dissociativity), not the superincreasing hypothesis of
     #728/#732.  a(n)=2a(n-1)-a(n-1-r), r=round(sqrt(2(n-1)));
     set = { a(B) - a(B-i) : i=1..B }."""
     import math
@@ -534,7 +535,7 @@ def block_C(report):
             # certify P is a genuine distinct-subset-sum (dissociated) set, and
             # (for conway-guy, B>=4) NON-superincreasing -> independent witness
             check(has_distinct_subset_sums(P),
-                  f"BLOCK C[{name} B={B}]: P has distinct subset sums (Sidon)")
+                  f"BLOCK C[{name} B={B}]: P has distinct subset sums (dissociated)")
             if name == "conway-guy" and B >= 4:
                 check(not is_superincreasing(P),
                       f"BLOCK C[{name} B={B}]: P is NON-superincreasing (indep witness)")
@@ -551,33 +552,17 @@ def block_C(report):
             check(all(sum(S) % C == s0 for S in twins),
                   f"BLOCK C[{name} B={B}]: all twin unions have sum s0")
             # EXACTNESS of the central fiber:
-            if B <= 8:
-                # full enumeration of C(2B,B)
-                fib0 = [frozenset(S) for S in combinations(T, a) if sum(S) % C == s0]
-                check(set(fib0) == set(twins),
-                      f"BLOCK C[{name} B={B}]: central fiber == twin-pair unions EXACTLY")
-                W = len(fib0)
-            else:
-                # B=10: containment + independent count (all twins are in the
-                # fiber; and NO other a-subset hits s0 by the Sidon argument,
-                # which we spot-check on a deterministic sample of non-twins)
-                W = Wtwin
-                # deterministic adversarial sample: subsets that break one pair
-                bad = 0
-                pairs = [(A, (C - A) % C) for A in P]
-                # take a twin, swap one element out for a wrong partner
-                base = twins[0]
-                for i in range(B):
-                    for repl in T:
-                        if repl in base:
-                            continue
-                        # remove one element of base, add repl
-                        rem = sorted(base)[i % len(base)]
-                        cand = (base - {rem}) | {repl}
-                        if len(cand) == a and sum(cand) % C == s0 and frozenset(cand) not in set(twins):
-                            bad += 1
-                check(bad == 0,
-                      f"BLOCK C[{name} B={B}]: no near-twin perturbation hits s0 (Sidon)")
+            # Full enumeration, including both C(20,10) B=10 instances.
+            fib0 = [
+                frozenset(S)
+                for S in combinations(T, a)
+                if sum(S) % C == s0
+            ]
+            check(
+                set(fib0) == set(twins),
+                f"BLOCK C[{name} B={B}]: central fiber == twin-pair unions EXACTLY",
+            )
+            W = len(fib0)
             # emission on the twin fiber
             fires, extras = emit_vector_ZC(twins, T, a, R=1, C=C)
             check(fires["saturation"] and extras["maxint"] == a - 2,
@@ -596,7 +581,7 @@ def block_C(report):
                             "L_superinc": L, "maxint": extras["maxint"],
                             "fires": fires, "exact_design": extras["exact_design"]})
     report(f"  involution-planted class verified for {len(results)} (family,B) "
-           f"instances; both superincreasing AND non-superincreasing Conway-Guy Sidon P")
+           f"instances; both superincreasing AND non-superincreasing Conway-Guy dissociated P")
     return results
 
 def emit_vector_ZC(F, T, a, R, C):
@@ -703,7 +688,6 @@ def block_D(report):
                 for j in range(1, d):
                     if sum(pow(x, j, p) for x in cos) % p != 0:
                         ok_ps = False
-                check(sum(cos) % p == 0 or True, "")  # (p_1 checked in loop)
             check(ok_ps,
                   f"BLOCK D[p={p},d={d}]: every H_{d}-coset has p_1..p_{d-1}=0 mod p")
             # take a = 2 cosets (d*2 elements) over T = all cosets
@@ -881,7 +865,7 @@ def main():
     heavy = A["all_heavy"]
     report("BLOCK B  saturation-forcing via constant-weight code bound")
     Bres = block_B(heavy, report)
-    report("BLOCK C  depth-1 involution-planted class (Sidon P, generalizing #732)")
+    report("BLOCK C  depth-1 involution-planted class (dissociated P, generalizing #732)")
     C = block_C(report)
     report("BLOCK D  depth-R multiplicative folding + involution shatter at R=2")
     D = block_D(report)

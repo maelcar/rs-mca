@@ -1,0 +1,55 @@
+{
+  "deployed": {
+    "K": 1048576,
+    "L": 32768,
+    "L_minus_1": 32767,
+    "a_size": 27,
+    "code_alphabet_size": 93571093019388561295270373781649880353786165192103559169,
+    "extension_degree": 6,
+    "k": 32,
+    "m": 1116047,
+    "n": 2097152,
+    "outer_q0_unrouted_footprint_floor": 33,
+    "owner_size": 5,
+    "p": 2130706433,
+    "q0": 64,
+    "sigma": 67471
+  },
+  "fixture_scope": "prime_field_evidence_only",
+  "fixtures": {
+    "F13_q6_L2_multi_owner_core": {
+      "core_equality_maps": 105456,
+      "linear_maps": 4826809,
+      "nonvanishing_core_maps": 4798248,
+      "quotient_homomorphism_pairs": 144
+    },
+    "F17_q4_L2_all_phi": {
+      "core_equality_cases": 626688,
+      "core_qualifying_cases": 10653696,
+      "discrepancy_identities": 1002252,
+      "exact_footprints": 497664,
+      "inverse_realizations": 83521,
+      "linear_maps": 83521,
+      "quotient_homomorphism_pairs": 64
+    },
+    "F5_q4_L1_all_weighted_sources": {
+      "discrepancy_identities": 7500,
+      "distinct_phi_reached": 25,
+      "exact_footprints": 2400,
+      "inverse_realizations_with_all_weights": 6400,
+      "quotient_homomorphism_pairs": 16,
+      "weighted_forward_cases": 160000
+    }
+  },
+  "status": "PASS",
+  "tamper_mutations_rejected": [
+    "deployed_sigma_plus_one",
+    "quotient_exponent_L_plus_one",
+    "dual_multiplier_without_y",
+    "inverse_dft_exponent_shift",
+    "discrepancy_scalar_without_locator",
+    "literal_weights_not_restored",
+    "exact_footprint_any_instead_of_all",
+    "core_budget_L_minus_two"
+  ]
+}
