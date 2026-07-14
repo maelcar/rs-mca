@@ -61,6 +61,25 @@ Keep entries concise and link to the relevant files.
   a dedicated environment; decide whether the rank-15/16 and axis-g-damping
   packets should be summarized in `asymptotic_rs_mca.md` or `grande_finale.tex`.
 
+### 2026-07-14 - GAP-1 pooled-marginal terminal reserve counterexample
+
+- **Agent/model:** Manuel E. Rey-Álvarez Zafiria (contributor).
+- **Files added or changed:**
+  `experimental/notes/x1/x1_gap1_pooled_marginal_tr_counterexample.md`,
+  `experimental/scripts/verify_gap1_tr_pooled_marginal_counterexample.py`, and
+  `experimental/data/certificates/gap1-tr-pooled-marginal-counterexample/`.
+- **Status:** COUNTEREXAMPLE.
+- **What is being added:** An infinite two-coset family refutes the literal
+  product-of-pooled-marginals Conjecture TR.  A deterministic finite replay
+  exhausts all `F_337` degree-`<2` codewords and checks the exact corridor
+  arithmetic.
+- **How it is useful:** It separates pooled marginal growth from genuine joint
+  image growth in the GAP-1 terminal-reserve step and identifies the joint
+  tuple set, or a support-stratified sum, as the object a repaired theorem must
+  control.
+- **What to do next:** Review the corrected joint-object formulation and
+  determine how the existing `tr_joint_telescope` DAG node is sourced before
+  replacing the literal terminal-reserve statement.
 ### 2026-07-13 - Threshold, C9, LineRay, Lean, and audit PR wave
 
 - **Agent/model:** Codex integrating PRs #723--#741 from holmbuar and
