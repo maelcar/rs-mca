@@ -1,0 +1,2965 @@
+{
+  "ell17_D0_global_counterexample_family": {
+    "active_coefficient_for_sector_s": 81,
+    "cells": [
+      {
+        "D": 0,
+        "H_stabilizer_of_exact_missed_core": [
+          1
+        ],
+        "Lambda_coefficients_ascending": [
+          1136,
+          1173,
+          614,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          689,
+          1108,
+          1
+        ],
+        "P0_coefficients_ascending": [
+          829,
+          1337,
+          1168,
+          629,
+          167,
+          100,
+          864,
+          855,
+          486,
+          449,
+          747,
+          943,
+          1
+        ],
+        "active_nonzero_DFT_sectors": [
+          1,
+          11
+        ],
+        "core_beta_labels": [
+          1136,
+          114,
+          160,
+          917,
+          1096,
+          225,
+          1247,
+          1201,
+          444,
+          265,
+          145,
+          108
+        ],
+        "core_quotient_indices": [
+          2,
+          10,
+          18,
+          26,
+          34,
+          42,
+          50,
+          58,
+          66,
+          74,
+          7,
+          15
+        ],
+        "core_root_indices": [
+          [
+            0,
+            4,
+            10
+          ],
+          [
+            5,
+            9,
+            15
+          ],
+          [
+            3,
+            10,
+            14
+          ],
+          [
+            2,
+            8,
+            15
+          ],
+          [
+            3,
+            7,
+            13
+          ],
+          [
+            1,
+            8,
+            12
+          ],
+          [
+            0,
+            6,
+            13
+          ],
+          [
+            1,
+            5,
+            11
+          ],
+          [
+            6,
+            10,
+            16
+          ],
+          [
+            4,
+            11,
+            15
+          ],
+          [
+            1,
+            6
+          ],
+          [
+            6,
+            11
+          ]
+        ],
+        "core_root_values": [
+          [
+            9,
+            121,
+            168
+          ],
+          [
+            1161,
+            638,
+            1257
+          ],
+          [
+            194,
+            59,
+            642
+          ],
+          [
+            1158,
+            528,
+            806
+          ],
+          [
+            538,
+            1033,
+            62
+          ],
+          [
+            1193,
+            1352,
+            1240
+          ],
+          [
+            723,
+            104,
+            200
+          ],
+          [
+            1302,
+            719,
+            1167
+          ],
+          [
+            555,
+            203,
+            833
+          ],
+          [
+            1299,
+            823,
+            328
+          ],
+          [
+            1083,
+            292
+          ],
+          [
+            885,
+            921
+          ]
+        ],
+        "core_zero_profile": [
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          2,
+          2
+        ],
+        "degree": 204,
+        "degree_bound": 204,
+        "exact_missed_core_size": 170,
+        "full_DFT_support_including_sector_zero": [
+          0,
+          1,
+          11
+        ],
+        "listed": true,
+        "listing_threshold": 221,
+        "m": 12,
+        "minimal_kernel_range_upper": 170,
+        "minimality": "The upstream full-petal reconstruction bijection applies: the scalars are distinct and nonzero, the word is listed and full-petal, and its exact missed core lies in [ell,(tau-1)ell].  Therefore that exact missed core is a divisibility-minimal kernel set.",
+        "petal_agreement": 187,
+        "petal_alpha_labels": [
+          1,
+          317,
+          808,
+          268,
+          574,
+          945,
+          1052,
+          39,
+          752,
+          209,
+          925
+        ],
+        "petal_quotient_indices": [
+          0,
+          1,
+          3,
+          4,
+          5,
+          6,
+          8,
+          9,
+          11,
+          12,
+          13
+        ],
+        "petal_scalars": [
+          839,
+          807,
+          547,
+          188,
+          56,
+          1286,
+          1002,
+          774,
+          589,
+          1076,
+          479
+        ],
+        "phi_coefficients_ascending": [
+          969,
+          135,
+          357,
+          798,
+          1215,
+          619,
+          65,
+          692,
+          313,
+          726,
+          915,
+          1
+        ],
+        "primitive": true,
+        "retained_core": 34,
+        "target_A_equals_P0_over_phi_on_core": [
+          665,
+          42,
+          1335,
+          729,
+          132,
+          696,
+          1319,
+          26,
+          632,
+          1229,
+          980,
+          1208
+        ],
+        "tau": 11,
+        "total_agreement": 221
+      },
+      {
+        "D": 0,
+        "H_stabilizer_of_exact_missed_core": [
+          1
+        ],
+        "Lambda_coefficients_ascending": [
+          1298,
+          49,
+          365,
+          614,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          574,
+          1217,
+          455,
+          1
+        ],
+        "P0_coefficients_ascending": [
+          1091,
+          834,
+          1358,
+          1280,
+          834,
+          412,
+          1128,
+          577,
+          1093,
+          157,
+          1249,
+          427,
+          476,
+          1
+        ],
+        "active_nonzero_DFT_sectors": [
+          1,
+          11
+        ],
+        "core_beta_labels": [
+          1136,
+          114,
+          160,
+          917,
+          1096,
+          225,
+          1247,
+          1201,
+          444,
+          265,
+          145,
+          108,
+          653
+        ],
+        "core_quotient_indices": [
+          2,
+          10,
+          18,
+          26,
+          34,
+          42,
+          50,
+          58,
+          66,
+          74,
+          7,
+          15,
+          23
+        ],
+        "core_root_indices": [
+          [
+            0,
+            4,
+            10
+          ],
+          [
+            5,
+            9,
+            15
+          ],
+          [
+            3,
+            10,
+            14
+          ],
+          [
+            2,
+            8,
+            15
+          ],
+          [
+            3,
+            7,
+            13
+          ],
+          [
+            1,
+            8,
+            12
+          ],
+          [
+            0,
+            6,
+            13
+          ],
+          [
+            1,
+            5,
+            11
+          ],
+          [
+            6,
+            10,
+            16
+          ],
+          [
+            4,
+            11,
+            15
+          ],
+          [
+            1,
+            6
+          ],
+          [
+            6,
+            11
+          ],
+          [
+            11,
+            16
+          ]
+        ],
+        "core_root_values": [
+          [
+            9,
+            121,
+            168
+          ],
+          [
+            1161,
+            638,
+            1257
+          ],
+          [
+            194,
+            59,
+            642
+          ],
+          [
+            1158,
+            528,
+            806
+          ],
+          [
+            538,
+            1033,
+            62
+          ],
+          [
+            1193,
+            1352,
+            1240
+          ],
+          [
+            723,
+            104,
+            200
+          ],
+          [
+            1302,
+            719,
+            1167
+          ],
+          [
+            555,
+            203,
+            833
+          ],
+          [
+            1299,
+            823,
+            328
+          ],
+          [
+            1083,
+            292
+          ],
+          [
+            885,
+            921
+          ],
+          [
+            1202,
+            402
+          ]
+        ],
+        "core_zero_profile": [
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          2,
+          2,
+          2
+        ],
+        "degree": 221,
+        "degree_bound": 221,
+        "exact_missed_core_size": 185,
+        "full_DFT_support_including_sector_zero": [
+          0,
+          1,
+          11
+        ],
+        "listed": true,
+        "listing_threshold": 238,
+        "m": 13,
+        "minimal_kernel_range_upper": 187,
+        "minimality": "The upstream full-petal reconstruction bijection applies: the scalars are distinct and nonzero, the word is listed and full-petal, and its exact missed core lies in [ell,(tau-1)ell].  Therefore that exact missed core is a divisibility-minimal kernel set.",
+        "petal_agreement": 204,
+        "petal_alpha_labels": [
+          1,
+          317,
+          808,
+          268,
+          574,
+          945,
+          1052,
+          39,
+          752,
+          209,
+          925,
+          610
+        ],
+        "petal_quotient_indices": [
+          0,
+          1,
+          3,
+          4,
+          5,
+          6,
+          8,
+          9,
+          11,
+          12,
+          13,
+          14
+        ],
+        "petal_scalars": [
+          725,
+          39,
+          6,
+          103,
+          575,
+          278,
+          1066,
+          1205,
+          970,
+          527,
+          215,
+          693
+        ],
+        "phi_coefficients_ascending": [
+          945,
+          279,
+          125,
+          815,
+          32,
+          622,
+          438,
+          1216,
+          302,
+          1139,
+          586,
+          305,
+          1
+        ],
+        "primitive": true,
+        "retained_core": 36,
+        "target_A_equals_P0_over_phi_on_core": [
+          665,
+          42,
+          1335,
+          729,
+          132,
+          696,
+          1319,
+          26,
+          632,
+          1229,
+          980,
+          1208,
+          678
+        ],
+        "tau": 12,
+        "total_agreement": 240
+      },
+      {
+        "D": 0,
+        "H_stabilizer_of_exact_missed_core": [
+          1
+        ],
+        "Lambda_coefficients_ascending": [
+          1150,
+          706,
+          861,
+          974,
+          614,
+          0,
+          0,
+          0,
+          0,
+          0,
+          259,
+          675,
+          775,
+          804,
+          1
+        ],
+        "P0_coefficients_ascending": [
+          530,
+          1183,
+          114,
+          762,
+          875,
+          1006,
+          579,
+          510,
+          1324,
+          630,
+          1030,
+          684,
+          1237,
+          664,
+          1
+        ],
+        "active_nonzero_DFT_sectors": [
+          1,
+          11
+        ],
+        "core_beta_labels": [
+          1136,
+          114,
+          160,
+          917,
+          1096,
+          225,
+          1247,
+          1201,
+          444,
+          265,
+          145,
+          108,
+          653,
+          1012
+        ],
+        "core_quotient_indices": [
+          2,
+          10,
+          18,
+          26,
+          34,
+          42,
+          50,
+          58,
+          66,
+          74,
+          7,
+          15,
+          23,
+          31
+        ],
+        "core_root_indices": [
+          [
+            0,
+            4,
+            10
+          ],
+          [
+            5,
+            9,
+            15
+          ],
+          [
+            3,
+            10,
+            14
+          ],
+          [
+            2,
+            8,
+            15
+          ],
+          [
+            3,
+            7,
+            13
+          ],
+          [
+            1,
+            8,
+            12
+          ],
+          [
+            0,
+            6,
+            13
+          ],
+          [
+            1,
+            5,
+            11
+          ],
+          [
+            6,
+            10,
+            16
+          ],
+          [
+            4,
+            11,
+            15
+          ],
+          [
+            1,
+            6
+          ],
+          [
+            6,
+            11
+          ],
+          [
+            11,
+            16
+          ],
+          [
+            4,
+            16
+          ]
+        ],
+        "core_root_values": [
+          [
+            9,
+            121,
+            168
+          ],
+          [
+            1161,
+            638,
+            1257
+          ],
+          [
+            194,
+            59,
+            642
+          ],
+          [
+            1158,
+            528,
+            806
+          ],
+          [
+            538,
+            1033,
+            62
+          ],
+          [
+            1193,
+            1352,
+            1240
+          ],
+          [
+            723,
+            104,
+            200
+          ],
+          [
+            1302,
+            719,
+            1167
+          ],
+          [
+            555,
+            203,
+            833
+          ],
+          [
+            1299,
+            823,
+            328
+          ],
+          [
+            1083,
+            292
+          ],
+          [
+            885,
+            921
+          ],
+          [
+            1202,
+            402
+          ],
+          [
+            140,
+            1265
+          ]
+        ],
+        "core_zero_profile": [
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          2,
+          2,
+          2,
+          2
+        ],
+        "degree": 238,
+        "degree_bound": 238,
+        "exact_missed_core_size": 200,
+        "full_DFT_support_including_sector_zero": [
+          0,
+          1,
+          11
+        ],
+        "listed": true,
+        "listing_threshold": 255,
+        "m": 14,
+        "minimal_kernel_range_upper": 204,
+        "minimality": "The upstream full-petal reconstruction bijection applies: the scalars are distinct and nonzero, the word is listed and full-petal, and its exact missed core lies in [ell,(tau-1)ell].  Therefore that exact missed core is a divisibility-minimal kernel set.",
+        "petal_agreement": 221,
+        "petal_alpha_labels": [
+          1,
+          317,
+          808,
+          268,
+          574,
+          945,
+          1052,
+          39,
+          752,
+          209,
+          925,
+          610,
+          211
+        ],
+        "petal_quotient_indices": [
+          0,
+          1,
+          3,
+          4,
+          5,
+          6,
+          8,
+          9,
+          11,
+          12,
+          13,
+          14,
+          16
+        ],
+        "petal_scalars": [
+          1281,
+          626,
+          681,
+          705,
+          1331,
+          1194,
+          1157,
+          214,
+          1168,
+          172,
+          906,
+          855,
+          392
+        ],
+        "phi_coefficients_ascending": [
+          672,
+          599,
+          1124,
+          1007,
+          868,
+          807,
+          752,
+          1091,
+          100,
+          870,
+          1344,
+          198,
+          94,
+          1
+        ],
+        "primitive": true,
+        "retained_core": 38,
+        "target_A_equals_P0_over_phi_on_core": [
+          665,
+          42,
+          1335,
+          729,
+          132,
+          696,
+          1319,
+          26,
+          632,
+          1229,
+          980,
+          1208,
+          678,
+          358
+        ],
+        "tau": 13,
+        "total_agreement": 259
+      },
+      {
+        "D": 0,
+        "H_stabilizer_of_exact_missed_core": [
+          1
+        ],
+        "Lambda_coefficients_ascending": [
+          1253,
+          1105,
+          1108,
+          263,
+          611,
+          614,
+          0,
+          0,
+          0,
+          0,
+          984,
+          669,
+          188,
+          477,
+          482,
+          1
+        ],
+        "P0_coefficients_ascending": [
+          172,
+          179,
+          1256,
+          919,
+          397,
+          393,
+          688,
+          313,
+          1031,
+          435,
+          692,
+          729,
+          684,
+          156,
+          271,
+          1
+        ],
+        "active_nonzero_DFT_sectors": [
+          1,
+          11
+        ],
+        "core_beta_labels": [
+          1136,
+          114,
+          160,
+          917,
+          1096,
+          225,
+          1247,
+          1201,
+          444,
+          265,
+          145,
+          108,
+          653,
+          1012,
+          322
+        ],
+        "core_quotient_indices": [
+          2,
+          10,
+          18,
+          26,
+          34,
+          42,
+          50,
+          58,
+          66,
+          74,
+          7,
+          15,
+          23,
+          31,
+          39
+        ],
+        "core_root_indices": [
+          [
+            0,
+            4,
+            10
+          ],
+          [
+            5,
+            9,
+            15
+          ],
+          [
+            3,
+            10,
+            14
+          ],
+          [
+            2,
+            8,
+            15
+          ],
+          [
+            3,
+            7,
+            13
+          ],
+          [
+            1,
+            8,
+            12
+          ],
+          [
+            0,
+            6,
+            13
+          ],
+          [
+            1,
+            5,
+            11
+          ],
+          [
+            6,
+            10,
+            16
+          ],
+          [
+            4,
+            11,
+            15
+          ],
+          [
+            1,
+            6
+          ],
+          [
+            6,
+            11
+          ],
+          [
+            11,
+            16
+          ],
+          [
+            4,
+            16
+          ],
+          [
+            4,
+            9
+          ]
+        ],
+        "core_root_values": [
+          [
+            9,
+            121,
+            168
+          ],
+          [
+            1161,
+            638,
+            1257
+          ],
+          [
+            194,
+            59,
+            642
+          ],
+          [
+            1158,
+            528,
+            806
+          ],
+          [
+            538,
+            1033,
+            62
+          ],
+          [
+            1193,
+            1352,
+            1240
+          ],
+          [
+            723,
+            104,
+            200
+          ],
+          [
+            1302,
+            719,
+            1167
+          ],
+          [
+            555,
+            203,
+            833
+          ],
+          [
+            1299,
+            823,
+            328
+          ],
+          [
+            1083,
+            292
+          ],
+          [
+            885,
+            921
+          ],
+          [
+            1202,
+            402
+          ],
+          [
+            140,
+            1265
+          ],
+          [
+            1226,
+            367
+          ]
+        ],
+        "core_zero_profile": [
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "degree": 255,
+        "degree_bound": 255,
+        "exact_missed_core_size": 215,
+        "full_DFT_support_including_sector_zero": [
+          0,
+          1,
+          11
+        ],
+        "listed": true,
+        "listing_threshold": 272,
+        "m": 15,
+        "minimal_kernel_range_upper": 221,
+        "minimality": "The upstream full-petal reconstruction bijection applies: the scalars are distinct and nonzero, the word is listed and full-petal, and its exact missed core lies in [ell,(tau-1)ell].  Therefore that exact missed core is a divisibility-minimal kernel set.",
+        "petal_agreement": 238,
+        "petal_alpha_labels": [
+          1,
+          317,
+          808,
+          268,
+          574,
+          945,
+          1052,
+          39,
+          752,
+          209,
+          925,
+          610,
+          211,
+          198
+        ],
+        "petal_quotient_indices": [
+          0,
+          1,
+          3,
+          4,
+          5,
+          6,
+          8,
+          9,
+          11,
+          12,
+          13,
+          14,
+          16,
+          17
+        ],
+        "petal_scalars": [
+          1003,
+          1200,
+          1182,
+          980,
+          878,
+          1309,
+          807,
+          371,
+          1229,
+          262,
+          56,
+          386,
+          667,
+          715
+        ],
+        "phi_coefficients_ascending": [
+          322,
+          477,
+          1251,
+          444,
+          629,
+          319,
+          260,
+          1133,
+          345,
+          687,
+          153,
+          248,
+          640,
+          1257,
+          1
+        ],
+        "primitive": true,
+        "retained_core": 40,
+        "target_A_equals_P0_over_phi_on_core": [
+          665,
+          42,
+          1335,
+          729,
+          132,
+          696,
+          1319,
+          26,
+          632,
+          1229,
+          980,
+          1208,
+          678,
+          358,
+          1269
+        ],
+        "tau": 14,
+        "total_agreement": 278
+      },
+      {
+        "D": 0,
+        "H_stabilizer_of_exact_missed_core": [
+          1
+        ],
+        "Lambda_coefficients_ascending": [
+          672,
+          880,
+          1167,
+          1135,
+          393,
+          1176,
+          614,
+          0,
+          0,
+          0,
+          1136,
+          1358,
+          709,
+          1303,
+          956,
+          627,
+          1
+        ],
+        "P0_coefficients_ascending": [
+          1335,
+          8,
+          735,
+          926,
+          469,
+          1102,
+          1073,
+          32,
+          335,
+          1002,
+          239,
+          557,
+          581,
+          269,
+          1053,
+          1170,
+          1
+        ],
+        "active_nonzero_DFT_sectors": [
+          1,
+          11
+        ],
+        "core_beta_labels": [
+          1136,
+          114,
+          160,
+          917,
+          1096,
+          225,
+          1247,
+          1201,
+          444,
+          265,
+          145,
+          108,
+          653,
+          1012,
+          322,
+          1216
+        ],
+        "core_quotient_indices": [
+          2,
+          10,
+          18,
+          26,
+          34,
+          42,
+          50,
+          58,
+          66,
+          74,
+          7,
+          15,
+          23,
+          31,
+          39,
+          47
+        ],
+        "core_root_indices": [
+          [
+            0,
+            4,
+            10
+          ],
+          [
+            5,
+            9,
+            15
+          ],
+          [
+            3,
+            10,
+            14
+          ],
+          [
+            2,
+            8,
+            15
+          ],
+          [
+            3,
+            7,
+            13
+          ],
+          [
+            1,
+            8,
+            12
+          ],
+          [
+            0,
+            6,
+            13
+          ],
+          [
+            1,
+            5,
+            11
+          ],
+          [
+            6,
+            10,
+            16
+          ],
+          [
+            4,
+            11,
+            15
+          ],
+          [
+            1,
+            6
+          ],
+          [
+            6,
+            11
+          ],
+          [
+            11,
+            16
+          ],
+          [
+            4,
+            16
+          ],
+          [
+            4,
+            9
+          ],
+          [
+            9,
+            14
+          ]
+        ],
+        "core_root_values": [
+          [
+            9,
+            121,
+            168
+          ],
+          [
+            1161,
+            638,
+            1257
+          ],
+          [
+            194,
+            59,
+            642
+          ],
+          [
+            1158,
+            528,
+            806
+          ],
+          [
+            538,
+            1033,
+            62
+          ],
+          [
+            1193,
+            1352,
+            1240
+          ],
+          [
+            723,
+            104,
+            200
+          ],
+          [
+            1302,
+            719,
+            1167
+          ],
+          [
+            555,
+            203,
+            833
+          ],
+          [
+            1299,
+            823,
+            328
+          ],
+          [
+            1083,
+            292
+          ],
+          [
+            885,
+            921
+          ],
+          [
+            1202,
+            402
+          ],
+          [
+            140,
+            1265
+          ],
+          [
+            1226,
+            367
+          ],
+          [
+            278,
+            1069
+          ]
+        ],
+        "core_zero_profile": [
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "degree": 272,
+        "degree_bound": 272,
+        "exact_missed_core_size": 230,
+        "full_DFT_support_including_sector_zero": [
+          0,
+          1,
+          11
+        ],
+        "listed": true,
+        "listing_threshold": 289,
+        "m": 16,
+        "minimal_kernel_range_upper": 238,
+        "minimality": "The upstream full-petal reconstruction bijection applies: the scalars are distinct and nonzero, the word is listed and full-petal, and its exact missed core lies in [ell,(tau-1)ell].  Therefore that exact missed core is a divisibility-minimal kernel set.",
+        "petal_agreement": 255,
+        "petal_alpha_labels": [
+          1,
+          317,
+          808,
+          268,
+          574,
+          945,
+          1052,
+          39,
+          752,
+          209,
+          925,
+          610,
+          211,
+          198,
+          363
+        ],
+        "petal_quotient_indices": [
+          0,
+          1,
+          3,
+          4,
+          5,
+          6,
+          8,
+          9,
+          11,
+          12,
+          13,
+          14,
+          16,
+          17,
+          19
+        ],
+        "petal_scalars": [
+          859,
+          278,
+          2,
+          875,
+          744,
+          1237,
+          826,
+          1114,
+          325,
+          597,
+          865,
+          977,
+          124,
+          616,
+          758
+        ],
+        "phi_coefficients_ascending": [
+          160,
+          18,
+          938,
+          677,
+          765,
+          517,
+          1209,
+          3,
+          1110,
+          27,
+          949,
+          1316,
+          659,
+          284,
+          894,
+          1
+        ],
+        "primitive": true,
+        "retained_core": 42,
+        "target_A_equals_P0_over_phi_on_core": [
+          665,
+          42,
+          1335,
+          729,
+          132,
+          696,
+          1319,
+          26,
+          632,
+          1229,
+          980,
+          1208,
+          678,
+          358,
+          1269,
+          381
+        ],
+        "tau": 15,
+        "total_agreement": 297
+      }
+    ],
+    "ell": 17,
+    "generator": 3,
+    "global_spectrum_histogram": [
+      [
+        1,
+        60
+      ],
+      [
+        2,
+        10
+      ],
+      [
+        3,
+        10
+      ]
+    ],
+    "p": 1361,
+    "quotient_shift": 4,
+    "quotient_size": 80,
+    "sector_r": 1,
+    "sector_s": 11,
+    "theorem": "Over F_1361 with ell=17, each D=0 cell tau=11,...,15, m=tau+1 has an explicit listed full-petal word with active nonzero sectors {1,11}; its exact missed core is a primitive divisibility-minimal kernel set.",
+    "zeta": 260
+  },
+  "ell19_D0_total_vacancy": {
+    "all_sector_pair_spectra": {
+      "histograms": [
+        [
+          [
+            1,
+            132
+          ],
+          [
+            2,
+            8
+          ],
+          [
+            3,
+            2
+          ]
+        ],
+        [
+          [
+            1,
+            132
+          ],
+          [
+            2,
+            10
+          ]
+        ],
+        [
+          [
+            1,
+            133
+          ],
+          [
+            2,
+            9
+          ]
+        ],
+        [
+          [
+            1,
+            134
+          ],
+          [
+            2,
+            8
+          ]
+        ],
+        [
+          [
+            1,
+            135
+          ],
+          [
+            2,
+            6
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            135
+          ],
+          [
+            2,
+            7
+          ]
+        ],
+        [
+          [
+            1,
+            136
+          ],
+          [
+            2,
+            5
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            136
+          ],
+          [
+            2,
+            6
+          ]
+        ],
+        [
+          [
+            1,
+            138
+          ],
+          [
+            2,
+            4
+          ]
+        ],
+        [
+          [
+            1,
+            140
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            1,
+            141
+          ],
+          [
+            2,
+            1
+          ]
+        ]
+      ],
+      "maximum_bonus_sum_mu_minus_1": 12,
+      "maximum_bonus_witness": {
+        "histogram": [
+          [
+            1,
+            132
+          ],
+          [
+            2,
+            8
+          ],
+          [
+            3,
+            2
+          ]
+        ],
+        "quotient_shift": 0,
+        "sector_r": 1,
+        "sector_s": 5
+      },
+      "maximum_top_by_core_size": {
+        "1": {
+          "histogram": [
+            [
+              1,
+              136
+            ],
+            [
+              2,
+              5
+            ],
+            [
+              3,
+              1
+            ]
+          ],
+          "quotient_shift": 0,
+          "sector_r": 1,
+          "sector_s": 4,
+          "top": 3
+        },
+        "10": {
+          "histogram": [
+            [
+              1,
+              132
+            ],
+            [
+              2,
+              8
+            ],
+            [
+              3,
+              2
+            ]
+          ],
+          "quotient_shift": 0,
+          "sector_r": 1,
+          "sector_s": 5,
+          "top": 22
+        },
+        "11": {
+          "histogram": [
+            [
+              1,
+              132
+            ],
+            [
+              2,
+              8
+            ],
+            [
+              3,
+              2
+            ]
+          ],
+          "quotient_shift": 0,
+          "sector_r": 1,
+          "sector_s": 5,
+          "top": 23
+        },
+        "12": {
+          "histogram": [
+            [
+              1,
+              132
+            ],
+            [
+              2,
+              8
+            ],
+            [
+              3,
+              2
+            ]
+          ],
+          "quotient_shift": 0,
+          "sector_r": 1,
+          "sector_s": 5,
+          "top": 24
+        },
+        "13": {
+          "histogram": [
+            [
+              1,
+              132
+            ],
+            [
+              2,
+              8
+            ],
+            [
+              3,
+              2
+            ]
+          ],
+          "quotient_shift": 0,
+          "sector_r": 1,
+          "sector_s": 5,
+          "top": 25
+        },
+        "14": {
+          "histogram": [
+            [
+              1,
+              132
+            ],
+            [
+              2,
+              8
+            ],
+            [
+              3,
+              2
+            ]
+          ],
+          "quotient_shift": 0,
+          "sector_r": 1,
+          "sector_s": 5,
+          "top": 26
+        },
+        "15": {
+          "histogram": [
+            [
+              1,
+              132
+            ],
+            [
+              2,
+              8
+            ],
+            [
+              3,
+              2
+            ]
+          ],
+          "quotient_shift": 0,
+          "sector_r": 1,
+          "sector_s": 5,
+          "top": 27
+        },
+        "16": {
+          "histogram": [
+            [
+              1,
+              132
+            ],
+            [
+              2,
+              8
+            ],
+            [
+              3,
+              2
+            ]
+          ],
+          "quotient_shift": 0,
+          "sector_r": 1,
+          "sector_s": 5,
+          "top": 28
+        },
+        "17": {
+          "histogram": [
+            [
+              1,
+              132
+            ],
+            [
+              2,
+              8
+            ],
+            [
+              3,
+              2
+            ]
+          ],
+          "quotient_shift": 0,
+          "sector_r": 1,
+          "sector_s": 5,
+          "top": 29
+        },
+        "18": {
+          "histogram": [
+            [
+              1,
+              132
+            ],
+            [
+              2,
+              8
+            ],
+            [
+              3,
+              2
+            ]
+          ],
+          "quotient_shift": 0,
+          "sector_r": 1,
+          "sector_s": 5,
+          "top": 30
+        },
+        "2": {
+          "histogram": [
+            [
+              1,
+              132
+            ],
+            [
+              2,
+              8
+            ],
+            [
+              3,
+              2
+            ]
+          ],
+          "quotient_shift": 0,
+          "sector_r": 1,
+          "sector_s": 5,
+          "top": 6
+        },
+        "3": {
+          "histogram": [
+            [
+              1,
+              132
+            ],
+            [
+              2,
+              8
+            ],
+            [
+              3,
+              2
+            ]
+          ],
+          "quotient_shift": 0,
+          "sector_r": 1,
+          "sector_s": 5,
+          "top": 8
+        },
+        "4": {
+          "histogram": [
+            [
+              1,
+              132
+            ],
+            [
+              2,
+              8
+            ],
+            [
+              3,
+              2
+            ]
+          ],
+          "quotient_shift": 0,
+          "sector_r": 1,
+          "sector_s": 5,
+          "top": 10
+        },
+        "5": {
+          "histogram": [
+            [
+              1,
+              132
+            ],
+            [
+              2,
+              8
+            ],
+            [
+              3,
+              2
+            ]
+          ],
+          "quotient_shift": 0,
+          "sector_r": 1,
+          "sector_s": 5,
+          "top": 12
+        },
+        "6": {
+          "histogram": [
+            [
+              1,
+              132
+            ],
+            [
+              2,
+              8
+            ],
+            [
+              3,
+              2
+            ]
+          ],
+          "quotient_shift": 0,
+          "sector_r": 1,
+          "sector_s": 5,
+          "top": 14
+        },
+        "7": {
+          "histogram": [
+            [
+              1,
+              132
+            ],
+            [
+              2,
+              8
+            ],
+            [
+              3,
+              2
+            ]
+          ],
+          "quotient_shift": 0,
+          "sector_r": 1,
+          "sector_s": 5,
+          "top": 16
+        },
+        "8": {
+          "histogram": [
+            [
+              1,
+              132
+            ],
+            [
+              2,
+              8
+            ],
+            [
+              3,
+              2
+            ]
+          ],
+          "quotient_shift": 0,
+          "sector_r": 1,
+          "sector_s": 5,
+          "top": 18
+        },
+        "9": {
+          "histogram": [
+            [
+              1,
+              132
+            ],
+            [
+              2,
+              8
+            ],
+            [
+              3,
+              2
+            ]
+          ],
+          "quotient_shift": 0,
+          "sector_r": 1,
+          "sector_s": 5,
+          "top": 20
+        }
+      },
+      "pair_count": 153,
+      "quotient_state_rows": 225
+    },
+    "cells": [
+      {
+        "D": 0,
+        "gap": 13,
+        "listing_requires": 38,
+        "m": 13,
+        "maximum_retained_core": 25,
+        "tau": 12,
+        "vacant": true
+      },
+      {
+        "D": 0,
+        "gap": 12,
+        "listing_requires": 38,
+        "m": 14,
+        "maximum_retained_core": 26,
+        "tau": 13,
+        "vacant": true
+      },
+      {
+        "D": 0,
+        "gap": 11,
+        "listing_requires": 38,
+        "m": 15,
+        "maximum_retained_core": 27,
+        "tau": 14,
+        "vacant": true
+      },
+      {
+        "D": 0,
+        "gap": 10,
+        "listing_requires": 38,
+        "m": 16,
+        "maximum_retained_core": 28,
+        "tau": 15,
+        "vacant": true
+      },
+      {
+        "D": 0,
+        "gap": 9,
+        "listing_requires": 38,
+        "m": 17,
+        "maximum_retained_core": 29,
+        "tau": 16,
+        "vacant": true
+      },
+      {
+        "D": 0,
+        "gap": 8,
+        "listing_requires": 38,
+        "m": 18,
+        "maximum_retained_core": 30,
+        "tau": 17,
+        "vacant": true
+      }
+    ],
+    "frontier_orbit_spectra": {
+      "histograms": [
+        [
+          [
+            1,
+            132
+          ],
+          [
+            2,
+            8
+          ],
+          [
+            3,
+            2
+          ]
+        ],
+        [
+          [
+            1,
+            135
+          ],
+          [
+            2,
+            6
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            136
+          ],
+          [
+            2,
+            5
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            138
+          ],
+          [
+            2,
+            4
+          ]
+        ],
+        [
+          [
+            1,
+            140
+          ],
+          [
+            2,
+            2
+          ]
+        ]
+      ],
+      "maximum_bonus_sum_mu_minus_1": 12,
+      "maximum_bonus_witness": {
+        "histogram": [
+          [
+            1,
+            132
+          ],
+          [
+            2,
+            8
+          ],
+          [
+            3,
+            2
+          ]
+        ],
+        "quotient_shift": 0,
+        "sector_r": 1,
+        "sector_s": 5
+      },
+      "maximum_top_by_core_size": {
+        "1": {
+          "histogram": [
+            [
+              1,
+              136
+            ],
+            [
+              2,
+              5
+            ],
+            [
+              3,
+              1
+            ]
+          ],
+          "quotient_shift": 0,
+          "sector_r": 1,
+          "sector_s": 4,
+          "top": 3
+        },
+        "10": {
+          "histogram": [
+            [
+              1,
+              132
+            ],
+            [
+              2,
+              8
+            ],
+            [
+              3,
+              2
+            ]
+          ],
+          "quotient_shift": 0,
+          "sector_r": 1,
+          "sector_s": 5,
+          "top": 22
+        },
+        "11": {
+          "histogram": [
+            [
+              1,
+              132
+            ],
+            [
+              2,
+              8
+            ],
+            [
+              3,
+              2
+            ]
+          ],
+          "quotient_shift": 0,
+          "sector_r": 1,
+          "sector_s": 5,
+          "top": 23
+        },
+        "12": {
+          "histogram": [
+            [
+              1,
+              132
+            ],
+            [
+              2,
+              8
+            ],
+            [
+              3,
+              2
+            ]
+          ],
+          "quotient_shift": 0,
+          "sector_r": 1,
+          "sector_s": 5,
+          "top": 24
+        },
+        "13": {
+          "histogram": [
+            [
+              1,
+              132
+            ],
+            [
+              2,
+              8
+            ],
+            [
+              3,
+              2
+            ]
+          ],
+          "quotient_shift": 0,
+          "sector_r": 1,
+          "sector_s": 5,
+          "top": 25
+        },
+        "14": {
+          "histogram": [
+            [
+              1,
+              132
+            ],
+            [
+              2,
+              8
+            ],
+            [
+              3,
+              2
+            ]
+          ],
+          "quotient_shift": 0,
+          "sector_r": 1,
+          "sector_s": 5,
+          "top": 26
+        },
+        "15": {
+          "histogram": [
+            [
+              1,
+              132
+            ],
+            [
+              2,
+              8
+            ],
+            [
+              3,
+              2
+            ]
+          ],
+          "quotient_shift": 0,
+          "sector_r": 1,
+          "sector_s": 5,
+          "top": 27
+        },
+        "16": {
+          "histogram": [
+            [
+              1,
+              132
+            ],
+            [
+              2,
+              8
+            ],
+            [
+              3,
+              2
+            ]
+          ],
+          "quotient_shift": 0,
+          "sector_r": 1,
+          "sector_s": 5,
+          "top": 28
+        },
+        "17": {
+          "histogram": [
+            [
+              1,
+              132
+            ],
+            [
+              2,
+              8
+            ],
+            [
+              3,
+              2
+            ]
+          ],
+          "quotient_shift": 0,
+          "sector_r": 1,
+          "sector_s": 5,
+          "top": 29
+        },
+        "18": {
+          "histogram": [
+            [
+              1,
+              132
+            ],
+            [
+              2,
+              8
+            ],
+            [
+              3,
+              2
+            ]
+          ],
+          "quotient_shift": 0,
+          "sector_r": 1,
+          "sector_s": 5,
+          "top": 30
+        },
+        "2": {
+          "histogram": [
+            [
+              1,
+              132
+            ],
+            [
+              2,
+              8
+            ],
+            [
+              3,
+              2
+            ]
+          ],
+          "quotient_shift": 0,
+          "sector_r": 1,
+          "sector_s": 5,
+          "top": 6
+        },
+        "3": {
+          "histogram": [
+            [
+              1,
+              132
+            ],
+            [
+              2,
+              8
+            ],
+            [
+              3,
+              2
+            ]
+          ],
+          "quotient_shift": 0,
+          "sector_r": 1,
+          "sector_s": 5,
+          "top": 8
+        },
+        "4": {
+          "histogram": [
+            [
+              1,
+              132
+            ],
+            [
+              2,
+              8
+            ],
+            [
+              3,
+              2
+            ]
+          ],
+          "quotient_shift": 0,
+          "sector_r": 1,
+          "sector_s": 5,
+          "top": 10
+        },
+        "5": {
+          "histogram": [
+            [
+              1,
+              132
+            ],
+            [
+              2,
+              8
+            ],
+            [
+              3,
+              2
+            ]
+          ],
+          "quotient_shift": 0,
+          "sector_r": 1,
+          "sector_s": 5,
+          "top": 12
+        },
+        "6": {
+          "histogram": [
+            [
+              1,
+              132
+            ],
+            [
+              2,
+              8
+            ],
+            [
+              3,
+              2
+            ]
+          ],
+          "quotient_shift": 0,
+          "sector_r": 1,
+          "sector_s": 5,
+          "top": 14
+        },
+        "7": {
+          "histogram": [
+            [
+              1,
+              132
+            ],
+            [
+              2,
+              8
+            ],
+            [
+              3,
+              2
+            ]
+          ],
+          "quotient_shift": 0,
+          "sector_r": 1,
+          "sector_s": 5,
+          "top": 16
+        },
+        "8": {
+          "histogram": [
+            [
+              1,
+              132
+            ],
+            [
+              2,
+              8
+            ],
+            [
+              3,
+              2
+            ]
+          ],
+          "quotient_shift": 0,
+          "sector_r": 1,
+          "sector_s": 5,
+          "top": 18
+        },
+        "9": {
+          "histogram": [
+            [
+              1,
+              132
+            ],
+            [
+              2,
+              8
+            ],
+            [
+              3,
+              2
+            ]
+          ],
+          "quotient_shift": 0,
+          "sector_r": 1,
+          "sector_s": 5,
+          "top": 20
+        }
+      },
+      "pair_count": 54,
+      "quotient_state_rows": 78
+    },
+    "theorem": "Over F_2699 with ell=19, every background-free full-petal D=0 word with exactly two active nonzero sectors and 12<=tau<m<19 is unlisted."
+  },
+  "global_coefficient_form": {
+    "D0_consequence": "When g_r,g_s are constants, the number of three-root core labels is at most gcd(s-r,(p-1)/ell).  Double-root states are enumerated exactly in the quotient group.",
+    "definition": "On core coset b_j*mu_ell, beta_j=b_j^ell, write A_j=P0(beta_j)/phi(beta_j), B_j=b_j^r*g_r(beta_j), C_j=b_j^s*g_s(beta_j).",
+    "normalized_ratio": "e=s*r^{-1} modulo ell",
+    "ratio_consequence": "beta_j^(s-r)*(g_s(beta_j)/g_r(beta_j))^ell=U_e/T_e",
+    "three_root_equations": [
+      "B_j^ell=T_e*A_j^ell",
+      "C_j^ell=U_e*A_j^ell",
+      "B_j^e=J_e*A_j^(e-1)*C_j"
+    ]
+  },
+  "next_obligation": "Return to the exceptional frontier with D>0.  The ratio equation becomes a rational-function incidence in g_s/g_r; the present finite D=0 spectra must not be extrapolated.",
+  "operation_counts": {
+    "coefficient_pair_enumerations_per_coset": 0,
+    "ell17_pointwise_witness_cells": 5,
+    "ell19_all_sector_pairs": 153,
+    "ell19_quotient_state_rows": 225,
+    "projective_3x3_rank_tests": 9894
+  },
+  "projective_three_root_classification": [
+    {
+      "ell": 17,
+      "generator": 3,
+      "p": 1361,
+      "quotient_size": 80,
+      "rank_tests_3x3": 4080,
+      "rows": [
+        {
+          "J_equals_B_to_e_over_A_to_e_minus_1_C": 876,
+          "T_equals_B_over_A_to_ell": 1102,
+          "U_equals_C_over_A_to_ell": 1150,
+          "U_over_T": 747,
+          "all_states_one_projective_rotation_orbit": true,
+          "exact_root_count": 3,
+          "exponent_ratio": 4,
+          "representative_coefficients_A_B_C": [
+            1,
+            84,
+            1276
+          ],
+          "representative_root_indices": [
+            0,
+            2,
+            10
+          ],
+          "singular_triples": 17
+        },
+        {
+          "J_equals_B_to_e_over_A_to_e_minus_1_C": 845,
+          "T_equals_B_over_A_to_ell": 129,
+          "U_equals_C_over_A_to_ell": 614,
+          "U_over_T": 1102,
+          "all_states_one_projective_rotation_orbit": true,
+          "exact_root_count": 3,
+          "exponent_ratio": 5,
+          "representative_coefficients_A_B_C": [
+            1,
+            392,
+            968
+          ],
+          "representative_root_indices": [
+            0,
+            2,
+            8
+          ],
+          "singular_triples": 17
+        },
+        {
+          "J_equals_B_to_e_over_A_to_e_minus_1_C": 602,
+          "T_equals_B_over_A_to_ell": 614,
+          "U_equals_C_over_A_to_ell": 129,
+          "U_over_T": 1093,
+          "all_states_one_projective_rotation_orbit": true,
+          "exact_root_count": 3,
+          "exponent_ratio": 7,
+          "representative_coefficients_A_B_C": [
+            1,
+            1344,
+            16
+          ],
+          "representative_root_indices": [
+            0,
+            4,
+            11
+          ],
+          "singular_triples": 17
+        },
+        {
+          "J_equals_B_to_e_over_A_to_e_minus_1_C": 564,
+          "T_equals_B_over_A_to_ell": 747,
+          "U_equals_C_over_A_to_ell": 1093,
+          "U_over_T": 129,
+          "all_states_one_projective_rotation_orbit": true,
+          "exact_root_count": 3,
+          "exponent_ratio": 11,
+          "representative_coefficients_A_B_C": [
+            1,
+            1097,
+            263
+          ],
+          "representative_root_indices": [
+            0,
+            4,
+            10
+          ],
+          "singular_triples": 17
+        },
+        {
+          "J_equals_B_to_e_over_A_to_e_minus_1_C": 1357,
+          "T_equals_B_over_A_to_ell": 1150,
+          "U_equals_C_over_A_to_ell": 1102,
+          "U_over_T": 614,
+          "all_states_one_projective_rotation_orbit": true,
+          "exact_root_count": 3,
+          "exponent_ratio": 13,
+          "representative_coefficients_A_B_C": [
+            1,
+            1153,
+            207
+          ],
+          "representative_root_indices": [
+            0,
+            2,
+            11
+          ],
+          "singular_triples": 17
+        },
+        {
+          "J_equals_B_to_e_over_A_to_e_minus_1_C": 685,
+          "T_equals_B_over_A_to_ell": 1093,
+          "U_equals_C_over_A_to_ell": 747,
+          "U_over_T": 1150,
+          "all_states_one_projective_rotation_orbit": true,
+          "exact_root_count": 3,
+          "exponent_ratio": 14,
+          "representative_coefficients_A_B_C": [
+            1,
+            844,
+            516
+          ],
+          "representative_root_indices": [
+            0,
+            2,
+            9
+          ],
+          "singular_triples": 17
+        }
+      ],
+      "state_criterion": "For normalized A+B*h+C*h^e with A*B*C nonzero, exact three roots occur iff B^ell=T*A^ell, C^ell=U*A^ell, and B^e=J*A^(e-1)*C for the displayed row.",
+      "zeta": 260
+    },
+    {
+      "ell": 19,
+      "generator": 2,
+      "p": 2699,
+      "quotient_size": 142,
+      "rank_tests_3x3": 5814,
+      "rows": [
+        {
+          "J_equals_B_to_e_over_A_to_e_minus_1_C": 258,
+          "T_equals_B_over_A_to_ell": 1838,
+          "U_equals_C_over_A_to_ell": 904,
+          "U_over_T": 861,
+          "all_states_one_projective_rotation_orbit": true,
+          "exact_root_count": 3,
+          "exponent_ratio": 4,
+          "representative_coefficients_A_B_C": [
+            1,
+            2056,
+            642
+          ],
+          "representative_root_indices": [
+            0,
+            3,
+            7
+          ],
+          "singular_triples": 19
+        },
+        {
+          "J_equals_B_to_e_over_A_to_e_minus_1_C": 676,
+          "T_equals_B_over_A_to_ell": 904,
+          "U_equals_C_over_A_to_ell": 1838,
+          "U_over_T": 1047,
+          "all_states_one_projective_rotation_orbit": true,
+          "exact_root_count": 3,
+          "exponent_ratio": 5,
+          "representative_coefficients_A_B_C": [
+            1,
+            2197,
+            501
+          ],
+          "representative_root_indices": [
+            0,
+            3,
+            10
+          ],
+          "singular_triples": 19
+        },
+        {
+          "J_equals_B_to_e_over_A_to_e_minus_1_C": 170,
+          "T_equals_B_over_A_to_ell": 861,
+          "U_equals_C_over_A_to_ell": 1652,
+          "U_over_T": 2284,
+          "all_states_one_projective_rotation_orbit": true,
+          "exact_root_count": 3,
+          "exponent_ratio": 6,
+          "representative_coefficients_A_B_C": [
+            1,
+            339,
+            2359
+          ],
+          "representative_root_indices": [
+            0,
+            2,
+            9
+          ],
+          "singular_triples": 19
+        },
+        {
+          "J_equals_B_to_e_over_A_to_e_minus_1_C": 2555,
+          "T_equals_B_over_A_to_ell": 1047,
+          "U_equals_C_over_A_to_ell": 2284,
+          "U_over_T": 1652,
+          "all_states_one_projective_rotation_orbit": true,
+          "exact_root_count": 3,
+          "exponent_ratio": 14,
+          "representative_coefficients_A_B_C": [
+            1,
+            2241,
+            457
+          ],
+          "representative_root_indices": [
+            0,
+            2,
+            12
+          ],
+          "singular_triples": 19
+        },
+        {
+          "J_equals_B_to_e_over_A_to_e_minus_1_C": 156,
+          "T_equals_B_over_A_to_ell": 2284,
+          "U_equals_C_over_A_to_ell": 1047,
+          "U_over_T": 1838,
+          "all_states_one_projective_rotation_orbit": true,
+          "exact_root_count": 3,
+          "exponent_ratio": 15,
+          "representative_coefficients_A_B_C": [
+            1,
+            2358,
+            340
+          ],
+          "representative_root_indices": [
+            0,
+            3,
+            12
+          ],
+          "singular_triples": 19
+        },
+        {
+          "J_equals_B_to_e_over_A_to_e_minus_1_C": 2473,
+          "T_equals_B_over_A_to_ell": 1652,
+          "U_equals_C_over_A_to_ell": 861,
+          "U_over_T": 904,
+          "all_states_one_projective_rotation_orbit": true,
+          "exact_root_count": 3,
+          "exponent_ratio": 16,
+          "representative_coefficients_A_B_C": [
+            1,
+            2055,
+            643
+          ],
+          "representative_root_indices": [
+            0,
+            3,
+            15
+          ],
+          "singular_triples": 19
+        }
+      ],
+      "state_criterion": "For normalized A+B*h+C*h^e with A*B*C nonzero, exact three roots occur iff B^ell=T*A^ell, C^ell=U*A^ell, and B^e=J*A^(e-1)*C for the displayed row.",
+      "zeta": 944
+    }
+  ],
+  "proof_steps": [
+    "Rank every 3x3 subgroup evaluation matrix in the exceptional orbit. Exactly ell singular triples occur, all rank two and all in one projective-rotation orbit; evaluating every null state gives exactly three roots and excludes four-root states.",
+    "Record the complete projective invariants T,U,J. Substitution of the global sector coefficients gives the displayed beta/g_r/g_s coupling equations.",
+    "At D=0 identify F_p^*/mu_ell with quotient exponents. For sector difference d, quotient shifts modulo gcd(d,N) exhaust all spectra; no coefficient-pair search per coset occurs.",
+    "For ell=19 enumerate all 153 nonzero-sector pairs. The exact maximum top-m is m+12 for m=13,...,18, hence at most 30<38.",
+    "For ell=17 the fixed pair {1,11} and coefficient 81 has spectrum 1^60 2^10 3^10. Select the top m quotient labels and interpolate P0 on the core independently for each of the five cells.",
+    "Evaluate every petal and core point, check degree, exact DFT support, scalar distinctness/nonzeroness, listing, exact missed-core size, and trivial H-stabilizer. Invoke the upstream full-petal bijection only after all its hypotheses are checked."
+  ],
+  "scope": "Prime fields, background-free full-petal words, exactly two active nonzero DFT sectors, and D=m-tau-1=0 only.  No D>0 statement is made.",
+  "status": "PROVED_MIXED_VERDICT",
+  "title": "Exceptional D=0 two-sector cross-coset coupling",
+  "upstream": {
+    "collision": "No p=1361 exact-two-active-sector global witness and no p=2699 D=0 quotient-state vacancy theorem were found in the cited upstream sources.  Upstream retains the two-or-more-sector/pma_wide_residual target.",
+    "dag_source": "experimental/data/prize-dag/prize_dag.json",
+    "reconstruction_source": "experimental/notes/l1/l1_general_reconstruction_collapse.md",
+    "residual_source": "experimental/notes/l1/l1_coset_mixed_vacancy_threshold.md"
+  },
+  "verdict": "PASS_WITH_ELL19_D0_VACANCY_AND_ELL17_GLOBAL_COUNTEREXAMPLES"
+}

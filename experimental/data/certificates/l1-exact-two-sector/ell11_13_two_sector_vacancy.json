@@ -1,0 +1,6112 @@
+{
+  "all_checks_pass": true,
+  "checks": {
+    "all_43_cells_have_strict_retained_gap": true,
+    "all_normalized_resultants_are_orbit_invariant": true,
+    "all_orbit_resultants_match_expected": true,
+    "all_smoke_binomial_boundaries_have_at_most_one_root": true,
+    "available_smokes_realize_every_cell_and_have_root_cap_two": true,
+    "exceptional_primes_are_unavailable_for_every_cell": true,
+    "exceptional_smokes_are_unavailable_and_exhibit_three_roots": true,
+    "normalized_ratio_classes_match_exact_tables": true,
+    "orbit_counts_are_2_and_3": true,
+    "orbit_sizes_match_exact_tables": true,
+    "unique_admissible_external_primes_are_23_and_53": true,
+    "upstream_current_snapshot_has_full_support_multisector_witnesses": true,
+    "upstream_current_snapshot_leaves_two_or_more_sectors_open": true,
+    "vandermonde_resultants_are_ell_cubed": true
+  },
+  "ell_rows": [
+    {
+      "affine_orbits": {
+        "orbit_count": 2,
+        "orbits": [
+          {
+            "canonical": [
+              0,
+              1,
+              2
+            ],
+            "normalized_ratios": [
+              2,
+              6,
+              10
+            ],
+            "representative_ratio": 2,
+            "size": 55
+          },
+          {
+            "canonical": [
+              0,
+              1,
+              3
+            ],
+            "normalized_ratios": [
+              3,
+              4,
+              5,
+              7,
+              8,
+              9
+            ],
+            "representative_ratio": 3,
+            "size": 110
+          }
+        ],
+        "ratio_class_map": {
+          "10": [
+            0,
+            1,
+            2
+          ],
+          "2": [
+            0,
+            1,
+            2
+          ],
+          "3": [
+            0,
+            1,
+            3
+          ],
+          "4": [
+            0,
+            1,
+            3
+          ],
+          "5": [
+            0,
+            1,
+            3
+          ],
+          "6": [
+            0,
+            1,
+            2
+          ],
+          "7": [
+            0,
+            1,
+            3
+          ],
+          "8": [
+            0,
+            1,
+            3
+          ],
+          "9": [
+            0,
+            1,
+            3
+          ]
+        }
+      },
+      "available_smoke": {
+        "all_binomial_boundaries_have_at_most_one_root": true,
+        "ell": 11,
+        "generator": 3,
+        "max_roots": 2,
+        "maximum_cell_cosets": 19,
+        "minimum_cell_cosets": 11,
+        "orbit_rows": [
+          {
+            "all_binomial_boundaries_have_at_most_one_root": true,
+            "binomial_boundary_maxima": {
+              "A_zero": 1,
+              "B_zero": 1,
+              "C_zero": 1
+            },
+            "max_root_set": [
+              80,
+              274
+            ],
+            "max_root_witness": [
+              1,
+              31,
+              85
+            ],
+            "max_roots": 2,
+            "projective_live_polynomials": 109892,
+            "representative_exponent": 2,
+            "support_class": [
+              0,
+              1,
+              2
+            ]
+          },
+          {
+            "all_binomial_boundaries_have_at_most_one_root": true,
+            "binomial_boundary_maxima": {
+              "A_zero": 1,
+              "B_zero": 1,
+              "C_zero": 1
+            },
+            "max_root_set": [
+              270,
+              74
+            ],
+            "max_root_witness": [
+              1,
+              4,
+              108
+            ],
+            "max_roots": 2,
+            "projective_live_polynomials": 109892,
+            "representative_exponent": 3,
+            "support_class": [
+              0,
+              1,
+              3
+            ]
+          }
+        ],
+        "p": 331,
+        "quotient_cosets": 30,
+        "realizes_at_least_one_tau_ge_5_cell": true,
+        "realizes_every_tau_ge_5_cell": true,
+        "subgroup_size": 11,
+        "total_point_evaluations": 2417624,
+        "total_projective_polynomials": 219784
+      },
+      "cell_count": 15,
+      "cells": [
+        {
+          "D": 0,
+          "distinct_cosets_required": 11,
+          "ell": 11,
+          "expected_gap": 10,
+          "listing_core_requirement": 22,
+          "m": 6,
+          "retained_upper_bound": 12,
+          "strict_gap": 10,
+          "tau": 5,
+          "vacant_under_two_root_cap": true
+        },
+        {
+          "D": 1,
+          "distinct_cosets_required": 12,
+          "ell": 11,
+          "expected_gap": 10,
+          "listing_core_requirement": 33,
+          "m": 7,
+          "retained_upper_bound": 23,
+          "strict_gap": 10,
+          "tau": 5,
+          "vacant_under_two_root_cap": true
+        },
+        {
+          "D": 2,
+          "distinct_cosets_required": 13,
+          "ell": 11,
+          "expected_gap": 10,
+          "listing_core_requirement": 44,
+          "m": 8,
+          "retained_upper_bound": 34,
+          "strict_gap": 10,
+          "tau": 5,
+          "vacant_under_two_root_cap": true
+        },
+        {
+          "D": 3,
+          "distinct_cosets_required": 14,
+          "ell": 11,
+          "expected_gap": 10,
+          "listing_core_requirement": 55,
+          "m": 9,
+          "retained_upper_bound": 45,
+          "strict_gap": 10,
+          "tau": 5,
+          "vacant_under_two_root_cap": true
+        },
+        {
+          "D": 4,
+          "distinct_cosets_required": 15,
+          "ell": 11,
+          "expected_gap": 10,
+          "listing_core_requirement": 66,
+          "m": 10,
+          "retained_upper_bound": 56,
+          "strict_gap": 10,
+          "tau": 5,
+          "vacant_under_two_root_cap": true
+        },
+        {
+          "D": 0,
+          "distinct_cosets_required": 13,
+          "ell": 11,
+          "expected_gap": 8,
+          "listing_core_requirement": 22,
+          "m": 7,
+          "retained_upper_bound": 14,
+          "strict_gap": 8,
+          "tau": 6,
+          "vacant_under_two_root_cap": true
+        },
+        {
+          "D": 1,
+          "distinct_cosets_required": 14,
+          "ell": 11,
+          "expected_gap": 8,
+          "listing_core_requirement": 33,
+          "m": 8,
+          "retained_upper_bound": 25,
+          "strict_gap": 8,
+          "tau": 6,
+          "vacant_under_two_root_cap": true
+        },
+        {
+          "D": 2,
+          "distinct_cosets_required": 15,
+          "ell": 11,
+          "expected_gap": 8,
+          "listing_core_requirement": 44,
+          "m": 9,
+          "retained_upper_bound": 36,
+          "strict_gap": 8,
+          "tau": 6,
+          "vacant_under_two_root_cap": true
+        },
+        {
+          "D": 3,
+          "distinct_cosets_required": 16,
+          "ell": 11,
+          "expected_gap": 8,
+          "listing_core_requirement": 55,
+          "m": 10,
+          "retained_upper_bound": 47,
+          "strict_gap": 8,
+          "tau": 6,
+          "vacant_under_two_root_cap": true
+        },
+        {
+          "D": 0,
+          "distinct_cosets_required": 15,
+          "ell": 11,
+          "expected_gap": 6,
+          "listing_core_requirement": 22,
+          "m": 8,
+          "retained_upper_bound": 16,
+          "strict_gap": 6,
+          "tau": 7,
+          "vacant_under_two_root_cap": true
+        },
+        {
+          "D": 1,
+          "distinct_cosets_required": 16,
+          "ell": 11,
+          "expected_gap": 6,
+          "listing_core_requirement": 33,
+          "m": 9,
+          "retained_upper_bound": 27,
+          "strict_gap": 6,
+          "tau": 7,
+          "vacant_under_two_root_cap": true
+        },
+        {
+          "D": 2,
+          "distinct_cosets_required": 17,
+          "ell": 11,
+          "expected_gap": 6,
+          "listing_core_requirement": 44,
+          "m": 10,
+          "retained_upper_bound": 38,
+          "strict_gap": 6,
+          "tau": 7,
+          "vacant_under_two_root_cap": true
+        },
+        {
+          "D": 0,
+          "distinct_cosets_required": 17,
+          "ell": 11,
+          "expected_gap": 4,
+          "listing_core_requirement": 22,
+          "m": 9,
+          "retained_upper_bound": 18,
+          "strict_gap": 4,
+          "tau": 8,
+          "vacant_under_two_root_cap": true
+        },
+        {
+          "D": 1,
+          "distinct_cosets_required": 18,
+          "ell": 11,
+          "expected_gap": 4,
+          "listing_core_requirement": 33,
+          "m": 10,
+          "retained_upper_bound": 29,
+          "strict_gap": 4,
+          "tau": 8,
+          "vacant_under_two_root_cap": true
+        },
+        {
+          "D": 0,
+          "distinct_cosets_required": 19,
+          "ell": 11,
+          "expected_gap": 2,
+          "listing_core_requirement": 22,
+          "m": 10,
+          "retained_upper_bound": 20,
+          "strict_gap": 2,
+          "tau": 9,
+          "vacant_under_two_root_cap": true
+        }
+      ],
+      "ell": 11,
+      "exact_resultants": {
+        "all_normalized_pair_rows": [
+          {
+            "determinant_degree": 5,
+            "exponent_class": [
+              0,
+              1,
+              2
+            ],
+            "exponent_ratio": 2,
+            "quotient_degree": 0,
+            "quotient_factorization": [],
+            "quotient_resultant": 1,
+            "raw_resultant": 1331,
+            "root_class": [
+              0,
+              1,
+              2
+            ],
+            "root_ratio": 2,
+            "vandermonde_degree": 5,
+            "vandermonde_resultant": 1331
+          },
+          {
+            "determinant_degree": 7,
+            "exponent_class": [
+              0,
+              1,
+              2
+            ],
+            "exponent_ratio": 2,
+            "quotient_degree": 0,
+            "quotient_factorization": [],
+            "quotient_resultant": 1,
+            "raw_resultant": 1331,
+            "root_class": [
+              0,
+              1,
+              3
+            ],
+            "root_ratio": 3,
+            "vandermonde_degree": 7,
+            "vandermonde_resultant": 1331
+          },
+          {
+            "determinant_degree": 9,
+            "exponent_class": [
+              0,
+              1,
+              2
+            ],
+            "exponent_ratio": 2,
+            "quotient_degree": 0,
+            "quotient_factorization": [],
+            "quotient_resultant": 1,
+            "raw_resultant": 1331,
+            "root_class": [
+              0,
+              1,
+              3
+            ],
+            "root_ratio": 4,
+            "vandermonde_degree": 9,
+            "vandermonde_resultant": 1331
+          },
+          {
+            "determinant_degree": 11,
+            "exponent_class": [
+              0,
+              1,
+              2
+            ],
+            "exponent_ratio": 2,
+            "quotient_degree": 0,
+            "quotient_factorization": [],
+            "quotient_resultant": 1,
+            "raw_resultant": 1331,
+            "root_class": [
+              0,
+              1,
+              3
+            ],
+            "root_ratio": 5,
+            "vandermonde_degree": 11,
+            "vandermonde_resultant": 1331
+          },
+          {
+            "determinant_degree": 13,
+            "exponent_class": [
+              0,
+              1,
+              2
+            ],
+            "exponent_ratio": 2,
+            "quotient_degree": 0,
+            "quotient_factorization": [],
+            "quotient_resultant": 1,
+            "raw_resultant": 1331,
+            "root_class": [
+              0,
+              1,
+              2
+            ],
+            "root_ratio": 6,
+            "vandermonde_degree": 13,
+            "vandermonde_resultant": 1331
+          },
+          {
+            "determinant_degree": 15,
+            "exponent_class": [
+              0,
+              1,
+              2
+            ],
+            "exponent_ratio": 2,
+            "quotient_degree": 0,
+            "quotient_factorization": [],
+            "quotient_resultant": 1,
+            "raw_resultant": 1331,
+            "root_class": [
+              0,
+              1,
+              3
+            ],
+            "root_ratio": 7,
+            "vandermonde_degree": 15,
+            "vandermonde_resultant": 1331
+          },
+          {
+            "determinant_degree": 17,
+            "exponent_class": [
+              0,
+              1,
+              2
+            ],
+            "exponent_ratio": 2,
+            "quotient_degree": 0,
+            "quotient_factorization": [],
+            "quotient_resultant": 1,
+            "raw_resultant": 1331,
+            "root_class": [
+              0,
+              1,
+              3
+            ],
+            "root_ratio": 8,
+            "vandermonde_degree": 17,
+            "vandermonde_resultant": 1331
+          },
+          {
+            "determinant_degree": 19,
+            "exponent_class": [
+              0,
+              1,
+              2
+            ],
+            "exponent_ratio": 2,
+            "quotient_degree": 0,
+            "quotient_factorization": [],
+            "quotient_resultant": 1,
+            "raw_resultant": 1331,
+            "root_class": [
+              0,
+              1,
+              3
+            ],
+            "root_ratio": 9,
+            "vandermonde_degree": 19,
+            "vandermonde_resultant": 1331
+          },
+          {
+            "determinant_degree": 21,
+            "exponent_class": [
+              0,
+              1,
+              2
+            ],
+            "exponent_ratio": 2,
+            "quotient_degree": 0,
+            "quotient_factorization": [],
+            "quotient_resultant": 1,
+            "raw_resultant": 1331,
+            "root_class": [
+              0,
+              1,
+              2
+            ],
+            "root_ratio": 10,
+            "vandermonde_degree": 21,
+            "vandermonde_resultant": 1331
+          },
+          {
+            "determinant_degree": 7,
+            "exponent_class": [
+              0,
+              1,
+              3
+            ],
+            "exponent_ratio": 3,
+            "quotient_degree": 2,
+            "quotient_factorization": [],
+            "quotient_resultant": 1,
+            "raw_resultant": 1331,
+            "root_class": [
+              0,
+              1,
+              2
+            ],
+            "root_ratio": 2,
+            "vandermonde_degree": 5,
+            "vandermonde_resultant": 1331
+          },
+          {
+            "determinant_degree": 10,
+            "exponent_class": [
+              0,
+              1,
+              3
+            ],
+            "exponent_ratio": 3,
+            "quotient_degree": 3,
+            "quotient_factorization": [
+              [
+                23,
+                1
+              ]
+            ],
+            "quotient_resultant": 23,
+            "raw_resultant": 30613,
+            "root_class": [
+              0,
+              1,
+              3
+            ],
+            "root_ratio": 3,
+            "vandermonde_degree": 7,
+            "vandermonde_resultant": 1331
+          },
+          {
+            "determinant_degree": 13,
+            "exponent_class": [
+              0,
+              1,
+              3
+            ],
+            "exponent_ratio": 3,
+            "quotient_degree": 4,
+            "quotient_factorization": [
+              [
+                23,
+                1
+              ]
+            ],
+            "quotient_resultant": 23,
+            "raw_resultant": 30613,
+            "root_class": [
+              0,
+              1,
+              3
+            ],
+            "root_ratio": 4,
+            "vandermonde_degree": 9,
+            "vandermonde_resultant": 1331
+          },
+          {
+            "determinant_degree": 16,
+            "exponent_class": [
+              0,
+              1,
+              3
+            ],
+            "exponent_ratio": 3,
+            "quotient_degree": 5,
+            "quotient_factorization": [
+              [
+                23,
+                1
+              ]
+            ],
+            "quotient_resultant": 23,
+            "raw_resultant": 30613,
+            "root_class": [
+              0,
+              1,
+              3
+            ],
+            "root_ratio": 5,
+            "vandermonde_degree": 11,
+            "vandermonde_resultant": 1331
+          },
+          {
+            "determinant_degree": 19,
+            "exponent_class": [
+              0,
+              1,
+              3
+            ],
+            "exponent_ratio": 3,
+            "quotient_degree": 6,
+            "quotient_factorization": [],
+            "quotient_resultant": 1,
+            "raw_resultant": 1331,
+            "root_class": [
+              0,
+              1,
+              2
+            ],
+            "root_ratio": 6,
+            "vandermonde_degree": 13,
+            "vandermonde_resultant": 1331
+          },
+          {
+            "determinant_degree": 22,
+            "exponent_class": [
+              0,
+              1,
+              3
+            ],
+            "exponent_ratio": 3,
+            "quotient_degree": 7,
+            "quotient_factorization": [
+              [
+                23,
+                1
+              ]
+            ],
+            "quotient_resultant": 23,
+            "raw_resultant": 30613,
+            "root_class": [
+              0,
+              1,
+              3
+            ],
+            "root_ratio": 7,
+            "vandermonde_degree": 15,
+            "vandermonde_resultant": 1331
+          },
+          {
+            "determinant_degree": 25,
+            "exponent_class": [
+              0,
+              1,
+              3
+            ],
+            "exponent_ratio": 3,
+            "quotient_degree": 8,
+            "quotient_factorization": [
+              [
+                23,
+                1
+              ]
+            ],
+            "quotient_resultant": 23,
+            "raw_resultant": 30613,
+            "root_class": [
+              0,
+              1,
+              3
+            ],
+            "root_ratio": 8,
+            "vandermonde_degree": 17,
+            "vandermonde_resultant": 1331
+          },
+          {
+            "determinant_degree": 28,
+            "exponent_class": [
+              0,
+              1,
+              3
+            ],
+            "exponent_ratio": 3,
+            "quotient_degree": 9,
+            "quotient_factorization": [
+              [
+                23,
+                1
+              ]
+            ],
+            "quotient_resultant": 23,
+            "raw_resultant": 30613,
+            "root_class": [
+              0,
+              1,
+              3
+            ],
+            "root_ratio": 9,
+            "vandermonde_degree": 19,
+            "vandermonde_resultant": 1331
+          },
+          {
+            "determinant_degree": 31,
+            "exponent_class": [
+              0,
+              1,
+              3
+            ],
+            "exponent_ratio": 3,
+            "quotient_degree": 10,
+            "quotient_factorization": [],
+            "quotient_resultant": 1,
+            "raw_resultant": 1331,
+            "root_class": [
+              0,
+              1,
+              2
+            ],
+            "root_ratio": 10,
+            "vandermonde_degree": 21,
+            "vandermonde_resultant": 1331
+          },
+          {
+            "determinant_degree": 9,
+            "exponent_class": [
+              0,
+              1,
+              3
+            ],
+            "exponent_ratio": 4,
+            "quotient_degree": 4,
+            "quotient_factorization": [],
+            "quotient_resultant": 1,
+            "raw_resultant": 1331,
+            "root_class": [
+              0,
+              1,
+              2
+            ],
+            "root_ratio": 2,
+            "vandermonde_degree": 5,
+            "vandermonde_resultant": 1331
+          },
+          {
+            "determinant_degree": 13,
+            "exponent_class": [
+              0,
+              1,
+              3
+            ],
+            "exponent_ratio": 4,
+            "quotient_degree": 6,
+            "quotient_factorization": [
+              [
+                23,
+                1
+              ]
+            ],
+            "quotient_resultant": 23,
+            "raw_resultant": 30613,
+            "root_class": [
+              0,
+              1,
+              3
+            ],
+            "root_ratio": 3,
+            "vandermonde_degree": 7,
+            "vandermonde_resultant": 1331
+          },
+          {
+            "determinant_degree": 17,
+            "exponent_class": [
+              0,
+              1,
+              3
+            ],
+            "exponent_ratio": 4,
+            "quotient_degree": 8,
+            "quotient_factorization": [
+              [
+                23,
+                1
+              ]
+            ],
+            "quotient_resultant": 23,
+            "raw_resultant": 30613,
+            "root_class": [
+              0,
+              1,
+              3
+            ],
+            "root_ratio": 4,
+            "vandermonde_degree": 9,
+            "vandermonde_resultant": 1331
+          },
+          {
+            "determinant_degree": 21,
+            "exponent_class": [
+              0,
+              1,
+              3
+            ],
+            "exponent_ratio": 4,
+            "quotient_degree": 10,
+            "quotient_factorization": [
+              [
+                23,
+                1
+              ]
+            ],
+            "quotient_resultant": 23,
+            "raw_resultant": 30613,
+            "root_class": [
+              0,
+              1,
+              3
+            ],
+            "root_ratio": 5,
+            "vandermonde_degree": 11,
+            "vandermonde_resultant": 1331
+          },
+          {
+            "determinant_degree": 25,
+            "exponent_class": [
+              0,
+              1,
+              3
+            ],
+            "exponent_ratio": 4,
+            "quotient_degree": 12,
+            "quotient_factorization": [],
+            "quotient_resultant": 1,
+            "raw_resultant": 1331,
+            "root_class": [
+              0,
+              1,
+              2
+            ],
+            "root_ratio": 6,
+            "vandermonde_degree": 13,
+            "vandermonde_resultant": 1331
+          },
+          {
+            "determinant_degree": 29,
+            "exponent_class": [
+              0,
+              1,
+              3
+            ],
+            "exponent_ratio": 4,
+            "quotient_degree": 14,
+            "quotient_factorization": [
+              [
+                23,
+                1
+              ]
+            ],
+            "quotient_resultant": 23,
+            "raw_resultant": 30613,
+            "root_class": [
+              0,
+              1,
+              3
+            ],
+            "root_ratio": 7,
+            "vandermonde_degree": 15,
+            "vandermonde_resultant": 1331
+          },
+          {
+            "determinant_degree": 33,
+            "exponent_class": [
+              0,
+              1,
+              3
+            ],
+            "exponent_ratio": 4,
+            "quotient_degree": 16,
+            "quotient_factorization": [
+              [
+                23,
+                1
+              ]
+            ],
+            "quotient_resultant": 23,
+            "raw_resultant": 30613,
+            "root_class": [
+              0,
+              1,
+              3
+            ],
+            "root_ratio": 8,
+            "vandermonde_degree": 17,
+            "vandermonde_resultant": 1331
+          },
+          {
+            "determinant_degree": 37,
+            "exponent_class": [
+              0,
+              1,
+              3
+            ],
+            "exponent_ratio": 4,
+            "quotient_degree": 18,
+            "quotient_factorization": [
+              [
+                23,
+                1
+              ]
+            ],
+            "quotient_resultant": 23,
+            "raw_resultant": 30613,
+            "root_class": [
+              0,
+              1,
+              3
+            ],
+            "root_ratio": 9,
+            "vandermonde_degree": 19,
+            "vandermonde_resultant": 1331
+          },
+          {
+            "determinant_degree": 41,
+            "exponent_class": [
+              0,
+              1,
+              3
+            ],
+            "exponent_ratio": 4,
+            "quotient_degree": 20,
+            "quotient_factorization": [],
+            "quotient_resultant": 1,
+            "raw_resultant": 1331,
+            "root_class": [
+              0,
+              1,
+              2
+            ],
+            "root_ratio": 10,
+            "vandermonde_degree": 21,
+            "vandermonde_resultant": 1331
+          },
+          {
+            "determinant_degree": 11,
+            "exponent_class": [
+              0,
+              1,
+              3
+            ],
+            "exponent_ratio": 5,
+            "quotient_degree": 6,
+            "quotient_factorization": [],
+            "quotient_resultant": 1,
+            "raw_resultant": 1331,
+            "root_class": [
+              0,
+              1,
+              2
+            ],
+            "root_ratio": 2,
+            "vandermonde_degree": 5,
+            "vandermonde_resultant": 1331
+          },
+          {
+            "determinant_degree": 16,
+            "exponent_class": [
+              0,
+              1,
+              3
+            ],
+            "exponent_ratio": 5,
+            "quotient_degree": 9,
+            "quotient_factorization": [
+              [
+                23,
+                1
+              ]
+            ],
+            "quotient_resultant": 23,
+            "raw_resultant": 30613,
+            "root_class": [
+              0,
+              1,
+              3
+            ],
+            "root_ratio": 3,
+            "vandermonde_degree": 7,
+            "vandermonde_resultant": 1331
+          },
+          {
+            "determinant_degree": 21,
+            "exponent_class": [
+              0,
+              1,
+              3
+            ],
+            "exponent_ratio": 5,
+            "quotient_degree": 12,
+            "quotient_factorization": [
+              [
+                23,
+                1
+              ]
+            ],
+            "quotient_resultant": 23,
+            "raw_resultant": 30613,
+            "root_class": [
+              0,
+              1,
+              3
+            ],
+            "root_ratio": 4,
+            "vandermonde_degree": 9,
+            "vandermonde_resultant": 1331
+          },
+          {
+            "determinant_degree": 26,
+            "exponent_class": [
+              0,
+              1,
+              3
+            ],
+            "exponent_ratio": 5,
+            "quotient_degree": 15,
+            "quotient_factorization": [
+              [
+                23,
+                1
+              ]
+            ],
+            "quotient_resultant": 23,
+            "raw_resultant": 30613,
+            "root_class": [
+              0,
+              1,
+              3
+            ],
+            "root_ratio": 5,
+            "vandermonde_degree": 11,
+            "vandermonde_resultant": 1331
+          },
+          {
+            "determinant_degree": 31,
+            "exponent_class": [
+              0,
+              1,
+              3
+            ],
+            "exponent_ratio": 5,
+            "quotient_degree": 18,
+            "quotient_factorization": [],
+            "quotient_resultant": 1,
+            "raw_resultant": 1331,
+            "root_class": [
+              0,
+              1,
+              2
+            ],
+            "root_ratio": 6,
+            "vandermonde_degree": 13,
+            "vandermonde_resultant": 1331
+          },
+          {
+            "determinant_degree": 36,
+            "exponent_class": [
+              0,
+              1,
+              3
+            ],
+            "exponent_ratio": 5,
+            "quotient_degree": 21,
+            "quotient_factorization": [
+              [
+                23,
+                1
+              ]
+            ],
+            "quotient_resultant": 23,
+            "raw_resultant": 30613,
+            "root_class": [
+              0,
+              1,
+              3
+            ],
+            "root_ratio": 7,
+            "vandermonde_degree": 15,
+            "vandermonde_resultant": 1331
+          },
+          {
+            "determinant_degree": 41,
+            "exponent_class": [
+              0,
+              1,
+              3
+            ],
+            "exponent_ratio": 5,
+            "quotient_degree": 24,
+            "quotient_factorization": [
+              [
+                23,
+                1
+              ]
+            ],
+            "quotient_resultant": 23,
+            "raw_resultant": 30613,
+            "root_class": [
+              0,
+              1,
+              3
+            ],
+            "root_ratio": 8,
+            "vandermonde_degree": 17,
+            "vandermonde_resultant": 1331
+          },
+          {
+            "determinant_degree": 46,
+            "exponent_class": [
+              0,
+              1,
+              3
+            ],
+            "exponent_ratio": 5,
+            "quotient_degree": 27,
+            "quotient_factorization": [
+              [
+                23,
+                1
+              ]
+            ],
+            "quotient_resultant": 23,
+            "raw_resultant": 30613,
+            "root_class": [
+              0,
+              1,
+              3
+            ],
+            "root_ratio": 9,
+            "vandermonde_degree": 19,
+            "vandermonde_resultant": 1331
+          },
+          {
+            "determinant_degree": 51,
+            "exponent_class": [
+              0,
+              1,
+              3
+            ],
+            "exponent_ratio": 5,
+            "quotient_degree": 30,
+            "quotient_factorization": [],
+            "quotient_resultant": 1,
+            "raw_resultant": 1331,
+            "root_class": [
+              0,
+              1,
+              2
+            ],
+            "root_ratio": 10,
+            "vandermonde_degree": 21,
+            "vandermonde_resultant": 1331
+          },
+          {
+            "determinant_degree": 13,
+            "exponent_class": [
+              0,
+              1,
+              2
+            ],
+            "exponent_ratio": 6,
+            "quotient_degree": 8,
+            "quotient_factorization": [],
+            "quotient_resultant": 1,
+            "raw_resultant": 1331,
+            "root_class": [
+              0,
+              1,
+              2
+            ],
+            "root_ratio": 2,
+            "vandermonde_degree": 5,
+            "vandermonde_resultant": 1331
+          },
+          {
+            "determinant_degree": 19,
+            "exponent_class": [
+              0,
+              1,
+              2
+            ],
+            "exponent_ratio": 6,
+            "quotient_degree": 12,
+            "quotient_factorization": [],
+            "quotient_resultant": 1,
+            "raw_resultant": 1331,
+            "root_class": [
+              0,
+              1,
+              3
+            ],
+            "root_ratio": 3,
+            "vandermonde_degree": 7,
+            "vandermonde_resultant": 1331
+          },
+          {
+            "determinant_degree": 25,
+            "exponent_class": [
+              0,
+              1,
+              2
+            ],
+            "exponent_ratio": 6,
+            "quotient_degree": 16,
+            "quotient_factorization": [],
+            "quotient_resultant": 1,
+            "raw_resultant": 1331,
+            "root_class": [
+              0,
+              1,
+              3
+            ],
+            "root_ratio": 4,
+            "vandermonde_degree": 9,
+            "vandermonde_resultant": 1331
+          },
+          {
+            "determinant_degree": 31,
+            "exponent_class": [
+              0,
+              1,
+              2
+            ],
+            "exponent_ratio": 6,
+            "quotient_degree": 20,
+            "quotient_factorization": [],
+            "quotient_resultant": 1,
+            "raw_resultant": 1331,
+            "root_class": [
+              0,
+              1,
+              3
+            ],
+            "root_ratio": 5,
+            "vandermonde_degree": 11,
+            "vandermonde_resultant": 1331
+          },
+          {
+            "determinant_degree": 37,
+            "exponent_class": [
+              0,
+              1,
+              2
+            ],
+            "exponent_ratio": 6,
+            "quotient_degree": 24,
+            "quotient_factorization": [],
+            "quotient_resultant": 1,
+            "raw_resultant": 1331,
+            "root_class": [
+              0,
+              1,
+              2
+            ],
+            "root_ratio": 6,
+            "vandermonde_degree": 13,
+            "vandermonde_resultant": 1331
+          },
+          {
+            "determinant_degree": 43,
+            "exponent_class": [
+              0,
+              1,
+              2
+            ],
+            "exponent_ratio": 6,
+            "quotient_degree": 28,
+            "quotient_factorization": [],
+            "quotient_resultant": 1,
+            "raw_resultant": 1331,
+            "root_class": [
+              0,
+              1,
+              3
+            ],
+            "root_ratio": 7,
+            "vandermonde_degree": 15,
+            "vandermonde_resultant": 1331
+          },
+          {
+            "determinant_degree": 49,
+            "exponent_class": [
+              0,
+              1,
+              2
+            ],
+            "exponent_ratio": 6,
+            "quotient_degree": 32,
+            "quotient_factorization": [],
+            "quotient_resultant": 1,
+            "raw_resultant": 1331,
+            "root_class": [
+              0,
+              1,
+              3
+            ],
+            "root_ratio": 8,
+            "vandermonde_degree": 17,
+            "vandermonde_resultant": 1331
+          },
+          {
+            "determinant_degree": 55,
+            "exponent_class": [
+              0,
+              1,
+              2
+            ],
+            "exponent_ratio": 6,
+            "quotient_degree": 36,
+            "quotient_factorization": [],
+            "quotient_resultant": 1,
+            "raw_resultant": 1331,
+            "root_class": [
+              0,
+              1,
+              3
+            ],
+            "root_ratio": 9,
+            "vandermonde_degree": 19,
+            "vandermonde_resultant": 1331
+          },
+          {
+            "determinant_degree": 61,
+            "exponent_class": [
+              0,
+              1,
+              2
+            ],
+            "exponent_ratio": 6,
+            "quotient_degree": 40,
+            "quotient_factorization": [],
+            "quotient_resultant": 1,
+            "raw_resultant": 1331,
+            "root_class": [
+              0,
+              1,
+              2
+            ],
+            "root_ratio": 10,
+            "vandermonde_degree": 21,
+            "vandermonde_resultant": 1331
+          },
+          {
+            "determinant_degree": 15,
+            "exponent_class": [
+              0,
+              1,
+              3
+            ],
+            "exponent_ratio": 7,
+            "quotient_degree": 10,
+            "quotient_factorization": [],
+            "quotient_resultant": 1,
+            "raw_resultant": 1331,
+            "root_class": [
+              0,
+              1,
+              2
+            ],
+            "root_ratio": 2,
+            "vandermonde_degree": 5,
+            "vandermonde_resultant": 1331
+          },
+          {
+            "determinant_degree": 22,
+            "exponent_class": [
+              0,
+              1,
+              3
+            ],
+            "exponent_ratio": 7,
+            "quotient_degree": 15,
+            "quotient_factorization": [
+              [
+                23,
+                1
+              ]
+            ],
+            "quotient_resultant": 23,
+            "raw_resultant": 30613,
+            "root_class": [
+              0,
+              1,
+              3
+            ],
+            "root_ratio": 3,
+            "vandermonde_degree": 7,
+            "vandermonde_resultant": 1331
+          },
+          {
+            "determinant_degree": 29,
+            "exponent_class": [
+              0,
+              1,
+              3
+            ],
+            "exponent_ratio": 7,
+            "quotient_degree": 20,
+            "quotient_factorization": [
+              [
+                23,
+                1
+              ]
+            ],
+            "quotient_resultant": 23,
+            "raw_resultant": 30613,
+            "root_class": [
+              0,
+              1,
+              3
+            ],
+            "root_ratio": 4,
+            "vandermonde_degree": 9,
+            "vandermonde_resultant": 1331
+          },
+          {
+            "determinant_degree": 36,
+            "exponent_class": [
+              0,
+              1,
+              3
+            ],
+            "exponent_ratio": 7,
+            "quotient_degree": 25,
+            "quotient_factorization": [
+              [
+                23,
+                1
+              ]
+            ],
+            "quotient_resultant": 23,
+            "raw_resultant": 30613,
+            "root_class": [
+              0,
+              1,
+              3
+            ],
+            "root_ratio": 5,
+            "vandermonde_degree": 11,
+            "vandermonde_resultant": 1331
+          },
+          {
+            "determinant_degree": 43,
+            "exponent_class": [
+              0,
+              1,
+              3
+            ],
+            "exponent_ratio": 7,
+            "quotient_degree": 30,
+            "quotient_factorization": [],
+            "quotient_resultant": 1,
+            "raw_resultant": 1331,
+            "root_class": [
+              0,
+              1,
+              2
+            ],
+            "root_ratio": 6,
+            "vandermonde_degree": 13,
+            "vandermonde_resultant": 1331
+          },
+          {
+            "determinant_degree": 50,
+            "exponent_class": [
+              0,
+              1,
+              3
+            ],
+            "exponent_ratio": 7,
+            "quotient_degree": 35,
+            "quotient_factorization": [
+              [
+                23,
+                1
+              ]
+            ],
+            "quotient_resultant": 23,
+            "raw_resultant": 30613,
+            "root_class": [
+              0,
+              1,
+              3
+            ],
+            "root_ratio": 7,
+            "vandermonde_degree": 15,
+            "vandermonde_resultant": 1331
+          },
+          {
+            "determinant_degree": 57,
+            "exponent_class": [
+              0,
+              1,
+              3
+            ],
+            "exponent_ratio": 7,
+            "quotient_degree": 40,
+            "quotient_factorization": [
+              [
+                23,
+                1
+              ]
+            ],
+            "quotient_resultant": 23,
+            "raw_resultant": 30613,
+            "root_class": [
+              0,
+              1,
+              3
+            ],
+            "root_ratio": 8,
+            "vandermonde_degree": 17,
+            "vandermonde_resultant": 1331
+          },
+          {
+            "determinant_degree": 64,
+            "exponent_class": [
+              0,
+              1,
+              3
+            ],
+            "exponent_ratio": 7,
+            "quotient_degree": 45,
+            "quotient_factorization": [
+              [
+                23,
+                1
+              ]
+            ],
+            "quotient_resultant": 23,
+            "raw_resultant": 30613,
+            "root_class": [
+              0,
+              1,
+              3
+            ],
+            "root_ratio": 9,
+            "vandermonde_degree": 19,
+            "vandermonde_resultant": 1331
+          },
+          {
+            "determinant_degree": 71,
+            "exponent_class": [
+              0,
+              1,
+              3
+            ],
+            "exponent_ratio": 7,
+            "quotient_degree": 50,
+            "quotient_factorization": [],
+            "quotient_resultant": 1,
+            "raw_resultant": 1331,
+            "root_class": [
+              0,
+              1,
+              2
+            ],
+            "root_ratio": 10,
+            "vandermonde_degree": 21,
+            "vandermonde_resultant": 1331
+          },
+          {
+            "determinant_degree": 17,
+            "exponent_class": [
+              0,
+              1,
+              3
+            ],
+            "exponent_ratio": 8,
+            "quotient_degree": 12,
+            "quotient_factorization": [],
+            "quotient_resultant": 1,
+            "raw_resultant": 1331,
+            "root_class": [
+              0,
+              1,
+              2
+            ],
+            "root_ratio": 2,
+            "vandermonde_degree": 5,
+            "vandermonde_resultant": 1331
+          },
+          {
+            "determinant_degree": 25,
+            "exponent_class": [
+              0,
+              1,
+              3
+            ],
+            "exponent_ratio": 8,
+            "quotient_degree": 18,
+            "quotient_factorization": [
+              [
+                23,
+                1
+              ]
+            ],
+            "quotient_resultant": 23,
+            "raw_resultant": 30613,
+            "root_class": [
+              0,
+              1,
+              3
+            ],
+            "root_ratio": 3,
+            "vandermonde_degree": 7,
+            "vandermonde_resultant": 1331
+          },
+          {
+            "determinant_degree": 33,
+            "exponent_class": [
+              0,
+              1,
+              3
+            ],
+            "exponent_ratio": 8,
+            "quotient_degree": 24,
+            "quotient_factorization": [
+              [
+                23,
+                1
+              ]
+            ],
+            "quotient_resultant": 23,
+            "raw_resultant": 30613,
+            "root_class": [
+              0,
+              1,
+              3
+            ],
+            "root_ratio": 4,
+            "vandermonde_degree": 9,
+            "vandermonde_resultant": 1331
+          },
+          {
+            "determinant_degree": 41,
+            "exponent_class": [
+              0,
+              1,
+              3
+            ],
+            "exponent_ratio": 8,
+            "quotient_degree": 30,
+            "quotient_factorization": [
+              [
+                23,
+                1
+              ]
+            ],
+            "quotient_resultant": 23,
+            "raw_resultant": 30613,
+            "root_class": [
+              0,
+              1,
+              3
+            ],
+            "root_ratio": 5,
+            "vandermonde_degree": 11,
+            "vandermonde_resultant": 1331
+          },
+          {
+            "determinant_degree": 49,
+            "exponent_class": [
+              0,
+              1,
+              3
+            ],
+            "exponent_ratio": 8,
+            "quotient_degree": 36,
+            "quotient_factorization": [],
+            "quotient_resultant": 1,
+            "raw_resultant": 1331,
+            "root_class": [
+              0,
+              1,
+              2
+            ],
+            "root_ratio": 6,
+            "vandermonde_degree": 13,
+            "vandermonde_resultant": 1331
+          },
+          {
+            "determinant_degree": 57,
+            "exponent_class": [
+              0,
+              1,
+              3
+            ],
+            "exponent_ratio": 8,
+            "quotient_degree": 42,
+            "quotient_factorization": [
+              [
+                23,
+                1
+              ]
+            ],
+            "quotient_resultant": 23,
+            "raw_resultant": 30613,
+            "root_class": [
+              0,
+              1,
+              3
+            ],
+            "root_ratio": 7,
+            "vandermonde_degree": 15,
+            "vandermonde_resultant": 1331
+          },
+          {
+            "determinant_degree": 65,
+            "exponent_class": [
+              0,
+              1,
+              3
+            ],
+            "exponent_ratio": 8,
+            "quotient_degree": 48,
+            "quotient_factorization": [
+              [
+                23,
+                1
+              ]
+            ],
+            "quotient_resultant": 23,
+            "raw_resultant": 30613,
+            "root_class": [
+              0,
+              1,
+              3
+            ],
+            "root_ratio": 8,
+            "vandermonde_degree": 17,
+            "vandermonde_resultant": 1331
+          },
+          {
+            "determinant_degree": 73,
+            "exponent_class": [
+              0,
+              1,
+              3
+            ],
+            "exponent_ratio": 8,
+            "quotient_degree": 54,
+            "quotient_factorization": [
+              [
+                23,
+                1
+              ]
+            ],
+            "quotient_resultant": 23,
+            "raw_resultant": 30613,
+            "root_class": [
+              0,
+              1,
+              3
+            ],
+            "root_ratio": 9,
+            "vandermonde_degree": 19,
+            "vandermonde_resultant": 1331
+          },
+          {
+            "determinant_degree": 81,
+            "exponent_class": [
+              0,
+              1,
+              3
+            ],
+            "exponent_ratio": 8,
+            "quotient_degree": 60,
+            "quotient_factorization": [],
+            "quotient_resultant": 1,
+            "raw_resultant": 1331,
+            "root_class": [
+              0,
+              1,
+              2
+            ],
+            "root_ratio": 10,
+            "vandermonde_degree": 21,
+            "vandermonde_resultant": 1331
+          },
+          {
+            "determinant_degree": 19,
+            "exponent_class": [
+              0,
+              1,
+              3
+            ],
+            "exponent_ratio": 9,
+            "quotient_degree": 14,
+            "quotient_factorization": [],
+            "quotient_resultant": 1,
+            "raw_resultant": 1331,
+            "root_class": [
+              0,
+              1,
+              2
+            ],
+            "root_ratio": 2,
+            "vandermonde_degree": 5,
+            "vandermonde_resultant": 1331
+          },
+          {
+            "determinant_degree": 28,
+            "exponent_class": [
+              0,
+              1,
+              3
+            ],
+            "exponent_ratio": 9,
+            "quotient_degree": 21,
+            "quotient_factorization": [
+              [
+                23,
+                1
+              ]
+            ],
+            "quotient_resultant": 23,
+            "raw_resultant": 30613,
+            "root_class": [
+              0,
+              1,
+              3
+            ],
+            "root_ratio": 3,
+            "vandermonde_degree": 7,
+            "vandermonde_resultant": 1331
+          },
+          {
+            "determinant_degree": 37,
+            "exponent_class": [
+              0,
+              1,
+              3
+            ],
+            "exponent_ratio": 9,
+            "quotient_degree": 28,
+            "quotient_factorization": [
+              [
+                23,
+                1
+              ]
+            ],
+            "quotient_resultant": 23,
+            "raw_resultant": 30613,
+            "root_class": [
+              0,
+              1,
+              3
+            ],
+            "root_ratio": 4,
+            "vandermonde_degree": 9,
+            "vandermonde_resultant": 1331
+          },
+          {
+            "determinant_degree": 46,
+            "exponent_class": [
+              0,
+              1,
+              3
+            ],
+            "exponent_ratio": 9,
+            "quotient_degree": 35,
+            "quotient_factorization": [
+              [
+                23,
+                1
+              ]
+            ],
+            "quotient_resultant": 23,
+            "raw_resultant": 30613,
+            "root_class": [
+              0,
+              1,
+              3
+            ],
+            "root_ratio": 5,
+            "vandermonde_degree": 11,
+            "vandermonde_resultant": 1331
+          },
+          {
+            "determinant_degree": 55,
+            "exponent_class": [
+              0,
+              1,
+              3
+            ],
+            "exponent_ratio": 9,
+            "quotient_degree": 42,
+            "quotient_factorization": [],
+            "quotient_resultant": 1,
+            "raw_resultant": 1331,
+            "root_class": [
+              0,
+              1,
+              2
+            ],
+            "root_ratio": 6,
+            "vandermonde_degree": 13,
+            "vandermonde_resultant": 1331
+          },
+          {
+            "determinant_degree": 64,
+            "exponent_class": [
+              0,
+              1,
+              3
+            ],
+            "exponent_ratio": 9,
+            "quotient_degree": 49,
+            "quotient_factorization": [
+              [
+                23,
+                1
+              ]
+            ],
+            "quotient_resultant": 23,
+            "raw_resultant": 30613,
+            "root_class": [
+              0,
+              1,
+              3
+            ],
+            "root_ratio": 7,
+            "vandermonde_degree": 15,
+            "vandermonde_resultant": 1331
+          },
+          {
+            "determinant_degree": 73,
+            "exponent_class": [
+              0,
+              1,
+              3
+            ],
+            "exponent_ratio": 9,
+            "quotient_degree": 56,
+            "quotient_factorization": [
+              [
+                23,
+                1
+              ]
+            ],
+            "quotient_resultant": 23,
+            "raw_resultant": 30613,
+            "root_class": [
+              0,
+              1,
+              3
+            ],
+            "root_ratio": 8,
+            "vandermonde_degree": 17,
+            "vandermonde_resultant": 1331
+          },
+          {
+            "determinant_degree": 82,
+            "exponent_class": [
+              0,
+              1,
+              3
+            ],
+            "exponent_ratio": 9,
+            "quotient_degree": 63,
+            "quotient_factorization": [
+              [
+                23,
+                1
+              ]
+            ],
+            "quotient_resultant": 23,
+            "raw_resultant": 30613,
+            "root_class": [
+              0,
+              1,
+              3
+            ],
+            "root_ratio": 9,
+            "vandermonde_degree": 19,
+            "vandermonde_resultant": 1331
+          },
+          {
+            "determinant_degree": 91,
+            "exponent_class": [
+              0,
+              1,
+              3
+            ],
+            "exponent_ratio": 9,
+            "quotient_degree": 70,
+            "quotient_factorization": [],
+            "quotient_resultant": 1,
+            "raw_resultant": 1331,
+            "root_class": [
+              0,
+              1,
+              2
+            ],
+            "root_ratio": 10,
+            "vandermonde_degree": 21,
+            "vandermonde_resultant": 1331
+          },
+          {
+            "determinant_degree": 21,
+            "exponent_class": [
+              0,
+              1,
+              2
+            ],
+            "exponent_ratio": 10,
+            "quotient_degree": 16,
+            "quotient_factorization": [],
+            "quotient_resultant": 1,
+            "raw_resultant": 1331,
+            "root_class": [
+              0,
+              1,
+              2
+            ],
+            "root_ratio": 2,
+            "vandermonde_degree": 5,
+            "vandermonde_resultant": 1331
+          },
+          {
+            "determinant_degree": 31,
+            "exponent_class": [
+              0,
+              1,
+              2
+            ],
+            "exponent_ratio": 10,
+            "quotient_degree": 24,
+            "quotient_factorization": [],
+            "quotient_resultant": 1,
+            "raw_resultant": 1331,
+            "root_class": [
+              0,
+              1,
+              3
+            ],
+            "root_ratio": 3,
+            "vandermonde_degree": 7,
+            "vandermonde_resultant": 1331
+          },
+          {
+            "determinant_degree": 41,
+            "exponent_class": [
+              0,
+              1,
+              2
+            ],
+            "exponent_ratio": 10,
+            "quotient_degree": 32,
+            "quotient_factorization": [],
+            "quotient_resultant": 1,
+            "raw_resultant": 1331,
+            "root_class": [
+              0,
+              1,
+              3
+            ],
+            "root_ratio": 4,
+            "vandermonde_degree": 9,
+            "vandermonde_resultant": 1331
+          },
+          {
+            "determinant_degree": 51,
+            "exponent_class": [
+              0,
+              1,
+              2
+            ],
+            "exponent_ratio": 10,
+            "quotient_degree": 40,
+            "quotient_factorization": [],
+            "quotient_resultant": 1,
+            "raw_resultant": 1331,
+            "root_class": [
+              0,
+              1,
+              3
+            ],
+            "root_ratio": 5,
+            "vandermonde_degree": 11,
+            "vandermonde_resultant": 1331
+          },
+          {
+            "determinant_degree": 61,
+            "exponent_class": [
+              0,
+              1,
+              2
+            ],
+            "exponent_ratio": 10,
+            "quotient_degree": 48,
+            "quotient_factorization": [],
+            "quotient_resultant": 1,
+            "raw_resultant": 1331,
+            "root_class": [
+              0,
+              1,
+              2
+            ],
+            "root_ratio": 6,
+            "vandermonde_degree": 13,
+            "vandermonde_resultant": 1331
+          },
+          {
+            "determinant_degree": 71,
+            "exponent_class": [
+              0,
+              1,
+              2
+            ],
+            "exponent_ratio": 10,
+            "quotient_degree": 56,
+            "quotient_factorization": [],
+            "quotient_resultant": 1,
+            "raw_resultant": 1331,
+            "root_class": [
+              0,
+              1,
+              3
+            ],
+            "root_ratio": 7,
+            "vandermonde_degree": 15,
+            "vandermonde_resultant": 1331
+          },
+          {
+            "determinant_degree": 81,
+            "exponent_class": [
+              0,
+              1,
+              2
+            ],
+            "exponent_ratio": 10,
+            "quotient_degree": 64,
+            "quotient_factorization": [],
+            "quotient_resultant": 1,
+            "raw_resultant": 1331,
+            "root_class": [
+              0,
+              1,
+              3
+            ],
+            "root_ratio": 8,
+            "vandermonde_degree": 17,
+            "vandermonde_resultant": 1331
+          },
+          {
+            "determinant_degree": 91,
+            "exponent_class": [
+              0,
+              1,
+              2
+            ],
+            "exponent_ratio": 10,
+            "quotient_degree": 72,
+            "quotient_factorization": [],
+            "quotient_resultant": 1,
+            "raw_resultant": 1331,
+            "root_class": [
+              0,
+              1,
+              3
+            ],
+            "root_ratio": 9,
+            "vandermonde_degree": 19,
+            "vandermonde_resultant": 1331
+          },
+          {
+            "determinant_degree": 101,
+            "exponent_class": [
+              0,
+              1,
+              2
+            ],
+            "exponent_ratio": 10,
+            "quotient_degree": 80,
+            "quotient_factorization": [],
+            "quotient_resultant": 1,
+            "raw_resultant": 1331,
+            "root_class": [
+              0,
+              1,
+              2
+            ],
+            "root_ratio": 10,
+            "vandermonde_degree": 21,
+            "vandermonde_resultant": 1331
+          }
+        ],
+        "external_admissible_prime_factors": [
+          23
+        ],
+        "orbit_resultant_table": [
+          {
+            "all_normalized_pairs_in_class_agree": true,
+            "exponent_class": [
+              0,
+              1,
+              2
+            ],
+            "exponent_representative": 2,
+            "factorization": [],
+            "matches_expected": true,
+            "quotient_resultant": 1,
+            "root_class": [
+              0,
+              1,
+              2
+            ],
+            "root_representative": 2
+          },
+          {
+            "all_normalized_pairs_in_class_agree": true,
+            "exponent_class": [
+              0,
+              1,
+              2
+            ],
+            "exponent_representative": 2,
+            "factorization": [],
+            "matches_expected": true,
+            "quotient_resultant": 1,
+            "root_class": [
+              0,
+              1,
+              3
+            ],
+            "root_representative": 3
+          },
+          {
+            "all_normalized_pairs_in_class_agree": true,
+            "exponent_class": [
+              0,
+              1,
+              3
+            ],
+            "exponent_representative": 3,
+            "factorization": [],
+            "matches_expected": true,
+            "quotient_resultant": 1,
+            "root_class": [
+              0,
+              1,
+              2
+            ],
+            "root_representative": 2
+          },
+          {
+            "all_normalized_pairs_in_class_agree": true,
+            "exponent_class": [
+              0,
+              1,
+              3
+            ],
+            "exponent_representative": 3,
+            "factorization": [
+              [
+                23,
+                1
+              ]
+            ],
+            "matches_expected": true,
+            "quotient_resultant": 23,
+            "root_class": [
+              0,
+              1,
+              3
+            ],
+            "root_representative": 3
+          }
+        ],
+        "vandermonde_resultant_value": 1331
+      },
+      "exceptional_prime": 23,
+      "exceptional_prime_is_geometrically_unavailable_for_every_cell": true,
+      "exceptional_prime_quotient_cosets": 2,
+      "maximum_required_cosets": 19,
+      "minimum_required_cosets": 11,
+      "unavailable_exceptional_smoke": {
+        "all_binomial_boundaries_have_at_most_one_root": true,
+        "ell": 11,
+        "generator": 5,
+        "max_roots": 3,
+        "maximum_cell_cosets": 19,
+        "minimum_cell_cosets": 11,
+        "orbit_rows": [
+          {
+            "all_binomial_boundaries_have_at_most_one_root": true,
+            "binomial_boundary_maxima": {
+              "A_zero": 1,
+              "B_zero": 1,
+              "C_zero": 1
+            },
+            "max_root_set": [
+              16,
+              18
+            ],
+            "max_root_witness": [
+              1,
+              1,
+              2
+            ],
+            "max_roots": 2,
+            "projective_live_polynomials": 552,
+            "representative_exponent": 2,
+            "support_class": [
+              0,
+              1,
+              2
+            ]
+          },
+          {
+            "all_binomial_boundaries_have_at_most_one_root": true,
+            "binomial_boundary_maxima": {
+              "A_zero": 1,
+              "B_zero": 1,
+              "C_zero": 1
+            },
+            "max_root_set": [
+              1,
+              16,
+              6
+            ],
+            "max_root_witness": [
+              1,
+              5,
+              17
+            ],
+            "max_roots": 3,
+            "projective_live_polynomials": 552,
+            "representative_exponent": 3,
+            "support_class": [
+              0,
+              1,
+              3
+            ]
+          }
+        ],
+        "p": 23,
+        "quotient_cosets": 2,
+        "realizes_at_least_one_tau_ge_5_cell": false,
+        "realizes_every_tau_ge_5_cell": false,
+        "subgroup_size": 11,
+        "total_point_evaluations": 12144,
+        "total_projective_polynomials": 1104
+      }
+    },
+    {
+      "affine_orbits": {
+        "orbit_count": 3,
+        "orbits": [
+          {
+            "canonical": [
+              0,
+              1,
+              2
+            ],
+            "normalized_ratios": [
+              2,
+              7,
+              12
+            ],
+            "representative_ratio": 2,
+            "size": 78
+          },
+          {
+            "canonical": [
+              0,
+              1,
+              3
+            ],
+            "normalized_ratios": [
+              3,
+              5,
+              6,
+              8,
+              9,
+              11
+            ],
+            "representative_ratio": 3,
+            "size": 156
+          },
+          {
+            "canonical": [
+              0,
+              1,
+              4
+            ],
+            "normalized_ratios": [
+              4,
+              10
+            ],
+            "representative_ratio": 4,
+            "size": 52
+          }
+        ],
+        "ratio_class_map": {
+          "10": [
+            0,
+            1,
+            4
+          ],
+          "11": [
+            0,
+            1,
+            3
+          ],
+          "12": [
+            0,
+            1,
+            2
+          ],
+          "2": [
+            0,
+            1,
+            2
+          ],
+          "3": [
+            0,
+            1,
+            3
+          ],
+          "4": [
+            0,
+            1,
+            4
+          ],
+          "5": [
+            0,
+            1,
+            3
+          ],
+          "6": [
+            0,
+            1,
+            3
+          ],
+          "7": [
+            0,
+            1,
+            2
+          ],
+          "8": [
+            0,
+            1,
+            3
+          ],
+          "9": [
+            0,
+            1,
+            3
+          ]
+        }
+      },
+      "available_smoke": {
+        "all_binomial_boundaries_have_at_most_one_root": true,
+        "ell": 13,
+        "generator": 10,
+        "max_roots": 2,
+        "maximum_cell_cosets": 23,
+        "minimum_cell_cosets": 11,
+        "orbit_rows": [
+          {
+            "all_binomial_boundaries_have_at_most_one_root": true,
+            "binomial_boundary_maxima": {
+              "A_zero": 1,
+              "B_zero": 1,
+              "C_zero": 1
+            },
+            "max_root_set": [
+              44,
+              27
+            ],
+            "max_root_witness": [
+              1,
+              6,
+              44
+            ],
+            "max_roots": 2,
+            "projective_live_polynomials": 98282,
+            "representative_exponent": 2,
+            "support_class": [
+              0,
+              1,
+              2
+            ]
+          },
+          {
+            "all_binomial_boundaries_have_at_most_one_root": true,
+            "binomial_boundary_maxima": {
+              "A_zero": 1,
+              "B_zero": 1,
+              "C_zero": 1
+            },
+            "max_root_set": [
+              150,
+              277
+            ],
+            "max_root_witness": [
+              1,
+              1,
+              97
+            ],
+            "max_roots": 2,
+            "projective_live_polynomials": 98282,
+            "representative_exponent": 3,
+            "support_class": [
+              0,
+              1,
+              3
+            ]
+          },
+          {
+            "all_binomial_boundaries_have_at_most_one_root": true,
+            "binomial_boundary_maxima": {
+              "A_zero": 1,
+              "B_zero": 1,
+              "C_zero": 1
+            },
+            "max_root_set": [
+              150,
+              113
+            ],
+            "max_root_witness": [
+              1,
+              1,
+              274
+            ],
+            "max_roots": 2,
+            "projective_live_polynomials": 98282,
+            "representative_exponent": 4,
+            "support_class": [
+              0,
+              1,
+              4
+            ]
+          }
+        ],
+        "p": 313,
+        "quotient_cosets": 24,
+        "realizes_at_least_one_tau_ge_5_cell": true,
+        "realizes_every_tau_ge_5_cell": true,
+        "subgroup_size": 13,
+        "total_point_evaluations": 3832998,
+        "total_projective_polynomials": 294846
+      },
+      "cell_count": 28,
+      "cells": [
+        {
+          "D": 0,
+          "distinct_cosets_required": 11,
+          "ell": 13,
+          "expected_gap": 14,
+          "listing_core_requirement": 26,
+          "m": 6,
+          "retained_upper_bound": 12,
+          "strict_gap": 14,
+          "tau": 5,
+          "vacant_under_two_root_cap": true
+        },
+        {
+          "D": 1,
+          "distinct_cosets_required": 12,
+          "ell": 13,
+          "expected_gap": 14,
+          "listing_core_requirement": 39,
+          "m": 7,
+          "retained_upper_bound": 25,
+          "strict_gap": 14,
+          "tau": 5,
+          "vacant_under_two_root_cap": true
+        },
+        {
+          "D": 2,
+          "distinct_cosets_required": 13,
+          "ell": 13,
+          "expected_gap": 14,
+          "listing_core_requirement": 52,
+          "m": 8,
+          "retained_upper_bound": 38,
+          "strict_gap": 14,
+          "tau": 5,
+          "vacant_under_two_root_cap": true
+        },
+        {
+          "D": 3,
+          "distinct_cosets_required": 14,
+          "ell": 13,
+          "expected_gap": 14,
+          "listing_core_requirement": 65,
+          "m": 9,
+          "retained_upper_bound": 51,
+          "strict_gap": 14,
+          "tau": 5,
+          "vacant_under_two_root_cap": true
+        },
+        {
+          "D": 4,
+          "distinct_cosets_required": 15,
+          "ell": 13,
+          "expected_gap": 14,
+          "listing_core_requirement": 78,
+          "m": 10,
+          "retained_upper_bound": 64,
+          "strict_gap": 14,
+          "tau": 5,
+          "vacant_under_two_root_cap": true
+        },
+        {
+          "D": 5,
+          "distinct_cosets_required": 16,
+          "ell": 13,
+          "expected_gap": 14,
+          "listing_core_requirement": 91,
+          "m": 11,
+          "retained_upper_bound": 77,
+          "strict_gap": 14,
+          "tau": 5,
+          "vacant_under_two_root_cap": true
+        },
+        {
+          "D": 6,
+          "distinct_cosets_required": 17,
+          "ell": 13,
+          "expected_gap": 14,
+          "listing_core_requirement": 104,
+          "m": 12,
+          "retained_upper_bound": 90,
+          "strict_gap": 14,
+          "tau": 5,
+          "vacant_under_two_root_cap": true
+        },
+        {
+          "D": 0,
+          "distinct_cosets_required": 13,
+          "ell": 13,
+          "expected_gap": 12,
+          "listing_core_requirement": 26,
+          "m": 7,
+          "retained_upper_bound": 14,
+          "strict_gap": 12,
+          "tau": 6,
+          "vacant_under_two_root_cap": true
+        },
+        {
+          "D": 1,
+          "distinct_cosets_required": 14,
+          "ell": 13,
+          "expected_gap": 12,
+          "listing_core_requirement": 39,
+          "m": 8,
+          "retained_upper_bound": 27,
+          "strict_gap": 12,
+          "tau": 6,
+          "vacant_under_two_root_cap": true
+        },
+        {
+          "D": 2,
+          "distinct_cosets_required": 15,
+          "ell": 13,
+          "expected_gap": 12,
+          "listing_core_requirement": 52,
+          "m": 9,
+          "retained_upper_bound": 40,
+          "strict_gap": 12,
+          "tau": 6,
+          "vacant_under_two_root_cap": true
+        },
+        {
+          "D": 3,
+          "distinct_cosets_required": 16,
+          "ell": 13,
+          "expected_gap": 12,
+          "listing_core_requirement": 65,
+          "m": 10,
+          "retained_upper_bound": 53,
+          "strict_gap": 12,
+          "tau": 6,
+          "vacant_under_two_root_cap": true
+        },
+        {
+          "D": 4,
+          "distinct_cosets_required": 17,
+          "ell": 13,
+          "expected_gap": 12,
+          "listing_core_requirement": 78,
+          "m": 11,
+          "retained_upper_bound": 66,
+          "strict_gap": 12,
+          "tau": 6,
+          "vacant_under_two_root_cap": true
+        },
+        {
+          "D": 5,
+          "distinct_cosets_required": 18,
+          "ell": 13,
+          "expected_gap": 12,
+          "listing_core_requirement": 91,
+          "m": 12,
+          "retained_upper_bound": 79,
+          "strict_gap": 12,
+          "tau": 6,
+          "vacant_under_two_root_cap": true
+        },
+        {
+          "D": 0,
+          "distinct_cosets_required": 15,
+          "ell": 13,
+          "expected_gap": 10,
+          "listing_core_requirement": 26,
+          "m": 8,
+          "retained_upper_bound": 16,
+          "strict_gap": 10,
+          "tau": 7,
+          "vacant_under_two_root_cap": true
+        },
+        {
+          "D": 1,
+          "distinct_cosets_required": 16,
+          "ell": 13,
+          "expected_gap": 10,
+          "listing_core_requirement": 39,
+          "m": 9,
+          "retained_upper_bound": 29,
+          "strict_gap": 10,
+          "tau": 7,
+          "vacant_under_two_root_cap": true
+        },
+        {
+          "D": 2,
+          "distinct_cosets_required": 17,
+          "ell": 13,
+          "expected_gap": 10,
+          "listing_core_requirement": 52,
+          "m": 10,
+          "retained_upper_bound": 42,
+          "strict_gap": 10,
+          "tau": 7,
+          "vacant_under_two_root_cap": true
+        },
+        {
+          "D": 3,
+          "distinct_cosets_required": 18,
+          "ell": 13,
+          "expected_gap": 10,
+          "listing_core_requirement": 65,
+          "m": 11,
+          "retained_upper_bound": 55,
+          "strict_gap": 10,
+          "tau": 7,
+          "vacant_under_two_root_cap": true
+        },
+        {
+          "D": 4,
+          "distinct_cosets_required": 19,
+          "ell": 13,
+          "expected_gap": 10,
+          "listing_core_requirement": 78,
+          "m": 12,
+          "retained_upper_bound": 68,
+          "strict_gap": 10,
+          "tau": 7,
+          "vacant_under_two_root_cap": true
+        },
+        {
+          "D": 0,
+          "distinct_cosets_required": 17,
+          "ell": 13,
+          "expected_gap": 8,
+          "listing_core_requirement": 26,
+          "m": 9,
+          "retained_upper_bound": 18,
+          "strict_gap": 8,
+          "tau": 8,
+          "vacant_under_two_root_cap": true
+        },
+        {
+          "D": 1,
+          "distinct_cosets_required": 18,
+          "ell": 13,
+          "expected_gap": 8,
+          "listing_core_requirement": 39,
+          "m": 10,
+          "retained_upper_bound": 31,
+          "strict_gap": 8,
+          "tau": 8,
+          "vacant_under_two_root_cap": true
+        },
+        {
+          "D": 2,
+          "distinct_cosets_required": 19,
+          "ell": 13,
+          "expected_gap": 8,
+          "listing_core_requirement": 52,
+          "m": 11,
+          "retained_upper_bound": 44,
+          "strict_gap": 8,
+          "tau": 8,
+          "vacant_under_two_root_cap": true
+        },
+        {
+          "D": 3,
+          "distinct_cosets_required": 20,
+          "ell": 13,
+          "expected_gap": 8,
+          "listing_core_requirement": 65,
+          "m": 12,
+          "retained_upper_bound": 57,
+          "strict_gap": 8,
+          "tau": 8,
+          "vacant_under_two_root_cap": true
+        },
+        {
+          "D": 0,
+          "distinct_cosets_required": 19,
+          "ell": 13,
+          "expected_gap": 6,
+          "listing_core_requirement": 26,
+          "m": 10,
+          "retained_upper_bound": 20,
+          "strict_gap": 6,
+          "tau": 9,
+          "vacant_under_two_root_cap": true
+        },
+        {
+          "D": 1,
+          "distinct_cosets_required": 20,
+          "ell": 13,
+          "expected_gap": 6,
+          "listing_core_requirement": 39,
+          "m": 11,
+          "retained_upper_bound": 33,
+          "strict_gap": 6,
+          "tau": 9,
+          "vacant_under_two_root_cap": true
+        },
+        {
+          "D": 2,
+          "distinct_cosets_required": 21,
+          "ell": 13,
+          "expected_gap": 6,
+          "listing_core_requirement": 52,
+          "m": 12,
+          "retained_upper_bound": 46,
+          "strict_gap": 6,
+          "tau": 9,
+          "vacant_under_two_root_cap": true
+        },
+        {
+          "D": 0,
+          "distinct_cosets_required": 21,
+          "ell": 13,
+          "expected_gap": 4,
+          "listing_core_requirement": 26,
+          "m": 11,
+          "retained_upper_bound": 22,
+          "strict_gap": 4,
+          "tau": 10,
+          "vacant_under_two_root_cap": true
+        },
+        {
+          "D": 1,
+          "distinct_cosets_required": 22,
+          "ell": 13,
+          "expected_gap": 4,
+          "listing_core_requirement": 39,
+          "m": 12,
+          "retained_upper_bound": 35,
+          "strict_gap": 4,
+          "tau": 10,
+          "vacant_under_two_root_cap": true
+        },
+        {
+          "D": 0,
+          "distinct_cosets_required": 23,
+          "ell": 13,
+          "expected_gap": 2,
+          "listing_core_requirement": 26,
+          "m": 12,
+          "retained_upper_bound": 24,
+          "strict_gap": 2,
+          "tau": 11,
+          "vacant_under_two_root_cap": true
+        }
+      ],
+      "ell": 13,
+      "exact_resultants": {
+        "all_normalized_pair_rows": [
+          {
+            "determinant_degree": 5,
+            "exponent_class": [
+              0,
+              1,
+              2
+            ],
+            "exponent_ratio": 2,
+            "quotient_degree": 0,
+            "quotient_factorization": [],
+            "quotient_resultant": 1,
+            "raw_resultant": 2197,
+            "root_class": [
+              0,
+              1,
+              2
+            ],
+            "root_ratio": 2,
+            "vandermonde_degree": 5,
+            "vandermonde_resultant": 2197
+          },
+          {
+            "determinant_degree": 7,
+            "exponent_class": [
+              0,
+              1,
+              2
+            ],
+            "exponent_ratio": 2,
+            "quotient_degree": 0,
+            "quotient_factorization": [],
+            "quotient_resultant": 1,
+            "raw_resultant": 2197,
+            "root_class": [
+              0,
+              1,
+              3
+            ],
+            "root_ratio": 3,
+            "vandermonde_degree": 7,
+            "vandermonde_resultant": 2197
+          },
+          {
+            "determinant_degree": 9,
+            "exponent_class": [
+              0,
+              1,
+              2
+            ],
+            "exponent_ratio": 2,
+            "quotient_degree": 0,
+            "quotient_factorization": [],
+            "quotient_resultant": 1,
+            "raw_resultant": 2197,
+            "root_class": [
+              0,
+              1,
+              4
+            ],
+            "root_ratio": 4,
+            "vandermonde_degree": 9,
+            "vandermonde_resultant": 2197
+          },
+          {
+            "determinant_degree": 11,
+            "exponent_class": [
+              0,
+              1,
+              2
+            ],
+            "exponent_ratio": 2,
+            "quotient_degree": 0,
+            "quotient_factorization": [],
+            "quotient_resultant": 1,
+            "raw_resultant": 2197,
+            "root_class": [
+              0,
+              1,
+              3
+            ],
+            "root_ratio": 5,
+            "vandermonde_degree": 11,
+            "vandermonde_resultant": 2197
+          },
+          {
+            "determinant_degree": 13,
+            "exponent_class": [
+              0,
+              1,
+              2
+            ],
+            "exponent_ratio": 2,
+            "quotient_degree": 0,
+            "quotient_factorization": [],
+            "quotient_resultant": 1,
+            "raw_resultant": 2197,
+            "root_class": [
+              0,
+              1,
+              3
+            ],
+            "root_ratio": 6,
+            "vandermonde_degree": 13,
+            "vandermonde_resultant": 2197
+          },
+          {
+            "determinant_degree": 15,
+            "exponent_class": [
+              0,
+              1,
+              2
+            ],
+            "exponent_ratio": 2,
+            "quotient_degree": 0,
+            "quotient_factorization": [],
+            "quotient_resultant": 1,
+            "raw_resultant": 2197,
+            "root_class": [
+              0,
+              1,
+              2
+            ],
+            "root_ratio": 7,
+            "vandermonde_degree": 15,
+            "vandermonde_resultant": 2197
+          },
+          {
+            "determinant_degree": 17,
+            "exponent_class": [
+              0,
+              1,
+              2
+            ],
+            "exponent_ratio": 2,
+            "quotient_degree": 0,
+            "quotient_factorization": [],
+            "quotient_resultant": 1,
+            "raw_resultant": 2197,
+            "root_class": [
+              0,
+              1,
+              3
+            ],
+            "root_ratio": 8,
+            "vandermonde_degree": 17,
+            "vandermonde_resultant": 2197
+          },
+          {
+            "determinant_degree": 19,
+            "exponent_class": [
+              0,
+              1,
+              2
+            ],
+            "exponent_ratio": 2,
+            "quotient_degree": 0,
+            "quotient_factorization": [],
+            "quotient_resultant": 1,
+            "raw_resultant": 2197,
+            "root_class": [
+              0,
+              1,
+              3
+            ],
+            "root_ratio": 9,
+            "vandermonde_degree": 19,
+            "vandermonde_resultant": 2197
+          },
+          {
+            "determinant_degree": 21,
+            "exponent_class": [
+              0,
+              1,
+              2
+            ],
+            "exponent_ratio": 2,
+            "quotient_degree": 0,
+            "quotient_factorization": [],
+            "quotient_resultant": 1,
+            "raw_resultant": 2197,
+            "root_class": [
+              0,
+              1,
+              4
+            ],
+            "root_ratio": 10,
+            "vandermonde_degree": 21,
+            "vandermonde_resultant": 2197
+          },
+          {
+            "determinant_degree": 23,
+            "exponent_class": [
+              0,
+              1,
+              2
+            ],
+            "exponent_ratio": 2,
+            "quotient_degree": 0,
+            "quotient_factorization": [],
+            "quotient_resultant": 1,
+            "raw_resultant": 2197,
+            "root_class": [
+              0,
+              1,
+              3
+            ],
+            "root_ratio": 11,
+            "vandermonde_degree": 23,
+            "vandermonde_resultant": 2197
+          },
+          {
+            "determinant_degree": 25,
+            "exponent_class": [
+              0,
+              1,
+              2
+            ],
+            "exponent_ratio": 2,
+            "quotient_degree": 0,
+            "quotient_factorization": [],
+            "quotient_resultant": 1,
+            "raw_resultant": 2197,
+            "root_class": [
+              0,
+              1,
+              2
+            ],
+            "root_ratio": 12,
+            "vandermonde_degree": 25,
+            "vandermonde_resultant": 2197
+          },
+          {
+            "determinant_degree": 7,
+            "exponent_class": [
+              0,
+              1,
+              3
+            ],
+            "exponent_ratio": 3,
+            "quotient_degree": 2,
+            "quotient_factorization": [],
+            "quotient_resultant": 1,
+            "raw_resultant": 2197,
+            "root_class": [
+              0,
+              1,
+              2
+            ],
+            "root_ratio": 2,
+            "vandermonde_degree": 5,
+            "vandermonde_resultant": 2197
+          },
+          {
+            "determinant_degree": 10,
+            "exponent_class": [
+              0,
+              1,
+              3
+            ],
+            "exponent_ratio": 3,
+            "quotient_degree": 3,
+            "quotient_factorization": [
+              [
+                53,
+                1
+              ]
+            ],
+            "quotient_resultant": 53,
+            "raw_resultant": 116441,
+            "root_class": [
+              0,
+              1,
+              3
+            ],
+            "root_ratio": 3,
+            "vandermonde_degree": 7,
+            "vandermonde_resultant": 2197
+          },
+          {
+            "determinant_degree": 13,
+            "exponent_class": [
+              0,
+              1,
+              3
+            ],
+            "exponent_ratio": 3,
+            "quotient_degree": 4,
+            "quotient_factorization": [
+              [
+                3,
+                3
+              ]
+            ],
+            "quotient_resultant": 27,
+            "raw_resultant": 59319,
+            "root_class": [
+              0,
+              1,
+              4
+            ],
+            "root_ratio": 4,
+            "vandermonde_degree": 9,
+            "vandermonde_resultant": 2197
+          },
+          {
+            "determinant_degree": 16,
+            "exponent_class": [
+              0,
+              1,
+              3
+            ],
+            "exponent_ratio": 3,
+            "quotient_degree": 5,
+            "quotient_factorization": [
+              [
+                53,
+                1
+              ]
+            ],
+            "quotient_resultant": 53,
+            "raw_resultant": 116441,
+            "root_class": [
+              0,
+              1,
+              3
+            ],
+            "root_ratio": 5,
+            "vandermonde_degree": 11,
+            "vandermonde_resultant": 2197
+          },
+          {
+            "determinant_degree": 19,
+            "exponent_class": [
+              0,
+              1,
+              3
+            ],
+            "exponent_ratio": 3,
+            "quotient_degree": 6,
+            "quotient_factorization": [
+              [
+                53,
+                1
+              ]
+            ],
+            "quotient_resultant": 53,
+            "raw_resultant": 116441,
+            "root_class": [
+              0,
+              1,
+              3
+            ],
+            "root_ratio": 6,
+            "vandermonde_degree": 13,
+            "vandermonde_resultant": 2197
+          },
+          {
+            "determinant_degree": 22,
+            "exponent_class": [
+              0,
+              1,
+              3
+            ],
+            "exponent_ratio": 3,
+            "quotient_degree": 7,
+            "quotient_factorization": [],
+            "quotient_resultant": 1,
+            "raw_resultant": 2197,
+            "root_class": [
+              0,
+              1,
+              2
+            ],
+            "root_ratio": 7,
+            "vandermonde_degree": 15,
+            "vandermonde_resultant": 2197
+          },
+          {
+            "determinant_degree": 25,
+            "exponent_class": [
+              0,
+              1,
+              3
+            ],
+            "exponent_ratio": 3,
+            "quotient_degree": 8,
+            "quotient_factorization": [
+              [
+                53,
+                1
+              ]
+            ],
+            "quotient_resultant": 53,
+            "raw_resultant": 116441,
+            "root_class": [
+              0,
+              1,
+              3
+            ],
+            "root_ratio": 8,
+            "vandermonde_degree": 17,
+            "vandermonde_resultant": 2197
+          },
+          {
+            "determinant_degree": 28,
+            "exponent_class": [
+              0,
+              1,
+              3
+            ],
+            "exponent_ratio": 3,
+            "quotient_degree": 9,
+            "quotient_factorization": [
+              [
+                53,
+                1
+              ]
+            ],
+            "quotient_resultant": 53,
+            "raw_resultant": 116441,
+            "root_class": [
+              0,
+              1,
+              3
+            ],
+            "root_ratio": 9,
+            "vandermonde_degree": 19,
+            "vandermonde_resultant": 2197
+          },
+          {
+            "determinant_degree": 31,
+            "exponent_class": [
+              0,
+              1,
+              3
+            ],
+            "exponent_ratio": 3,
+            "quotient_degree": 10,
+            "quotient_factorization": [
+              [
+                3,
+                3
+              ]
+            ],
+            "quotient_resultant": 27,
+            "raw_resultant": 59319,
+            "root_class": [
+              0,
+              1,
+              4
+            ],
+            "root_ratio": 10,
+            "vandermonde_degree": 21,
+            "vandermonde_resultant": 2197
+          },
+          {
+            "determinant_degree": 34,
+            "exponent_class": [
+              0,
+              1,
+              3
+            ],
+            "exponent_ratio": 3,
+            "quotient_degree": 11,
+            "quotient_factorization": [
+              [
+                53,
+                1
+              ]
+            ],
+            "quotient_resultant": 53,
+            "raw_resultant": 116441,
+            "root_class": [
+              0,
+              1,
+              3
+            ],
+            "root_ratio": 11,
+            "vandermonde_degree": 23,
+            "vandermonde_resultant": 2197
+          },
+          {
+            "determinant_degree": 37,
+            "exponent_class": [
+              0,
+              1,
+              3
+            ],
+            "exponent_ratio": 3,
+            "quotient_degree": 12,
+            "quotient_factorization": [],
+            "quotient_resultant": 1,
+            "raw_resultant": 2197,
+            "root_class": [
+              0,
+              1,
+              2
+            ],
+            "root_ratio": 12,
+            "vandermonde_degree": 25,
+            "vandermonde_resultant": 2197
+          },
+          {
+            "determinant_degree": 9,
+            "exponent_class": [
+              0,
+              1,
+              4
+            ],
+            "exponent_ratio": 4,
+            "quotient_degree": 4,
+            "quotient_factorization": [],
+            "quotient_resultant": 1,
+            "raw_resultant": 2197,
+            "root_class": [
+              0,
+              1,
+              2
+            ],
+            "root_ratio": 2,
+            "vandermonde_degree": 5,
+            "vandermonde_resultant": 2197
+          },
+          {
+            "determinant_degree": 13,
+            "exponent_class": [
+              0,
+              1,
+              4
+            ],
+            "exponent_ratio": 4,
+            "quotient_degree": 6,
+            "quotient_factorization": [
+              [
+                3,
+                3
+              ]
+            ],
+            "quotient_resultant": 27,
+            "raw_resultant": 59319,
+            "root_class": [
+              0,
+              1,
+              3
+            ],
+            "root_ratio": 3,
+            "vandermonde_degree": 7,
+            "vandermonde_resultant": 2197
+          },
+          {
+            "determinant_degree": 17,
+            "exponent_class": [
+              0,
+              1,
+              4
+            ],
+            "exponent_ratio": 4,
+            "quotient_degree": 8,
+            "quotient_factorization": [
+              [
+                3,
+                6
+              ]
+            ],
+            "quotient_resultant": 729,
+            "raw_resultant": 1601613,
+            "root_class": [
+              0,
+              1,
+              4
+            ],
+            "root_ratio": 4,
+            "vandermonde_degree": 9,
+            "vandermonde_resultant": 2197
+          },
+          {
+            "determinant_degree": 21,
+            "exponent_class": [
+              0,
+              1,
+              4
+            ],
+            "exponent_ratio": 4,
+            "quotient_degree": 10,
+            "quotient_factorization": [
+              [
+                3,
+                3
+              ]
+            ],
+            "quotient_resultant": 27,
+            "raw_resultant": 59319,
+            "root_class": [
+              0,
+              1,
+              3
+            ],
+            "root_ratio": 5,
+            "vandermonde_degree": 11,
+            "vandermonde_resultant": 2197
+          },
+          {
+            "determinant_degree": 25,
+            "exponent_class": [
+              0,
+              1,
+              4
+            ],
+            "exponent_ratio": 4,
+            "quotient_degree": 12,
+            "quotient_factorization": [
+              [
+                3,
+                3
+              ]
+            ],
+            "quotient_resultant": 27,
+            "raw_resultant": 59319,
+            "root_class": [
+              0,
+              1,
+              3
+            ],
+            "root_ratio": 6,
+            "vandermonde_degree": 13,
+            "vandermonde_resultant": 2197
+          },
+          {
+            "determinant_degree": 29,
+            "exponent_class": [
+              0,
+              1,
+              4
+            ],
+            "exponent_ratio": 4,
+            "quotient_degree": 14,
+            "quotient_factorization": [],
+            "quotient_resultant": 1,
+            "raw_resultant": 2197,
+            "root_class": [
+              0,
+              1,
+              2
+            ],
+            "root_ratio": 7,
+            "vandermonde_degree": 15,
+            "vandermonde_resultant": 2197
+          },
+          {
+            "determinant_degree": 33,
+            "exponent_class": [
+              0,
+              1,
+              4
+            ],
+            "exponent_ratio": 4,
+            "quotient_degree": 16,
+            "quotient_factorization": [
+              [
+                3,
+                3
+              ]
+            ],
+            "quotient_resultant": 27,
+            "raw_resultant": 59319,
+            "root_class": [
+              0,
+              1,
+              3
+            ],
+            "root_ratio": 8,
+            "vandermonde_degree": 17,
+            "vandermonde_resultant": 2197
+          },
+          {
+            "determinant_degree": 37,
+            "exponent_class": [
+              0,
+              1,
+              4
+            ],
+            "exponent_ratio": 4,
+            "quotient_degree": 18,
+            "quotient_factorization": [
+              [
+                3,
+                3
+              ]
+            ],
+            "quotient_resultant": 27,
+            "raw_resultant": 59319,
+            "root_class": [
+              0,
+              1,
+              3
+            ],
+            "root_ratio": 9,
+            "vandermonde_degree": 19,
+            "vandermonde_resultant": 2197
+          },
+          {
+            "determinant_degree": 41,
+            "exponent_class": [
+              0,
+              1,
+              4
+            ],
+            "exponent_ratio": 4,
+            "quotient_degree": 20,
+            "quotient_factorization": [
+              [
+                3,
+                6
+              ]
+            ],
+            "quotient_resultant": 729,
+            "raw_resultant": 1601613,
+            "root_class": [
+              0,
+              1,
+              4
+            ],
+            "root_ratio": 10,
+            "vandermonde_degree": 21,
+            "vandermonde_resultant": 2197
+          },
+          {
+            "determinant_degree": 45,
+            "exponent_class": [
+              0,
+              1,
+              4
+            ],
+            "exponent_ratio": 4,
+            "quotient_degree": 22,
+            "quotient_factorization": [
+              [
+                3,
+                3
+              ]
+            ],
+            "quotient_resultant": 27,
+            "raw_resultant": 59319,
+            "root_class": [
+              0,
+              1,
+              3
+            ],
+            "root_ratio": 11,
+            "vandermonde_degree": 23,
+            "vandermonde_resultant": 2197
+          },
+          {
+            "determinant_degree": 49,
+            "exponent_class": [
+              0,
+              1,
+              4
+            ],
+            "exponent_ratio": 4,
+            "quotient_degree": 24,
+            "quotient_factorization": [],
+            "quotient_resultant": 1,
+            "raw_resultant": 2197,
+            "root_class": [
+              0,
+              1,
+              2
+            ],
+            "root_ratio": 12,
+            "vandermonde_degree": 25,
+            "vandermonde_resultant": 2197
+          },
+          {
+            "determinant_degree": 11,
+            "exponent_class": [
+              0,
+              1,
+              3
+            ],
+            "exponent_ratio": 5,
+            "quotient_degree": 6,
+            "quotient_factorization": [],
+            "quotient_resultant": 1,
+            "raw_resultant": 2197,
+            "root_class": [
+              0,
+              1,
+              2
+            ],
+            "root_ratio": 2,
+            "vandermonde_degree": 5,
+            "vandermonde_resultant": 2197
+          },
+          {
+            "determinant_degree": 16,
+            "exponent_class": [
+              0,
+              1,
+              3
+            ],
+            "exponent_ratio": 5,
+            "quotient_degree": 9,
+            "quotient_factorization": [
+              [
+                53,
+                1
+              ]
+            ],
+            "quotient_resultant": 53,
+            "raw_resultant": 116441,
+            "root_class": [
+              0,
+              1,
+              3
+            ],
+            "root_ratio": 3,
+            "vandermonde_degree": 7,
+            "vandermonde_resultant": 2197
+          },
+          {
+            "determinant_degree": 21,
+            "exponent_class": [
+              0,
+              1,
+              3
+            ],
+            "exponent_ratio": 5,
+            "quotient_degree": 12,
+            "quotient_factorization": [
+              [
+                3,
+                3
+              ]
+            ],
+            "quotient_resultant": 27,
+            "raw_resultant": 59319,
+            "root_class": [
+              0,
+              1,
+              4
+            ],
+            "root_ratio": 4,
+            "vandermonde_degree": 9,
+            "vandermonde_resultant": 2197
+          },
+          {
+            "determinant_degree": 26,
+            "exponent_class": [
+              0,
+              1,
+              3
+            ],
+            "exponent_ratio": 5,
+            "quotient_degree": 15,
+            "quotient_factorization": [
+              [
+                53,
+                1
+              ]
+            ],
+            "quotient_resultant": 53,
+            "raw_resultant": 116441,
+            "root_class": [
+              0,
+              1,
+              3
+            ],
+            "root_ratio": 5,
+            "vandermonde_degree": 11,
+            "vandermonde_resultant": 2197
+          },
+          {
+            "determinant_degree": 31,
+            "exponent_class": [
+              0,
+              1,
+              3
+            ],
+            "exponent_ratio": 5,
+            "quotient_degree": 18,
+            "quotient_factorization": [
+              [
+                53,
+                1
+              ]
+            ],
+            "quotient_resultant": 53,
+            "raw_resultant": 116441,
+            "root_class": [
+              0,
+              1,
+              3
+            ],
+            "root_ratio": 6,
+            "vandermonde_degree": 13,
+            "vandermonde_resultant": 2197
+          },
+          {
+            "determinant_degree": 36,
+            "exponent_class": [
+              0,
+              1,
+              3
+            ],
+            "exponent_ratio": 5,
+            "quotient_degree": 21,
+            "quotient_factorization": [],
+            "quotient_resultant": 1,
+            "raw_resultant": 2197,
+            "root_class": [
+              0,
+              1,
+              2
+            ],
+            "root_ratio": 7,
+            "vandermonde_degree": 15,
+            "vandermonde_resultant": 2197
+          },
+          {
+            "determinant_degree": 41,
+            "exponent_class": [
+              0,
+              1,
+              3
+            ],
+            "exponent_ratio": 5,
+            "quotient_degree": 24,
+            "quotient_factorization": [
+              [
+                53,
+                1
+              ]
+            ],
+            "quotient_resultant": 53,
+            "raw_resultant": 116441,
+            "root_class": [
+              0,
+              1,
+              3
+            ],
+            "root_ratio": 8,
+            "vandermonde_degree": 17,
+            "vandermonde_resultant": 2197
+          },
+          {
+            "determinant_degree": 46,
+            "exponent_class": [
+              0,
+              1,
+              3
+            ],
+            "exponent_ratio": 5,
+            "quotient_degree": 27,
+            "quotient_factorization": [
+              [
+                53,
+                1
+              ]
+            ],
+            "quotient_resultant": 53,
+            "raw_resultant": 116441,
+            "root_class": [
+              0,
+              1,
+              3
+            ],
+            "root_ratio": 9,
+            "vandermonde_degree": 19,
+            "vandermonde_resultant": 2197
+          },
+          {
+            "determinant_degree": 51,
+            "exponent_class": [
+              0,
+              1,
+              3
+            ],
+            "exponent_ratio": 5,
+            "quotient_degree": 30,
+            "quotient_factorization": [
+              [
+                3,
+                3
+              ]
+            ],
+            "quotient_resultant": 27,
+            "raw_resultant": 59319,
+            "root_class": [
+              0,
+              1,
+              4
+            ],
+            "root_ratio": 10,
+            "vandermonde_degree": 21,
+            "vandermonde_resultant": 2197
+          },
+          {
+            "determinant_degree": 56,
+            "exponent_class": [
+              0,
+              1,
+              3
+            ],
+            "exponent_ratio": 5,
+            "quotient_degree": 33,
+            "quotient_factorization": [
+              [
+                53,
+                1
+              ]
+            ],
+            "quotient_resultant": 53,
+            "raw_resultant": 116441,
+            "root_class": [
+              0,
+              1,
+              3
+            ],
+            "root_ratio": 11,
+            "vandermonde_degree": 23,
+            "vandermonde_resultant": 2197
+          },
+          {
+            "determinant_degree": 61,
+            "exponent_class": [
+              0,
+              1,
+              3
+            ],
+            "exponent_ratio": 5,
+            "quotient_degree": 36,
+            "quotient_factorization": [],
+            "quotient_resultant": 1,
+            "raw_resultant": 2197,
+            "root_class": [
+              0,
+              1,
+              2
+            ],
+            "root_ratio": 12,
+            "vandermonde_degree": 25,
+            "vandermonde_resultant": 2197
+          },
+          {
+            "determinant_degree": 13,
+            "exponent_class": [
+              0,
+              1,
+              3
+            ],
+            "exponent_ratio": 6,
+            "quotient_degree": 8,
+            "quotient_factorization": [],
+            "quotient_resultant": 1,
+            "raw_resultant": 2197,
+            "root_class": [
+              0,
+              1,
+              2
+            ],
+            "root_ratio": 2,
+            "vandermonde_degree": 5,
+            "vandermonde_resultant": 2197
+          },
+          {
+            "determinant_degree": 19,
+            "exponent_class": [
+              0,
+              1,
+              3
+            ],
+            "exponent_ratio": 6,
+            "quotient_degree": 12,
+            "quotient_factorization": [
+              [
+                53,
+                1
+              ]
+            ],
+            "quotient_resultant": 53,
+            "raw_resultant": 116441,
+            "root_class": [
+              0,
+              1,
+              3
+            ],
+            "root_ratio": 3,
+            "vandermonde_degree": 7,
+            "vandermonde_resultant": 2197
+          },
+          {
+            "determinant_degree": 25,
+            "exponent_class": [
+              0,
+              1,
+              3
+            ],
+            "exponent_ratio": 6,
+            "quotient_degree": 16,
+            "quotient_factorization": [
+              [
+                3,
+                3
+              ]
+            ],
+            "quotient_resultant": 27,
+            "raw_resultant": 59319,
+            "root_class": [
+              0,
+              1,
+              4
+            ],
+            "root_ratio": 4,
+            "vandermonde_degree": 9,
+            "vandermonde_resultant": 2197
+          },
+          {
+            "determinant_degree": 31,
+            "exponent_class": [
+              0,
+              1,
+              3
+            ],
+            "exponent_ratio": 6,
+            "quotient_degree": 20,
+            "quotient_factorization": [
+              [
+                53,
+                1
+              ]
+            ],
+            "quotient_resultant": 53,
+            "raw_resultant": 116441,
+            "root_class": [
+              0,
+              1,
+              3
+            ],
+            "root_ratio": 5,
+            "vandermonde_degree": 11,
+            "vandermonde_resultant": 2197
+          },
+          {
+            "determinant_degree": 37,
+            "exponent_class": [
+              0,
+              1,
+              3
+            ],
+            "exponent_ratio": 6,
+            "quotient_degree": 24,
+            "quotient_factorization": [
+              [
+                53,
+                1
+              ]
+            ],
+            "quotient_resultant": 53,
+            "raw_resultant": 116441,
+            "root_class": [
+              0,
+              1,
+              3
+            ],
+            "root_ratio": 6,
+            "vandermonde_degree": 13,
+            "vandermonde_resultant": 2197
+          },
+          {
+            "determinant_degree": 43,
+            "exponent_class": [
+              0,
+              1,
+              3
+            ],
+            "exponent_ratio": 6,
+            "quotient_degree": 28,
+            "quotient_factorization": [],
+            "quotient_resultant": 1,
+            "raw_resultant": 2197,
+            "root_class": [
+              0,
+              1,
+              2
+            ],
+            "root_ratio": 7,
+            "vandermonde_degree": 15,
+            "vandermonde_resultant": 2197
+          },
+          {
+            "determinant_degree": 49,
+            "exponent_class": [
+              0,
+              1,
+              3
+            ],
+            "exponent_ratio": 6,
+            "quotient_degree": 32,
+            "quotient_factorization": [
+              [
+                53,
+                1
+              ]
+            ],
+            "quotient_resultant": 53,
+            "raw_resultant": 116441,
+            "root_class": [
+              0,
+              1,
+              3
+            ],
+            "root_ratio": 8,
+            "vandermonde_degree": 17,
+            "vandermonde_resultant": 2197
+          },
+          {
+            "determinant_degree": 55,
+            "exponent_class": [
+              0,
+              1,
+              3
+            ],
+            "exponent_ratio": 6,
+            "quotient_degree": 36,
+            "quotient_factorization": [
+              [
+                53,
+                1
+              ]
+            ],
+            "quotient_resultant": 53,
+            "raw_resultant": 116441,
+            "root_class": [
+              0,
+              1,
+              3
+            ],
+            "root_ratio": 9,
+            "vandermonde_degree": 19,
+            "vandermonde_resultant": 2197
+          },
+          {
+            "determinant_degree": 61,
+            "exponent_class": [
+              0,
+              1,
+              3
+            ],
+            "exponent_ratio": 6,
+            "quotient_degree": 40,
+            "quotient_factorization": [
+              [
+                3,
+                3
+              ]
+            ],
+            "quotient_resultant": 27,
+            "raw_resultant": 59319,
+            "root_class": [
+              0,
+              1,
+              4
+            ],
+            "root_ratio": 10,
+            "vandermonde_degree": 21,
+            "vandermonde_resultant": 2197
+          },
+          {
+            "determinant_degree": 67,
+            "exponent_class": [
+              0,
+              1,
+              3
+            ],
+            "exponent_ratio": 6,
+            "quotient_degree": 44,
+            "quotient_factorization": [
+              [
+                53,
+                1
+              ]
+            ],
+            "quotient_resultant": 53,
+            "raw_resultant": 116441,
+            "root_class": [
+              0,
+              1,
+              3
+            ],
+            "root_ratio": 11,
+            "vandermonde_degree": 23,
+            "vandermonde_resultant": 2197
+          },
+          {
+            "determinant_degree": 73,
+            "exponent_class": [
+              0,
+              1,
+              3
+            ],
+            "exponent_ratio": 6,
+            "quotient_degree": 48,
+            "quotient_factorization": [],
+            "quotient_resultant": 1,
+            "raw_resultant": 2197,
+            "root_class": [
+              0,
+              1,
+              2
+            ],
+            "root_ratio": 12,
+            "vandermonde_degree": 25,
+            "vandermonde_resultant": 2197
+          },
+          {
+            "determinant_degree": 15,
+            "exponent_class": [
+              0,
+              1,
+              2
+            ],
+            "exponent_ratio": 7,
+            "quotient_degree": 10,
+            "quotient_factorization": [],
+            "quotient_resultant": 1,
+            "raw_resultant": 2197,
+            "root_class": [
+              0,
+              1,
+              2
+            ],
+            "root_ratio": 2,
+            "vandermonde_degree": 5,
+            "vandermonde_resultant": 2197
+          },
+          {
+            "determinant_degree": 22,
+            "exponent_class": [
+              0,
+              1,
+              2
+            ],
+            "exponent_ratio": 7,
+            "quotient_degree": 15,
+            "quotient_factorization": [],
+            "quotient_resultant": 1,
+            "raw_resultant": 2197,
+            "root_class": [
+              0,
+              1,
+              3
+            ],
+            "root_ratio": 3,
+            "vandermonde_degree": 7,
+            "vandermonde_resultant": 2197
+          },
+          {
+            "determinant_degree": 29,
+            "exponent_class": [
+              0,
+              1,
+              2
+            ],
+            "exponent_ratio": 7,
+            "quotient_degree": 20,
+            "quotient_factorization": [],
+            "quotient_resultant": 1,
+            "raw_resultant": 2197,
+            "root_class": [
+              0,
+              1,
+              4
+            ],
+            "root_ratio": 4,
+            "vandermonde_degree": 9,
+            "vandermonde_resultant": 2197
+          },
+          {
+            "determinant_degree": 36,
+            "exponent_class": [
+              0,
+              1,
+              2
+            ],
+            "exponent_ratio": 7,
+            "quotient_degree": 25,
+            "quotient_factorization": [],
+            "quotient_resultant": 1,
+            "raw_resultant": 2197,
+            "root_class": [
+              0,
+              1,
+              3
+            ],
+            "root_ratio": 5,
+            "vandermonde_degree": 11,
+            "vandermonde_resultant": 2197
+          },
+          {
+            "determinant_degree": 43,
+            "exponent_class": [
+              0,
+              1,
+              2
+            ],
+            "exponent_ratio": 7,
+            "quotient_degree": 30,
+            "quotient_factorization": [],
+            "quotient_resultant": 1,
+            "raw_resultant": 2197,
+            "root_class": [
+              0,
+              1,
+              3
+            ],
+            "root_ratio": 6,
+            "vandermonde_degree": 13,
+            "vandermonde_resultant": 2197
+          },
+          {
+            "determinant_degree": 50,
+            "exponent_class": [
+              0,
+              1,
+              2
+            ],
+            "exponent_ratio": 7,
+            "quotient_degree": 35,
+            "quotient_factorization": [],
+            "quotient_resultant": 1,
+            "raw_resultant": 2197,
+            "root_class": [
+              0,
+              1,
+              2
+            ],
+            "root_ratio": 7,
+            "vandermonde_degree": 15,
+            "vandermonde_resultant": 2197
+          },
+          {
+            "determinant_degree": 57,
+            "exponent_class": [
+              0,
+              1,
+              2
+            ],
+            "exponent_ratio": 7,
+            "quotient_degree": 40,
+            "quotient_factorization": [],
+            "quotient_resultant": 1,
+            "raw_resultant": 2197,
+            "root_class": [
+              0,
+              1,
+              3
+            ],
+            "root_ratio": 8,
+            "vandermonde_degree": 17,
+            "vandermonde_resultant": 2197
+          },
+          {
+            "determinant_degree": 64,
+            "exponent_class": [
+              0,
+              1,
+              2
+            ],
+            "exponent_ratio": 7,
+            "quotient_degree": 45,
+            "quotient_factorization": [],
+            "quotient_resultant": 1,
+            "raw_resultant": 2197,
+            "root_class": [
+              0,
+              1,
+              3
+            ],
+            "root_ratio": 9,
+            "vandermonde_degree": 19,
+            "vandermonde_resultant": 2197
+          },
+          {
+            "determinant_degree": 71,
+            "exponent_class": [
+              0,
+              1,
+              2
+            ],
+            "exponent_ratio": 7,
+            "quotient_degree": 50,
+            "quotient_factorization": [],
+            "quotient_resultant": 1,
+            "raw_resultant": 2197,
+            "root_class": [
+              0,
+              1,
+              4
+            ],
+            "root_ratio": 10,
+            "vandermonde_degree": 21,
+            "vandermonde_resultant": 2197
+          },
+          {
+            "determinant_degree": 78,
+            "exponent_class": [
+              0,
+              1,
+              2
+            ],
+            "exponent_ratio": 7,
+            "quotient_degree": 55,
+            "quotient_factorization": [],
+            "quotient_resultant": 1,
+            "raw_resultant": 2197,
+            "root_class": [
+              0,
+              1,
+              3
+            ],
+            "root_ratio": 11,
+            "vandermonde_degree": 23,
+            "vandermonde_resultant": 2197
+          },
+          {
+            "determinant_degree": 85,
+            "exponent_class": [
+              0,
+              1,
+              2
+            ],
+            "exponent_ratio": 7,
+            "quotient_degree": 60,
+            "quotient_factorization": [],
+            "quotient_resultant": 1,
+            "raw_resultant": 2197,
+            "root_class": [
+              0,
+              1,
+              2
+            ],
+            "root_ratio": 12,
+            "vandermonde_degree": 25,
+            "vandermonde_resultant": 2197
+          },
+          {
+            "determinant_degree": 17,
+            "exponent_class": [
+              0,
+              1,
+              3
+            ],
+            "exponent_ratio": 8,
+            "quotient_degree": 12,
+            "quotient_factorization": [],
+            "quotient_resultant": 1,
+            "raw_resultant": 2197,
+            "root_class": [
+              0,
+              1,
+              2
+            ],
+            "root_ratio": 2,
+            "vandermonde_degree": 5,
+            "vandermonde_resultant": 2197
+          },
+          {
+            "determinant_degree": 25,
+            "exponent_class": [
+              0,
+              1,
+              3
+            ],
+            "exponent_ratio": 8,
+            "quotient_degree": 18,
+            "quotient_factorization": [
+              [
+                53,
+                1
+              ]
+            ],
+            "quotient_resultant": 53,
+            "raw_resultant": 116441,
+            "root_class": [
+              0,
+              1,
+              3
+            ],
+            "root_ratio": 3,
+            "vandermonde_degree": 7,
+            "vandermonde_resultant": 2197
+          },
+          {
+            "determinant_degree": 33,
+            "exponent_class": [
+              0,
+              1,
+              3
+            ],
+            "exponent_ratio": 8,
+            "quotient_degree": 24,
+            "quotient_factorization": [
+              [
+                3,
+                3
+              ]
+            ],
+            "quotient_resultant": 27,
+            "raw_resultant": 59319,
+            "root_class": [
+              0,
+              1,
+              4
+            ],
+            "root_ratio": 4,
+            "vandermonde_degree": 9,
+            "vandermonde_resultant": 2197
+          },
+          {
+            "determinant_degree": 41,
+            "exponent_class": [
+              0,
+              1,
+              3
+            ],
+            "exponent_ratio": 8,
+            "quotient_degree": 30,
+            "quotient_factorization": [
+              [
+                53,
+                1
+              ]
+            ],
+            "quotient_resultant": 53,
+            "raw_resultant": 116441,
+            "root_class": [
+              0,
+              1,
+              3
+            ],
+            "root_ratio": 5,
+            "vandermonde_degree": 11,
+            "vandermonde_resultant": 2197
+          },
+          {
+            "determinant_degree": 49,
+            "exponent_class": [
+              0,
+              1,
+              3
+            ],
+            "exponent_ratio": 8,
+            "quotient_degree": 36,
+            "quotient_factorization": [
+              [
+                53,
+                1
+              ]
+            ],
+            "quotient_resultant": 53,
+            "raw_resultant": 116441,
+            "root_class": [
+              0,
+              1,
+              3
+            ],
+            "root_ratio": 6,
+            "vandermonde_degree": 13,
+            "vandermonde_resultant": 2197
+          },
+          {
+            "determinant_degree": 57,
+            "exponent_class": [
+              0,
+              1,
+              3
+            ],
+            "exponent_ratio": 8,
+            "quotient_degree": 42,
+            "quotient_factorization": [],
+            "quotient_resultant": 1,
+            "raw_resultant": 2197,
+            "root_class": [
+              0,
+              1,
+              2
+            ],
+            "root_ratio": 7,
+            "vandermonde_degree": 15,
+            "vandermonde_resultant": 2197
+          },
+          {
+            "determinant_degree": 65,
+            "exponent_class": [
+              0,
+              1,
+              3
+            ],
+            "exponent_ratio": 8,
+            "quotient_degree": 48,
+            "quotient_factorization": [
+              [
+                53,
+                1
+              ]
+            ],
+            "quotient_resultant": 53,
+            "raw_resultant": 116441,
+            "root_class": [
+              0,
+              1,
+              3
+            ],
+            "root_ratio": 8,
+            "vandermonde_degree": 17,
+            "vandermonde_resultant": 2197
+          },
+          {
+            "determinant_degree": 73,
+            "exponent_class": [
+              0,
+              1,
+              3
+            ],
+            "exponent_ratio": 8,
+            "quotient_degree": 54,
+            "quotient_factorization": [
+              [
+                53,
+                1
+              ]
+            ],
+            "quotient_resultant": 53,
+            "raw_resultant": 116441,
+            "root_class": [
+              0,
+              1,
+              3
+            ],
+            "root_ratio": 9,
+            "vandermonde_degree": 19,
+            "vandermonde_resultant": 2197
+          },
+          {
+            "determinant_degree": 81,
+            "exponent_class": [
+              0,
+              1,
+              3
+            ],
+            "exponent_ratio": 8,
+            "quotient_degree": 60,
+            "quotient_factorization": [
+              [
+                3,
+                3
+              ]
+            ],
+            "quotient_resultant": 27,
+            "raw_resultant": 59319,
+            "root_class": [
+              0,
+              1,
+              4
+            ],
+            "root_ratio": 10,
+            "vandermonde_degree": 21,
+            "vandermonde_resultant": 2197
+          },
+          {
+            "determinant_degree": 89,
+            "exponent_class": [
+              0,
+              1,
+              3
+            ],
+            "exponent_ratio": 8,
+            "quotient_degree": 66,
+            "quotient_factorization": [
+              [
+                53,
+                1
+              ]
+            ],
+            "quotient_resultant": 53,
+            "raw_resultant": 116441,
+            "root_class": [
+              0,
+              1,
+              3
+            ],
+            "root_ratio": 11,
+            "vandermonde_degree": 23,
+            "vandermonde_resultant": 2197
+          },
+          {
+            "determinant_degree": 97,
+            "exponent_class": [
+              0,
+              1,
+              3
+            ],
+            "exponent_ratio": 8,
+            "quotient_degree": 72,
+            "quotient_factorization": [],
+            "quotient_resultant": 1,
+            "raw_resultant": 2197,
+            "root_class": [
+              0,
+              1,
+              2
+            ],
+            "root_ratio": 12,
+            "vandermonde_degree": 25,
+            "vandermonde_resultant": 2197
+          },
+          {
+            "determinant_degree": 19,
+            "exponent_class": [
+              0,
+              1,
+              3
+            ],
+            "exponent_ratio": 9,
+            "quotient_degree": 14,
+            "quotient_factorization": [],
+            "quotient_resultant": 1,
+            "raw_resultant": 2197,
+            "root_class": [
+              0,
+              1,
+              2
+            ],
+            "root_ratio": 2,
+            "vandermonde_degree": 5,
+            "vandermonde_resultant": 2197
+          },
+          {
+            "determinant_degree": 28,
+            "exponent_class": [
+              0,
+              1,
+              3
+            ],
+            "exponent_ratio": 9,
+            "quotient_degree": 21,
+            "quotient_factorization": [
+              [
+                53,
+                1
+              ]
+            ],
+            "quotient_resultant": 53,
+            "raw_resultant": 116441,
+            "root_class": [
+              0,
+              1,
+              3
+            ],
+            "root_ratio": 3,
+            "vandermonde_degree": 7,
+            "vandermonde_resultant": 2197
+          },
+          {
+            "determinant_degree": 37,
+            "exponent_class": [
+              0,
+              1,
+              3
+            ],
+            "exponent_ratio": 9,
+            "quotient_degree": 28,
+            "quotient_factorization": [
+              [
+                3,
+                3
+              ]
+            ],
+            "quotient_resultant": 27,
+            "raw_resultant": 59319,
+            "root_class": [
+              0,
+              1,
+              4
+            ],
+            "root_ratio": 4,
+            "vandermonde_degree": 9,
+            "vandermonde_resultant": 2197
+          },
+          {
+            "determinant_degree": 46,
+            "exponent_class": [
+              0,
+              1,
+              3
+            ],
+            "exponent_ratio": 9,
+            "quotient_degree": 35,
+            "quotient_factorization": [
+              [
+                53,
+                1
+              ]
+            ],
+            "quotient_resultant": 53,
+            "raw_resultant": 116441,
+            "root_class": [
+              0,
+              1,
+              3
+            ],
+            "root_ratio": 5,
+            "vandermonde_degree": 11,
+            "vandermonde_resultant": 2197
+          },
+          {
+            "determinant_degree": 55,
+            "exponent_class": [
+              0,
+              1,
+              3
+            ],
+            "exponent_ratio": 9,
+            "quotient_degree": 42,
+            "quotient_factorization": [
+              [
+                53,
+                1
+              ]
+            ],
+            "quotient_resultant": 53,
+            "raw_resultant": 116441,
+            "root_class": [
+              0,
+              1,
+              3
+            ],
+            "root_ratio": 6,
+            "vandermonde_degree": 13,
+            "vandermonde_resultant": 2197
+          },
+          {
+            "determinant_degree": 64,
+            "exponent_class": [
+              0,
+              1,
+              3
+            ],
+            "exponent_ratio": 9,
+            "quotient_degree": 49,
+            "quotient_factorization": [],
+            "quotient_resultant": 1,
+            "raw_resultant": 2197,
+            "root_class": [
+              0,
+              1,
+              2
+            ],
+            "root_ratio": 7,
+            "vandermonde_degree": 15,
+            "vandermonde_resultant": 2197
+          },
+          {
+            "determinant_degree": 73,
+            "exponent_class": [
+              0,
+              1,
+              3
+            ],
+            "exponent_ratio": 9,
+            "quotient_degree": 56,
+            "quotient_factorization": [
+              [
+                53,
+                1
+              ]
+            ],
+            "quotient_resultant": 53,
+            "raw_resultant": 116441,
+            "root_class": [
+              0,
+              1,
+              3
+            ],
+            "root_ratio": 8,
+            "vandermonde_degree": 17,
+            "vandermonde_resultant": 2197
+          },
+          {
+            "determinant_degree": 82,
+            "exponent_class": [
+              0,
+              1,
+              3
+            ],
+            "exponent_ratio": 9,
+            "quotient_degree": 63,
+            "quotient_factorization": [
+              [
+                53,
+                1
+              ]
+            ],
+            "quotient_resultant": 53,
+            "raw_resultant": 116441,
+            "root_class": [
+              0,
+              1,
+              3
+            ],
+            "root_ratio": 9,
+            "vandermonde_degree": 19,
+            "vandermonde_resultant": 2197
+          },
+          {
+            "determinant_degree": 91,
+            "exponent_class": [
+              0,
+              1,
+              3
+            ],
+            "exponent_ratio": 9,
+            "quotient_degree": 70,
+            "quotient_factorization": [
+              [
+                3,
+                3
+              ]
+            ],
+            "quotient_resultant": 27,
+            "raw_resultant": 59319,
+            "root_class": [
+              0,
+              1,
+              4
+            ],
+            "root_ratio": 10,
+            "vandermonde_degree": 21,
+            "vandermonde_resultant": 2197
+          },
+          {
+            "determinant_degree": 100,
+            "exponent_class": [
+              0,
+              1,
+              3
+            ],
+            "exponent_ratio": 9,
+            "quotient_degree": 77,
+            "quotient_factorization": [
+              [
+                53,
+                1
+              ]
+            ],
+            "quotient_resultant": 53,
+            "raw_resultant": 116441,
+            "root_class": [
+              0,
+              1,
+              3
+            ],
+            "root_ratio": 11,
+            "vandermonde_degree": 23,
+            "vandermonde_resultant": 2197
+          },
+          {
+            "determinant_degree": 109,
+            "exponent_class": [
+              0,
+              1,
+              3
+            ],
+            "exponent_ratio": 9,
+            "quotient_degree": 84,
+            "quotient_factorization": [],
+            "quotient_resultant": 1,
+            "raw_resultant": 2197,
+            "root_class": [
+              0,
+              1,
+              2
+            ],
+            "root_ratio": 12,
+            "vandermonde_degree": 25,
+            "vandermonde_resultant": 2197
+          },
+          {
+            "determinant_degree": 21,
+            "exponent_class": [
+              0,
+              1,
+              4
+            ],
+            "exponent_ratio": 10,
+            "quotient_degree": 16,
+            "quotient_factorization": [],
+            "quotient_resultant": 1,
+            "raw_resultant": 2197,
+            "root_class": [
+              0,
+              1,
+              2
+            ],
+            "root_ratio": 2,
+            "vandermonde_degree": 5,
+            "vandermonde_resultant": 2197
+          },
+          {
+            "determinant_degree": 31,
+            "exponent_class": [
+              0,
+              1,
+              4
+            ],
+            "exponent_ratio": 10,
+            "quotient_degree": 24,
+            "quotient_factorization": [
+              [
+                3,
+                3
+              ]
+            ],
+            "quotient_resultant": 27,
+            "raw_resultant": 59319,
+            "root_class": [
+              0,
+              1,
+              3
+            ],
+            "root_ratio": 3,
+            "vandermonde_degree": 7,
+            "vandermonde_resultant": 2197
+          },
+          {
+            "determinant_degree": 41,
+            "exponent_class": [
+              0,
+              1,
+              4
+            ],
+            "exponent_ratio": 10,
+            "quotient_degree": 32,
+            "quotient_factorization": [
+              [
+                3,
+                6
+              ]
+            ],
+            "quotient_resultant": 729,
+            "raw_resultant": 1601613,
+            "root_class": [
+              0,
+              1,
+              4
+            ],
+            "root_ratio": 4,
+            "vandermonde_degree": 9,
+            "vandermonde_resultant": 2197
+          },
+          {
+            "determinant_degree": 51,
+            "exponent_class": [
+              0,
+              1,
+              4
+            ],
+            "exponent_ratio": 10,
+            "quotient_degree": 40,
+            "quotient_factorization": [
+              [
+                3,
+                3
+              ]
+            ],
+            "quotient_resultant": 27,
+            "raw_resultant": 59319,
+            "root_class": [
+              0,
+              1,
+              3
+            ],
+            "root_ratio": 5,
+            "vandermonde_degree": 11,
+            "vandermonde_resultant": 2197
+          },
+          {
+            "determinant_degree": 61,
+            "exponent_class": [
+              0,
+              1,
+              4
+            ],
+            "exponent_ratio": 10,
+            "quotient_degree": 48,
+            "quotient_factorization": [
+              [
+                3,
+                3
+              ]
+            ],
+            "quotient_resultant": 27,
+            "raw_resultant": 59319,
+            "root_class": [
+              0,
+              1,
+              3
+            ],
+            "root_ratio": 6,
+            "vandermonde_degree": 13,
+            "vandermonde_resultant": 2197
+          },
+          {
+            "determinant_degree": 71,
+            "exponent_class": [
+              0,
+              1,
+              4
+            ],
+            "exponent_ratio": 10,
+            "quotient_degree": 56,
+            "quotient_factorization": [],
+            "quotient_resultant": 1,
+            "raw_resultant": 2197,
+            "root_class": [
+              0,
+              1,
+              2
+            ],
+            "root_ratio": 7,
+            "vandermonde_degree": 15,
+            "vandermonde_resultant": 2197
+          },
+          {
+            "determinant_degree": 81,
+            "exponent_class": [
+              0,
+              1,
+              4
+            ],
+            "exponent_ratio": 10,
+            "quotient_degree": 64,
+            "quotient_factorization": [
+              [
+                3,
+                3
+              ]
+            ],
+            "quotient_resultant": 27,
+            "raw_resultant": 59319,
+            "root_class": [
+              0,
+              1,
+              3
+            ],
+            "root_ratio": 8,
+            "vandermonde_degree": 17,
+            "vandermonde_resultant": 2197
+          },
+          {
+            "determinant_degree": 91,
+            "exponent_class": [
+              0,
+              1,
+              4
+            ],
+            "exponent_ratio": 10,
+            "quotient_degree": 72,
+            "quotient_factorization": [
+              [
+                3,
+                3
+              ]
+            ],
+            "quotient_resultant": 27,
+            "raw_resultant": 59319,
+            "root_class": [
+              0,
+              1,
+              3
+            ],
+            "root_ratio": 9,
+            "vandermonde_degree": 19,
+            "vandermonde_resultant": 2197
+          },
+          {
+            "determinant_degree": 101,
+            "exponent_class": [
+              0,
+              1,
+              4
+            ],
+            "exponent_ratio": 10,
+            "quotient_degree": 80,
+            "quotient_factorization": [
+              [
+                3,
+                6
+              ]
+            ],
+            "quotient_resultant": 729,
+            "raw_resultant": 1601613,
+            "root_class": [
+              0,
+              1,
+              4
+            ],
+            "root_ratio": 10,
+            "vandermonde_degree": 21,
+            "vandermonde_resultant": 2197
+          },
+          {
+            "determinant_degree": 111,
+            "exponent_class": [
+              0,
+              1,
+              4
+            ],
+            "exponent_ratio": 10,
+            "quotient_degree": 88,
+            "quotient_factorization": [
+              [
+                3,
+                3
+              ]
+            ],
+            "quotient_resultant": 27,
+            "raw_resultant": 59319,
+            "root_class": [
+              0,
+              1,
+              3
+            ],
+            "root_ratio": 11,
+            "vandermonde_degree": 23,
+            "vandermonde_resultant": 2197
+          },
+          {
+            "determinant_degree": 121,
+            "exponent_class": [
+              0,
+              1,
+              4
+            ],
+            "exponent_ratio": 10,
+            "quotient_degree": 96,
+            "quotient_factorization": [],
+            "quotient_resultant": 1,
+            "raw_resultant": 2197,
+            "root_class": [
+              0,
+              1,
+              2
+            ],
+            "root_ratio": 12,
+            "vandermonde_degree": 25,
+            "vandermonde_resultant": 2197
+          },
+          {
+            "determinant_degree": 23,
+            "exponent_class": [
+              0,
+              1,
+              3
+            ],
+            "exponent_ratio": 11,
+            "quotient_degree": 18,
+            "quotient_factorization": [],
+            "quotient_resultant": 1,
+            "raw_resultant": 2197,
+            "root_class": [
+              0,
+              1,
+              2
+            ],
+            "root_ratio": 2,
+            "vandermonde_degree": 5,
+            "vandermonde_resultant": 2197
+          },
+          {
+            "determinant_degree": 34,
+            "exponent_class": [
+              0,
+              1,
+              3
+            ],
+            "exponent_ratio": 11,
+            "quotient_degree": 27,
+            "quotient_factorization": [
+              [
+                53,
+                1
+              ]
+            ],
+            "quotient_resultant": 53,
+            "raw_resultant": 116441,
+            "root_class": [
+              0,
+              1,
+              3
+            ],
+            "root_ratio": 3,
+            "vandermonde_degree": 7,
+            "vandermonde_resultant": 2197
+          },
+          {
+            "determinant_degree": 45,
+            "exponent_class": [
+              0,
+              1,
+              3
+            ],
+            "exponent_ratio": 11,
+            "quotient_degree": 36,
+            "quotient_factorization": [
+              [
+                3,
+                3
+              ]
+            ],
+            "quotient_resultant": 27,
+            "raw_resultant": 59319,
+            "root_class": [
+              0,
+              1,
+              4
+            ],
+            "root_ratio": 4,
+            "vandermonde_degree": 9,
+            "vandermonde_resultant": 2197
+          },
+          {
+            "determinant_degree": 56,
+            "exponent_class": [
+              0,
+              1,
+              3
+            ],
+            "exponent_ratio": 11,
+            "quotient_degree": 45,
+            "quotient_factorization": [
+              [
+                53,
+                1
+              ]
+            ],
+            "quotient_resultant": 53,
+            "raw_resultant": 116441,
+            "root_class": [
+              0,
+              1,
+              3
+            ],
+            "root_ratio": 5,
+            "vandermonde_degree": 11,
+            "vandermonde_resultant": 2197
+          },
+          {
+            "determinant_degree": 67,
+            "exponent_class": [
+              0,
+              1,
+              3
+            ],
+            "exponent_ratio": 11,
+            "quotient_degree": 54,
+            "quotient_factorization": [
+              [
+                53,
+                1
+              ]
+            ],
+            "quotient_resultant": 53,
+            "raw_resultant": 116441,
+            "root_class": [
+              0,
+              1,
+              3
+            ],
+            "root_ratio": 6,
+            "vandermonde_degree": 13,
+            "vandermonde_resultant": 2197
+          },
+          {
+            "determinant_degree": 78,
+            "exponent_class": [
+              0,
+              1,
+              3
+            ],
+            "exponent_ratio": 11,
+            "quotient_degree": 63,
+            "quotient_factorization": [],
+            "quotient_resultant": 1,
+            "raw_resultant": 2197,
+            "root_class": [
+              0,
+              1,
+              2
+            ],
+            "root_ratio": 7,
+            "vandermonde_degree": 15,
+            "vandermonde_resultant": 2197
+          },
+          {
+            "determinant_degree": 89,
+            "exponent_class": [
+              0,
+              1,
+              3
+            ],
+            "exponent_ratio": 11,
+            "quotient_degree": 72,
+            "quotient_factorization": [
+              [
+                53,
+                1
+              ]
+            ],
+            "quotient_resultant": 53,
+            "raw_resultant": 116441,
+            "root_class": [
+              0,
+              1,
+              3
+            ],
+            "root_ratio": 8,
+            "vandermonde_degree": 17,
+            "vandermonde_resultant": 2197
+          },
+          {
+            "determinant_degree": 100,
+            "exponent_class": [
+              0,
+              1,
+              3
+            ],
+            "exponent_ratio": 11,
+            "quotient_degree": 81,
+            "quotient_factorization": [
+              [
+                53,
+                1
+              ]
+            ],
+            "quotient_resultant": 53,
+            "raw_resultant": 116441,
+            "root_class": [
+              0,
+              1,
+              3
+            ],
+            "root_ratio": 9,
+            "vandermonde_degree": 19,
+            "vandermonde_resultant": 2197
+          },
+          {
+            "determinant_degree": 111,
+            "exponent_class": [
+              0,
+              1,
+              3
+            ],
+            "exponent_ratio": 11,
+            "quotient_degree": 90,
+            "quotient_factorization": [
+              [
+                3,
+                3
+              ]
+            ],
+            "quotient_resultant": 27,
+            "raw_resultant": 59319,
+            "root_class": [
+              0,
+              1,
+              4
+            ],
+            "root_ratio": 10,
+            "vandermonde_degree": 21,
+            "vandermonde_resultant": 2197
+          },
+          {
+            "determinant_degree": 122,
+            "exponent_class": [
+              0,
+              1,
+              3
+            ],
+            "exponent_ratio": 11,
+            "quotient_degree": 99,
+            "quotient_factorization": [
+              [
+                53,
+                1
+              ]
+            ],
+            "quotient_resultant": 53,
+            "raw_resultant": 116441,
+            "root_class": [
+              0,
+              1,
+              3
+            ],
+            "root_ratio": 11,
+            "vandermonde_degree": 23,
+            "vandermonde_resultant": 2197
+          },
+          {
+            "determinant_degree": 133,
+            "exponent_class": [
+              0,
+              1,
+              3
+            ],
+            "exponent_ratio": 11,
+            "quotient_degree": 108,
+            "quotient_factorization": [],
+            "quotient_resultant": 1,
+            "raw_resultant": 2197,
+            "root_class": [
+              0,
+              1,
+              2
+            ],
+            "root_ratio": 12,
+            "vandermonde_degree": 25,
+            "vandermonde_resultant": 2197
+          },
+          {
+            "determinant_degree": 25,
+            "exponent_class": [
+              0,
+              1,
+              2
+            ],
+            "exponent_ratio": 12,
+            "quotient_degree": 20,
+            "quotient_factorization": [],
+            "quotient_resultant": 1,
+            "raw_resultant": 2197,
+            "root_class": [
+              0,
+              1,
+              2
+            ],
+            "root_ratio": 2,
+            "vandermonde_degree": 5,
+            "vandermonde_resultant": 2197
+          },
+          {
+            "determinant_degree": 37,
+            "exponent_class": [
+              0,
+              1,
+              2
+            ],
+            "exponent_ratio": 12,
+            "quotient_degree": 30,
+            "quotient_factorization": [],
+            "quotient_resultant": 1,
+            "raw_resultant": 2197,
+            "root_class": [
+              0,
+              1,
+              3
+            ],
+            "root_ratio": 3,
+            "vandermonde_degree": 7,
+            "vandermonde_resultant": 2197
+          },
+          {
+            "determinant_degree": 49,
+            "exponent_class": [
+              0,
+              1,
+              2
+            ],
+            "exponent_ratio": 12,
+            "quotient_degree": 40,
+            "quotient_factorization": [],
+            "quotient_resultant": 1,
+            "raw_resultant": 2197,
+            "root_class": [
+              0,
+              1,
+              4
+            ],
+            "root_ratio": 4,
+            "vandermonde_degree": 9,
+            "vandermonde_resultant": 2197
+          },
+          {
+            "determinant_degree": 61,
+            "exponent_class": [
+              0,
+              1,
+              2
+            ],
+            "exponent_ratio": 12,
+            "quotient_degree": 50,
+            "quotient_factorization": [],
+            "quotient_resultant": 1,
+            "raw_resultant": 2197,
+            "root_class": [
+              0,
+              1,
+              3
+            ],
+            "root_ratio": 5,
+            "vandermonde_degree": 11,
+            "vandermonde_resultant": 2197
+          },
+          {
+            "determinant_degree": 73,
+            "exponent_class": [
+              0,
+              1,
+              2
+            ],
+            "exponent_ratio": 12,
+            "quotient_degree": 60,
+            "quotient_factorization": [],
+            "quotient_resultant": 1,
+            "raw_resultant": 2197,
+            "root_class": [
+              0,
+              1,
+              3
+            ],
+            "root_ratio": 6,
+            "vandermonde_degree": 13,
+            "vandermonde_resultant": 2197
+          },
+          {
+            "determinant_degree": 85,
+            "exponent_class": [
+              0,
+              1,
+              2
+            ],
+            "exponent_ratio": 12,
+            "quotient_degree": 70,
+            "quotient_factorization": [],
+            "quotient_resultant": 1,
+            "raw_resultant": 2197,
+            "root_class": [
+              0,
+              1,
+              2
+            ],
+            "root_ratio": 7,
+            "vandermonde_degree": 15,
+            "vandermonde_resultant": 2197
+          },
+          {
+            "determinant_degree": 97,
+            "exponent_class": [
+              0,
+              1,
+              2
+            ],
+            "exponent_ratio": 12,
+            "quotient_degree": 80,
+            "quotient_factorization": [],
+            "quotient_resultant": 1,
+            "raw_resultant": 2197,
+            "root_class": [
+              0,
+              1,
+              3
+            ],
+            "root_ratio": 8,
+            "vandermonde_degree": 17,
+            "vandermonde_resultant": 2197
+          },
+          {
+            "determinant_degree": 109,
+            "exponent_class": [
+              0,
+              1,
+              2
+            ],
+            "exponent_ratio": 12,
+            "quotient_degree": 90,
+            "quotient_factorization": [],
+            "quotient_resultant": 1,
+            "raw_resultant": 2197,
+            "root_class": [
+              0,
+              1,
+              3
+            ],
+            "root_ratio": 9,
+            "vandermonde_degree": 19,
+            "vandermonde_resultant": 2197
+          },
+          {
+            "determinant_degree": 121,
+            "exponent_class": [
+              0,
+              1,
+              2
+            ],
+            "exponent_ratio": 12,
+            "quotient_degree": 100,
+            "quotient_factorization": [],
+            "quotient_resultant": 1,
+            "raw_resultant": 2197,
+            "root_class": [
+              0,
+              1,
+              4
+            ],
+            "root_ratio": 10,
+            "vandermonde_degree": 21,
+            "vandermonde_resultant": 2197
+          },
+          {
+            "determinant_degree": 133,
+            "exponent_class": [
+              0,
+              1,
+              2
+            ],
+            "exponent_ratio": 12,
+            "quotient_degree": 110,
+            "quotient_factorization": [],
+            "quotient_resultant": 1,
+            "raw_resultant": 2197,
+            "root_class": [
+              0,
+              1,
+              3
+            ],
+            "root_ratio": 11,
+            "vandermonde_degree": 23,
+            "vandermonde_resultant": 2197
+          },
+          {
+            "determinant_degree": 145,
+            "exponent_class": [
+              0,
+              1,
+              2
+            ],
+            "exponent_ratio": 12,
+            "quotient_degree": 120,
+            "quotient_factorization": [],
+            "quotient_resultant": 1,
+            "raw_resultant": 2197,
+            "root_class": [
+              0,
+              1,
+              2
+            ],
+            "root_ratio": 12,
+            "vandermonde_degree": 25,
+            "vandermonde_resultant": 2197
+          }
+        ],
+        "external_admissible_prime_factors": [
+          53
+        ],
+        "orbit_resultant_table": [
+          {
+            "all_normalized_pairs_in_class_agree": true,
+            "exponent_class": [
+              0,
+              1,
+              2
+            ],
+            "exponent_representative": 2,
+            "factorization": [],
+            "matches_expected": true,
+            "quotient_resultant": 1,
+            "root_class": [
+              0,
+              1,
+              2
+            ],
+            "root_representative": 2
+          },
+          {
+            "all_normalized_pairs_in_class_agree": true,
+            "exponent_class": [
+              0,
+              1,
+              2
+            ],
+            "exponent_representative": 2,
+            "factorization": [],
+            "matches_expected": true,
+            "quotient_resultant": 1,
+            "root_class": [
+              0,
+              1,
+              3
+            ],
+            "root_representative": 3
+          },
+          {
+            "all_normalized_pairs_in_class_agree": true,
+            "exponent_class": [
+              0,
+              1,
+              2
+            ],
+            "exponent_representative": 2,
+            "factorization": [],
+            "matches_expected": true,
+            "quotient_resultant": 1,
+            "root_class": [
+              0,
+              1,
+              4
+            ],
+            "root_representative": 4
+          },
+          {
+            "all_normalized_pairs_in_class_agree": true,
+            "exponent_class": [
+              0,
+              1,
+              3
+            ],
+            "exponent_representative": 3,
+            "factorization": [],
+            "matches_expected": true,
+            "quotient_resultant": 1,
+            "root_class": [
+              0,
+              1,
+              2
+            ],
+            "root_representative": 2
+          },
+          {
+            "all_normalized_pairs_in_class_agree": true,
+            "exponent_class": [
+              0,
+              1,
+              3
+            ],
+            "exponent_representative": 3,
+            "factorization": [
+              [
+                53,
+                1
+              ]
+            ],
+            "matches_expected": true,
+            "quotient_resultant": 53,
+            "root_class": [
+              0,
+              1,
+              3
+            ],
+            "root_representative": 3
+          },
+          {
+            "all_normalized_pairs_in_class_agree": true,
+            "exponent_class": [
+              0,
+              1,
+              3
+            ],
+            "exponent_representative": 3,
+            "factorization": [
+              [
+                3,
+                3
+              ]
+            ],
+            "matches_expected": true,
+            "quotient_resultant": 27,
+            "root_class": [
+              0,
+              1,
+              4
+            ],
+            "root_representative": 4
+          },
+          {
+            "all_normalized_pairs_in_class_agree": true,
+            "exponent_class": [
+              0,
+              1,
+              4
+            ],
+            "exponent_representative": 4,
+            "factorization": [],
+            "matches_expected": true,
+            "quotient_resultant": 1,
+            "root_class": [
+              0,
+              1,
+              2
+            ],
+            "root_representative": 2
+          },
+          {
+            "all_normalized_pairs_in_class_agree": true,
+            "exponent_class": [
+              0,
+              1,
+              4
+            ],
+            "exponent_representative": 4,
+            "factorization": [
+              [
+                3,
+                3
+              ]
+            ],
+            "matches_expected": true,
+            "quotient_resultant": 27,
+            "root_class": [
+              0,
+              1,
+              3
+            ],
+            "root_representative": 3
+          },
+          {
+            "all_normalized_pairs_in_class_agree": true,
+            "exponent_class": [
+              0,
+              1,
+              4
+            ],
+            "exponent_representative": 4,
+            "factorization": [
+              [
+                3,
+                6
+              ]
+            ],
+            "matches_expected": true,
+            "quotient_resultant": 729,
+            "root_class": [
+              0,
+              1,
+              4
+            ],
+            "root_representative": 4
+          }
+        ],
+        "vandermonde_resultant_value": 2197
+      },
+      "exceptional_prime": 53,
+      "exceptional_prime_is_geometrically_unavailable_for_every_cell": true,
+      "exceptional_prime_quotient_cosets": 4,
+      "maximum_required_cosets": 23,
+      "minimum_required_cosets": 11,
+      "unavailable_exceptional_smoke": {
+        "all_binomial_boundaries_have_at_most_one_root": true,
+        "ell": 13,
+        "generator": 2,
+        "max_roots": 3,
+        "maximum_cell_cosets": 23,
+        "minimum_cell_cosets": 11,
+        "orbit_rows": [
+          {
+            "all_binomial_boundaries_have_at_most_one_root": true,
+            "binomial_boundary_maxima": {
+              "A_zero": 1,
+              "B_zero": 1,
+              "C_zero": 1
+            },
+            "max_root_set": [
+              42,
+              36
+            ],
+            "max_root_witness": [
+              1,
+              1,
+              36
+            ],
+            "max_roots": 2,
+            "projective_live_polynomials": 2862,
+            "representative_exponent": 2,
+            "support_class": [
+              0,
+              1,
+              2
+            ]
+          },
+          {
+            "all_binomial_boundaries_have_at_most_one_root": true,
+            "binomial_boundary_maxima": {
+              "A_zero": 1,
+              "B_zero": 1,
+              "C_zero": 1
+            },
+            "max_root_set": [
+              16,
+              24,
+              13
+            ],
+            "max_root_witness": [
+              1,
+              5,
+              37
+            ],
+            "max_roots": 3,
+            "projective_live_polynomials": 2862,
+            "representative_exponent": 3,
+            "support_class": [
+              0,
+              1,
+              3
+            ]
+          },
+          {
+            "all_binomial_boundaries_have_at_most_one_root": true,
+            "binomial_boundary_maxima": {
+              "A_zero": 1,
+              "B_zero": 1,
+              "C_zero": 1
+            },
+            "max_root_set": [
+              1,
+              47
+            ],
+            "max_root_witness": [
+              1,
+              1,
+              51
+            ],
+            "max_roots": 2,
+            "projective_live_polynomials": 2862,
+            "representative_exponent": 4,
+            "support_class": [
+              0,
+              1,
+              4
+            ]
+          }
+        ],
+        "p": 53,
+        "quotient_cosets": 4,
+        "realizes_at_least_one_tau_ge_5_cell": false,
+        "realizes_every_tau_ge_5_cell": false,
+        "subgroup_size": 13,
+        "total_point_evaluations": 111618,
+        "total_projective_polynomials": 8586
+      }
+    }
+  ],
+  "next_obligation": "Extend the orbit-resultant sieve to further prime ell, or attack the first three-active-sector strata without contradicting the known multispectral witness band.",
+  "proof_steps": [
+    "Write D=m-tau-1>=0. Full-petal agreement gives P_r=phi*g_r and P_s=phi*g_s with nonzero g_r,g_s of degree at most D.",
+    "The common zero set of g_r,g_s contains at most D core labels. Calling these sector-dead and granting them all ell retained points is a pessimistic upper bound.",
+    "On every other core coset the restriction is A+B*h^r+C*h^s with (B,C)!=(0,0). A coefficient-zero boundary is a nonzero binomial and has at most one root on mu_ell because ell is prime.",
+    "Normalize the exponent support to {0,1,e} under AGL(1,ell), and any three distinct roots to {1,zeta,zeta^w}. The 3x3 evaluation matrix is singular exactly when a nonzero supported polynomial vanishes on those roots; the binomial bound forces all three coefficients to be nonzero.",
+    "The evaluation determinant is D_e,w=(X-1)(X^(ew)-1)-(X^e-1)(X^w-1). Divide its nonvanishing distinct-root Vandermonde factor V_w=(X-1)(X^w-1)(X^w-X).",
+    "Exact Sylvester/Bareiss resultants of Phi_ell with D_e,w/V_w are orbit-invariant. Their tables are [[1,1],[1,23]] at ell=11 and [[1,1,1],[1,53,27],[1,27,729]] at ell=13.",
+    "Among prime factors of those tables, the only primes congruent to one modulo ell are 23 and 53. They contain only 2 and 4 mu_ell-cosets, but every tau>=5,tau<m cell needs at least tau+m>=11, so a realizable cell avoids every bad characteristic.",
+    "Every live coset therefore retains at most two points. If z<=D is the actual number of sector-dead cosets, retained<=z*ell+2*(m-z)<=D*ell+2*(tau+1), while listing requires (D+2)*ell. Their difference is 2*(ell-tau-1)>0 because tau<m<ell."
+  ],
+  "scope": "Prime-field background-free setting only: no extension-field claim is made. Closes exactly two active nonzero sectors for ell in {11,13} and tau>=5,tau<m<ell, conditional only on geometric realizability. It is not whole-cell vacancy. Current upstream contains compatible multispectral/full-support witnesses (and numeric ell=11,13 spectrum witnesses); every stratum with three or more active sectors remains outside this theorem.",
+  "singularity_equivalence": "For fixed distinct support and root triples, determinant zero is equivalent to a nonzero coefficient vector in the evaluation kernel. A monomial has no roots and a binomial has at most one mu_ell-root, so a kernel vector for three distinct roots has all three entries nonzero; it is exactly a trinomial three-root event.",
+  "status": "PROVED_LOCAL",
+  "theorem": "Let ell be 11 or 13, p prime with ell|(p-1), tau>=5, and tau<m<ell. If F_p^* contains the tau+m distinct mu_ell-cosets needed by the background-free sunflower, no listed full-petal codeword has exactly two active nonzero DFT sectors. Hence this exact-two-sector stratum contributes no mixed minimal kernel set, primitive or otherwise.",
+  "title": "Complete exact-two-sector vacancy for ell=11 and ell=13",
+  "uniformity": "The load-bearing proof is the complete integer orbit-resultant table plus the geometric coset-count exclusion. Finite-field enumerations are regression tests only.",
+  "upstream": {
+    "collision": "No exact-two-sector ell=11/13 orbit-resultant closure found in the inspected upstream sources. Upstream's multispectral witnesses prevent any whole-cell vacancy restatement.",
+    "multisector_source": "experimental/notes/l1/l1_prime_ell_pv_refutation.md",
+    "residual_source": "experimental/notes/l1/l1_coset_mixed_vacancy_threshold.md"
+  },
+  "verdict": "PASS_WITH_ELL11_13_TWO_SECTOR_COMPLETE_VACANCY"
+}

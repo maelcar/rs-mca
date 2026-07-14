@@ -1,0 +1,4055 @@
+{
+  "ell_rows": [
+    {
+      "affine_orbits": {
+        "orbit_count": 3,
+        "orbits": [
+          {
+            "canonical": [
+              0,
+              1,
+              2
+            ],
+            "normalized_ratios": [
+              2,
+              9,
+              16
+            ],
+            "representative_ratio": 2,
+            "support_orbit_size": 136
+          },
+          {
+            "canonical": [
+              0,
+              1,
+              3
+            ],
+            "normalized_ratios": [
+              3,
+              6,
+              8,
+              10,
+              12,
+              15
+            ],
+            "representative_ratio": 3,
+            "support_orbit_size": 272
+          },
+          {
+            "canonical": [
+              0,
+              1,
+              4
+            ],
+            "normalized_ratios": [
+              4,
+              5,
+              7,
+              11,
+              13,
+              14
+            ],
+            "representative_ratio": 4,
+            "support_orbit_size": 272
+          }
+        ]
+      },
+      "cell_classification": {
+        "exceptional_classification_row_count": 2970,
+        "exceptional_route_counts": {
+          "EXPLICIT_UNRESOLVED_FRONTIER": 90,
+          "Fourier_resultant_two_root_cap": 90,
+          "cyclic_width_vacancy": 2052,
+          "four_by_three_rank_three_root_cap": 126,
+          "prime_field_coset_unavailable": 612
+        },
+        "frontier": {
+          "exponent_ratios": [
+            4,
+            5,
+            7,
+            11,
+            13,
+            14
+          ],
+          "four_root_event": false,
+          "m_condition": "tau < m < ell",
+          "p": 1361,
+          "parameter_pair_count": 15,
+          "parameter_pairs": [
+            [
+              11,
+              12
+            ],
+            [
+              11,
+              13
+            ],
+            [
+              11,
+              14
+            ],
+            [
+              11,
+              15
+            ],
+            [
+              11,
+              16
+            ],
+            [
+              12,
+              13
+            ],
+            [
+              12,
+              14
+            ],
+            [
+              12,
+              15
+            ],
+            [
+              12,
+              16
+            ],
+            [
+              13,
+              14
+            ],
+            [
+              13,
+              15
+            ],
+            [
+              13,
+              16
+            ],
+            [
+              14,
+              15
+            ],
+            [
+              14,
+              16
+            ],
+            [
+              15,
+              16
+            ]
+          ],
+          "proven_live_coset_root_cap": 3,
+          "ratio_parameter_cell_count": 90,
+          "status": "UNRESOLVED_NOT_A_COUNTEREXAMPLE",
+          "tau_max": 15,
+          "tau_min": 11
+        },
+        "generic_nonexceptional_characteristics": {
+          "all_cells_vacant": true,
+          "cell_rows": [
+            {
+              "D": 0,
+              "listing_requirement": 34,
+              "m": 6,
+              "retained_bound_cap_2": 12,
+              "strict_gap": 22,
+              "tau": 5
+            },
+            {
+              "D": 1,
+              "listing_requirement": 51,
+              "m": 7,
+              "retained_bound_cap_2": 29,
+              "strict_gap": 22,
+              "tau": 5
+            },
+            {
+              "D": 2,
+              "listing_requirement": 68,
+              "m": 8,
+              "retained_bound_cap_2": 46,
+              "strict_gap": 22,
+              "tau": 5
+            },
+            {
+              "D": 3,
+              "listing_requirement": 85,
+              "m": 9,
+              "retained_bound_cap_2": 63,
+              "strict_gap": 22,
+              "tau": 5
+            },
+            {
+              "D": 4,
+              "listing_requirement": 102,
+              "m": 10,
+              "retained_bound_cap_2": 80,
+              "strict_gap": 22,
+              "tau": 5
+            },
+            {
+              "D": 5,
+              "listing_requirement": 119,
+              "m": 11,
+              "retained_bound_cap_2": 97,
+              "strict_gap": 22,
+              "tau": 5
+            },
+            {
+              "D": 6,
+              "listing_requirement": 136,
+              "m": 12,
+              "retained_bound_cap_2": 114,
+              "strict_gap": 22,
+              "tau": 5
+            },
+            {
+              "D": 7,
+              "listing_requirement": 153,
+              "m": 13,
+              "retained_bound_cap_2": 131,
+              "strict_gap": 22,
+              "tau": 5
+            },
+            {
+              "D": 8,
+              "listing_requirement": 170,
+              "m": 14,
+              "retained_bound_cap_2": 148,
+              "strict_gap": 22,
+              "tau": 5
+            },
+            {
+              "D": 9,
+              "listing_requirement": 187,
+              "m": 15,
+              "retained_bound_cap_2": 165,
+              "strict_gap": 22,
+              "tau": 5
+            },
+            {
+              "D": 10,
+              "listing_requirement": 204,
+              "m": 16,
+              "retained_bound_cap_2": 182,
+              "strict_gap": 22,
+              "tau": 5
+            },
+            {
+              "D": 0,
+              "listing_requirement": 34,
+              "m": 7,
+              "retained_bound_cap_2": 14,
+              "strict_gap": 20,
+              "tau": 6
+            },
+            {
+              "D": 1,
+              "listing_requirement": 51,
+              "m": 8,
+              "retained_bound_cap_2": 31,
+              "strict_gap": 20,
+              "tau": 6
+            },
+            {
+              "D": 2,
+              "listing_requirement": 68,
+              "m": 9,
+              "retained_bound_cap_2": 48,
+              "strict_gap": 20,
+              "tau": 6
+            },
+            {
+              "D": 3,
+              "listing_requirement": 85,
+              "m": 10,
+              "retained_bound_cap_2": 65,
+              "strict_gap": 20,
+              "tau": 6
+            },
+            {
+              "D": 4,
+              "listing_requirement": 102,
+              "m": 11,
+              "retained_bound_cap_2": 82,
+              "strict_gap": 20,
+              "tau": 6
+            },
+            {
+              "D": 5,
+              "listing_requirement": 119,
+              "m": 12,
+              "retained_bound_cap_2": 99,
+              "strict_gap": 20,
+              "tau": 6
+            },
+            {
+              "D": 6,
+              "listing_requirement": 136,
+              "m": 13,
+              "retained_bound_cap_2": 116,
+              "strict_gap": 20,
+              "tau": 6
+            },
+            {
+              "D": 7,
+              "listing_requirement": 153,
+              "m": 14,
+              "retained_bound_cap_2": 133,
+              "strict_gap": 20,
+              "tau": 6
+            },
+            {
+              "D": 8,
+              "listing_requirement": 170,
+              "m": 15,
+              "retained_bound_cap_2": 150,
+              "strict_gap": 20,
+              "tau": 6
+            },
+            {
+              "D": 9,
+              "listing_requirement": 187,
+              "m": 16,
+              "retained_bound_cap_2": 167,
+              "strict_gap": 20,
+              "tau": 6
+            },
+            {
+              "D": 0,
+              "listing_requirement": 34,
+              "m": 8,
+              "retained_bound_cap_2": 16,
+              "strict_gap": 18,
+              "tau": 7
+            },
+            {
+              "D": 1,
+              "listing_requirement": 51,
+              "m": 9,
+              "retained_bound_cap_2": 33,
+              "strict_gap": 18,
+              "tau": 7
+            },
+            {
+              "D": 2,
+              "listing_requirement": 68,
+              "m": 10,
+              "retained_bound_cap_2": 50,
+              "strict_gap": 18,
+              "tau": 7
+            },
+            {
+              "D": 3,
+              "listing_requirement": 85,
+              "m": 11,
+              "retained_bound_cap_2": 67,
+              "strict_gap": 18,
+              "tau": 7
+            },
+            {
+              "D": 4,
+              "listing_requirement": 102,
+              "m": 12,
+              "retained_bound_cap_2": 84,
+              "strict_gap": 18,
+              "tau": 7
+            },
+            {
+              "D": 5,
+              "listing_requirement": 119,
+              "m": 13,
+              "retained_bound_cap_2": 101,
+              "strict_gap": 18,
+              "tau": 7
+            },
+            {
+              "D": 6,
+              "listing_requirement": 136,
+              "m": 14,
+              "retained_bound_cap_2": 118,
+              "strict_gap": 18,
+              "tau": 7
+            },
+            {
+              "D": 7,
+              "listing_requirement": 153,
+              "m": 15,
+              "retained_bound_cap_2": 135,
+              "strict_gap": 18,
+              "tau": 7
+            },
+            {
+              "D": 8,
+              "listing_requirement": 170,
+              "m": 16,
+              "retained_bound_cap_2": 152,
+              "strict_gap": 18,
+              "tau": 7
+            },
+            {
+              "D": 0,
+              "listing_requirement": 34,
+              "m": 9,
+              "retained_bound_cap_2": 18,
+              "strict_gap": 16,
+              "tau": 8
+            },
+            {
+              "D": 1,
+              "listing_requirement": 51,
+              "m": 10,
+              "retained_bound_cap_2": 35,
+              "strict_gap": 16,
+              "tau": 8
+            },
+            {
+              "D": 2,
+              "listing_requirement": 68,
+              "m": 11,
+              "retained_bound_cap_2": 52,
+              "strict_gap": 16,
+              "tau": 8
+            },
+            {
+              "D": 3,
+              "listing_requirement": 85,
+              "m": 12,
+              "retained_bound_cap_2": 69,
+              "strict_gap": 16,
+              "tau": 8
+            },
+            {
+              "D": 4,
+              "listing_requirement": 102,
+              "m": 13,
+              "retained_bound_cap_2": 86,
+              "strict_gap": 16,
+              "tau": 8
+            },
+            {
+              "D": 5,
+              "listing_requirement": 119,
+              "m": 14,
+              "retained_bound_cap_2": 103,
+              "strict_gap": 16,
+              "tau": 8
+            },
+            {
+              "D": 6,
+              "listing_requirement": 136,
+              "m": 15,
+              "retained_bound_cap_2": 120,
+              "strict_gap": 16,
+              "tau": 8
+            },
+            {
+              "D": 7,
+              "listing_requirement": 153,
+              "m": 16,
+              "retained_bound_cap_2": 137,
+              "strict_gap": 16,
+              "tau": 8
+            },
+            {
+              "D": 0,
+              "listing_requirement": 34,
+              "m": 10,
+              "retained_bound_cap_2": 20,
+              "strict_gap": 14,
+              "tau": 9
+            },
+            {
+              "D": 1,
+              "listing_requirement": 51,
+              "m": 11,
+              "retained_bound_cap_2": 37,
+              "strict_gap": 14,
+              "tau": 9
+            },
+            {
+              "D": 2,
+              "listing_requirement": 68,
+              "m": 12,
+              "retained_bound_cap_2": 54,
+              "strict_gap": 14,
+              "tau": 9
+            },
+            {
+              "D": 3,
+              "listing_requirement": 85,
+              "m": 13,
+              "retained_bound_cap_2": 71,
+              "strict_gap": 14,
+              "tau": 9
+            },
+            {
+              "D": 4,
+              "listing_requirement": 102,
+              "m": 14,
+              "retained_bound_cap_2": 88,
+              "strict_gap": 14,
+              "tau": 9
+            },
+            {
+              "D": 5,
+              "listing_requirement": 119,
+              "m": 15,
+              "retained_bound_cap_2": 105,
+              "strict_gap": 14,
+              "tau": 9
+            },
+            {
+              "D": 6,
+              "listing_requirement": 136,
+              "m": 16,
+              "retained_bound_cap_2": 122,
+              "strict_gap": 14,
+              "tau": 9
+            },
+            {
+              "D": 0,
+              "listing_requirement": 34,
+              "m": 11,
+              "retained_bound_cap_2": 22,
+              "strict_gap": 12,
+              "tau": 10
+            },
+            {
+              "D": 1,
+              "listing_requirement": 51,
+              "m": 12,
+              "retained_bound_cap_2": 39,
+              "strict_gap": 12,
+              "tau": 10
+            },
+            {
+              "D": 2,
+              "listing_requirement": 68,
+              "m": 13,
+              "retained_bound_cap_2": 56,
+              "strict_gap": 12,
+              "tau": 10
+            },
+            {
+              "D": 3,
+              "listing_requirement": 85,
+              "m": 14,
+              "retained_bound_cap_2": 73,
+              "strict_gap": 12,
+              "tau": 10
+            },
+            {
+              "D": 4,
+              "listing_requirement": 102,
+              "m": 15,
+              "retained_bound_cap_2": 90,
+              "strict_gap": 12,
+              "tau": 10
+            },
+            {
+              "D": 5,
+              "listing_requirement": 119,
+              "m": 16,
+              "retained_bound_cap_2": 107,
+              "strict_gap": 12,
+              "tau": 10
+            },
+            {
+              "D": 0,
+              "listing_requirement": 34,
+              "m": 12,
+              "retained_bound_cap_2": 24,
+              "strict_gap": 10,
+              "tau": 11
+            },
+            {
+              "D": 1,
+              "listing_requirement": 51,
+              "m": 13,
+              "retained_bound_cap_2": 41,
+              "strict_gap": 10,
+              "tau": 11
+            },
+            {
+              "D": 2,
+              "listing_requirement": 68,
+              "m": 14,
+              "retained_bound_cap_2": 58,
+              "strict_gap": 10,
+              "tau": 11
+            },
+            {
+              "D": 3,
+              "listing_requirement": 85,
+              "m": 15,
+              "retained_bound_cap_2": 75,
+              "strict_gap": 10,
+              "tau": 11
+            },
+            {
+              "D": 4,
+              "listing_requirement": 102,
+              "m": 16,
+              "retained_bound_cap_2": 92,
+              "strict_gap": 10,
+              "tau": 11
+            },
+            {
+              "D": 0,
+              "listing_requirement": 34,
+              "m": 13,
+              "retained_bound_cap_2": 26,
+              "strict_gap": 8,
+              "tau": 12
+            },
+            {
+              "D": 1,
+              "listing_requirement": 51,
+              "m": 14,
+              "retained_bound_cap_2": 43,
+              "strict_gap": 8,
+              "tau": 12
+            },
+            {
+              "D": 2,
+              "listing_requirement": 68,
+              "m": 15,
+              "retained_bound_cap_2": 60,
+              "strict_gap": 8,
+              "tau": 12
+            },
+            {
+              "D": 3,
+              "listing_requirement": 85,
+              "m": 16,
+              "retained_bound_cap_2": 77,
+              "strict_gap": 8,
+              "tau": 12
+            },
+            {
+              "D": 0,
+              "listing_requirement": 34,
+              "m": 14,
+              "retained_bound_cap_2": 28,
+              "strict_gap": 6,
+              "tau": 13
+            },
+            {
+              "D": 1,
+              "listing_requirement": 51,
+              "m": 15,
+              "retained_bound_cap_2": 45,
+              "strict_gap": 6,
+              "tau": 13
+            },
+            {
+              "D": 2,
+              "listing_requirement": 68,
+              "m": 16,
+              "retained_bound_cap_2": 62,
+              "strict_gap": 6,
+              "tau": 13
+            },
+            {
+              "D": 0,
+              "listing_requirement": 34,
+              "m": 15,
+              "retained_bound_cap_2": 30,
+              "strict_gap": 4,
+              "tau": 14
+            },
+            {
+              "D": 1,
+              "listing_requirement": 51,
+              "m": 16,
+              "retained_bound_cap_2": 47,
+              "strict_gap": 4,
+              "tau": 14
+            },
+            {
+              "D": 0,
+              "listing_requirement": 34,
+              "m": 16,
+              "retained_bound_cap_2": 32,
+              "strict_gap": 2,
+              "tau": 15
+            }
+          ],
+          "root_cap": 2
+        },
+        "width_three_transition": {
+          "first_tau_not_paid_by_width": 11,
+          "last_tau_paid_by_cyclic_width": 10,
+          "minimum_required_cosets_at_first_unpaid_tau": 23,
+          "p": 239,
+          "quotient_cosets": 14,
+          "unavailable_from_first_unpaid_tau_onward": true
+        }
+      },
+      "cyclic_span_widths": [
+        {
+          "delta": 2,
+          "exponent_ratio": 2
+        },
+        {
+          "delta": 3,
+          "exponent_ratio": 3
+        },
+        {
+          "delta": 4,
+          "exponent_ratio": 4
+        },
+        {
+          "delta": 4,
+          "exponent_ratio": 5
+        },
+        {
+          "delta": 3,
+          "exponent_ratio": 6
+        },
+        {
+          "delta": 4,
+          "exponent_ratio": 7
+        },
+        {
+          "delta": 3,
+          "exponent_ratio": 8
+        },
+        {
+          "delta": 2,
+          "exponent_ratio": 9
+        },
+        {
+          "delta": 3,
+          "exponent_ratio": 10
+        },
+        {
+          "delta": 4,
+          "exponent_ratio": 11
+        },
+        {
+          "delta": 3,
+          "exponent_ratio": 12
+        },
+        {
+          "delta": 4,
+          "exponent_ratio": 13
+        },
+        {
+          "delta": 4,
+          "exponent_ratio": 14
+        },
+        {
+          "delta": 3,
+          "exponent_ratio": 15
+        },
+        {
+          "delta": 2,
+          "exponent_ratio": 16
+        }
+      ],
+      "ell": 17,
+      "exceptional_prime_rank_exhaustions": [
+        {
+          "all_four_by_three_matrices_full_column_rank": true,
+          "ell": 17,
+          "four_subset_rank_tests": 35700,
+          "generator": 5,
+          "p": 103,
+          "quotient_cosets": 6,
+          "ratio_rows": [
+            {
+              "cyclic_span_width": 2,
+              "exact_max_roots": 2,
+              "exponent_ratio": 2,
+              "singular_four_subsets": 0,
+              "singular_three_subsets": 0,
+              "three_root_witness": null
+            },
+            {
+              "cyclic_span_width": 3,
+              "exact_max_roots": 3,
+              "exponent_ratio": 3,
+              "singular_four_subsets": 0,
+              "singular_three_subsets": 17,
+              "three_root_witness": {
+                "coefficients_A_B_C": [
+                  7,
+                  25,
+                  71
+                ],
+                "root_indices": [
+                  0,
+                  1,
+                  14
+                ],
+                "root_values": [
+                  1,
+                  72,
+                  30
+                ]
+              }
+            },
+            {
+              "cyclic_span_width": 4,
+              "exact_max_roots": 3,
+              "exponent_ratio": 4,
+              "singular_four_subsets": 0,
+              "singular_three_subsets": 17,
+              "three_root_witness": {
+                "coefficients_A_B_C": [
+                  54,
+                  81,
+                  71
+                ],
+                "root_indices": [
+                  0,
+                  1,
+                  15
+                ],
+                "root_values": [
+                  1,
+                  72,
+                  100
+                ]
+              }
+            },
+            {
+              "cyclic_span_width": 4,
+              "exact_max_roots": 3,
+              "exponent_ratio": 5,
+              "singular_four_subsets": 0,
+              "singular_three_subsets": 17,
+              "three_root_witness": {
+                "coefficients_A_B_C": [
+                  56,
+                  25,
+                  22
+                ],
+                "root_indices": [
+                  0,
+                  4,
+                  12
+                ],
+                "root_values": [
+                  1,
+                  23,
+                  13
+                ]
+              }
+            },
+            {
+              "cyclic_span_width": 3,
+              "exact_max_roots": 3,
+              "exponent_ratio": 6,
+              "singular_four_subsets": 0,
+              "singular_three_subsets": 17,
+              "three_root_witness": {
+                "coefficients_A_B_C": [
+                  96,
+                  32,
+                  78
+                ],
+                "root_indices": [
+                  0,
+                  3,
+                  8
+                ],
+                "root_values": [
+                  1,
+                  79,
+                  14
+                ]
+              }
+            },
+            {
+              "cyclic_span_width": 4,
+              "exact_max_roots": 3,
+              "exponent_ratio": 7,
+              "singular_four_subsets": 0,
+              "singular_three_subsets": 17,
+              "three_root_witness": {
+                "coefficients_A_B_C": [
+                  47,
+                  81,
+                  78
+                ],
+                "root_indices": [
+                  0,
+                  3,
+                  9
+                ],
+                "root_values": [
+                  1,
+                  79,
+                  81
+                ]
+              }
+            },
+            {
+              "cyclic_span_width": 3,
+              "exact_max_roots": 3,
+              "exponent_ratio": 8,
+              "singular_four_subsets": 0,
+              "singular_three_subsets": 17,
+              "three_root_witness": {
+                "coefficients_A_B_C": [
+                  59,
+                  11,
+                  33
+                ],
+                "root_indices": [
+                  0,
+                  2,
+                  11
+                ],
+                "root_values": [
+                  1,
+                  34,
+                  76
+                ]
+              }
+            },
+            {
+              "cyclic_span_width": 2,
+              "exact_max_roots": 2,
+              "exponent_ratio": 9,
+              "singular_four_subsets": 0,
+              "singular_three_subsets": 0,
+              "three_root_witness": null
+            },
+            {
+              "cyclic_span_width": 3,
+              "exact_max_roots": 3,
+              "exponent_ratio": 10,
+              "singular_four_subsets": 0,
+              "singular_three_subsets": 17,
+              "three_root_witness": {
+                "coefficients_A_B_C": [
+                  45,
+                  25,
+                  33
+                ],
+                "root_indices": [
+                  0,
+                  2,
+                  8
+                ],
+                "root_values": [
+                  1,
+                  34,
+                  14
+                ]
+              }
+            },
+            {
+              "cyclic_span_width": 4,
+              "exact_max_roots": 3,
+              "exponent_ratio": 11,
+              "singular_four_subsets": 0,
+              "singular_three_subsets": 17,
+              "three_root_witness": {
+                "coefficients_A_B_C": [
+                  14,
+                  11,
+                  78
+                ],
+                "root_indices": [
+                  0,
+                  3,
+                  11
+                ],
+                "root_values": [
+                  1,
+                  79,
+                  76
+                ]
+              }
+            },
+            {
+              "cyclic_span_width": 3,
+              "exact_max_roots": 3,
+              "exponent_ratio": 12,
+              "singular_four_subsets": 0,
+              "singular_three_subsets": 17,
+              "three_root_witness": {
+                "coefficients_A_B_C": [
+                  58,
+                  70,
+                  78
+                ],
+                "root_indices": [
+                  0,
+                  3,
+                  12
+                ],
+                "root_values": [
+                  1,
+                  79,
+                  13
+                ]
+              }
+            },
+            {
+              "cyclic_span_width": 4,
+              "exact_max_roots": 3,
+              "exponent_ratio": 13,
+              "singular_four_subsets": 0,
+              "singular_three_subsets": 17,
+              "three_root_witness": {
+                "coefficients_A_B_C": [
+                  49,
+                  32,
+                  22
+                ],
+                "root_indices": [
+                  0,
+                  4,
+                  9
+                ],
+                "root_values": [
+                  1,
+                  23,
+                  81
+                ]
+              }
+            },
+            {
+              "cyclic_span_width": 4,
+              "exact_max_roots": 3,
+              "exponent_ratio": 14,
+              "singular_four_subsets": 0,
+              "singular_three_subsets": 17,
+              "three_root_witness": {
+                "coefficients_A_B_C": [
+                  61,
+                  74,
+                  71
+                ],
+                "root_indices": [
+                  0,
+                  1,
+                  3
+                ],
+                "root_values": [
+                  1,
+                  72,
+                  79
+                ]
+              }
+            },
+            {
+              "cyclic_span_width": 3,
+              "exact_max_roots": 3,
+              "exponent_ratio": 15,
+              "singular_four_subsets": 0,
+              "singular_three_subsets": 17,
+              "three_root_witness": {
+                "coefficients_A_B_C": [
+                  28,
+                  4,
+                  71
+                ],
+                "root_indices": [
+                  0,
+                  1,
+                  4
+                ],
+                "root_values": [
+                  1,
+                  72,
+                  23
+                ]
+              }
+            },
+            {
+              "cyclic_span_width": 2,
+              "exact_max_roots": 2,
+              "exponent_ratio": 16,
+              "singular_four_subsets": 0,
+              "singular_three_subsets": 0,
+              "three_root_witness": null
+            }
+          ],
+          "ratios_with_exactly_three_roots": [
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ],
+          "three_subset_rank_tests": 10200,
+          "zeta": 72
+        },
+        {
+          "all_four_by_three_matrices_full_column_rank": true,
+          "ell": 17,
+          "four_subset_rank_tests": 35700,
+          "generator": 7,
+          "p": 239,
+          "quotient_cosets": 14,
+          "ratio_rows": [
+            {
+              "cyclic_span_width": 2,
+              "exact_max_roots": 2,
+              "exponent_ratio": 2,
+              "singular_four_subsets": 0,
+              "singular_three_subsets": 0,
+              "three_root_witness": null
+            },
+            {
+              "cyclic_span_width": 3,
+              "exact_max_roots": 3,
+              "exponent_ratio": 3,
+              "singular_four_subsets": 0,
+              "singular_three_subsets": 17,
+              "three_root_witness": {
+                "coefficients_A_B_C": [
+                  215,
+                  77,
+                  186
+                ],
+                "root_indices": [
+                  0,
+                  4,
+                  9
+                ],
+                "root_values": [
+                  1,
+                  187,
+                  51
+                ]
+              }
+            },
+            {
+              "cyclic_span_width": 4,
+              "exact_max_roots": 2,
+              "exponent_ratio": 4,
+              "singular_four_subsets": 0,
+              "singular_three_subsets": 0,
+              "three_root_witness": null
+            },
+            {
+              "cyclic_span_width": 4,
+              "exact_max_roots": 2,
+              "exponent_ratio": 5,
+              "singular_four_subsets": 0,
+              "singular_three_subsets": 0,
+              "three_root_witness": null
+            },
+            {
+              "cyclic_span_width": 3,
+              "exact_max_roots": 3,
+              "exponent_ratio": 6,
+              "singular_four_subsets": 0,
+              "singular_three_subsets": 17,
+              "three_root_witness": {
+                "coefficients_A_B_C": [
+                  96,
+                  77,
+                  66
+                ],
+                "root_indices": [
+                  0,
+                  2,
+                  7
+                ],
+                "root_values": [
+                  1,
+                  67,
+                  40
+                ]
+              }
+            },
+            {
+              "cyclic_span_width": 4,
+              "exact_max_roots": 2,
+              "exponent_ratio": 7,
+              "singular_four_subsets": 0,
+              "singular_three_subsets": 0,
+              "three_root_witness": null
+            },
+            {
+              "cyclic_span_width": 3,
+              "exact_max_roots": 3,
+              "exponent_ratio": 8,
+              "singular_four_subsets": 0,
+              "singular_three_subsets": 17,
+              "three_root_witness": {
+                "coefficients_A_B_C": [
+                  103,
+                  165,
+                  210
+                ],
+                "root_indices": [
+                  0,
+                  1,
+                  8
+                ],
+                "root_values": [
+                  1,
+                  211,
+                  75
+                ]
+              }
+            },
+            {
+              "cyclic_span_width": 2,
+              "exact_max_roots": 2,
+              "exponent_ratio": 9,
+              "singular_four_subsets": 0,
+              "singular_three_subsets": 0,
+              "three_root_witness": null
+            },
+            {
+              "cyclic_span_width": 3,
+              "exact_max_roots": 3,
+              "exponent_ratio": 10,
+              "singular_four_subsets": 0,
+              "singular_three_subsets": 17,
+              "three_root_witness": {
+                "coefficients_A_B_C": [
+                  34,
+                  234,
+                  210
+                ],
+                "root_indices": [
+                  0,
+                  1,
+                  10
+                ],
+                "root_values": [
+                  1,
+                  211,
+                  6
+                ]
+              }
+            },
+            {
+              "cyclic_span_width": 4,
+              "exact_max_roots": 2,
+              "exponent_ratio": 11,
+              "singular_four_subsets": 0,
+              "singular_three_subsets": 0,
+              "three_root_witness": null
+            },
+            {
+              "cyclic_span_width": 3,
+              "exact_max_roots": 3,
+              "exponent_ratio": 12,
+              "singular_four_subsets": 0,
+              "singular_three_subsets": 17,
+              "three_root_witness": {
+                "coefficients_A_B_C": [
+                  212,
+                  200,
+                  66
+                ],
+                "root_indices": [
+                  0,
+                  2,
+                  12
+                ],
+                "root_values": [
+                  1,
+                  67,
+                  163
+                ]
+              }
+            },
+            {
+              "cyclic_span_width": 4,
+              "exact_max_roots": 2,
+              "exponent_ratio": 13,
+              "singular_four_subsets": 0,
+              "singular_three_subsets": 0,
+              "three_root_witness": null
+            },
+            {
+              "cyclic_span_width": 4,
+              "exact_max_roots": 2,
+              "exponent_ratio": 14,
+              "singular_four_subsets": 0,
+              "singular_three_subsets": 0,
+              "three_root_witness": null
+            },
+            {
+              "cyclic_span_width": 3,
+              "exact_max_roots": 3,
+              "exponent_ratio": 15,
+              "singular_four_subsets": 0,
+              "singular_three_subsets": 17,
+              "three_root_witness": {
+                "coefficients_A_B_C": [
+                  103,
+                  189,
+                  186
+                ],
+                "root_indices": [
+                  0,
+                  4,
+                  12
+                ],
+                "root_values": [
+                  1,
+                  187,
+                  163
+                ]
+              }
+            },
+            {
+              "cyclic_span_width": 2,
+              "exact_max_roots": 2,
+              "exponent_ratio": 16,
+              "singular_four_subsets": 0,
+              "singular_three_subsets": 0,
+              "three_root_witness": null
+            }
+          ],
+          "ratios_with_exactly_three_roots": [
+            3,
+            6,
+            8,
+            10,
+            12,
+            15
+          ],
+          "three_subset_rank_tests": 10200,
+          "zeta": 211
+        },
+        {
+          "all_four_by_three_matrices_full_column_rank": true,
+          "ell": 17,
+          "four_subset_rank_tests": 35700,
+          "generator": 3,
+          "p": 1361,
+          "quotient_cosets": 80,
+          "ratio_rows": [
+            {
+              "cyclic_span_width": 2,
+              "exact_max_roots": 2,
+              "exponent_ratio": 2,
+              "singular_four_subsets": 0,
+              "singular_three_subsets": 0,
+              "three_root_witness": null
+            },
+            {
+              "cyclic_span_width": 3,
+              "exact_max_roots": 2,
+              "exponent_ratio": 3,
+              "singular_four_subsets": 0,
+              "singular_three_subsets": 0,
+              "three_root_witness": null
+            },
+            {
+              "cyclic_span_width": 4,
+              "exact_max_roots": 3,
+              "exponent_ratio": 4,
+              "singular_four_subsets": 0,
+              "singular_three_subsets": 17,
+              "three_root_witness": {
+                "coefficients_A_B_C": [
+                  950,
+                  862,
+                  910
+                ],
+                "root_indices": [
+                  0,
+                  2,
+                  10
+                ],
+                "root_values": [
+                  1,
+                  911,
+                  926
+                ]
+              }
+            },
+            {
+              "cyclic_span_width": 4,
+              "exact_max_roots": 3,
+              "exponent_ratio": 5,
+              "singular_four_subsets": 0,
+              "singular_three_subsets": 17,
+              "three_root_witness": {
+                "coefficients_A_B_C": [
+                  15,
+                  436,
+                  910
+                ],
+                "root_indices": [
+                  0,
+                  2,
+                  8
+                ],
+                "root_values": [
+                  1,
+                  911,
+                  500
+                ]
+              }
+            },
+            {
+              "cyclic_span_width": 3,
+              "exact_max_roots": 2,
+              "exponent_ratio": 6,
+              "singular_four_subsets": 0,
+              "singular_three_subsets": 0,
+              "three_root_witness": null
+            },
+            {
+              "cyclic_span_width": 4,
+              "exact_max_roots": 3,
+              "exponent_ratio": 7,
+              "singular_four_subsets": 0,
+              "singular_three_subsets": 17,
+              "three_root_witness": {
+                "coefficients_A_B_C": [
+                  152,
+                  138,
+                  1071
+                ],
+                "root_indices": [
+                  0,
+                  4,
+                  11
+                ],
+                "root_values": [
+                  1,
+                  1072,
+                  1224
+                ]
+              }
+            },
+            {
+              "cyclic_span_width": 3,
+              "exact_max_roots": 2,
+              "exponent_ratio": 8,
+              "singular_four_subsets": 0,
+              "singular_three_subsets": 0,
+              "three_root_witness": null
+            },
+            {
+              "cyclic_span_width": 2,
+              "exact_max_roots": 2,
+              "exponent_ratio": 9,
+              "singular_four_subsets": 0,
+              "singular_three_subsets": 0,
+              "three_root_witness": null
+            },
+            {
+              "cyclic_span_width": 3,
+              "exact_max_roots": 2,
+              "exponent_ratio": 10,
+              "singular_four_subsets": 0,
+              "singular_three_subsets": 0,
+              "three_root_witness": null
+            },
+            {
+              "cyclic_span_width": 4,
+              "exact_max_roots": 3,
+              "exponent_ratio": 11,
+              "singular_four_subsets": 0,
+              "singular_three_subsets": 17,
+              "three_root_witness": {
+                "coefficients_A_B_C": [
+                  1215,
+                  436,
+                  1071
+                ],
+                "root_indices": [
+                  0,
+                  4,
+                  10
+                ],
+                "root_values": [
+                  1,
+                  1072,
+                  926
+                ]
+              }
+            },
+            {
+              "cyclic_span_width": 3,
+              "exact_max_roots": 2,
+              "exponent_ratio": 12,
+              "singular_four_subsets": 0,
+              "singular_three_subsets": 0,
+              "three_root_witness": null
+            },
+            {
+              "cyclic_span_width": 4,
+              "exact_max_roots": 3,
+              "exponent_ratio": 13,
+              "singular_four_subsets": 0,
+              "singular_three_subsets": 17,
+              "three_root_witness": {
+                "coefficients_A_B_C": [
+                  1155,
+                  657,
+                  910
+                ],
+                "root_indices": [
+                  0,
+                  2,
+                  11
+                ],
+                "root_values": [
+                  1,
+                  911,
+                  1224
+                ]
+              }
+            },
+            {
+              "cyclic_span_width": 4,
+              "exact_max_roots": 3,
+              "exponent_ratio": 14,
+              "singular_four_subsets": 0,
+              "singular_three_subsets": 17,
+              "three_root_witness": {
+                "coefficients_A_B_C": [
+                  313,
+                  138,
+                  910
+                ],
+                "root_indices": [
+                  0,
+                  2,
+                  9
+                ],
+                "root_values": [
+                  1,
+                  911,
+                  705
+                ]
+              }
+            },
+            {
+              "cyclic_span_width": 3,
+              "exact_max_roots": 2,
+              "exponent_ratio": 15,
+              "singular_four_subsets": 0,
+              "singular_three_subsets": 0,
+              "three_root_witness": null
+            },
+            {
+              "cyclic_span_width": 2,
+              "exact_max_roots": 2,
+              "exponent_ratio": 16,
+              "singular_four_subsets": 0,
+              "singular_three_subsets": 0,
+              "three_root_witness": null
+            }
+          ],
+          "ratios_with_exactly_three_roots": [
+            4,
+            5,
+            7,
+            11,
+            13,
+            14
+          ],
+          "three_subset_rank_tests": 10200,
+          "zeta": 260
+        }
+      ],
+      "resultant_sieve": {
+        "external_admissible_prime_factors": [
+          103,
+          239,
+          1361
+        ],
+        "normalized_resultant_values": [
+          1,
+          103,
+          239,
+          1361
+        ],
+        "orbit_normalization_reason": "AGL unit powers and translations act by row/column permutations, cyclotomic Galois automorphisms, and nonzero monomial factors; therefore the absolute quotient resultant is constant on each ordered pair of exponent/root orbits.",
+        "orbit_table": [
+          {
+            "determinant_degree": 5,
+            "exponent_class": [
+              0,
+              1,
+              2
+            ],
+            "exponent_representative": 2,
+            "factorization": [],
+            "quotient_degree": 0,
+            "quotient_resultant": 1,
+            "raw_factorization_check": true,
+            "root_class": [
+              0,
+              1,
+              2
+            ],
+            "root_representative": 2,
+            "vandermonde_degree": 5
+          },
+          {
+            "determinant_degree": 7,
+            "exponent_class": [
+              0,
+              1,
+              2
+            ],
+            "exponent_representative": 2,
+            "factorization": [],
+            "quotient_degree": 0,
+            "quotient_resultant": 1,
+            "raw_factorization_check": true,
+            "root_class": [
+              0,
+              1,
+              3
+            ],
+            "root_representative": 3,
+            "vandermonde_degree": 7
+          },
+          {
+            "determinant_degree": 9,
+            "exponent_class": [
+              0,
+              1,
+              2
+            ],
+            "exponent_representative": 2,
+            "factorization": [],
+            "quotient_degree": 0,
+            "quotient_resultant": 1,
+            "raw_factorization_check": true,
+            "root_class": [
+              0,
+              1,
+              4
+            ],
+            "root_representative": 4,
+            "vandermonde_degree": 9
+          },
+          {
+            "determinant_degree": 7,
+            "exponent_class": [
+              0,
+              1,
+              3
+            ],
+            "exponent_representative": 3,
+            "factorization": [],
+            "quotient_degree": 2,
+            "quotient_resultant": 1,
+            "raw_factorization_check": true,
+            "root_class": [
+              0,
+              1,
+              2
+            ],
+            "root_representative": 2,
+            "vandermonde_degree": 5
+          },
+          {
+            "determinant_degree": 10,
+            "exponent_class": [
+              0,
+              1,
+              3
+            ],
+            "exponent_representative": 3,
+            "factorization": [
+              [
+                239,
+                1
+              ]
+            ],
+            "quotient_degree": 3,
+            "quotient_resultant": 239,
+            "raw_factorization_check": true,
+            "root_class": [
+              0,
+              1,
+              3
+            ],
+            "root_representative": 3,
+            "vandermonde_degree": 7
+          },
+          {
+            "determinant_degree": 13,
+            "exponent_class": [
+              0,
+              1,
+              3
+            ],
+            "exponent_representative": 3,
+            "factorization": [
+              [
+                103,
+                1
+              ]
+            ],
+            "quotient_degree": 4,
+            "quotient_resultant": 103,
+            "raw_factorization_check": true,
+            "root_class": [
+              0,
+              1,
+              4
+            ],
+            "root_representative": 4,
+            "vandermonde_degree": 9
+          },
+          {
+            "determinant_degree": 9,
+            "exponent_class": [
+              0,
+              1,
+              4
+            ],
+            "exponent_representative": 4,
+            "factorization": [],
+            "quotient_degree": 4,
+            "quotient_resultant": 1,
+            "raw_factorization_check": true,
+            "root_class": [
+              0,
+              1,
+              2
+            ],
+            "root_representative": 2,
+            "vandermonde_degree": 5
+          },
+          {
+            "determinant_degree": 13,
+            "exponent_class": [
+              0,
+              1,
+              4
+            ],
+            "exponent_representative": 4,
+            "factorization": [
+              [
+                103,
+                1
+              ]
+            ],
+            "quotient_degree": 6,
+            "quotient_resultant": 103,
+            "raw_factorization_check": true,
+            "root_class": [
+              0,
+              1,
+              3
+            ],
+            "root_representative": 3,
+            "vandermonde_degree": 7
+          },
+          {
+            "determinant_degree": 17,
+            "exponent_class": [
+              0,
+              1,
+              4
+            ],
+            "exponent_representative": 4,
+            "factorization": [
+              [
+                1361,
+                1
+              ]
+            ],
+            "quotient_degree": 8,
+            "quotient_resultant": 1361,
+            "raw_factorization_check": true,
+            "root_class": [
+              0,
+              1,
+              4
+            ],
+            "root_representative": 4,
+            "vandermonde_degree": 9
+          }
+        ],
+        "vandermonde_resultant": 4913
+      }
+    },
+    {
+      "affine_orbits": {
+        "orbit_count": 4,
+        "orbits": [
+          {
+            "canonical": [
+              0,
+              1,
+              2
+            ],
+            "normalized_ratios": [
+              2,
+              10,
+              18
+            ],
+            "representative_ratio": 2,
+            "support_orbit_size": 171
+          },
+          {
+            "canonical": [
+              0,
+              1,
+              3
+            ],
+            "normalized_ratios": [
+              3,
+              7,
+              9,
+              11,
+              13,
+              17
+            ],
+            "representative_ratio": 3,
+            "support_orbit_size": 342
+          },
+          {
+            "canonical": [
+              0,
+              1,
+              4
+            ],
+            "normalized_ratios": [
+              4,
+              5,
+              6,
+              14,
+              15,
+              16
+            ],
+            "representative_ratio": 4,
+            "support_orbit_size": 342
+          },
+          {
+            "canonical": [
+              0,
+              1,
+              8
+            ],
+            "normalized_ratios": [
+              8,
+              12
+            ],
+            "representative_ratio": 8,
+            "support_orbit_size": 114
+          }
+        ]
+      },
+      "cell_classification": {
+        "exceptional_classification_row_count": 4641,
+        "exceptional_route_counts": {
+          "EXPLICIT_UNRESOLVED_FRONTIER": 126,
+          "Fourier_resultant_two_root_cap": 390,
+          "cyclic_width_vacancy": 3057,
+          "four_by_three_rank_three_root_cap": 144,
+          "prime_field_coset_unavailable": 924
+        },
+        "frontier": {
+          "exponent_ratios": [
+            4,
+            5,
+            6,
+            14,
+            15,
+            16
+          ],
+          "four_root_event": false,
+          "m_condition": "tau < m < ell",
+          "p": 2699,
+          "parameter_pair_count": 21,
+          "parameter_pairs": [
+            [
+              12,
+              13
+            ],
+            [
+              12,
+              14
+            ],
+            [
+              12,
+              15
+            ],
+            [
+              12,
+              16
+            ],
+            [
+              12,
+              17
+            ],
+            [
+              12,
+              18
+            ],
+            [
+              13,
+              14
+            ],
+            [
+              13,
+              15
+            ],
+            [
+              13,
+              16
+            ],
+            [
+              13,
+              17
+            ],
+            [
+              13,
+              18
+            ],
+            [
+              14,
+              15
+            ],
+            [
+              14,
+              16
+            ],
+            [
+              14,
+              17
+            ],
+            [
+              14,
+              18
+            ],
+            [
+              15,
+              16
+            ],
+            [
+              15,
+              17
+            ],
+            [
+              15,
+              18
+            ],
+            [
+              16,
+              17
+            ],
+            [
+              16,
+              18
+            ],
+            [
+              17,
+              18
+            ]
+          ],
+          "proven_live_coset_root_cap": 3,
+          "ratio_parameter_cell_count": 126,
+          "status": "UNRESOLVED_NOT_A_COUNTEREXAMPLE",
+          "tau_max": 17,
+          "tau_min": 12
+        },
+        "generic_nonexceptional_characteristics": {
+          "all_cells_vacant": true,
+          "cell_rows": [
+            {
+              "D": 0,
+              "listing_requirement": 38,
+              "m": 6,
+              "retained_bound_cap_2": 12,
+              "strict_gap": 26,
+              "tau": 5
+            },
+            {
+              "D": 1,
+              "listing_requirement": 57,
+              "m": 7,
+              "retained_bound_cap_2": 31,
+              "strict_gap": 26,
+              "tau": 5
+            },
+            {
+              "D": 2,
+              "listing_requirement": 76,
+              "m": 8,
+              "retained_bound_cap_2": 50,
+              "strict_gap": 26,
+              "tau": 5
+            },
+            {
+              "D": 3,
+              "listing_requirement": 95,
+              "m": 9,
+              "retained_bound_cap_2": 69,
+              "strict_gap": 26,
+              "tau": 5
+            },
+            {
+              "D": 4,
+              "listing_requirement": 114,
+              "m": 10,
+              "retained_bound_cap_2": 88,
+              "strict_gap": 26,
+              "tau": 5
+            },
+            {
+              "D": 5,
+              "listing_requirement": 133,
+              "m": 11,
+              "retained_bound_cap_2": 107,
+              "strict_gap": 26,
+              "tau": 5
+            },
+            {
+              "D": 6,
+              "listing_requirement": 152,
+              "m": 12,
+              "retained_bound_cap_2": 126,
+              "strict_gap": 26,
+              "tau": 5
+            },
+            {
+              "D": 7,
+              "listing_requirement": 171,
+              "m": 13,
+              "retained_bound_cap_2": 145,
+              "strict_gap": 26,
+              "tau": 5
+            },
+            {
+              "D": 8,
+              "listing_requirement": 190,
+              "m": 14,
+              "retained_bound_cap_2": 164,
+              "strict_gap": 26,
+              "tau": 5
+            },
+            {
+              "D": 9,
+              "listing_requirement": 209,
+              "m": 15,
+              "retained_bound_cap_2": 183,
+              "strict_gap": 26,
+              "tau": 5
+            },
+            {
+              "D": 10,
+              "listing_requirement": 228,
+              "m": 16,
+              "retained_bound_cap_2": 202,
+              "strict_gap": 26,
+              "tau": 5
+            },
+            {
+              "D": 11,
+              "listing_requirement": 247,
+              "m": 17,
+              "retained_bound_cap_2": 221,
+              "strict_gap": 26,
+              "tau": 5
+            },
+            {
+              "D": 12,
+              "listing_requirement": 266,
+              "m": 18,
+              "retained_bound_cap_2": 240,
+              "strict_gap": 26,
+              "tau": 5
+            },
+            {
+              "D": 0,
+              "listing_requirement": 38,
+              "m": 7,
+              "retained_bound_cap_2": 14,
+              "strict_gap": 24,
+              "tau": 6
+            },
+            {
+              "D": 1,
+              "listing_requirement": 57,
+              "m": 8,
+              "retained_bound_cap_2": 33,
+              "strict_gap": 24,
+              "tau": 6
+            },
+            {
+              "D": 2,
+              "listing_requirement": 76,
+              "m": 9,
+              "retained_bound_cap_2": 52,
+              "strict_gap": 24,
+              "tau": 6
+            },
+            {
+              "D": 3,
+              "listing_requirement": 95,
+              "m": 10,
+              "retained_bound_cap_2": 71,
+              "strict_gap": 24,
+              "tau": 6
+            },
+            {
+              "D": 4,
+              "listing_requirement": 114,
+              "m": 11,
+              "retained_bound_cap_2": 90,
+              "strict_gap": 24,
+              "tau": 6
+            },
+            {
+              "D": 5,
+              "listing_requirement": 133,
+              "m": 12,
+              "retained_bound_cap_2": 109,
+              "strict_gap": 24,
+              "tau": 6
+            },
+            {
+              "D": 6,
+              "listing_requirement": 152,
+              "m": 13,
+              "retained_bound_cap_2": 128,
+              "strict_gap": 24,
+              "tau": 6
+            },
+            {
+              "D": 7,
+              "listing_requirement": 171,
+              "m": 14,
+              "retained_bound_cap_2": 147,
+              "strict_gap": 24,
+              "tau": 6
+            },
+            {
+              "D": 8,
+              "listing_requirement": 190,
+              "m": 15,
+              "retained_bound_cap_2": 166,
+              "strict_gap": 24,
+              "tau": 6
+            },
+            {
+              "D": 9,
+              "listing_requirement": 209,
+              "m": 16,
+              "retained_bound_cap_2": 185,
+              "strict_gap": 24,
+              "tau": 6
+            },
+            {
+              "D": 10,
+              "listing_requirement": 228,
+              "m": 17,
+              "retained_bound_cap_2": 204,
+              "strict_gap": 24,
+              "tau": 6
+            },
+            {
+              "D": 11,
+              "listing_requirement": 247,
+              "m": 18,
+              "retained_bound_cap_2": 223,
+              "strict_gap": 24,
+              "tau": 6
+            },
+            {
+              "D": 0,
+              "listing_requirement": 38,
+              "m": 8,
+              "retained_bound_cap_2": 16,
+              "strict_gap": 22,
+              "tau": 7
+            },
+            {
+              "D": 1,
+              "listing_requirement": 57,
+              "m": 9,
+              "retained_bound_cap_2": 35,
+              "strict_gap": 22,
+              "tau": 7
+            },
+            {
+              "D": 2,
+              "listing_requirement": 76,
+              "m": 10,
+              "retained_bound_cap_2": 54,
+              "strict_gap": 22,
+              "tau": 7
+            },
+            {
+              "D": 3,
+              "listing_requirement": 95,
+              "m": 11,
+              "retained_bound_cap_2": 73,
+              "strict_gap": 22,
+              "tau": 7
+            },
+            {
+              "D": 4,
+              "listing_requirement": 114,
+              "m": 12,
+              "retained_bound_cap_2": 92,
+              "strict_gap": 22,
+              "tau": 7
+            },
+            {
+              "D": 5,
+              "listing_requirement": 133,
+              "m": 13,
+              "retained_bound_cap_2": 111,
+              "strict_gap": 22,
+              "tau": 7
+            },
+            {
+              "D": 6,
+              "listing_requirement": 152,
+              "m": 14,
+              "retained_bound_cap_2": 130,
+              "strict_gap": 22,
+              "tau": 7
+            },
+            {
+              "D": 7,
+              "listing_requirement": 171,
+              "m": 15,
+              "retained_bound_cap_2": 149,
+              "strict_gap": 22,
+              "tau": 7
+            },
+            {
+              "D": 8,
+              "listing_requirement": 190,
+              "m": 16,
+              "retained_bound_cap_2": 168,
+              "strict_gap": 22,
+              "tau": 7
+            },
+            {
+              "D": 9,
+              "listing_requirement": 209,
+              "m": 17,
+              "retained_bound_cap_2": 187,
+              "strict_gap": 22,
+              "tau": 7
+            },
+            {
+              "D": 10,
+              "listing_requirement": 228,
+              "m": 18,
+              "retained_bound_cap_2": 206,
+              "strict_gap": 22,
+              "tau": 7
+            },
+            {
+              "D": 0,
+              "listing_requirement": 38,
+              "m": 9,
+              "retained_bound_cap_2": 18,
+              "strict_gap": 20,
+              "tau": 8
+            },
+            {
+              "D": 1,
+              "listing_requirement": 57,
+              "m": 10,
+              "retained_bound_cap_2": 37,
+              "strict_gap": 20,
+              "tau": 8
+            },
+            {
+              "D": 2,
+              "listing_requirement": 76,
+              "m": 11,
+              "retained_bound_cap_2": 56,
+              "strict_gap": 20,
+              "tau": 8
+            },
+            {
+              "D": 3,
+              "listing_requirement": 95,
+              "m": 12,
+              "retained_bound_cap_2": 75,
+              "strict_gap": 20,
+              "tau": 8
+            },
+            {
+              "D": 4,
+              "listing_requirement": 114,
+              "m": 13,
+              "retained_bound_cap_2": 94,
+              "strict_gap": 20,
+              "tau": 8
+            },
+            {
+              "D": 5,
+              "listing_requirement": 133,
+              "m": 14,
+              "retained_bound_cap_2": 113,
+              "strict_gap": 20,
+              "tau": 8
+            },
+            {
+              "D": 6,
+              "listing_requirement": 152,
+              "m": 15,
+              "retained_bound_cap_2": 132,
+              "strict_gap": 20,
+              "tau": 8
+            },
+            {
+              "D": 7,
+              "listing_requirement": 171,
+              "m": 16,
+              "retained_bound_cap_2": 151,
+              "strict_gap": 20,
+              "tau": 8
+            },
+            {
+              "D": 8,
+              "listing_requirement": 190,
+              "m": 17,
+              "retained_bound_cap_2": 170,
+              "strict_gap": 20,
+              "tau": 8
+            },
+            {
+              "D": 9,
+              "listing_requirement": 209,
+              "m": 18,
+              "retained_bound_cap_2": 189,
+              "strict_gap": 20,
+              "tau": 8
+            },
+            {
+              "D": 0,
+              "listing_requirement": 38,
+              "m": 10,
+              "retained_bound_cap_2": 20,
+              "strict_gap": 18,
+              "tau": 9
+            },
+            {
+              "D": 1,
+              "listing_requirement": 57,
+              "m": 11,
+              "retained_bound_cap_2": 39,
+              "strict_gap": 18,
+              "tau": 9
+            },
+            {
+              "D": 2,
+              "listing_requirement": 76,
+              "m": 12,
+              "retained_bound_cap_2": 58,
+              "strict_gap": 18,
+              "tau": 9
+            },
+            {
+              "D": 3,
+              "listing_requirement": 95,
+              "m": 13,
+              "retained_bound_cap_2": 77,
+              "strict_gap": 18,
+              "tau": 9
+            },
+            {
+              "D": 4,
+              "listing_requirement": 114,
+              "m": 14,
+              "retained_bound_cap_2": 96,
+              "strict_gap": 18,
+              "tau": 9
+            },
+            {
+              "D": 5,
+              "listing_requirement": 133,
+              "m": 15,
+              "retained_bound_cap_2": 115,
+              "strict_gap": 18,
+              "tau": 9
+            },
+            {
+              "D": 6,
+              "listing_requirement": 152,
+              "m": 16,
+              "retained_bound_cap_2": 134,
+              "strict_gap": 18,
+              "tau": 9
+            },
+            {
+              "D": 7,
+              "listing_requirement": 171,
+              "m": 17,
+              "retained_bound_cap_2": 153,
+              "strict_gap": 18,
+              "tau": 9
+            },
+            {
+              "D": 8,
+              "listing_requirement": 190,
+              "m": 18,
+              "retained_bound_cap_2": 172,
+              "strict_gap": 18,
+              "tau": 9
+            },
+            {
+              "D": 0,
+              "listing_requirement": 38,
+              "m": 11,
+              "retained_bound_cap_2": 22,
+              "strict_gap": 16,
+              "tau": 10
+            },
+            {
+              "D": 1,
+              "listing_requirement": 57,
+              "m": 12,
+              "retained_bound_cap_2": 41,
+              "strict_gap": 16,
+              "tau": 10
+            },
+            {
+              "D": 2,
+              "listing_requirement": 76,
+              "m": 13,
+              "retained_bound_cap_2": 60,
+              "strict_gap": 16,
+              "tau": 10
+            },
+            {
+              "D": 3,
+              "listing_requirement": 95,
+              "m": 14,
+              "retained_bound_cap_2": 79,
+              "strict_gap": 16,
+              "tau": 10
+            },
+            {
+              "D": 4,
+              "listing_requirement": 114,
+              "m": 15,
+              "retained_bound_cap_2": 98,
+              "strict_gap": 16,
+              "tau": 10
+            },
+            {
+              "D": 5,
+              "listing_requirement": 133,
+              "m": 16,
+              "retained_bound_cap_2": 117,
+              "strict_gap": 16,
+              "tau": 10
+            },
+            {
+              "D": 6,
+              "listing_requirement": 152,
+              "m": 17,
+              "retained_bound_cap_2": 136,
+              "strict_gap": 16,
+              "tau": 10
+            },
+            {
+              "D": 7,
+              "listing_requirement": 171,
+              "m": 18,
+              "retained_bound_cap_2": 155,
+              "strict_gap": 16,
+              "tau": 10
+            },
+            {
+              "D": 0,
+              "listing_requirement": 38,
+              "m": 12,
+              "retained_bound_cap_2": 24,
+              "strict_gap": 14,
+              "tau": 11
+            },
+            {
+              "D": 1,
+              "listing_requirement": 57,
+              "m": 13,
+              "retained_bound_cap_2": 43,
+              "strict_gap": 14,
+              "tau": 11
+            },
+            {
+              "D": 2,
+              "listing_requirement": 76,
+              "m": 14,
+              "retained_bound_cap_2": 62,
+              "strict_gap": 14,
+              "tau": 11
+            },
+            {
+              "D": 3,
+              "listing_requirement": 95,
+              "m": 15,
+              "retained_bound_cap_2": 81,
+              "strict_gap": 14,
+              "tau": 11
+            },
+            {
+              "D": 4,
+              "listing_requirement": 114,
+              "m": 16,
+              "retained_bound_cap_2": 100,
+              "strict_gap": 14,
+              "tau": 11
+            },
+            {
+              "D": 5,
+              "listing_requirement": 133,
+              "m": 17,
+              "retained_bound_cap_2": 119,
+              "strict_gap": 14,
+              "tau": 11
+            },
+            {
+              "D": 6,
+              "listing_requirement": 152,
+              "m": 18,
+              "retained_bound_cap_2": 138,
+              "strict_gap": 14,
+              "tau": 11
+            },
+            {
+              "D": 0,
+              "listing_requirement": 38,
+              "m": 13,
+              "retained_bound_cap_2": 26,
+              "strict_gap": 12,
+              "tau": 12
+            },
+            {
+              "D": 1,
+              "listing_requirement": 57,
+              "m": 14,
+              "retained_bound_cap_2": 45,
+              "strict_gap": 12,
+              "tau": 12
+            },
+            {
+              "D": 2,
+              "listing_requirement": 76,
+              "m": 15,
+              "retained_bound_cap_2": 64,
+              "strict_gap": 12,
+              "tau": 12
+            },
+            {
+              "D": 3,
+              "listing_requirement": 95,
+              "m": 16,
+              "retained_bound_cap_2": 83,
+              "strict_gap": 12,
+              "tau": 12
+            },
+            {
+              "D": 4,
+              "listing_requirement": 114,
+              "m": 17,
+              "retained_bound_cap_2": 102,
+              "strict_gap": 12,
+              "tau": 12
+            },
+            {
+              "D": 5,
+              "listing_requirement": 133,
+              "m": 18,
+              "retained_bound_cap_2": 121,
+              "strict_gap": 12,
+              "tau": 12
+            },
+            {
+              "D": 0,
+              "listing_requirement": 38,
+              "m": 14,
+              "retained_bound_cap_2": 28,
+              "strict_gap": 10,
+              "tau": 13
+            },
+            {
+              "D": 1,
+              "listing_requirement": 57,
+              "m": 15,
+              "retained_bound_cap_2": 47,
+              "strict_gap": 10,
+              "tau": 13
+            },
+            {
+              "D": 2,
+              "listing_requirement": 76,
+              "m": 16,
+              "retained_bound_cap_2": 66,
+              "strict_gap": 10,
+              "tau": 13
+            },
+            {
+              "D": 3,
+              "listing_requirement": 95,
+              "m": 17,
+              "retained_bound_cap_2": 85,
+              "strict_gap": 10,
+              "tau": 13
+            },
+            {
+              "D": 4,
+              "listing_requirement": 114,
+              "m": 18,
+              "retained_bound_cap_2": 104,
+              "strict_gap": 10,
+              "tau": 13
+            },
+            {
+              "D": 0,
+              "listing_requirement": 38,
+              "m": 15,
+              "retained_bound_cap_2": 30,
+              "strict_gap": 8,
+              "tau": 14
+            },
+            {
+              "D": 1,
+              "listing_requirement": 57,
+              "m": 16,
+              "retained_bound_cap_2": 49,
+              "strict_gap": 8,
+              "tau": 14
+            },
+            {
+              "D": 2,
+              "listing_requirement": 76,
+              "m": 17,
+              "retained_bound_cap_2": 68,
+              "strict_gap": 8,
+              "tau": 14
+            },
+            {
+              "D": 3,
+              "listing_requirement": 95,
+              "m": 18,
+              "retained_bound_cap_2": 87,
+              "strict_gap": 8,
+              "tau": 14
+            },
+            {
+              "D": 0,
+              "listing_requirement": 38,
+              "m": 16,
+              "retained_bound_cap_2": 32,
+              "strict_gap": 6,
+              "tau": 15
+            },
+            {
+              "D": 1,
+              "listing_requirement": 57,
+              "m": 17,
+              "retained_bound_cap_2": 51,
+              "strict_gap": 6,
+              "tau": 15
+            },
+            {
+              "D": 2,
+              "listing_requirement": 76,
+              "m": 18,
+              "retained_bound_cap_2": 70,
+              "strict_gap": 6,
+              "tau": 15
+            },
+            {
+              "D": 0,
+              "listing_requirement": 38,
+              "m": 17,
+              "retained_bound_cap_2": 34,
+              "strict_gap": 4,
+              "tau": 16
+            },
+            {
+              "D": 1,
+              "listing_requirement": 57,
+              "m": 18,
+              "retained_bound_cap_2": 53,
+              "strict_gap": 4,
+              "tau": 16
+            },
+            {
+              "D": 0,
+              "listing_requirement": 38,
+              "m": 18,
+              "retained_bound_cap_2": 36,
+              "strict_gap": 2,
+              "tau": 17
+            }
+          ],
+          "root_cap": 2
+        },
+        "width_three_transition": {
+          "first_tau_not_paid_by_width": 12,
+          "last_tau_paid_by_cyclic_width": 11,
+          "minimum_required_cosets_at_first_unpaid_tau": 25,
+          "p": 457,
+          "quotient_cosets": 24,
+          "unavailable_from_first_unpaid_tau_onward": true
+        }
+      },
+      "cyclic_span_widths": [
+        {
+          "delta": 2,
+          "exponent_ratio": 2
+        },
+        {
+          "delta": 3,
+          "exponent_ratio": 3
+        },
+        {
+          "delta": 4,
+          "exponent_ratio": 4
+        },
+        {
+          "delta": 4,
+          "exponent_ratio": 5
+        },
+        {
+          "delta": 4,
+          "exponent_ratio": 6
+        },
+        {
+          "delta": 3,
+          "exponent_ratio": 7
+        },
+        {
+          "delta": 5,
+          "exponent_ratio": 8
+        },
+        {
+          "delta": 3,
+          "exponent_ratio": 9
+        },
+        {
+          "delta": 2,
+          "exponent_ratio": 10
+        },
+        {
+          "delta": 3,
+          "exponent_ratio": 11
+        },
+        {
+          "delta": 5,
+          "exponent_ratio": 12
+        },
+        {
+          "delta": 3,
+          "exponent_ratio": 13
+        },
+        {
+          "delta": 4,
+          "exponent_ratio": 14
+        },
+        {
+          "delta": 4,
+          "exponent_ratio": 15
+        },
+        {
+          "delta": 4,
+          "exponent_ratio": 16
+        },
+        {
+          "delta": 3,
+          "exponent_ratio": 17
+        },
+        {
+          "delta": 2,
+          "exponent_ratio": 18
+        }
+      ],
+      "ell": 19,
+      "exceptional_prime_rank_exhaustions": [
+        {
+          "all_four_by_three_matrices_full_column_rank": true,
+          "ell": 19,
+          "four_subset_rank_tests": 65892,
+          "generator": 19,
+          "p": 191,
+          "quotient_cosets": 10,
+          "ratio_rows": [
+            {
+              "cyclic_span_width": 2,
+              "exact_max_roots": 2,
+              "exponent_ratio": 2,
+              "singular_four_subsets": 0,
+              "singular_three_subsets": 0,
+              "three_root_witness": null
+            },
+            {
+              "cyclic_span_width": 3,
+              "exact_max_roots": 3,
+              "exponent_ratio": 3,
+              "singular_four_subsets": 0,
+              "singular_three_subsets": 19,
+              "three_root_witness": {
+                "coefficients_A_B_C": [
+                  39,
+                  123,
+                  29
+                ],
+                "root_indices": [
+                  0,
+                  2,
+                  8
+                ],
+                "root_values": [
+                  1,
+                  30,
+                  160
+                ]
+              }
+            },
+            {
+              "cyclic_span_width": 4,
+              "exact_max_roots": 3,
+              "exponent_ratio": 4,
+              "singular_four_subsets": 0,
+              "singular_three_subsets": 19,
+              "three_root_witness": {
+                "coefficients_A_B_C": [
+                  130,
+                  32,
+                  29
+                ],
+                "root_indices": [
+                  0,
+                  2,
+                  6
+                ],
+                "root_values": [
+                  1,
+                  30,
+                  69
+                ]
+              }
+            },
+            {
+              "cyclic_span_width": 4,
+              "exact_max_roots": 3,
+              "exponent_ratio": 5,
+              "singular_four_subsets": 0,
+              "singular_three_subsets": 19,
+              "three_root_witness": {
+                "coefficients_A_B_C": [
+                  93,
+                  67,
+                  31
+                ],
+                "root_indices": [
+                  0,
+                  3,
+                  14
+                ],
+                "root_values": [
+                  1,
+                  32,
+                  153
+                ]
+              }
+            },
+            {
+              "cyclic_span_width": 4,
+              "exact_max_roots": 3,
+              "exponent_ratio": 6,
+              "singular_four_subsets": 0,
+              "singular_three_subsets": 19,
+              "three_root_witness": {
+                "coefficients_A_B_C": [
+                  17,
+                  123,
+                  51
+                ],
+                "root_indices": [
+                  0,
+                  1,
+                  7
+                ],
+                "root_values": [
+                  1,
+                  52,
+                  150
+                ]
+              }
+            },
+            {
+              "cyclic_span_width": 3,
+              "exact_max_roots": 3,
+              "exponent_ratio": 7,
+              "singular_four_subsets": 0,
+              "singular_three_subsets": 19,
+              "three_root_witness": {
+                "coefficients_A_B_C": [
+                  98,
+                  42,
+                  51
+                ],
+                "root_indices": [
+                  0,
+                  1,
+                  6
+                ],
+                "root_values": [
+                  1,
+                  52,
+                  69
+                ]
+              }
+            },
+            {
+              "cyclic_span_width": 5,
+              "exact_max_roots": 2,
+              "exponent_ratio": 8,
+              "singular_four_subsets": 0,
+              "singular_three_subsets": 0,
+              "three_root_witness": null
+            },
+            {
+              "cyclic_span_width": 3,
+              "exact_max_roots": 3,
+              "exponent_ratio": 9,
+              "singular_four_subsets": 0,
+              "singular_three_subsets": 19,
+              "three_root_witness": {
+                "coefficients_A_B_C": [
+                  128,
+                  32,
+                  31
+                ],
+                "root_indices": [
+                  0,
+                  3,
+                  7
+                ],
+                "root_values": [
+                  1,
+                  32,
+                  150
+                ]
+              }
+            },
+            {
+              "cyclic_span_width": 2,
+              "exact_max_roots": 2,
+              "exponent_ratio": 10,
+              "singular_four_subsets": 0,
+              "singular_three_subsets": 0,
+              "three_root_witness": null
+            },
+            {
+              "cyclic_span_width": 3,
+              "exact_max_roots": 3,
+              "exponent_ratio": 11,
+              "singular_four_subsets": 0,
+              "singular_three_subsets": 19,
+              "three_root_witness": {
+                "coefficients_A_B_C": [
+                  121,
+                  39,
+                  31
+                ],
+                "root_indices": [
+                  0,
+                  3,
+                  15
+                ],
+                "root_values": [
+                  1,
+                  32,
+                  125
+                ]
+              }
+            },
+            {
+              "cyclic_span_width": 5,
+              "exact_max_roots": 2,
+              "exponent_ratio": 12,
+              "singular_four_subsets": 0,
+              "singular_three_subsets": 0,
+              "three_root_witness": null
+            },
+            {
+              "cyclic_span_width": 3,
+              "exact_max_roots": 3,
+              "exponent_ratio": 13,
+              "singular_four_subsets": 0,
+              "singular_three_subsets": 19,
+              "three_root_witness": {
+                "coefficients_A_B_C": [
+                  175,
+                  156,
+                  51
+                ],
+                "root_indices": [
+                  0,
+                  1,
+                  14
+                ],
+                "root_values": [
+                  1,
+                  52,
+                  153
+                ]
+              }
+            },
+            {
+              "cyclic_span_width": 4,
+              "exact_max_roots": 3,
+              "exponent_ratio": 14,
+              "singular_four_subsets": 0,
+              "singular_three_subsets": 19,
+              "three_root_witness": {
+                "coefficients_A_B_C": [
+                  101,
+                  39,
+                  51
+                ],
+                "root_indices": [
+                  0,
+                  1,
+                  13
+                ],
+                "root_values": [
+                  1,
+                  52,
+                  36
+                ]
+              }
+            },
+            {
+              "cyclic_span_width": 4,
+              "exact_max_roots": 3,
+              "exponent_ratio": 15,
+              "singular_four_subsets": 0,
+              "singular_three_subsets": 19,
+              "three_root_witness": {
+                "coefficients_A_B_C": [
+                  118,
+                  42,
+                  31
+                ],
+                "root_indices": [
+                  0,
+                  3,
+                  8
+                ],
+                "root_values": [
+                  1,
+                  32,
+                  160
+                ]
+              }
+            },
+            {
+              "cyclic_span_width": 4,
+              "exact_max_roots": 3,
+              "exponent_ratio": 16,
+              "singular_four_subsets": 0,
+              "singular_three_subsets": 19,
+              "three_root_witness": {
+                "coefficients_A_B_C": [
+                  6,
+                  156,
+                  29
+                ],
+                "root_indices": [
+                  0,
+                  2,
+                  15
+                ],
+                "root_values": [
+                  1,
+                  30,
+                  125
+                ]
+              }
+            },
+            {
+              "cyclic_span_width": 3,
+              "exact_max_roots": 3,
+              "exponent_ratio": 17,
+              "singular_four_subsets": 0,
+              "singular_three_subsets": 19,
+              "three_root_witness": {
+                "coefficients_A_B_C": [
+                  95,
+                  67,
+                  29
+                ],
+                "root_indices": [
+                  0,
+                  2,
+                  13
+                ],
+                "root_values": [
+                  1,
+                  30,
+                  36
+                ]
+              }
+            },
+            {
+              "cyclic_span_width": 2,
+              "exact_max_roots": 2,
+              "exponent_ratio": 18,
+              "singular_four_subsets": 0,
+              "singular_three_subsets": 0,
+              "three_root_witness": null
+            }
+          ],
+          "ratios_with_exactly_three_roots": [
+            3,
+            4,
+            5,
+            6,
+            7,
+            9,
+            11,
+            13,
+            14,
+            15,
+            16,
+            17
+          ],
+          "three_subset_rank_tests": 16473,
+          "zeta": 52
+        },
+        {
+          "all_four_by_three_matrices_full_column_rank": true,
+          "ell": 19,
+          "four_subset_rank_tests": 65892,
+          "generator": 13,
+          "p": 457,
+          "quotient_cosets": 24,
+          "ratio_rows": [
+            {
+              "cyclic_span_width": 2,
+              "exact_max_roots": 2,
+              "exponent_ratio": 2,
+              "singular_four_subsets": 0,
+              "singular_three_subsets": 0,
+              "three_root_witness": null
+            },
+            {
+              "cyclic_span_width": 3,
+              "exact_max_roots": 3,
+              "exponent_ratio": 3,
+              "singular_four_subsets": 0,
+              "singular_three_subsets": 19,
+              "three_root_witness": {
+                "coefficients_A_B_C": [
+                  284,
+                  390,
+                  240
+                ],
+                "root_indices": [
+                  0,
+                  3,
+                  14
+                ],
+                "root_values": [
+                  1,
+                  241,
+                  215
+                ]
+              }
+            },
+            {
+              "cyclic_span_width": 4,
+              "exact_max_roots": 2,
+              "exponent_ratio": 4,
+              "singular_four_subsets": 0,
+              "singular_three_subsets": 0,
+              "three_root_witness": null
+            },
+            {
+              "cyclic_span_width": 4,
+              "exact_max_roots": 2,
+              "exponent_ratio": 5,
+              "singular_four_subsets": 0,
+              "singular_three_subsets": 0,
+              "three_root_witness": null
+            },
+            {
+              "cyclic_span_width": 4,
+              "exact_max_roots": 2,
+              "exponent_ratio": 6,
+              "singular_four_subsets": 0,
+              "singular_three_subsets": 0,
+              "three_root_witness": null
+            },
+            {
+              "cyclic_span_width": 3,
+              "exact_max_roots": 3,
+              "exponent_ratio": 7,
+              "singular_four_subsets": 0,
+              "singular_three_subsets": 19,
+              "three_root_witness": {
+                "coefficients_A_B_C": [
+                  72,
+                  390,
+                  452
+                ],
+                "root_indices": [
+                  0,
+                  4,
+                  14
+                ],
+                "root_values": [
+                  1,
+                  453,
+                  215
+                ]
+              }
+            },
+            {
+              "cyclic_span_width": 5,
+              "exact_max_roots": 2,
+              "exponent_ratio": 8,
+              "singular_four_subsets": 0,
+              "singular_three_subsets": 0,
+              "three_root_witness": null
+            },
+            {
+              "cyclic_span_width": 3,
+              "exact_max_roots": 3,
+              "exponent_ratio": 9,
+              "singular_four_subsets": 0,
+              "singular_three_subsets": 19,
+              "three_root_witness": {
+                "coefficients_A_B_C": [
+                  232,
+                  442,
+                  240
+                ],
+                "root_indices": [
+                  0,
+                  3,
+                  13
+                ],
+                "root_values": [
+                  1,
+                  241,
+                  185
+                ]
+              }
+            },
+            {
+              "cyclic_span_width": 2,
+              "exact_max_roots": 2,
+              "exponent_ratio": 10,
+              "singular_four_subsets": 0,
+              "singular_three_subsets": 0,
+              "three_root_witness": null
+            },
+            {
+              "cyclic_span_width": 3,
+              "exact_max_roots": 3,
+              "exponent_ratio": 11,
+              "singular_four_subsets": 0,
+              "singular_three_subsets": 19,
+              "three_root_witness": {
+                "coefficients_A_B_C": [
+                  431,
+                  243,
+                  240
+                ],
+                "root_indices": [
+                  0,
+                  3,
+                  9
+                ],
+                "root_values": [
+                  1,
+                  241,
+                  68
+                ]
+              }
+            },
+            {
+              "cyclic_span_width": 5,
+              "exact_max_roots": 2,
+              "exponent_ratio": 12,
+              "singular_four_subsets": 0,
+              "singular_three_subsets": 0,
+              "three_root_witness": null
+            },
+            {
+              "cyclic_span_width": 3,
+              "exact_max_roots": 3,
+              "exponent_ratio": 13,
+              "singular_four_subsets": 0,
+              "singular_three_subsets": 19,
+              "three_root_witness": {
+                "coefficients_A_B_C": [
+                  219,
+                  243,
+                  452
+                ],
+                "root_indices": [
+                  0,
+                  4,
+                  9
+                ],
+                "root_values": [
+                  1,
+                  453,
+                  68
+                ]
+              }
+            },
+            {
+              "cyclic_span_width": 4,
+              "exact_max_roots": 2,
+              "exponent_ratio": 14,
+              "singular_four_subsets": 0,
+              "singular_three_subsets": 0,
+              "three_root_witness": null
+            },
+            {
+              "cyclic_span_width": 4,
+              "exact_max_roots": 2,
+              "exponent_ratio": 15,
+              "singular_four_subsets": 0,
+              "singular_three_subsets": 0,
+              "three_root_witness": null
+            },
+            {
+              "cyclic_span_width": 4,
+              "exact_max_roots": 2,
+              "exponent_ratio": 16,
+              "singular_four_subsets": 0,
+              "singular_three_subsets": 0,
+              "three_root_witness": null
+            },
+            {
+              "cyclic_span_width": 3,
+              "exact_max_roots": 3,
+              "exponent_ratio": 17,
+              "singular_four_subsets": 0,
+              "singular_three_subsets": 19,
+              "three_root_witness": {
+                "coefficients_A_B_C": [
+                  401,
+                  273,
+                  240
+                ],
+                "root_indices": [
+                  0,
+                  3,
+                  8
+                ],
+                "root_values": [
+                  1,
+                  241,
+                  16
+                ]
+              }
+            },
+            {
+              "cyclic_span_width": 2,
+              "exact_max_roots": 2,
+              "exponent_ratio": 18,
+              "singular_four_subsets": 0,
+              "singular_three_subsets": 0,
+              "three_root_witness": null
+            }
+          ],
+          "ratios_with_exactly_three_roots": [
+            3,
+            7,
+            9,
+            11,
+            13,
+            17
+          ],
+          "three_subset_rank_tests": 16473,
+          "zeta": 347
+        },
+        {
+          "all_four_by_three_matrices_full_column_rank": true,
+          "ell": 19,
+          "four_subset_rank_tests": 65892,
+          "generator": 2,
+          "p": 2699,
+          "quotient_cosets": 142,
+          "ratio_rows": [
+            {
+              "cyclic_span_width": 2,
+              "exact_max_roots": 2,
+              "exponent_ratio": 2,
+              "singular_four_subsets": 0,
+              "singular_three_subsets": 0,
+              "three_root_witness": null
+            },
+            {
+              "cyclic_span_width": 3,
+              "exact_max_roots": 2,
+              "exponent_ratio": 3,
+              "singular_four_subsets": 0,
+              "singular_three_subsets": 0,
+              "three_root_witness": null
+            },
+            {
+              "cyclic_span_width": 4,
+              "exact_max_roots": 3,
+              "exponent_ratio": 4,
+              "singular_four_subsets": 0,
+              "singular_three_subsets": 19,
+              "three_root_witness": {
+                "coefficients_A_B_C": [
+                  1093,
+                  1640,
+                  2665
+                ],
+                "root_indices": [
+                  0,
+                  3,
+                  7
+                ],
+                "root_values": [
+                  1,
+                  2666,
+                  2396
+                ]
+              }
+            },
+            {
+              "cyclic_span_width": 4,
+              "exact_max_roots": 3,
+              "exponent_ratio": 5,
+              "singular_four_subsets": 0,
+              "singular_three_subsets": 19,
+              "three_root_witness": {
+                "coefficients_A_B_C": [
+                  140,
+                  2593,
+                  2665
+                ],
+                "root_indices": [
+                  0,
+                  3,
+                  10
+                ],
+                "root_values": [
+                  1,
+                  2666,
+                  1902
+                ]
+              }
+            },
+            {
+              "cyclic_span_width": 4,
+              "exact_max_roots": 3,
+              "exponent_ratio": 6,
+              "singular_four_subsets": 0,
+              "singular_three_subsets": 19,
+              "three_root_witness": {
+                "coefficients_A_B_C": [
+                  594,
+                  1640,
+                  465
+                ],
+                "root_indices": [
+                  0,
+                  2,
+                  9
+                ],
+                "root_values": [
+                  1,
+                  466,
+                  1849
+                ]
+              }
+            },
+            {
+              "cyclic_span_width": 3,
+              "exact_max_roots": 2,
+              "exponent_ratio": 7,
+              "singular_four_subsets": 0,
+              "singular_three_subsets": 0,
+              "three_root_witness": null
+            },
+            {
+              "cyclic_span_width": 5,
+              "exact_max_roots": 2,
+              "exponent_ratio": 8,
+              "singular_four_subsets": 0,
+              "singular_three_subsets": 0,
+              "three_root_witness": null
+            },
+            {
+              "cyclic_span_width": 3,
+              "exact_max_roots": 2,
+              "exponent_ratio": 9,
+              "singular_four_subsets": 0,
+              "singular_three_subsets": 0,
+              "three_root_witness": null
+            },
+            {
+              "cyclic_span_width": 2,
+              "exact_max_roots": 2,
+              "exponent_ratio": 10,
+              "singular_four_subsets": 0,
+              "singular_three_subsets": 0,
+              "three_root_witness": null
+            },
+            {
+              "cyclic_span_width": 3,
+              "exact_max_roots": 2,
+              "exponent_ratio": 11,
+              "singular_four_subsets": 0,
+              "singular_three_subsets": 0,
+              "three_root_witness": null
+            },
+            {
+              "cyclic_span_width": 5,
+              "exact_max_roots": 2,
+              "exponent_ratio": 12,
+              "singular_four_subsets": 0,
+              "singular_three_subsets": 0,
+              "three_root_witness": null
+            },
+            {
+              "cyclic_span_width": 3,
+              "exact_max_roots": 2,
+              "exponent_ratio": 13,
+              "singular_four_subsets": 0,
+              "singular_three_subsets": 0,
+              "three_root_witness": null
+            },
+            {
+              "cyclic_span_width": 4,
+              "exact_max_roots": 3,
+              "exponent_ratio": 14,
+              "singular_four_subsets": 0,
+              "singular_three_subsets": 19,
+              "three_root_witness": {
+                "coefficients_A_B_C": [
+                  1383,
+                  851,
+                  465
+                ],
+                "root_indices": [
+                  0,
+                  2,
+                  12
+                ],
+                "root_values": [
+                  1,
+                  466,
+                  1060
+                ]
+              }
+            },
+            {
+              "cyclic_span_width": 4,
+              "exact_max_roots": 3,
+              "exponent_ratio": 15,
+              "singular_four_subsets": 0,
+              "singular_three_subsets": 19,
+              "three_root_witness": {
+                "coefficients_A_B_C": [
+                  2429,
+                  304,
+                  2665
+                ],
+                "root_indices": [
+                  0,
+                  3,
+                  12
+                ],
+                "root_values": [
+                  1,
+                  2666,
+                  1060
+                ]
+              }
+            },
+            {
+              "cyclic_span_width": 4,
+              "exact_max_roots": 3,
+              "exponent_ratio": 16,
+              "singular_four_subsets": 0,
+              "singular_three_subsets": 19,
+              "three_root_witness": {
+                "coefficients_A_B_C": [
+                  1935,
+                  798,
+                  2665
+                ],
+                "root_indices": [
+                  0,
+                  3,
+                  15
+                ],
+                "root_values": [
+                  1,
+                  2666,
+                  107
+                ]
+              }
+            },
+            {
+              "cyclic_span_width": 3,
+              "exact_max_roots": 2,
+              "exponent_ratio": 17,
+              "singular_four_subsets": 0,
+              "singular_three_subsets": 0,
+              "three_root_witness": null
+            },
+            {
+              "cyclic_span_width": 2,
+              "exact_max_roots": 2,
+              "exponent_ratio": 18,
+              "singular_four_subsets": 0,
+              "singular_three_subsets": 0,
+              "three_root_witness": null
+            }
+          ],
+          "ratios_with_exactly_three_roots": [
+            4,
+            5,
+            6,
+            14,
+            15,
+            16
+          ],
+          "three_subset_rank_tests": 16473,
+          "zeta": 944
+        }
+      ],
+      "resultant_sieve": {
+        "external_admissible_prime_factors": [
+          191,
+          457,
+          2699
+        ],
+        "normalized_resultant_values": [
+          1,
+          191,
+          343,
+          457,
+          1331,
+          2699,
+          117649
+        ],
+        "orbit_normalization_reason": "AGL unit powers and translations act by row/column permutations, cyclotomic Galois automorphisms, and nonzero monomial factors; therefore the absolute quotient resultant is constant on each ordered pair of exponent/root orbits.",
+        "orbit_table": [
+          {
+            "determinant_degree": 5,
+            "exponent_class": [
+              0,
+              1,
+              2
+            ],
+            "exponent_representative": 2,
+            "factorization": [],
+            "quotient_degree": 0,
+            "quotient_resultant": 1,
+            "raw_factorization_check": true,
+            "root_class": [
+              0,
+              1,
+              2
+            ],
+            "root_representative": 2,
+            "vandermonde_degree": 5
+          },
+          {
+            "determinant_degree": 7,
+            "exponent_class": [
+              0,
+              1,
+              2
+            ],
+            "exponent_representative": 2,
+            "factorization": [],
+            "quotient_degree": 0,
+            "quotient_resultant": 1,
+            "raw_factorization_check": true,
+            "root_class": [
+              0,
+              1,
+              3
+            ],
+            "root_representative": 3,
+            "vandermonde_degree": 7
+          },
+          {
+            "determinant_degree": 9,
+            "exponent_class": [
+              0,
+              1,
+              2
+            ],
+            "exponent_representative": 2,
+            "factorization": [],
+            "quotient_degree": 0,
+            "quotient_resultant": 1,
+            "raw_factorization_check": true,
+            "root_class": [
+              0,
+              1,
+              4
+            ],
+            "root_representative": 4,
+            "vandermonde_degree": 9
+          },
+          {
+            "determinant_degree": 17,
+            "exponent_class": [
+              0,
+              1,
+              2
+            ],
+            "exponent_representative": 2,
+            "factorization": [],
+            "quotient_degree": 0,
+            "quotient_resultant": 1,
+            "raw_factorization_check": true,
+            "root_class": [
+              0,
+              1,
+              8
+            ],
+            "root_representative": 8,
+            "vandermonde_degree": 17
+          },
+          {
+            "determinant_degree": 7,
+            "exponent_class": [
+              0,
+              1,
+              3
+            ],
+            "exponent_representative": 3,
+            "factorization": [],
+            "quotient_degree": 2,
+            "quotient_resultant": 1,
+            "raw_factorization_check": true,
+            "root_class": [
+              0,
+              1,
+              2
+            ],
+            "root_representative": 2,
+            "vandermonde_degree": 5
+          },
+          {
+            "determinant_degree": 10,
+            "exponent_class": [
+              0,
+              1,
+              3
+            ],
+            "exponent_representative": 3,
+            "factorization": [
+              [
+                457,
+                1
+              ]
+            ],
+            "quotient_degree": 3,
+            "quotient_resultant": 457,
+            "raw_factorization_check": true,
+            "root_class": [
+              0,
+              1,
+              3
+            ],
+            "root_representative": 3,
+            "vandermonde_degree": 7
+          },
+          {
+            "determinant_degree": 13,
+            "exponent_class": [
+              0,
+              1,
+              3
+            ],
+            "exponent_representative": 3,
+            "factorization": [
+              [
+                191,
+                1
+              ]
+            ],
+            "quotient_degree": 4,
+            "quotient_resultant": 191,
+            "raw_factorization_check": true,
+            "root_class": [
+              0,
+              1,
+              4
+            ],
+            "root_representative": 4,
+            "vandermonde_degree": 9
+          },
+          {
+            "determinant_degree": 25,
+            "exponent_class": [
+              0,
+              1,
+              3
+            ],
+            "exponent_representative": 3,
+            "factorization": [
+              [
+                7,
+                3
+              ]
+            ],
+            "quotient_degree": 8,
+            "quotient_resultant": 343,
+            "raw_factorization_check": true,
+            "root_class": [
+              0,
+              1,
+              8
+            ],
+            "root_representative": 8,
+            "vandermonde_degree": 17
+          },
+          {
+            "determinant_degree": 9,
+            "exponent_class": [
+              0,
+              1,
+              4
+            ],
+            "exponent_representative": 4,
+            "factorization": [],
+            "quotient_degree": 4,
+            "quotient_resultant": 1,
+            "raw_factorization_check": true,
+            "root_class": [
+              0,
+              1,
+              2
+            ],
+            "root_representative": 2,
+            "vandermonde_degree": 5
+          },
+          {
+            "determinant_degree": 13,
+            "exponent_class": [
+              0,
+              1,
+              4
+            ],
+            "exponent_representative": 4,
+            "factorization": [
+              [
+                191,
+                1
+              ]
+            ],
+            "quotient_degree": 6,
+            "quotient_resultant": 191,
+            "raw_factorization_check": true,
+            "root_class": [
+              0,
+              1,
+              3
+            ],
+            "root_representative": 3,
+            "vandermonde_degree": 7
+          },
+          {
+            "determinant_degree": 17,
+            "exponent_class": [
+              0,
+              1,
+              4
+            ],
+            "exponent_representative": 4,
+            "factorization": [
+              [
+                2699,
+                1
+              ]
+            ],
+            "quotient_degree": 8,
+            "quotient_resultant": 2699,
+            "raw_factorization_check": true,
+            "root_class": [
+              0,
+              1,
+              4
+            ],
+            "root_representative": 4,
+            "vandermonde_degree": 9
+          },
+          {
+            "determinant_degree": 33,
+            "exponent_class": [
+              0,
+              1,
+              4
+            ],
+            "exponent_representative": 4,
+            "factorization": [
+              [
+                11,
+                3
+              ]
+            ],
+            "quotient_degree": 16,
+            "quotient_resultant": 1331,
+            "raw_factorization_check": true,
+            "root_class": [
+              0,
+              1,
+              8
+            ],
+            "root_representative": 8,
+            "vandermonde_degree": 17
+          },
+          {
+            "determinant_degree": 17,
+            "exponent_class": [
+              0,
+              1,
+              8
+            ],
+            "exponent_representative": 8,
+            "factorization": [],
+            "quotient_degree": 12,
+            "quotient_resultant": 1,
+            "raw_factorization_check": true,
+            "root_class": [
+              0,
+              1,
+              2
+            ],
+            "root_representative": 2,
+            "vandermonde_degree": 5
+          },
+          {
+            "determinant_degree": 25,
+            "exponent_class": [
+              0,
+              1,
+              8
+            ],
+            "exponent_representative": 8,
+            "factorization": [
+              [
+                7,
+                3
+              ]
+            ],
+            "quotient_degree": 18,
+            "quotient_resultant": 343,
+            "raw_factorization_check": true,
+            "root_class": [
+              0,
+              1,
+              3
+            ],
+            "root_representative": 3,
+            "vandermonde_degree": 7
+          },
+          {
+            "determinant_degree": 33,
+            "exponent_class": [
+              0,
+              1,
+              8
+            ],
+            "exponent_representative": 8,
+            "factorization": [
+              [
+                11,
+                3
+              ]
+            ],
+            "quotient_degree": 24,
+            "quotient_resultant": 1331,
+            "raw_factorization_check": true,
+            "root_class": [
+              0,
+              1,
+              4
+            ],
+            "root_representative": 4,
+            "vandermonde_degree": 9
+          },
+          {
+            "determinant_degree": 65,
+            "exponent_class": [
+              0,
+              1,
+              8
+            ],
+            "exponent_representative": 8,
+            "factorization": [
+              [
+                7,
+                6
+              ]
+            ],
+            "quotient_degree": 48,
+            "quotient_resultant": 117649,
+            "raw_factorization_check": true,
+            "root_class": [
+              0,
+              1,
+              8
+            ],
+            "root_representative": 8,
+            "vandermonde_degree": 17
+          }
+        ],
+        "vandermonde_resultant": 6859
+      }
+    }
+  ],
+  "frontier_meaning": "The two displayed families are unresolved cells, not witnesses. Exact rank exhaustion proves that a live trinomial can have three roots but never four in those characteristics.  It does not prove a listed codeword, a minimal kernel set, or whole-cell nonvacancy.",
+  "next_obligation": "Resolve or refute the two explicit p=1361 and p=2699 frontier families using cross-coset coefficient coupling/minimality; do not infer a listed word from a local three-root witness.",
+  "operation_counts": {
+    "coefficient_pair_enumerations": 0,
+    "four_by_three_rank_tests": 304776,
+    "three_by_three_rank_tests": 80019
+  },
+  "proof_steps": [
+    "Write D=m-tau-1.  At most D core cosets are sector-dead; with live-coset cap c, retained<=D*ell+c*(tau+1), while listing requires (D+2)*ell.",
+    "Normalize exponent and root triples under AGL(1,ell).  A three-root trinomial makes the 3x3 Fourier minor D_e,w singular; divide its nonzero distinct-root Vandermonde factor.",
+    "Exact Bareiss resultants give value sets {1,103,239,1361} for ell=17 and {1,191,343,457,1331,2699,117649} for ell=19.",
+    "Only p congruent to 1 modulo ell can contain mu_ell: the external primes are {103,239,1361} and {191,457,2699} respectively.",
+    "Every 3x3 and 4x3 evaluation subset is ranked over each external prime.  No singular 4x3 matrix occurs; the exact live-coset cap is therefore two or three, never four.",
+    "The width theorem pays each cell satisfying (tau+1)*delta<2ell.  The rank cap three extends payment to tau<=10 at ell=17 and tau<=11 at ell=19.",
+    "The width-three primes p=239 and p=457 are unavailable at the first following tau: 14<23 and 24<25 quotient-coset requirements.  The small primes p=103 and p=191 cannot realize even the smallest cell.",
+    "At p=1361 and p=2699 the only ratios admitting three roots are the displayed frontier ratios; cap three stops paying exactly at tau=11 and tau=12.  All other rows have a proved vacancy route."
+  ],
+  "scope": "Prime fields only; background-free sunflowers; exactly two active nonzero DFT sectors.  This is not an extension-field theorem, not vacancy of any whole parameter cell, and not a global counterexample.  Three-or-more-sector upstream witnesses remain outside the statement.",
+  "status": "PROVED_LOCAL_FRONTIER_REDUCTION",
+  "theorem": "Let ell be 17 or 19, p be prime with ell|(p-1), tau>=5, and tau<m<ell in the background-free full-petal setting.  Every geometrically realizable exactly-two-active-nonzero-sector stratum is vacant except possibly: ell=17,p=1361,tau>=11, e in {4,5,7,11,13,14}; or ell=19,p=2699,tau>=12, e in {4,5,6,14,15,16}.  In both families tau<m<ell.",
+  "title": "ell=17,19 exact-two-sector exceptional frontier",
+  "upstream": {
+    "collision": "No ell=17,19 exact-two-sector orbit-resultant/exceptional-rank frontier theorem was found.  Upstream keeps |S|>=2 and pma_wide_residual open.  Its p=239 entry is spectrum-side and explicitly availability-limited; p=2699 occurs only in an unsearched concentrated-floor coverage interval.  Neither is this exact-two-sector frontier theorem.",
+    "dag_source": "experimental/data/prize-dag/prize_dag.json",
+    "ell17_p239_spectrum_source": "experimental/notes/l1/l1_prime_ell_frontier_corrected.md",
+    "ell19_p2699_coverage_source": "experimental/notes/l1/l1_ell19_attainment.md",
+    "multisector_source": "experimental/notes/l1/l1_prime_ell_pv_refutation.md",
+    "residual_source": "experimental/notes/l1/l1_coset_mixed_vacancy_threshold.md"
+  },
+  "verdict": "PASS_WITH_ELL17_19_TWO_SECTOR_EXCEPTIONAL_FRONTIER"
+}

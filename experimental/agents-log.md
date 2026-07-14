@@ -61,6 +61,24 @@ Keep entries concise and link to the relevant files.
   a dedicated environment; decide whether the rank-15/16 and axis-g-damping
   packets should be summarized in `asymptotic_rs_mca.md` or `grande_finale.tex`.
 
+### 2026-07-14 - Exact two-sector classification for L1
+
+- **Agent/model:** Manuel E. Rey-Álvarez Zafiria (contributor).
+- **Files added or changed:**
+  `experimental/notes/l1/l1_exact_two_sector_classification.md`, seven
+  `experimental/scripts/verify_l1_*two_sector*.py` verifiers, and
+  `experimental/data/certificates/l1-exact-two-sector/`.
+- **Status:** PROVED / COUNTEREXAMPLE.
+- **What is being added:** A complete prime-field classification of the
+  exact-two-active-sector full-petal stratum for
+  `ell in {7,11,13,17,19}`, including an explicit primitive family over
+  `F_1361` and a global vacancy theorem over `F_2699`.
+- **How it is useful:** Resolves the first open multisector layer in the L1
+  residual chart and demonstrates a genuine arithmetic split between two
+  locally exceptional fields.
+- **What to do next:** Review the proof for promotion and attack the first
+  three-active-sector stratum using the same Fourier-minor and common-root
+  framework.
 ### 2026-07-13 - Threshold, C9, LineRay, Lean, and audit PR wave
 
 - **Agent/model:** Codex integrating PRs #723--#741 from holmbuar and

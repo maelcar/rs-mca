@@ -1,0 +1,975 @@
+{
+  "affine_orbits": {
+    "orbit_count": 2,
+    "orbits": [
+      {
+        "canonical": [
+          0,
+          1,
+          2
+        ],
+        "minimum_cyclic_span": 2,
+        "size": 21
+      },
+      {
+        "canonical": [
+          0,
+          1,
+          3
+        ],
+        "minimum_cyclic_span": 3,
+        "size": 14
+      }
+    ]
+  },
+  "all_checks_pass": true,
+  "availability": "The background-free cell needs tau+m=11 distinct mu_7-cosets. Inside F_p^* this requires (p-1)/7>=11. Small tested primes may be algebraically admissible but geometrically unavailable; p=113,127,197 are tested available examples.",
+  "available_test_fields": [
+    113,
+    127,
+    197
+  ],
+  "checks": {
+    "D_is_zero_so_every_core_coset_is_live": true,
+    "agl_has_exactly_two_three_support_orbits": true,
+    "agl_orbit_sizes_are_21_and_14": true,
+    "all_15_bareiss_resultants_match_exact_table": true,
+    "all_15_nonzero_sector_pairs_classified": true,
+    "all_resultants_are_units_or_powers_of_two": true,
+    "finite_field_exhaustions_have_no_root_violation": true,
+    "finite_field_suite_contains_three_available_cells": true,
+    "no_tested_admissible_prime_divides_a_resultant": true,
+    "normalized_narrow_ratios_are_2_4_6": true,
+    "normalized_wide_ratios_are_3_5": true,
+    "retained_bound_is_strictly_below_list_requirement": true,
+    "sector_pair_split_is_9_narrow_6_wide": true,
+    "upstream_explicitly_leaves_two_or_more_sectors_open": true
+  },
+  "finite_field_rows": [
+    {
+      "cell_available_in_Fp_star": false,
+      "generator": 2,
+      "p": 29,
+      "p_is_prime": true,
+      "p_mod_7": 1,
+      "pass": true,
+      "quotient_cosets": 4,
+      "ratio_rows": [
+        {
+          "class": "narrow",
+          "max_root_witness": [
+            1,
+            2,
+            24
+          ],
+          "max_roots": 2,
+          "projective_live_polynomials": 870,
+          "ratio": 2,
+          "within_two_root_bound": true
+        },
+        {
+          "class": "wide",
+          "max_root_witness": [
+            1,
+            1,
+            27
+          ],
+          "max_roots": 2,
+          "projective_live_polynomials": 870,
+          "ratio": 3,
+          "within_two_root_bound": true
+        },
+        {
+          "class": "narrow",
+          "max_root_witness": [
+            1,
+            1,
+            11
+          ],
+          "max_roots": 2,
+          "projective_live_polynomials": 870,
+          "ratio": 4,
+          "within_two_root_bound": true
+        },
+        {
+          "class": "wide",
+          "max_root_witness": [
+            1,
+            1,
+            27
+          ],
+          "max_roots": 2,
+          "projective_live_polynomials": 870,
+          "ratio": 5,
+          "within_two_root_bound": true
+        },
+        {
+          "class": "narrow",
+          "max_root_witness": [
+            1,
+            2,
+            21
+          ],
+          "max_roots": 2,
+          "projective_live_polynomials": 870,
+          "ratio": 6,
+          "within_two_root_bound": true
+        }
+      ],
+      "required_distinct_petal_plus_core_cosets": 11,
+      "subgroup_size": 7,
+      "total_projective_root_tests": 4350,
+      "violations": 0
+    },
+    {
+      "cell_available_in_Fp_star": false,
+      "generator": 3,
+      "p": 43,
+      "p_is_prime": true,
+      "p_mod_7": 1,
+      "pass": true,
+      "quotient_cosets": 6,
+      "ratio_rows": [
+        {
+          "class": "narrow",
+          "max_root_witness": [
+            1,
+            1,
+            41
+          ],
+          "max_roots": 2,
+          "projective_live_polynomials": 1892,
+          "ratio": 2,
+          "within_two_root_bound": true
+        },
+        {
+          "class": "wide",
+          "max_root_witness": [
+            1,
+            2,
+            40
+          ],
+          "max_roots": 2,
+          "projective_live_polynomials": 1892,
+          "ratio": 3,
+          "within_two_root_bound": true
+        },
+        {
+          "class": "narrow",
+          "max_root_witness": [
+            1,
+            1,
+            24
+          ],
+          "max_roots": 2,
+          "projective_live_polynomials": 1892,
+          "ratio": 4,
+          "within_two_root_bound": true
+        },
+        {
+          "class": "wide",
+          "max_root_witness": [
+            1,
+            2,
+            12
+          ],
+          "max_roots": 2,
+          "projective_live_polynomials": 1892,
+          "ratio": 5,
+          "within_two_root_bound": true
+        },
+        {
+          "class": "narrow",
+          "max_root_witness": [
+            1,
+            1,
+            41
+          ],
+          "max_roots": 2,
+          "projective_live_polynomials": 1892,
+          "ratio": 6,
+          "within_two_root_bound": true
+        }
+      ],
+      "required_distinct_petal_plus_core_cosets": 11,
+      "subgroup_size": 7,
+      "total_projective_root_tests": 9460,
+      "violations": 0
+    },
+    {
+      "cell_available_in_Fp_star": false,
+      "generator": 7,
+      "p": 71,
+      "p_is_prime": true,
+      "p_mod_7": 1,
+      "pass": true,
+      "quotient_cosets": 10,
+      "ratio_rows": [
+        {
+          "class": "narrow",
+          "max_root_witness": [
+            1,
+            2,
+            48
+          ],
+          "max_roots": 2,
+          "projective_live_polynomials": 5112,
+          "ratio": 2,
+          "within_two_root_bound": true
+        },
+        {
+          "class": "wide",
+          "max_root_witness": [
+            1,
+            4,
+            56
+          ],
+          "max_roots": 2,
+          "projective_live_polynomials": 5112,
+          "ratio": 3,
+          "within_two_root_bound": true
+        },
+        {
+          "class": "narrow",
+          "max_root_witness": [
+            1,
+            1,
+            19
+          ],
+          "max_roots": 2,
+          "projective_live_polynomials": 5112,
+          "ratio": 4,
+          "within_two_root_bound": true
+        },
+        {
+          "class": "wide",
+          "max_root_witness": [
+            1,
+            5,
+            65
+          ],
+          "max_roots": 2,
+          "projective_live_polynomials": 5112,
+          "ratio": 5,
+          "within_two_root_bound": true
+        },
+        {
+          "class": "narrow",
+          "max_root_witness": [
+            1,
+            5,
+            5
+          ],
+          "max_roots": 2,
+          "projective_live_polynomials": 5112,
+          "ratio": 6,
+          "within_two_root_bound": true
+        }
+      ],
+      "required_distinct_petal_plus_core_cosets": 11,
+      "subgroup_size": 7,
+      "total_projective_root_tests": 25560,
+      "violations": 0
+    },
+    {
+      "cell_available_in_Fp_star": true,
+      "generator": 3,
+      "p": 113,
+      "p_is_prime": true,
+      "p_mod_7": 1,
+      "pass": true,
+      "quotient_cosets": 16,
+      "ratio_rows": [
+        {
+          "class": "narrow",
+          "max_root_witness": [
+            1,
+            3,
+            109
+          ],
+          "max_roots": 2,
+          "projective_live_polynomials": 12882,
+          "ratio": 2,
+          "within_two_root_bound": true
+        },
+        {
+          "class": "wide",
+          "max_root_witness": [
+            1,
+            9,
+            33
+          ],
+          "max_roots": 2,
+          "projective_live_polynomials": 12882,
+          "ratio": 3,
+          "within_two_root_bound": true
+        },
+        {
+          "class": "narrow",
+          "max_root_witness": [
+            1,
+            1,
+            34
+          ],
+          "max_roots": 2,
+          "projective_live_polynomials": 12882,
+          "ratio": 4,
+          "within_two_root_bound": true
+        },
+        {
+          "class": "wide",
+          "max_root_witness": [
+            1,
+            18,
+            23
+          ],
+          "max_roots": 2,
+          "projective_live_polynomials": 12882,
+          "ratio": 5,
+          "within_two_root_bound": true
+        },
+        {
+          "class": "narrow",
+          "max_root_witness": [
+            1,
+            5,
+            37
+          ],
+          "max_roots": 2,
+          "projective_live_polynomials": 12882,
+          "ratio": 6,
+          "within_two_root_bound": true
+        }
+      ],
+      "required_distinct_petal_plus_core_cosets": 11,
+      "subgroup_size": 7,
+      "total_projective_root_tests": 64410,
+      "violations": 0
+    },
+    {
+      "cell_available_in_Fp_star": true,
+      "generator": 3,
+      "p": 127,
+      "p_is_prime": true,
+      "p_mod_7": 1,
+      "pass": true,
+      "quotient_cosets": 18,
+      "ratio_rows": [
+        {
+          "class": "narrow",
+          "max_root_witness": [
+            1,
+            31,
+            16
+          ],
+          "max_roots": 2,
+          "projective_live_polynomials": 16256,
+          "ratio": 2,
+          "within_two_root_bound": true
+        },
+        {
+          "class": "wide",
+          "max_root_witness": [
+            1,
+            3,
+            15
+          ],
+          "max_roots": 2,
+          "projective_live_polynomials": 16256,
+          "ratio": 3,
+          "within_two_root_bound": true
+        },
+        {
+          "class": "narrow",
+          "max_root_witness": [
+            1,
+            1,
+            61
+          ],
+          "max_roots": 2,
+          "projective_live_polynomials": 16256,
+          "ratio": 4,
+          "within_two_root_bound": true
+        },
+        {
+          "class": "wide",
+          "max_root_witness": [
+            1,
+            15,
+            3
+          ],
+          "max_roots": 2,
+          "projective_live_polynomials": 16256,
+          "ratio": 5,
+          "within_two_root_bound": true
+        },
+        {
+          "class": "narrow",
+          "max_root_witness": [
+            1,
+            7,
+            97
+          ],
+          "max_roots": 2,
+          "projective_live_polynomials": 16256,
+          "ratio": 6,
+          "within_two_root_bound": true
+        }
+      ],
+      "required_distinct_petal_plus_core_cosets": 11,
+      "subgroup_size": 7,
+      "total_projective_root_tests": 81280,
+      "violations": 0
+    },
+    {
+      "cell_available_in_Fp_star": true,
+      "generator": 2,
+      "p": 197,
+      "p_is_prime": true,
+      "p_mod_7": 1,
+      "pass": true,
+      "quotient_cosets": 28,
+      "ratio_rows": [
+        {
+          "class": "narrow",
+          "max_root_witness": [
+            1,
+            5,
+            191
+          ],
+          "max_roots": 2,
+          "projective_live_polynomials": 39006,
+          "ratio": 2,
+          "within_two_root_bound": true
+        },
+        {
+          "class": "wide",
+          "max_root_witness": [
+            1,
+            3,
+            63
+          ],
+          "max_roots": 2,
+          "projective_live_polynomials": 39006,
+          "ratio": 3,
+          "within_two_root_bound": true
+        },
+        {
+          "class": "narrow",
+          "max_root_witness": [
+            1,
+            1,
+            39
+          ],
+          "max_roots": 2,
+          "projective_live_polynomials": 39006,
+          "ratio": 4,
+          "within_two_root_bound": true
+        },
+        {
+          "class": "wide",
+          "max_root_witness": [
+            1,
+            12,
+            192
+          ],
+          "max_roots": 2,
+          "projective_live_polynomials": 39006,
+          "ratio": 5,
+          "within_two_root_bound": true
+        },
+        {
+          "class": "narrow",
+          "max_root_witness": [
+            1,
+            2,
+            131
+          ],
+          "max_roots": 2,
+          "projective_live_polynomials": 39006,
+          "ratio": 6,
+          "within_two_root_bound": true
+        }
+      ],
+      "required_distinct_petal_plus_core_cosets": 11,
+      "subgroup_size": 7,
+      "total_projective_root_tests": 195030,
+      "violations": 0
+    }
+  ],
+  "next_obligation": "Generalize the arithmetic root cap nu_{p,ell}(r,s) with a resultant/Fourier-minor sieve, or attack the first three-active-sector cell at ell=7.",
+  "normalized_ratio_rows": [
+    {
+      "affine_witness_unit_shift": [
+        1,
+        0
+      ],
+      "canonical_support": [
+        0,
+        1,
+        2
+      ],
+      "class": "narrow",
+      "ratio": 2
+    },
+    {
+      "affine_witness_unit_shift": [
+        1,
+        0
+      ],
+      "canonical_support": [
+        0,
+        1,
+        3
+      ],
+      "class": "wide",
+      "ratio": 3
+    },
+    {
+      "affine_witness_unit_shift": [
+        2,
+        0
+      ],
+      "canonical_support": [
+        0,
+        1,
+        2
+      ],
+      "class": "narrow",
+      "ratio": 4
+    },
+    {
+      "affine_witness_unit_shift": [
+        3,
+        0
+      ],
+      "canonical_support": [
+        0,
+        1,
+        3
+      ],
+      "class": "wide",
+      "ratio": 5
+    },
+    {
+      "affine_witness_unit_shift": [
+        1,
+        1
+      ],
+      "canonical_support": [
+        0,
+        1,
+        2
+      ],
+      "class": "narrow",
+      "ratio": 6
+    }
+  ],
+  "parameters": {
+    "D": 0,
+    "ell": 7,
+    "listing_core_requirement": 14,
+    "live_core_cosets": 6,
+    "m": 6,
+    "retained_upper_bound": 12,
+    "tau": 5
+  },
+  "proof_steps": [
+    "Here D=m-tau-1=0. Each active sector quotient g_r=P_r/phi is a nonzero constant, so all six core cosets are live.",
+    "AGL(1,7) has exactly two orbits on three-exponent supports: narrow {0,1,2} and wide {0,1,3}. The 15 pairs of nonzero sectors split as 9 narrow and 6 wide pairs.",
+    "The narrow orbit has cyclic width two, so the monomial-rotation argument gives at most two retained mu_7-points per live core coset.",
+    "For the wide orbit, after a unit-power substitution and a nonvanishing monomial rotation, the restriction has support {0,1,3}. Binomial boundary cases have at most one root.",
+    "If A+B X+C X^3 with ABC nonzero had three distinct roots x,y,z in mu_7, its missing X^2 coefficient would force x+y+z=0. Dividing by x gives 1+zeta^u+zeta^v=0 for distinct 1<=u<v<=6.",
+    "Exact Sylvester/Bareiss determinants give Res(Phi_7,1+X^u+X^v) in {1,8} for all 15 pairs. Since p congruent to 1 modulo 7 is odd, p divides none of them, so the three-root relation is impossible in every admissible characteristic.",
+    "Every one of the six core cosets therefore retains at most two points: retained<=12. Listing requires retained>=(D+2)ell=14, a contradiction."
+  ],
+  "resultant_rows": [
+    {
+      "absolute_resultant": 1,
+      "expected": 1,
+      "matches_expected": true,
+      "resultant": 1,
+      "sylvester_size": 8,
+      "u": 1,
+      "v": 2
+    },
+    {
+      "absolute_resultant": 8,
+      "expected": 8,
+      "matches_expected": true,
+      "resultant": 8,
+      "sylvester_size": 9,
+      "u": 1,
+      "v": 3
+    },
+    {
+      "absolute_resultant": 1,
+      "expected": 1,
+      "matches_expected": true,
+      "resultant": 1,
+      "sylvester_size": 10,
+      "u": 1,
+      "v": 4
+    },
+    {
+      "absolute_resultant": 8,
+      "expected": 8,
+      "matches_expected": true,
+      "resultant": 8,
+      "sylvester_size": 11,
+      "u": 1,
+      "v": 5
+    },
+    {
+      "absolute_resultant": 1,
+      "expected": 1,
+      "matches_expected": true,
+      "resultant": 1,
+      "sylvester_size": 12,
+      "u": 1,
+      "v": 6
+    },
+    {
+      "absolute_resultant": 8,
+      "expected": 8,
+      "matches_expected": true,
+      "resultant": 8,
+      "sylvester_size": 9,
+      "u": 2,
+      "v": 3
+    },
+    {
+      "absolute_resultant": 1,
+      "expected": 1,
+      "matches_expected": true,
+      "resultant": 1,
+      "sylvester_size": 10,
+      "u": 2,
+      "v": 4
+    },
+    {
+      "absolute_resultant": 1,
+      "expected": 1,
+      "matches_expected": true,
+      "resultant": 1,
+      "sylvester_size": 11,
+      "u": 2,
+      "v": 5
+    },
+    {
+      "absolute_resultant": 8,
+      "expected": 8,
+      "matches_expected": true,
+      "resultant": 8,
+      "sylvester_size": 12,
+      "u": 2,
+      "v": 6
+    },
+    {
+      "absolute_resultant": 1,
+      "expected": 1,
+      "matches_expected": true,
+      "resultant": 1,
+      "sylvester_size": 10,
+      "u": 3,
+      "v": 4
+    },
+    {
+      "absolute_resultant": 1,
+      "expected": 1,
+      "matches_expected": true,
+      "resultant": 1,
+      "sylvester_size": 11,
+      "u": 3,
+      "v": 5
+    },
+    {
+      "absolute_resultant": 1,
+      "expected": 1,
+      "matches_expected": true,
+      "resultant": 1,
+      "sylvester_size": 12,
+      "u": 3,
+      "v": 6
+    },
+    {
+      "absolute_resultant": 8,
+      "expected": 8,
+      "matches_expected": true,
+      "resultant": 8,
+      "sylvester_size": 11,
+      "u": 4,
+      "v": 5
+    },
+    {
+      "absolute_resultant": 8,
+      "expected": 8,
+      "matches_expected": true,
+      "resultant": 8,
+      "sylvester_size": 12,
+      "u": 4,
+      "v": 6
+    },
+    {
+      "absolute_resultant": 1,
+      "expected": 1,
+      "matches_expected": true,
+      "resultant": 1,
+      "sylvester_size": 12,
+      "u": 5,
+      "v": 6
+    }
+  ],
+  "scope": "Closes the exact-two-active-sector stratum only at (tau,m,ell)=(5,6,7). It is not a vacancy theorem for the whole parameter cell and does not exclude any witness with three or more active sectors (including a six-sector witness), other ell, or the large-tau/wide-pair residual in general.",
+  "sector_pair_rows": [
+    {
+      "affine_witness_unit_shift": [
+        1,
+        0
+      ],
+      "canonical_support": [
+        0,
+        1,
+        2
+      ],
+      "class": "narrow",
+      "sectors": [
+        1,
+        2
+      ]
+    },
+    {
+      "affine_witness_unit_shift": [
+        1,
+        0
+      ],
+      "canonical_support": [
+        0,
+        1,
+        3
+      ],
+      "class": "wide",
+      "sectors": [
+        1,
+        3
+      ]
+    },
+    {
+      "affine_witness_unit_shift": [
+        2,
+        0
+      ],
+      "canonical_support": [
+        0,
+        1,
+        2
+      ],
+      "class": "narrow",
+      "sectors": [
+        1,
+        4
+      ]
+    },
+    {
+      "affine_witness_unit_shift": [
+        3,
+        0
+      ],
+      "canonical_support": [
+        0,
+        1,
+        3
+      ],
+      "class": "wide",
+      "sectors": [
+        1,
+        5
+      ]
+    },
+    {
+      "affine_witness_unit_shift": [
+        1,
+        1
+      ],
+      "canonical_support": [
+        0,
+        1,
+        2
+      ],
+      "class": "narrow",
+      "sectors": [
+        1,
+        6
+      ]
+    },
+    {
+      "affine_witness_unit_shift": [
+        3,
+        1
+      ],
+      "canonical_support": [
+        0,
+        1,
+        3
+      ],
+      "class": "wide",
+      "sectors": [
+        2,
+        3
+      ]
+    },
+    {
+      "affine_witness_unit_shift": [
+        3,
+        2
+      ],
+      "canonical_support": [
+        0,
+        1,
+        2
+      ],
+      "class": "narrow",
+      "sectors": [
+        2,
+        4
+      ]
+    },
+    {
+      "affine_witness_unit_shift": [
+        3,
+        1
+      ],
+      "canonical_support": [
+        0,
+        1,
+        2
+      ],
+      "class": "narrow",
+      "sectors": [
+        2,
+        5
+      ]
+    },
+    {
+      "affine_witness_unit_shift": [
+        1,
+        1
+      ],
+      "canonical_support": [
+        0,
+        1,
+        3
+      ],
+      "class": "wide",
+      "sectors": [
+        2,
+        6
+      ]
+    },
+    {
+      "affine_witness_unit_shift": [
+        2,
+        1
+      ],
+      "canonical_support": [
+        0,
+        1,
+        2
+      ],
+      "class": "narrow",
+      "sectors": [
+        3,
+        4
+      ]
+    },
+    {
+      "affine_witness_unit_shift": [
+        3,
+        0
+      ],
+      "canonical_support": [
+        0,
+        1,
+        2
+      ],
+      "class": "narrow",
+      "sectors": [
+        3,
+        5
+      ]
+    },
+    {
+      "affine_witness_unit_shift": [
+        2,
+        2
+      ],
+      "canonical_support": [
+        0,
+        1,
+        2
+      ],
+      "class": "narrow",
+      "sectors": [
+        3,
+        6
+      ]
+    },
+    {
+      "affine_witness_unit_shift": [
+        1,
+        3
+      ],
+      "canonical_support": [
+        0,
+        1,
+        3
+      ],
+      "class": "wide",
+      "sectors": [
+        4,
+        5
+      ]
+    },
+    {
+      "affine_witness_unit_shift": [
+        3,
+        3
+      ],
+      "canonical_support": [
+        0,
+        1,
+        3
+      ],
+      "class": "wide",
+      "sectors": [
+        4,
+        6
+      ]
+    },
+    {
+      "affine_witness_unit_shift": [
+        1,
+        2
+      ],
+      "canonical_support": [
+        0,
+        1,
+        2
+      ],
+      "class": "narrow",
+      "sectors": [
+        5,
+        6
+      ]
+    }
+  ],
+  "status": "PROVED_LOCAL",
+  "theorem": "Let p be prime with p congruent to 1 modulo 7. In a background-free mu_7-coset sunflower with tau=5 petals and m=6 core cosets, no listed full-petal codeword has exactly two active nonzero DFT sectors. Thus the exact-two-sector stratum contributes no mixed minimal kernel set, primitive or otherwise. The statement is vacuous when F_p^* has fewer than 11 distinct mu_7-cosets.",
+  "title": "Complete exact-two-sector vacancy at (tau,m,ell)=(5,6,7)",
+  "uniformity": "The theorem is uniform over every prime p congruent to 1 modulo 7: the load-bearing certificate is the integer resultant set {1,8}. Finite-field enumeration is only a regression and normalization check.",
+  "upstream": {
+    "collision": "No ell=7 wide-pair resultant closure found; upstream leaves |S|>=2 open.",
+    "source": "experimental/notes/l1/l1_coset_mixed_vacancy_threshold.md"
+  },
+  "verdict": "PASS_WITH_ELL7_TWO_SECTOR_COMPLETE_VACANCY"
+}

@@ -1,0 +1,1276 @@
+{
+  "exact_double_triple_state_census": {
+    "distinct_spectrum_histograms": 11,
+    "ell": 19,
+    "generator": 2,
+    "maximum_top_by_live_size": {
+      "13": {
+        "histogram": [
+          [
+            1,
+            132
+          ],
+          [
+            2,
+            8
+          ],
+          [
+            3,
+            2
+          ]
+        ],
+        "quotient_shift": 0,
+        "sector_r": 1,
+        "sector_s": 5,
+        "top": 25
+      },
+      "14": {
+        "histogram": [
+          [
+            1,
+            132
+          ],
+          [
+            2,
+            8
+          ],
+          [
+            3,
+            2
+          ]
+        ],
+        "quotient_shift": 0,
+        "sector_r": 1,
+        "sector_s": 5,
+        "top": 26
+      },
+      "15": {
+        "histogram": [
+          [
+            1,
+            132
+          ],
+          [
+            2,
+            8
+          ],
+          [
+            3,
+            2
+          ]
+        ],
+        "quotient_shift": 0,
+        "sector_r": 1,
+        "sector_s": 5,
+        "top": 27
+      },
+      "16": {
+        "histogram": [
+          [
+            1,
+            132
+          ],
+          [
+            2,
+            8
+          ],
+          [
+            3,
+            2
+          ]
+        ],
+        "quotient_shift": 0,
+        "sector_r": 1,
+        "sector_s": 5,
+        "top": 28
+      },
+      "17": {
+        "histogram": [
+          [
+            1,
+            132
+          ],
+          [
+            2,
+            8
+          ],
+          [
+            3,
+            2
+          ]
+        ],
+        "quotient_shift": 0,
+        "sector_r": 1,
+        "sector_s": 5,
+        "top": 29
+      }
+    },
+    "p": 2699,
+    "quotient_reduction_reason": "Every c in F_p^* is generator^q times xi with 0<=q<142 and xi in mu_19.  Since s-r is invertible modulo 19, choose u in mu_19 with u^(s-r)=xi^(-1).  Then f_(c*xi)(u*h)=u^r f_c(h), so fiber multiplicities are identical.  Thus the 142 representatives exhaust all nonzero scalar ratios.",
+    "quotient_size": 142,
+    "quotient_states_per_pair": 142,
+    "sector_pairs": 153,
+    "spectrum_histogram_counts": [
+      {
+        "histogram": [
+          [
+            1,
+            132
+          ],
+          [
+            2,
+            8
+          ],
+          [
+            3,
+            2
+          ]
+        ],
+        "rows": 1704
+      },
+      {
+        "histogram": [
+          [
+            1,
+            132
+          ],
+          [
+            2,
+            10
+          ]
+        ],
+        "rows": 3408
+      },
+      {
+        "histogram": [
+          [
+            1,
+            133
+          ],
+          [
+            2,
+            9
+          ]
+        ],
+        "rows": 2556
+      },
+      {
+        "histogram": [
+          [
+            1,
+            134
+          ],
+          [
+            2,
+            8
+          ]
+        ],
+        "rows": 3834
+      },
+      {
+        "histogram": [
+          [
+            1,
+            135
+          ],
+          [
+            2,
+            6
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        "rows": 1704
+      },
+      {
+        "histogram": [
+          [
+            1,
+            135
+          ],
+          [
+            2,
+            7
+          ]
+        ],
+        "rows": 852
+      },
+      {
+        "histogram": [
+          [
+            1,
+            136
+          ],
+          [
+            2,
+            5
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        "rows": 2556
+      },
+      {
+        "histogram": [
+          [
+            1,
+            136
+          ],
+          [
+            2,
+            6
+          ]
+        ],
+        "rows": 1278
+      },
+      {
+        "histogram": [
+          [
+            1,
+            138
+          ],
+          [
+            2,
+            4
+          ]
+        ],
+        "rows": 1278
+      },
+      {
+        "histogram": [
+          [
+            1,
+            140
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        "rows": 1278
+      },
+      {
+        "histogram": [
+          [
+            1,
+            141
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        "rows": 1278
+      }
+    ],
+    "spectrum_rows": 21726,
+    "state_multiplicity_counts": {
+      "1": 20637,
+      "2": 1035,
+      "3": 54
+    },
+    "state_rows": 21726,
+    "triple_equation_checks": 54,
+    "triple_equation_representatives": [
+      {
+        "U_over_T": 861,
+        "quotient_state": 62,
+        "representative_fiber_value": 2492,
+        "representative_root_indices": [
+          9,
+          12,
+          16
+        ],
+        "sector_r": 1,
+        "sector_s": 4
+      },
+      {
+        "U_over_T": 1047,
+        "quotient_state": 80,
+        "representative_fiber_value": 259,
+        "representative_root_indices": [
+          2,
+          5,
+          12
+        ],
+        "sector_r": 1,
+        "sector_s": 5
+      },
+      {
+        "U_over_T": 2284,
+        "quotient_state": 89,
+        "representative_fiber_value": 2038,
+        "representative_root_indices": [
+          8,
+          10,
+          17
+        ],
+        "sector_r": 1,
+        "sector_s": 6
+      },
+      {
+        "U_over_T": 1652,
+        "quotient_state": 9,
+        "representative_fiber_value": 1617,
+        "representative_root_indices": [
+          5,
+          12,
+          14
+        ],
+        "sector_r": 1,
+        "sector_s": 14
+      },
+      {
+        "U_over_T": 1838,
+        "quotient_state": 133,
+        "representative_fiber_value": 1563,
+        "representative_root_indices": [
+          1,
+          10,
+          17
+        ],
+        "sector_r": 1,
+        "sector_s": 15
+      },
+      {
+        "U_over_T": 904,
+        "quotient_state": 53,
+        "representative_fiber_value": 1326,
+        "representative_root_indices": [
+          8,
+          12,
+          15
+        ],
+        "sector_r": 1,
+        "sector_s": 16
+      },
+      {
+        "U_over_T": 861,
+        "quotient_state": 62,
+        "representative_fiber_value": 2492,
+        "representative_root_indices": [
+          6,
+          8,
+          14
+        ],
+        "sector_r": 2,
+        "sector_s": 8
+      },
+      {
+        "U_over_T": 1652,
+        "quotient_state": 9,
+        "representative_fiber_value": 1617,
+        "representative_root_indices": [
+          6,
+          7,
+          12
+        ],
+        "sector_r": 2,
+        "sector_s": 9
+      },
+      {
+        "U_over_T": 1047,
+        "quotient_state": 80,
+        "representative_fiber_value": 259,
+        "representative_root_indices": [
+          1,
+          6,
+          12
+        ],
+        "sector_r": 2,
+        "sector_s": 10
+      },
+      {
+        "U_over_T": 1838,
+        "quotient_state": 133,
+        "representative_fiber_value": 1563,
+        "representative_root_indices": [
+          5,
+          10,
+          18
+        ],
+        "sector_r": 2,
+        "sector_s": 11
+      },
+      {
+        "U_over_T": 2284,
+        "quotient_state": 89,
+        "representative_fiber_value": 2038,
+        "representative_root_indices": [
+          4,
+          5,
+          18
+        ],
+        "sector_r": 2,
+        "sector_s": 12
+      },
+      {
+        "U_over_T": 904,
+        "quotient_state": 53,
+        "representative_fiber_value": 1326,
+        "representative_root_indices": [
+          4,
+          6,
+          17
+        ],
+        "sector_r": 2,
+        "sector_s": 13
+      },
+      {
+        "U_over_T": 1652,
+        "quotient_state": 9,
+        "representative_fiber_value": 1617,
+        "representative_root_indices": [
+          4,
+          8,
+          11
+        ],
+        "sector_r": 3,
+        "sector_s": 4
+      },
+      {
+        "U_over_T": 1838,
+        "quotient_state": 133,
+        "representative_fiber_value": 1563,
+        "representative_root_indices": [
+          12,
+          13,
+          16
+        ],
+        "sector_r": 3,
+        "sector_s": 7
+      },
+      {
+        "U_over_T": 904,
+        "quotient_state": 53,
+        "representative_fiber_value": 1326,
+        "representative_root_indices": [
+          4,
+          5,
+          9
+        ],
+        "sector_r": 3,
+        "sector_s": 10
+      },
+      {
+        "U_over_T": 861,
+        "quotient_state": 62,
+        "representative_fiber_value": 2492,
+        "representative_root_indices": [
+          3,
+          4,
+          18
+        ],
+        "sector_r": 3,
+        "sector_s": 12
+      },
+      {
+        "U_over_T": 1047,
+        "quotient_state": 80,
+        "representative_fiber_value": 259,
+        "representative_root_indices": [
+          4,
+          7,
+          8
+        ],
+        "sector_r": 3,
+        "sector_s": 15
+      },
+      {
+        "U_over_T": 2284,
+        "quotient_state": 89,
+        "representative_fiber_value": 2038,
+        "representative_root_indices": [
+          9,
+          12,
+          16
+        ],
+        "sector_r": 3,
+        "sector_s": 18
+      },
+      {
+        "U_over_T": 2284,
+        "quotient_state": 89,
+        "representative_fiber_value": 2038,
+        "representative_root_indices": [
+          2,
+          9,
+          12
+        ],
+        "sector_r": 4,
+        "sector_s": 5
+      },
+      {
+        "U_over_T": 904,
+        "quotient_state": 53,
+        "representative_fiber_value": 1326,
+        "representative_root_indices": [
+          2,
+          3,
+          18
+        ],
+        "sector_r": 4,
+        "sector_s": 7
+      },
+      {
+        "U_over_T": 861,
+        "quotient_state": 62,
+        "representative_fiber_value": 2492,
+        "representative_root_indices": [
+          3,
+          4,
+          7
+        ],
+        "sector_r": 4,
+        "sector_s": 16
+      },
+      {
+        "U_over_T": 1652,
+        "quotient_state": 9,
+        "representative_fiber_value": 1617,
+        "representative_root_indices": [
+          3,
+          6,
+          13
+        ],
+        "sector_r": 4,
+        "sector_s": 18
+      },
+      {
+        "U_over_T": 1047,
+        "quotient_state": 80,
+        "representative_fiber_value": 259,
+        "representative_root_indices": [
+          1,
+          8,
+          10
+        ],
+        "sector_r": 5,
+        "sector_s": 6
+      },
+      {
+        "U_over_T": 2284,
+        "quotient_state": 89,
+        "representative_fiber_value": 2038,
+        "representative_root_indices": [
+          2,
+          11,
+          13
+        ],
+        "sector_r": 5,
+        "sector_s": 11
+      },
+      {
+        "U_over_T": 1652,
+        "quotient_state": 9,
+        "representative_fiber_value": 1617,
+        "representative_root_indices": [
+          1,
+          10,
+          18
+        ],
+        "sector_r": 5,
+        "sector_s": 13
+      },
+      {
+        "U_over_T": 1838,
+        "quotient_state": 133,
+        "representative_fiber_value": 1563,
+        "representative_root_indices": [
+          2,
+          4,
+          11
+        ],
+        "sector_r": 5,
+        "sector_s": 18
+      },
+      {
+        "U_over_T": 1652,
+        "quotient_state": 9,
+        "representative_fiber_value": 1617,
+        "representative_root_indices": [
+          2,
+          4,
+          15
+        ],
+        "sector_r": 6,
+        "sector_s": 8
+      },
+      {
+        "U_over_T": 1047,
+        "quotient_state": 80,
+        "representative_fiber_value": 259,
+        "representative_root_indices": [
+          2,
+          4,
+          13
+        ],
+        "sector_r": 6,
+        "sector_s": 11
+      },
+      {
+        "U_over_T": 1838,
+        "quotient_state": 133,
+        "representative_fiber_value": 1563,
+        "representative_root_indices": [
+          6,
+          8,
+          16
+        ],
+        "sector_r": 6,
+        "sector_s": 14
+      },
+      {
+        "U_over_T": 2284,
+        "quotient_state": 89,
+        "representative_fiber_value": 2038,
+        "representative_root_indices": [
+          6,
+          8,
+          14
+        ],
+        "sector_r": 6,
+        "sector_s": 17
+      },
+      {
+        "U_over_T": 861,
+        "quotient_state": 62,
+        "representative_fiber_value": 2492,
+        "representative_root_indices": [
+          4,
+          5,
+          18
+        ],
+        "sector_r": 7,
+        "sector_s": 9
+      },
+      {
+        "U_over_T": 1838,
+        "quotient_state": 133,
+        "representative_fiber_value": 1563,
+        "representative_root_indices": [
+          11,
+          15,
+          16
+        ],
+        "sector_r": 7,
+        "sector_s": 10
+      },
+      {
+        "U_over_T": 1047,
+        "quotient_state": 80,
+        "representative_fiber_value": 259,
+        "representative_root_indices": [
+          3,
+          17,
+          18
+        ],
+        "sector_r": 7,
+        "sector_s": 16
+      },
+      {
+        "U_over_T": 904,
+        "quotient_state": 53,
+        "representative_fiber_value": 1326,
+        "representative_root_indices": [
+          12,
+          13,
+          18
+        ],
+        "sector_r": 7,
+        "sector_s": 17
+      },
+      {
+        "U_over_T": 2284,
+        "quotient_state": 89,
+        "representative_fiber_value": 2038,
+        "representative_root_indices": [
+          1,
+          6,
+          14
+        ],
+        "sector_r": 8,
+        "sector_s": 10
+      },
+      {
+        "U_over_T": 861,
+        "quotient_state": 62,
+        "representative_fiber_value": 2492,
+        "representative_root_indices": [
+          2,
+          11,
+          13
+        ],
+        "sector_r": 8,
+        "sector_s": 13
+      },
+      {
+        "U_over_T": 904,
+        "quotient_state": 53,
+        "representative_fiber_value": 1326,
+        "representative_root_indices": [
+          1,
+          9,
+          11
+        ],
+        "sector_r": 8,
+        "sector_s": 14
+      },
+      {
+        "U_over_T": 1652,
+        "quotient_state": 9,
+        "representative_fiber_value": 1617,
+        "representative_root_indices": [
+          3,
+          11,
+          16
+        ],
+        "sector_r": 8,
+        "sector_s": 17
+      },
+      {
+        "U_over_T": 904,
+        "quotient_state": 53,
+        "representative_fiber_value": 1326,
+        "representative_root_indices": [
+          3,
+          8,
+          14
+        ],
+        "sector_r": 9,
+        "sector_s": 11
+      },
+      {
+        "U_over_T": 1652,
+        "quotient_state": 9,
+        "representative_fiber_value": 1617,
+        "representative_root_indices": [
+          9,
+          10,
+          14
+        ],
+        "sector_r": 9,
+        "sector_s": 12
+      },
+      {
+        "U_over_T": 2284,
+        "quotient_state": 89,
+        "representative_fiber_value": 2038,
+        "representative_root_indices": [
+          3,
+          4,
+          18
+        ],
+        "sector_r": 9,
+        "sector_s": 16
+      },
+      {
+        "U_over_T": 861,
+        "quotient_state": 62,
+        "representative_fiber_value": 2492,
+        "representative_root_indices": [
+          1,
+          6,
+          14
+        ],
+        "sector_r": 9,
+        "sector_s": 17
+      },
+      {
+        "U_over_T": 1047,
+        "quotient_state": 80,
+        "representative_fiber_value": 259,
+        "representative_root_indices": [
+          4,
+          5,
+          10
+        ],
+        "sector_r": 10,
+        "sector_s": 12
+      },
+      {
+        "U_over_T": 1838,
+        "quotient_state": 133,
+        "representative_fiber_value": 1563,
+        "representative_root_indices": [
+          1,
+          2,
+          15
+        ],
+        "sector_r": 10,
+        "sector_s": 17
+      },
+      {
+        "U_over_T": 1838,
+        "quotient_state": 133,
+        "representative_fiber_value": 1563,
+        "representative_root_indices": [
+          5,
+          7,
+          13
+        ],
+        "sector_r": 11,
+        "sector_s": 13
+      },
+      {
+        "U_over_T": 1047,
+        "quotient_state": 80,
+        "representative_fiber_value": 259,
+        "representative_root_indices": [
+          8,
+          14,
+          16
+        ],
+        "sector_r": 11,
+        "sector_s": 17
+      },
+      {
+        "U_over_T": 2284,
+        "quotient_state": 89,
+        "representative_fiber_value": 2038,
+        "representative_root_indices": [
+          3,
+          4,
+          7
+        ],
+        "sector_r": 12,
+        "sector_s": 15
+      },
+      {
+        "U_over_T": 1652,
+        "quotient_state": 9,
+        "representative_fiber_value": 1617,
+        "representative_root_indices": [
+          1,
+          2,
+          17
+        ],
+        "sector_r": 12,
+        "sector_s": 16
+      },
+      {
+        "U_over_T": 861,
+        "quotient_state": 62,
+        "representative_fiber_value": 2492,
+        "representative_root_indices": [
+          8,
+          10,
+          17
+        ],
+        "sector_r": 13,
+        "sector_s": 14
+      },
+      {
+        "U_over_T": 904,
+        "quotient_state": 53,
+        "representative_fiber_value": 1326,
+        "representative_root_indices": [
+          5,
+          7,
+          17
+        ],
+        "sector_r": 13,
+        "sector_s": 18
+      },
+      {
+        "U_over_T": 904,
+        "quotient_state": 53,
+        "representative_fiber_value": 1326,
+        "representative_root_indices": [
+          6,
+          9,
+          16
+        ],
+        "sector_r": 14,
+        "sector_s": 15
+      },
+      {
+        "U_over_T": 861,
+        "quotient_state": 62,
+        "representative_fiber_value": 2492,
+        "representative_root_indices": [
+          2,
+          9,
+          12
+        ],
+        "sector_r": 14,
+        "sector_s": 18
+      },
+      {
+        "U_over_T": 1838,
+        "quotient_state": 133,
+        "representative_fiber_value": 1563,
+        "representative_root_indices": [
+          7,
+          10,
+          14
+        ],
+        "sector_r": 15,
+        "sector_s": 16
+      },
+      {
+        "U_over_T": 1047,
+        "quotient_state": 80,
+        "representative_fiber_value": 259,
+        "representative_root_indices": [
+          9,
+          13,
+          16
+        ],
+        "sector_r": 15,
+        "sector_s": 18
+      }
+    ],
+    "zeta": 944
+  },
+  "next_obligation": "Return to the broader prime-ell pma_wide_residual: three or more active DFT sectors, extension fields, or an asymptotic version of the common-root deficit principle.  No p=2699 exact-two-sector cell remains open.",
+  "normal_form": {
+    "cofactor_degrees": "deg(g_r),deg(g_s)<=D=m-tau-1",
+    "common_dead_labels": "z=#{beta in core: g_r(beta)=g_s(beta)=0}<=D",
+    "listing_core_requirement": "R_core>=(D+2)*19",
+    "three_root_equation": "beta^(s-r)(g_s(beta)/g_r(beta))^19=U/T",
+    "word": "P(X)=P0(X^19)+phi(X^19)(X^r g_r(X^19)+X^s g_s(X^19))"
+  },
+  "operation_counts": {
+    "blind_coefficient_pairs_enumerated": 0,
+    "parameter_cells": 15,
+    "quotient_fiber_state_rows": 21726,
+    "quotient_spectrum_rows": 21726,
+    "three_root_equation_checks": 54
+  },
+  "parameter_cells": [
+    {
+      "D": 1,
+      "listing_core_requirement": 57,
+      "m": 14,
+      "tau": 12,
+      "uniform_retained_core_upper_bound": 44,
+      "uniform_strict_gap": 13,
+      "vacant": true,
+      "z_at_most_D_minus_1": {
+        "retained_core_upper_bound": 42,
+        "strict_gap": 15
+      },
+      "z_equals_D": {
+        "dead_core_contribution": 19,
+        "exact_constant_ratio_live_envelope": 25,
+        "live_core_labels": 13,
+        "retained_core_upper_bound": 44,
+        "strict_gap": 13
+      }
+    },
+    {
+      "D": 2,
+      "listing_core_requirement": 76,
+      "m": 15,
+      "tau": 12,
+      "uniform_retained_core_upper_bound": 63,
+      "uniform_strict_gap": 13,
+      "vacant": true,
+      "z_at_most_D_minus_1": {
+        "retained_core_upper_bound": 61,
+        "strict_gap": 15
+      },
+      "z_equals_D": {
+        "dead_core_contribution": 38,
+        "exact_constant_ratio_live_envelope": 25,
+        "live_core_labels": 13,
+        "retained_core_upper_bound": 63,
+        "strict_gap": 13
+      }
+    },
+    {
+      "D": 3,
+      "listing_core_requirement": 95,
+      "m": 16,
+      "tau": 12,
+      "uniform_retained_core_upper_bound": 82,
+      "uniform_strict_gap": 13,
+      "vacant": true,
+      "z_at_most_D_minus_1": {
+        "retained_core_upper_bound": 80,
+        "strict_gap": 15
+      },
+      "z_equals_D": {
+        "dead_core_contribution": 57,
+        "exact_constant_ratio_live_envelope": 25,
+        "live_core_labels": 13,
+        "retained_core_upper_bound": 82,
+        "strict_gap": 13
+      }
+    },
+    {
+      "D": 4,
+      "listing_core_requirement": 114,
+      "m": 17,
+      "tau": 12,
+      "uniform_retained_core_upper_bound": 101,
+      "uniform_strict_gap": 13,
+      "vacant": true,
+      "z_at_most_D_minus_1": {
+        "retained_core_upper_bound": 99,
+        "strict_gap": 15
+      },
+      "z_equals_D": {
+        "dead_core_contribution": 76,
+        "exact_constant_ratio_live_envelope": 25,
+        "live_core_labels": 13,
+        "retained_core_upper_bound": 101,
+        "strict_gap": 13
+      }
+    },
+    {
+      "D": 5,
+      "listing_core_requirement": 133,
+      "m": 18,
+      "tau": 12,
+      "uniform_retained_core_upper_bound": 120,
+      "uniform_strict_gap": 13,
+      "vacant": true,
+      "z_at_most_D_minus_1": {
+        "retained_core_upper_bound": 118,
+        "strict_gap": 15
+      },
+      "z_equals_D": {
+        "dead_core_contribution": 95,
+        "exact_constant_ratio_live_envelope": 25,
+        "live_core_labels": 13,
+        "retained_core_upper_bound": 120,
+        "strict_gap": 13
+      }
+    },
+    {
+      "D": 1,
+      "listing_core_requirement": 57,
+      "m": 15,
+      "tau": 13,
+      "uniform_retained_core_upper_bound": 45,
+      "uniform_strict_gap": 12,
+      "vacant": true,
+      "z_at_most_D_minus_1": {
+        "retained_core_upper_bound": 45,
+        "strict_gap": 12
+      },
+      "z_equals_D": {
+        "dead_core_contribution": 19,
+        "exact_constant_ratio_live_envelope": 26,
+        "live_core_labels": 14,
+        "retained_core_upper_bound": 45,
+        "strict_gap": 12
+      }
+    },
+    {
+      "D": 2,
+      "listing_core_requirement": 76,
+      "m": 16,
+      "tau": 13,
+      "uniform_retained_core_upper_bound": 64,
+      "uniform_strict_gap": 12,
+      "vacant": true,
+      "z_at_most_D_minus_1": {
+        "retained_core_upper_bound": 64,
+        "strict_gap": 12
+      },
+      "z_equals_D": {
+        "dead_core_contribution": 38,
+        "exact_constant_ratio_live_envelope": 26,
+        "live_core_labels": 14,
+        "retained_core_upper_bound": 64,
+        "strict_gap": 12
+      }
+    },
+    {
+      "D": 3,
+      "listing_core_requirement": 95,
+      "m": 17,
+      "tau": 13,
+      "uniform_retained_core_upper_bound": 83,
+      "uniform_strict_gap": 12,
+      "vacant": true,
+      "z_at_most_D_minus_1": {
+        "retained_core_upper_bound": 83,
+        "strict_gap": 12
+      },
+      "z_equals_D": {
+        "dead_core_contribution": 57,
+        "exact_constant_ratio_live_envelope": 26,
+        "live_core_labels": 14,
+        "retained_core_upper_bound": 83,
+        "strict_gap": 12
+      }
+    },
+    {
+      "D": 4,
+      "listing_core_requirement": 114,
+      "m": 18,
+      "tau": 13,
+      "uniform_retained_core_upper_bound": 102,
+      "uniform_strict_gap": 12,
+      "vacant": true,
+      "z_at_most_D_minus_1": {
+        "retained_core_upper_bound": 102,
+        "strict_gap": 12
+      },
+      "z_equals_D": {
+        "dead_core_contribution": 76,
+        "exact_constant_ratio_live_envelope": 26,
+        "live_core_labels": 14,
+        "retained_core_upper_bound": 102,
+        "strict_gap": 12
+      }
+    },
+    {
+      "D": 1,
+      "listing_core_requirement": 57,
+      "m": 16,
+      "tau": 14,
+      "uniform_retained_core_upper_bound": 48,
+      "uniform_strict_gap": 9,
+      "vacant": true,
+      "z_at_most_D_minus_1": {
+        "retained_core_upper_bound": 48,
+        "strict_gap": 9
+      },
+      "z_equals_D": {
+        "dead_core_contribution": 19,
+        "exact_constant_ratio_live_envelope": 27,
+        "live_core_labels": 15,
+        "retained_core_upper_bound": 46,
+        "strict_gap": 11
+      }
+    },
+    {
+      "D": 2,
+      "listing_core_requirement": 76,
+      "m": 17,
+      "tau": 14,
+      "uniform_retained_core_upper_bound": 67,
+      "uniform_strict_gap": 9,
+      "vacant": true,
+      "z_at_most_D_minus_1": {
+        "retained_core_upper_bound": 67,
+        "strict_gap": 9
+      },
+      "z_equals_D": {
+        "dead_core_contribution": 38,
+        "exact_constant_ratio_live_envelope": 27,
+        "live_core_labels": 15,
+        "retained_core_upper_bound": 65,
+        "strict_gap": 11
+      }
+    },
+    {
+      "D": 3,
+      "listing_core_requirement": 95,
+      "m": 18,
+      "tau": 14,
+      "uniform_retained_core_upper_bound": 86,
+      "uniform_strict_gap": 9,
+      "vacant": true,
+      "z_at_most_D_minus_1": {
+        "retained_core_upper_bound": 86,
+        "strict_gap": 9
+      },
+      "z_equals_D": {
+        "dead_core_contribution": 57,
+        "exact_constant_ratio_live_envelope": 27,
+        "live_core_labels": 15,
+        "retained_core_upper_bound": 84,
+        "strict_gap": 11
+      }
+    },
+    {
+      "D": 1,
+      "listing_core_requirement": 57,
+      "m": 17,
+      "tau": 15,
+      "uniform_retained_core_upper_bound": 51,
+      "uniform_strict_gap": 6,
+      "vacant": true,
+      "z_at_most_D_minus_1": {
+        "retained_core_upper_bound": 51,
+        "strict_gap": 6
+      },
+      "z_equals_D": {
+        "dead_core_contribution": 19,
+        "exact_constant_ratio_live_envelope": 28,
+        "live_core_labels": 16,
+        "retained_core_upper_bound": 47,
+        "strict_gap": 10
+      }
+    },
+    {
+      "D": 2,
+      "listing_core_requirement": 76,
+      "m": 18,
+      "tau": 15,
+      "uniform_retained_core_upper_bound": 70,
+      "uniform_strict_gap": 6,
+      "vacant": true,
+      "z_at_most_D_minus_1": {
+        "retained_core_upper_bound": 70,
+        "strict_gap": 6
+      },
+      "z_equals_D": {
+        "dead_core_contribution": 38,
+        "exact_constant_ratio_live_envelope": 28,
+        "live_core_labels": 16,
+        "retained_core_upper_bound": 66,
+        "strict_gap": 10
+      }
+    },
+    {
+      "D": 1,
+      "listing_core_requirement": 57,
+      "m": 18,
+      "tau": 16,
+      "uniform_retained_core_upper_bound": 54,
+      "uniform_strict_gap": 3,
+      "vacant": true,
+      "z_at_most_D_minus_1": {
+        "retained_core_upper_bound": 54,
+        "strict_gap": 3
+      },
+      "z_equals_D": {
+        "dead_core_contribution": 19,
+        "exact_constant_ratio_live_envelope": 29,
+        "live_core_labels": 17,
+        "retained_core_upper_bound": 48,
+        "strict_gap": 9
+      }
+    }
+  ],
+  "proof": {
+    "branch_z_equals_D": "If z=D, the nonzero degree-<=D cofactors share D distinct roots, hence g_r=c_r Q and g_s=c_s Q.  On live labels Q is nonzero and cancels from fiber multiplicities, so the constant-ratio quotient census applies.  Its exact top-n envelope is n+12 for n=tau+1=13,...,17.  Therefore R_core<=19D+tau+13, with listing gap 25-tau>=9.",
+    "branch_z_less_than_D": "If z<=D-1, the exact local cap three gives R_core<=19z+3(m-z)<=19D+3tau-13.  Since D>0 and m<19 force tau<=16, the listing gap is at least 51-3tau>=3.  Thus no rational-incidence estimate is needed in the genuinely nonconstant branch.",
+    "interpolation_and_minimality": "The fiber census maximizes independently over the sector-zero value A=P0(beta)/phi(beta) on every live label and the top-n step maximizes over every choice of core labels. It is therefore an upper envelope before imposing P0 interpolation, distinct/nonzero petal scalars, exact degree, minimality, or primitivity.  Those constraints can only remove candidates; strict unlistedness makes their individual feasibility moot.",
+    "logical_guard": "The D=0 spectrum is used only after z=D algebraically forces the reduced ratio to be constant.  It is never transported into the z<D rational-function branch."
+  },
+  "saturated_dead_coset_dichotomy_lemma": {
+    "novelty_guard": "The dead-coset budget itself is upstream machinery.  The contribution here is the equality-frontier split and its exact F_2699 application, not a claim of new generic sector-dead machinery.",
+    "specialization": "Here ell=19, c=3 and S_n=n+12.  The first branch has gap 51-3tau>=3; the saturated branch has gap 25-tau>=9.",
+    "statement": "Let two nonzero quotient cofactors have degree <=D, let z be their number of distinct common core-label roots, and suppose every nondead core coset has retained cap c. For m=tau+1+D: if z<=D-1 then R_core<=(D-1)ell+c(tau+2); if z=D then both cofactors are scalar multiples of the common degree-D locator and R_core<=D*ell+S_(tau+1), where S_n is the exact constant-ratio top-n spectrum envelope."
+  },
+  "scientific_consequence": "The D=0 and D-positive arguments close the complete exact-two-active-sector frontier over F_2699.  The propagation theorem separately shows the F_1361 frontier is nonvacant.  The arithmetic dichotomy is therefore genuinely prime-dependent.",
+  "scope": "Prime field F_2699, ell=19, background-free full petals, exactly two active nonzero DFT sectors, and the exceptional parameter range.  This is not whole-cell vacancy for words with three or more active sectors and not an extension-field theorem.",
+  "status": "VACANCY_THEOREM",
+  "theorem": "Over F_2699 with ell=19, every background-free full-petal word with exactly two active nonzero DFT sectors is unlisted throughout 12<=tau<m<19 and D=m-tau-1>0.  Together with the D=0 theorem, the entire p=2699 exceptional frontier is vacant.",
+  "title": "ell=19 p=2699 D-positive exact-two-sector vacancy",
+  "uniform_minimum_listing_gap": 3,
+  "upstream": {
+    "baseline_is_ancestor": true,
+    "collision": "The cited sources supply the sector decomposition, the sector-dead degree budget, the full-petal/minimal-kernel bijection, and unrelated general ell=19 spectrum work.  They leave the exact-two-sector p=2699 D>0 closure and the |S|>=2 pma_wide_residual open.",
+    "source_baseline": "c35a6da31ed0905afcbaaefe4eb0f242572ebb35",
+    "sources": [
+      "experimental/notes/l1/l1_coset_mixed_vacancy_threshold.md",
+      "experimental/notes/l1/l1_general_reconstruction_collapse.md",
+      "experimental/notes/l1/l1_ell19_attainment.md",
+      "experimental/data/prize-dag/prize_dag.json"
+    ]
+  },
+  "verdict": "PASS_WITH_ELL19_FULL_EXCEPTIONAL_FRONTIER_VACANCY"
+}
