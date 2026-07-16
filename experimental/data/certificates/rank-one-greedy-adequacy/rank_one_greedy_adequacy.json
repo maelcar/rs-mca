@@ -1,0 +1,49 @@
+{
+ "b6_k4_census": {
+  "charged": 958,
+  "distinct_top_configs": 5,
+  "violations": 10,
+  "worst_realized": 0.864049
+ },
+ "b8_witness": {
+  "best": 4.524622,
+  "cap": 5.236534
+ },
+ "chart": "base-3",
+ "claims": [
+  "T1",
+  "T2",
+  "T3",
+  "T4"
+ ],
+ "greedy_max_patterns_by_k": {
+  "1": 1,
+  "2": 1,
+  "3": 1,
+  "4": 2,
+  "5": 2
+ },
+ "instances_k_le_5": 17820,
+ "k6_exhaustive_worst": 0.448225,
+ "k6_greedy_max_patterns": 3,
+ "k7_worst_instance_ratio": 0.327952,
+ "k7_worst_patterns_used": 4,
+ "packet": "rank-one-greedy-adequacy",
+ "realized_witness": {
+  "class": "101110",
+  "k": 4,
+  "r": 4,
+  "ratio": 0.991009
+ },
+ "t5_witness_lhs_rhs": [
+  2.9043,
+  4.2724
+ ],
+ "worst_ratio_by_k": {
+  "1": 1.0,
+  "2": 1.0,
+  "3": 1.0,
+  "4": 0.72294,
+  "5": 0.597806
+ }
+}

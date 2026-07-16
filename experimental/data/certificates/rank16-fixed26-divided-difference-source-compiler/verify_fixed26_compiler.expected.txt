@@ -1,0 +1,12 @@
+FIXED26_DIVIDED_DIFFERENCE_SOURCE_COMPILER: PASS
+manifest_schema=rs-mca.rank16-fixed26-divided-difference-source-compiler.v1
+deployed=B32768,s1936,a67472,r63601,D61665,d28897,tail3870
+compiler=labels38,pairs703,identity_contract11,degree_criterion=PASS
+algebra_replay=moduli2,instances6,pair_checks396,monomial_formula_checks48,source_reconstruction=PASS
+monomial_cap=37,class_size<=3,partition=3x12+2,zero_tail_branch=NO_H_SPLIT_EDGES
+filters=9,status=RETAINED_NOT_CONSEQUENCES
+overlap=826,838,843,844;pr843_rank2=CARVED_OUT;pr844=CARVED_OUT
+ledger=OMITTED;finite_payment=0;parent_closure=0;score_delta=0
+semantic_tamper_selftests=PASS,count=12
+artifact_checksums=PASS,count=4
+RESULT=PASS

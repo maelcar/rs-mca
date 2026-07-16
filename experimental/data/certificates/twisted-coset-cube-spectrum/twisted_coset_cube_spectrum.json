@@ -1,0 +1,25 @@
+{
+ "B": 6,
+ "B6_coefficients": 13104,
+ "B8_spot_worst": "1.95e-14",
+ "N_exact_B": [
+  4,
+  6,
+  8
+ ],
+ "chart": "base-3",
+ "claims": [
+  "N",
+  "A",
+  "B",
+  "C"
+ ],
+ "coset_energy_worst_rel": "3.20e-14",
+ "k1_pure_imag_worst_re": "1.39e-15",
+ "localization_worst": "1.51e-15",
+ "packet": "twisted-coset-cube-spectrum",
+ "pin_k1_r1_max": 1.732050807568878,
+ "pin_symmetric_depth2": -1.336932620625273,
+ "product_law_worst": "8.94e-15",
+ "union_worst": "8.32e-15"
+}

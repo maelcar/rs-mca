@@ -1,0 +1,626 @@
+{
+  "claims": {
+    "PB5_equality_is_Steiner_design": true,
+    "common_flat_complement_identity": true,
+    "core_capacity_identity": true,
+    "deep_hole_basis_heaviness_is_automatic": true,
+    "exact_pencil_disintegration": true,
+    "exact_slack_identity": true,
+    "moving_zero_disjointness": true,
+    "no_owner_or_target_closure_claimed": true
+  },
+  "common_flat_and_slack_fixture": {
+    "all_possible_bases": 20,
+    "augmented_rank": 4,
+    "basis_census": 18,
+    "basis_deficiency": 2,
+    "common_flat_complements": 2,
+    "core_capacity_sum": 54,
+    "core_load_sum": 51,
+    "core_slack_sum": 3,
+    "domain_size": 6,
+    "field_order": 7,
+    "kappa": 2,
+    "local_basis_sum": 17,
+    "minimum_zeros": 3,
+    "name": "F7_nonmaximal_common_flat",
+    "pencils": [
+      {
+        "capacity": 4,
+        "common_zero_count": 2,
+        "core": [
+          0,
+          1
+        ],
+        "load": 4,
+        "pair_count": 2,
+        "slack": 0
+      },
+      {
+        "capacity": 3,
+        "common_zero_count": 3,
+        "core": [
+          0,
+          2
+        ],
+        "load": 3,
+        "pair_count": 2,
+        "slack": 0
+      },
+      {
+        "capacity": 3,
+        "common_zero_count": 3,
+        "core": [
+          0,
+          3
+        ],
+        "load": 3,
+        "pair_count": 2,
+        "slack": 0
+      },
+      {
+        "capacity": 3,
+        "common_zero_count": 3,
+        "core": [
+          0,
+          4
+        ],
+        "load": 3,
+        "pair_count": 2,
+        "slack": 0
+      },
+      {
+        "capacity": 3,
+        "common_zero_count": 3,
+        "core": [
+          0,
+          5
+        ],
+        "load": 3,
+        "pair_count": 2,
+        "slack": 0
+      },
+      {
+        "capacity": 4,
+        "common_zero_count": 2,
+        "core": [
+          1,
+          2
+        ],
+        "load": 3,
+        "pair_count": 2,
+        "slack": 1
+      },
+      {
+        "capacity": 4,
+        "common_zero_count": 2,
+        "core": [
+          1,
+          3
+        ],
+        "load": 4,
+        "pair_count": 3,
+        "slack": 0
+      },
+      {
+        "capacity": 4,
+        "common_zero_count": 2,
+        "core": [
+          1,
+          4
+        ],
+        "load": 3,
+        "pair_count": 2,
+        "slack": 1
+      },
+      {
+        "capacity": 4,
+        "common_zero_count": 2,
+        "core": [
+          1,
+          5
+        ],
+        "load": 4,
+        "pair_count": 3,
+        "slack": 0
+      },
+      {
+        "capacity": 4,
+        "common_zero_count": 2,
+        "core": [
+          2,
+          3
+        ],
+        "load": 4,
+        "pair_count": 2,
+        "slack": 0
+      },
+      {
+        "capacity": 4,
+        "common_zero_count": 2,
+        "core": [
+          2,
+          4
+        ],
+        "load": 3,
+        "pair_count": 1,
+        "slack": 1
+      },
+      {
+        "capacity": 3,
+        "common_zero_count": 3,
+        "core": [
+          2,
+          5
+        ],
+        "load": 3,
+        "pair_count": 2,
+        "slack": 0
+      },
+      {
+        "capacity": 3,
+        "common_zero_count": 3,
+        "core": [
+          3,
+          4
+        ],
+        "load": 3,
+        "pair_count": 2,
+        "slack": 0
+      },
+      {
+        "capacity": 4,
+        "common_zero_count": 2,
+        "core": [
+          3,
+          5
+        ],
+        "load": 4,
+        "pair_count": 2,
+        "slack": 0
+      },
+      {
+        "capacity": 4,
+        "common_zero_count": 2,
+        "core": [
+          4,
+          5
+        ],
+        "load": 4,
+        "pair_count": 2,
+        "slack": 0
+      }
+    ],
+    "retained_pairs": 6
+  },
+  "deep_hole_affine_line_fixtures": [
+    {
+      "PB5_denominator": 3,
+      "PB5_ratio": 12,
+      "Steiner_system": "S(2,3,9)",
+      "agreement_size": 3,
+      "all_possible_bases": 36,
+      "augmented_rank": 3,
+      "basis_census": 36,
+      "basis_deficiency": 0,
+      "characteristic": 3,
+      "common_flat_complements": 0,
+      "core_capacity_sum": 72,
+      "core_load_sum": 72,
+      "core_slack_sum": 0,
+      "direction_coset_weights_checked": 9,
+      "direction_distance": 8,
+      "domain_size": 9,
+      "error_weight": 6,
+      "expected_pair_count": 12,
+      "field_order": 9,
+      "global_common_core_size": 0,
+      "identity_depth": 1,
+      "kappa": 1,
+      "local_basis_sum": 36,
+      "minimum_zeros": 3,
+      "name": "F9_F3_affine_lines",
+      "pair_coverage_multiplicity": 1,
+      "pencils": [
+        {
+          "capacity": 8,
+          "common_zero_count": 1,
+          "core": [
+            0
+          ],
+          "load": 8,
+          "pair_count": 4,
+          "slack": 0
+        },
+        {
+          "capacity": 8,
+          "common_zero_count": 1,
+          "core": [
+            1
+          ],
+          "load": 8,
+          "pair_count": 4,
+          "slack": 0
+        },
+        {
+          "capacity": 8,
+          "common_zero_count": 1,
+          "core": [
+            2
+          ],
+          "load": 8,
+          "pair_count": 4,
+          "slack": 0
+        },
+        {
+          "capacity": 8,
+          "common_zero_count": 1,
+          "core": [
+            3
+          ],
+          "load": 8,
+          "pair_count": 4,
+          "slack": 0
+        },
+        {
+          "capacity": 8,
+          "common_zero_count": 1,
+          "core": [
+            4
+          ],
+          "load": 8,
+          "pair_count": 4,
+          "slack": 0
+        },
+        {
+          "capacity": 8,
+          "common_zero_count": 1,
+          "core": [
+            5
+          ],
+          "load": 8,
+          "pair_count": 4,
+          "slack": 0
+        },
+        {
+          "capacity": 8,
+          "common_zero_count": 1,
+          "core": [
+            6
+          ],
+          "load": 8,
+          "pair_count": 4,
+          "slack": 0
+        },
+        {
+          "capacity": 8,
+          "common_zero_count": 1,
+          "core": [
+            7
+          ],
+          "load": 8,
+          "pair_count": 4,
+          "slack": 0
+        },
+        {
+          "capacity": 8,
+          "common_zero_count": 1,
+          "core": [
+            8
+          ],
+          "load": 8,
+          "pair_count": 4,
+          "slack": 0
+        }
+      ],
+      "retained_pairs": 12,
+      "slope_count": 4,
+      "slope_multiplicity": 3
+    },
+    {
+      "PB5_denominator": 10,
+      "PB5_ratio": 30,
+      "Steiner_system": "S(2,5,25)",
+      "agreement_size": 5,
+      "all_possible_bases": 300,
+      "augmented_rank": 3,
+      "basis_census": 300,
+      "basis_deficiency": 0,
+      "characteristic": 5,
+      "common_flat_complements": 0,
+      "core_capacity_sum": 600,
+      "core_load_sum": 600,
+      "core_slack_sum": 0,
+      "direction_coset_weights_checked": 25,
+      "direction_distance": 24,
+      "domain_size": 25,
+      "error_weight": 20,
+      "expected_pair_count": 30,
+      "field_order": 25,
+      "global_common_core_size": 0,
+      "identity_depth": 3,
+      "kappa": 1,
+      "local_basis_sum": 300,
+      "minimum_zeros": 5,
+      "name": "F25_F5_affine_lines",
+      "pair_coverage_multiplicity": 1,
+      "pencils": [
+        {
+          "capacity": 24,
+          "common_zero_count": 1,
+          "core": [
+            0
+          ],
+          "load": 24,
+          "pair_count": 6,
+          "slack": 0
+        },
+        {
+          "capacity": 24,
+          "common_zero_count": 1,
+          "core": [
+            1
+          ],
+          "load": 24,
+          "pair_count": 6,
+          "slack": 0
+        },
+        {
+          "capacity": 24,
+          "common_zero_count": 1,
+          "core": [
+            2
+          ],
+          "load": 24,
+          "pair_count": 6,
+          "slack": 0
+        },
+        {
+          "capacity": 24,
+          "common_zero_count": 1,
+          "core": [
+            3
+          ],
+          "load": 24,
+          "pair_count": 6,
+          "slack": 0
+        },
+        {
+          "capacity": 24,
+          "common_zero_count": 1,
+          "core": [
+            4
+          ],
+          "load": 24,
+          "pair_count": 6,
+          "slack": 0
+        },
+        {
+          "capacity": 24,
+          "common_zero_count": 1,
+          "core": [
+            5
+          ],
+          "load": 24,
+          "pair_count": 6,
+          "slack": 0
+        },
+        {
+          "capacity": 24,
+          "common_zero_count": 1,
+          "core": [
+            6
+          ],
+          "load": 24,
+          "pair_count": 6,
+          "slack": 0
+        },
+        {
+          "capacity": 24,
+          "common_zero_count": 1,
+          "core": [
+            7
+          ],
+          "load": 24,
+          "pair_count": 6,
+          "slack": 0
+        },
+        {
+          "capacity": 24,
+          "common_zero_count": 1,
+          "core": [
+            8
+          ],
+          "load": 24,
+          "pair_count": 6,
+          "slack": 0
+        },
+        {
+          "capacity": 24,
+          "common_zero_count": 1,
+          "core": [
+            9
+          ],
+          "load": 24,
+          "pair_count": 6,
+          "slack": 0
+        },
+        {
+          "capacity": 24,
+          "common_zero_count": 1,
+          "core": [
+            10
+          ],
+          "load": 24,
+          "pair_count": 6,
+          "slack": 0
+        },
+        {
+          "capacity": 24,
+          "common_zero_count": 1,
+          "core": [
+            11
+          ],
+          "load": 24,
+          "pair_count": 6,
+          "slack": 0
+        },
+        {
+          "capacity": 24,
+          "common_zero_count": 1,
+          "core": [
+            12
+          ],
+          "load": 24,
+          "pair_count": 6,
+          "slack": 0
+        },
+        {
+          "capacity": 24,
+          "common_zero_count": 1,
+          "core": [
+            13
+          ],
+          "load": 24,
+          "pair_count": 6,
+          "slack": 0
+        },
+        {
+          "capacity": 24,
+          "common_zero_count": 1,
+          "core": [
+            14
+          ],
+          "load": 24,
+          "pair_count": 6,
+          "slack": 0
+        },
+        {
+          "capacity": 24,
+          "common_zero_count": 1,
+          "core": [
+            15
+          ],
+          "load": 24,
+          "pair_count": 6,
+          "slack": 0
+        },
+        {
+          "capacity": 24,
+          "common_zero_count": 1,
+          "core": [
+            16
+          ],
+          "load": 24,
+          "pair_count": 6,
+          "slack": 0
+        },
+        {
+          "capacity": 24,
+          "common_zero_count": 1,
+          "core": [
+            17
+          ],
+          "load": 24,
+          "pair_count": 6,
+          "slack": 0
+        },
+        {
+          "capacity": 24,
+          "common_zero_count": 1,
+          "core": [
+            18
+          ],
+          "load": 24,
+          "pair_count": 6,
+          "slack": 0
+        },
+        {
+          "capacity": 24,
+          "common_zero_count": 1,
+          "core": [
+            19
+          ],
+          "load": 24,
+          "pair_count": 6,
+          "slack": 0
+        },
+        {
+          "capacity": 24,
+          "common_zero_count": 1,
+          "core": [
+            20
+          ],
+          "load": 24,
+          "pair_count": 6,
+          "slack": 0
+        },
+        {
+          "capacity": 24,
+          "common_zero_count": 1,
+          "core": [
+            21
+          ],
+          "load": 24,
+          "pair_count": 6,
+          "slack": 0
+        },
+        {
+          "capacity": 24,
+          "common_zero_count": 1,
+          "core": [
+            22
+          ],
+          "load": 24,
+          "pair_count": 6,
+          "slack": 0
+        },
+        {
+          "capacity": 24,
+          "common_zero_count": 1,
+          "core": [
+            23
+          ],
+          "load": 24,
+          "pair_count": 6,
+          "slack": 0
+        },
+        {
+          "capacity": 24,
+          "common_zero_count": 1,
+          "core": [
+            24
+          ],
+          "load": 24,
+          "pair_count": 6,
+          "slack": 0
+        }
+      ],
+      "retained_pairs": 30,
+      "slope_count": 6,
+      "slope_multiplicity": 5
+    }
+  ],
+  "payload_sha256": "59f7da83e72af6a1d94f78c984b13a05949d887f25934e5fec0b87b996959b9a",
+  "schema": "rs-mca-augmented-basis-pencil-design-inverse-v1",
+  "source_binding": [
+    {
+      "path": "experimental/notes/thresholds/all_pair_paving_basis_multiplicity_compiler.md",
+      "pins": [
+        {
+          "line": 120,
+          "line_sha256": "26ff51f484452d78836ce3cab77c5e3b130106890f3bfc26279e40b08823d2eb",
+          "marker": "### Theorem 2 (deep-hole specialization)"
+        },
+        {
+          "line": 487,
+          "line_sha256": "26e7b28d3a9e6e08f184bcbea949600c14727570761fc323ccf6a8fe80c59fc1",
+          "marker": "The exact remaining wall is the **deep-hole pencil/design owner dichotomy**"
+        }
+      ],
+      "sha256": "84d1ed18a110f0e1fee423905bee5710be42f3e8651cefd50db9646d5ffcc239"
+    }
+  ],
+  "status": "PROVED LINEAR ALGEBRA / AUDITED FINITE FIXTURES",
+  "theorem_id": "augmented-basis-pencil-design-inverse"
+}

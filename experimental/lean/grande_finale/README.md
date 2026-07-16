@@ -8,6 +8,67 @@ The package root is `GrandeFinale`, with additional modules under
 
 - `GrandeFinale.lean` formalizes the core staircase, first-match, moment, and
   finite certificate kernels.
+- `GrandeFinale/SetSystemJohnson.lean` proves the abstract set-system
+  Johnson multiplicity kernel used by fixed-slope support caps.
+- `GrandeFinale/FixedSlopeKernelJohnsonMultiplicity.lean` packages the
+  fixed-slope kernel-Johnson multiplicity compiler; it is a theorem-level
+  combinatorial cap, not a full threshold theorem.
+- `GrandeFinale/Rank16FixedCoreQuotientLineObstruction.lean` records the
+  rank-16 fixed-core quotient-line obstruction kernel for the q64 line family.
+- `GrandeFinale/TripleNegativeFirstMatchReduction.lean` formalizes the
+  triple-negative first-match reduction to one residual wall.
+- `GrandeFinale/AugmentedBasisPencilDesignInverse.lean` formalizes the
+  augmented-basis pencil and deep-hole design inverse audit kernel.
+- `GrandeFinale/C0PeriodicFirstMatchTarget.lean` proves the exact four-cell
+  first-match union cap from Danny's #796 packet.  The classified-cell caps
+  and cover are explicit hypotheses; no complete `c=0` parent bound is claimed.
+- `GrandeFinale/C0PeriodicSingletonCertificate.lean` proves the q128
+  two-odd-moment omitted-pair packing bounds for singleton occupancies five and
+  seven, then composes supplied fixed-singleton cell caps into the exact
+  `b=5,7` subtotal consumed by the first-match theorem.
+- `GrandeFinale/C0PeriodicF29ResidualOwner.lean` proves that projectively
+  congruent periodic locators with nonzero quotient constants and residual
+  supports shorter than the period have the same residual support.  Its
+  certificate compiler specializes this to q64 `f=29` and sums a supplied
+  local cap across 64 quotient-constant classes.
+- `GrandeFinale/C0PeriodicF28ResidualPencil.lean` proves the support-level
+  base-root packing theorem for a q64 `f=28` residual pencil, giving at most
+  63 residual supports, then compiles 64 supplied fixed-residual scalar cells
+  into the exact cap `83,970,774,720`.
+- `GrandeFinale/C0PeriodicF28TwoBlockCompiler.lean` proves that projective
+  periodic-locator congruence modulo `X^a`, with `2B <= a`, forces both low
+  coefficient-block equations after the same projective scaling.
+- `GrandeFinale/C0PeriodicF28CanonicalBlocks.lean` splits every support
+  locator canonically by Euclidean division through `X^B`.  At the deployed
+  boundary it derives the exact decomposition, lower-degree bound, exact upper
+  degree, upper monicity, and uniqueness directly from residual-support
+  cardinality.
+- `GrandeFinale/C0PeriodicF28ScalarPencil.lean` solves those block equations
+  as an explicit reference-member pencil when the quotient constants are
+  nonzero, then derives the low-block degree cut from two distinct monic
+  residuals with a common upper-block degree budget.
+- `GrandeFinale/C0PeriodicF28DerivedOwner.lean`, in the at-least-two-member
+  branch, compiles a deduplicated family of literal deployed two-block locators
+  and projective congruences into the support-level residual-pencil certificate
+  and derives the degree cut.  It proves the owner cap 63 in all cases, and its
+  outer wrapper
+  recovers the exact target cap `83,970,774,720` from supplied fixed cells and
+  composes it into the PR #819 first-match payment.
+- `GrandeFinale/C0PeriodicF28TargetCompiler.lean` accepts those algebraic
+  certificates directly on a finite target family.  It deduplicates residual
+  supports by finite image, selects representatives while fixing the reference
+  target, derives each block decomposition canonically, and chooses
+  ray scales for targets on nonreference supports from existential projective
+  witnesses.  It normalizes the reference scale to one, proves every chosen
+  scale is nonzero, and recovers the exact target and first-match bounds without
+  separate family-selection, block-data, ray-scale-function, scale-nonzero, or
+  duplicate-coherence fields.
+- `GrandeFinale/C0PeriodicF28PairwiseCompiler.lean` removes the designated
+  reference target and its conditional membership proof.  It accepts
+  projective witnesses between every pair of targets on distinct residual
+  supports, chooses a reference when the family is nonempty, handles the empty
+  family without assuming the target type is inhabited, and recovers the same
+  exact residual, target, and first-match bounds.
 - `GrandeFinale/ChallengeIntersection.lean` formalizes exact finite
   translate--challenge intersection averaging, received-line shear invariance,
   the challenge-restricted MCA numerator, and the outer ceiling compiler used

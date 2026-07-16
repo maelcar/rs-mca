@@ -1,0 +1,33 @@
+RANK15_D69_D73_ARRANGEMENT_ARITHMETIC: PASS
+field=p:2130706433 prime:yes p_minus_1:2^24*127 divisors:50
+moments=points:211 incidences:630 line_pairs:861
+D=69 moment=5473 prefix=7 terminal=3
+D=70 moment=6115 prefix=5 terminal=2
+D=71 moment=6998 prefix=22 terminal=3
+D=72 moment=7706 prefix=23 terminal=2
+D=73 moment=8446 prefix=25 terminal=3
+D=69 n3=109 n4=27 n5=3 n14=3 route=THREE_N14
+D=69 n3=108 n4=29 n5=2 n13=1 n14=1 n15=1 route=N13_N14_N15
+D=69 n3=108 n4=30 n6=1 n14=3 route=THREE_N14
+D=70 n3=106 n4=30 n5=2 n14=3 route=THREE_N14
+D=70 n3=105 n4=32 n5=1 n13=1 n14=1 n15=1 route=N13_N14_N15
+D=71 n3=103 n4=33 n5=1 n14=3 route=THREE_N14
+D=71 n3=102 n4=35 n13=1 n14=1 n15=1 route=N13_N14_N15
+D=71 n3=123 n6=15 n14=1 n15=1 route=PBD_D71
+D=72 n3=100 n4=36 n14=3 route=THREE_N14
+D=72 n3=121 n5=2 n6=14 n14=1 n15=1 route=PBD_D72
+D=73 n3=122 n4=1 n5=1 n6=1 n7=11 n11=1 n15=1 route=OPEN_D73
+D=73 n3=118 n4=3 n5=1 n6=14 n14=1 n15=1 route=PBD_D73_4_2BLOCKS
+D=73 n3=119 n5=4 n6=13 n14=1 n15=1 route=PBD_D73_4_3BLOCKS
+terminal_stream=bytes:443 sha256:b7089c1cd264762b603188f11545551462ab34bd97b9c8cacbb100e7589f7fb1
+kneser_minimum=|X|:11..14 lower:16 unique_stabilizer_order:16
+product_coset=target_values_at_most:14 omitted_at_least:2 reps_each_at_least:12 exceptions_at_least:24 matching_at_most:14
+pbd_pair_capacity=D71:91 D72:91 D73a:91 D73b:91
+pbd_vertex_checks=D71:reject D72:reject D73a:reject D73b:reject
+D73_open=n3:122 n4:1 n5:1 n6:1 n7:11 n11:1 n15:1
+D73_direction_spectrum=10^1,6^11,5^1,4^1,3^1,2^122,1^73 blocks:210 incidences:405 pairs:351
+conditional_result=exclude_D:69..72 reduce_D73_to_one_profile
+ARITHMETIC_SCOPE=moment_enumeration,prefix_gate,field_divisors,PBD_equations,direction_spectrum
+GEOMETRIC_LEMMAS_NOT_MACHINE_PROVED=matching,coordinates,Cauchy-Davenport,Kneser_application,PBD_construction,duality
+RESULT=PASS
+report_sha256=3955d0c3b1ba3b11417c2ebd47bff4b2379040905b3f9fa9a4497897360891f1

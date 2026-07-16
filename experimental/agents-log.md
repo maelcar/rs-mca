@@ -30,6 +30,41 @@ Keep entries concise and link to the relevant files.
 
 ## Entries
 
+### 2026-07-16 - Lean, M1, L2, and threshold compiler PR wave
+
+- **Agent/model:** Codex integrating reviewed PRs from DannyExperiments,
+  Holm Buar, Scott Hughes, and Adam Mohammed A Latif.  The latest superset
+  branches were used where the PRs formed stacks: #823 covers #817, #841
+  covers the C0 periodic Lean stack #819/#821/#825/#828/#830/#831/#833/#834/#836/#837/#840,
+  and #845 covers the M1 branch stack #814/#835/#839/#844.
+- **Files added or changed:** Added threshold/compiler notes, certificates,
+  and lightweight verifier scripts under `experimental/notes/thresholds/`,
+  `experimental/data/certificates/`, and `experimental/scripts/`; added L2
+  rank-15/rank-16 source certificates and notes under `experimental/notes/l2/`;
+  added M1 branch-2 route-cut and rank-drop certificates under
+  `experimental/notes/m1/`; repaired the CircleCode Lean skeleton under
+  `experimental/lean/cs25_cap_v12/`; and extended `experimental/lean/grande_finale/`
+  with C0 periodic, fixed-slope Johnson, quotient-line obstruction,
+  triple-negative first-match, and augmented-basis pencil modules.
+- **Status:** PROVED / AUDIT / COUNTEREXAMPLE / EXPERIMENTAL, depending on
+  the packet.  The integrated items are local theorem kernels, formalization
+  modules, finite certificate ledgers, or route cuts; no Paper-D theorem row or
+  asymptotic RS-MCA theorem is promoted by this entry.
+- **What is being added:** A large coordination batch for the final-resolution
+  program: rank-one threshold compiler arithmetic, omega-sound and adequacy
+  route corrections, product-profile transfer evidence, fixed-slope Johnson
+  formalization, C0 periodic first-match formalization, rank-15/rank-16 L2
+  reductions, and M1 KoalaBear branch-2 payment scaffolding.
+- **How it is useful:** These packets tighten the finite safe-side atlas and
+  make several residual branches auditable or formally replayable.  They are
+  especially relevant to the grande-finale Lean track, the v13 raw safe-ledger
+  audit, and the L2/M1 residual route map.
+- **What to do next:** Do not promote these notes into the main TeX papers
+  wholesale.  Audit each local theorem against `experimental/grande_finale.tex`
+  and `experimental/cap25_cap_v13_raw.tex`, run the supplied verifier scripts
+  only when a maintainer requests computation, and use the Lean modules as
+  formalization targets without running Lake by default.
+
 ### 2026-07-16 - RS-MCA paving ePrint submission package
 
 - **Agent/model:** Codex logging a human-added ePrint submission candidate by

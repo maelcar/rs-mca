@@ -8,6 +8,56 @@ This package is a partial Lean formalization of
 - `GrandeFinale.lean`: core self-contained kernels for integer budgets,
   first-match ledgers, CA/MCA bad-slope monotonicity, moment inequalities, and
   finite packet arithmetic checks.
+- `GrandeFinale/SetSystemJohnson.lean`: abstract set-system Johnson
+  multiplicity kernel used by fixed-slope support caps.
+- `GrandeFinale/FixedSlopeKernelJohnsonMultiplicity.lean`: fixed-slope
+  kernel-Johnson multiplicity compiler; theorem-level combinatorial cap, not a
+  full threshold theorem.
+- `GrandeFinale/Rank16FixedCoreQuotientLineObstruction.lean`: rank-16
+  fixed-core quotient-line obstruction kernel for the q64 line family.
+- `GrandeFinale/TripleNegativeFirstMatchReduction.lean`: triple-negative
+  first-match reduction to one residual wall.
+- `GrandeFinale/AugmentedBasisPencilDesignInverse.lean`: augmented-basis
+  pencil and deep-hole design inverse audit kernel.
+- `GrandeFinale/C0PeriodicFirstMatchTarget.lean`: exact finite-set proof of
+  Danny's #796 four-cell first-match union cap, with the component caps and
+  cover supplied explicitly and the complete `c=0` parent kept outside scope.
+- `GrandeFinale/C0PeriodicSingletonCertificate.lean`: exact recovery of an
+  omitted pair from fixed first and third moments, disjoint powerset-certificate
+  packing, the literal q128 singleton caps `34,137` and `12,598,400`, and the
+  conditional fixed-singleton compiler for the `b=5,7` subtotal.
+- `GrandeFinale/C0PeriodicF29ResidualOwner.lean`: low-block recovery for
+  periodic locators, support-level residual ownership via locator injectivity,
+  and the conditional 64-class compiler for the literal q64 `f=29` cap
+  `1,619,679,744`.
+- `GrandeFinale/C0PeriodicF28ResidualPencil.lean`: support-level projective
+  pencil parameter injectivity, common-base root packing, the exact residual
+  owner cap 63, and the conditional q64 `f=28` compiler for
+  `83,970,774,720`.
+- `GrandeFinale/C0PeriodicF28TwoBlockCompiler.lean`: generic two-block
+  truncation of periodic locators and recovery of both low coefficient-block
+  equations from projective congruence modulo `X^a` when `2B <= a`.
+- `GrandeFinale/C0PeriodicF28CanonicalBlocks.lean`: canonical Euclidean
+  division of a support locator by `X^B`, with a lower-degree bound, exact
+  upper degree, upper monicity, the deployed `32,768 + 30,833`
+  specialization, and uniqueness.
+- `GrandeFinale/C0PeriodicF28ScalarPencil.lean`: explicit scalar solution of
+  the two block equations, direct projective-congruence-to-pencil normal form,
+  and the `30,833` low-block degree cut from two distinct monic members.
+- `GrandeFinale/C0PeriodicF28DerivedOwner.lean`: certificate compiler from a
+  deduplicated literal two-block/projective family to the support-level pencil,
+  including the singleton branch, the derived residual-owner cap 63, the exact
+  q64 `f=28` target cap `83,970,774,720`, and its first-match composition.
+- `GrandeFinale/C0PeriodicF28TargetCompiler.lean`: finite-image
+  deduplication and representative selection from target-indexed two-block
+  data, choice of scales on nonreference supports from existential projective
+  witnesses, canonical reference-scale normalization, derived nonzero chosen
+  scales, and the same exact residual, target, and first-match bounds.
+- `GrandeFinale/C0PeriodicF28PairwiseCompiler.lean`: finite choice of a
+  reference from a nonempty target family with pairwise projectivity on
+  distinct residual supports, plus a separate empty-family branch requiring
+  no inhabitant of the target type; it removes the designated-reference and
+  reference-membership inputs while preserving the exact bounds.
 - `GrandeFinale/ChallengeIntersection.lean`: exact finite-group
   translate-intersection averaging, linear-code received-line shear invariance,
   challenge-restricted MCA numerators, and the ceiling-density transfer from a
@@ -118,6 +168,49 @@ This package is a partial Lean formalization of
 
 The files formalize reusable theorem-level kernels and arithmetic facts from the
 Grande Finale program.  They do not prove the full RS-MCA threshold theorem.
+
+The periodic singleton module discharges the algebraic and finite-packing part
+of the q128 `b=5,7` component used by the C0 first-match target.  Its
+`Q128OccupancyCertificate` deliberately keeps the fixed-singleton Hahn caps and
+the cover by the 128 quotient-constant fibers as explicit inputs.  It does not
+formalize the frozen Ruby replay, pay `b>=9`, or promote a complete `c=0`
+parent bound.
+
+The periodic `f=29` module proves the algebraic residual-support owner and the
+64-cell union arithmetic.  Its `F29ProjectiveRayCertificate` deliberately
+keeps the deployed locator decomposition, pairwise projective congruences,
+quotient-constant classification, and the fixed-residual local Hahn cap as
+explicit inputs.  It does not construct the literal deployed stratum, prove
+the `f=28` component, or promote a complete `c=0` parent bound.
+
+The periodic `f=28` residual-pencil module proves that a certified pencil of
+63,601-point residual supports in the deployed 2,097,152-point ambient set has
+at most 63 members when its direction is `X^32,768 U` with `U(0) != 0` and
+`deg U <= 30,833`.  It then checks the 63-by-64 local-cell compiler and
+replaces the final opaque component
+cap in the first-match theorem.  The separate two-block compiler now proves
+that projective congruence modulo the deployed monomial forces both low
+coefficient-block equations after the same scaling.  The scalar-pencil module
+solves those equations when both quotient constants are nonzero and proves the
+`30,833` degree cut when a normalized family has at least two distinct monic
+members with the deployed upper-block degree bound.  In the at-least-two-member
+branch, the derived-owner compiler now constructs the support-level pencil
+certificate from a supplied deduplicated family of literal two-block
+decompositions and projective congruences.  It obtains the owner cap 63 in all
+cases.  Its outer compiler recovers the exact q64 `f=28` target cap and PR
+#819 first-match payment from supplied scalar classes and fixed-cell caps.  The
+target-indexed compiler now forms the distinct-support image and selects one
+representative per support, always retaining the designated reference target;
+no duplicate-data coherence is needed.  The canonical-block module now derives
+each locator decomposition, the lower-degree bound, exact upper degree, and
+upper monicity directly from the residual support.  Constructing the
+target-indexed quotient polynomials and existential projective relations from
+the canonical stratum remains explicit.  The compiler chooses the
+scales for nonreference supports, uses the coefficient-zero equation to prove
+them nonzero, and normalizes the reference scale to one.  The fixed-residual
+Hahn cap and the first-match cover remain explicit inputs.  These modules do
+not treat
+`f<=27`, general monic moduli, or a complete `c=0` parent.
 
 The main remaining target is Q:
 

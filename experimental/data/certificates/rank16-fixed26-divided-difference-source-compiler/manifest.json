@@ -1,0 +1,81 @@
+{
+  "schema": "rs-mca.rank16-fixed26-divided-difference-source-compiler.v1",
+  "base": "9c4ca98cf45639407611a3ad5154893fb22e77e2",
+  "open_overlap_baseline": [
+    826,
+    838,
+    843,
+    844
+  ],
+  "theorem": {
+    "field_prime": 2130706433,
+    "domain_order": 2097152,
+    "fiber_label_order": 64,
+    "fiber_size_B": 32768,
+    "fixed_core_labels": 26,
+    "remaining_labels": 38,
+    "pair_positions": 703,
+    "generator_degree_a": 67472,
+    "monomial_generator": "X^67472",
+    "s": 1936,
+    "residual_degree_r": 63601,
+    "pade_degree_D": 61665,
+    "normalized_degree_d": 28897,
+    "tail_length": 3870,
+    "monomial_edge_cap": 37
+  },
+  "identity_contract": [
+    "F_y V_y=xi+g S_y",
+    "V_y-V_z=(y-z)U_yz",
+    "F_z U_yz=V_y+g Q_yz",
+    "F_y U_yz=V_z+g Q_yz",
+    "F_y F_z U_yz=xi+g P_yz",
+    "U_yz=rem_g(xi(F_y F_z)^-1)",
+    "G_C F_y F_z R_yz=q_yz eta+g q_yz(A_C+G_C P_yz)",
+    "F_z R_yz=q_yz V_y+g q_yz Q_yz",
+    "deg U_yz<=r iff tau_y=tau_z",
+    "deg U_yz=r iff tau_y=tau_z and c_y!=c_z",
+    "S_y=-y^-3 A_0-y^-2 A_1-y^-1 A_2 for g=X^a"
+  ],
+  "validity_filters": [
+    "exact_degree_and_monic_normalization",
+    "squarefree",
+    "complete_H_splitting",
+    "avoid_selected_complete_fibers",
+    "no_additional_q64_fiber",
+    "residual_q64_footprint_at_least_4",
+    "not_fourteen_natural_q32_pairs",
+    "outside_prior_agreement_and_paired_owners",
+    "actual_canonical_first_match"
+  ],
+  "monomial_proof_contract": {
+    "tail_map_degree_at_most": 3,
+    "nonconstant_class_size_at_most": 3,
+    "label_count": 38,
+    "max_edges": 37,
+    "zero_tail_forces_X_power_divisor": 1936,
+    "H_excludes_zero": true
+  },
+  "scope": {
+    "arbitrary_g_cap_116": false,
+    "source_realized_117_family": false,
+    "finite_payment": false,
+    "parent_closure": false,
+    "grand_list": false,
+    "grand_mca": false,
+    "score_movement": false,
+    "ledger_values_included": false,
+    "pr843_rank2_classification_carved_out": true,
+    "pr844_claims_carved_out": true
+  },
+  "expected_output": {
+    "path": "experimental/data/certificates/rank16-fixed26-divided-difference-source-compiler/verify_fixed26_compiler.expected.txt",
+    "sha256": "d2f6c375c092e8f0aca993a006ad07082b52a6556e6b904f35703e911daddd43"
+  },
+  "artifacts": [
+    "experimental/notes/l2/rank16_fixed26_divided_difference_source_compiler.md",
+    "experimental/scripts/verify_rank16_fixed26_divided_difference_source_compiler.py",
+    "experimental/data/certificates/rank16-fixed26-divided-difference-source-compiler/manifest.json",
+    "experimental/data/certificates/rank16-fixed26-divided-difference-source-compiler/verify_fixed26_compiler.expected.txt"
+  ]
+}

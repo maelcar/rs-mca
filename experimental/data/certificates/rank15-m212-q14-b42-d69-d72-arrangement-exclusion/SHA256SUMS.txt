@@ -1,0 +1,4 @@
+bf76c2d2fdce369a8e4473eee21277db304456d55405658c8d40a3037cd45951  ../../../scripts/verify_rank15_m212_q14_b42_d69_d73_arrangement_profiles.py
+946783c1f16e5bbcb8cafed21c624994269eb253f328bc7e868d5d3cd0b2f836  ../../../notes/l2/rank15_m212_q14_b42_d69_d72_arrangement_exclusion.md
+7f35b8b57627a5e414c857d1c72ae9caec07f577627b0a30fde903b2df957f9d  README.md
+facf1236a5517763ee4e8531515cae071f597d1d4a9432473f4621ffa9f4e9e2  verify_rank15_m212_q14_b42_d69_d73_arrangement_profiles.expected.txt

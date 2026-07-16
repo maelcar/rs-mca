@@ -1,0 +1,8 @@
+RANK16_FIXED_CORE_QUOTIENT_LINE_OBSTRUCTION: PASS
+p=2130706433 prime=true p_minus_1=2130706432=127*2^24 subgroup=2097152 block=32768 image=64
+t=981105 sigma=67471 a=67472 D=96369 residual=63601 w=28897
+cross_roots=196608 cross_degree_cap=192738 gap=3870
+degree_interval=[67472,96369] twoB=65536 threeB=98304 multiples=[]
+conditional_cap8_total=272133314965102416 target_margin=2720795531085176
+cap9_total=301327693533216784 target_excess=26473583037029192
+RESULT: PASS

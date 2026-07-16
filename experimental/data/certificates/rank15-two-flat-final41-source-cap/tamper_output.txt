@@ -1,0 +1,11 @@
+RANK15_TWO_FLAT_FINAL41_TAMPER_SELFTEST
+TAMPER boundary_u_min_1043916: REJECTED (claimed state is not closed: u=1043916, margin=+878)
+TAMPER cut_a_h15_plus_1: REJECTED (cut_a: local cut failed at distinguished=3)
+TAMPER cut_b_h14_plus_1: REJECTED (cut_b: local cut failed at distinguished=1)
+TAMPER cut_c_h15_plus_1: REJECTED (cut_c: local cut failed at distinguished=6)
+TAMPER parser_duplicate_key: REJECTED (duplicate JSON key rejected: schema)
+TAMPER parser_unknown_field: REJECTED (certificate keys changed: ['budgets', 'claim', 'gamma', 'local_cuts', 'parameters', 'schema', 'unexpected'])
+TAMPER parser_float_integer: REJECTED (parameters.n must be an integer, not float)
+TAMPER parser_bool_integer: REJECTED (parameters.section_cap must be an integer, not bool)
+TAMPER parser_nonfinite_constant: REJECTED (non-finite JSON constant rejected: NaN)
+TAMPER_RESULT: PASS

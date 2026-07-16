@@ -1,0 +1,57 @@
+RANK15_TWO_FLAT_FINAL41_SOURCE_CAP
+certificate_sha256=493e24507abd11a0b65991019a33e6b39eb35227ce13db38cb99865633adf730
+parameters=p2130706433,n2097152,K1048576,m1116047,M212
+section_cap=F_m1(1043918)=15;maximizers=1045969..1048575;count=2607
+local_cut=cut_a;cases=16;minimum_slack=0;witness=4
+local_cut=cut_b;cases=17;minimum_slack=0;witness=0
+local_cut=cut_c;cases=16;minimum_slack=0;witness=8
+discrete_convex_exchange=PASS;resources=4;occupancies=1..13
+optimizer_cache=270;f=211..228;branches=6597135;successors_rejected=212177
+BOUNDARY u=1043916 margin=+878 OPEN
+MARGIN u=1043917 margin=-842
+MARGIN u=1043918 margin=-2562
+MARGIN u=1043919 margin=-4282
+MARGIN u=1043920 margin=-6002
+MARGIN u=1043921 margin=-7722
+MARGIN u=1043922 margin=-9442
+MARGIN u=1043923 margin=-11162
+MARGIN u=1043924 margin=-12882
+MARGIN u=1043925 margin=-14598
+MARGIN u=1043926 margin=-15867
+MARGIN u=1043927 margin=-17136
+MARGIN u=1043928 margin=-18405
+MARGIN u=1043929 margin=-19285
+MARGIN u=1043930 margin=-19877
+MARGIN u=1043931 margin=-20469
+MARGIN u=1043932 margin=-21061
+MARGIN u=1043933 margin=-21653
+MARGIN u=1043934 margin=-22245
+MARGIN u=1043935 margin=-22837
+MARGIN u=1043936 margin=-24896
+MARGIN u=1043937 margin=-27522
+MARGIN u=1043938 margin=-30148
+MARGIN u=1043939 margin=-32774
+MARGIN u=1043940 margin=-34700
+MARGIN u=1043941 margin=-36195
+MARGIN u=1043942 margin=-37690
+MARGIN u=1043943 margin=-39185
+MARGIN u=1043944 margin=-40680
+MARGIN u=1043945 margin=-42175
+MARGIN u=1043946 margin=-43670
+MARGIN u=1043947 margin=-45165
+MARGIN u=1043948 margin=-46660
+MARGIN u=1043949 margin=-48104
+MARGIN u=1043950 margin=-48919
+MARGIN u=1043951 margin=-49734
+MARGIN u=1043952 margin=-50549
+MARGIN u=1043953 margin=-51364
+MARGIN u=1043954 margin=-52179
+MARGIN u=1043955 margin=-52994
+MARGIN u=1043956 margin=-54129
+MARGIN u=1043957 margin=-56079
+FIRST_CLOSED=1043917
+CLOSED_COUNT=41
+REPLACEMENT=D2[1043917..1043957]<=211
+UNRESOLVED=1043592..1043916;count=325
+NONCLAIMS=parent_recurrence,366_child_closure,arrangement_transport,rank16,Grand_List,Grand_MCA,score_movement
+RESULT: PASS

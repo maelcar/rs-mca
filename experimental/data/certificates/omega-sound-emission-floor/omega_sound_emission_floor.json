@@ -1,0 +1,18 @@
+{
+ "B": 6,
+ "cap_closed_form_worst": "2.03e-13",
+ "cap_identity_worst": "8.88e-16",
+ "charged_pairs_full": "421/421",
+ "chart": "base-3",
+ "claims": [
+  "S1",
+  "S2",
+  "S3",
+  "S4",
+  "S5"
+ ],
+ "packet": "omega-sound-emission-floor",
+ "pairs_total": 558,
+ "t3_overpay_pairs": 263,
+ "zero_charge_paid": 135
+}

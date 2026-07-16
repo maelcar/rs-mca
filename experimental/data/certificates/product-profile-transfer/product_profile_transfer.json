@@ -1,0 +1,19 @@
+{
+ "c1_worst": "8.53e-14",
+ "c2_worst": "1.11e-14",
+ "c3_convergence": {
+  "12": "6.14e-10",
+  "16": "1.47e-14",
+  "8": "6.99e-05"
+ },
+ "c4_worst": "7.42e-12",
+ "chart": "base-3",
+ "claims": [
+  "C1",
+  "C2",
+  "C3",
+  "C4",
+  "C5"
+ ],
+ "packet": "product-profile-transfer"
+}

@@ -124,7 +124,7 @@ If `d=R`, then `K+<b_1>` is an `[N,kappa+1,R]` MDS code and
 ```text
 sum_((gamma,c) in P) binom(N-wt(c),kappa+1)
   <= beta_(kappa+1)(A)
-  <= binom(N,kappa+1).                                   (PB4)
+   = binom(N,kappa+1).                                   (PB4)
 ```
 
 Hence
@@ -282,6 +282,18 @@ If `d=R`, then
 
 The right side is the total number of `(kappa+1)`-subsets of `Z_c`, so every
 such subset is a local basis.  This is the strengthened deep-hole charge.
+
+The same MDS fact also determines the global census.  Every
+`(kappa+1)`-row restriction of `[b_1 G]` has rank `kappa+1`, and `[b_1 G]`
+is a column submatrix of `A`.  Therefore every `(kappa+1)`-row subset of
+`A` is a basis:
+
+```text
+beta_(kappa+1)(A)=binom(N,kappa+1).                      (10a)
+```
+
+Thus the second relation in (PB4) is equality, not merely the generic upper
+bound inherited from (PB1).
 
 ### 3.4 A global basis has at most one pair-owner
 
@@ -472,22 +484,29 @@ lower unsafe-side reserve, a target crossing, Grand MCA, or Grand List.  It
 does not merge generated, line, challenge, list, base, or extension fields.
 It changes no stable paper and moves no official score.
 
-The exact remaining wall is the **basis-heavy deep-hole owner dichotomy**, with
-first sharp case
+The exact remaining wall is the **deep-hole pencil/design owner dichotomy**,
+with first sharp case
 
 ```text
 d=R,       R-t=1.
 ```
 
-For every first-match-surviving primitive chart on this boundary, one must
-either prove that
+Here basis heaviness is automatic: (10a) fixes `beta_(kappa+1)(A)` at its
+maximum for every chart, regardless of whether the two hosted syndromes have
+rank one or two and regardless of planted or generic presentation.  The basis
+census therefore has no inverse content on its own.  For every
+first-match-surviving primitive chart on this boundary, one must instead
+either prove that the resulting distributed core pencils/design packing has
+subexponential normalized mass, or route the entire corresponding pair fibers
+to a named earlier source owner before this compiler is applied.  Numerically
+the local ratio is already forced to be
 
 ```text
-beta_(kappa+1)(A_lambda) / Lambda_(R,t)
-  <= exp(o(n)) (1+Nbar_lambda),
+binom(N,kappa+1) / Lambda_(R,t).
 ```
 
-or route the entire corresponding pair fibers to a named earlier source owner
-before this compiler is applied.  The sharp family in Section 4 disproves the
-owner-free universal subexponential alternative.  No unpublished recurrence
-is used as part of this theorem claim.
+The sharp family in Section 4 disproves the owner-free universal
+subexponential alternative.  The exact core-pencil slack identity, its
+Steiner-design equality case, and a positive-depth Frobenius fixture are
+recorded in `augmented_basis_pencil_design_inverse.md`.  No unpublished
+recurrence is used as part of this theorem claim.
