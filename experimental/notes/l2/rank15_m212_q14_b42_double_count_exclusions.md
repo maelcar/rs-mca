@@ -26,7 +26,7 @@ its multiplicity is at most 15.
 Then the arrangement double-point count `D` cannot lie in
 
 ```text
-{39} union {44,45,...,61}.
+{39} union {44,45,...,65}.
 ```
 
 The conclusion applies to both exact aggregate rows
@@ -41,12 +41,12 @@ The bounded moment equations are feasible only for `D=39` and
 the exact conservative remainder after this theorem is
 
 ```text
-62 <= D <= 146.
+66 <= D <= 146.
 ```
 
 ## Proof map
 
-The proof is split into six independently replayed cells.
+The proof is split into seven independently replayed cells.
 
 1. `D=39`: the moment row is forced to
    `n2=39,n3=169,n15=3`. The double graph becomes three disjoint stars, and
@@ -68,6 +68,11 @@ The proof is split into six independently replayed cells.
    final profile has two exhaustive no-heavy-line cases; their selected
    correlation masses are at least 139 and 142, respectively, and both
    contradict Kneser's lower bound.
+7. `D=62,63,64,65`: exact moment and disjoint-group packing censuses leave
+   `26,41,51,138` profiles, respectively. A heavy/no-heavy line-pair budget
+   eliminates every profile through `D=64` and all but 13 profiles at
+   `D=65`. Every remaining profile violates the balanced projective
+   subset-pair inequality.
 
 The complete proofs and two independent implementations of every finite
 census are preserved in
@@ -82,12 +87,8 @@ experimental/data/certificates/
 The next conservative source-valid target is the same boundary object with
 
 ```text
-62 <= D <= 146.
+66 <= D <= 146.
 ```
-
-A claimant for `D=62,63,64` exists outside this packet, but its frozen hostile
-expected-output digest is stale. It is intentionally not consumed here.
-The `D=65` diagnostic leaves 13 exact profiles and contains no theorem.
 
 These local exclusions do not prove `D_2(u)<=211` for all 366 children in the
 rank-15 recurrence. The previously frozen recurrence still has 261 unsafe
@@ -99,8 +100,7 @@ Grand List wall.
 
 This note does not claim:
 
-- the held `D=62,63,64` exclusion;
-- any exclusion for `65<=D<=146`;
+- any exclusion for `66<=D<=146`;
 - a complete `M<=211` theorem;
 - removal of a recurrence parent;
 - a Grand List theorem, Grand MCA theorem, or official score movement.

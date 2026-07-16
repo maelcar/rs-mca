@@ -1,4 +1,4 @@
-# Failing bands are wide, and the base-3 cylinder hierarchy renormalizes: middle-band certificates by exact self-similarity
+# Failing bands are wide, and base-3 subgroup cylinders renormalize
 
 ## Status
 
@@ -11,7 +11,7 @@ Status: PROVED (U1, every base) that failing bands are WIDE: |hatf(xi)| <= M
         Narrow bands NEVER fail; the band-uniform packet's narrow-band
         certificate covers band PIECES, not standalone failures -- the
         middle-band compression residual is therefore THE failing-band
-        case, and this packet solves it on a hierarchy.
+        case.  This packet solves the subgroup-cylinder subcase only.
       + PROVED (U2, base 3 only, c = 3^B) the suffix structure: theta_i(xi)
         depends on xi mod 3^{B-i+1} (the low digits) -- the angle vector is
         the x3-orbit of theta_1 = 2 pi xi / 3^B, and low-digit cylinders
@@ -32,32 +32,31 @@ Status: PROVED (U1, every base) that failing bands are WIDE: |hatf(xi)| <= M
         Verified to absolute deviation 6e-12 (~5e-16 of M): B in {6,8},
         k in {1,2,3}, ALL m (subgroup); B = 6, ALL r < 3^k, ALL m
         (twisted); Parseval-guarded at BOTH scales.
-      + PROVED (slice staircase + hierarchy flatness; the certificate)
+      + PROVED (slice staircase + subgroup flatness; the certificate)
         every graded slice of the chart is class-constant (the j-slice
         staircase, same dissociativity proof), so every slice is
         CUBE-FLAT; with the polynomial-level renormalization this PROVES
-        that subgroup bands' entire cube spectra concentrate at D = empty
-        -- and the twisted cosets are VERIFIED equally flat (absolute
-        1e-15-scale, all patterns; the nonzero spectrum is exactly the 31
-        per-class D = empty values at B = 6, k = 1).  A hierarchy band's
-        cube certificate is therefore its per-class D = empty list --
-        O(poly B) per level, <= 3 distinct values per level on subgroup
-        bands (pinned), renormalizing to scale-(B-k) data -- NOT the
-        irreducibly-exponential hatf list.  Every HIERARCHY-MEASURABLE
-        band (finite coset union; disjoint bands are orthogonal, spectra
-        and certificates ADD; the failing maximal band is exactly the
-        depth-k coset union, per-coset shares pinned, V7) inherits the
-        certificate.  This is the transverse-charge packet's
-        Bernoulli-convolution remark in exact finite form: the x3-orbit
-        self-similarity IS the renormalization.
+        that subgroup bands' entire cube spectra concentrate at D = empty.
+        Their certificate is therefore the per-class D = empty list,
+        O(poly B) per level, with at most 3 distinct values per level in
+        the checked cases.  This conclusion does not extend automatically
+        to twisted cosets or their finite unions.
+      + COUNTEREXAMPLE (twisted flatness): the former verifier evaluated
+        only the cosine, hence real, projection of a generally complex
+        cube coefficient.  At B=6,k=1,r=1 the omitted nonempty coefficient
+        has magnitude sqrt(3).  Even after symmetrizing the depth-two pair
+        xi mod 9 in {1,8}, a real nonempty coefficient remains:
+            -1.336932620625273... .
+        Therefore the former blanket twisted-coset and hierarchy-measurable
+        flatness claims are withdrawn.
 LANE: hard input 2 ("image-scale MI + MA, or a direct Sidon payment",
         agents.md L51) -- fifth packet of the arc (forcing -> typing ->
         reduction -> scope -> compression): the middle-band certificate-
-        compression residual named by the band-uniform packet is SOLVED for
-        the base-3 cylinder hierarchy {xi == r mod 3^k}; failing bands
-        outside the hierarchy (adversarial spectra) remain the honest
-        residual, alongside the admission decision, atlas totality (the
-        Codex team's lane), and the large-q Sidon residual.  Fence (N1)
+        compression residual named by the band-uniform packet is SOLVED only
+        for subgroup cylinders {xi == 0 mod 3^k}.  Twisted and non-hierarchy
+        failing bands remain the honest residual, alongside the admission
+        decision, atlas totality (the Codex team's lane), and the large-q
+        Sidon residual.  Fence (N1)
         (thm:aperiodic-one-ray-saturation) respected: nothing here pays or
         claims lower reserve.
 ```
@@ -67,7 +66,7 @@ Label key (agents.md dialect): **PROVED** / **CONDITIONAL** / **CONJECTURAL** /
 all pins are exact; every trigonometric scan uses floats under exact
 Parseval guards at BOTH scales, recomputed by
 `experimental/scripts/verify_cylinder_renormalization.py` (stdlib only,
-deterministic, `RESULT: PASS (42/42)`, `--tamper-selftest` catches `5/5`,
+deterministic, `RESULT: PASS`, `--tamper-selftest` catches `5/5`,
 ~1.4 s).  Machine-readable certificate:
 `experimental/data/certificates/cylinder-renormalization/cylinder_renormalization.json`.
 Lean statement stub (decidable `native_decide` identities, no `sorry`, no
@@ -194,7 +193,7 @@ finite `B`.
 
 ---
 
-## 4. The cube corollary: recursive certificates for the hierarchy
+## 4. The cube corollary and the twisted-coset correction
 
 > **Lemma (slice staircase).**  For EVERY slice size `j` (not only
 > `j = B`), the `j`-slice of the chart is class-constant: within a class
@@ -204,35 +203,53 @@ finite `B`.
 > graded slice measure is CUBE-FLAT: its sign-cube spectrum on every
 > class is concentrated at `D = empty`.
 >
-> **Corollary (hierarchy flatness + the certificate).**  Over the
+> **Corollary (subgroup flatness + the certificate).**  Over the
 > subgroup band `A_{k,0} \ {0}` (= `{3^k m : m in [1, 3^{B-k})}` after
 > symmetrization): the entire cube spectrum is concentrated at
 > `D = empty` -- every `D != empty` coefficient VANISHES (PROVED: the
 > polynomial-level renormalization writes the band's weights as graded
 > combinations of scale-`(B-k)` slices, and each slice is cube-flat by
-> the Lemma).  The same flatness holds on the TWISTED cosets `A_{k,r}`
-> (VERIFIED to absolute `1e-10`, k = 1, all r; the offsets shift phases,
-> not the vanishing frequencies).  The certificate of a hierarchy band is
-> therefore its per-class `D = empty` value list -- NOT the `hatf` list --
-> and on the subgroup bands those values renormalize to the
+> the Lemma).  Its certificate is therefore its per-class `D = empty`
+> value list -- NOT the `hatf` list -- and those values renormalize to the
 > graded-convolved scale-`(B-k)` data and take at most 3 distinct values
 > per level (pinned).
 
-Verified (V4): flatness on subgroup AND twisted cosets, all classes, ALL
-patterns (absolute deviations at the `1e-15` scale against a `1e-10`
-tolerance; the nonzero spectrum is exactly the 31 per-class `D = empty`
-values at `B = 6, k = 1`); the renormalized `D = empty` values against
+> **Counterexample (twisted flatness).**  Twisted renormalization does not
+> preserve cube-flatness.  For `B=6`, `k=1`, and `r=1`, literal complex
+> Fourier inversion gives a nonempty sign-cube coefficient of magnitude
+> `sqrt(3)`.  The old verifier used only
+> `cos(2*pi*xi*sigma/c)`, discarding the imaginary component.  This is not
+> repaired by symmetric finite unions: for
+> `Q_1={xi : xi mod 9 in {1,8}}` and the top-coordinate pattern
+> `U={B-2,B-1}`, the full two-coordinate coefficient equals
+>
+> ```text
+> -(2/9) sin(2*pi/9) sin(2*pi/3)
+>   * (w0 + 2*w2*(cos(4*pi/9)+cos(8*pi/9)))
+> = -1.336932620625273...,
+> w0 = C(B,B/2), w2 = C(B-2,(B-2)/2).
+> ```
+>
+> Here `cos(4*pi/9)+cos(8*pi/9)=-cos(2*pi/9)`.  For every even `B>=4`,
+> `w2/w0=B/(4(B-1))<=1/3`, so the bracket divided by `w0` is at least
+> `1-2/3>0`; both sine factors are nonzero.  This proves an infinite
+> nonflat symmetric family without relying on floating-point separation.
+
+Verified (V4): flatness on subgroup cosets, all classes and all patterns;
+the literal complex regression pins `sqrt(3)` on the twisted `B=6,k=1,r=1`
+coset and `-1.336932620625273...` on the symmetric depth-two union.  The
+nonzero subgroup spectrum is exactly the 31 per-class `D = empty` values at
+`B = 6, k = 1`; the renormalized `D = empty` values agree with
 the graded-convolved scale-`(B-k)` sum (absolute `2e-15`); the
 `<= 3` distinct values per level; and the slice staircase by brute force
 at EVERY slice size (`B in {4,6}`, both bases).  The compression is thus
 of the CUBE SPECTRUM, not the `hatf` list (which stays irreducibly
-exponential): a hierarchy band's certificate is its per-class
+exponential): a subgroup band's certificate is its per-class
 `D = empty` list, `O(poly B)` per level via the renormalization, with
-flatness PROVED on subgroup bands (Lemma + renormalization) and VERIFIED
-on twisted cosets.  Every HIERARCHY-MEASURABLE band (finite union of
-cosets; disjoint bands are orthogonal, so spectra and certificates ADD)
-inherits the certificate: the compression residual of the band-uniform
-packet is solved on the hierarchy sigma-algebra.
+flatness PROVED on subgroup bands (Lemma + renormalization).  Disjoint-band
+norms remain orthogonal, but their cube spectra do not become flat merely by
+addition.  Twisted and general hierarchy-measurable bands require the exact
+cube-spectrum criterion from the band-uniform packet, case by case.
 
 **Relevance** (V7, pinned): the failing maximal band IS the depth-`k`
 coset union at every `k` (coset spectral masses add exactly; the per-coset
@@ -241,18 +258,15 @@ shares are pinned at `k = 1`: `.2065 / .3968 / .3968` at `B = 6` and
 under-weighted at small `B` and the shares drift toward `1/3`, COMPUTED
 trend), and the subgroup band's own failure ratio grows with `B` at fixed
 `k` (`R = 0.4615 / 0.6226 / 0.7834` at `B = 6/8/10`, `k = 1`, strictly
-increasing -- COMPUTED; not yet failing at the scanned sizes).  The
-certificates therefore cover failing bands through their coset
-decompositions today, and the trend points to standalone hierarchy
-failures at larger `B`.
+increasing -- COMPUTED; not yet failing at the scanned sizes).  This norm
+decomposition does not imply cube-flat certificates for the twisted pieces.
 
 ## Nonclaims
 
-- **Adversarial bands outside the hierarchy are NOT compressed** -- a
-  failing band need not be a cylinder or a short union of cylinders; the
-  honest residual is now "compress (or exclude) non-hierarchy failing
-  bands", a strictly narrower object than before (U1 removed the narrow
-  case; this packet removed the hierarchy).
+- **Twisted and adversarial bands are NOT compressed** -- a failing band need
+  not be a subgroup cylinder, and a twisted cylinder or finite coset union can
+  have nonzero cube spectrum.  The honest residual is "compress, pay, or
+  exclude non-subgroup failing bands"; U1 removes only the narrow case.
 - **Base 3 only** for U2/U3/the corollary (COUNTEREXAMPLE pin on base 5,
   V5); U1 is every-base.
 - **No admission claim**: the certificates are inputs for the (open)
@@ -266,21 +280,22 @@ failures at larger `B`.
 ## Consumers
 
 - **The band-uniform packet (#795 note)**: its T2 scope is sharpened (U1)
-  and its named middle-band residual is answered on the hierarchy (U3 +
-  corollary).
+  and its named middle-band residual is answered on subgroup cylinders (U3 +
+  corollary); twisted pieces return to its exact cube-spectrum criterion.
 - **The fold-charge packet (#791 note)**: its closed forms become the
   recursion's base case.
 - **The resonant-folding packet (#779 note)**: its digit-sparse shell is
   the hierarchy's `k ~ B` tail; its census re-pins here.
-- **#716**: the sixth alternative's certificate inputs now cover the
-  cylinder hierarchy at every width.
+- **#716**: the sixth alternative's certificate inputs cover subgroup
+  cylinders at every width, not arbitrary twisted unions.
 - `rs_mca_thresholds.tex`: paste-ready as a remark after the PO4 material
   -- "on the base-3 Sidon-paired chart the character sums renormalize
-  exactly along the 3-adic cylinder hierarchy (top factors degenerate to
-  (1+z)^{2k}; the rest is the smaller chart's graded spectrum), so
-  middle-width cylinder bands carry recursive e^{o(N)} cube certificates;
-  failing bands are always exponentially wide" -- visible hypotheses:
-  #749-corrected class, base-3 chart (c = 3^B), q=2 rooting.
+  exactly on subgroup cylinders (top factors degenerate to (1+z)^{2k};
+  the rest is the smaller chart's graded spectrum), so those bands carry
+  recursive e^{o(N)} cube certificates; twisted cylinders need separate
+  cube-spectrum checks; failing bands are always exponentially wide" --
+  visible hypotheses: #749-corrected class, base-3 chart (c = 3^B), q=2
+  rooting.
 
 ## Reproducibility
 

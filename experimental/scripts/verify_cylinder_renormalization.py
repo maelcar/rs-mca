@@ -20,10 +20,13 @@ V3  U3 twisted (r != 0): for B = 6, k in {1,2,3}, every r in [1, 3^k) and
     the top factors T_r at angles 2 pi r 3^{i-1}/3^B (i > B-k) and the low
     factors phase-shifted by phi_i(r) = 2 pi r 3^{i-1}/3^B, to 1e-9 M.
 V4  Cube corollary (B = 6, base 3):
-    (a) HIERARCHY FLATNESS: on subgroup bands (k in {1,2}) AND twisted
-    cosets (k = 1, r in {1,2}), EVERY pattern D != empty has
-    hcube_v(D) == 0 (absolute deviation <= 1e-10; the nonzero spectrum is
-    exactly the per-class D = empty values -- 31 of 364 coefficients);
+    (a) SUBGROUP FLATNESS: on subgroup bands (k in {1,2}), EVERY pattern
+    D != empty has hcube_v(D) == 0 (absolute deviation <= 1e-10; at k=1
+    the nonzero spectrum is exactly the 31 per-class D = empty values).
+    The literal complex scan also pins the correction to the former twisted
+    flatness claim: the k=1,r=1 coset has a nonempty coefficient of magnitude
+    sqrt(3), and the symmetric depth-two band r in {1,8} mod 9 has coefficient
+    -1.336932620625273... .
     (b) RENORMALIZED VALUES: on the subgroup bands, the direct brute cube
     coefficient (every D, the D = empty values being the live ones) equals
     the scale-(B-k) m-sum with the graded-convolved weight (absolute
@@ -32,8 +35,7 @@ V4  Cube corollary (B = 6, base 3):
     (c) SLICE STAIRCASE (the flatness mechanism, brute): for EVERY slice
     size j (not only j = B), within-class fiber counts of the j-slice are
     equal (B in {4,6}, both bases) -- every graded slice is class-constant,
-    which with the polynomial-level renormalization PROVES subgroup-coset
-    flatness; twisted flatness is VERIFIED by (a).
+    which with the polynomial-level renormalization PROVES subgroup flatness.
 V5  Base-5 COUNTEREXAMPLE pin: the analogous k = 1 identity FAILS on base 5
     (c = (5^B+1)/2 is not a power of the base): the max deviation over m is
     pinned ABOVE 0.05 M (exhibited witness), while base 3 sits below
@@ -257,7 +259,8 @@ def v4_cube_corollary(cert=None):
     M = closed_M(B)
     P = sidon_P(B, base)
     _c, hf = hatf_scan(B, base)
-    costab = [cos(2 * pi * r / c) for r in range(c)]
+    exptab = [complex(cos(2 * pi * r / c), -sin(2 * pi * r / c))
+              for r in range(c)]
     cls = brute_classes(B, base)
 
     def cube_data(Ab):
@@ -275,17 +278,18 @@ def v4_cube_corollary(cert=None):
                 sigs[bits] = sum(e * P[U[t]] for t, e in enumerate(eps)) % c
             for sig in sigs.values():
                 if sig not in hv:
-                    hv[sig] = sum(hf[xi] * costab[(xi * sig) % c]
+                    hv[sig] = sum(hf[xi] * exptab[(xi * sig) % c]
                                   for xi in Ab) / c
             cube = {bits: hv[sigs[bits]] for bits in sigs}
             out[v] = {dbits: cube_coeff(cube, dbits, s)
                       for dbits in range(2 ** s)}
         return out
 
-    # (a) hierarchy flatness: subgroup AND twisted cosets
-    for k, r in ((1, 0), (2, 0), (1, 1), (1, 2)):
-        band = coset_band(c, k, r) if r else sorted(
-            {(3 ** k * m) % c for m in range(1, 3 ** (B - k))})
+    # (a) subgroup flatness, followed by two regressions for the false
+    # twisted-coset extrapolation.
+    for k in (1, 2):
+        band = sorted({(3 ** k * m) % c
+                       for m in range(1, 3 ** (B - k))})
         data = cube_data(band)
         ok_flat, nonzero = True, 0
         for v, coeffs in data.items():
@@ -295,11 +299,32 @@ def v4_cube_corollary(cert=None):
                         ok_flat = False
                 elif abs(x) > 1e-12:
                     nonzero += 1
-        check(f"V4a hierarchy flatness: all D != empty vanish (B=6, k={k}, r={r})",
+        check(f"V4a subgroup flatness: all D != empty vanish (B=6, k={k})",
               ok_flat)
-        if (k, r) == (1, 0):
+        if k == 1:
             check("V4a nonzero cube spectrum == the 31 per-class D=empty values (B=6, k=1, r=0)",
                   nonzero == 31)
+
+    twisted = cube_data(coset_band(c, 1, 1))
+    twisted_max = max(abs(x) for coeffs in twisted.values()
+                      for dbits, x in coeffs.items() if dbits)
+    check("V4a correction: twisted k=1,r=1 has nonempty coefficient magnitude sqrt(3)",
+          abs(twisted_max - sqrt(3)) <= 1e-10)
+
+    symmetric_band = sorted(xi for xi in range(c) if xi % 9 in (1, 8))
+    symmetric = cube_data(symmetric_band)
+    v_top = (0, 0, 0, 0, 1, 1)
+    symmetric_coeff = symmetric[v_top][3]
+    w0 = comb(B, B // 2)
+    w2 = comb(B - 2, (B - 2) // 2)
+    symmetric_closed = -(2 / 9) * sin(2 * pi / 9) * sin(2 * pi / 3) * (
+        w0 + 2 * w2 * (cos(4 * pi / 9) + cos(8 * pi / 9)))
+    check("V4a correction: symmetric depth-two twisted union is nonflat",
+          abs(symmetric_coeff - symmetric_closed) <= 1e-10
+          and abs(symmetric_coeff) > 1)
+    if cert is not None:
+        cert["twisted_k1_r1_max_nonempty"] = round(twisted_max, 15)
+        cert["symmetric_depth2_nonempty"] = round(symmetric_coeff.real, 15)
 
     # (b) subgroup renormalized values + distinct-value pins
     for k in (1, 2):
@@ -315,7 +340,7 @@ def v4_cube_corollary(cert=None):
         for v, coeffs in data.items():
             s = sum(v)
             U = [i for i in range(B) if v[i]]
-            level_vals[s].add(round(coeffs[0], 9))
+            level_vals[s].add(round(coeffs[0].real, 9))
             for dbits, br in coeffs.items():
                 if any(U[t] >= Bs for t in range(s) if (dbits >> t) & 1):
                     continue

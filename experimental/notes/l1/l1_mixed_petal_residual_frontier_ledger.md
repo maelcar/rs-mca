@@ -1032,6 +1032,135 @@ The new largest unresolved row is
 charge `384*19^2=138,624`. TheoremSearch returned rational-interpolation and
 syzygy analogues only; no literature theorem is imported into the proof.
 
+## Exact `d=4,r=1` shared auxiliary-owner scope
+
+The existing-owner audit for the new 41331 row finds 384 canonical full
+supports. Since `d=ell`, there is no restored-core refinement. Exactly one
+support is fixed by shift nine and first-matches to periodic support; the
+other 383 first-match to auxiliary Johnson. No `UNPAID_PRIMITIVE` pattern
+survives.
+
+More importantly, the sharp auxiliary theorem used earlier is layer-level,
+not profile-level. For every fixed `(D_0,R_0)` with `d=4,r=1`,
+
+```text
+|T|=12, a=7, d=4, a^2-d|T|=1,
+floor(|T|(a-d)/(a^2-d|T|))=36.
+```
+
+There is one `D_0` and two `R_0` choices, so `72` bounds the union of all
+fifteen exact profile cells with `d=4,r=1`. Their post-32221 charges total
+`416,020`; the earlier ledger attached the same `72` envelope only to the
+`(3,2,2)` cell and conservatively retained the other fourteen charges. The
+correct shared-envelope bookkeeping is therefore
+
+```text
+15-profile shared scope: 416,020 -> 72,
+all-profile add-back:   1,192,927 -> 776,979,
+unresolved mass:          357,763 -> 212,755.
+```
+
+The unresolved subtotal follows the existing convention and retains the one
+`72` carrier charge. The fourteen zero allocations are incremental ledger
+charges, not standalone zero bounds. The unique periodic support is already
+inside the common auxiliary envelope and adds no extra `+1`.
+
+The next largest unchanged row is
+`(ell,d,r,t,a_i)=(4,4,0,3,(3,3,2))`, `(G2,GR)=(2,5)`, with charge
+`288*19^2=103,968`. The stronger possible cross-`R_0` charge `36`, and any
+payment of the `r=0` row, are deliberately not used without a separate frozen
+lemma and review.
+
+## Exact `d=4,r=0` shared auxiliary-owner scope
+
+The separate frozen audit supplies that next lemma without combining residual
+layers.  On the concrete partition
+
+```text
+Omega = Y disjoint-union {16,17} disjoint-union T,
+Y = {0,1,2,3},        D_0=Y,        R_0=empty,
+```
+
+exact `d=4,r=0` excludes every core and background agreement.  Thus all
+agreements lie on the common twelve-point petal domain, and the concrete
+sunflower map is `G_P=P-P_star` with degree at most four and at least eight
+agreements with the single auxiliary word `U_D0`.  The sharp Johnson audit is
+
+```text
+|T|=12, a=8, d=4, a^2-d|T|=16,
+floor(|T|(a-d)/(a^2-d|T|))=3.
+```
+
+The exact profile generator gives eleven disjoint cells: the sole `t=2` cell
+`(4,4)` and the ten nonincreasing `t=3` triples with entries at most four and
+sum at least eight.  Their aggregate support-pattern multiplicity is `794`,
+their post-41331 charge is `135,470`, and their unresolved-route subtotal is
+`107,844`.  The multiplicity is not a realized-codeword census.
+
+One bookkeeping carrier on the original unresolved `(3,3,2)` row charges the
+common envelope once; the other ten zeroes are only incremental allocations.
+Fresh independent and cross-model reviews are GREEN, and the mutation-tested
+content-addressed replay banks
+
+```text
+11-profile shared scope: 135,470 -> 3,
+all-profile add-back:     776,979 -> 641,512,
+unresolved mass:          212,755 -> 104,914.
+```
+
+The separately banked `r=1` charge `72` remains unchanged; no cross-`r`
+`72+3 -> 36` saving is used.  The next largest unresolved row is
+`(ell,d,r,t,a_i)=(4,3,1,3,(3,2,1))`, `(G2,GR)=(3,4)`, with 1,152 aggregate
+patterns and charge `1,152*19=21,888`.  Its auxiliary margin is zero.
+
+## Exact `d=3,r=1,(3,2,1)` total-degree-six CRT scope
+
+The frozen existing-owner partition enumerates 1,152 canonical aggregate
+cofactor keys and 4,608 restored-core refinements.  Every selected cofactor
+support is aperiodic.  Exactly twelve full-support refinements are periodic,
+in twelve distinct aggregate keys, but no refinement-level payment is
+subtracted without a disjoint per-core-hit cofactor injection.  Quotient
+descent fails closed, the auxiliary Johnson margin is zero, global Johnson has
+`lambda=0<lambda_J=1`, and B11 escapes.  Thus all 1,152 aggregate keys reach
+the algebraic packet.
+
+For pairwise-coprime labelled support locators whose degrees are a permutation
+of `(3,2,1)`, the quotient-degree multiset is `(0,1,2)`.  The fixed system has
+shape `12 x 9` and rank nine.  Moving the three lower coefficients of a monic
+cubic gives a `12 x 12` system whose compatibility quotient is the `3 x 3`
+map formed by the `X^3,X^4,X^5` coefficients of `FG mod B`.
+
+Full reduced rank gives at most one monic cubic per aggregate key.  If a rank
+drop is compatible, then
+
+```text
+B | F_0 V_1 - F_1 V_0,
+deg(F_0 V_1 - F_1 V_0) <= 5 < 6 = deg(B),
+```
+
+so the cross-polynomial vanishes.  Euclid's lemma forces a nonconstant
+`gcd(F,V)`.  With `F=L_(C\{h})`, `W=R(X-h)V`, split squarefreeness,
+block disjointness, and zero core/background received data, this common factor
+restores a missed core point.  The missed core is exactly `D\Z(V)`, so a
+compatible rank drop exits exact `d=3`.  Full rank bounds all four restored
+points jointly; there is no extra factor four.
+
+The exact `GF(19)` census has 1,108 full-rank keys and 44 affine-inconsistent
+rank-two keys.  There is no compatible finite rank drop in this row, so that
+finite branch is explicitly vacuous; the uniform degree-gap proof is
+load-bearing.  Fresh independent and Claude reviews are GREEN with ledger
+authorization YES.  The content-addressed 75-row replay banks
+
+```text
+profile charge:       21,888 ->  1,152,
+all-profile add-back: 641,512 -> 620,776,
+unresolved mass:      104,914 ->  84,178.
+```
+
+The next largest unresolved row is
+`(ell,d,r,t,a_i)=(4,4,2,2,(3,3))`, `(G2,GR)=(2,3)`, with 48 aggregate
+patterns and charge `48*19^2=17,328`.
+
 ## Proof status and stop condition
 
 - **Rigorous for the frozen finite rows:** profile enumeration, support-pattern
@@ -1058,7 +1187,13 @@ syzygy analogues only; no literature theorem is imported into the proof.
   received-data hypotheses. For `(3,2,3,(2,2,1))`, the degree-five CRT modulus,
   degree-at-most-four cross polynomial, and Euclid's lemma give the analogous
   common-factor migration with `deg V<=1`. Two fresh read-only reviews are
-  GREEN under the printed standalone profile hypotheses.
+  GREEN under the printed standalone profile hypotheses. For the new
+  `(3,1,3,(3,2,1))` row, the support-locator degrees still sum to six, the
+  fixed system remains `12 x 9` of rank nine, and the moving monic-cubic
+  compatibility quotient remains `3 x 3`. The same degree-gap/Euclid argument
+  forces common-factor migration on every compatible rank drop. Fresh
+  independent and Claude reviews are GREEN under the bound label,
+  coprimality, split-squarefree, block-disjointness, and zero-data hypotheses.
 - **Exact domain/owner partition:** all 67 compatible structural tiny-field
   charts emit their PGL2 involution but remain unowned without an RS domain.
   The actual sequential `GF(19)` domain has no compatible rank-two chart. The
@@ -1071,8 +1206,12 @@ syzygy analogues only; no literature theorem is imported into the proof.
   complete add-back `1,503,967` and unresolved mass `668,803` on the
   frozen GF(19) layout. The reviewed reduced-CRT replay further improves these
   first to `1,348,447` and `513,283`, then the reviewed 32221 replay improves
-  them to banked values `1,192,927` and `357,763`, respectively. Positive
-  unresolved mass remains.
+  them to `1,192,927` and `357,763`. The fresh independent and cross-model
+  GREEN 41331 review then authorizes the shared `d=4,r=1` auxiliary envelope,
+  giving banked values `776,979` and `212,755`. A separate pair of GREEN
+  reviews authorizes the one-layer `d=4,r=0` envelope, giving banked values
+  `641,512` and `104,914`. The reviewed total-degree-six `31321` replay then
+  banks `620,776` and `84,178`, respectively. Positive unresolved mass remains.
 - **Empirical/exact finite evidence:** the 19-codeword list and seven surviving
   template solutions, the `GF(11)`/`GF(13)` structural censuses, the empty
   216-fibre `p=19` control, and the 576-pattern `(3,2,1)` census with its
@@ -1081,8 +1220,10 @@ syzygy analogues only; no literature theorem is imported into the proof.
   cubic-line templates; the reduced-CRT lemma routes every actual split-core
   incidence to exact-profile migration. The 32221 census has zero exact targets
   and one compatible ambient line; its forced factor is reproduced by three
-  engines and by separate small-field falsification scans. Exact does not mean
-  asymptotic.
+  engines and by separate small-field falsification scans. The new 1,152-key
+  `31321` census has 1,108 full-rank systems and 44 affine-inconsistent
+  rank-two systems; its compatible-rank-drop finite branch is vacuous and is
+  not substituted for the uniform proof. Exact does not mean asymptotic.
 - **Unproved:** domain-compatible payment for any non-exact rank-two frontier
   template, closure of the remaining finite profiles, identification with a
   closed asymptotic profile envelope, the fixed-profile cap required by PR
@@ -1102,10 +1243,16 @@ both from exact `d=3`. The `432` charge and resulting `1,348,447`/`513,283`
 totals were banked after GREEN cross-model review. The 32221 owner partition
 leaves all 432 aggregate keys unpaid, but its independently reviewed
 degree-five reduced-CRT lemma now banks the further `432` charge and resulting
-`1,192,927`/`357,763` totals. The next gate is the existing-owner partition for
-`(ell,d,r,t,a_i)=(4,4,1,3,(3,3,1))`, `(G2,GR)=(2,4)`, charge `138,624`. The
-global theorem remains out of scope until the remaining profiles have named
-payments and the whole implication chain survives independent review.
+`1,192,927`/`357,763` totals. The exact 41331 owner partition leaves no unpaid
+support, and its reviewed shared-layer replay banks the further
+`776,979`/`212,755` totals. The separately reviewed `d=4,r=0` layer replay then
+banks `641,512`/`104,914` without combining it with `r=1`. The reviewed
+total-degree-six `31321` lemma then banks `620,776`/`84,178`. The next gate is
+the existing-owner partition for
+`(ell,d,r,t,a_i)=(4,4,2,2,(3,3))`, `(G2,GR)=(2,3)`, charge `17,328`.
+Cross-`r` aggregation remains unbanked. The global theorem remains out of
+scope until the remaining profiles have named payments and the whole
+implication chain survives independent review.
 
 ## Reproduction
 
@@ -1156,4 +1303,16 @@ python3 experimental/scripts/verify_l1_b9_frontier_32221_reduced_crt_cas.py
 python3 experimental/scripts/verify_l1_b9_frontier_32221_reduced_crt_cas.py --tamper-selftest
 PYTHONPATH=experimental/scripts python3 experimental/scripts/verify_l1_b9_frontier_32221_reduced_crt_ledger.py
 PYTHONPATH=experimental/scripts python3 experimental/scripts/verify_l1_b9_frontier_32221_reduced_crt_ledger.py --tamper-selftest
+python3 experimental/scripts/verify_l1_b9_frontier_41331_owner_partition.py
+python3 experimental/scripts/verify_l1_b9_frontier_41331_owner_partition.py --tamper-selftest
+python3 experimental/scripts/verify_l1_b9_frontier_41331_shared_auxiliary_ledger.py
+python3 experimental/scripts/verify_l1_b9_frontier_41331_shared_auxiliary_ledger.py --tamper-selftest
+python3 experimental/scripts/verify_l1_b9_d4r0_shared_auxiliary_ledger.py
+python3 experimental/scripts/verify_l1_b9_d4r0_shared_auxiliary_ledger.py --tamper-selftest
+python3 experimental/scripts/verify_l1_b9_frontier_31321_owner_partition.py
+python3 experimental/scripts/verify_l1_b9_frontier_31321_owner_partition.py --tamper-selftest
+/usr/local/bin/sage experimental/scripts/verify_l1_b9_frontier_31321_total_degree_crt.sage
+/usr/local/bin/sage experimental/scripts/verify_l1_b9_frontier_31321_total_degree_crt.sage --tamper-selftest
+PYTHONPATH=experimental/scripts python3 experimental/scripts/verify_l1_b9_frontier_31321_total_degree_crt_ledger.py
+PYTHONPATH=experimental/scripts python3 experimental/scripts/verify_l1_b9_frontier_31321_total_degree_crt_ledger.py --tamper-selftest
 ```

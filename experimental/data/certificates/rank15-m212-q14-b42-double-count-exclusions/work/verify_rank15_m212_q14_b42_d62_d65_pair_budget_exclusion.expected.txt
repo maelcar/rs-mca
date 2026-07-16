@@ -1,0 +1,26 @@
+RANK15_D62_D65_PAIR_BUDGET_EXCLUSION: PASS
+D moment_profiles packing_survivors negative_zmax pair_rejects min_positive_gap survivors
+62 1825 26 10 16 4 0
+63 2172 41 12 29 3 0
+64 2573 51 17 34 2 0
+65 3103 138 49 76 1 13
+D=65 terminal subset-pair ledger
+id profile h n3 heavy I_H zmax gate_pair/cap terminal_subset J phi/cap
+01 {4^2,5^2,6,7^6,10,14^2} h=14 n3=132 H=2 I_H=28 zmax=15 gate=102/105 X={7^3,10,14^2} J=59 terminal=17/15
+02 {4^3,5,8^3,9^5,15} h=13 n3=133 H=1 I_H=15 zmax=27 gate=218/351 X={9^5,15} J=60 terminal=18/15
+03 {4^2,5,6^3,7^5,10,13,15} h=14 n3=132 H=2 I_H=28 zmax=15 gate=101/105 X={7^3,10,13,15} J=59 terminal=17/15
+04 {4^4,5,6,7^6,10,13,15} h=15 n3=131 H=2 I_H=28 zmax=15 gate=101/105 X={7^3,10,13,15} J=59 terminal=17/15
+05 {6^5,7^6,14,15} h=13 n3=133 H=2 I_H=29 zmax=14 gate=90/91 X={7^5,14,15} J=64 terminal=22/21
+06 {4^6,6^6,7^2,10,14,15} h=17 n3=129 H=2 I_H=29 zmax=14 gate=90/91 X={7^2,10,14,15} J=53 terminal=11/10
+07 {4^2,5^6,6^2,7^3,10,14,15} h=16 n3=130 H=2 I_H=29 zmax=14 gate=90/91 X={7^2,10,14,15} J=53 terminal=11/10
+08 {4^5,5^3,6^3,7^3,10,14,15} h=17 n3=129 H=2 I_H=29 zmax=14 gate=90/91 X={7^2,10,14,15} J=53 terminal=11/10
+09 {4^8,6^4,7^3,10,14,15} h=18 n3=128 H=2 I_H=29 zmax=14 gate=90/91 X={7^2,10,14,15} J=53 terminal=11/10
+10 {4^4,5^6,7^4,10,14,15} h=17 n3=129 H=2 I_H=29 zmax=14 gate=90/91 X={7^2,10,14,15} J=53 terminal=11/10
+11 {4^7,5^3,6,7^4,10,14,15} h=18 n3=128 H=2 I_H=29 zmax=14 gate=90/91 X={7^2,10,14,15} J=53 terminal=11/10
+12 {4^10,6^2,7^4,10,14,15} h=19 n3=127 H=2 I_H=29 zmax=14 gate=90/91 X={7^2,10,14,15} J=53 terminal=11/10
+13 {4^12,7^5,10,14,15} h=20 n3=126 H=2 I_H=29 zmax=14 gate=90/91 X={7^2,10,14,15} J=53 terminal=11/10
+special_4^3_5_8^3_9^5_15 noheavy=27 incidences=74 pair_demand=67 capacity=66
+corrected_6^5_7^6_14_15 blocks=6xK5+5xK4 edges=90/91 vertex_equations=impossible
+ledger_sha256=a182490e084e113f2098cce2a446a1fc43b1b05ce241a860f199d2aaa51d6754
+payment=D62,D63,D64,D65
+next=D66

@@ -7,7 +7,9 @@ wide (|A| >= (c/L) e^{2 eta N}; narrow bands never fail).  U2/U3 (base 3,
 c = 3^B): the angle vector is the x3-orbit of theta_1, and on the cylinder
 xi = 3^k m the top k factors degenerate to (1+z)^2 exactly, giving
   hatf_B(3^k m) = sum_j C(2k, B-j) [z^j] p_{B-k, m},
-with a twisted form for r != 0 cylinders and a cube-certificate recursion
+with a twisted polynomial-renormalization form for r != 0 cylinders.  The
+cube-certificate recursion is valid on subgroup cylinders; twisted
+cube-flatness is false and is regression-pinned by the Python verifier
 (base-5 COUNTEREXAMPLE pinned: the identity is base-3-specific).
 
 Note:     `experimental/notes/thresholds/cylinder_renormalization.md`.

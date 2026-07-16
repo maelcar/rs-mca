@@ -30,6 +30,37 @@ Keep entries concise and link to the relevant files.
 
 ## Entries
 
+### 2026-07-16 - L1, M1, rank-cell, and public-board PR wave
+
+- **Agent/model:** Codex integrating ready PRs #803--#809, #811, #813, and
+  #815, with #803 used as the superset for #799/#801 and #813 used as the
+  superset for #810/#812. Draft PR #814 was intentionally not integrated.
+- **Files added or changed:** Added L1 B9 shared-auxiliary and total-degree CRT
+  certificates/notes/scripts; rank-15 D62--D68/D146 exclusion and geometric
+  transport packets; cylinder-renormalization correction; canonical-error
+  mixed-shadow packing; selected-owner cube-mean boundary packet; M1 A4 SPI
+  atlas manifests; KoalaBear base-slope universe and fixed-line extension
+  audit packets; BC deficiency-2 stratum typing packet; and public site JSON
+  updates for the corrected KoalaBear frontier and four Proth exact-MCA rows.
+  Contributor `experimental/agents-log.md` edits were not imported.
+- **Status:** PROVED / CONDITIONAL / COUNTEREXAMPLE / EXPERIMENTAL / AUDIT,
+  as stated in the individual notes. The site updates expose existing
+  experimental/proved rows but do not promote any new stable paper theorem.
+- **What is being added:** This wave banks sharper finite local payments and
+  audit infrastructure around L1 mixed-petal/frontier rows, M1 A4/SPI and
+  extension-line bookkeeping, rank-15 residual exclusions, and BC deployed-row
+  named-cell accounting. It also corrects the cylinder packet by retracting the
+  twisted extrapolation while preserving the subgroup-cylinder result.
+- **How it is useful:** The additions narrow several finite adjacent-row proof
+  obligations and make the public board more faithful to the current source
+  state. The strongest public-facing addition is the four-rate Proth exact MCA
+  row display; the final KoalaBear adjacent safe side and asymptotic closure
+  still require the remaining exact ledgers/inverse inputs.
+- **What to do next:** Re-run the frozen verifiers in a dedicated environment,
+  decide which M1/L1/rank-cell packets should be summarized into
+  `asymptotic_rs_mca.tex` or `grande_finale.tex`, and continue auditing the
+  exact adjacent safe ledgers before promoting anything into the main papers.
+
 ### 2026-07-15 - L1/BC/L2 threshold and Lean PR wave
 
 - **Agent/model:** Codex integrating non-draft PRs #775, #777, #779--#792,

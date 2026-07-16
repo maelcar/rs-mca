@@ -1,0 +1,14 @@
+RANK15_UNIFORM_GEOMETRIC_TRANSPORT: PASS
+certificate_sha256=3a5486436d6e5beb4bce8bc6822d44bd232d149c49be4d8a40257081b332c6d2
+line_types=2025 pair_rows=78 certificates=4387 unique_certificates=1605
+D=66 moment=3586 packing=378 farkas=373 line_type_survivors=5 distinguished_pair_rejected=2 two15_rejected=3 kneser_rejected=0 remaining=0
+  line_type_profiles=4^3,5^14,12^1,14^1,15^1;6^13,15^2;4^9,5^11,11^1,15^2;4^24,5^3,12^1,15^2;4^27,6^1,12^1,15^2
+D=67 moment=4128 packing=1174 farkas=1168 line_type_survivors=6 distinguished_pair_rejected=4 two15_rejected=2 kneser_rejected=0 remaining=0
+  line_type_profiles=4^4,5^14,13^2,15^1;4^6,5^13,12^1,14^1,15^1;5^2,6^12,15^2;4^2,5^14,6^1,10^1,15^2;4^12,5^10,11^1,15^2;4^27,5^2,12^1,15^2
+D=68 moment=4849 packing=2858 farkas=2846 line_type_survivors=12 distinguished_pair_rejected=7 two15_rejected=3 kneser_rejected=2 remaining=0
+  line_type_profiles=4^5,5^14,13^1,14^2;4^7,5^13,13^2,15^1;4^9,5^12,12^1,14^1,15^1;4^26,5^3,13^1,14^1,15^1;4^29,6^1,13^1,14^1,15^1;5^4,6^11,15^2;4^3,5^1,6^12,15^2;4^2,5^16,10^1,15^2;4^5,5^13,6^1,10^1,15^2;4^8,5^10,6^2,10^1,15^2;4^15,5^9,11^1,15^2;4^30,5^1,12^1,15^2
+D=145_relaxation profile=5^50,6^14 n3=2 line_types=1*(d3,t6,5^4,6^2)+41*(d7,t0,5^6,6^2) pair_usage=5-5:621/1225,5-6:500/700,6-6:42/91 distinguished_pair_margin=200
+D=146 moment=1 profile=5^52,6^13 local_solutions=((2, 5), (6, 2)) sixfold_incidence=78 required_minimum=84 remaining=0
+field=2130706433 field_minus_one=2^24*127 mod13=10 mod14=8
+SCOPE conditional_arrangement_interface_only
+NOVEL excluded_D=66,67,68,146 conditional_post_804_residual_D=69..145

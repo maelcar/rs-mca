@@ -15,7 +15,7 @@
       "rows": [
         {
           "id": "paperD-v12-first-grid-rho-1-2",
-          "title": "Paper D v12 first-grid MCA δ* upper cap",
+          "title": "Paper D v12 first-grid MCA \u03b4* upper cap",
           "rho": "1/2",
           "track": "mca",
           "trackLabel": "MCA / CA",
@@ -57,14 +57,62 @@
           "sourceHref": "https://github.com/przchojecki/rs-mca/blob/main/tex/cs25_cap_v12.tex",
           "nonClaims": [
             "Applies to official-rate rows with 127 <= k <= 2^40, q<2^256, and q>n; it is stronger than the older fixed cap 255/512 in that range.",
-            "This is a δ* upper cap from a failure lower bound, not an exact threshold or a safe-side theorem.",
+            "This is a \u03b4* upper cap from a failure lower bound, not an exact threshold or a safe-side theorem.",
             "The c=1 first-grid proof does not require smoothness, but the public board records it for smooth Proximity Prize rows."
           ],
           "authors": "Paper D authors / Codex audit"
         },
         {
+          "id": "proth-exact-rho-1-2-n2199023255552",
+          "title": "Certified Proth exact MCA threshold, rho=1/2",
+          "rho": "1/2",
+          "track": "mca",
+          "trackLabel": "support-wise affine MCA (Gamma=F_p)",
+          "direction": "exact-finite-slope-gate",
+          "n": "2199023255552 (=2^41)",
+          "k": "1099511627776 (=2^40)",
+          "field": "F_p, p=132540169958804033333249306710494641010898987122689 (certified Proth prime; n | p-1)",
+          "fieldSizeLog2": 166.502834419,
+          "domainKind": "multiplicative-subgroup",
+          "smoothPowerOfTwo": true,
+          "agreementA": "1809522702943 unsafe / 1809522702944 safe",
+          "sigma": "710011075167 / 710011075168",
+          "deltaExact": "389500552609/2199023255552",
+          "deltaApprox": 0.177124344467757,
+          "etaExact": "710011075167/2199023255552",
+          "etaApprox": 0.322875655532243,
+          "qGen": "132540169958804033333249306710494641010898987122689",
+          "qLine": "132540169958804033333249306710494641010898987122689",
+          "qChal": "132540169958804033333249306710494641010898987122689",
+          "nBad": ">=389500552610 at a=1809522702943; =389500552609 at a=1809522702944",
+          "bound": "e_mca <= 2^-128 iff floor(delta*n) <= 389500552608",
+          "failureMarginBits": 3.70396145876e-12,
+          "marginLabel": "exact B / >=B+1 gate",
+          "prizeBox": {
+            "rate": true,
+            "smoothDomain": true,
+            "kBound": true,
+            "fieldBound": true,
+            "denominatorAudited": true,
+            "endpointConvention": true,
+            "publicSource": true,
+            "conditionalImport": false,
+            "rhoNIntegral": true
+          },
+          "status": "PROVED_EXACT_MCA_THRESHOLD",
+          "statusLabel": "proved exact full-field MCA threshold",
+          "source": "Reed-Solomon MCA Thresholds, thm:intro-prize-rows (P1-P3)",
+          "sourceHref": "https://github.com/przchojecki/rs-mca/blob/main/experimental/rs_mca_thresholds.tex#L409-L463",
+          "nonClaims": [
+            "Exact for the full-field affine support-wise MCA sampler Gamma=F_p; not an ordinary-list, interleaved-list, CA, curve-MCA, or protocol-soundness theorem.",
+            "deltaExact is the unsafe supremum B/n of the half-open safe set [0,B/n); the largest safe grid radius is (B-1)/n.",
+            "Proved in the experimental exact-threshold manuscript and independently audited, but not promoted into Paper D or externally peer reviewed; no novelty or priority claim is made."
+          ],
+          "authors": "Przemek Chojecki / independent theorem-chain and certificate audits"
+        },
+        {
           "id": "mca-cap-rho-1-2",
-          "title": "Paper D MCA δ* upper cap",
+          "title": "Paper D MCA \u03b4* upper cap",
           "rho": "1/2",
           "track": "mca",
           "trackLabel": "MCA / CA",
@@ -107,7 +155,7 @@
           "nonClaims": [
             "Paper D v12 cap; hypotheses verified by the displayed divisor, binomial, and field ledgers.",
             "Paper D v12 routes the MCA cap through the self-contained deep-point argument; CA/list comparison statements still have separate radius and import conventions.",
-            "This is a δ* upper cap from a failure lower bound, not an exact threshold."
+            "This is a \u03b4* upper cap from a failure lower bound, not an exact threshold."
           ],
           "authors": "Paper D authors / Codex audit"
         },
@@ -163,7 +211,7 @@
         },
         {
           "id": "cap25-v13-identity-kb-mca-edge",
-          "title": "CAP25 v13 experimental KoalaBear identity-prefix edge",
+          "title": "CAP25 v13 raw KoalaBear identity-prefix edge",
           "rho": "1/2",
           "track": "mca",
           "trackLabel": "support-wise MCA",
@@ -174,18 +222,18 @@
           "fieldSizeLog2": 185.93,
           "domainKind": "multiplicative-subgroup",
           "smoothPowerOfTwo": true,
-          "agreementA": "1116043",
-          "sigma": "67467",
-          "deltaExact": "981109/2097152",
-          "deltaApprox": 0.4678292,
-          "etaExact": "67467/2097152",
-          "etaApprox": 0.03217077,
+          "agreementA": "1116047 unsafe / 1116048 open",
+          "sigma": "67471 / 67472",
+          "deltaExact": "981105/2097152",
+          "deltaApprox": 0.46782732009887695,
+          "etaExact": "67471/2097152",
+          "etaApprox": 0.03217267990112305,
           "qGen": "2130706433",
           "qLine": "2130706433^6",
           "qChal": "protocol-dependent",
-          "bound": "epsilon_mca > 2^-128",
-          "failureMarginBits": 25.7,
-          "marginLabel": "+25.7 bits",
+          "bound": "epsilon_mca > 2^-128 at a=1116047",
+          "failureMarginBits": 8.9777,
+          "marginLabel": "+8.98 bits at a=1116047",
           "prizeBox": {
             "rate": true,
             "smoothDomain": true,
@@ -201,18 +249,19 @@
           },
           "status": "EXPERIMENTAL_V13_IDENTITY_FRONTIER",
           "statusLabel": "experimental v13 identity frontier",
-          "source": "CAP25 v13 experimental identity frontier",
-          "sourceHref": "https://github.com/przchojecki/rs-mca/blob/main/experimental/cap25_v13_experimental.tex",
+          "source": "CAP25 v13 raw corrected identity frontier",
+          "sourceHref": "https://github.com/przchojecki/rs-mca/blob/main/experimental/cap25_cap_v13_raw.tex",
           "nonClaims": [
-            "Experimental v13 source only; not promoted to the active Paper D v12 submission draft.",
-            "This supersedes the c=2 addendum edge 490557/1048576 and narrows the deployed KoalaBear unsafe edge from 15331/32768 to 981109/2097152, but it does not close the safe-side threshold band.",
-            "The conjectured adjacent safe agreement is 1116044 and still needs an exact upper ledger; the companion checker verifies the displayed lower edge, not the safe side."
+            "The exact v13 raw proposition proves the MCA unsafe edge at agreement 1116047; this is a delta* upper cap, not an exact threshold.",
+            "The identity-prefix lower comparison fails at 1116048 by 22.20 bits, but that only leaves 1116048 open; it does not prove safety there.",
+            "The KoalaBear list row is separate and remains at 1116046 unsafe / 1116047 open.",
+            "This v13 raw result is not promoted here into the active exact-threshold manuscript."
           ],
           "authors": "Przemek Chojecki / Codex audit"
         },
         {
           "id": "list-cap-rho-1-2",
-          "title": "Interleaved-list δ* upper cap from base-list obstruction",
+          "title": "Interleaved-list \u03b4* upper cap from base-list obstruction",
           "rho": "1/2",
           "track": "list",
           "trackLabel": "Interleaved-list",
@@ -254,7 +303,7 @@
           "sourceHref": "https://github.com/przchojecki/rs-mca/blob/main/tex/slackMCA_v4.tex",
           "nonClaims": [
             "List lower bound only; it is not by itself an MCA or protocol soundness theorem.",
-            "This is a δ*_list upper cap from a list-size lower bound, not an exact threshold."
+            "This is a \u03b4*_list upper cap from a list-size lower bound, not an exact threshold."
           ],
           "authors": "RS-MCA experimental notes / Codex audit"
         },
@@ -782,6 +831,56 @@
           "authors": "Vadim Avdeev / AllenGrahamHart / Codex audit"
         },
         {
+          "id": "prime-a406-a407-adjacent-gate",
+          "title": "Prime-field A406/A407 adjacent finite-slope gate",
+          "rho": "1/2",
+          "track": "mca",
+          "trackLabel": "support-wise MCA",
+          "direction": "exact-finite-slope-gate",
+          "n": "512",
+          "k": "256",
+          "field": "F_p, p=27168*2^120+1",
+          "fieldSizeLog2": 134.7296,
+          "domainKind": "multiplicative-subgroup",
+          "smoothPowerOfTwo": true,
+          "agreementA": "406 unsafe / 407 safe",
+          "sigma": "150 / 151",
+          "deltaExact": "53/256",
+          "deltaApprox": 0.20703125,
+          "etaExact": "75/256",
+          "etaApprox": 0.29296875,
+          "qGen": "36112466189484594435050630213696401440769",
+          "qLine": "36112466189484594435050630213696401440769",
+          "qChal": "not protocol-bound",
+          "nBad": ">=107 at a=406; =106 at a=407",
+          "failureMarginBits": 0.011846,
+          "marginLabel": "exact 106/107 budget gate",
+          "prizeBox": {
+            "rate": true,
+            "smoothDomain": true,
+            "kBound": true,
+            "fieldBound": true,
+            "denominatorAudited": true,
+            "endpointConvention": true,
+            "publicSource": true,
+            "conditionalImport": false,
+            "rhoNIntegral": true,
+            "powerOfTwoQuotient": true,
+            "quotientDivisor": "p == 1 mod 512, so F_p^* has an order-512 subgroup"
+          },
+          "status": "exact-gate",
+          "statusLabel": "exact finite-slope gate",
+          "source": "A407/A408 residual-design threshold packet",
+          "sourceHref": "https://github.com/przchojecki/rs-mca/blob/main/experimental/notes/m1/m1_a407_a408_residual_design_threshold_v1.md",
+          "nonClaims": [
+            "Finite-slope support-wise MCA / LD_sw only.",
+            "LD_sw(C,406) is not classified exactly; only the tangent lower floor >=107 is used at the unsafe endpoint.",
+            "This is a separate engineered prime-field row, not the F_17^32 or KoalaBear row.",
+            "Not ordinary list decoding, interleaved-list safety, protocol soundness, or full M1 closure."
+          ],
+          "authors": "Vadim Avdeev / Codex audit"
+        },
+        {
           "id": "strict352-quotient-core",
           "title": "Strict352 quotient-core proof record",
           "rho": "1/2",
@@ -871,7 +970,7 @@
           "authors": "DannyExperiments / Codex audit"
         }
       ],
-      "missingPiece": "L1 / M1 / F1"
+      "missingPiece": "L1 / M1 (including F1 via exact restriction of scalars to base-field interleaved samplers)"
     },
     {
       "rho": "1/4",
@@ -887,7 +986,7 @@
       "rows": [
         {
           "id": "paperD-v12-first-grid-rho-1-4",
-          "title": "Paper D v12 first-grid MCA δ* upper cap",
+          "title": "Paper D v12 first-grid MCA \u03b4* upper cap",
           "rho": "1/4",
           "track": "mca",
           "trackLabel": "MCA / CA",
@@ -929,14 +1028,62 @@
           "sourceHref": "https://github.com/przchojecki/rs-mca/blob/main/tex/cs25_cap_v12.tex",
           "nonClaims": [
             "Applies to official-rate rows with 78 <= k <= 2^40, q<2^256, and q>n; it is stronger than the older fixed cap 383/512 in that range.",
-            "This is a δ* upper cap from a failure lower bound, not an exact threshold or a safe-side theorem.",
+            "This is a \u03b4* upper cap from a failure lower bound, not an exact threshold or a safe-side theorem.",
             "The c=1 first-grid proof does not require smoothness, but the public board records it for smooth Proximity Prize rows."
           ],
           "authors": "Paper D authors / Codex audit"
         },
         {
+          "id": "proth-exact-rho-1-4-n4398046511104",
+          "title": "Certified Proth exact MCA threshold, rho=1/4",
+          "rho": "1/4",
+          "track": "mca",
+          "trackLabel": "support-wise affine MCA (Gamma=F_p)",
+          "direction": "exact-finite-slope-gate",
+          "n": "4398046511104 (=2^42)",
+          "k": "1099511627776 (=2^40)",
+          "field": "F_p, p=411940680852499481698306614369841346700408394874881 (certified Proth prime; n | p-1)",
+          "fieldSizeLog2": 168.13884135,
+          "domainKind": "multiplicative-subgroup",
+          "smoothPowerOfTwo": true,
+          "agreementA": "3187461653064 unsafe / 3187461653065 safe",
+          "sigma": "2087950025288 / 2087950025289",
+          "deltaExact": "1210584858040/4398046511104",
+          "deltaApprox": 0.275255128608478,
+          "etaExact": "2087950025288/4398046511104",
+          "etaApprox": 0.474744871391522,
+          "qGen": "411940680852499481698306614369841346700408394874881",
+          "qLine": "411940680852499481698306614369841346700408394874881",
+          "qChal": "411940680852499481698306614369841346700408394874881",
+          "nBad": ">=1210584858041 at a=3187461653064; =1210584858040 at a=3187461653065",
+          "bound": "e_mca <= 2^-128 iff floor(delta*n) <= 1210584858039",
+          "failureMarginBits": 1.19173391185e-12,
+          "marginLabel": "exact B / >=B+1 gate",
+          "prizeBox": {
+            "rate": true,
+            "smoothDomain": true,
+            "kBound": true,
+            "fieldBound": true,
+            "denominatorAudited": true,
+            "endpointConvention": true,
+            "publicSource": true,
+            "conditionalImport": false,
+            "rhoNIntegral": true
+          },
+          "status": "PROVED_EXACT_MCA_THRESHOLD",
+          "statusLabel": "proved exact full-field MCA threshold",
+          "source": "Reed-Solomon MCA Thresholds, thm:intro-prize-rows (P1-P3)",
+          "sourceHref": "https://github.com/przchojecki/rs-mca/blob/main/experimental/rs_mca_thresholds.tex#L409-L463",
+          "nonClaims": [
+            "Exact for the full-field affine support-wise MCA sampler Gamma=F_p; not an ordinary-list, interleaved-list, CA, curve-MCA, or protocol-soundness theorem.",
+            "deltaExact is the unsafe supremum B/n of the half-open safe set [0,B/n); the largest safe grid radius is (B-1)/n.",
+            "Proved in the experimental exact-threshold manuscript and independently audited, but not promoted into Paper D or externally peer reviewed; no novelty or priority claim is made."
+          ],
+          "authors": "Przemek Chojecki / independent theorem-chain and certificate audits"
+        },
+        {
           "id": "mca-cap-rho-1-4",
-          "title": "Paper D MCA δ* upper cap",
+          "title": "Paper D MCA \u03b4* upper cap",
           "rho": "1/4",
           "track": "mca",
           "trackLabel": "MCA / CA",
@@ -979,7 +1126,7 @@
           "nonClaims": [
             "Paper D v12 cap; hypotheses verified by the displayed divisor, binomial, and field ledgers.",
             "Paper D v12 routes the MCA cap through the self-contained deep-point argument; CA/list comparison statements still have separate radius and import conventions.",
-            "This is a δ* upper cap from a failure lower bound, not an exact threshold."
+            "This is a \u03b4* upper cap from a failure lower bound, not an exact threshold."
           ],
           "authors": "Paper D authors / Codex audit"
         },
@@ -1035,7 +1182,7 @@
         },
         {
           "id": "list-cap-rho-1-4",
-          "title": "Interleaved-list δ* upper cap from base-list obstruction",
+          "title": "Interleaved-list \u03b4* upper cap from base-list obstruction",
           "rho": "1/4",
           "track": "list",
           "trackLabel": "Interleaved-list",
@@ -1077,7 +1224,7 @@
           "sourceHref": "https://github.com/przchojecki/rs-mca/blob/main/tex/slackMCA_v4.tex",
           "nonClaims": [
             "List lower bound only; it is not by itself an MCA or protocol soundness theorem.",
-            "This is a δ*_list upper cap from a list-size lower bound, not an exact threshold."
+            "This is a \u03b4*_list upper cap from a list-size lower bound, not an exact threshold."
           ],
           "authors": "RS-MCA experimental notes / Codex audit"
         },
@@ -1131,7 +1278,7 @@
           "authors": "leaderboard_sweep_192 scanner / Codex audit"
         }
       ],
-      "missingPiece": "L1 / M1 / F1"
+      "missingPiece": "L1 / M1 (including F1 via exact restriction of scalars to base-field interleaved samplers)"
     },
     {
       "rho": "1/8",
@@ -1147,7 +1294,7 @@
       "rows": [
         {
           "id": "paperD-v12-first-grid-rho-1-8",
-          "title": "Paper D v12 first-grid MCA δ* upper cap",
+          "title": "Paper D v12 first-grid MCA \u03b4* upper cap",
           "rho": "1/8",
           "track": "mca",
           "trackLabel": "MCA / CA",
@@ -1189,14 +1336,62 @@
           "sourceHref": "https://github.com/przchojecki/rs-mca/blob/main/tex/cs25_cap_v12.tex",
           "nonClaims": [
             "Applies to official-rate rows with 58 <= k <= 2^40, q<2^256, and q>n; it is stronger than the older fixed cap 447/512 in that range.",
-            "This is a δ* upper cap from a failure lower bound, not an exact threshold or a safe-side theorem.",
+            "This is a \u03b4* upper cap from a failure lower bound, not an exact threshold or a safe-side theorem.",
             "The c=1 first-grid proof does not require smoothness, but the public board records it for smooth Proximity Prize rows."
           ],
           "authors": "Paper D authors / Codex audit"
         },
         {
+          "id": "proth-exact-rho-1-8-n8796093022208",
+          "title": "Certified Proth exact MCA threshold, rho=1/8",
+          "rho": "1/8",
+          "track": "mca",
+          "trackLabel": "support-wise affine MCA (Gamma=F_p)",
+          "direction": "exact-finite-slope-gate",
+          "n": "8796093022208 (=2^43)",
+          "k": "1099511627776 (=2^40)",
+          "field": "F_p, p=979947269755402568812854322316630667196565607677953 (certified Proth prime; n | p-1)",
+          "fieldSizeLog2": 169.389108865,
+          "domainKind": "multiplicative-subgroup",
+          "smoothPowerOfTwo": true,
+          "agreementA": "5916286822955 unsafe / 5916286822956 safe",
+          "sigma": "4816775195179 / 4816775195180",
+          "deltaExact": "2879806199253/8796093022208",
+          "deltaApprox": 0.32739606004418,
+          "etaExact": "4816775195179/8796093022208",
+          "etaApprox": 0.54760393995582,
+          "qGen": "979947269755402568812854322316630667196565607677953",
+          "qLine": "979947269755402568812854322316630667196565607677953",
+          "qChal": "979947269755402568812854322316630667196565607677953",
+          "nBad": ">=2879806199254 at a=5916286822955; =2879806199253 at a=5916286822956",
+          "bound": "e_mca <= 2^-128 iff floor(delta*n) <= 2879806199252",
+          "failureMarginBits": 5.00969485614e-13,
+          "marginLabel": "exact B / >=B+1 gate",
+          "prizeBox": {
+            "rate": true,
+            "smoothDomain": true,
+            "kBound": true,
+            "fieldBound": true,
+            "denominatorAudited": true,
+            "endpointConvention": true,
+            "publicSource": true,
+            "conditionalImport": false,
+            "rhoNIntegral": true
+          },
+          "status": "PROVED_EXACT_MCA_THRESHOLD",
+          "statusLabel": "proved exact full-field MCA threshold",
+          "source": "Reed-Solomon MCA Thresholds, thm:intro-prize-rows (P1-P3)",
+          "sourceHref": "https://github.com/przchojecki/rs-mca/blob/main/experimental/rs_mca_thresholds.tex#L409-L463",
+          "nonClaims": [
+            "Exact for the full-field affine support-wise MCA sampler Gamma=F_p; not an ordinary-list, interleaved-list, CA, curve-MCA, or protocol-soundness theorem.",
+            "deltaExact is the unsafe supremum B/n of the half-open safe set [0,B/n); the largest safe grid radius is (B-1)/n.",
+            "Proved in the experimental exact-threshold manuscript and independently audited, but not promoted into Paper D or externally peer reviewed; no novelty or priority claim is made."
+          ],
+          "authors": "Przemek Chojecki / independent theorem-chain and certificate audits"
+        },
+        {
           "id": "mca-cap-rho-1-8",
-          "title": "Paper D MCA δ* upper cap",
+          "title": "Paper D MCA \u03b4* upper cap",
           "rho": "1/8",
           "track": "mca",
           "trackLabel": "MCA / CA",
@@ -1239,7 +1434,7 @@
           "nonClaims": [
             "Paper D v12 cap; hypotheses verified by the displayed divisor, binomial, and field ledgers.",
             "Paper D v12 routes the MCA cap through the self-contained deep-point argument; CA/list comparison statements still have separate radius and import conventions.",
-            "This is a δ* upper cap from a failure lower bound, not an exact threshold."
+            "This is a \u03b4* upper cap from a failure lower bound, not an exact threshold."
           ],
           "authors": "Paper D authors / Codex audit"
         },
@@ -1295,7 +1490,7 @@
         },
         {
           "id": "list-cap-rho-1-8",
-          "title": "Interleaved-list δ* upper cap from base-list obstruction",
+          "title": "Interleaved-list \u03b4* upper cap from base-list obstruction",
           "rho": "1/8",
           "track": "list",
           "trackLabel": "Interleaved-list",
@@ -1337,7 +1532,7 @@
           "sourceHref": "https://github.com/przchojecki/rs-mca/blob/main/tex/slackMCA_v4.tex",
           "nonClaims": [
             "List lower bound only; it is not by itself an MCA or protocol soundness theorem.",
-            "This is a δ*_list upper cap from a list-size lower bound, not an exact threshold."
+            "This is a \u03b4*_list upper cap from a list-size lower bound, not an exact threshold."
           ],
           "authors": "RS-MCA experimental notes / Codex audit"
         },
@@ -1391,7 +1586,7 @@
           "authors": "leaderboard_sweep_192 scanner / Codex audit"
         }
       ],
-      "missingPiece": "L1 / M1 / F1"
+      "missingPiece": "L1 / M1 (including F1 via exact restriction of scalars to base-field interleaved samplers)"
     },
     {
       "rho": "1/16",
@@ -1407,7 +1602,7 @@
       "rows": [
         {
           "id": "paperD-v12-first-grid-rho-1-16",
-          "title": "Paper D v12 first-grid MCA δ* upper cap",
+          "title": "Paper D v12 first-grid MCA \u03b4* upper cap",
           "rho": "1/16",
           "track": "mca",
           "trackLabel": "MCA / CA",
@@ -1449,14 +1644,62 @@
           "sourceHref": "https://github.com/przchojecki/rs-mca/blob/main/tex/cs25_cap_v12.tex",
           "nonClaims": [
             "Applies to official-rate rows with 47 <= k <= 2^40, q<2^256, and q>n; it is stronger than the older fixed cap 959/1024 in that range.",
-            "This is a δ* upper cap from a failure lower bound, not an exact threshold or a safe-side theorem.",
+            "This is a \u03b4* upper cap from a failure lower bound, not an exact threshold or a safe-side theorem.",
             "The c=1 first-grid proof does not require smoothness, but the public board records it for smooth Proximity Prize rows."
           ],
           "authors": "Paper D authors / Codex audit"
         },
         {
+          "id": "proth-exact-rho-1-16-n17592186044416",
+          "title": "Certified Proth exact MCA threshold, rho=1/16",
+          "rho": "1/16",
+          "track": "mca",
+          "trackLabel": "support-wise affine MCA (Gamma=F_p)",
+          "direction": "exact-finite-slope-gate",
+          "n": "17592186044416 (=2^44)",
+          "k": "1099511627776 (=2^40)",
+          "field": "F_p, p=2121285573237585848299875619011192262679065433997313 (certified Proth prime; n | p-1)",
+          "fieldSizeLog2": 170.503271693,
+          "domainKind": "multiplicative-subgroup",
+          "smoothPowerOfTwo": true,
+          "agreementA": "11358288024862 unsafe / 11358288024863 safe",
+          "sigma": "10258776397086 / 10258776397087",
+          "deltaExact": "6233898019554/17592186044416",
+          "deltaApprox": 0.35435607626107,
+          "etaExact": "10258776397086/17592186044416",
+          "etaApprox": 0.58314392373893,
+          "qGen": "2121285573237585848299875619011192262679065433997313",
+          "qLine": "2121285573237585848299875619011192262679065433997313",
+          "qChal": "2121285573237585848299875619011192262679065433997313",
+          "nBad": ">=6233898019555 at a=11358288024862; =6233898019554 at a=11358288024863",
+          "bound": "e_mca <= 2^-128 iff floor(delta*n) <= 6233898019553",
+          "failureMarginBits": 2.31427423051e-13,
+          "marginLabel": "exact B / >=B+1 gate",
+          "prizeBox": {
+            "rate": true,
+            "smoothDomain": true,
+            "kBound": true,
+            "fieldBound": true,
+            "denominatorAudited": true,
+            "endpointConvention": true,
+            "publicSource": true,
+            "conditionalImport": false,
+            "rhoNIntegral": true
+          },
+          "status": "PROVED_EXACT_MCA_THRESHOLD",
+          "statusLabel": "proved exact full-field MCA threshold",
+          "source": "Reed-Solomon MCA Thresholds, thm:intro-prize-rows (P1-P3)",
+          "sourceHref": "https://github.com/przchojecki/rs-mca/blob/main/experimental/rs_mca_thresholds.tex#L409-L463",
+          "nonClaims": [
+            "Exact for the full-field affine support-wise MCA sampler Gamma=F_p; not an ordinary-list, interleaved-list, CA, curve-MCA, or protocol-soundness theorem.",
+            "deltaExact is the unsafe supremum B/n of the half-open safe set [0,B/n); the largest safe grid radius is (B-1)/n.",
+            "Proved in the experimental exact-threshold manuscript and independently audited, but not promoted into Paper D or externally peer reviewed; no novelty or priority claim is made."
+          ],
+          "authors": "Przemek Chojecki / independent theorem-chain and certificate audits"
+        },
+        {
           "id": "mca-cap-rho-1-16",
-          "title": "Paper D MCA δ* upper cap",
+          "title": "Paper D MCA \u03b4* upper cap",
           "rho": "1/16",
           "track": "mca",
           "trackLabel": "MCA / CA",
@@ -1499,7 +1742,7 @@
           "nonClaims": [
             "Paper D v12 cap; hypotheses verified by the displayed divisor, binomial, and field ledgers.",
             "Paper D v12 routes the MCA cap through the self-contained deep-point argument; CA/list comparison statements still have separate radius and import conventions.",
-            "This is a δ* upper cap from a failure lower bound, not an exact threshold."
+            "This is a \u03b4* upper cap from a failure lower bound, not an exact threshold."
           ],
           "authors": "Paper D authors / Codex audit"
         },
@@ -1555,7 +1798,7 @@
         },
         {
           "id": "list-cap-rho-1-16",
-          "title": "Interleaved-list δ* upper cap from base-list obstruction",
+          "title": "Interleaved-list \u03b4* upper cap from base-list obstruction",
           "rho": "1/16",
           "track": "list",
           "trackLabel": "Interleaved-list",
@@ -1597,7 +1840,7 @@
           "sourceHref": "https://github.com/przchojecki/rs-mca/blob/main/tex/slackMCA_v4.tex",
           "nonClaims": [
             "List lower bound only; it is not by itself an MCA or protocol soundness theorem.",
-            "This is a δ*_list upper cap from a list-size lower bound, not an exact threshold."
+            "This is a \u03b4*_list upper cap from a list-size lower bound, not an exact threshold."
           ],
           "authors": "RS-MCA experimental notes / Codex audit"
         },
@@ -1651,7 +1894,7 @@
           "authors": "leaderboard_sweep_192 scanner / Codex audit"
         }
       ],
-      "missingPiece": "L1 / M1 / F1"
+      "missingPiece": "L1 / M1 (including F1 via exact restriction of scalars to base-field interleaved samplers)"
     }
   ]
 }
