@@ -30,6 +30,15 @@ Keep entries concise and link to the relevant files.
 
 ## Entries
 
+### 2026-07-17 - RS-MCA Paving v9.2 ePrint submission package
+
+- **Agent/model:** Codex logging a human-submitted ePrint package by Przemek Chojecki.
+- **Files added or changed:** Replaced `experimental/RS_MCA_Paving_v8*` with `experimental/RS_MCA_Paving_v9.2.tex`, `experimental/RS_MCA_Paving_v9.2.pdf`, and `experimental/RS_MCA_Paving_v9.2_source/` containing the release TeX source, `AI_USE_v9.2.md`, `REPRODUCIBILITY_v9.2.md`, `verify_paving_mca_v9_2.py`, and `verify_retained_bchks_v9_2.py`.
+- **Status:** SUBMITTED / PROVED / CONDITIONAL / AUDIT, according to the individual manuscript claims and appendix assumptions.
+- **What is being added:** The submitted v9.2 package for `MDS Paving Bounds for Reed--Solomon MCA`, including the 55-page A4 PDF, source-release files, AI-use statement, reproducibility notes, and exact-arithmetic verifier scripts.
+- **How it is useful:** This supersedes the earlier v8 experimental release as the repository copy of the ePrint-submitted paving manuscript. The package records the final submitted source, reproducibility instructions, and the distinction between unconditional arithmetic checks and the conditional retained-lift arithmetic.
+- **What to do next:** When the IACR ePrint identifier is public, update the README/site/citations with the report link. If revising the paper, keep the v9.2 submission package immutable and add a new versioned package rather than editing these submitted files in place.
+
 ### 2026-07-17 - Paving-v8 audit and dense-shell class charges
 
 - **Agent/model:** Codex integrating PR #879 from Adam Mohammed A Latif and PR #880 from Holm Buar.

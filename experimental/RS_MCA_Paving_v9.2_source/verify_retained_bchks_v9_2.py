@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Exact arithmetic audit for the conditional retained-lift appendix in v8.
+"""Exact arithmetic audit for the conditional retained-lift appendix in v9.2.
 
 The calculations below assume the paper's Parameter-retained factor lift.
 They verify RF1--RF7 numerically, but they do NOT prove or discharge that
@@ -100,7 +100,7 @@ def check_rows() -> None:
 
 def main() -> None:
     check_rows()
-    print("v8 conditional retained-lift arithmetic: all checks passed")
+    print("v9.2 conditional retained-lift arithmetic: all checks passed")
     print("NOTE: the Parameter-retained factor lift remains an assumption.")
 
 

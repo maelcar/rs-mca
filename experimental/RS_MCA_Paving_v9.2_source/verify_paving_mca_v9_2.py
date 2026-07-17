@@ -1,12 +1,13 @@
 #!/usr/bin/env python3
-"""Exact arithmetic checks for the unconditional finite rows in v8.
+"""Exact arithmetic checks for the unconditional finite rows in v9.2.
 
 This script verifies the printed Proth certificates, field budgets,
-quadratic-boundary signs, paving-envelope divisions, all-radius saturation
-inequalities, and circle-row arithmetic.  It uses only Python's standard
-library and does not attempt to verify any conditional appendix statement.
+quadratic-boundary signs, all-test-size circuit envelopes, Jo shortening
+comparisons, exact RS plateaux, and circle-row arithmetic.  It uses only
+Python's standard library and does not verify any conditional appendix.
 """
 
+from fractions import Fraction
 from math import comb, log2
 
 
@@ -26,14 +27,36 @@ def proth_certificate(p: int, u: int, s: int, witness: int) -> None:
             "Proth modular certificate failed")
 
 
-def paving_numerator(n: int, k: int, a: int) -> int:
-    """The challenge-free integrated MDS paving envelope."""
-    return min(comb(n, a), comb(n, k + 1) // comb(a - 1, k))
+def circuit_numerator(n: int, k: int, a: int) -> int:
+    """Jo's challenge-free all-test-size MDS circuit envelope."""
+    return min(comb(n, b) // comb(a - 1, b - 1)
+               for b in range(k + 1, a + 1))
+
+
+def jo_shortening_square(n: int, k: int, a: int, t: int) -> tuple[Fraction, int]:
+    """Square of the exact shortening/BCHKS real upper bound."""
+    e = n - a
+    reduced_n = n - t
+    d = k - 1 - t
+    shortened_a = a - t
+    require(0 < d < reduced_n, "invalid shortened degree parameter")
+    require(shortened_a * shortened_a > reduced_n * d,
+            "shortened row is not strictly Johnson-safe")
+
+    # Exact form of m=max(ceil(sqrt(d/N)/(A/N-sqrt(d/N))),3).
+    m = 3
+    while (m + 1) ** 2 * d * reduced_n > m * m * shortened_a * shortened_a:
+        m += 1
+    x = Fraction(2 * m + 1, 2)
+    c = (Fraction(2, 3) * x**5 * reduced_n**4
+         + x * d * reduced_n**2 * (e + 1))
+    ratio = Fraction(comb(n, t), comb(a, t))
+    return ratio * ratio * c * c / (d * reduced_n) ** 3, m
 
 
 def beyond_johnson(n: int, k: int, a: int) -> bool:
-    """Exact form of (n-a)/n > 1-sqrt(k/n)."""
-    return k * n > a * a
+    """Exact MDS form of (n-a)/n > 1-sqrt((k-1)/n)."""
+    return (k - 1) * n > a * a
 
 
 def lucas_lehmer(exponent: int) -> bool:
@@ -114,16 +137,40 @@ def check_special_saturation_and_paving_rows() -> None:
         value = comb(128, k + 1)
         require(value == printed, "printed n=128 binomial value is wrong")
         require(value <= budget, "all-radius saturation budget fails")
+        require(p > comb(value, 2), "Jo exact-plateau field condition fails")
+        require(circuit_numerator(128, k, k + 2) == value // (k + 1),
+                "improved adjacent circuit threshold is wrong")
 
-    finite_rows = (
-        (32, 52, 210954686508560867421211382134708972291),
-        (64, 158, 275511258760747555342982982548156580976),
+    shortening_rows = (
+        # k, agreement, shortening, exact m, printed log2 upper, Johnson margin
+        (256, 351, 123, 162, 126.234492, 7359),
+        (128, 233, 67, 63, 127.290843, 10735),
+        (64, 143, 45, 15, 126.254265, 11807),
     )
-    for k, a, printed in finite_rows:
-        value = paving_numerator(512, k, a)
-        require(value == printed, "printed finite paving numerator is wrong")
-        require(value <= budget, "finite paving numerator exceeds the budget")
-        require(beyond_johnson(512, k, a), "finite paving row is not beyond Johnson")
+    for k, a, t, expected_m, printed_log_upper, expected_margin in shortening_rows:
+        upper_square, m = jo_shortening_square(512, k, a, t)
+        require(m == expected_m, "printed Jo ceiling parameter is wrong")
+        require(upper_square < budget * budget,
+                "finite shortening numerator exceeds the budget")
+        actual_log = (log2(upper_square.numerator)
+                      - log2(upper_square.denominator)) / 2
+        require(actual_log < printed_log_upper,
+                "printed shortening logarithmic upper bound failed")
+        require(printed_log_upper - actual_log < 1e-6,
+                "printed shortening logarithmic upper bound is too loose")
+        require(beyond_johnson(512, k, a),
+                "finite shortening row is not beyond Johnson")
+        require(512 * (k - 1) - a * a == expected_margin,
+                "printed exact Johnson margin is wrong")
+
+    k, a = 32, 52
+    printed = 210954686508560867421211382134708972291
+    value = circuit_numerator(512, k, a)
+    require(value == printed, "printed finite circuit numerator is wrong")
+    require(value <= budget, "finite circuit numerator exceeds the budget")
+    require(beyond_johnson(512, k, a), "finite circuit row is not beyond Johnson")
+    require(512 * (k - 1) - a * a == 13168,
+            "printed exact circuit-row Johnson margin is wrong")
 
 
 def check_circle_rows() -> None:
@@ -141,9 +188,9 @@ def check_circle_rows() -> None:
         (31, 50, 60827291905480389917403158602781524185, 128.483942),
     )
     for k, a, printed, printed_bits in rows:
-        value = paving_numerator(512, k, a)
-        require(value == printed, "printed circle paving numerator is wrong")
-        require(value <= budget, "circle paving numerator exceeds the budget")
+        value = circuit_numerator(512, k, a)
+        require(value == printed, "printed circle circuit numerator is wrong")
+        require(value <= budget, "circle circuit numerator exceeds the budget")
         require(beyond_johnson(512, k, a), "circle row is not beyond Johnson")
         bits = log2(q) - log2(value)
         require(abs(bits - printed_bits) < 0.5e-6,
@@ -154,7 +201,7 @@ def main() -> None:
     check_prize_proth_rows()
     check_special_saturation_and_paving_rows()
     check_circle_rows()
-    print("v8 unconditional arithmetic: all checks passed")
+    print("v9.2 unconditional arithmetic: all checks passed")
 
 
 if __name__ == "__main__":

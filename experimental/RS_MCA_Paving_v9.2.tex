@@ -127,25 +127,26 @@
 \newcolumntype{Y}{>{\raggedright\arraybackslash}X}
 
 
-\title{MDS Paving Bounds for Reed--Solomon MCA}
+\title{Shortening Bounds for Reed--Solomon MCA}
 \author{Przemek Chojecki}
 \thanks{Affiliation: Ulam.ai. Public profile: \url{https://github.com/przchojecki}.}
 \address{Ulam.ai}
+\email{prz.chojecki@gmail.com}
 \urladdr{https://github.com/przchojecki}
-\hypersetup{pdftitle={MDS Paving Bounds for Reed--Solomon MCA},
+\hypersetup{pdftitle={Shortening Bounds for Reed--Solomon MCA},
 pdfauthor={Przemek Chojecki},
 pdfsubject={Finite and asymptotic bounds for Reed--Solomon mutual correlated agreement},
-pdfkeywords={Reed-Solomon codes, mutual correlated agreement, Proximity Prize, MDS codes, paving matroids, circle codes}}
+pdfkeywords={Reed-Solomon codes, mutual correlated agreement, Proximity Prize, agreement-set shortening, MDS codes, circle codes}}
 \subjclass[2020]{94B35, 11T71, 05B40}
 \keywords{Reed--Solomon codes, mutual correlated agreement, Proximity Prize,
-MDS codes, paving matroids, soundness gaps, circle codes}
-\date{July 16, 2026}
+agreement-set shortening, MDS codes, soundness gaps, circle codes}
+\date{July 17, 2026}
 
 \begin{document}
 \raggedbottom
 
 \begin{abstract}
-We prove an integrated support-count and paving-information-set upper bound for affine support-wise mutual correlated agreement of every linear MDS code.  It yields finite smooth multiplicative and explicitly monomially equivalent circle Reed--Solomon certificates with \(\varepsilon_{\rm mca}\le2^{-128}\) beyond the Johnson radius.  Using an exact CA--MCA decomposition and a prior BCHKS proximity-gap bound, we give challenge-restricted, endpoint-exact linear-budget thresholds through asymptotically half the minimum distance.  For exponential budgets, the Johnson-range estimate and the MDS envelope give an explicit one-sided safe-frontier certificate.  We distinguish the customary subcapacity threshold from the official radius interval \([0,1]\), and prove all-radius saturation once the integer slope budget dominates \(\binom n{k+1}\).  Finally, we isolate a conditional retained-interpolation calculation and prove that an image-normalized Sidon payment at an accessible moment order implies primitive max-fiber flatness; the missing analytic payment and ray compiler leave the unrestricted constant-rate smooth/circle frontier open.
+We derive an explicit exponent \(\Psi_\rho\) that bounds the Reed--Solomon MCA bad-slope numerator at every fixed relative radius between Johnson and capacity.  The resulting positive-relative-radius exponential-budget safe-frontier certificate strictly improves the smallest-test MDS exponent and gives a constant post-Johnson radius for every positive usable budget exponent.  An all-test-size MDS circuit-incidence envelope gives exact large-field capacity plateaux, improved adjacent thresholds, and four explicit length-\(512\), \(2^{-128}\)-secure smooth multiplicative certificates beyond Johnson.  An exact CA--MCA decomposition gives challenge-restricted, endpoint-exact linear-budget thresholds through asymptotically half the minimum distance, and monomial equivalence transfers the applicable bounds to circle presentations.  A Gowers--cube argument proves primitive max-fiber flatness from an image-normalized Sidon payment at an accessible moment order.  The unrestricted subexponential-budget smooth/circle frontier remains open because shortening has positive exponential cost and the analytic payment, residual ray compiler, profile add-back, and matching attacks are not yet available.
 \end{abstract}
 
 \maketitle
@@ -319,14 +320,22 @@ The source states this theorem and sketches the generalization following
 its statement; we use only its displayed \(M=1\) specialization and mark it
 as an imported input.
 Hab\"ock's earlier note \cite{Habock25} outlines the quadratic predecessor
-but is not load-bearing here.  Below half
+but is not load-bearing here.  Jo \cite{Jo26} proves an all-test-size
+circuit-incidence envelope for MDS codes and an exact agreement-set
+shortening theorem for Reed--Solomon codes.  The former contains both the
+support-atlas and paving bounds.  Jo also combines shortening with BCHKS to
+prove polynomial numerators at every fixed number of integer steps beyond
+Johnson for each fixed reciprocal-integer rate; we use his transfer below
+to derive the positive-relative-radius exponential-budget exponent
+\(\Psi_\rho\).  Below half
 the relative minimum distance, the BCHKS two-radius theorem, the exact
 CA--MCA decomposition, and the tangent construction already imply the
 \(r+1\) staircase.  Our contribution in that range is the finite,
 challenge-restricted, endpoint-exact formulation, not a new constant-rate
-phenomenon.  Our additional universal mechanism is an augmented-word
-paving-matroid double count: it applies to every MDS code at every agreement
-and gives finite smooth and circle certificates beyond Johnson.  A separate
+phenomenon.  We retain an independent augmented-word matroid interpretation
+of the smallest-test specialization of Jo's envelope and derive the
+positive-relative-radius exponential-budget safe-frontier certificate in
+the notation relevant to the Prize.  A separate
 parameter-retained interpolation audit is confined to
 \cref{app:retained-interpolation}; it is conditional on one explicit lift
 assumption and is not used by any unconditional main theorem.
@@ -356,7 +365,8 @@ smooth or circle folding alone and its conclusion is a support-fiber bound,
 not a distinct-slope bound.
 We therefore replace that conditional equality by two unconditional
 statements on their natural scales: an endpoint-exact linear-budget formula
-and a one-sided exponential-budget safe-frontier certificate.
+and a one-sided positive-relative-radius exponential-budget safe-frontier
+certificate.
 
 Polynomial-generator preservation and syndrome-space results concern other
 sampler or code classes \cite{BordageChiesaGuanManzur25,YuanZhu26}, while
@@ -372,9 +382,14 @@ arbitrary-domain finite MDS thresholds studied here.
 \toprule
 Statement & Status & Attribution and role here \\
 \midrule
-Integrated support/paving MDS envelope & proved here &
-The augmented-word paving double count and its intersection with the exact
-support count are the principal proposed new contribution. \\
+Positive-relative-radius exponential-budget safe-frontier certificate &
+derived here & Jo's shortening transfer and the BCHKS Johnson estimate give
+the exponent \(\Psi_\rho\); this is one-sided and not a matching
+near-capacity threshold. \\
+All-test-size MDS circuit envelope & imported and reproduced &
+Jo's rejecting-test proof is reproduced here; at \(b=k+1\) it has the
+augmented-word matroid interpretation recorded in
+\cref{rem:paving-saving}. \\
 RS staircase below half the minimum distance & prior upper input; exact
 bookkeeping here & BCHKS plus the CA--MCA conversion supply the asymptotic
 phenomenon; this paper retains restricted challenges, integer floors, and
@@ -382,9 +397,6 @@ open endpoints. \\
 Linear MCA bound below Johnson & prior & BCHKS Theorem~4.6 supplies the
 Johnson-range input used in the exponential-budget certificate; Hab\"ock
 outlines the earlier quadratic route. \\
-Exponential-budget safe frontier & proved integration here & The Johnson
-input and the MDS envelope give a one-sided certificate, not a matching
-near-capacity threshold. \\
 Primitive inverse from a Sidon payment at accessible moment order &
 proved implication & Given \(\log L_N/q_N=o(N)\), BSG and Boolean-cube
 difference growth eliminate the high-energy Boolean branch; proving the
@@ -414,10 +426,10 @@ on additive domains in extension fields; ``binary'' describes
 domain contained in the two-element field.
 
 \paragraph{Scope of the unconditional claims.}
-The exact linear-budget theorem, the MDS paving envelope, the one-sided
-exponential-budget certificate, the all-radius completion, and every
-explicitly verified finite paving row are unconditional subject only to the
-displayed imported literature theorems.  The parameter-retained appendix is
+The exact linear-budget theorem, Jo's MDS circuit envelope, the one-sided
+shortening certificate, the all-radius completion, and every explicitly
+verified finite row are unconditional subject only to the displayed BCHKS
+and Jo inputs.  The parameter-retained appendix is
 conditional on its displayed factor-lifting assumption.  The primitive
 inverse theorem is unconditional as an implication from its stated Sidon
 payment at an accessible moment order, but it does not establish that
@@ -431,23 +443,113 @@ and edit \LaTeX\ throughout this manuscript.  The human author supplied the
 research program, source manuscripts, repository materials, mathematical
 choices, and corrections, and retains sole responsibility for correctness
 and originality.  A more detailed use statement accompanies the source
-release as \path{AI_USE_v8.md}.
+release as \path{AI_USE_v9.2.md}.
 
-\begin{theorem}[Integrated MDS envelope]\label{thm:intro-paving}
+\paragraph{Principal original bound.}
+Put \(J_\rho=1-\sqrt\rho\).  For
+\(J_\rho\le\delta\le1-\rho\), set \(\alpha=1-\delta\) and
+\[
+ \tau_\rho(\delta)=\frac{\rho-\alpha^2}{1+\rho-2\alpha},\qquad
+ \Psi_\rho(\delta)=H_2(\tau_\rho(\delta))
+ -\alpha H_2\!\left(\frac{\tau_\rho(\delta)}{\alpha}\right), \tag{SF1}
+ \label{eq:intro-Psi}
+\]
+and extend \(\Psi_\rho\) by zero on \([0,J_\rho]\).  For comparison, put
+\[
+ \Phi_\rho(\delta)=H_2(\rho)
+ -(1-\delta)H_2\!\left(\frac{\rho}{1-\delta}\right),
+ \qquad 0\le\delta\le1-\rho.                       \tag{SF2}
+ \label{eq:intro-Phi}
+\]
+
+\begin{theorem}[Positive-relative-radius shortening exponent]
+\label{thm:intro-shortening-exponent}
+Let \(C_n=\RS_{\F_n}(D_n,k_n)\) with \(k_n/n\to\rho\in(0,1)\), and let
+\(\varnothing\ne\Gamma_n\subseteq\F_n\).  Fix
+\(J_\rho<\delta<1-\rho\) and put
+\(a_n=n-\floor{\delta n}\).  Then
+\[
+ \limsup_{n\to\infty}\frac1n\log_2
+ \bigl(1+B_{C_n,\Gamma_n}^{\rm MCA}(a_n)\bigr)
+ \le\Psi_\rho(\delta).                             \tag{SF3}
+ \label{eq:shortening-exponent-bound}
+\]
+Moreover, \(0<\tau_\rho(\delta)<\rho\) and
+\[
+ \Psi_\rho(\delta)<\Phi_\rho(\delta)              \tag{SF4}
+ \label{eq:shortening-beats-circuit}
+\]
+strictly between Johnson and capacity.  The exponent extends continuously
+with \(\Psi_\rho(J_\rho)=0\) and
+\(\Psi_\rho(1-\rho)=H_2(\rho)\).
+\end{theorem}
+
+The proof is given in \cref{sec:agreement-shortening}.  The optimization
+leading to \(\Psi_\rho\) was carried out after the author learned of Jo's
+agreement-set shortening theorem \cite{Jo26}: Jo proves the transfer and the
+fixed-integer-step consequence, while the positive-relative-radius entropy
+optimization and its Prize-budget formulation are derived here.
+
+\begin{theorem}[Imported circuit-incidence MDS envelope, Jo
+  {\cite[Thm.~4.2]{Jo26}}]\label{thm:intro-paving}
 Let \(C\subseteq\F^n\) be a linear \([n,k]\) MDS code,
 let \(\varnothing\ne\Gamma\subseteq\F\), and let \(k+1\le a\le n\).
 Then
 \[
  B_{C,\Gamma}^{\rm CA}(a)\le B_{C,\Gamma}^{\rm MCA}(a)
  \le U_{n,k,\Gamma}(a)
- \defeq\min\left\{\abs\Gamma,\binom na,
- \floor{\frac{\binom n{k+1}}{\binom{a-1}k}}\right\}.       \tag{1.3}
+ \defeq\min\left\{\abs\Gamma,
+ \min_{k+1\le b\le a}
+ \floor{\frac{\binom nb}{\binom{a-1}{b-1}}}\right\}.       \tag{1.3}
  \label{eq:intro-paving}
 \]
+The full-field estimate is due to Jo; the restricted-challenge form follows
+by intersecting the bad-slope set with \(\Gamma\).  Its endpoint test sizes
+\(b=k+1\) and \(b=a\) recover, respectively, the paving and support-atlas
+bounds used below.
 The bound is invariant under coordinate permutations and nonzero diagonal
 scalings, and hence applies without loss to generalized Reed--Solomon codes
 and to the circle presentations proved monomially equivalent to them.
 \end{theorem}
+
+\begin{theorem}[Imported BCHKS Johnson-range estimate, \(M=1\)]
+\label{thm:bchks-johnson-general}
+Let \(N,d,E\) be integers with \(0<d<N\), \(0<E<N\), and
+\((N-E)^2>Nd\).  Put
+\[
+ \rho_0=\frac dN,\qquad \gamma_0=\frac EN,\qquad
+ \eta_0=1-\sqrt{\rho_0}-\gamma_0,
+\]
+\[
+ m_B=\max\left\{\left\lceil
+       \frac{\sqrt{\rho_0}}{\eta_0}\right\rceil,3\right\},
+ \qquad x_B=m_B+\frac12,
+\]
+and
+\[
+ \Jcal(N,d,E)=
+ \left(\frac{2x_B^5+3x_B\gamma_0\rho_0}
+ {3\rho_0^{3/2}}\right)N+\frac{x_B}{\sqrt{\rho_0}}. \tag{B1}
+ \label{eq:bchks-johnson-general}
+\]
+For every Reed--Solomon code \(C=\RS_\F(L,d+1)\) of length \(N\) and
+every nonempty \(\Gamma\subseteq\F\),
+\[
+ B_{C,\Gamma}^{\rm MCA}(N-E)
+ \le B_C^{\rm MCA}(N-E)
+ \le \Jcal(N,d,E).                                 \tag{B2}
+ \label{eq:bchks-johnson-bound}
+\]
+\end{theorem}
+
+\begin{proof}
+This is the affine-line \(M=1\) specialization of
+BCHKS \cite[Thm.~4.6]{BCHKS25}, in the explicit normalization of
+Jo \cite[Thm.~2.3 and Eqs.~(6)--(9)]{Jo26}.  There the polynomial degree is
+at most \(d\), hence the code dimension is \(d+1\), and the strict
+Johnson condition is precisely \((N-E)^2>Nd\).  Restricting the slope set
+from \(\F\) to \(\Gamma\) can only decrease the numerator.
+\end{proof}
 
 \begin{theorem}[Official endpoint and all-radius saturation]
 \label{thm:official-saturation}
@@ -506,7 +608,7 @@ nonsaturated case, monotonicity and the identity
 real interval.
 \end{proof}
 
-\begin{corollary}[Four official-rate budget-saturated rows]
+\begin{corollary}[Four exact-plateau saturated rows]
 \label{cor:intro-four-saturated-rows}
 Let
 \[
@@ -519,6 +621,11 @@ and let \(D\le\F_p^\times\) be the subgroup of order \(128\).  For
 \]
 the complete official safe set at target \(2^{-128}\) is \([0,1]\), so
 both official grid and supremum endpoints equal \(1\) for all four rates.
+Moreover, with \(M_\rho=\binom{128}{128\rho+1}\),
+\[
+ B_{C_\rho}^{\rm MCA}(a)=M_\rho
+ \qquad(0\le a\le128\rho+1).
+\]
 The field has fewer than \(2^{256}\) elements and the evaluation domain has
 power-of-two order.
 \end{corollary}
@@ -537,7 +644,10 @@ k&\binom{128}{k+1}\\ \hline
 \end{array}
 \]
 and every entry is smaller than that budget.  Apply
-\cref{thm:official-saturation}.
+\cref{thm:official-saturation}.  The largest \(M_\rho\) is less than
+\(2^{125}\), while \(p>2^{255}\), so
+\(p>\binom{M_\rho}{2}\) in every row.  The exact plateau follows from
+\cref{thm:jo-rs-endpoint}.
 \end{proof}
 
 \begin{remark}[The field-size quantifier]
@@ -552,9 +662,9 @@ particular, selected saturated rows do not solve the uniform given-\(C\)
 problem.
 \end{remark}
 
-The two terms after \(\abs\Gamma\) are complementary.  The support atlas is
-exact at \(a=n\), whereas the paving term is strongest in much of the
-interior.  For Reed--Solomon rows and their monomially equivalent GRS or
+The endpoint test sizes in \eqref{eq:intro-paving} recover the support-atlas
+and paving bounds, while intermediate sizes can improve both at finite
+length.  For Reed--Solomon rows and their monomially equivalent GRS or
 circle presentations---indeed, after \cref{prop:universal-tangent-floor},
 for every linear MDS code---put
 \(L_{n,\Gamma}(a)=\min\{\abs\Gamma,n-a+1\}\), the tangent construction and
@@ -638,39 +748,24 @@ This is an exact asymptotic formula for \(q_n=\Theta(n)\).  If instead
 threshold still has the form \eqref{eq:intro-linear-budget-formula} and
 therefore tends to radius zero.
 
-For exponentially large budgets define, for \(0\le\delta<1-\rho\),
+The shortening exponent of \cref{thm:intro-shortening-exponent} converts
+directly into a target-budget certificate.  For \(\theta>0\), define
 \[
- \Phi_\rho(\delta)=H_2(\rho)
- -(1-\delta)H_2\!\left(\frac{\rho}{1-\delta}\right),\quad
- J_\rho=1-\sqrt\rho,\quad
- \theta_J=\Phi_\rho(J_\rho)
- =H_2(\rho)-\sqrt\rho\,H_2(\sqrt\rho).             \tag{1.8}
- \label{eq:intro-Phi}
-\]
-The function \(\Phi_\rho\) is continuous and strictly increasing from
-zero to \(H_2(\rho)\), since
-\(\Phi_\rho'(\delta)=
-\log_2((1-\delta)/(1-\delta-\rho))>0\).  Put
-\[
- D_\rho^{\rm sub}(\theta)=
+ D_{\rho,\mathrm{short}}^{\rm sub}(\theta)
+ =\sup\{0\le\delta<1-\rho:\Psi_\rho(\delta)<\theta\},
+ \quad
+ D_{\rho,\mathrm{short}}^{\rm off}(\theta)=
  \begin{cases}
- J_\rho,&0<\theta\le\theta_J,\\
- \Phi_\rho^{-1}(\theta),&\theta_J<\theta<H_2(\rho),\\
- 1-\rho,&\theta\ge H_2(\rho).
- \end{cases}                                      \tag{1.9}
- \label{eq:intro-D}
-\]
-and define the official certificate
-\[
- D_\rho^{\rm off}(\theta)=
- \begin{cases}
- D_\rho^{\rm sub}(\theta),&0<\theta\le H_2(\rho),\\
+ D_{\rho,\mathrm{short}}^{\rm sub}(\theta),&
+                    \theta\le H_2(\rho),\\
  1,&\theta>H_2(\rho).
  \end{cases}                                      \tag{1.10}
- \label{eq:intro-D-official}
+ \label{eq:intro-D-short}
 \]
+In particular, every \(\theta>0\) moves the certified subcapacity radius
+strictly beyond Johnson.
 
-\begin{theorem}[Exponential-budget safe-frontier certificate]
+\begin{theorem}[Positive-relative-radius exponential-budget safe-frontier certificate]
 \label{thm:intro-exponential-frontier}
 Let \(C_n=\RS_{\F_n}(D_n,k_n)\), let \(k_n/n\to\rho\in(0,1)\),
 let \(\varnothing\ne\Gamma_n\subseteq\F_n\), let \(0\le\eps_n\le1\), and put
@@ -682,9 +777,9 @@ let \(\varnothing\ne\Gamma_n\subseteq\F_n\), let \(0\le\eps_n\le1\), and put
 Then \(a_n^*\) is defined for all sufficiently large \(n\), and
 \[
  \liminf_{n\to\infty}\delta_{n,\mathrm{sub,grid}}^*
- \ge D_\rho^{\rm sub}(\theta),\qquad
+ \ge D_{\rho,\mathrm{short}}^{\rm sub}(\theta),\qquad
  \liminf_{n\to\infty}\delta_{C_n,\Gamma_n,\mathrm{off,grid}}^*(\eps_n)
- \ge D_\rho^{\rm off}(\theta).                   \tag{1.12}
+ \ge D_{\rho,\mathrm{short}}^{\rm off}(\theta).  \tag{1.12}
  \label{eq:intro-certified-frontier}
 \]
 If \(\theta\ge H_2(\rho)\), then
@@ -704,41 +799,23 @@ exact threshold.
 The positive budget exponent gives \(B_n^*\ge1\) eventually, while
 \cref{thm:intro-paving} gives
 \(B_{C_n,\Gamma_n}^{\rm MCA}(n)\le1\); hence \(a_n^*\) exists.
-For every fixed \(0<\delta<J_\rho\), put
-\(\rho_n^-=(k_n-1)/n\),
+For every fixed \(0<\delta<J_\rho\), apply
+\cref{thm:bchks-johnson-general} with
 \[
- m_n=\max\left\{\left\lceil
- \frac{\sqrt{\rho_n^-}}{1-\sqrt{\rho_n^-}-\delta}
- \right\rceil,3\right\},\qquad t_n=m_n+\frac12.
+ N=n,\qquad d=k_n-1,\qquad E=\floor{\delta n}.
 \]
-BCHKS \cite[Thm.~4.6]{BCHKS25}, with its parameter \(M=1\) and
-degree-at-most parameter \(k_n-1\), gives
-\[
- B_{C_n}^{\rm MCA}(n-\floor{\delta n})
- \le
- \frac{2t_n^5+3t_n\delta\rho_n^-}
-      {3(\rho_n^-)^{3/2}}\,n
- +\frac{t_n}{\sqrt{\rho_n^-}}.                   \tag{1.13}
- \label{eq:intro-johnson-import}
-\]
-For large \(n\), the denominator in the definition of \(m_n\) stays
-positive and \(m_n=O_{\rho,\delta}(1)\), so the displayed numerator is
-linear in \(n\).  At \(\delta=0\), the same subexponential conclusion
+Here \(d/N\to\rho\) and
+\(1-\sqrt{d/N}-E/N\to J_\rho-\delta>0\), so the integer \(m_B\) in
+\eqref{eq:bchks-johnson-general} is bounded and
+\(\Jcal(N,d,E)=O_{\rho,\delta}(n)\).  At \(\delta=0\), the same
+subexponential conclusion
 follows already from \cref{thm:intro-paving}.  Restricting from \(\F_n\)
 to \(\Gamma_n\) can only decrease the numerator, and every such numerator
-is eventually below a budget of positive exponent.  For
-\(J_\rho\le\delta<1-\rho\), take
-\(a_n=n-\floor{\delta n}\) in \cref{thm:intro-paving}.  Stirling's
-formula gives
-\[
- \frac1n\log_2
- \frac{\binom n{k_n+1}}{\binom{a_n-1}{k_n}}
- =\Phi_\rho(\delta)+o(1).                          \tag{1.14}
- \label{eq:intro-paving-stirling}
-\]
-Hence every fixed radius with \(\Phi_\rho(\delta)<\theta\) is safe.
-Taking the union of the Johnson and paving ranges gives
-\eqref{eq:intro-D}--\eqref{eq:intro-certified-frontier}; the official
+is eventually below a budget of positive exponent.  Beyond Johnson,
+\cref{thm:intro-shortening-exponent} shows that every fixed radius with
+\(\Psi_\rho(\delta)<\theta\) is safe.  At Johnson itself, choose a nearby
+larger radius with the same strict inequality and use monotonicity.
+Taking suprema gives \eqref{eq:intro-certified-frontier}; the official
 bound follows because it contains the subcapacity safe grid, with the strict
 saturation branch supplied by \cref{thm:official-saturation}.
 Every subcapacity grid radius is at most \(1-(k_n+1)/n\), proving the
@@ -750,13 +827,15 @@ matching subcapacity limit when \(\theta\ge H_2(\rho)\).  If
 
 \begin{remark}[Imported Johnson-range input]
 \label{rem:bchks-theorem46-provenance}
-The only input to the preceding proof that is not proved in this paper is
-the stated BCHKS Theorem~4.6.  Its source gives the displayed theorem and
-then sketches the list-correlated-agreement generalization.  Thus
-\eqref{eq:intro-johnson-import} and the below-Johnson part of
+The load-bearing Johnson-range input is BCHKS Theorem~4.6 in the
+standalone \((N,d,E)\) normalization of
+\cref{thm:bchks-johnson-general}.  The source states the displayed theorem
+and sketches the list-correlated-agreement generalization.  Thus the
+below-Johnson part of
 \cref{thm:intro-exponential-frontier,cor:intro-security-exponents} depend on
-that published statement; the self-contained MDS envelope and its finite
-certificates do not.
+that published statement.  Jo's shortening transfer and rejecting-test
+proof of the all-test-size MDS envelope are reproduced in
+\cref{thm:jo-shortening-transfer,lem:rejecting-test-abundance}.
 \end{remark}
 
 \begin{corollary}[Security and soundness exponents]
@@ -769,17 +848,26 @@ Let \(C_n=\RS_{\F_n}(D_n,k_n)\) with \(k_n/n\to\rho\in(0,1)\), put
  \frac{s_n(\delta)}n\longrightarrow\phi
  \quad(0\le\delta<J_\rho),\qquad
  \liminf_{n\to\infty}\frac{s_n(\delta)}n
- \ge\bigl(\phi-\Phi_\rho(\delta)\bigr)_+
+ \ge\bigl(\phi-\Psi_\rho(\delta)\bigr)_+
  \quad(J_\rho\le\delta<1-\rho).                   \tag{1.15}
  \label{eq:intro-security-exponents}
 \]
 The tangent attack gives \(\limsup s_n(\delta)/n\le\phi\), so the
 remaining soundness-gap rate beyond Johnson is at most
-\(\min\{\phi,\Phi_\rho(\delta)\}\).  For a target
+\(\min\{\phi,\Psi_\rho(\delta)\}\).  Relative to the smallest-test MDS
+exponent, shortening closes
+\[
+ \min\{\phi,\Phi_\rho(\delta)\}
+ -\min\{\phi,\Psi_\rho(\delta)\}
+\]
+bits per coordinate; this equals
+\(\Phi_\rho(\delta)-\Psi_\rho(\delta)\) only when
+\(\phi\ge\Phi_\rho(\delta)\).  For a target
 \(2^{-\lambda_n}\) with \(\lambda_n\ge0\),
 \(\lambda_n/n\to\lambda\), and
 \(\phi-\lambda>0\), the certified limiting frontier is
-\(D_\rho^{\rm sub}(\phi-\lambda)\): every fixed radius strictly below it is
+\(D_{\rho,\mathrm{short}}^{\rm sub}(\phi-\lambda)\): every fixed radius
+strictly below it is
 eventually safe.  If \(\phi-\lambda>H_2(\rho)\), the official safe set is
 \([0,1]\) eventually.  When \(\phi>0\), a fixed 128-bit target has
 \(\lambda=0\); for \(q_n=\Theta(n)\), the exact linear-budget formula
@@ -788,9 +876,16 @@ eventually safe.  If \(\phi-\lambda>H_2(\rho)\), the official safe set is
 
 \begin{proof}
 Below Johnson, the BCHKS linear upper numerator and the tangent polynomial
-lower numerator have zero base-two exponent, which gives the limit.  Beyond
-Johnson, combine the field cap with
-\eqref{eq:intro-paving-stirling}.  The target statement follows because
+lower numerator have zero base-two exponent, which gives the limit.  For
+\(\delta>J_\rho\), combine the field cap with
+\cref{thm:intro-shortening-exponent}.  At \(\delta=J_\rho\), monotonicity
+gives, for every fixed \(\delta'>J_\rho\) and all large \(n\),
+\[
+ B_{C_n}^{\rm MCA}(n-\floor{J_\rho n})
+ \le B_{C_n}^{\rm MCA}(n-\floor{\delta'n}).
+\]
+Apply that theorem and let
+\(\delta'\downarrow J_\rho\).  The target statement follows because
 \(\log_2(1+\floor{q_n2^{-\lambda_n}})/n\to\phi-\lambda\).
 \end{proof}
 
@@ -1157,143 +1252,72 @@ two received words on that support.  The chosen-support map is therefore
 injective.  Intersect with the challenge set.
 \end{proof}
 
-
-\begin{lemma}[Bases in a paving matroid]\label{lem:paving-bases}
-If \(M\) is a rank-\(s\) paving matroid on \(v\ge s\) elements, then
+For an MDS code on a coordinate set \(S\), a \(b\)-coordinate
+\emph{local test} is a subset \(T\in\binom Sb\); it accepts a word \(w\)
+when \(w|_T\in C|_T\) and rejects it otherwise.
+\begin{lemma}[Rejecting-test abundance, Jo
+  {\cite[Lem.~4.1]{Jo26}}]\label{lem:rejecting-test-abundance}
+Let \(C\subseteq\F^S\) be an \([m,k]\) MDS code, let \(w\notin C\), and let
+\(k+1\le b\le m\).  Then at least
 \[
-                         b(M)\ge\binom{v-1}{s-1},  \tag{2.3}
- \label{eq:paving-bases}
+                         \binom{m-1}{b-1}           \tag{2.3}
 \]
-where \(b(M)\) denotes the number of bases of \(M\).
-The bound is sharp, for example for the direct sum of a coloop and
-\(U_{s-1,v-1}\).  This classical estimate also follows from the
-\(h\)-vector description in \cite[Prop.~3.1]{MNRI11}.
+sets \(T\in\binom Sb\) satisfy \(w|_T\notin C|_T\).  This number is
+best possible.
 \end{lemma}
 
 \begin{proof}
-Induct on \(v+s\).  If \(s=1\), a rank-one matroid has a nonloop and
-therefore at least one basis, which is the required bound.  If \(v=s\),
-the whole ground set is the unique basis.  Now assume \(1<s<v\).
-A rank-\(s\) paving matroid has no loops, and at most \(s\) elements can
-be coloops, so choose a non-coloop \(e\).  Then \(M\setminus e\) and
-\(M/e\) are paving of ranks \(s\) and \(s-1\), respectively.  Bases
-avoiding and containing \(e\) are counted by these two minors, so
-induction and Pascal's identity give
-\(b(M)\ge\binom{v-2}{s-1}+\binom{v-2}{s-2}
-=\binom{v-1}{s-1}\).
-\end{proof}
+We reproduce Jo's induction.  Use strong induction on \(m\), simultaneously
+in \(k\).  For \(k=0\),
+choose \(x\) with \(w(x)\ne0\); every \(b\)-set containing \(x\) rejects.
+For \(k\ge1\), fix \(x\in S\) and put \(S'=S\setminus\{x\}\).
+If \(w|_{S'}\in C|_{S'}\), choose \(c\in C\) agreeing with \(w\) on
+\(S'\).  Since \(w\notin C\), the words differ at \(x\), and every
+\(b\)-set containing \(x\) rejects by MDS uniqueness on its other
+\(b-1\ge k\) coordinates.
 
-\begin{lemma}[Exact MDS witness]\label{lem:exact-mds-witness}
-Let \(C\subseteq\F^n\) be a linear \([n,k]\) MDS code and \(a\ge k+1\).
-Every threshold-\(a\) MCA witness contains an exact-\(a\) witness for the
-same received pair and slope.
-\end{lemma}
-
-\begin{proof}
-Let \(S\) be a witnessing support and choose a coordinate word \(u_i\)
-whose restriction is not in \(C|_S\).  On a fixed \(k\)-subset
-\(K\subseteq S\), the MDS property gives a unique punctured codeword
-agreeing with \(u_i|_K\).  It disagrees at some \(x\in S\setminus K\);
-otherwise it would explain \(u_i\) on \(S\).  Thus
-\(u_i|_{K\cup\{x\}}\notin C|_{K\cup\{x\}}\).  Extend this set inside
-\(S\) to size \(a\).  Nonmembership persists, and the original affine
-combination remains explained.
+Otherwise, if \(b<m\), induction gives \(\binom{m-2}{b-1}\) rejecting
+\(b\)-sets avoiding \(x\); for \(b=m\) this contribution is zero.  Choose
+\(c\in C\) with \(c(x)=w(x)\), put \(v=w-c\),
+and shorten at \(x\):
+\[
+ C_x=\{d|_{S'}:d\in C,\ d(x)=0\}.
+\]
+This is \([m-1,k-1]\) MDS and \(v|_{S'}\notin C_x\).  A set
+\(T\cup\{x\}\) accepts \(w\) precisely when \(T\) accepts \(v\) for
+\(C_x\), so induction supplies \(\binom{m-2}{b-2}\) further rejecting
+sets.  Pascal's identity proves the bound.  Sharpness is attained by
+\(w=c+e_x\), where \(e_x\) is nonzero only at \(x\): exactly the sets
+containing \(x\) reject.
 \end{proof}
 
 \begin{proof}[Proof of \cref{thm:intro-paving}]
-The CA inequality is immediate because column-far pairs form a subclass
-of the received pairs in the MCA maximum.  By
-\cref{lem:exact-mds-witness}, choose an exact \(a\)-support for each bad
-slope.  A noncommon support carries at most one slope, so the chosen-support
-map is injective and gives the atlas bound \(\binom na\).
-
-It remains to prove the paving term.  Fix a received pair \(u=(u_0,u_1)\)
-and let \(Z\subseteq\Gamma\) be its bad-slope set.  For every
-\(\gamma\in Z\), choose an exact witness \(S_\gamma\), an explaining
-codeword there, and \(i(\gamma)\in\{0,1\}\) such that
-\(u_{i(\gamma)}|_{S_\gamma}\notin C|_{S_\gamma}\).
-Append that word as a last row to a \(k\)-row generator matrix of
-\(C|_{S_\gamma}\).  The augmented matrix has rank \(k+1\), and each set
-of at most \(k\) columns is independent because the original matrix
-generates an MDS code.  Its column matroid is therefore rank \(k+1\)
-paving.  By \cref{lem:paving-bases}, at least \(\binom{a-1}k\) of its
-\((k+1)\)-subsets are bases.
-
-For each such subset \(T\), let \(\ell_T\ne0\) be a parity functional
-with kernel \(C|_T\).  The explaining condition gives
+Following Jo, the CA inequality is immediate.  Fix a received pair, let \(Z\subseteq\Gamma\)
+be its bad-slope set, and, for every \(\gamma\in Z\), choose a witnessing support \(S_\gamma\) of
+size at least \(a\).  The direction word is outside \(C|_{S_\gamma}\),
+whereas the affine combination at \(\gamma\) is inside it.  For fixed
+\(k+1\le b\le a\), \cref{lem:rejecting-test-abundance} gives at least
+\(\binom{a-1}{b-1}\) subsets \(T\in\binom{S_\gamma}b\) on which the
+direction rejects while the affine combination accepts.  One fixed \(T\)
+cannot be owned by two distinct slopes, since subtraction would make the
+direction accept on \(T\).  Hence
 \[
- \ell_T(u_0|_T)+\gamma\ell_T(u_1|_T)=0.            \tag{2.4}
- \label{eq:paving-affine-equation}
+                 \abs Z\binom{a-1}{b-1}\le\binom nb.       \tag{2.4}
 \]
-At least one coefficient is nonzero because \(T\) is an augmented basis;
-since the equation holds for the chosen \(\gamma\), it determines at most
-one finite slope.  Double counting the pairs \((\gamma,T)\) yields
-\[
- \abs Z\binom{a-1}k\le\binom n{k+1}.
-\]
-Taking the integer floor, maximizing over received pairs, and intersecting
-the three applicable caps proves \eqref{eq:intro-paving}.  Coordinate
-permutations and invertible diagonal scalings preserve punctured
-membership and the affine equation, which proves the invariance statement.
+Take the floor, minimize over \(b\), and intersect with \(\Gamma\).
+Coordinate permutations and invertible diagonal scalings preserve every
+punctured membership test.
 \end{proof}
 
-\begin{remark}[The actual paving gain]\label{rem:paving-saving}
-Ignoring challenge caps, the paving term improves the atlas only when its
-ratio is smaller.  In that range the bit gain is
-\[
- \log_2\!\left(
- \frac{\binom na\binom{a-1}k}{\binom n{k+1}}\right)
- =\log_2\!\left(\frac{k+1}{a}
-                 \binom{n-k-1}{a-k-1}\right).     \tag{2.5}
-\]
-Writing \(U_{\rm atlas}=\min\{\abs\Gamma,\binom na\}\), globally the gain is
-\(\log_2(U_{\rm atlas}/U_{n,k,\Gamma})\ge0\), which correctly vanishes
-near \(a=n\).  The local multiplicity \(\binom{a-1}k\) is best possible
-when a word differs from a punctured codeword in one coordinate; a
-stronger universal theorem must use compatibility among different slopes.
+\begin{remark}[Paving specialization]\label{rem:paving-saving}
+At \(b=k+1\), the rejecting sets are the bases of the rank-\((k+1)\)
+augmented-word paving matroid, giving the independent matroid
+interpretation used in the earlier Chojecki manuscript \cite{RSMCARepo}.
+Jo's strengthening is to use every test size.  The local lower bound is
+sharp for a one-coordinate perturbation, so further universal progress
+must exploit compatibility among different slopes.
 \end{remark}
 
-
-\begin{proposition}[Two finite rows beyond Johnson]
-\label{prop:paving-finite-rows}
-Let
-\[
- p=(2^{128}-255)2^{128}+1,\qquad
- B=\floor{p2^{-128}}=2^{128}-255,
-\]
-and let \(D\le\F_p^\times\) have order \(512\).  The number \(p\) is
-prime.  At target \(2^{-128}\), the integrated MDS envelope certifies
-\[
-\begin{array}{c|c|c|c|c}
- k&a&(512-a)/512&1-\sqrt{k/512}&U_{512,k,\F_p}(a)\\ \hline
- 32&52&115/128&3/4&
- 210954686508560867421211382134708972291\\
- 64&158&177/256&1-1/\sqrt8&
- 275511258760747555342982982548156580976 .
-\end{array}                                       \tag{2.6}
- \label{eq:paving-finite-rows}
-\]
-Both upper numerators are at most \(B\); hence both radii are safe and
-lie strictly beyond Johnson.  They are exact evaluations of the proved
-upper bound, not claims that the MCA numerator attains them, and failure
-of the same certificate one agreement lower would not prove unsafety.
-\end{proposition}
-
-\begin{proof}
-The two entries are the integer divisions
-\(\floor{\binom{512}{33}/\binom{51}{32}}\) and
-\(\floor{\binom{512}{65}/\binom{157}{64}}\).
-Write \(p=u2^{128}+1\) with odd \(u=2^{128}-255<2^{128}\).
-The exact congruence
-\(3^{(p-1)/2}\equiv-1\pmod p\) is a Proth certificate.  Indeed every
-prime divisor \(\ell\) of \(p\) satisfies
-\(\ell\ge2^{128}+1\), whereas
-\(p<2^{256}+1<(2^{128}+1)^2\), so a composite \(p\) could not have a
-prime divisor at most \(\sqrt p\).  Thus \(p\) is prime, and
-\(512\mid p-1\) gives the subgroup.  The exact divisions are at most
-\(B\), and the radius comparisons are
-\(115/128>3/4\) and \(177/256>1-1/\sqrt8\).
-\end{proof}
 
 \section{Exact syndrome geometry}
 \label{sec:syndrome-exact}
@@ -2228,6 +2252,227 @@ At every radius \(r\le B-1\),
 \end{proof}
 
 
+\section{Agreement-set shortening beyond Johnson}
+\label{sec:agreement-shortening}
+
+We record Jo's shortening mechanism because it preserves actual bad slopes
+and therefore bypasses support-to-ray conversion.  The shortened evaluation
+set need not retain any smoothness.
+
+\begin{lemma}[Normalized shortening, Jo
+  {\cite[Lem.~3.1]{Jo26}}]\label{lem:jo-shortening-map}
+Let \(C=\RS_\F(D,k)\), let \(S\subseteq D\) have size \(t<k\), put
+\(P_S(X)=\prod_{x\in S}(X-x)\), and let \(I_S(w)\) be the degree-less-than-
+\(t\) polynomial interpolating \(w|_S\), with
+\(P_\varnothing=1\) and \(I_\varnothing=0\).  Define, for
+\(x\in D\setminus S\),
+\[
+ Q_S(w)(x)=\frac{w(x)-I_S(w)(x)}{P_S(x)}.          \tag{SH1}
+\]
+Then \(Q_S\) is linear and maps \(C\) into
+\(C_S=\RS_\F(D\setminus S,k-t)\).  If a slope is MCA-bad for \(C\) on a
+witness support \(A\supseteq S\), then it is MCA-bad for the shortened line
+at agreement \(\abs A-t\) in \(C_S\).
+\end{lemma}
+
+\begin{proof}
+We reproduce Jo's normalization argument.  For a code polynomial \(f\),
+the polynomial \(f-I_S(f)\) vanishes on
+\(S\), so division by \(P_S\) leaves degree less than \(k-t\).  If the
+shortened received pair had explanations \(g_i\) on \(A\setminus S\), then
+\(I_S(u_i)+P_Sg_i\) would explain each original word on all of \(A\),
+contradicting the witness nontriviality.
+\end{proof}
+
+\begin{theorem}[Agreement-set shortening transfer, Jo
+  {\cite[Thm.~3.2]{Jo26}}]\label{thm:jo-shortening-transfer}
+Let \(C=\RS_\F(D,k)\) have length \(n\), let \(k+1\le a\le n\), and let
+\(0\le t<k\) with \(t\le a\).  For every nonempty challenge set
+\(\Gamma\subseteq\F\),
+\[
+ B_{C,\Gamma}^{\rm MCA}(a)
+ \le \frac{\binom nt}{\binom at}
+       \max_{\substack{S\subseteq D\\\abs S=t}}
+       B_{C_S,\Gamma}^{\rm MCA}(a-t).              \tag{SH2}
+ \label{eq:jo-shortening-transfer}
+\]
+\end{theorem}
+
+\begin{proof}
+This is Jo's double count, restricted to \(\Gamma\).  For a fixed received
+line, choose a witness support \(A_\gamma\) of size at
+least \(a\) for every bad \(\gamma\in\Gamma\).  Each \(A_\gamma\) contains
+at least \(\binom at\) shortening sets, and
+\cref{lem:jo-shortening-map} preserves the same slope for every such set.
+Count pairs \((\gamma,S)\) first by slope and then over the \(\binom nt\)
+choices of \(S\), and finally maximize over the received line.
+\end{proof}
+
+\begin{corollary}[Fixed integer steps beyond Johnson, Jo
+  {\cite[Thm.~3.4]{Jo26}}]\label{cor:jo-fixed-johnson-steps}
+Fix integers \(r\ge2\) and \(h\ge1\).  For all sufficiently large \(k\),
+let \(n=rk\), let \(D\subseteq\F\) be arbitrary of size \(n\), and put
+\[
+ E_{r,h}=\floor{n-\sqrt{n(k-1)}}+h,\qquad
+ t_{r,h}=\floor{\frac{2h\sqrt r}{(\sqrt r-1)^2}}+1. \tag{SH3}
+\]
+Then \(E_{r,h}\) is the \(h\)-th integer error budget strictly beyond the
+exact Johnson boundary, and
+\[
+ B_C^{\rm MCA}(n-E_{r,h})=O_{r,h}(k^6).            \tag{SH4}
+\]
+The assertion is uniform over the field and evaluation set.
+\end{corollary}
+
+The key identity behind the corollary is
+\[
+ (a-t)^2-(n-t)(k-1-t)
+ =a^2-n(k-1)+t(n+k-1-2a).                         \tag{SH5}
+\]
+The displayed \(t_{r,h}\) makes the shortened side strictly Johnson-safe;
+the resulting normalized margin is \(\Omega_{r,h}(k^{-1})\), and the
+BCHKS estimate is \(O_{r,h}(k^6)\).
+
+\begin{proof}[Proof of \cref{thm:intro-shortening-exponent}]
+Fix \(\tau\) with \(\tau_\rho(\delta)<\tau<\rho\) and put
+\[
+ t_n=\floor{\tau n},\quad E_n=\floor{\delta n},\quad
+ N_n=n-t_n,\quad d_n=k_n-1-t_n,\quad
+ A_n=a_n-t_n=N_n-E_n.
+\]
+Because \(\tau<\rho<\alpha\), while \(k_n/n\to\rho\) and
+\(a_n/n\to\alpha\), eventually
+\[
+             0\le t_n\le\min\{a_n,k_n-2\}.          \tag{SH6}
+\]
+Thus both the shortening transfer and
+\cref{thm:bchks-johnson-general} apply.  Moreover,
+\[
+ (\alpha-\tau)^2-(1-\tau)(\rho-\tau)
+ =\alpha^2-\rho+\tau(1+\rho-2\alpha)>0,           \tag{SH9}
+ \label{eq:shortened-density-surplus}
+\]
+so \(A_n^2>N_nd_n\) for all sufficiently large \(n\).  The limiting
+reduced rate \((\rho-\tau)/(1-\tau)\) is positive, and the strict surplus
+is bounded away from zero after normalization.  Consequently
+\(\Jcal(N_n,d_n,E_n)=O_{\rho,\delta,\tau}(n)\), uniformly over the
+arbitrary shortened domains \(D_n\setminus S\).
+\Cref{thm:bchks-johnson-general} therefore makes the maximum shortened
+numerator in
+\eqref{eq:jo-shortening-transfer} polynomial in \(n\).  Stirling's formula
+therefore gives
+\[
+ \limsup_{n\to\infty}\frac1n\log_2
+ \bigl(1+B_{C_n,\Gamma_n}^{\rm MCA}(a_n)\bigr)
+ \le H_2(\tau)-\alpha H_2(\tau/\alpha).
+\]
+Let \(\tau\downarrow\tau_\rho(\delta)\).  This order of limits is
+essential: shortening at the critical density itself has no fixed Johnson
+margin.
+
+Solving equality in \eqref{eq:shortened-density-surplus} gives
+\(\tau_\rho(\delta)\).  Indeed \(\rho<\alpha<\sqrt\rho\), so
+\[
+ 1+\rho-2\alpha>0,\qquad
+ \rho-\tau_\rho(\delta)
+ =\frac{(\alpha-\rho)^2}{1+\rho-2\alpha}>0;
+\]
+hence \(0<\tau_\rho(\delta)<\rho\).  For fixed \(\alpha\),
+\[
+ \frac{d}{dx}\left[H_2(x)-\alpha H_2(x/\alpha)\right]
+ =\log_2\frac{1-x}{\alpha-x}>0.
+\]
+Comparison at \(x=\tau_\rho(\delta)\) and \(x=\rho\) proves
+\eqref{eq:shortening-beats-circuit}; direct substitution at the two
+endpoints proves the final
+claims.
+\end{proof}
+
+\begin{remark}[What shortening does not remove]
+Splitting a total shortening \(t=t_1+t_2\) into stages gives the same cost,
+because the two binomial ratios telescope to
+\(\binom nt/\binom at\).  Thus constant relative improvement has the
+positive exponent \(\Psi_\rho(\delta)\); the method does not by itself
+produce a subexponential numerator beyond Johnson.
+\end{remark}
+
+\begin{proposition}[Four finite rows beyond Johnson]
+\label{prop:paving-finite-rows}
+Let
+\[
+ p=(2^{128}-255)2^{128}+1,\qquad
+ B=\floor{p2^{-128}}=2^{128}-255,
+\]
+and let \(D\le\F_p^\times\) have order \(512\).  The number \(p\) is
+prime.  At target \(2^{-128}\), agreement-set shortening and the
+circuit-incidence envelope certify
+\[
+\begin{array}{c|c|c|c|c|c}
+ \rho&k&a&(512-a)/512&\text{certificate}&\log_2 U<\\ \hline
+ 1/2&256&351&161/512&\text{shorten }123&126.234492\\
+ 1/4&128&233&279/512&\text{shorten }67&127.290843\\
+ 1/8&64 &143&369/512&\text{shorten }45&126.254265\\
+ 1/16&32&52&115/128&\text{circuit }b=33&127.310201.
+\end{array}                                       \tag{F512}
+ \label{eq:paving-finite-rows}
+\]
+In every row the rigorous numerator \(U\) is strictly smaller than \(B\),
+so all four radii are safe and strictly beyond Johnson.  The decimal
+logarithms are diagnostics only; the proof uses exact integer inequalities.
+These are upper certificates, not claims that the MCA numerator attains
+\(U\), and failure one agreement lower would not prove unsafety.
+\end{proposition}
+
+\begin{proof}
+Write \(p=u2^{128}+1\) with odd \(u=2^{128}-255<2^{128}\).
+The exact congruence
+\(3^{(p-1)/2}\equiv-1\pmod p\) is a Proth certificate.  Indeed every
+prime divisor \(\ell\) of \(p\) satisfies
+\(\ell\ge2^{128}+1\), whereas
+\(p<2^{256}+1<(2^{128}+1)^2\), so a composite \(p\) could not have a
+prime divisor at most \(\sqrt p\).  Thus \(p\) is prime, and
+\(512\mid p-1\) gives the subgroup.
+
+For the first three rows put
+\(E=512-a\), \(N=512-t\), \(d=k-1-t\), \(A=a-t\), and
+\(x=m+1/2\), using
+\[
+ (t,m)=(123,162),(67,63),(45,15),\qquad
+ C=\frac23x^5N^4+xdN^2(E+1).
+\]
+The exact inequalities
+\[
+ A^2>Nd,\qquad (m-1)^2A^2<dm^2N,\qquad
+ d(m+1)^2N\le m^2A^2
+\]
+certify both the shortened Johnson condition and the ceiling parameter in
+\cref{thm:bchks-johnson-general}.  Combining that theorem with
+\cref{thm:jo-shortening-transfer} gives
+\[
+ U=\frac{\binom{512}{t}}{\binom at}\,
+       \frac{C}{\sqrt{(dN)^3}}.
+\]
+After squaring positive quantities, direct integer arithmetic gives
+\[
+ \left(\frac{\binom{512}{t}}{\binom at}C\right)^2
+ <B^2(dN)^3
+\]
+in all three cases, hence \(U<B\).  In the last row,
+\cref{thm:intro-paving} with \(b=33\) gives the exact integer upper bound
+\(\floor{\binom{512}{33}/\binom{51}{32}}\)
+\(=210954686508560867421211382134708972291<B\).
+Finally, the four exact inequalities \(a^2<512(k-1)\), whose positive
+margins are respectively \(7359,10735,11807,13168\), prove that the four
+displayed radii exceed the exact MDS Johnson radii
+\(1-\sqrt{(k-1)/512}\), and hence also \(1-\sqrt\rho\).
+\end{proof}
+
+Jo's own challenge-scale post-Johnson rows and exact length-\(64\)
+transitions are recorded in \cite[Thms.~5.1--5.2]{Jo26}; they are not
+duplicated here.  The rows in \cref{prop:paving-finite-rows} instead compare
+the shortening and circuit mechanisms on the common length-\(512\) field
+already used elsewhere in this paper.
+
 \section{Reproducible finite Prize instances}\label{sec:prize-rows}
 
 \begin{table}[H]
@@ -2317,74 +2562,49 @@ special form used here.  Finally \(s\ge\log_2 n\) gives \(n\mid p-1\),
 and cyclicity of \(\F_p^*\) gives the required subgroup.
 \end{proof}
 
-\begin{theorem}[Exact first adjacent row over a separating field]
-\label{thm:exact-first-adjacent-row}
-Let \(C=\RS_\F(D,k)\), put \(R=n-k\) and
-\(M=\binom n{R-1}=\binom n{k+1}\), and define
+\begin{theorem}[Reed--Solomon endpoint, Jo
+  {\cite[Thm.~4.3]{Jo26}}]\label{thm:jo-rs-endpoint}
+Let \(C=\RS_{\F_q}(D,k)\), put \(M=\binom n{k+1}\), and use the
+full-field challenge.  For every \(0\le a\le k+1\),
 \[
-                    Q_{\rm sep}(M)=\max\left\{M,\binom M2\right\}.
+ \ceil{\frac{Mq}{q+M-1}}
+ \le B_C^{\rm MCA}(a)\le\min\{M,q\}.              \tag{EP}
 \]
-If \(\abs\F>Q_{\rm sep}(M)\), then for the full-field challenge
+If \(q>\binom M2\), then
 \[
-                         B_C^{\rm MCA}(k+1)=M.      \tag{AD1}
+                         B_C^{\rm MCA}(a)=M
+                         \qquad(0\le a\le k+1).    \tag{EP$'$}
 \]
-If \(R\ge2\), \(0\le\eps\le1\), and
-\(b=\floor{\eps\abs\F}\), define
-\[
- a^*=\min\{a\in\{k+1,\ldots,n\}:B_C^{\rm MCA}(a)\le b\},
-\]
-whenever this set is nonempty.  The first safe nontrivial agreement then
-satisfies
-\[
- \begin{array}{ll}
- b\ge M &\Longrightarrow\quad a^*=k+1,\\[2mm]
- \displaystyle\binom n{R-2}\le b<M
-   &\Longrightarrow\quad a^*=k+2.
-\end{array}                                       \tag{AD2}
-\]
-In the first branch the official safe set is \([0,1]\) and
-\(\delta_{C,\mathrm{off,grid}}^*
-=\delta_{C,\mathrm{off,sup}}^*=1\); in the second branch the transition
-occurs before capacity.
-Thus the first finite adjacent comparison has literal binomial constants;
-no \(e^{o(n)}\) or unspecified polynomial factor occurs.
 \end{theorem}
 
-\begin{proof}
-The upper bound in \textup{(AD1)} is
-\cref{prop:exact-support-upper}.  For the reverse inequality use the
-Reed--Solomon parity check of redundancy \(R\).  For every
-\((R-1)\)-set \(E\subseteq D\), its column span \(V_E\) is a hyperplane
-in \(\F^R\), and distinct sets give distinct hyperplanes: otherwise the
-union of two distinct \((R-1)\)-sets would contain at least \(R\) columns
-in one \((R-1)\)-space, contradicting the MDS column property.
-
-Every proper linear hyperplane in \(\F^R\) has
-\(\abs{\F}^{R-1}\) points.  Since \(M<\abs\F\), the union of the \(M\)
-spaces \(V_E\) has fewer than \(\abs{\F}^{R}\) points; choose \(y_1\)
-outside it.  For each \(E\),
-choose a nonzero linear functional \(\ell_E\) with kernel \(V_E\).
-The line \(y_0+\gamma y_1\) meets \(V_E\) at
+\begin{corollary}[Exact first adjacent row]
+\label{thm:exact-first-adjacent-row}
+Let \(C=\RS_{\F_q}(D,k)\), assume \(k\le n-2\), and put
 \[
-                 \gamma_E=-\ell_E(y_0)/\ell_E(y_1).
+ M=\binom n{k+1},\qquad U=\floor{\frac{M}{k+1}}.
 \]
-For \(E\ne E'\), equality \(\gamma_E=\gamma_{E'}\) cuts out a proper
-hyperplane in the variable \(y_0\), because the normalized functionals
-\(\ell_E/\ell_E(y_1)\) and
-\(\ell_{E'}/\ell_{E'}(y_1)\) are distinct.  There are at most
-\(\binom M2<\abs\F\) collision hyperplanes; their union also has fewer
-than \(\abs{\F}^{R}\) points, so choose \(y_0\) outside it.  Since
-\(y_1\notin V_E\), the line is not contained in \(V_E\), and every
-intersection is transverse.  The \(M\) parameters \(\gamma_E\) are then
-finite and pairwise distinct.  Syndrome surjectivity and
-\cref{thm:syndrome-secant-exact} realize them as \(M\) bad slopes at
-agreement \(k+1\), proving \textup{(AD1)}.
+Suppose \(q>\binom M2\), use the full-field challenge, let
+\(0\le\eps\le1\), put \(b=\floor{\eps q}\), and, when the set is nonempty,
+define
+\[
+ a^*=\min\{a\in\{k+1,\ldots,n\}:B_C^{\rm MCA}(a)\le b\}.
+\]
+In either of the following cases \(a^*\) is defined, with
+\[
+ \begin{array}{ll}
+ b\ge M &\Longrightarrow a^*=k+1,\\[1mm]
+ U\le b<M&\Longrightarrow a^*=k+2.
+ \end{array}                                      \tag{AD}
+\]
+In the first branch the complete official safe set is \([0,1]\); in the
+second branch the transition occurs before capacity.
+\end{corollary}
 
-If \(b\ge M\), the support upper bound makes the first allowed agreement
-safe.  If \(\binom n{R-2}\le b<M\), equality \textup{(AD1)} makes
-\(k+1\) unsafe, whereas
-\cref{prop:exact-support-upper} makes \(k+2\) safe.  Monotonicity proves
-\textup{(AD2)}.
+\begin{proof}
+By \cref{thm:jo-rs-endpoint}, the numerator at \(k+1\) is exactly \(M\).
+At \(a=k+2\), \cref{thm:intro-paving} with test size \(k+1\) gives
+\(B_C^{\rm MCA}(k+2)\le\floor{M/(k+1)}=U\).  Monotonicity proves both
+claims.
 \end{proof}
 
 \begin{theorem}[Subfield confinement]\label{thm:subfield-confinement-full}
@@ -3139,12 +3359,12 @@ For an integer \(\nu\ge5\), put
 \]
 Refine the depth-\(w\) prefix by the locator constant coefficient:
 \[
- \Psi_\nu(S)=\bigl(c_1(S),\ldots,c_w(S),c_m(S)\bigr)
+ \Xi_\nu(S)=\bigl(c_1(S),\ldots,c_w(S),c_m(S)\bigr)
  \qquad\left(S\in\binom Dm\right).
 \]
 There are \(z\in\F_q^w\) and \(c\in\F_q^\times\) for which
 \[
- \Gcal_{z,c}=\{S:\Psi_\nu(S)=(z,c)\},
+ \Gcal_{z,c}=\{S:\Xi_\nu(S)=(z,c)\},
  \qquad
  \abs{\Gcal_{z,c}}
  \ge\ceil{\binom nm q^{-(w+1)}}
@@ -3167,7 +3387,7 @@ aperiodic supports.
 \end{theorem}
 
 \begin{proof}
-The map \(\Psi_\nu\) has at most \(q^{w+1}\) values, so pigeonholing
+The map \(\Xi_\nu\) has at most \(q^{w+1}\) values, so pigeonholing
 proves the first inequality in \eqref{eq:one-ray-large-fiber}.  Moreover
 \[
  \log\binom nm=n\log2-O(\log n),\qquad
@@ -4578,8 +4798,9 @@ Let \(C=\RS_\F(D,k)\), let \(D\subseteq\B\subseteq\F\), put
  P(a)&=\left\lceil\frac{\abs\Gamma}{q}
        \left\lceil\frac{L(a)(q-n)}
        {q-n+k(L(a)-1)}\right\rceil\right\rceil,\\
- U(a)&=\min\left\{\abs\Gamma,\binom na,
-       \floor{\frac{\binom n{k+1}}{\binom{a-1}k}}\right\}.
+ U(a)&=\min\left\{\abs\Gamma,
+       \min_{k+1\le b\le a}
+       \floor{\frac{\binom nb}{\binom{a-1}{b-1}}}\right\}.
  \end{split}                                       \tag{SB1}
 \]
 Whenever the defining set is nonempty, write
@@ -4614,7 +4835,7 @@ stronger realized-list construction may replace \(L(a)\) in \(P(a)\).
 \begin{proof}
 The exact prefix list and pole-line construction give
 \(B_{C,\Gamma}^{\rm MCA}(a)\ge P(a)\) by
-\cref{prop:simple-pole-lower}.  The integrated MDS envelope gives
+\cref{prop:simple-pole-lower}.  The circuit-incidence MDS envelope gives
 \(B_{C,\Gamma}^{\rm MCA}(a)\le U(a)\) by
 \cref{thm:intro-paving}.  Thus \(a_-\) is unsafe and \(a_+\) is
 safe; monotonicity proves \textup{(SB3)} and the adjacent conclusion.
@@ -4636,19 +4857,21 @@ two-radius input, the exact sparse MCA layer, and the tangent construction
 with all floors exposed.  If the first safe nontrivial agreement is instead
 \(k+1\), the MDS plateau changes the official answer: every radius in
 \([0,1]\) is safe and the official endpoint is one.  In the distinct
-exponential-budget regime, the Johnson theorem and the integrated MDS
-envelope give the explicit subcapacity certificate
-\(D_\rho^{\rm sub}(\theta)\).  For
+exponential-budget regime, Jo's shortening transfer and the BCHKS Johnson
+theorem give the explicit subcapacity certificate
+\(D_{\rho,\mathrm{short}}^{\rm sub}(\theta)\), strictly improving the
+smallest-test MDS exponent between Johnson and capacity.  For
 \(\theta>H_2(\rho)\) the subcapacity grid tends to \(1-\rho\) while the
 official endpoint equals one; at equality the official outcome remains
 constant-sensitive.  Below that branch the result is one-sided without a
 matching constant-radius attack.
 
-The augmented-word paving count is the paper's additional universal mechanism;
-we are unaware of this application in the proximity-gap literature.
-Intersecting it with the exact support atlas is essential and yields a
-finite security interval rather than a one-sided score.  It gives
-multiplicative and circle certificates beyond Johnson at length \(512\).
+Jo's all-test-size circuit bound subsumes the support and paving envelope.
+The augmented-word interpretation recorded here describes its smallest-test
+specialization in matroid language and helps expose a
+finite security interval rather than a one-sided score.  Together with
+shortening it gives multiplicative and circle certificates beyond Johnson
+at length \(512\).
 The deployed prefix calculations move the unsafe side at KoalaBear and Mersenne--31,
 but their adjacent failure does not certify safety.
 
@@ -4657,8 +4880,10 @@ image-normalized Sidon payment is available at an accessible moment order.
 At energy threshold \(e^{-\sigma N}\), its cube estimate gives
 \(\abs F\le e^{C_0\sigma N}\); because the payment is assumed for every
 fixed \(\sigma>0\), an alleged excess rate \(\eta>0\) is contradicted by
-choosing \(\sigma<\eta/(4C_0)\).  The payment and residual ray compiler remain substantive row
-inputs.
+choosing \(\sigma<\eta/(4C_0)\).  The payment and residual ray compiler
+remain substantive row inputs.  Staged shortening telescopes to the same
+binomial cost as one-stage shortening, so it does not remove those
+interfaces in the subexponential-budget, positive-relative-radius regime.
 
 All smooth and circle transfers are made through complete-fiber maps or
 an explicit monomial equivalence.  Fixed-length residue classes have
@@ -4676,7 +4901,7 @@ soundness gap, with proved-bit gains computed from
 \section{Conditional parameter-retained interpolation audit}
 \label{app:retained-interpolation}
 
-The paving bound is strongest in short, low-rate rows over very large
+The circuit-incidence bound is strongest in short, low-rate rows over very large
 fields.  Near Johnson at deployed length, a parameter-retained
 interpolation audit is potentially much stronger, but its exact lift is
 not a source-verbatim theorem.  This appendix therefore isolates the
@@ -4895,7 +5120,7 @@ Conditional on the retained lift, the computation crosses 128 bits at
 four near-Johnson radii.  The tangent lower attacks still leave intervals of
 roughly \(37.3\)--\(38.7\) bits there.  These are therefore major
 safe-side reductions of the soundness gap, not exact threshold
-determinations and not beyond-Johnson certificates.  The paving theorem
+determinations and not beyond-Johnson certificates.  The circuit-incidence theorem
 and the conditional retained bound occupy complementary regimes.
 \end{remark}
 
@@ -4906,14 +5131,14 @@ This appendix records elementary coding-theoretic and integer calculations
 that can be checked independently of the geometric proofs.  The short
 derivations fix the normalization conventions.  Exact integer checks
 accompany this source release in two scripts:
-\path{verify_paving_mca_v8.py} checks the
+\path{verify_paving_mca_v9_2.py} checks the
 unconditional paving, all-radius saturation, circle, primality,
 field-budget, and Johnson
-comparisons, while \path{verify_retained_bchks_v8.py} checks only the
+comparisons, while \path{verify_retained_bchks_v9_2.py} checks only the
 arithmetic consequences of the retained-lift assumption in
 \cref{app:retained-interpolation}.  It does not discharge that assumption.
 Commands and SHA-256 digests are recorded in
-\path{REPRODUCIBILITY_v8.md}.  General proof-development materials are
+\path{REPRODUCIBILITY_v9.2.md}.  General proof-development materials are
 pinned at
 \href{https://github.com/przchojecki/rs-mca/tree/02728b208ea785d02115ea967236aebf653b31ec}
 {repository commit \texttt{02728b2}}; the two scripts are ancillary files
@@ -5199,7 +5424,7 @@ P. Chojecki,
 \newblock \texttt{rs-mca}: proof development and exact certificate ledgers,
 \newblock source repository, pinned snapshot
 \href{https://github.com/przchojecki/rs-mca/tree/02728b208ea785d02115ea967236aebf653b31ec}{\texttt{02728b208ea7}}, 2026,
-\newblock \url{https://github.com/przchojecki/rs-mca}, accessed July 16, 2026.
+\newblock \url{https://github.com/przchojecki/rs-mca}, accessed July 17, 2026.
 
 \bibitem[CS25]{CS25}
 E. Crites and A. Stewart,
@@ -5215,7 +5440,7 @@ H. Davenport,
 {Ethereum Foundation},
 \newblock The Proximity Prize: \$1M Reed--Solomon Challenge,
 \newblock preliminary version, 2026,
-\newblock \url{https://proximityprize.org/}, accessed July 16, 2026.
+\newblock \url{https://proximityprize.org/}, accessed July 17, 2026.
 
 \bibitem[GYXK26]{GaoYangXuKan26}
 Y. Gao, H. Yang, Y. Xu, and H. Kan,
@@ -5258,6 +5483,12 @@ U. Hab\"ock, D. Levit, and S. Papini,
 \newblock Circle STARKs,
 \newblock IACR Cryptology ePrint Archive, Report 2024/278, 2024.
 
+\bibitem[Jo26]{Jo26}
+S. Jo,
+\newblock Reed--Solomon mutual correlated agreement beyond the Johnson radius,
+\newblock IACR Cryptology ePrint Archive, Report 2026/1432, 2026,
+\newblock \url{https://eprint.iacr.org/2026/1432}.
+
 \bibitem[Kam26]{Kambire26}
 A. Kambir\'e,
 \newblock Proximity gaps conjecture fails near capacity over prime fields,
@@ -5267,12 +5498,6 @@ A. Kambir\'e,
 D. Krachun, S. Kazanin, and U. Hab\"ock,
 \newblock Failure of proximity gaps close to capacity,
 \newblock IACR Cryptology ePrint Archive, Report 2026/782, 2026.
-
-\bibitem[MNRI11]{MNRI11}
-C. Merino, S. D. Noble, M. Ram\'irez-Ib\'a\~nez, and R. Villarroel,
-\newblock On the structure of the \(h\)-vector of a paving matroid,
-\newblock \emph{European J. Combin.} 33 (2012), no.~8, 1787--1799;
-\newblock arXiv:1008.2031.
 
 \bibitem[Rie94]{Riesel}
 H. Riesel,
