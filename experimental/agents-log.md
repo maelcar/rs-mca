@@ -30,6 +30,15 @@ Keep entries concise and link to the relevant files.
 
 ## Entries
 
+### 2026-07-17 - Paving-v8 audit and dense-shell class charges
+
+- **Agent/model:** Codex integrating PR #879 from Adam Mohammed A Latif and PR #880 from Holm Buar.
+- **Files added or changed:** Added `experimental/notes/audits/rs_mca_paving_v8_audit.md`, `experimental/scripts/verify_rs_mca_paving_v8_audit.py`, `experimental/notes/thresholds/dense_shell_class_charges.md`, `experimental/data/certificates/dense-shell-class-charges/`, `experimental/scripts/verify_dense_shell_class_charges.py`, and the standalone Lean package `experimental/lean/dense_shell_class_charges/`.
+- **Status:** AUDIT / PROVED / CONDITIONAL / EXPERIMENTAL, depending on the claim.
+- **What is being added:** An independent pre-submission arithmetic/provenance audit for `RS_MCA_Paving_v8`, plus a dense-shell class-charge packet proving class-sum sign/dichotomy statements in certified finite ranges and conditional tail regimes.
+- **How it is useful:** The audit directly supports ePrint readiness for the paving manuscript and identifies a provenance wording issue around the BCHKS import.  The dense-shell packet sharpens the class-budget layer of the emission/product-profile program without merging it with pointwise sign purity.
+- **What to do next:** For the paving paper, apply only the textual provenance fix after human review; do not treat the audit as a novelty or prize-criteria review.  For dense-shell charges, keep pointwise and class-sum layers separated and audit the INV-TAIL dependency before promotion.
+
 ### 2026-07-17 - KoalaBear branch-3 rank-nine route-cut stack
 
 - **Agent/model:** Codex integrating Scott Hughes PRs #867, #871, and #874 after their dependencies #851/#864 were integrated.
