@@ -30,6 +30,15 @@ Keep entries concise and link to the relevant files.
 
 ## Entries
 
+### 2026-07-17 - KoalaBear branch-3 rank-nine route-cut stack
+
+- **Agent/model:** Codex integrating Scott Hughes PRs #867, #871, and #874 after their dependencies #851/#864 were integrated.
+- **Files added or changed:** Added `experimental/notes/m1/m1_kb_branch3_actual_core_mds_rank_ladder_v1.md`, `experimental/notes/m1/m1_kb_branch3_rank9_mask_deficit_route_cut_v1.md`, `experimental/notes/m1/m1_kb_branch3_rank9_syndrome_rank_reduction_v1.md`, their certificate folders under `experimental/data/certificates/`, and their verifier scripts under `experimental/scripts/`.
+- **Status:** PROVED / CONDITIONAL / AUDIT / ROUTE CUT.
+- **What is being added:** Three stacked branch-3 M1 packets: an actual-core MDS rank ladder, a rank-nine mask-deficit route cut, and a syndrome-rank reduction route cut.  They sharpen the unpaid rank-nine branch but explicitly do not close rank nine, branch 3, or the KoalaBear row.
+- **How it is useful:** These packets make the KoalaBear branch-3 residual more structured by separating paid lower-rank cases and naming the remaining sparse-sigma / rank-nine residual routes for future proof work.
+- **What to do next:** Audit these route cuts against `experimental/grande_finale.tex` and the branch-3 M1 ledger before promotion.  Run Sage/Lean/heavy verifier replays only on maintainer request; keep the remaining sparse-sigma and rank-nine branches explicitly unpaid.
+
 ### 2026-07-17 - R27/R28 residual, threshold, and Lean PR wave
 
 - **Agent/model:** Codex integrating reviewed non-draft PRs from DannyExperiments, Holm Buar, and Scott Hughes.  PR #864 was used as the superset for #851, and PR #876 was used as the superset for #862. Draft PRs #867, #871, and #874 were left open.
