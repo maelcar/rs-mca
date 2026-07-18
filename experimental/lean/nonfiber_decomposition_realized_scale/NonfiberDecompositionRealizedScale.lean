@@ -1,14 +1,14 @@
 /-!
-# Non-fiber-indexed decomposition at realized-image scale (statement stub)
+# Non-fiber-indexed decomposition at realized-image scale (arithmetic formalization)
 
 Maps to **hard input 2**: the NON-fiber-indexed route to avdeevvadim's #716
 charge-preserving semantic-or-signed decomposition -- the object left open after
 the fiber-indexed route was cut on the Sidon-paired class (#739) and per-fiber
 emission was closed (#735).  Reframed by the paper's `rem` PO5 (the correct
 Fourier denominator is the realized-image group `|G_lambda|`, which "does not
-assert that the realized image fills the affine group") and by the profile-
-envelope comparison packet (PR #759, OPEN: identity image can collapse a factor
-`p` at realized scale).
+assert that the realized image fills the affine group") and by the integrated
+profile-envelope comparison audit: its exact finite full-codomain deficit for
+the identity image is motivational only, not an asymptotic `(FI)` conclusion.
 
 Note:     `experimental/notes/thresholds/nonfiber_decomposition_realized_scale.md`.
 Verifier: `experimental/scripts/verify_nonfiber_decomposition_realized_scale.py`
@@ -19,7 +19,7 @@ Class (#739 / #732 / #735 corrected Thm 2a / #717 Sec 7; DannyExperiments #749):
   `Phi(S) = sum_{t in S} t` over `Z`; `M = C(2B,B)`, realized image
   `L = (3^B+1)/2`, unpaired-count `s` per support.
 
-Analytic results (PROVED in note + Python verifier; over `Z`/`F_p`; NOT in Lean):
+Analytic and census results (PROVED in note + Python verifier; over `Z`/`F_p`):
   RUNG (a)  #739 kills concentration at BOTH ambient and realized scale.  The
             realized image `L` is the SMALLEST admissible denominator
             (`L <= |G_lambda| <= ambient`), so `M/L` is the LARGEST mean and the
@@ -37,8 +37,10 @@ Analytic results (PROVED in note + Python verifier; over `Z`/`F_p`; NOT in Lean)
             product is conserved: 0 semantic (single-unpaired-level) mass for
             every `#pieces < 3^{B-2}`.  VERDICT: hits the abundance identically.
 
-This module is the DECIDABLE arithmetic shadow (stdlib-only `native_decide`, no
-mathlib, no `sorry`) of the parts that are integer/combinatorial.
+This module is the DECIDABLE arithmetic shadow (stdlib-only, no mathlib, no
+`sorry`) of the parts that are integer/combinatorial.  It formalizes the exact
+finite normalization-order kernel `(ORD)` but not the exponential concentration
+or decomposition conclusions.
 -/
 
 namespace NonfiberDecompositionRealizedScale
@@ -91,6 +93,44 @@ theorem compositeHasProperSubgroup :
 
 /-! ## 2. RUNG (a) scale decision: realized `L` is the minimal denominator, and
     the effective-image collapse (base `5^i`) is present but insufficient. -/
+
+/-- Number of entries in one fixed finite fiber-size census satisfying the
+    division-free heaviness test `K * M <= f * D`. -/
+def heavyCount (fibers : List Nat) (K M D : Nat) : Nat :=
+  (fibers.filter (fun f => K * M <= f * D)).length
+
+/-- Increasing the cell scale can only increase the number of entries satisfying
+    the same cross-multiplied heaviness test.  No relation between `M` and the
+    sum of `fibers` is needed for this order kernel. -/
+theorem heavyCount_mono_denominator (fibers : List Nat)
+    (K M D₁ D₂ : Nat) (hD : D₁ <= D₂) :
+    heavyCount fibers K M D₁ <= heavyCount fibers K M D₂ := by
+  induction fibers with
+  | nil => simp [heavyCount]
+  | cons f fibers ih =>
+      have ih' :
+          (fibers.filter (fun f => K * M <= f * D₁)).length <=
+            (fibers.filter (fun f => K * M <= f * D₂)).length := by
+        simpa only [heavyCount] using ih
+      have hmul : f * D₁ <= f * D₂ := Nat.mul_le_mul_left f hD
+      by_cases h₁ : K * M <= f * D₁
+      · have h₂ : K * M <= f * D₂ := Nat.le_trans h₁ hmul
+        simpa [heavyCount, h₁, h₂] using Nat.succ_le_succ ih'
+      · by_cases h₂ : K * M <= f * D₂
+        · simp [heavyCount, h₁, h₂]
+          exact Nat.le_succ_of_le ih'
+        · simpa [heavyCount, h₁, h₂] using ih'
+
+/-- Exact source ordering `(ORD)` for one fixed fiber-size census: if the
+    realized-image cell count `L` is at most the generated-group count `G`, and
+    `G` is at most the ambient count `A`, the corresponding heavy counts are
+    ordered in the same direction. -/
+theorem heavyCount_scale_chain (fibers : List Nat)
+    (K M L G A : Nat) (hLG : L <= G) (hGA : G <= A) :
+    heavyCount fibers K M L <= heavyCount fibers K M G ∧
+      heavyCount fibers K M G <= heavyCount fibers K M A := by
+  exact ⟨heavyCount_mono_denominator fibers K M L G hLG,
+    heavyCount_mono_denominator fibers K M G A hGA⟩
 
 /-- Realized image is strictly below the designed ambient modulus (both bases):
     the realized image does NOT fill the affine group (paper's PO5 warning). -/

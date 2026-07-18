@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Verifier: the omega-sound emission floor (compiler soundness discharged).
+"""Verifier: the omega-sound emission floor (local scalar soundness).
 
 Claims checked (see experimental/notes/thresholds/omega_sound_emission_floor.md):
 
@@ -21,11 +21,11 @@ Claims checked (see experimental/notes/thresholds/omega_sound_emission_floor.md)
   S4  (discharge)   the corrected rank-one rule -- pay
                     min(2^s|hcube_v(D*)|, sum_eps h_+), one pattern per
                     class, disjoint pieces -- never overpays omega:
-                    compiler soundness is arithmetic, 0 violations.
+                    local scalar no-overcredit is arithmetic, 0 violations.
   S5  (adequacy)    COMPUTED: on EVERY charged (piece, class) pair at
                     B = 6 the argmax payment already reaches the positive
                     charge (2^s|hcube(D*)| >= sum h_+, 421/421), so the
-                    corrected rule pays hierarchy pieces IN FULL.
+                    corrected rule reaches each local scalar cap.
 
 stdlib only, deterministic; floats under exact Parseval + Lemma-N guards.
 
@@ -230,7 +230,7 @@ def v_main(cert):
           depth1_overpay <= 1e-12)
     check(f"S4: corrected rule min(argmax, cap) never overpays omega ({corrected_viol} violations)",
           corrected_viol == 0)
-    check(f"S5: corrected rule pays IN FULL on every charged pair ({n_full}/{n_charged}, expect 421/421)",
+    check(f"S5: corrected rule reaches the scalar cap on every charged pair ({n_full}/{n_charged}, expect 421/421)",
           n_charged == 421 and n_full == 421)
     check(f"guard: h real on symmetric pieces (worst |Im| {IMAG_RESIDUE[0]:.1e})",
           IMAG_RESIDUE[0] <= 1e-12)
@@ -294,7 +294,16 @@ if __name__ == "__main__":
     if args and args[0] == "--emit-certificate":
         path = args[1]
         cert = {"packet": "omega-sound-emission-floor", "B": 6,
-                "chart": "base-3", "claims": ["S1", "S2", "S3", "S4", "S5"]}
+                "chart": "base-3", "claims": ["S1", "S2", "S3", "S4", "S5"],
+                "scope": {
+                    "certifies": "local scalar omega-cap accounting",
+                    "does_not_certify": [
+                        "same-owner first-match profile cell",
+                        "A4 analytic/Sidon payment",
+                        "A6/RC distinct-slope bound",
+                        "uniform subexponential aggregate census",
+                    ],
+                }}
     ok = run_all(cert)
     if cert is not None and ok:
         with open(path, "w") as fh:

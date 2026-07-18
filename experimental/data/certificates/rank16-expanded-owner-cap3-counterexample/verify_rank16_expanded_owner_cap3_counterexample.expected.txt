@@ -1,0 +1,9 @@
+R29_EXPANDED_OWNER_CAP3_COUNTEREXAMPLE: PASS
+p=2130706433 n=2097152 K=1048576 m=1116047 B=32768
+omega=1213133211 zeta=1548376985 order_omega=2097152 order_zeta=64
+core=1048575 petal=67472 endpoint=32209 remainder=36497
+candidates=15 exact_agreements=1116047 pair_intersection=1048575
+profile=(0,0,0,0,0,0) f64=0 expanded_owner_memberships=none
+owner_paid=274854110496187589 target=274854110496187592 complement_lower=15
+ledger_delta=0 official_score=0/2
+RESULT: PASS

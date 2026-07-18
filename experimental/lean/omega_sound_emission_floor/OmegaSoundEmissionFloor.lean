@@ -1,15 +1,15 @@
 /-!
 # The omega-sound emission floor: decidable counting shadow
 
-Maps to **hard input 2**: eighth packet of the arc (... -> admission
-arithmetic -> admission soundness).  The note shows band-uniform T3's
+Maps to **hard input 2**: eighth packet of the arc (... -> local scalar
+arithmetic -> local scalar soundness).  The note shows band-uniform T3's
 floor is sound against the cube |h|-ell^1 but overpays the grammar's
 charge omega = h_+ on sign-mixed hierarchy classes (263/558 pairs at
 B = 6, witness (3,12,011110)); the omega-sound cap is the exact identity
 sum h_+ = (sum |h| + 2^s hcube(empty))/2; single-sign (flat) territory is
 unaffected so the #791 reduction stands; the corrected rank-one rule is
-compiler-sound with 0 violations and pays every charged class IN FULL at
-B = 6 (421/421, computed).
+scalar-accounting-sound with 0 violations and reaches every charged class's
+scalar cap at B = 6 (421/421, computed).
 
 Note:     `experimental/notes/thresholds/omega_sound_emission_floor.md`.
 Verifier: `experimental/scripts/verify_omega_sound_emission_floor.py`

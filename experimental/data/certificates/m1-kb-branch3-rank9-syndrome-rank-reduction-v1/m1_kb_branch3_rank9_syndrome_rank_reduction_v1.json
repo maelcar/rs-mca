@@ -24,12 +24,12 @@
     "degenerate_line_rejected": "REJECT_UNCERTIFIED_INPUT",
     "fail_closed_defaults": "REJECT_UNCERTIFIED_INPUT",
     "fail_closed_nonterminal": "REJECT_UNCERTIFIED_INPUT",
-    "owner_terminal_count": 2,
-    "owner_terminals": [
+    "partition_object": "ORIGINAL_RECEIVED_PAIR_COLUMN_FAR_AT_AGREEMENT_A",
+    "terminal_count": 2,
+    "terminals": [
       "NON_CA_RANK9_SYNDROME_REDUCTION_PAID",
       "CORRELATED_AGREEMENT_ROUTE_TO_SPARSE_SIGMA"
     ],
-    "partition_object": "ORIGINAL_RECEIVED_PAIR_COLUMN_FAR_AT_AGREEMENT_A",
     "terminals_disjoint_and_exhaustive_for_certified_column_far_partition": true,
     "unknown_column_far_state_rejected": "REJECT_UNCERTIFIED_INPUT",
     "valid_column_far_non_CA": "NON_CA_RANK9_SYNDROME_REDUCTION_PAID",
@@ -49,7 +49,7 @@
     "classification_object": "ORIGINAL_RECEIVED_PAIR_COLUMN_FAR_AT_AGREEMENT_A",
     "column_far_implies_no_restricted_common_lift": "ZERO_EXTEND_ANY_COMMON_H_V_LIFTS; SUBTRACT_FROM_THE_ORIGINAL_PAIR; OBTAIN_ORIGINAL_CODEWORDS_WITH_COMMON_AGREEMENT_AT_LEAST_A",
     "correlated_agreement_definition": "EXISTS x0,x1 WITH H_V*x_i=y_i AND |supp(x0) UNION supp(x1)|<=j",
-    "correlated_agreement_owner": "CORRELATED_AGREEMENT_ROUTE_TO_SPARSE_SIGMA",
+    "correlated_agreement_terminal": "CORRELATED_AGREEMENT_ROUTE_TO_SPARSE_SIGMA",
     "d": 1048577,
     "exponent_t_minus_h": 8,
     "gamma_denominator_d": 1048577,
@@ -59,8 +59,8 @@
     "margin_to_B_remaining": "271642789963125392",
     "no_CA_inequality": "|Gamma|*((d-E)/d)^(t-h)<=FLOOR((Eplus+1)/(Eplus-E+1))",
     "non_CA_cap": "3337935545766696",
-    "non_correlated_agreement_owner": "NON_CA_RANK9_SYNDROME_REDUCTION_PAID",
-    "sparse_owner_paid_here": false,
+    "non_correlated_agreement_terminal": "NON_CA_RANK9_SYNDROME_REDUCTION_PAID",
+    "sparse_route_paid_here": false,
     "syndrome_span_rank_h": 2,
     "theorem_scope": "DETERMINISTIC_LINEAR_CODE_CORRELATED_AGREEMENT",
     "witness_rank_t": 10
@@ -94,7 +94,7 @@
     "U_paid_before": "2602502999",
     "branch3_status": "YELLOW_OPEN",
     "koalabear_row_status": "YELLOW_OPEN",
-    "next_route": "SPARSE_SIGMA_FIRST_MATCH_OWNER_AUDIT",
+    "next_route": "SPARSE_SIGMA_FIRST_MATCH_AUDIT",
     "rank9_status": "YELLOW_OPEN_SPARSE_SIGMA_ONLY"
   },
   "literature_import": {
@@ -123,7 +123,7 @@
     "The Sage control is not a deployed-field census or a proof of the symbolic lemma.",
     "This packet does not authorize Lean or Paper-D promotion."
   ],
-  "payload_sha256": "ea660060b4165aa8cf99d16e36d17754fd2a0a17d751a99344e1bcdf8e0ec5f4",
+  "payload_sha256": "e54562cf759290c0762365563e3c4e34dddbeaa2ec613f7131854aabb6965708",
   "predecessor_contract": {
     "actual_core_rank_r": 8,
     "basis_carrier_equals_complete_union": true,
@@ -168,13 +168,13 @@
       "binding_id": "packet-readme",
       "path": "experimental/data/certificates/m1-kb-branch3-rank9-syndrome-rank-reduction-v1/README.md",
       "role": "replay and scope contract",
-      "sha256": "9b330860f13c25b239e29e8b6490fa3a1908c6fb2720531db895dc6b93580090"
+      "sha256": "3e2cb00becaf22875eda839863e8fab30b92a3bb9f073310297a6940e094a586"
     },
     {
       "binding_id": "packet-verifier",
       "path": "experimental/scripts/verify_m1_kb_branch3_rank9_syndrome_rank_reduction_v1.py",
       "role": "exact fail-closed verifier",
-      "sha256": "ede048699dff02e9a1031355b36151b93c94a0df0151af07537c3fa505439c19"
+      "sha256": "17e218ed0b4936ca2c3b4973fd7aff42702a4d194ca101058dc2d1f384d09772"
     },
     {
       "binding_id": "sage-control",
@@ -186,19 +186,19 @@
       "binding_id": "mask-note",
       "path": "experimental/notes/m1/m1_kb_branch3_rank9_mask_deficit_route_cut_v1.md",
       "role": "immediate route-cut predecessor",
-      "sha256": "59d0d6075d023c673ff110ea7a7ee89f1b42ec8e51e90e90303843d3512345c3"
+      "sha256": "945e0b2af86d8888d718f2407fc2faa7995df93eefffaca29d4256675144d3c0"
     },
     {
       "binding_id": "mask-certificate",
       "path": "experimental/data/certificates/m1-kb-branch3-rank9-mask-deficit-v1/m1_kb_branch3_rank9_mask_deficit_v1.json",
       "role": "frozen rank-nine row state",
-      "sha256": "926a2b34bc2c77b974d478d1ff7dc8bc9de97dc47ee4237e0d3d5e04787c7c8b"
+      "sha256": "365a57690651e2a72fe32c5104b05f710e5cb07ac364fda4b1492217483ee7d1"
     },
     {
       "binding_id": "mask-verifier",
       "path": "experimental/scripts/verify_m1_kb_branch3_rank9_mask_deficit_v1.py",
       "role": "predecessor replay",
-      "sha256": "c88d87e11da61f1b2fd2f40a2a39b3c43d3db35afc0bbc01bbded3721de1a880"
+      "sha256": "057f2cc2488d5f62b7d8b505e2bc8c0b21df44c8f40bb983187ccbaac1c2c8a7"
     },
     {
       "binding_id": "rank-note",
@@ -210,7 +210,7 @@
       "binding_id": "rank-certificate",
       "path": "experimental/data/certificates/m1-kb-branch3-actual-core-mds-v1/m1_kb_branch3_actual_core_mds_v1.json",
       "role": "frozen selector contract",
-      "sha256": "1d33311376fae565924bf9656d2e5f11b59a735238eb053aa6b485cceea80392"
+      "sha256": "750d2ff597730fcf47b3867f08bbf34bce613ab7aca2746bee923b1f9d585eca"
     },
     {
       "binding_id": "rank-verifier",

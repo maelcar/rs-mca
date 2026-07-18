@@ -1,0 +1,865 @@
+{
+  "artifact_bindings": {
+    "experimental/lean/grande_finale/PREFIX_ATLAS_BRIDGE_CORRESPONDENCE.md": {
+      "byte_count": 21635,
+      "path": "experimental/lean/grande_finale/PREFIX_ATLAS_BRIDGE_CORRESPONDENCE.md",
+      "sha256": "b32f3e4ea02fe81c4936b54066e88fdc6fc53d8350c418ed5a88bc57b7e07173"
+    },
+    "experimental/notes/audits/atlas_payment_interface_audit.md": {
+      "byte_count": 22245,
+      "path": "experimental/notes/audits/atlas_payment_interface_audit.md",
+      "sha256": "17c88a76da2ee27a959e01aaace695aba280d6ab5bbbdd7baec9713f5a772188"
+    },
+    "experimental/scripts/verify_atlas_payment_interface.py": {
+      "byte_count": 90818,
+      "path": "experimental/scripts/verify_atlas_payment_interface.py",
+      "sha256": "03d2ccdb98ed9d383b149e3d23494f7236ab3a2ea7c04becca1c3e91ab9a64f6"
+    }
+  },
+  "interface_summary": {
+    "not_proved": [
+      "construction of the cellwise U(z) budgets",
+      "witness exhaustion of slope-level residual cells without additional hypotheses",
+      "construction of C1-C9 semantic cell indices/cells, per-cell budgets, or uniform sum bound",
+      "a concrete C1-C9 Reed-Solomon semantic atlas, prefix classification, or payment",
+      "asymptotic-row same-catalogue uniformity (UNIF)",
+      "C1-C8 primitive-survival/catalogue classification for the intended row",
+      "general or row-level C3 semantic family identification, residual/profile estimate, and distinct-slope payment",
+      "a lower retained-support occupancy bound for any intended semantic C7 profile",
+      "semantic C8 chart assignment and deployed ray-incidence degree bounds",
+      "deployed-scale image-normalized Sidon payment",
+      "the final FC1 hpaid comparison and row-uniform sum for intended C8/C9 profiles"
+    ],
+    "proved": [
+      "total prefix keys partition and first-match-cover all supplied witnesses",
+      "concrete locator-prefix cells cover the supplied support family",
+      "support-family bad slopes equal the union of cellwise bad slopes",
+      "explicit cellwise U(z) budgets sum to a full-family budget",
+      "linewise U(u0,u1,z) budgets plus uniform summed bound B imply B_MCA <= B",
+      "stronger line-independent U(z) budgets imply B_MCA <= sum_z U(z)",
+      "each residual witness cell has exactly its assigned first-match slope image",
+      "explicit bad-slope image, witness exhaustion, and cell budgets bound B_MCA by the supremum of line-dependent sums",
+      "a uniform bound on those line-dependent sums yields B_MCA <= B",
+      "a proper witness subset can have exactly the full witness-family slope image",
+      "slope-level first-match residual cells can fail witness exhaustion despite original-cell and slope-image coverage",
+      "a finite coefficient-vector exact-cardinality RS witness catalogue is constructed for every received line",
+      "the concrete catalogue's slope image is exactly the threshold-a RS MCA-bad slope set",
+      "raw witness exhaustion plus first-match slope budgets specializes directly to the concrete RS catalogue",
+      "locator-prefix witness cells exactly exhaust every concrete linewise catalogue",
+      "under injective evaluation and the parity-dimension equation, each prefix-witness slope image equals its support-prefix bad-slope cell",
+      "locator-prefix first-match budgets specialize to B_MCA without a raw-exhaustivity hypothesis",
+      "literal witness cells split exactly over realized explanation-state fibers",
+      "positive retained-support occupancy bounds each post-first-match slope cell by floor(|residual|/H)",
+      "the resulting line-dependent RC1 quotient budgets specialize to the full B_MCA numerator",
+      "full-slice boundary image and retained residual fibers remain distinct normalization objects",
+      "retained residual fiber counts and equal-boundary collision pairs satisfy exact first/second-moment identities",
+      "supplied C8 ray-incidence degrees and C9 residual moment data bound the actual first-match slope cell by the literal FC1 floor",
+      "the explicit multiplicative subgroup-coset C3 candidate family has subexponential census sigma(N), with multiplier-fixed loci contained in it"
+    ]
+  },
+  "max_sum_quantifier_negative_control": {
+    "exact_conclusion": "sup_line sum_z cell(line,z) = 1 while sum_z sup_line cell(line,z) = 2^b",
+    "model": "cell(line,z) = 1 iff z = line on 2^b lines and cells",
+    "rows": [
+      {
+        "bits": 0,
+        "cell_count": 1,
+        "line_count": 1,
+        "overpayment_factor": 1,
+        "sum_cells_sup_line": 1,
+        "sup_line_sum_cells": 1
+      },
+      {
+        "bits": 1,
+        "cell_count": 2,
+        "line_count": 2,
+        "overpayment_factor": 2,
+        "sum_cells_sup_line": 2,
+        "sup_line_sum_cells": 1
+      },
+      {
+        "bits": 2,
+        "cell_count": 4,
+        "line_count": 4,
+        "overpayment_factor": 4,
+        "sum_cells_sup_line": 4,
+        "sup_line_sum_cells": 1
+      },
+      {
+        "bits": 3,
+        "cell_count": 8,
+        "line_count": 8,
+        "overpayment_factor": 8,
+        "sum_cells_sup_line": 8,
+        "sup_line_sum_cells": 1
+      },
+      {
+        "bits": 4,
+        "cell_count": 16,
+        "line_count": 16,
+        "overpayment_factor": 16,
+        "sum_cells_sup_line": 16,
+        "sup_line_sum_cells": 1
+      },
+      {
+        "bits": 5,
+        "cell_count": 32,
+        "line_count": 32,
+        "overpayment_factor": 32,
+        "sum_cells_sup_line": 32,
+        "sup_line_sum_cells": 1
+      },
+      {
+        "bits": 6,
+        "cell_count": 64,
+        "line_count": 64,
+        "overpayment_factor": 64,
+        "sum_cells_sup_line": 64,
+        "sup_line_sum_cells": 1
+      },
+      {
+        "bits": 7,
+        "cell_count": 128,
+        "line_count": 128,
+        "overpayment_factor": 128,
+        "sum_cells_sup_line": 128,
+        "sup_line_sum_cells": 1
+      },
+      {
+        "bits": 8,
+        "cell_count": 256,
+        "line_count": 256,
+        "overpayment_factor": 256,
+        "sum_cells_sup_line": 256,
+        "sup_line_sum_cells": 1
+      }
+    ]
+  },
+  "negative_control": {
+    "exact_conclusion": "totality and exact coverage permit 2^b realized singleton cells; coverage alone gives no subexponential profile or slope-payment bound",
+    "model": "identity total map i -> i on items [0, 2^b)",
+    "rows": [
+      {
+        "all_cells_singletons": true,
+        "bits": 0,
+        "flatten_exact": true,
+        "item_count": 1,
+        "realized_key_count": 1
+      },
+      {
+        "all_cells_singletons": true,
+        "bits": 1,
+        "flatten_exact": true,
+        "item_count": 2,
+        "realized_key_count": 2
+      },
+      {
+        "all_cells_singletons": true,
+        "bits": 2,
+        "flatten_exact": true,
+        "item_count": 4,
+        "realized_key_count": 4
+      },
+      {
+        "all_cells_singletons": true,
+        "bits": 3,
+        "flatten_exact": true,
+        "item_count": 8,
+        "realized_key_count": 8
+      },
+      {
+        "all_cells_singletons": true,
+        "bits": 4,
+        "flatten_exact": true,
+        "item_count": 16,
+        "realized_key_count": 16
+      },
+      {
+        "all_cells_singletons": true,
+        "bits": 5,
+        "flatten_exact": true,
+        "item_count": 32,
+        "realized_key_count": 32
+      },
+      {
+        "all_cells_singletons": true,
+        "bits": 6,
+        "flatten_exact": true,
+        "item_count": 64,
+        "realized_key_count": 64
+      },
+      {
+        "all_cells_singletons": true,
+        "bits": 7,
+        "flatten_exact": true,
+        "item_count": 128,
+        "realized_key_count": 128
+      },
+      {
+        "all_cells_singletons": true,
+        "bits": 8,
+        "flatten_exact": true,
+        "item_count": 256,
+        "realized_key_count": 256
+      }
+    ]
+  },
+  "schema": "atlas-payment-interface/v7",
+  "sources": {
+    "c3_scope": {
+      "census_path": "experimental/notes/thresholds/c3_planted_divisor_census.md",
+      "census_sha256": "8224621e77a6dfe9dcc7a34d01b5090b32065873bb543dd8cb38b69c3327a6c8",
+      "frontiers_path": "experimental/asymptotic_rs_mca_frontiers.tex",
+      "frontiers_sha256": "0e3aa7b1ba79b1065439ae484f4cb989d80cabe18afb68ec63a6b21d1f3370fd",
+      "partial_verdict_line": 254,
+      "planted_payment_line": 2405,
+      "remaining_scope": "row-level semantic family identification, residual/profile scale, description entropy, distinct-slope projection, and unrestricted common-factor/resultant C3 payment remain open",
+      "verified_narrow_result": "the explicit multiplicative subgroup-coset candidate family has census sigma(N) <= N(1+ln N), and multiplier-fixed loci lie in it"
+    },
+    "catalogue_ledger": {
+      "blocked_or_conditional_cells": {
+        "C3": {
+          "line": 161,
+          "paragraph_sha256": "55bf2517e29ea007da15ac769535d18338fcf47011bbb6c8f80744f991e85e12",
+          "required_status_tokens": [
+            "subexponential census",
+            "CONDITIONAL"
+          ]
+        },
+        "C7": {
+          "line": 165,
+          "paragraph_sha256": "10942e6793e29373310e4184b79c759733b2ce8e5b42e2b2d7c41e16905220dd",
+          "required_status_tokens": [
+            "projection-degree budget",
+            "OPEN"
+          ]
+        },
+        "C8": {
+          "line": 170,
+          "paragraph_sha256": "a98e049eb75a4231c83e0e0ff9888ebb254b7b20cc6ddb2fe07871321ff89ed2",
+          "required_status_tokens": [
+            "CONDITIONAL on (RC)"
+          ]
+        },
+        "C9": {
+          "line": 177,
+          "paragraph_sha256": "e514fad309c7bd8ef1ab4ba50b5e5bd23bff06659af8bb25bd167233b894328e",
+          "required_status_tokens": [
+            "UNPAID (general)"
+          ]
+        }
+      },
+      "paid_cells": [
+        "C1",
+        "C2",
+        "C4",
+        "C5",
+        "C6"
+      ],
+      "path": "experimental/notes/thresholds/atlas_cat_cell_ledger.md",
+      "payment_boundary_line": 148,
+      "sha256": "f4b4c13c27bddeca958bddf19eecfec169be564252f117e5e9856fdf34a6eab3",
+      "unconditional_exhaustion_line": 120,
+      "verified_boundary": "full-catalogue payment remains blocked exactly at C3/C7/C8/C9"
+    },
+    "concrete_prefix_bridge": {
+      "axiom_print_lines": [
+        "#print axioms badSlopeSetOnSupportFamily_card_le_sum_prefixBudgets",
+        "#print axioms rsMcaBadSlopes_card_le_sum_prefixBudgets",
+        "#print axioms B_MCA_rsEval_le_of_linewise_prefixBudgets",
+        "#print axioms B_MCA_rsEval_le_sum_prefixBudgets"
+      ],
+      "b_mca_linewise_payment_interface_theorem_line": 222,
+      "b_mca_payment_interface_theorem_line": 242,
+      "bad_slope_union_theorem_line": 116,
+      "coverage_theorem_line": 57,
+      "declarations": {
+        "B_MCA_rsEval_le_of_linewise_prefixBudgets": 222,
+        "B_MCA_rsEval_le_sum_prefixBudgets": 242,
+        "badSlopeSetOnPowersetCard_card_le_sum_prefixCells": 104,
+        "badSlopeSetOnPowersetCard_eq_prefixCells_biUnion": 92,
+        "badSlopeSetOnSupportFamily_card_le_sum_prefixBudgets": 143,
+        "badSlopeSetOnSupportFamily_card_le_sum_prefixCells": 129,
+        "badSlopeSetOnSupportFamily_eq_prefixCells_biUnion": 116,
+        "coefficientFiber_biUnion_eq_powersetCard": 77,
+        "mem_supportPrefixCell_iff": 47,
+        "prefixBadSlopeCell": 85,
+        "rsMcaBadSlopes_card_le_sum_prefixBudgets": 205,
+        "rsMcaBadSlopes_card_le_sum_prefixCells": 188,
+        "rsMcaBadSlopes_eq_prefixCells_biUnion": 169,
+        "rsPrefixBadSlopeCell": 158,
+        "supportPrefixCell": 42,
+        "supportPrefixCells_cover": 57,
+        "supportPrefixKey": 36,
+        "supportPrefixKey_space_card": 67
+      },
+      "fixed_row_comment_line": 220,
+      "fixed_row_comment_sha256": "eb5c2c5a526b9d3a526c6dc379a81b6db78c776e988a5404cb3bffe2e20fbac9",
+      "forbidden_syntax_checks": [
+        "any admit token",
+        "any sorry token",
+        "explicit axiom declaration",
+        "opaque declaration",
+        "same-line proof admit",
+        "same-line proof sorry"
+      ],
+      "line_uniform_payment_input": "one U(z) bounds every locator-prefix cell for every received-line pair (u0,u1)",
+      "line_uniform_payment_output": "B_MCA(rsEval(ev,k),a) <= sum_z U(z)",
+      "linewise_payment_input": "hcell bounds each cell by U(u0,u1,z); hunif bounds only each linewise sum by B",
+      "linewise_payment_output": "B_MCA(rsEval(ev,k),a) <= B",
+      "linewise_signature_sha256": "ee500c01d45414098971459e34f36732e79a8cd3c4b2a11f63d5ce52268d3393",
+      "path": "experimental/lean/grande_finale/GrandeFinale/PrefixAtlasBridge.lean",
+      "payment_input": "for every concrete prefix key z, bad-slope-card(cell z) <= U(z)",
+      "payment_interface_signatures": {
+        "B_MCA_rsEval_le_of_linewise_prefixBudgets": {
+          "line": 222,
+          "normalized_sha256": "ee500c01d45414098971459e34f36732e79a8cd3c4b2a11f63d5ce52268d3393"
+        },
+        "B_MCA_rsEval_le_sum_prefixBudgets": {
+          "line": 242,
+          "normalized_sha256": "03cd17280a19e87d6021dd9f5318ffc114b8a7c2f13fec427a18b73d5177d282"
+        },
+        "badSlopeSetOnSupportFamily_card_le_sum_prefixBudgets": {
+          "line": 143,
+          "normalized_sha256": "026dd443ec9b013289e6fa173e7096232ceb725b6643f8cd9463f816bf34b27b"
+        },
+        "rsMcaBadSlopes_card_le_sum_prefixBudgets": {
+          "line": 205,
+          "normalized_sha256": "aa99ccb6bb7648473ad1259d821de8e29e24c9d044da74c8f93374f7c77c8166"
+        }
+      },
+      "payment_interface_theorem_line": 143,
+      "payment_output": "bad-slope-card(full support family) <= sum_z U(z)",
+      "rs_bad_slope_union_theorem_line": 169,
+      "rs_payment_interface_theorem_line": 205,
+      "sha256": "89e56ff9d3829791b688f001d6a909cee74ff03ae1a9b77a176dfe2d2ba90889",
+      "verified_nonclaim": "the bridge constructs no U and proves no catalogue/profile payment"
+    },
+    "first_match_witness_bridge": {
+      "axiom_print_lines": [
+        "#print axioms firstMatchResidualWitnessCell_image_slope",
+        "#print axioms B_MCA_le_sup_of_witnessExhaustive_firstMatchSlopeBudgets",
+        "#print axioms B_MCA_le_of_witnessExhaustive_firstMatchSlopeBudgets",
+        "#print axioms slopeImage_cover_not_witnessExhaustive",
+        "#print axioms firstMatchResidualWitnessCells_not_witnessExhaustive"
+      ],
+      "declarations": {
+        "B_MCA_le_of_witnessExhaustive_firstMatchSlopeBudgets": 112,
+        "B_MCA_le_sup_of_witnessExhaustive_firstMatchSlopeBudgets": 75,
+        "firstMatchResidualWitnessCell": 35,
+        "firstMatchResidualWitnessCell_image_slope": 42,
+        "firstMatchResidualWitnessCells_not_witnessExhaustive": 149,
+        "firstMatchSlopeCell": 28,
+        "slopeImage_cover_not_witnessExhaustive": 138
+      },
+      "forbidden_syntax_checks": [
+        "any admit token",
+        "any axiom token",
+        "any opaque token",
+        "any sorry token"
+      ],
+      "path": "experimental/lean/grande_finale/GrandeFinale/FirstMatchWitnessBridge.lean",
+      "projection_boundary_line": 7,
+      "raw_countermodel_line": 138,
+      "residual_countermodel_line": 149,
+      "residual_noncoverage_line": 34,
+      "sha256": "b7f793e96143952016cd0528f80abfb2949b5aba8ed041aec4931655a8005d06",
+      "verified_boundary": "slope-image coverage does not imply witness coverage, and slope-level first match need not preserve witness exhaustion",
+      "verified_claim": "witness exhaustion plus exact bad-slope image and cell budgets bounds B_MCA; a uniform sum bound gives B_MCA <= B",
+      "verified_nonclaim": "the bridge constructs no catalogue, bad-image identity, budget, uniformity certificate, Reed-Solomon classification, or payment",
+      "witness_interface_signatures": {
+        "B_MCA_le_of_witnessExhaustive_firstMatchSlopeBudgets": {
+          "line": 112,
+          "normalized_sha256": "b289578e783ca72e74b6d379da581dcaf3522b1aafb233640cf90a27a7ab1fbe"
+        },
+        "B_MCA_le_sup_of_witnessExhaustive_firstMatchSlopeBudgets": {
+          "line": 75,
+          "normalized_sha256": "b188289fff7f8340418d46b5d399a82e1eee69e22eba168232a2829bb2d8e356"
+        },
+        "firstMatchResidualWitnessCell_image_slope": {
+          "line": 42,
+          "normalized_sha256": "063fb6f92f8edd58bb614f15a915bcde895b18d3d6604bc8369559e4f8706099"
+        },
+        "firstMatchResidualWitnessCells_not_witnessExhaustive": {
+          "line": 149,
+          "normalized_sha256": "cbd7cf81b53d8ec7afc0272b835992b8f3899ba8660b25a86877ef7699cde4a8"
+        },
+        "slopeImage_cover_not_witnessExhaustive": {
+          "line": 138,
+          "normalized_sha256": "2941e57808fb5d5e8397d6d9cd0d98df5d70671b6bd90384749e5d2d98e55c7e"
+        }
+      }
+    },
+    "generic_prefix_atlas": {
+      "coverage_payment_separation_line": 11,
+      "declarations": {
+        "fibreAtlas": 22,
+        "mem_fibreAtlas_flatten_iff": 29,
+        "nodup_fibreAtlas_flatten": 49,
+        "prefixFibreAtlas_total": 193,
+        "prefixFibreAtlas_total_of_keys": 152,
+        "realizedKeys": 82,
+        "realizedKeys_nodup": 91,
+        "totalFibreAtlas": 139,
+        "totalFibreAtlas_cells_nonempty": 173
+      },
+      "path": "experimental/lean/asymptotic_spine/AsymptoticSpine/PrefixAtlas.lean",
+      "payment_nonclaim_line": 151,
+      "sha256": "2d81c7daf245467335ef19f3165d1f6c1524bbaaf8032c77afe33132bc7188a0",
+      "verified_claim": "total key fibres give witness-exhaustive first-match coverage",
+      "verified_nonclaim": "coverage supplies neither cell payment nor a payment theorem"
+    },
+    "heavy_fiber_transfer": {
+      "depth_one_fiber_line": 328,
+      "h4_line": 256,
+      "h4_nonclaim_line": 346,
+      "path": "experimental/notes/thresholds/heavy_fiber_admissibility_transfer.md",
+      "sha256": "88a0959285c34b14dc705dc19877c1fb53e33ae647dbf648222b6ab18c3579cf",
+      "status": "conditional on atlas-internal H4; H4 is assumed, not re-proved",
+      "verified_nonclaim": "the transfer does not pay the image-scale MI/MA or Sidon cell"
+    },
+    "rs_exact_card_boundary_payment_bridge": {
+      "actual_cell_fc1_line": 154,
+      "axiom_print_lines": [
+        "#print axioms ResidualBoundaryProfile.card_eq_sum_fiberCount",
+        "#print axioms ResidualBoundaryProfile.collisionPairs_card_eq_sum_sq_fiberCount",
+        "#print axioms ResidualBoundaryProfile.fullMean_pos",
+        "#print axioms firstMatchSlopeCell_card_le_boundaryRayMomentFloor",
+        "#print axioms firstMatchSlopeCell_card_le_boundaryRayMomentBudget"
+      ],
+      "boundary_payment_signatures": {
+        "card_eq_sum_fiberCount": {
+          "line": 75,
+          "normalized_sha256": "7636fdbc516e4e94ff255ffa8dcc22e274ec6f2c3f63d4e7a0ca5c818ebacab1"
+        },
+        "collisionPairs_card_eq_sum_sq_fiberCount": {
+          "line": 84,
+          "normalized_sha256": "c99daa45112406c3e2ea3662ae8111cbf0b1bccb1bebac41666f0d089c724587"
+        },
+        "firstMatchSlopeCell_card_le_boundaryRayMomentBudget": {
+          "line": 200,
+          "normalized_sha256": "f98a4cd1dca6e8ae0ce4bc11f57fbeaaa2d1b4cdc5c9d5c430a9a397e158495c"
+        },
+        "firstMatchSlopeCell_card_le_boundaryRayMomentFloor": {
+          "line": 154,
+          "normalized_sha256": "15c8a6f132f2528c2bb19ae2c5a0460ce57b3583f7916c901e9efdb49c34a183"
+        },
+        "fullMean_pos": {
+          "line": 112,
+          "normalized_sha256": "51b631d4c80564e25c9e5c94c70d0175ef051337958c67fa8a398738b31f488f"
+        }
+      },
+      "collision_identity_line": 84,
+      "declarations": {
+        "assignedResidualSupports": 130,
+        "boundaryFiber": 54,
+        "card_eq_sum_fiberCount": 75,
+        "collisionPairs": 64,
+        "collisionPairs_card_eq_sum_sq_fiberCount": 84,
+        "fiberCount": 59,
+        "firstMatchBoundaryProfile": 138,
+        "firstMatchSlopeCell_card_le_boundaryRayMomentBudget": 200,
+        "firstMatchSlopeCell_card_le_boundaryRayMomentFloor": 154,
+        "fullMean": 70,
+        "fullMean_pos": 112,
+        "targetImage": 50
+      },
+      "fiber_sum_line": 75,
+      "forbidden_syntax_checks": [
+        "any admit token",
+        "any axiom token",
+        "any opaque token",
+        "any sorry token"
+      ],
+      "path": "experimental/lean/grande_finale/GrandeFinale/RSExactCardBoundaryPaymentBridge.lean",
+      "sha256": "640d1e0df828b898db015ab156e89c042b3bee99c88f1aedf90f55ccf22f05c7",
+      "verified_boundary": "semantic C8 incidence, deployed C9 boundary/moment payment, final hpaid comparison, and row-uniform summation remain explicit inputs",
+      "verified_claim": "full-image normalization and retained residual fibers give exact first/second-moment data, and supplied ray degrees plus a residual moment bound the actual assigned slope cell by the literal FC1 floor",
+      "verified_nonclaim": "the adapter does not classify a C7/C8/C9 cell or prove any hard input"
+    },
+    "rs_exact_card_occupancy_bridge": {
+      "axiom_print_lines": [
+        "#print axioms card_eq_sum_retainedSupportOccupancy",
+        "#print axioms supportImage_retainedSupportFiber_card",
+        "#print axioms slopeImage_card_le_card_div_of_retainedSupportOccupancy",
+        "#print axioms firstMatchSlopeCell_card_le_residual_card_div_of_retainedSupportOccupancy",
+        "#print axioms prefixFirstMatchSlopeCell_card_le_residual_card_div_of_occupancy",
+        "#print axioms B_MCA_rsEval_le_sup_of_exactCardPrefixRetainedSupportOccupancy",
+        "#print axioms B_MCA_rsEval_le_of_exactCardPrefixRetainedSupportOccupancy"
+      ],
+      "declarations": {
+        "B_MCA_rsEval_le_of_exactCardPrefixRetainedSupportOccupancy": 221,
+        "B_MCA_rsEval_le_sup_of_exactCardPrefixRetainedSupportOccupancy": 200,
+        "card_eq_sum_retainedSupportOccupancy": 60,
+        "explanationState": 39,
+        "explanationStateImage": 44,
+        "firstMatchSlopeCell_card_le_residual_card_div_of_retainedSupportOccupancy": 141,
+        "prefixFirstMatchSlopeCell_card_le_residual_card_div_of_occupancy": 182,
+        "prefixResidualWitnessCell": 171,
+        "retainedSupportFiber": 49,
+        "retainedSupportOccupancy": 54,
+        "slopeImage_card_le_card_div_of_retainedSupportOccupancy": 108,
+        "supportImage_retainedSupportFiber_card": 95,
+        "support_injOn_retainedSupportFiber": 71
+      },
+      "exact_occupancy_sum_line": 60,
+      "fixed_row_wrapper_line": 221,
+      "forbidden_syntax_checks": [
+        "any admit token",
+        "any axiom token",
+        "any opaque token",
+        "any sorry token"
+      ],
+      "occupancy_signatures": {
+        "B_MCA_rsEval_le_of_exactCardPrefixRetainedSupportOccupancy": {
+          "line": 221,
+          "normalized_sha256": "8c86ed4719174cbcde6ec7f679edd279cdca0d1318a3a81f42068ccb1b7580bd"
+        },
+        "B_MCA_rsEval_le_sup_of_exactCardPrefixRetainedSupportOccupancy": {
+          "line": 200,
+          "normalized_sha256": "fce2b1037226053af3b41fc19fba86d3b9b7926f735d84f98ad80aed6ed1cfc7"
+        },
+        "card_eq_sum_retainedSupportOccupancy": {
+          "line": 60,
+          "normalized_sha256": "e3c7f8c9f1581511175279fb0db5d846de068d15a3ed0af91665a2bf73b99938"
+        },
+        "firstMatchSlopeCell_card_le_residual_card_div_of_retainedSupportOccupancy": {
+          "line": 141,
+          "normalized_sha256": "90d6e9fd147937daba66a0ed1ef779fc4bfed71c59d2f8bb1e14454088bacde5"
+        },
+        "prefixFirstMatchSlopeCell_card_le_residual_card_div_of_occupancy": {
+          "line": 182,
+          "normalized_sha256": "ead00cd6db85ebb821dfb1f7cd728219a84127ad373b7a935d5722eac9f08771"
+        },
+        "slopeImage_card_le_card_div_of_retainedSupportOccupancy": {
+          "line": 108,
+          "normalized_sha256": "11a95acddaf806fe17881a02bc071a1169c959727169282310017032c8d5f404"
+        },
+        "supportImage_retainedSupportFiber_card": {
+          "line": 95,
+          "normalized_sha256": "4fd68387111908a20a26b734f1b232654ec6c85242f698bc11ee706f26461791"
+        }
+      },
+      "path": "experimental/lean/grande_finale/GrandeFinale/RSExactCardOccupancyBridge.lean",
+      "rc1_line": 108,
+      "sha256": "fd824064e24178dee5622aac74550b71e58d079b8fa527effc52e000654bd95c",
+      "verified_boundary": "the RC1 quotient is applied only after slope-level first match; the lower occupancy and uniform line-sum remain hypotheses",
+      "verified_claim": "realized explanation-state fibers partition each literal witness cell exactly, and a positive retained-support lower occupancy gives the exact floor(|C|/H) slope-image bound",
+      "verified_nonclaim": "the adapter is not a semantic C7 classifier, profile payment, boundary-image theorem, or C1-C9 routing certificate"
+    },
+    "rs_exact_card_prefix_witness_bridge": {
+      "axiom_print_lines": [
+        "#print axioms rsExactCardPrefixWitnessCells_cover",
+        "#print axioms rsExactCardPrefixWitnessCell_image_slope_eq_rsPrefixBadSlopeCell",
+        "#print axioms firstMatchExactCardPrefixWitnessSlopeCell_subset_rsPrefixBadSlopeCell",
+        "#print axioms B_MCA_rsEval_le_sup_of_exactCardPrefixWitness_firstMatchSlopeBudgets",
+        "#print axioms B_MCA_rsEval_le_sup_of_exactCardPrefixBadSlopeBudgets",
+        "#print axioms B_MCA_rsEval_le_of_exactCardPrefixWitness_firstMatchSlopeBudgets"
+      ],
+      "declarations": {
+        "B_MCA_rsEval_le_of_exactCardPrefixWitness_firstMatchSlopeBudgets": 215,
+        "B_MCA_rsEval_le_sup_of_exactCardPrefixBadSlopeBudgets": 195,
+        "B_MCA_rsEval_le_sup_of_exactCardPrefixWitness_firstMatchSlopeBudgets": 172,
+        "firstMatchExactCardPrefixWitnessSlopeCell_subset_rsPrefixBadSlopeCell": 143,
+        "mem_rsExactCardPrefixWitnessCell_iff": 50,
+        "rsExactCardPrefixWitnessCell": 43,
+        "rsExactCardPrefixWitnessCell_image_slope_eq_rsPrefixBadSlopeCell": 72,
+        "rsExactCardPrefixWitnessCells_cover": 61,
+        "rsExactCardWitnessPrefixKey": 37
+      },
+      "forbidden_syntax_checks": [
+        "any admit token",
+        "any axiom token",
+        "any opaque token",
+        "any sorry token"
+      ],
+      "path": "experimental/lean/grande_finale/GrandeFinale/RSExactCardPrefixWitnessBridge.lean",
+      "per_cell_alignment_line": 72,
+      "prefix_witness_signatures": {
+        "B_MCA_rsEval_le_of_exactCardPrefixWitness_firstMatchSlopeBudgets": {
+          "line": 215,
+          "normalized_sha256": "a94bee8809b46cdc67b91c35862b2a353e5b74d03696a665d4ade1423b353293"
+        },
+        "B_MCA_rsEval_le_sup_of_exactCardPrefixBadSlopeBudgets": {
+          "line": 195,
+          "normalized_sha256": "3b6e8ef68068a25ff77b13c20c6e50245740f2e9225c9a26cdd0c4e7ee4e2611"
+        },
+        "rsExactCardPrefixWitnessCell_image_slope_eq_rsPrefixBadSlopeCell": {
+          "line": 72,
+          "normalized_sha256": "adb9200e521cfd7b8559651f449017241ca2d9989637a0094287596b0e1f83b2"
+        },
+        "rsExactCardPrefixWitnessCells_cover": {
+          "line": 61,
+          "normalized_sha256": "3b33cb74880d84a536d4f2232cbafb40602a5c3128397f031644a337d6a6c9b0"
+        }
+      },
+      "raw_witness_cover_line": 61,
+      "sha256": "46f0df69ef802dced50b539db80d84152b1b498c667460d07d542856e2202f2b",
+      "verified_boundary": "raw prefix-witness exhaustivity is discharged, while first-match cell budgets and their uniform line-sum bound remain inputs",
+      "verified_claim": "locator-prefix cells exhaust the concrete exact-cardinality witness catalogue and, under injective evaluation and the parity-dimension equation, align cellwise with support-prefix slopes",
+      "verified_nonclaim": "the structural prefix partition is not a C1-C9 classification and constructs no cell payment or asymptotic UNIF certificate"
+    },
+    "rs_exact_card_witness_bridge": {
+      "axiom_print_lines": [
+        "#print axioms RSExactCardWitness.explanation_degree_lt",
+        "#print axioms explanation_eq_of_valid_of_slope_eq_support_eq",
+        "#print axioms slope_support_projection_injOn_validRSExactCardWitness",
+        "#print axioms rsMcaBadSlopes_eq_exactCardWitnessSlopeImage",
+        "#print axioms B_MCA_rsEval_le_sup_of_exactCardWitnessExhaustive_firstMatchSlopeBudgets",
+        "#print axioms B_MCA_rsEval_le_of_exactCardWitnessExhaustive_firstMatchSlopeBudgets"
+      ],
+      "bad_slope_image_line": 125,
+      "catalogue_line": 62,
+      "declarations": {
+        "B_MCA_rsEval_le_of_exactCardWitnessExhaustive_firstMatchSlopeBudgets": 206,
+        "B_MCA_rsEval_le_sup_of_exactCardWitnessExhaustive_firstMatchSlopeBudgets": 179,
+        "ValidRSExactCardWitness": 52,
+        "explanation_eq_of_valid_of_slope_eq_support_eq": 69,
+        "rsExactCardWitnesses": 62,
+        "rsMcaBadSlopes_eq_exactCardWitnessSlopeImage": 125,
+        "slope_support_projection_injOn_validRSExactCardWitness": 99
+      },
+      "exact_card_boundary_line": 8,
+      "finite_structure_line": 27,
+      "forbidden_syntax_checks": [
+        "any admit token",
+        "any axiom token",
+        "any opaque token",
+        "any sorry token"
+      ],
+      "path": "experimental/lean/grande_finale/GrandeFinale/RSExactCardWitnessBridge.lean",
+      "sha256": "955015ba7aba6976c438933039cfc0be8ffd3b390cba3bb87a4d15410e7b1cfb",
+      "valid_witness_line": 52,
+      "verified_boundary": "same slope and support determine the explainer, but slope alone need not determine the support",
+      "verified_claim": "the finite exact-cardinality RS witness catalogue has exactly the threshold-a bad slopes as its slope image",
+      "verified_nonclaim": "the adapter constructs no semantic cells, raw-witness exhaustion, cell budget, uniform sum, C1-C9 classification, or payment",
+      "witness_adapter_signatures": {
+        "B_MCA_rsEval_le_of_exactCardWitnessExhaustive_firstMatchSlopeBudgets": {
+          "line": 206,
+          "normalized_sha256": "194fba8dc71df8597cb22c6ff037e0e3581239117d97d144ea9db9d3ddba4200"
+        },
+        "B_MCA_rsEval_le_sup_of_exactCardWitnessExhaustive_firstMatchSlopeBudgets": {
+          "line": 179,
+          "normalized_sha256": "e72ac11185131ec9069ca28c298d13fca6b6a0e53934a0597e8760102482e46b"
+        },
+        "RSExactCardWitness.explanation_degree_lt": {
+          "line": 38,
+          "normalized_sha256": "e17a3ed649af6ec031bac10ac15607edc447c8201a82431621551f5c74e6e7e0"
+        },
+        "explanation_eq_of_valid_of_slope_eq_support_eq": {
+          "line": 69,
+          "normalized_sha256": "fd314d0d931feaa045db9efc241d0bc56ba1678ff103821b81008d023b7f391d"
+        },
+        "rsMcaBadSlopes_eq_exactCardWitnessSlopeImage": {
+          "line": 125,
+          "normalized_sha256": "4fa556aeea80459323d962e978d241ae1237511bf0d03868ea39c16c40626f89"
+        },
+        "slope_support_projection_injOn_validRSExactCardWitness": {
+          "line": 99,
+          "normalized_sha256": "6eb95daff068960ab79a30e4cdb5ac6602737461d6242a9ea73ffc7f8022d2c5"
+        }
+      }
+    }
+  },
+  "stale_downstream_wording": {
+    "classification": "legacy owner/lane wording; not a new mathematical escape",
+    "file_count": 11,
+    "files": {
+      "experimental/notes/thresholds/band_uniform_cube_reduction.md": {
+        "hits": [
+          {
+            "context_sha256": "bac19dda21db8a98aca64ee072f97286078f06383b8adca1dd31aa6250dded71",
+            "line": 59,
+            "term": "atlas totality"
+          },
+          {
+            "context_sha256": "be9220fb942699f051d3bf5cd5bda198403b96d85519c51130ef3eee80694b19",
+            "line": 112,
+            "term": "atlas-totality"
+          },
+          {
+            "context_sha256": "62998a5e2b2767d04476627b4e66ebc0a8dcc45693540a13d1b5038b06301f6d",
+            "line": 267,
+            "term": "atlas totality"
+          }
+        ],
+        "sha256": "7ca9786adb8a6e8238f3654a1f71853bc6c50d32c3cf2ad2db6d4cbdf9903346"
+      },
+      "experimental/notes/thresholds/cylinder_renormalization.md": {
+        "hits": [
+          {
+            "context_sha256": "4aa48e1b5c0bdc084f6d8e6be380d2e520ccaee6a2306ae51abaa1d05e7d2794",
+            "line": 58,
+            "term": "atlas totality"
+          },
+          {
+            "context_sha256": "6571c5e26867acaf4ea0ef7d9fbfed9778e2fe5810d50f21a3b357d8639c8d72",
+            "line": 103,
+            "term": "atlas-totality"
+          }
+        ],
+        "sha256": "4413b9aff0e217710df1933183f0b93fb26ae04f40e77f6981fd928f842e0785"
+      },
+      "experimental/notes/thresholds/fold_charge_localization.md": {
+        "hits": [
+          {
+            "context_sha256": "331219eb7fb2f8cdafd5d4e69b8bdae50cd7618acd0664c773926780147f3625",
+            "line": 78,
+            "term": "atlas-totality"
+          },
+          {
+            "context_sha256": "616c7d47a86a87884cd94b91e06fcdae6292e62b92f607594b4b8fbb31dd6002",
+            "line": 125,
+            "term": "atlas-totality"
+          },
+          {
+            "context_sha256": "4d300e0adbd84b4c56d51e1dd92fd837a956cd5168260ddcc93e0022a4a9995b",
+            "line": 375,
+            "term": "atlas-totality"
+          }
+        ],
+        "sha256": "e3dab6d2bbefc434ba94225fd11c5197ef5920e5235a78d819694d05c558c261"
+      },
+      "experimental/notes/thresholds/omega_sound_emission_floor.md": {
+        "hits": [
+          {
+            "context_sha256": "76d30cd805e4c4155aecf7505baa238e6e61dee5ef0533f9660b357bf6f43c9d",
+            "line": 51,
+            "term": "atlas totality"
+          },
+          {
+            "context_sha256": "981426765823b3cb489b6677ef89defa33f7d97d76efef4ea61a4f98248a1a22",
+            "line": 99,
+            "term": "atlas-totality"
+          }
+        ],
+        "sha256": "a29e4682aad5be95fe4d5ca16245432fa8a480a2da74a496c8c1ca9ab5d31671"
+      },
+      "experimental/notes/thresholds/product_profile_transfer_certificate.md": {
+        "hits": [
+          {
+            "context_sha256": "3984a10347a26b413404cf5c64218e899c160a0aa583d8d18b9e21b3657f4997",
+            "line": 51,
+            "term": "atlas totality"
+          },
+          {
+            "context_sha256": "8d759eea5745ab94943cf92b4f374a2232bd94450a8ab38d64270f9e7d108c93",
+            "line": 92,
+            "term": "atlas-totality"
+          }
+        ],
+        "sha256": "29ec195f210bca5e7ffe597166653b24744191c7f46219c8b2adfe80dc675b60"
+      },
+      "experimental/notes/thresholds/rank_one_emission_arithmetic.md": {
+        "hits": [
+          {
+            "context_sha256": "8850b4333294585a76125e9f99f4905ec9a8978f6d2115d77b0da0b96145cdb2",
+            "line": 62,
+            "term": "atlas totality"
+          },
+          {
+            "context_sha256": "d10d4ff7115547149baa036a41fffc2b9f45be8da6ec4bb5e8a47e2c76b2470c",
+            "line": 114,
+            "term": "atlas-totality"
+          },
+          {
+            "context_sha256": "7883dcaaaad88bccb4a0a511487f3bbdc313e08764fd24b33baffa4b80a121d4",
+            "line": 303,
+            "term": "atlas totality"
+          }
+        ],
+        "sha256": "03c19def9af114fa45b4b134b308a9257cef7849e36d50eb49bb076db7b7e7b9"
+      },
+      "experimental/notes/thresholds/rank_one_greedy_adequacy.md": {
+        "hits": [
+          {
+            "context_sha256": "b14a78fddc037785f8e5afd67b1cbc2baf321b1bb43615dfa70989e54da0edde",
+            "line": 100,
+            "term": "atlas-totality"
+          }
+        ],
+        "sha256": "64e0a88494e48494e906b2a79b358a6656fe2e70681d5055b5be685f362186ba"
+      },
+      "experimental/notes/thresholds/resonant_folding_inverse.md": {
+        "hits": [
+          {
+            "context_sha256": "019c0fdb86b51ad41bfff7acc93d46fe882f028d73a7feea42cf5938536dca94",
+            "line": 61,
+            "term": "atlas totality"
+          },
+          {
+            "context_sha256": "ec4f114747417b52eafa3fe22acf1fd23dd3e4c1010dd280f24215ba1cf3a6d7",
+            "line": 118,
+            "term": "atlas-totality"
+          },
+          {
+            "context_sha256": "77d654c1dc3c05b7442d081ff862e30a55fe6fa236f5bb7b763e52124472466b",
+            "line": 399,
+            "term": "atlas totality"
+          },
+          {
+            "context_sha256": "2b9c91daa6f1020f1f8419dc28682266eec0da87c52c9617921161c6c20ead6a",
+            "line": 441,
+            "term": "atlas-totality"
+          }
+        ],
+        "sha256": "ac3908611a8954ca202e8dfef1aae03439b3e56f0886d2a053a2dbfc14a176b3"
+      },
+      "experimental/notes/thresholds/shell_mass_spectral_law.md": {
+        "hits": [
+          {
+            "context_sha256": "586d83a580215bef75f4e7cc509ffdfcceb9788d0d47e0fda0e99a6615497063",
+            "line": 54,
+            "term": "atlas totality"
+          },
+          {
+            "context_sha256": "f9b36c47ac39901d6afa3fc87ae8c61f3eae2aeb5ac508dffb11e13a59721acb",
+            "line": 98,
+            "term": "atlas-totality"
+          }
+        ],
+        "sha256": "57a8521197d79ef9757f65162d912f6dd06f8262361f8ab9014f280260dbc273"
+      },
+      "experimental/notes/thresholds/transverse_charge_obstruction_sidon_paired.md": {
+        "hits": [
+          {
+            "context_sha256": "143990caa221b5114d73a9df91414860bab801dc30c37eb3621cc592e2a87b34",
+            "line": 59,
+            "term": "atlas-totality"
+          },
+          {
+            "context_sha256": "7b4d9cfe48404cca7cf9df79a8692dea9d856bd339203be9bc9582f03c0dec4c",
+            "line": 139,
+            "term": "atlas-totality"
+          },
+          {
+            "context_sha256": "2d2037213f12edde951ca4e1eb9443fac8d2a9a0a3f88c39423dbe9fe95a4bcb",
+            "line": 448,
+            "term": "atlas totality"
+          }
+        ],
+        "sha256": "3bf6e5a25a0fecb83108272befc1093e621f155a98c2a6d793605ddb22d643e8"
+      },
+      "experimental/notes/thresholds/twisted_coset_cube_spectrum.md": {
+        "hits": [
+          {
+            "context_sha256": "b733de5f201e5783787e62a4bbedb224433801db40ac5612c17ff48ea950f4aa",
+            "line": 53,
+            "term": "atlas totality"
+          },
+          {
+            "context_sha256": "7735fdc1ef09357170e37678ee74a5f91e08a172da4ec33f8cbd67488e30df9f",
+            "line": 94,
+            "term": "atlas-totality"
+          }
+        ],
+        "sha256": "e1a4b9c4568cf626c42c42604299ce3785f242dc7d1e731e7f5bc69766ceaec4"
+      }
+    },
+    "occurrence_count": 27,
+    "replacement_interface": "generic totality is integrated; the remaining obligation is primitive survival/catalogue classification plus cellwise profile and bad-slope payment",
+    "scope": "experimental/notes/thresholds/*.md"
+  },
+  "verdict": "AUDIT: coverage proved; catalogue/profile/payment interface remains explicit",
+  "verification_check_count": 314
+}

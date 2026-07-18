@@ -1,13 +1,13 @@
 /-!
 # The adequacy depth law and the greedy completion: decidable shadow
 
-Maps to **hard input 2**: ninth packet of the arc (... -> admission
-soundness -> adequacy closed).  The note proves: adequacy ratios are
-B-independent pure-trig instances (T1), single-pattern emission pays in
-full for ALL B at depths k <= 3 (T2, exhaustive over the finite B-free
+Maps to **hard input 2**: ninth packet of the arc (... -> local scalar
+soundness -> local scalar cap adequacy).  The note proves: adequacy ratios are
+B-independent pure-trig instances (T1), single-pattern coefficient capacity
+reaches each class's local scalar cap for every B at depths k <= 3 (T2,
 instance space), fails from depth 4 (T3; first instance
 (k,r,top,sG) = (4,4,{0,1,2},-1), ratio 0.9910, realized at B = 6), and
-the greedy schedule capped at sum h_+ pays EVERY depth in full (T4, the
+the greedy schedule capped at sum h_+ reaches EVERY depth's scalar cap (T4, the
 triangle inequality sum|h| <= 2^m sum|hcube|).
 
 Note:     `experimental/notes/thresholds/rank_one_greedy_adequacy.md`.

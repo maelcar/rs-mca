@@ -1,0 +1,139 @@
+{
+  "parameters": {
+    "A": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "E": [
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16
+    ],
+    "b": 3,
+    "base_prime": 17,
+    "domain": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16
+    ],
+    "extension_degree": 5,
+    "extension_modulus_low_first": [
+      3,
+      1,
+      0,
+      0,
+      0,
+      1
+    ],
+    "k": 4,
+    "m": 6,
+    "prefix": 0,
+    "r": 3,
+    "w": 1
+  },
+  "results": {
+    "all_six_subsets": 8008,
+    "balanced_supports": 256,
+    "candidate_cell_size_histogram": {
+      "1": 4,
+      "2": 4,
+      "3": 6,
+      "4": 8,
+      "5": 10,
+      "6": 24
+    },
+    "candidate_cells": 56,
+    "common_divisor_cells": 56,
+    "complete_line_bad_slopes": 472,
+    "exact_gcd_cells": 48,
+    "exact_gcd_slopes": 244,
+    "extension_field_size": 1419857,
+    "full_fiber_A_occupancy": {
+      "1": 41,
+      "2": 67,
+      "3": 256,
+      "4": 67,
+      "5": 41
+    },
+    "generic_separation_bound": 444640,
+    "max_pairwise_intersection": 4,
+    "nonzero_prefix_fiber_each": 471,
+    "post_exact_stabilizer_cells": 52,
+    "post_exact_stabilizer_histogram": {
+      "1": 4,
+      "2": 6,
+      "3": 8,
+      "4": 10,
+      "5": 24
+    },
+    "post_exact_stabilizer_scaled_inversion_cells": 52,
+    "post_exact_stabilizer_scaled_inversion_exact_gcd_cells": 40,
+    "post_exact_stabilizer_scaled_inversion_exact_gcd_slopes": 172,
+    "post_exact_stabilizer_scaled_inversion_histogram": {
+      "1": 4,
+      "2": 6,
+      "3": 10,
+      "4": 12,
+      "5": 20
+    },
+    "post_exact_stabilizer_scaled_inversion_repeated_common_divisor_cells": 48,
+    "post_exact_stabilizer_scaled_inversion_repeated_common_divisor_slopes": 190,
+    "post_exact_stabilizer_scaled_inversion_slopes": 194,
+    "post_exact_stabilizer_slopes": 200,
+    "prefix_zero_fiber": 472,
+    "projection_occupancy_max": 1,
+    "repeated_common_divisor_cells": 52,
+    "repeated_common_divisor_slopes": 252,
+    "support_slope_sha256": "af7fa089f16bb5a6348af426de9e088ad5bce2aa2984d1a03706fd0ee40c8da5",
+    "triple_sum_multiplicity_A": [
+      4,
+      3,
+      2,
+      1,
+      1,
+      0,
+      1,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      6,
+      6,
+      6,
+      5
+    ]
+  },
+  "schema": "c3_same_line_common_factor_explosion.v1",
+  "verdict": {
+    "deletion_scope": "exact multiplicative-stabilizer and scaled-inversion support predicates only; no full C1/C2 quotient-remainder claim",
+    "does_not_refute": "the repaired planted-payment criterion with explicit description-entropy, natural-profile, and slope-projection hypotheses",
+    "refutes": "actual same-line common factors alone force a subexponential candidate census or a subexponential/identity-scale slope charge",
+    "status": "COUNTEREXAMPLE"
+  }
+}

@@ -21,10 +21,12 @@ The package root is `GrandeFinale`, with additional modules under
   section “Common-zero cap for all pairs”; it does not certify that section's
   different-slope branch. The exact-weight, endpoint, and two-block compiler
   surfaces remain explicitly unproved targets.
-- `GrandeFinale/FirstWallMDSExtensionInverse.lean` formalizes the finite
-  first-wall MDS extension inverse: interpolation-owner partition, retained and
-  deleted collision slack, graph-arc normalization, and exact finite counting
-  kernels. It is an audit module, not a complete first-match catalogue.
+- `GrandeFinale/FirstWallMDSExtensionInverse.lean` formalizes the abstract
+  finite owner-image cap, equality/injectivity criterion, exact owner-fiber
+  partition, and five pinned binomial identities used by the first-wall audit.
+  Weighted-GRS interpolation, the MDS-extension equivalence, retained/deleted
+  slack, and graph-arc normalization remain in the mathematical note; this is
+  not a complete first-match catalogue.
 - `GrandeFinale/Rank16FixedCoreQuotientLineObstruction.lean` records the
   rank-16 fixed-core quotient-line obstruction kernel for the q64 line family.
 - `GrandeFinale/TripleNegativeFirstMatchReduction.lean` formalizes the

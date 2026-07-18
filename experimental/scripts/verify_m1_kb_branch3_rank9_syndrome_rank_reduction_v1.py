@@ -545,9 +545,9 @@ def expected_rank_reduction() -> dict[str, Any]:
             "ZERO_EXTEND_ANY_COMMON_H_V_LIFTS; SUBTRACT_FROM_THE_ORIGINAL_PAIR; "
             "OBTAIN_ORIGINAL_CODEWORDS_WITH_COMMON_AGREEMENT_AT_LEAST_A"
         ),
-        "correlated_agreement_owner": SPARSE_TERMINAL,
-        "non_correlated_agreement_owner": PAID_TERMINAL,
-        "sparse_owner_paid_here": False,
+        "correlated_agreement_terminal": SPARSE_TERMINAL,
+        "non_correlated_agreement_terminal": PAID_TERMINAL,
+        "sparse_route_paid_here": False,
     }
 
 
@@ -575,8 +575,8 @@ def expected_classifier_contract() -> dict[str, Any]:
     base = classifier_base()
     return {
         "partition_object": "ORIGINAL_RECEIVED_PAIR_COLUMN_FAR_AT_AGREEMENT_A",
-        "owner_terminals": [PAID_TERMINAL, SPARSE_TERMINAL],
-        "owner_terminal_count": 2,
+        "terminals": [PAID_TERMINAL, SPARSE_TERMINAL],
+        "terminal_count": 2,
         "fail_closed_nonterminal": REJECTED,
         "fail_closed_defaults": classify_rank9_selector(),
         "valid_column_far_non_CA": classify_rank9_selector(
@@ -677,7 +677,7 @@ def expected_certificate() -> dict[str, Any]:
             "rank9_status": "YELLOW_OPEN_SPARSE_SIGMA_ONLY",
             "branch3_status": "YELLOW_OPEN",
             "koalabear_row_status": "YELLOW_OPEN",
-            "next_route": "SPARSE_SIGMA_FIRST_MATCH_OWNER_AUDIT",
+            "next_route": "SPARSE_SIGMA_FIRST_MATCH_AUDIT",
         },
         "audit_sections": {
             "statement": "fixed-selector rank-nine syndrome-rank CA dichotomy",
@@ -775,13 +775,13 @@ def validate_certificate(certificate: dict[str, Any]) -> None:
     )
     require(reduction["cap_fits_remaining_budget"], "non-CA cap no longer fits")
     require(int(reduction["margin_to_B_remaining"]) == NON_CA_MARGIN, "margin drift")
-    require(reduction["sparse_owner_paid_here"] is False, "sparse owner promoted")
+    require(reduction["sparse_route_paid_here"] is False, "sparse route promoted")
 
     classifier = certificate["classifier_contract"]
-    require(classifier["owner_terminal_count"] == 2, "terminal count drift")
+    require(classifier["terminal_count"] == 2, "terminal count drift")
     require(
-        classifier["owner_terminals"] == [PAID_TERMINAL, SPARSE_TERMINAL],
-        "owner terminal set/order drift",
+        classifier["terminals"] == [PAID_TERMINAL, SPARSE_TERMINAL],
+        "terminal set/order drift",
     )
     require(
         classifier["partition_object"]
@@ -872,9 +872,9 @@ def mutation_cases(baseline: dict[str, Any]) -> list[tuple[str, tuple[Any, ...],
         ("cap", ("deterministic_rank_reduction", "non_CA_cap"), str(NON_CA_CAP + 1)),
         ("cap-fits", ("deterministic_rank_reduction", "cap_fits_remaining_budget"), False),
         ("margin", ("deterministic_rank_reduction", "margin_to_B_remaining"), str(NON_CA_MARGIN - 1)),
-        ("sparse-paid", ("deterministic_rank_reduction", "sparse_owner_paid_here"), True),
-        ("terminal-count", ("classifier_contract", "owner_terminal_count"), 1),
-        ("terminal-paid", ("classifier_contract", "owner_terminals", 0), "PAID"),
+        ("sparse-paid", ("deterministic_rank_reduction", "sparse_route_paid_here"), True),
+        ("terminal-count", ("classifier_contract", "terminal_count"), 1),
+        ("terminal-paid", ("classifier_contract", "terminals", 0), "PAID"),
         ("classifier-object", ("classifier_contract", "partition_object"), "RESTRICTED_COMMON_LIFT"),
         ("classifier-nonca", ("classifier_contract", "valid_column_far_non_CA"), SPARSE_TERMINAL),
         ("classifier-ca", ("classifier_contract", "valid_not_column_far_sparse_route"), PAID_TERMINAL),

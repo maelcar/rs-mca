@@ -40,10 +40,11 @@ Status: PROVED (Lemma R, reality + parity): G_{k,r} is REAL for every
         maximal band and all subgroup-cylinder unions remain the flat
         boundary case (the exactness-of-the-classification is COMPUTED,
         see E4(c)).
-        WIDENED PRIMITIVE: rank-one emission = pay 2^s |chat_v(D*)| at
-        the argmax pattern D* per class, certificate = the #816 G-table
-        + trig factors.  It subsumes flat-cube exactly where flat-cube
-        applies, and covers every hierarchy piece.
+        WIDENED PRIMITIVE: rank-one emission defines the capped scalar-credit
+        candidate min(2^s |chat_v(D*)|, sum h_+) at the argmax pattern D*
+        on every hierarchy (piece, class) account, certificate = the #816
+        G-table + trig factors.  It subsumes flat-cube exactly where flat-cube
+        applies; source-to-cell and profile payment remain separate.
       + COMPUTED (E5, the mandatory instance): the transverse-charge
         resonant residue j* = (c-1)/2 is the ALL-ONES digit word:
         s3(j*) = B and j* == (3^k-1)/2 mod 3^k -- maximally twisted at
@@ -54,13 +55,15 @@ Status: PROVED (Lemma R, reality + parity): G_{k,r} is REAL for every
 LANE: hard input 2 ("image-scale MI + MA, or a direct Sidon payment",
         agents.md L51) -- seventh packet of the arc (forcing -> typing ->
         reduction -> scope -> compression -> classification ->
-        ADMISSION ARITHMETIC): the admission decision's inputs are now
-        closed-form.  The question itself remains open and is now:
-        "does the certificate grammar admit RANK-ONE emission with T3's
-        one-pattern floor?" -- provably the right primitive (E4), with
-        its soundness cap provably necessary (E3).  Input-2 residual:
-        that decision, genuinely non-hierarchy bands, atlas totality
-        (the Codex team's lane), large-q Sidon.  Fence (N1)
+        LOCAL SCALAR EMISSION ARITHMETIC): the rank-one cube data,
+        coefficient budgets, and capped schedule are now closed-form.
+        This does not close admission: no named mode is mapped to an actual
+        same-owner first-match cell, no A4 analytic/Sidon payment or
+        separate A6/RC distinct-slope bound is proved, and no aggregate
+        subexponential cell/schedule census is certified.  Input-2
+        residual: that semantic bridge; a grammar rule for the resulting
+        payment; genuinely non-hierarchy bands; atlas totality; and
+        large-q Sidon.  Fence (N1)
         (thm:aperiodic-one-ray-saturation) respected: nothing here pays
         or claims lower reserve.
 ```
@@ -98,7 +101,8 @@ Integrated in-tree packets (consumed and credited, not reproved):
   T3's floor and its "one per class" clause get their converse here (E3:
   the cap is necessary); its Sec-3 design point ("a canonical
   multi-pattern payment SCHEDULE is left ... for the admission decision")
-  is CLOSED for hierarchy pieces (E2/E3); its Sec-4 open piece 2
+  is resolved only at local scalar schedule-shape scope on hierarchy
+  (piece, class) accounts (E2/E3); its Sec-4 open piece 2
   (middle-width certificate compression for structured band families) is
   answered for hierarchy families by #816's G-table, consumed here as the
   emission certificate.
@@ -111,7 +115,7 @@ Integrated in-tree packets (consumed and credited, not reproved):
   instance is maximally twisted at every depth.
 - **The cylinder packet (#798/#805-corrected)**: V7's failing-band
   decomposition is where the per-piece arithmetic applies.
-- **Codex team's atlas-totality lane** (in progress, theirs): unchanged.
+- **Atlas-totality residual**: unchanged by this packet.
 
 ---
 
@@ -282,38 +286,45 @@ G-tables are emitted into the certificate.
 
 ## 6. The admission question, restated with its arithmetic in hand
 
-What this packet settles: the emission rule's SHAPE (rank-one, one
+What this packet settles is local scalar bookkeeping: the candidate rule's
+SHAPE (rank-one, one
 pattern per class -- E3 makes the cap necessary, E4 makes the widening
 necessary), its CERTIFICATE (#816's G-table: `O(B 3^k)` bits exactly,
-hence `e^{o(N)}` whenever `k = O(log B)`), its BUDGET and PAYMENT in closed
+hence `e^{o(N)}` whenever `k = O(log B)`), its BUDGET and CAPPED SCALAR
+CREDIT in closed
 form (E1/E2), and its TEST INSTANCE (E5).  What admission now asks, and
 what stays open:
 
-1. **The grammar decision itself** (open, unchanged in kind): does the
-   compiler admit rank-one emission with T3's one-pattern floor?  The
-   compiler-level soundness obligation is now a short list: the
-   per-class cap (proved necessary here, E3), and no double counting
-   against other rules' territory (open; note the rule's targets --
-   twisted hierarchy pieces -- are exactly where fold-measurable ell^2
-   pieces are charge-trivial (#791 Thm A), which is what makes double
-   counting PLAUSIBLY absent).
-2. **Non-hierarchy adversarial bands** (open, outside every packet so
+1. **The semantic source-to-payment bridge** (open): map a named rank-one
+   mode to an actual realized same-owner first-match profile cell, certify
+   `|Z_i^circ| <= U_i <= exp(o(n))(1+barN_i)`, prove A4 by image-scale
+   MI+MA or a direct Sidon/Fourier moment payment, and separately prove A6
+   via RC or a direct distinct-slope theorem.  Constructibility and scalar
+   charge capacity alone are not payment.
+2. **The aggregate census** (open): bound all encoded modes and cells
+   uniformly at subexponential scale; finite pattern counts here do not
+   supply an all-depth census.
+3. **The grammar and overlap decision** (open): only after the semantic
+   bridge exists can the compiler admit the rule and prevent double counting.
+4. **Non-hierarchy adversarial bands** (open, outside every packet so
    far): a failing band with no bounded-depth structure has no G-table;
    U1 width forces only `|A| >= (c/L) e^{2 eta N}`.
-3. Atlas totality (the Codex team's lane) and large-q Sidon, unchanged.
+5. Atlas totality and large-q Sidon, unchanged.
 
 ## Nonclaims
 
-- **NOT a proof of admission**: no emission rule is added to the grammar;
-  E2/E3/E4 constrain what any admitted rule must look like, they do not
-  admit it.
+- **NOT a proof of admission**: E2/E3/E4 constrain local scalar accounting.
+  The governing profile-payment interface remains OPEN: an actual same-owner
+  first-match cell, an (A4) analytic/Sidon payment, a separate (A6)/(RC)
+  distinct-slope bound, and a uniform subexponential aggregate census.  No
+  emission rule is added to the grammar either.
 - **The overdraw extremal `2` and the share floors are B = 6 COMPUTED
   pins**; the proved statements are the inequalities (`> 1` on twisted
   pieces, `<= 2^{|top|/2}`) and the exact closed forms.
 - **Base 3 only**; single cosets asymmetric (symmetric statements pair
   `r` with `3^k - r`); bands exclude `0` (`D = empty` shift `-M/c` where
   it appears).
-- **No claim for non-hierarchy bands** (item 2 above).
+- **No claim for non-hierarchy bands** (item 4 above).
 - Floats only in scans under the exact Parseval + Lemma-N guards; the
   depth-1 arithmetic and the `j*` digit identities are exact.
 - **NOT a reserve payment**: fence (N1) respected.
@@ -321,13 +332,15 @@ what stays open:
 ## Consumers
 
 - **The admission decision (#791 Sec 5, #716 Sec 7.1)**: the yes/no
-  question is upgraded in place -- "flat-cube" becomes "rank-one" with
-  the widening proved necessary (E4) and the floor's cap proved
-  necessary (E3); the (=>) side of #791's reduction gains hierarchy-wide
-  scope with certificates in hand.
+  grammar question is not discharged or merely upgraded in place.  This
+  packet supplies the local scalar candidate -- "flat-cube" widens to
+  "rank-one" (E4) and the cap is necessary (E3) -- while the same-owner
+  first-match/source-to-cell theorem, A4 payment, separate A6/RC bound, and
+  aggregate census remain prerequisites.
 - **The band-uniform packet (#795)**: its multi-pattern-schedule design
-  point is closed for hierarchy pieces; its middle-width compression
-  residual is answered for hierarchy families (via #816, referenced).
+  point is resolved only at local scalar schedule-shape scope on hierarchy
+  (piece, class) accounts; its middle-width compression residual is answered
+  for hierarchy families (via #816, referenced).
 - **The twisted-coset packet (#816)**: C3's reality generalized (Lemma
   R); its G-table becomes an operational emission certificate.
 - **The transverse-charge packet (#776)**: its resonant instance located
@@ -337,7 +350,9 @@ what stays open:
   bands is one pattern per class (additive schedules overdraw, factor up
   to 2 computed), the optimal pattern and its payment are closed-form in
   the G-table, and the flat-cube rule is exact precisely on subgroup/
-  depth-1 territory -- the admission question is rank-one emission" --
+  depth-1 territory; these are local scalar facts, while admission still
+  requires a same-owner first-match/source-to-cell theorem, A4 payment,
+  A6/RC distinct-slope control, and an aggregate census" --
   visible hypotheses: #749-corrected class, base-3 chart, q=2 rooting.
 
 ## Reproducibility

@@ -21,9 +21,12 @@ this ledger, prerequisite (CAT).`
 
 Every `.tex` quote below is byte-verified at its cited line (tolerance-window
 `+/-2`, offset `0`) by `experimental/scripts/verify_atlas_cat_ledger.py`
-(stdlib-only, deterministic, `--check` -> `RESULT: PASS (n/n)`,
+(stdlib-only, deterministic, `--check` -> `RESULT: PASS (219/219)`,
 `--tamper-selftest`).  Machine-readable ledger at
 `experimental/data/certificates/atlas-cat-ledger/atlas_cat_ledger.json`.
+Block D loads and SHA-256-pins that JSON, then checks its cell semantics, tally,
+composition verdicts, verifier results, and corrected C8 producer provenance;
+it is no longer an unbound sidecar.
 **No `.tex`/`.pdf` is edited.**  PR numbers are the consumed notes' own lane /
 consumer labels; note files are cited by path and exist at this snapshot.
 
@@ -42,8 +45,9 @@ routing-detection theorem is `routing_exhaustiveness.md` (PR `#627`) with
 `c5_defect_magnitude.md` (PR `#610`), `c5_covering_constant.md`. The C6 laws are
 `atom_differential_cell_laws.md` (upgrading PR `#446`). The C8 arc is
 `bc_moving_root.md`, `ray_compiler_balanced_core.md` (PR `#528`),
-`balanced_core_kappa_growth.md`, `split_pencil_ray_collapse.md` (matching PR
-`#518`). The C9 reduction chain is `c9_payment_reduction_map.md` (PRs
+`balanced_core_kappa_growth.md` (PR `#534`, corrected by PR `#868`),
+`split_pencil_ray_collapse.md` (matching PR `#518`). The C9 reduction chain
+is `c9_payment_reduction_map.md` (PRs
 `#575`--`#582`), `sidon_special_case_proof.md`, `prefix_flatness_power_sum_lean.md`.
 The C1/C2/C4 payments are `a4_quotient_major_compiler.md` (PR `#465`),
 `quotient_census_window_compiler.md`,
@@ -104,7 +108,7 @@ Every row's status carries the hypotheses its proof uses.
 | **C5** | extension/field-descent | `noncyclic_c5_slope_count.md` (`#607`), `c5_defect_magnitude.md` (`#610`), `c5_covering_constant.md` | deployed Frobenius families; `p \nmid |G|` | slope count = cyclotomic defect `p^{d_p(G,I)}`, `d_p = o(|G|)` on deployed families -> `e^{o(n)}` | **PAID** |
 | **C6** | differential-locator | `atom_differential_cell_laws.md` (upgrades `#446`) | admissible leaves with `R < char` (A5) | differential `K`-rank defect law proved; **inert `index=1` under `R<=p`** | **PAID** |
 | **C7** | saturation/effective-image-collapse | `routing_exhaustiveness.md` (`#627`), `c7_routing_spectrum.md` (`#625`), `c7_degree_enumeration.md` (`#626`) | product leaves; MASTER-2 no-third-mode | **detection exhaustive PROVED**; projection degree = binomial tail of `e^{Omega(N)}` candidate profiles | **DETECTION PAID / PAYMENT OPEN** (`#626`) |
-| **C8** | balanced-core/split-pencil | `bc_moving_root.md`, `split_pencil_ray_collapse.md` (`#518`); `ray_compiler_balanced_core.md` (`#528`), `balanced_core_kappa_growth.md` | proj. dim 1 (split pencil); higher-dim needs a proved decomposition or direct ray count | split pencil: moving-root incidence `<= n-g` (`eq:moving-root-bound`); higher-dim: `e^{o(n)}` only under (RC) | **PAID (dim 1) / CONDITIONAL on (RC)** (higher-dim = input 3) |
+| **C8** | balanced-core/split-pencil | `bc_moving_root.md`, `split_pencil_ray_collapse.md` (`#518`); `ray_compiler_balanced_core.md` (`#528`), `balanced_core_kappa_growth.md` (`#534`, corrected by `#868`) | proj. dim 1 (split pencil); higher-dim needs a proved decomposition or direct ray count | split pencil: moving-root incidence `<= n-g` (`eq:moving-root-bound`); higher-dim: `e^{o(n)}` only under (RC) | **PAID (dim 1) / CONDITIONAL on (RC)** (higher-dim = input 3) |
 | **C9** | Fourier/Sidon-heavy | `c9_payment_reduction_map.md` (`#575`--`#582`), `sidon_special_case_proof.md`, `prefix_flatness_power_sum_lean.md` | `R>=m` (Newton-injective) or fixed `m`: PROVED-SPECIAL; general linear density `m=Theta(N)`: OPEN | prefix-fibre count `L <= p^w` (`#536`); Sidon moment payment `Gsid = e^{o(Nq)}` (`def:sidon-paid-cell` L5131) UNPROVED at deployed scale | **UNPAID** (general; = hard input 4/5) |
 
 **Tally: 5 PAID `{C1, C2, C4, C5, C6}`, 4 UNPAID/CONDITIONAL `{C3, C7, C8, C9}`.**
@@ -238,7 +242,7 @@ requires `(CAT)` first.
 
 ```bash
 python3 experimental/scripts/verify_atlas_cat_ledger.py --check
-# -> RESULT: PASS (n/n)
+# -> RESULT: PASS (219/219)
 python3 experimental/scripts/verify_atlas_cat_ledger.py --tamper-selftest
-# -> confirms a corrupted anchor is detected, then RESULT: PASS (n/n)
+# -> confirms a corrupted anchor is detected, then RESULT: PASS (4/4)
 ```

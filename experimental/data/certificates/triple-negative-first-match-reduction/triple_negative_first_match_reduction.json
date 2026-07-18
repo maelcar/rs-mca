@@ -247,7 +247,7 @@
     "No owner-free subexponential bound is claimed on all of J_K<=0.",
     "No theorem says a triple-negative witness survives earlier quotient, planted, curve, common-support, or other owners.",
     "No witness-exhaustive atlas, profile add-back, uniform received-line theorem, deployed-row movement, Grand MCA, or Grand List result is claimed.",
-    "The pending fixed-slope J_K source packet is not vendored or treated as integrated by this standalone arithmetic reduction."
+    "The integrated fixed-slope J_K source theorem from PR #823 is used only for its displayed neighboring J_K>0 interpretation; it does not make J_K<=0 a semantic owner cell."
   ],
   "owner_cap_noncomparability": [
     {
@@ -310,7 +310,7 @@
     "first_match_safety": "both complete-pair caps are monotone under deletion",
     "fixed_deficiency": "|P|<=binom(N,deficiency_delta+1)",
     "paving": "|P|<=floor(beta_(kappa+1)(A)/Lambda_direction_d(t))<=floor(binomial(N,kappa+1)/Lambda_direction_d(t))",
-    "remaining_wall": "positive-depth first-match profiles with positive-linear kappa and deficiency, after exact-weight, curve/pencil, low-rank affine-core, and earlier semantic owners are removed; compare owned augmented-basis mass to the realized profile scale or route the whole fiber",
+    "remaining_wall": "the local positive-depth J_K<=0 ratio remains conditional; on d=R the exact source target is the deep-hole core-pencil/design owner dichotomy, with beta automatically maximal, so prove image-normalized pencil/design deficit or route the whole fiber",
     "subexponential_routes": [
       "deficiency_delta=o(N)",
       "R=o(N), because 0<deficiency_delta<t<R",
@@ -318,7 +318,7 @@
       "identity_depth_h=0 is paid exactly at the depth-zero identity profile scale"
     ]
   },
-  "payload_sha256": "6ee918e4c6034cc4f97e5aa436a312934acd291ecda3bff5453cb20fee7313fe",
+  "payload_sha256": "a8c0ae04007b364cb7d47ec6f04b0985399a18b7a70ab159698dca6aca3e024d",
   "positive_depth_boundary_fixtures": [
     {
       "D_H": -96,
@@ -756,12 +756,12 @@
           "marker": "|P| <= floor(beta_(kappa+1)(A)/Lambda_(d,t))"
         },
         {
-          "line": 475,
-          "line_sha256": "e55399f17ca5f252c1ba56d662ac1de6ffa291e2fdc9efd2c4134f4ec1987cc3",
-          "marker": "The exact remaining wall is the **basis-heavy deep-hole owner dichotomy**"
+          "line": 487,
+          "line_sha256": "26e7b28d3a9e6e08f184bcbea949600c14727570761fc323ccf6a8fe80c59fc1",
+          "marker": "The exact remaining wall is the **deep-hole pencil/design owner dichotomy**"
         }
       ],
-      "sha256": "01a819ab3fea134c22bfebb51d0074ee32c378b0452f6f682f44304fec7db43d"
+      "sha256": "84d1ed18a110f0e1fee423905bee5710be42f3e8651cefd50db9646d5ffcc239"
     },
     {
       "path": "experimental/notes/thresholds/depth_zero_identity_lineray_owner.md",

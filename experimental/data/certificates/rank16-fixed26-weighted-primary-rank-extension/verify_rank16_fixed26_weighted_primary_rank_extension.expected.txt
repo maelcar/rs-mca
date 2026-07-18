@@ -1,0 +1,8 @@
+R29_FIXED26_WEIGHTED_PRIMARY_RANK_EXTENSION: PASS
+p=2130706433 n=2097152 B=32768 a=67472 r=63601 delta=3871 d=28897
+excluded=18..66 new=65,66 survivors=3..17_or_67..67472
+margin65=116671 margin66=53070 margin67=10531
+split_complement_degree=1968015 fibre_residual_cap=28897
+hypotheses=G64+actual_valid_edge normalization=(y-z)/(c_y-c_z)
+ledger_delta=0 official_score=0/2
+RESULT: PASS

@@ -1,5 +1,5 @@
 /-!
-# The chart-free pruned signed bound (statement stub)
+# The chart-free pruned signed bound (arithmetic formalization)
 
 Maps to **hard input 2**: image-scale MI + MA / direct Sidon payment -- the
 signed-minor clause of avdeevvadim's #716 charge-preserving dichotomy, escalated
@@ -17,8 +17,9 @@ This module certifies the EXACT, DECIDABLE backbone of the general theorem:
    evaluated on the atlas's depth-R prefix charts (exact L by enumeration);
 2. the finite per-q window predicate  prunedDecays M L q  <=>  L^(3q-2) < M^(2q)
    (the crude Theorem-I bound L^{3/2-1/q}/M < 1, cleared of the root);
-3. the layer-cake INTEGER identity  sum_j |{s : b s >= j}| = sum_s b s
-   (an unpruned mask of max multiplicity W_max splits into W_max pruned layers);
+3. the nonnegative/Nat layer-cake identity  sum_j |{s : b s >= j}| = sum_s b s
+   (an unpruned mask of max multiplicity W_max splits into W_max pruned layers),
+   together with the general signed pointwise reconstruction;
 4. the #728 superincreasing family as the depth-1 special case (finite window,
    rate-limit window {3,4}, heavy-fiber crossover W^2 > L at B>=6).
 
@@ -150,6 +151,216 @@ def layerSize (b : List Nat) (j : Nat) : Nat :=
 /-- total mass split into `W_max` layers. -/
 def layerSum (b : List Nat) (Wmax : Nat) : Nat :=
   ((List.range Wmax).map (fun j => layerSize b (j + 1))).foldl (· + ·) 0
+
+private theorem foldl_add_eq_sum (l : List Nat) (acc : Nat) :
+    l.foldl (· + ·) acc = acc + l.sum := by
+  induction l generalizing acc with
+  | nil => simp
+  | cons x xs ih =>
+      simp only [List.foldl_cons, List.sum_cons]
+      rw [ih]
+      simp only [Nat.add_assoc]
+
+private theorem layerSize_cons (x : Nat) (xs : List Nat) (j : Nat) :
+    layerSize (x :: xs) j = (if j <= x then 1 else 0) + layerSize xs j := by
+  by_cases h : j <= x <;> simp [layerSize, h, Nat.add_comm]
+
+private theorem sum_append_nat (l₁ l₂ : List Nat) :
+    (l₁ ++ l₂).sum = l₁.sum + l₂.sum := by
+  induction l₁ with
+  | nil => simp
+  | cons x xs ih => simp [ih, Nat.add_assoc]
+
+private theorem indicator_sum_eq_min (x W : Nat) :
+    ((List.range W).map (fun j => if Nat.succ j <= x then 1 else 0)).sum =
+      Nat.min x W := by
+  induction W with
+  | zero => simp
+  | succ W ih =>
+      rw [List.range_succ, List.map_append, sum_append_nat]
+      simp only [List.map_singleton, List.sum_cons, List.sum_nil, Nat.add_zero]
+      rw [ih]
+      by_cases h : Nat.succ W <= x
+      · have hminW : Nat.min x W = W :=
+          Nat.min_eq_right (Nat.le_trans (Nat.le_succ W) h)
+        have hminSucc : Nat.min x (Nat.succ W) = Nat.succ W :=
+          Nat.min_eq_right h
+        rw [hminW, hminSucc]
+        simp [h]
+      · have hx : x <= W := Nat.le_of_lt_succ (Nat.lt_of_not_ge h)
+        have hx' : x <= Nat.succ W := Nat.le_trans hx (Nat.le_succ W)
+        have hminW : Nat.min x W = x := Nat.min_eq_left hx
+        have hminSucc : Nat.min x (Nat.succ W) = x := Nat.min_eq_left hx'
+        rw [hminW, hminSucc]
+        simp [h]
+
+private theorem sum_layerSize_cons (js : List Nat) (x : Nat) (xs : List Nat) :
+    (js.map (fun j => layerSize (x :: xs) (Nat.succ j))).sum =
+      (js.map (fun j => if Nat.succ j <= x then 1 else 0)).sum +
+        (js.map (fun j => layerSize xs (Nat.succ j))).sum := by
+  induction js with
+  | nil => simp
+  | cons j js ih =>
+      simp only [List.map_cons, List.sum_cons]
+      rw [layerSize_cons, ih]
+      simp only [Nat.add_assoc, Nat.add_comm, Nat.add_left_comm]
+
+private theorem sum_layerSize_nil (js : List Nat) :
+    (js.map (fun j => layerSize [] (Nat.succ j))).sum = 0 := by
+  change (js.map (fun _ => 0)).sum = 0
+  induction js with
+  | nil => simp
+  | cons j js ih => simp [ih]
+
+private theorem layerSum_cons (x : Nat) (xs : List Nat) (W : Nat) :
+    layerSum (x :: xs) W = Nat.min x W + layerSum xs W := by
+  unfold layerSum
+  rw [foldl_add_eq_sum, foldl_add_eq_sum]
+  simp only [Nat.zero_add]
+  change
+    ((List.range W).map (fun j => layerSize (x :: xs) (Nat.succ j))).sum =
+      Nat.min x W +
+        ((List.range W).map (fun j => layerSize xs (Nat.succ j))).sum
+  rw [sum_layerSize_cons, indicator_sum_eq_min]
+
+/-- Exact nonnegative layer-cake formula, including the truncated case
+    `Wmax < max b`.  This is the mass identity in Section 3.1 of
+    `experimental/notes/thresholds/general_pruned_signed_bound.md` at
+    `9262f63c`, before imposing that `Wmax` bounds every multiplicity. -/
+theorem layerSum_eq_sum_min (b : List Nat) (Wmax : Nat) :
+    layerSum b Wmax = (b.map (fun x => Nat.min x Wmax)).sum := by
+  induction b with
+  | nil =>
+      unfold layerSum
+      rw [foldl_add_eq_sum]
+      simp only [Nat.zero_add]
+      change ((List.range Wmax).map (fun j => layerSize [] (Nat.succ j))).sum = 0
+      exact sum_layerSize_nil (List.range Wmax)
+  | cons x xs ih =>
+      rw [layerSum_cons, ih]
+      simp
+
+private theorem sum_min_eq_sum_of_le (b : List Nat) (Wmax : Nat) :
+    (forall x, x ∈ b -> x <= Wmax) ->
+      (b.map (fun x => Nat.min x Wmax)).sum = b.sum := by
+  induction b with
+  | nil => simp
+  | cons x xs ih =>
+      intro h
+      have hx : x <= Wmax := h x (by simp)
+      have hxs : forall y, y ∈ xs -> y <= Wmax := by
+        intro y hy
+        exact h y (by simp [hy])
+      simp [Nat.min_eq_left hx, ih hxs]
+
+/-- Total mass is preserved when `Wmax` bounds every multiplicity.  This is the
+    nonnegative specialization reused by the charge-preserving split packet. -/
+theorem layerSum_eq_foldl_of_le (b : List Nat) (Wmax : Nat)
+    (h : forall x, x ∈ b -> x <= Wmax) :
+    layerSum b Wmax = b.foldl (· + ·) 0 := by
+  rw [layerSum_eq_sum_min, foldl_add_eq_sum]
+  simp only [Nat.zero_add]
+  exact sum_min_eq_sum_of_le b Wmax h
+
+/-! ### 3.2 Signed pointwise reconstruction.
+
+The source statement is pointwise for an integer-valued syndrome mask.  Its
+`j`-th positive-index layer has the sign of the multiplicity while
+`j ≤ |b(s)|`, and vanishes above that absolute multiplicity. -/
+
+/-- The signed layer at positive threshold `j`. -/
+def signedLayer (z : Int) (j : Nat) : Int :=
+  if j <= z.natAbs then z.sign else 0
+
+/-- Sum the signed layers at thresholds `1, ..., Wmax`. -/
+def signedLayerSum (z : Int) (Wmax : Nat) : Int :=
+  ((List.range Wmax).map (fun j => signedLayer z (j + 1))).foldl (· + ·) 0
+
+private theorem foldl_int_add_eq_sum (l : List Int) (acc : Int) :
+    l.foldl (· + ·) acc = acc + l.sum := by
+  induction l generalizing acc with
+  | nil => simp
+  | cons x xs ih =>
+      simp only [List.foldl_cons, List.sum_cons]
+      rw [ih]
+      simp only [Int.add_assoc]
+
+private theorem sum_signed_indicator (js : List Nat) (c : Int) (n : Nat) :
+    (js.map (fun j => if Nat.succ j <= n then c else 0)).sum =
+      c * (((js.map (fun j => if Nat.succ j <= n then 1 else 0)).sum : Nat) : Int) := by
+  induction js with
+  | nil => simp
+  | cons j js ih =>
+      by_cases h : Nat.succ j <= n <;>
+        simp [h, ih, Int.mul_add, Int.add_assoc]
+
+private theorem sum_signedLayer (z : Int) (Wmax : Nat) :
+    ((List.range Wmax).map (fun j => signedLayer z (Nat.succ j))).sum =
+      z.sign * (Nat.min z.natAbs Wmax : Int) := by
+  change
+    ((List.range Wmax).map
+      (fun j => if Nat.succ j <= z.natAbs then z.sign else 0)).sum = _
+  rw [sum_signed_indicator, indicator_sum_eq_min]
+
+/-- Truncated signed layer cake: stopping at `Wmax` reconstructs `z` clipped
+    in absolute value at `Wmax`. -/
+theorem signedLayerSum_eq_sign_mul_min (z : Int) (Wmax : Nat) :
+    signedLayerSum z Wmax = z.sign * (Nat.min z.natAbs Wmax : Int) := by
+  unfold signedLayerSum
+  rw [foldl_int_add_eq_sum]
+  simp only [Int.zero_add]
+  change
+    ((List.range Wmax).map (fun j => signedLayer z (Nat.succ j))).sum = _
+  exact sum_signedLayer z Wmax
+
+/-- Pointwise signed layer-cake identity from Section 3.1 of
+    `experimental/notes/thresholds/general_pruned_signed_bound.md` at
+    `9262f63c`.  Any common upper bound on the absolute multiplicity suffices;
+    exact maximality is needed only to minimize the number of layers. -/
+theorem signedLayerSum_eq (z : Int) (Wmax : Nat) (h : z.natAbs <= Wmax) :
+    signedLayerSum z Wmax = z := by
+  rw [signedLayerSum_eq_sign_mul_min]
+  have hmin : Nat.min z.natAbs Wmax = z.natAbs := Nat.min_eq_left h
+  rw [hmin]
+  exact Int.sign_mul_natAbs z
+
+/-- For positive layer indices, the `natAbs`/`sign` definition is exactly the
+    source's `1_{z ≥ j} - 1_{z ≤ -j}` signed indicator. -/
+theorem signedLayer_eq_indicator_diff (z : Int) (j : Nat) (hj : 0 < j) :
+    signedLayer z j =
+      (if (j : Int) <= z then (1 : Int) else 0) -
+        (if z <= -(j : Int) then (1 : Int) else 0) := by
+  cases z with
+  | ofNat n =>
+      cases n with
+      | zero => simp [signedLayer]; omega
+      | succ n => simp [signedLayer]; omega
+  | negSucc n => simp [signedLayer, Int.negSucc_eq]; omega
+
+/-- Every layer is pruned: its pointwise value lies in `{-1, 0, 1}`. -/
+theorem signedLayer_values (z : Int) (j : Nat) :
+    signedLayer z j = -1 ∨ signedLayer z j = 0 ∨ signedLayer z j = 1 := by
+  unfold signedLayer
+  split
+  · cases z with
+    | ofNat n =>
+        cases n <;> simp
+    | negSucc n => simp
+  · simp
+
+/-- A signed layer never creates support outside the original mask. -/
+theorem signedLayer_ne_zero_imp (z : Int) (j : Nat)
+    (h : signedLayer z j ≠ 0) : z ≠ 0 := by
+  intro hz
+  subst z
+  simp [signedLayer] at h
+
+/-- Function-valued source form: reconstruction holds at every syndrome. -/
+theorem signed_layer_cake {α : Type} (b : α → Int) (Wmax : Nat)
+    (h : forall s, (b s).natAbs <= Wmax) :
+    forall s, signedLayerSum (b s) Wmax = b s := by
+  intro s
+  exact signedLayerSum_eq (b s) Wmax (h s)
 
 /-- layer-cake identity on a concrete unpruned mask (`W_max = 3`):
     `b = [3,1,2,0,3,1]`, `sum b = 10`, three layers of sizes `[5,3,2]`. -/

@@ -48,11 +48,13 @@ LANE: hard input 2 ("image-scale MI + MA, or a direct Sidon payment",
         profile, closed-form transform, factorizing digit sums) -- the
         residual LAYERS: extend the emission machinery to product
         profiles (covers the canonical family), with non-product
-        non-hierarchy bands the remaining outer layer.  Input-2 residual: the admission acceptance (#824),
-        product-profile emission (NEW, named here), whether asymptotic
-        failure is always extreme-shell-carried (the R_mid growth
-        question, open), atlas totality (the Codex team's lane),
-        large-q Sidon.  Fence (N1)
+        non-hierarchy bands the remaining outer layer.  The governing
+        profile-payment interface remains OPEN: an actual same-owner
+        first-match cell, an (A4) analytic/Sidon payment, a separate (A6)/(RC)
+        distinct-slope bound, and a uniform subexponential aggregate census.
+        Also open: a grammar rule; product-profile emission (NEW, named here);
+        whether asymptotic failure is always extreme-shell-carried (the R_mid
+        growth question); atlas totality; and large-q Sidon.  Fence (N1)
         (thm:aperiodic-one-ray-saturation) respected: nothing here pays
         or claims lower reserve.
 ```
@@ -95,7 +97,7 @@ Integrated in-tree packets (consumed and credited, not reproved):
 - **The band-uniform packet (#795)**: narrow-band list certificates
   cover the sparse mode; Sec-4 item 2's structured-family program gets
   the product-profile family (D).
-- **Codex team's atlas-totality lane** (in progress, theirs): unchanged.
+- **Atlas-totality residual**: unchanged by this packet.
 
 ---
 

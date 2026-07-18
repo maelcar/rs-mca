@@ -1,16 +1,14 @@
 /-!
-# Map-smooth fiber + collision-aware cap (W41-FIX M2, path B)
+# Map-smooth agreement arithmetic and collision-aware cap anchors
 
-Serves **K4* petal kernel** (map-smooth is the petal entry machinery).
+This package follows the actual map-smooth source labels and proves their
+all-parameter agreement arithmetic together with fixed numerical cap anchors:
 
-FIX: dropped fabricated `thm:fiber-to-slope` (no such label in frontiers).
-Rebuilt as a faithful instance of the real proved statements:
-
-Source labels (frontiers draft):
-- lem:map-smooth-fiber (L2741): ℓ=⌊k/a⌋+2, A=aℓ, if ℓ≤N−1 then a list of
+Source labels (active thresholds paper; identical in the frontiers draft):
+- lem:map-smooth-fiber: ℓ=⌊k/a⌋+2, A=aℓ, if ℓ≤N−1 then a list of
   size ≥ binom(N,ℓ)/|B| codewords agrees on ≥ A positions; and
   k+a+1 ≤ A ≤ k+2a (equality A=k+2a if a∣k)
-- prop:map-smooth-cap (L2764): with L=⌈binom(N,ℓ)/|B|⌉,
+- prop:map-smooth-cap: with L=⌈binom(N,ℓ)/|B|⌉,
   B_MCA(m) ≥ ⌈ L(q−n) / (q−n + k(L−1)) ⌉ for k+1 ≤ m ≤ A
 
 Explicit integer toy (a∣k so A equals k+2a):
@@ -21,12 +19,11 @@ Explicit integer toy (a∣k so A equals k+2a):
 - |B|=2: L=⌈C(4,3)/2⌉=⌈4/2⌉=2
 - Cap: q−n=2, L=2, k=2 → L(q−n)/(q−n+k(L−1))=4/(2+2)=1 exact
 
-No `sorry`. No mathlib. Dual `native_decide` / `decide`.
+No `sorry`. No mathlib. Fixed numerical anchors retain dual
+`native_decide` / `decide` checks.
 -/
 
 namespace PetalFiber
-
--- Serves K4* petal kernel (path B: lem:map-smooth-fiber + prop:map-smooth-cap).
 
 def binom : Nat → Nat → Nat
   | _, 0 => 1
@@ -35,6 +32,63 @@ def binom : Nat → Nat → Nat
 
 /-- Ceil division ⌈num/den⌉ for den > 0. -/
 def ceilDiv (num den : Nat) : Nat := (num + den - 1) / den
+
+/-! ## General arithmetic in `lem:map-smooth-fiber`.
+
+The source has `a ≥ 1` because `a` is the positive degree of a map-smooth
+polynomial.  This positivity is necessary only for the lower endpoint.  The
+remainder identity, upper endpoint, and divisibility characterization are valid
+for all natural `a`, including Lean's total-division case `a = 0`. -/
+
+/-- Exact division-algorithm kernel for `A = a * (k / a + 2)`. -/
+theorem map_smooth_agreement_remainder (k₀ a₀ : Nat) :
+    a₀ * (k₀ / a₀ + 2) + k₀ % a₀ = k₀ + 2 * a₀ := by
+  have hsplit : k₀ % a₀ + a₀ * (k₀ / a₀) = k₀ :=
+    Nat.mod_add_div k₀ a₀
+  rw [Nat.mul_add]
+  omega
+
+/-- Lower endpoint of the source agreement window.  Positivity is necessary. -/
+theorem map_smooth_agreement_lower (k₀ a₀ : Nat) (ha : 0 < a₀) :
+    k₀ + a₀ + 1 ≤ a₀ * (k₀ / a₀ + 2) := by
+  have hmod : k₀ % a₀ < a₀ := Nat.mod_lt k₀ ha
+  have hrem := map_smooth_agreement_remainder k₀ a₀
+  omega
+
+/-- Upper endpoint of the source agreement window; no positivity is needed. -/
+theorem map_smooth_agreement_upper (k₀ a₀ : Nat) :
+    a₀ * (k₀ / a₀ + 2) ≤ k₀ + 2 * a₀ := by
+  have hrem := map_smooth_agreement_remainder k₀ a₀
+  omega
+
+/-- The full source agreement window, with the implicit positive-degree
+    hypothesis made explicit. -/
+theorem map_smooth_agreement_window (k₀ a₀ : Nat) (ha : 0 < a₀) :
+    k₀ + a₀ + 1 ≤ a₀ * (k₀ / a₀ + 2) ∧
+      a₀ * (k₀ / a₀ + 2) ≤ k₀ + 2 * a₀ :=
+  ⟨map_smooth_agreement_lower k₀ a₀ ha,
+    map_smooth_agreement_upper k₀ a₀⟩
+
+/-- Source equality case: divisibility eliminates the remainder. -/
+theorem map_smooth_agreement_eq_of_dvd (k₀ a₀ : Nat) (hdiv : a₀ ∣ k₀) :
+    a₀ * (k₀ / a₀ + 2) = k₀ + 2 * a₀ := by
+  rw [Nat.mul_add, Nat.mul_div_cancel' hdiv, Nat.mul_comm a₀ 2]
+
+/-- Exact characterization of the top endpoint, including `a = 0`. -/
+theorem map_smooth_agreement_eq_top_iff (k₀ a₀ : Nat) :
+    a₀ * (k₀ / a₀ + 2) = k₀ + 2 * a₀ ↔ a₀ ∣ k₀ := by
+  constructor
+  · intro htop
+    apply Nat.dvd_of_mod_eq_zero
+    have hrem := map_smooth_agreement_remainder k₀ a₀
+    omega
+  · exact map_smooth_agreement_eq_of_dvd k₀ a₀
+
+/-- The lower endpoint would be false without the source's positive degree:
+    at `a = k = 0` it says `1 ≤ 0`. -/
+theorem map_smooth_agreement_lower_false_at_zero :
+    ¬ ((0 : Nat) + 0 + 1 ≤ 0 * (0 / 0 + 2)) := by
+  native_decide
 
 /-! ## Map-smooth parameters (lem:map-smooth-fiber) -/
 
@@ -55,12 +109,18 @@ theorem Aagree_value : Aagree = 6 := by native_decide
 theorem ell_le_N_minus_1 : ell ≤ Nq - 1 := by native_decide
 
 /-- Agreement window: k+a+1 ≤ A ≤ k+2a. -/
-theorem A_lower : k + a + 1 ≤ Aagree := by native_decide
-theorem A_upper : Aagree ≤ k + 2 * a := by native_decide
+theorem A_lower : k + a + 1 ≤ Aagree := by
+  simpa [Aagree, ell] using
+    (map_smooth_agreement_lower k a (by decide))
+theorem A_upper : Aagree ≤ k + 2 * a := by
+  simpa [Aagree, ell] using map_smooth_agreement_upper k a
 
 /-- Equality case a ∣ k ⇒ A = k+2a. -/
 theorem a_divides_k : k % a = 0 := by native_decide
-theorem A_eq_k_plus_2a : Aagree = k + 2 * a := by native_decide
+theorem A_eq_k_plus_2a : Aagree = k + 2 * a := by
+  simpa [Aagree, ell] using
+    (map_smooth_agreement_eq_of_dvd k a
+      (Nat.dvd_of_mod_eq_zero a_divides_k))
 
 /-! ## List size L = ⌈binom(N,ℓ)/|B|⌉ -/
 
@@ -87,7 +147,7 @@ theorem cap_divides : capNum = capExact * capDen := by native_decide
 theorem capExact_value : capExact = 1 := by native_decide
 theorem capCeil_eq_exact : capCeil = capExact := by native_decide
 
-/-- Main cap instance: B_MCA ≥ 1 on this toy. -/
+/-- Numerical RHS/cap anchor equals `1`; no MCA object is encoded. -/
 theorem map_smooth_cap_instance : capExact = 1 := by native_decide
 theorem map_smooth_cap_pos : capExact ≥ 1 := by native_decide
 

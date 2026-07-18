@@ -35,6 +35,15 @@
   "r": 4,
   "ratio": 0.991009
  },
+ "scope": {
+  "certifies": "local scalar capped-Walsh accounting",
+  "does_not_certify": [
+   "same-owner first-match profile cell",
+   "A4 analytic/Sidon payment",
+   "A6/RC distinct-slope bound",
+   "uniform subexponential aggregate census"
+  ]
+ },
  "t5_witness_lhs_rhs": [
   2.9043,
   4.2724

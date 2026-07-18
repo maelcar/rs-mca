@@ -16,10 +16,11 @@ experimental/notes/thresholds/balanced_core_kappa_growth.md gates:
   Group B  the MDS chart identity  kappa(U) = |U|-R  via a direct kernel/rank
            computation of the Vandermonde parity block H_U over F_q.
   Group C  the SET-THEORETIC IDENTITY  kappa = k - |common agreement core|,
-           and an exact census of balanced-core charts (prefix classes) on
-           small RS codes: the joint (proj-dim, kappa, size) distribution.
-  Group D  explicit residual balanced cores at growing scale n, exhibiting
-           kappa = k = Theta(n) with a superpolynomial secant constant.
+           and an exact census of raw prefix-support families on small RS
+           codes: the joint (proj-dim, kappa, size) distribution.
+  Group D  explicit raw empty-core prefix families at growing scale n,
+           exhibiting kappa = k = Theta(n) with a superpolynomial secant
+           upper-bound constant. These are not actual first-match slopes.
   Group E  a small direct check that the transverse-secant count really is
            <= C(R+kappa,kappa+1) (grounds the secant picture; sampled lines).
 
@@ -132,7 +133,7 @@ def group_A():
     lg = []
     for k in (4, 8, 16, 32, 64):
         R = k                    # rate 1/2 model: R = n-k = k, n = 2k
-        kap = k                  # empty-core residual chart: kappa = k (Group C/D)
+        kap = k                  # raw empty-core model: kappa = k (Group C/D)
         val = comb(R + kap, kap + 1)
         import math
         L = math.log2(val)
@@ -189,7 +190,7 @@ def proj_dim(vectors, p):
 
 def census_config(p, n, k, a, w, label, verbose=True):
     """Enumerate a-subsets of D=F_p^* (size n), group by depth-w prefix, and
-    measure (proj-dim, kappa, class-size) for each balanced-core-candidate class.
+    measure (proj-dim, kappa, class-size) for each raw balanced-core candidate.
     Returns summary dict incl. recs and a witness.  Gated identity checked inside."""
     R = n - k
     assert w == a - k - 1, "prefix depth convention w=a-k-1"
@@ -202,7 +203,7 @@ def census_config(p, n, k, a, w, label, verbose=True):
     n_classes = 0
     id_ok = True
     recs = []            # (size, proj_dim, kappa, |core|)
-    wit = None           # witness: members of the largest balanced core
+    wit = None           # witness: members of the largest raw candidate
     for key, members in classes.items():
         n_classes += 1
         Sset = [set(m) for m in members]
@@ -224,20 +225,20 @@ def census_config(p, n, k, a, w, label, verbose=True):
     check("C.identity.%s" % label, id_ok,
           "kappa(|U|-R) == max(0,k-|core|) over all %d classes" % n_classes)
 
-    bc = [r for r in recs if r[1] >= 2]           # balanced cores: proj-dim >= 2
+    bc = [r for r in recs if r[1] >= 2]  # raw balanced-core candidates
     kappa_max_bc = max((r[2] for r in bc), default=-1)
     largest = max(bc, key=lambda r: r[0]) if bc else (0, -1, -1, -1)
     frac_full = (sum(1 for r in bc if r[2] == k) / len(bc)) if bc else float("nan")
 
     if bc:
-        # GATED: some balanced core attains the maximal kernel kappa = k
+        # GATED: some raw candidate attains the maximal kernel kappa = k
         check("C.kappa_max.%s" % label, kappa_max_bc == k,
-              "max kappa over proj>=2 charts=%d, k=%d" % (kappa_max_bc, k))
-        # GATED: the LARGEST balanced core (most members ~ most rays) has kappa=k
-        #        (empty common core) -- the per-chart secant bound is vacuous
-        #        exactly on the charts that could carry the most slopes.
+              "max kappa over raw proj>=2 families=%d, k=%d" % (kappa_max_bc, k))
+        # GATED: the largest raw prefix family has empty core and kappa=k.
+        # Member count is not a realized-slope count or a first-match mass.
         check("C.largest_bc_kappa.%s" % label, largest[2] == k and largest[3] == 0,
-              "largest proj>=2 chart: size=%d kappa=%d core=%d (want kappa=k=%d,core=0)"
+              "largest raw proj>=2 family: size=%d kappa=%d core=%d "
+              "(want kappa=k=%d,core=0)"
               % (largest[0], largest[2], largest[3], k))
 
     if verbose:
@@ -247,28 +248,31 @@ def census_config(p, n, k, a, w, label, verbose=True):
         for r in bc:
             size_by_kappa.setdefault(r[2], []).append(r[0])
         import math
-        print("    [%s] p=%d n=%d k=%d R=%d a=%d w=%d : %d prefix classes, %d balanced (proj>=2)"
+        print("    [%s] p=%d n=%d k=%d R=%d a=%d w=%d : %d prefix classes, "
+              "%d raw balanced-core candidates (proj>=2)"
               % (label, p, n, k, R, a, w, n_classes, len(bc)))
-        print("      kappa histogram over balanced cores (kappa: #charts, max class size):")
+        print("      raw-candidate kappa histogram (kappa: #families, max class size):")
         for kap in sorted(kap_hist):
-            print("        kappa=%d : %4d charts, max_class_size=%d"
+            print("        kappa=%d : %4d families, max_class_size=%d"
                   % (kap, kap_hist[kap], max(size_by_kappa[kap])))
-        print("      largest balanced core: size=%d proj_dim=%d kappa=%d core=%d"
+        print("      largest raw candidate: size=%d proj_dim=%d kappa=%d core=%d"
               % (largest[0], largest[1], largest[2], largest[3]))
-        print("      frac of ALL balanced cores with kappa=k (empty core): %.2f" % frac_full)
+        print("      fraction of raw candidates with kappa=k (empty core): %.2f"
+              % frac_full)
         if largest[2] >= 0:
-            print("      => secant constant on largest chart: C(%d,%d), log2=%.1f"
+            print("      => secant upper-bound constant on largest raw family: "
+                  "C(%d,%d), log2=%.1f"
                   % (R + largest[2], largest[2] + 1,
                      math.log2(max(1, comb(R + largest[2], largest[2] + 1)))))
         if wit is not None:
-            print("      witness (largest balanced core) members: %s ; common core=%s"
+            print("      witness (largest raw candidate) members: %s ; common core=%s"
                   % ([tuple(m) for m in wit[1][:4]], "EMPTY" if wit[4] == 0 else wit[4]))
     return {"n": n, "k": k, "R": R, "n_classes": n_classes, "n_bc": len(bc),
             "largest": largest, "kappa_max_bc": kappa_max_bc,
             "frac_full": frac_full, "recs": recs, "witness": wit}
 
 def group_C():
-    print("[Group C] exact census of balanced-core charts on small RS codes")
+    print("[Group C] exact census of raw prefix-support families on small RS codes")
     summaries = []
     # (p, n, k, a, w=a-k-1) -- ladder where balanced cores (proj-dim>=2) occur
     configs = [
@@ -279,17 +283,17 @@ def group_C():
     ]
     for (p, n, k, a, w, lab) in configs:
         summaries.append(census_config(p, n, k, a, w, lab))
-    # GATED cross-config: max balanced-core kappa = k in every config, and it
-    # increases along the ladder => kappa_max = Theta(n) empirically.
+    # GATED cross-config: max raw-candidate kappa = k in every finite config.
     ks = [(s["n"], s["kappa_max_bc"], s["k"]) for s in summaries]
     check("C.kappa_grows_with_n",
           all(s["kappa_max_bc"] == s["k"] for s in summaries) and ks[-1][1] > ks[0][1],
           "kappa_max=k in every config and increases with n: %s" % ks)
-    # GATED: fraction of balanced cores at maximal kappa=k INCREASES with n
-    #        (mass concentrates at kappa=k -- residual => empty core => kappa=k).
+    # GATED: the fraction of raw candidates at maximal kappa=k increases along
+    # this finite ladder. This is not actual first-match mass.
     fr = [s["frac_full"] for s in summaries]
-    check("C.mass_concentrates_at_kappa_k", fr[-1] > fr[0],
-          "frac(kappa=k) rises along ladder: %s" % [round(x, 2) for x in fr])
+    check("C.raw_fraction_kappa_k_increases", fr[-1] > fr[0],
+          "raw candidate fraction(kappa=k) rises along ladder: %s"
+          % [round(x, 2) for x in fr])
     # GATED: proj-dim and kappa are INDEPENDENT parameters -- exhibit a balanced
     #        core with proj_dim < kappa AND one with proj_dim > kappa across the
     #        census (so kappa is NOT a function of the moving-space dimension).
@@ -301,7 +305,7 @@ def group_C():
     return summaries
 
 # ============================================================================
-# GROUP D -- residual charts force kappa=k=Theta(n): explicit + census-tied
+# GROUP D -- raw empty-core families can have kappa=k=Theta(n)
 # ============================================================================
 def disjoint_equal_prefix_pair(n, w):
     """Two DISJOINT a-subsets S1,S2 of D=[1..n] with equal power sums
@@ -320,13 +324,12 @@ def disjoint_equal_prefix_pair(n, w):
     return S1, S2
 
 def group_D():
-    print("[Group D] residual => kappa=k=Theta(n): explicit PTM pairs + census tie")
+    print("[Group D] raw empty-core prefix families can have "
+          "kappa=k=Theta(n): explicit PTM pairs")
     import math
-    # (D1) explicit, scalable, EXACT residual charts (disjoint equal-prefix pairs).
-    #      Disjoint => empty common core => U=D => kappa=|U|-R=k.  A shift PAIR
-    #      is proj-dim 1, so it is a residual SHIFT-PAIR chart (A6 still needs
-    #      it paid); it certifies kappa=k is attained by exact residual charts
-    #      at every scale.  (proj-dim>=2 balanced cores are exhibited by Group C.)
+    # (D1) explicit scalable raw support pairs with equal prefixes.
+    # Disjointness gives empty raw core and kappa=|U|-R=k. The calculation does
+    # not certify survival through first-match removal or realized slope mass.
     rows = []
     prev = -1.0
     mono = True
@@ -337,7 +340,7 @@ def group_D():
         assert len(S2) == a, "PTM halves must match"
         k = a - w - 1
         R = n - k
-        # verify equal depth-w prefix (residual shift pair) exactly over F_p
+        # Verify the raw equal depth-w prefix exactly over F_p.
         pref_ok = prefix_key(S1, p, w) == prefix_key(S2, p, w)
         core = set(S1) & set(S2)
         U = sorted(set(range(1, n + 1)) & (set(S1) | set(S2)))
@@ -353,8 +356,14 @@ def group_D():
         rows.append((n, k, kap_ker, logc))
         print("      n=%3d a=%2d k=%2d R=%2d : kappa=%2d  log2 C(R+kappa,kappa+1)=%.1f (=%.3f n)"
               % (n, a, k, R, kap_ker, logc, logc / n))
-    check("D1.kappa_theta_n", mono and rows[-1][2] > rows[0][2] and rows[-1][3] / rows[-1][0] >= 0.5,
-          "kappa=k grows with n and secant constant is superpolynomial (>=0.5 n)")
+    check(
+        "D1.kappa_theta_n",
+        mono
+        and rows[-1][2] > rows[0][2]
+        and all(4 * kap >= size and 2 * kap <= size for size, _, kap, _ in rows)
+        and rows[-1][3] / rows[-1][0] >= 0.5,
+        "n/4 <= kappa=k <= n/2 on every row and secant log2 constant >=0.5n",
+    )
     return rows
 
 # ============================================================================

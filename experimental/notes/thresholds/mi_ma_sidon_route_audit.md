@@ -52,7 +52,9 @@ identities `sum_c|tau_w|^2 = p^w n`, `sum_c|tau_w|^4 = p^w(2n^2-n)` (proved all
 `w<=3`-skeleton / `w>=4` incidence wall; the char-0 `N_0^{(0)}=0` computation; the
 Bernoulli/inverse-Littlewood-Offord reframe; the `Gamma_r` (`r>=3`) connection to
 `grande_finale`; and the cross-lane insight that his dyadic-block obstruction and
-holmbuar's PTE residual family `#534` are the *same* equal-power-sum wall. This
+holmbuar's raw PTE prefix-support family `#534` expose the same
+equal-power-sum structure. #534 does not certify survival as an actual
+first-match residual. This
 note **consumes** his material and adds only the *side-by-side applicability
 comparison* against the image-face cuts and the *route census*.
 
@@ -167,7 +169,8 @@ The clean separation lemma: **the two large-sieve objects are distinct (space,
 degree, signing), CUT by the same structure-blindness on their unsigned legs, and
 OPEN by the same signed-cancellation crux on their signed cores.** This unifies
 the wall across the image face and the max-fiber face -- extending hughes' own
-cross-lane insight (his dyadic-block obstruction `==` holmbuar's PTE family `#534`)
+cross-lane insight (his dyadic-block obstruction and holmbuar's raw PTE family
+`#534` share an equal-power-sum mechanism)
 up from the PTE/6th-moment level to the 4th-moment level.
 
 **Flagged for scottdhughes (with credit, as a route constraint -- not a

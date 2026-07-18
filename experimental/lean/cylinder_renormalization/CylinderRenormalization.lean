@@ -1,28 +1,19 @@
 /-!
-# Failing bands are wide + cylinder renormalization (statement stub)
+# Cylinder modulus arithmetic and finite renormalization anchors
 
-Maps to **hard input 2**: fifth packet of the arc (forcing -> typing ->
-reduction -> scope -> compression).  U1: failing bands are exponentially
-wide (|A| >= (c/L) e^{2 eta N}; narrow bands never fail).  U2/U3 (base 3,
-c = 3^B): the angle vector is the x3-orbit of theta_1, and on the cylinder
-xi = 3^k m the top k factors degenerate to (1+z)^2 exactly, giving
-  hatf_B(3^k m) = sum_j C(2k, B-j) [z^j] p_{B-k, m},
-with a twisted polynomial-renormalization form for r != 0 cylinders.  The
-cube-certificate recursion is valid on subgroup cylinders; twisted
-cube-flatness is false and is regression-pinned by the Python verifier
-(base-5 COUNTEREXAMPLE pinned: the identity is base-3-specific).
+This standalone module follows the corrected source packet
+`experimental/notes/thresholds/cylinder_renormalization.md`.  It proves the
+all-depth base-3 normalization behind U1/V1,
 
-Note:     `experimental/notes/thresholds/cylinder_renormalization.md`.
-Verifier: `experimental/scripts/verify_cylinder_renormalization.py`
-          (42/42, tamper 5/5).
+`2 * ((3^B + 1) / 2) = 3^B + 1`, hence `3^B = 2L - 1`,
 
-Analytic results (PROVED in note + Python verifier; NOT in Lean): the
-trigonometric content of U2/U3 and the cube corollary live in the note and
-the scans.  This module is the DECIDABLE arithmetic shadow (stdlib-only
-`native_decide`, no mathlib, no `sorry`): U1's exact modulus identity
-c = 2L - 1 on base 3, the DEGENERATE m = 0 instance of U3's convolution
-algebra (binomial rows; the trigonometric m != 0 content is Python-only),
-and the shared class pins.
+and retains the existing finite arithmetic anchors for the degenerate U3
+convolution, shifted Vandermonde checks, and class census.
+
+The primary theorem is subtraction-free.  The analytic Parseval estimate,
+trigonometric U2/U3 identities, subgroup cube-flatness, and the corrected
+twisted-coset counterexample are not formalized here.  No mathlib and no
+`sorry` are used.
 -/
 
 namespace CylinderRenormalization
@@ -34,7 +25,8 @@ def binom (n k : Nat) : Nat :=
 /-- Full slice `M = C(2B,B)`. -/
 def slice (B : Nat) : Nat := binom (2 * B) B
 
-/-- Realized image `L = (3^B+1)/2` (B even). -/
+/-- Arithmetic image scale `L = (3^B+1)/2`; V1 verifies the realized-image
+    interpretation at its displayed positive even depths. -/
 def realizedImage (B : Nat) : Nat := (3 ^ B + 1) / 2
 
 /-- Collision count `M2`. -/
@@ -46,9 +38,42 @@ def collisionMass (B : Nat) : Nat :=
 
 /-! ## 1. U1's exact modulus identity (base 3): `c = 2L - 1`. -/
 
+/-- Every power of three is odd, expressed as its remainder modulo two. -/
+private theorem three_pow_mod_two (B : Nat) : 3 ^ B % 2 = 1 := by
+  induction B with
+  | zero => decide
+  | succ B ih =>
+      rw [Nat.pow_succ, Nat.mul_mod, ih]
+
+/-- Subtraction-free all-depth form of the base-3 image normalization. -/
+theorem realizedImage_double (B : Nat) :
+    2 * realizedImage B = 3 ^ B + 1 := by
+  have hodd : 3 ^ B % 2 = 1 := three_pow_mod_two B
+  have hsplit : 3 ^ B % 2 + 2 * (3 ^ B / 2) = 3 ^ B :=
+    Nat.mod_add_div (3 ^ B) 2
+  have hsum : 3 ^ B + 1 = 2 * (3 ^ B / 2 + 1) := by
+    omega
+  have hhalf : (3 ^ B + 1) / 2 = 3 ^ B / 2 + 1 := by
+    rw [hsum]
+    exact Nat.mul_div_cancel_left _ (by decide)
+  unfold realizedImage
+  rw [hhalf]
+  omega
+
+/-- Exact source normalization, valid at every natural depth. -/
+theorem modulus_identity_all (B : Nat) :
+    3 ^ B = 2 * realizedImage B - 1 := by
+  calc
+    3 ^ B = (3 ^ B + 1) - 1 :=
+      (Nat.add_sub_cancel (3 ^ B) 1).symm
+    _ = 2 * realizedImage B - 1 := by
+      rw [realizedImage_double]
+
+/-- The former finite API, now a direct wrapper around the all-depth theorem. -/
 theorem modulus_identity :
     ∀ B ∈ [4, 6, 8, 16, 32, 64], 3 ^ B = 2 * realizedImage B - 1 := by
-  native_decide
+  intro B _
+  exact modulus_identity_all B
 
 /-! ## 2. U3's combinatorial half: the `(1+z)^{2k}` convolution.
 

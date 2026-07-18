@@ -1,0 +1,1 @@
+FIELD_AND_PASCH_SELFTEST: PASS p=2130706433 omega_order=64 synthetic_paths=6 synthetic_unique=1 target_profile=6,3,4

@@ -1,0 +1,12 @@
+R31_ROLE04_CUBIC_SOURCE_PROJECTION_POINT: PASS
+origin_main=c4856fa6db0b2cd491f5c5fe2a0f3c8468de645e
+pr892_head=d4a33c87ac3e3e1a5078b88fddf085cb6536b75e
+pr904_head=213c4ebdebf28c0bd92aa47f293f0138b034037b
+endpoint c=18619 k=2 U=230415 r=44982 m=22491 E=103078 N=51539 D_pair=63218721 D_root=189669415 existing_shortfall=669
+source_point mult=6107 D_star=18644671 strengthened_excess=18644002
+boundary c18619_k1 last_excluded_U=246939 excess=1529 first_unexcluded_U=246940 shortfall=2592
+boundary c18619_k2 last_excluded_U=246935 excess=591 parity_skip_U=246936 first_unexcluded_U=246937 shortfall=1469
+boundary c18618_k1 last_excluded_U=246937 excess=1730 first_unexcluded_U=246938 shortfall=2391
+local_parent_charge=0 global_ledger_charge=0 official_score=0/2
+mutations=6/6 caught
+RESULT: PASS

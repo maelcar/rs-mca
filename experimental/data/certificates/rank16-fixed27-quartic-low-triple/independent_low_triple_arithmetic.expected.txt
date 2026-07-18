@@ -1,0 +1,5 @@
+states 25996 feasible 19346 interval_infeasible 6647 capacity_infeasible 3
+best (28, 12401, 16496, 51200, 2048, 16, 75776, 37, 8, 238, 210)
+sharp states 25996 feasible 19350 interval_infeasible 6643 capacity_infeasible 3
+sharp best (-6766, 12997, 15900, 50604, 1, 32768, 72180, 72180, 15900, 1041918300, 1041925066)
+union 154021

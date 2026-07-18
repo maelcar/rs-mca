@@ -52,12 +52,14 @@ Also consumes the in-paper theorems `prop:simple-pole-lower` (L6180),
 
 **Verifier:** `experimental/scripts/verify_lower_reserve_deep_remainder.py`
 -> `RESULT: PASS 44/44` (`--check`), `RESULT: PASS 10/10`
-(`--tamper-selftest`), under normal and optimized Python, stdlib only. It
-exhaustively recomputes the occupancy atlas over `F_25` (square fold, `c=2`)
-and `F_13` (cube fold, `c=3`), the degree-`c` interlace and field-drop
-alphabet contrast over `F_25`, and the #714 contradiction arithmetic over
-`F_169`, and writes a deterministic JSON certificate to
-`experimental/data/certificates/lower-reserve-deep-remainder/`.
+(`--tamper-selftest`), plus `certificate check: PASS`, under normal and
+optimized Python, stdlib only. It exhaustively recomputes the occupancy atlas
+over `F_25` (square fold, `c=2`) and `F_13` (cube fold, `c=3`), the degree-`c`
+interlace and field-drop alphabet contrast over `F_25`, and the #714
+contradiction arithmetic over `F_169`. Mode `--check` byte-compares that result
+with the deterministic frozen JSON certificate without writing; only explicit
+`--write` regenerates
+`experimental/data/certificates/lower-reserve-deep-remainder/deep_remainder_atlas.json`.
 
 ---
 
@@ -346,5 +348,6 @@ python3 -O experimental/scripts/verify_deep_remainder_partial_occupancy_countere
 ```
 
 Both verifiers are stdlib-only and fail closed under optimized mode. The first
-writes the deterministic checked certificate under
+checks the deterministic frozen certificate byte-for-byte without writing it.
+Its explicit `--write` mode is reserved for reviewed regeneration under
 `experimental/data/certificates/lower-reserve-deep-remainder/`.

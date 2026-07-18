@@ -1,0 +1,14 @@
+[PASS] analytic constant A > 5/6 (A=0.939692620785908)
+[PASS] identity A*C = 1/4 + A/2
+[PASS] terminal h2 lower bound m2 is positive (m2=9.423028002201822e-04)
+[PASS] terminal h1 coarse lower bound is positive (lower=4.985591599339458e-03)
+[PASS] direct suffix coefficients match closed h1/h2 formulas (max_error=1.110e-16)
+[PASS] all three suffix coefficients are positive (minima=5.247563607142225e-02,8.101238329537645e-02,9.423028002201773e-04)
+[PASS] h0 strictly exceeds h2 (min_gap=2.853674722395419e-02)
+[PASS] observed h2 minimum equals m2
+[PASS] prefix alternating cone through B=16 (min_beta=5.513e-09)
+[PASS] terminal two-level charges positive through B=16 (min_charge=1.399892570065204e-06)
+[PASS] strict beta0*m2 lower bound through B=16 (min_ratio=55.688719230337)
+[PASS] all finite prefixes enumerated (count=32767)
+[PASS] root-anchor deletion factor q1=1/4 through B=10 (max_gap=4.163e-17)
+RESULT: PASS (13/13)

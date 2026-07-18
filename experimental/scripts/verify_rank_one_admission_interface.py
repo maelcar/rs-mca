@@ -310,6 +310,10 @@ def build_certificate() -> tuple[dict[str, object], int, int]:
                 "MI or MA certificate",
                 "Sidon moment payment",
                 "ray compiler",
+                "same-owner first-match profile cell",
+                "A4 analytic/Sidon payment",
+                "A6/RC distinct-slope bound",
+                "uniform subexponential aggregate census",
             ],
         },
     }

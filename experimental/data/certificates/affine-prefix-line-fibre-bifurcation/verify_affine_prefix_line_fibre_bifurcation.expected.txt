@@ -1,0 +1,8 @@
+AFFINE_PREFIX_LINE_FIBRE_BIFURCATION: PASS
+local_signatures=15 ambiguity_pattern=14x1+1x2
+B2_histogram=size1:50,size2:8,size4:1 supports=70
+generating_function_checks=B1..B10
+representation_moments=j0..j12,tau0..tau4
+separator_checks=B2..B100
+eta=0.03484375615097668 high_switch_checks=B2..B100
+tamper_checks=3/3

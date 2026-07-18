@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Verifier: the adequacy depth law and the greedy completion.
+"""Verifier: the local scalar adequacy depth law and greedy completion.
 
 Claims checked (see experimental/notes/thresholds/rank_one_greedy_adequacy.md):
 
@@ -10,9 +10,9 @@ Claims checked (see experimental/notes/thresholds/rank_one_greedy_adequacy.md):
   T2  (depth <= 3 law)   single-pattern adequacy best >= cap holds for ALL
                          3-adic instances at k <= 3 (exhaustive; worst
                          ratio exactly 1 attained) -- hence for EVERY B,
-                         depth <= 3 hierarchy pieces are paid in full by
-                         one pattern (upgrades #820 S5 to an all-B theorem
-                         at these depths).
+                         one pattern reaches each hierarchy piece's local
+                         scalar cap (upgrades #820 S5 to an all-B scalar
+                         theorem at these depths).
   T3  (depth >= 4 fails) the first violating instance is EXACTLY
                          (k, r, top, sG) = (4, 4, {0,1,2}, -1), ratio
                          0.99100917...; worst ratios decay with k
@@ -23,8 +23,8 @@ Claims checked (see experimental/notes/thresholds/rank_one_greedy_adequacy.md):
                          resolves NEGATIVELY at depth >= 4, positively at
                          depth <= 3.
   T4  (greedy completion) paying patterns in decreasing |hcube| until the
-                         omega-cap sum h_+ is sound (#820 S4's cap) and
-                         FULLY adequate at EVERY depth:
+                         local scalar omega-cap sum h_+ is sound (#820 S4)
+                         and scalar-adequate at EVERY depth:
                              sum_eps |h| <= 2^m sum_D |hcube(D)|
                          (triangle inequality), so the cumulative payments
                          always reach the cap.  Exhaustive at k <= 5, spot
@@ -302,7 +302,7 @@ def v_guards_and_realization(cert):
                    for dbits in range(2 ** s))
     check(f"T3: REALIZED at B=6, k=4, piece {{+-4 mod 81}}, class {''.join(map(str, v))}: best {best:.4f} < cap {pos:.4f} (ratio {best/pos:.4f})",
           pos > 1e-9 and best < pos - 1e-6)
-    check(f"T4: the same realized class is paid IN FULL by greedy (sum pays {tot_pays:.4f} >= cap)",
+    check(f"T4: total coefficient capacity reaches the same class's scalar cap ({tot_pays:.4f} >= cap)",
           tot_pays >= pos - 1e-9)
     # T1: brute ratio == abstract instance ratio (B-independence anchor)
     worst_t1 = 0.0
@@ -493,7 +493,16 @@ if __name__ == "__main__":
     if args and args[0] == "--emit-certificate":
         path = args[1]
         cert = {"packet": "rank-one-greedy-adequacy", "chart": "base-3",
-                "claims": ["T1", "T2", "T3", "T4"]}
+                "claims": ["T1", "T2", "T3", "T4"],
+                "scope": {
+                    "certifies": "local scalar capped-Walsh accounting",
+                    "does_not_certify": [
+                        "same-owner first-match profile cell",
+                        "A4 analytic/Sidon payment",
+                        "A6/RC distinct-slope bound",
+                        "uniform subexponential aggregate census",
+                    ],
+                }}
     ok = run_all(cert)
     if cert is not None and ok:
         with open(path, "w") as fh:

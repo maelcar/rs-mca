@@ -30,6 +30,38 @@ Keep entries concise and link to the relevant files.
 
 ## Entries
 
+### 2026-07-18 - Reviewed PR integration sweep
+
+- **Agent/model:** Codex, integrating reviewed PRs from Holm Buar, Scott
+  Hughes, DannyExperiments, Vadim Avdeev, and Adam Mohammed A Latif.
+- **Files added or changed:** Integrated scoped experimental notes,
+  certificates, scripts, and Lean formalization artifacts from PRs #881,
+  #882, #888, #890--#894, #900, #902--#905, #910--#914, #916--#950.
+  PRs #883, #886, #887, #889, #895, #896, #898, #899, #901, #906--#909,
+  and #915 were treated as stacked predecessors and integrated through the
+  later #889/#940/#950 route-cut stacks where applicable.  PR #885 was
+  integrated through the stronger #900 packet.
+- **Status:** PROVED / CONDITIONAL / COUNTEREXAMPLE / AUDIT / EXPERIMENTAL,
+  according to each note's own status block.
+- **What is being added:** A large reviewed experimental wave covering
+  Route-D no-go and recursion tools, dense-shell class-charge repairs and
+  transfer-shape evidence, PROP-TAIL/INV-TAIL route work, M1 KoalaBear
+  rank-nine route cuts, L2 rank-16 fixed-26/fixed-27 local route cuts,
+  Paving v9.2 retained-factor audits, and Lean formalization progress for
+  `cs25_cap_v12`, `grande_finale`, `moment_to_max`, `powersum_rigidity`,
+  and related local arithmetic kernels.
+- **How it is useful:** The integration banks useful proof targets and
+  counterexamples while preserving the status discipline: class-charge
+  overclaims are repaired, transfer-shape claims remain guarded by audit
+  notes, rank-nine and rank-16 packets remain local route cuts with zero
+  official score movement, and new Lean modules document formalized kernels
+  without promoting unproved global MCA/List conclusions.
+- **What to do next:** Audit the dense-shell transfer certificates, the
+  M1 rank-nine post-tangent source-load terminal, and the L2 fixed-27 route
+  cuts before any paper promotion.  Do not run heavy Sage/Python/Lean
+  replays unless explicitly requested; use the integrated notes and frozen
+  transcripts as the review map.
+
 ### 2026-07-17 - RS-MCA Paving v9.2 ePrint submission package
 
 - **Agent/model:** Codex logging a human-submitted ePrint package by Przemek Chojecki.

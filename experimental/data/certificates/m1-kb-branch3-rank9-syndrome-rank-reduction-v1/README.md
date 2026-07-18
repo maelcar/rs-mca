@@ -30,15 +30,20 @@ CORRELATED_AGREEMENT_ROUTE_TO_SPARSE_SIGMA
 The second terminal is not a paid owner.  This packet moves no ledger value
 and does not close rank nine, branch 3, or the KoalaBear row.
 
-Replay:
+Replay the committed certificate before any regeneration.  Use `--write` only
+after an intentional source change, then re-run `--check`.
 
 ```bash
-python3 experimental/scripts/verify_m1_kb_branch3_rank9_syndrome_rank_reduction_v1.py \
-  --write
 python3 experimental/scripts/verify_m1_kb_branch3_rank9_syndrome_rank_reduction_v1.py \
   --check
 python3 experimental/scripts/verify_m1_kb_branch3_rank9_syndrome_rank_reduction_v1.py \
   --tamper-selftest
+
+# Regeneration only after an intentional source change:
+python3 experimental/scripts/verify_m1_kb_branch3_rank9_syndrome_rank_reduction_v1.py \
+  --write
+python3 experimental/scripts/verify_m1_kb_branch3_rank9_syndrome_rank_reduction_v1.py \
+  --check
 
 python3 -O experimental/scripts/verify_m1_kb_branch3_rank9_syndrome_rank_reduction_v1.py \
   --check

@@ -1,87 +1,209 @@
 {
   "artifact": "profile-envelope-target-comparison",
-  "lane": "hard input 4 (complete profile-envelope comparison with the target)",
   "base_commit": "c35a6da",
-  "verifier": "experimental/scripts/verify_profile_envelope_target_comparison.py",
-  "verifier_result": "PASS (71/71)",
-  "note": "experimental/notes/thresholds/profile_envelope_target_comparison.md",
-  "no_tex_or_pdf_edited": true,
-  "normalization": "realized image L_lambda = |Phi_w(Omega_lambda)| (PO5); NOT ambient |B|^w",
-  "object": {
-    "envelope": "E_n(a) = 1 + (n-a+1) + sup_line sum_lambda (1 + barN_lambda)",
-    "barN": "barN_lambda = |Omega_lambda| / L_lambda",
-    "passes_identity_dominant_iff": "barN_lambda(a) <= barN_id(a) for every realized profile lambda (ID)",
-    "boundary_map": "Phi_w(S) = depth-w locator prefix of Q_S, w = a-k-1"
-  },
+  "integration": "2633895a",
+  "payload_sha256": "66902d6057db838fd3044b85ec9b829005dbae75e3011b5c8f27a735cbcf98ef",
+  "producer_head": "8cd4f4b6",
   "rows": {
+    "generic_20subset_GF121": {
+      "L_id": 9359,
+      "ambient": 14641,
+      "full_codomain": false,
+      "max_fiber": 57,
+      "size": 184756
+    },
     "prime_GF13_n12": {
-      "field": "GF(13)", "n": 12, "a": 6, "k": 3, "w": 2, "domain": "F_13^x",
-      "identity": {"size": 924, "L_id": 169, "barN_id": "924/169"},
-      "square_c2r0": {"size": 20, "L_sq": 13, "barN_sq": "20/13"},
-      "formal_identity_budget": "924/169",
-      "FI_identity_holds": true, "L_id_eq_Bpow_w": "169 = 13^2",
-      "field_drop": false, "square_field_values": 12,
-      "verdict": "identity dominates all scales",
-      "cross_mult_domination": "924*13 = 12012 >= 3380 = 20*169"
+      "c3r0": {
+        "L": 1,
+        "barN": "6",
+        "deep_dominated": true,
+        "identity_dominated": false,
+        "size": 6
+      },
+      "identity": {
+        "L": 169,
+        "barN": "924/169",
+        "size": 924
+      },
+      "power_cells": [
+        {
+          "L": 13,
+          "barN": "20/13",
+          "c": 2,
+          "r": 0,
+          "size": 20
+        },
+        {
+          "L": 1,
+          "barN": "6",
+          "c": 3,
+          "r": 0,
+          "size": 6
+        },
+        {
+          "L": 66,
+          "barN": "14/11",
+          "c": 4,
+          "r": 2,
+          "size": 84
+        },
+        {
+          "L": 1,
+          "barN": "2",
+          "c": 6,
+          "r": 0,
+          "size": 2
+        }
+      ]
+    },
+    "prime_GF19_n18": {
+      "identity": {
+        "L": 6859,
+        "size": 43758
+      },
+      "square": {
+        "L": 19,
+        "size": 126
+      },
+      "square_beats_identity": true
+    },
+    "prime_w1_family": {
+      "deep": 3,
+      "formula_identity": "(p-1)(p-2)/(2p)",
+      "formula_square": "(p-1)/2",
+      "primes_checked": [
+        11,
+        13,
+        17,
+        19,
+        23,
+        29,
+        31,
+        37,
+        41
+      ],
+      "square_beats_deep": true,
+      "square_beats_identity": true
     },
     "tower_GF49_n12": {
-      "field": "GF(7^2)", "n": 12, "a": 6, "k": 3, "w": 2, "domain": "theta*H, |H|=12",
-      "identity": {"size": 924, "L_id": 319, "barN_id": "924/319"},
-      "square_c2r0": {"size": 20, "L_sq": 7, "barN_sq": "20/7"},
-      "formal_identity_budget": "924/2401",
-      "FI_identity_holds": false, "L_id_lt_Bpow_w": "319 < 49^2 = 2401",
-      "field_drop": true, "B_phi": "F_7", "lambda_2": "1/2", "square_field_values": 6,
-      "verdict": "square beats formal identity budget (paper's thm:smooth-quotient-obstruction)",
-      "cross_mult_obstruction": "20*2401 = 48020 > 6468 = 924*7"
+      "formal_identity": "924/2401",
+      "power_cells": [
+        {
+          "barN": "20/7",
+          "c": 2,
+          "r": 0
+        },
+        {
+          "barN": "6",
+          "c": 3,
+          "r": 0
+        },
+        {
+          "barN": "14/11",
+          "c": 4,
+          "r": 2
+        },
+        {
+          "barN": "2",
+          "c": 6,
+          "r": 0
+        }
+      ],
+      "realized_identity": "924/319",
+      "selected_leader": "c=3,r=0"
     },
     "tower_GF121_n20": {
-      "field": "GF(11^2)", "n": 20, "a": 10, "k": 7, "w": 2, "domain": "theta*H, |H|=20",
-      "identity": {"size": 184756, "L_id": 1331, "barN_id_realized": "184756/1331"},
-      "square_c2r0": {"size": 252, "L_sq": 11, "barN_sq": "252/11"},
-      "formal_identity_budget": "184756/14641",
-      "FI_identity_holds": false, "L_id_collapse": "1331 = 11^3 = 11^4 / 11 (factor p)",
-      "field_drop": true, "B_phi": "F_11", "lambda_2": "1/2",
-      "verdict": "square beats formal identity budget; identity image ALSO collapses (input-2 coupling)",
-      "cross_mult_obstruction": "252*14641 = 3689532 > 2032316 = 184756*11",
-      "target_strict_move": {"E_identity": 26, "E_complete": 50, "B_star": 26,
-        "identity_says": "safe", "complete_says": "unsafe"}
-    },
-    "prime_GF41_n20": {
-      "field": "GF(41)", "n": 20, "a": 10, "k": 7, "w": 2, "domain": "order-20 subgroup of F_41^x",
-      "identity": {"size": 184756, "L_id": 1681, "barN_id": "184756/1681"},
-      "square_c2r0": {"size": 252, "L_sq": 41, "barN_sq": "252/41"},
-      "formal_identity_budget": "184756/1681",
-      "FI_identity_holds": true, "L_id_eq_Bpow_w": "1681 = 41^2",
-      "field_drop": false,
-      "verdict": "identity dominates (deep saturated, no drop, FI holds)"
-    },
-    "generic_20subset_GF121": {
-      "note": "control: a generic (non-coset) 20-subset does NOT collapse",
-      "distinct_depth2_prefixes_first_60000_supports": 7342,
-      "ambient_codomain": 14641,
-      "verdict": "identity image collapse is specific to the smooth coset D=theta*H"
+      "exact_full_codomain": false,
+      "formal_identity": "184756/14641",
+      "identity_L": 1331,
+      "power_cells": [
+        {
+          "L": 11,
+          "barN": "252/11",
+          "c": 2,
+          "r": 0,
+          "size": 252
+        },
+        {
+          "L": 190,
+          "barN": "66/19",
+          "c": 4,
+          "r": 2,
+          "size": 660
+        },
+        {
+          "L": 1,
+          "barN": "6",
+          "c": 5,
+          "r": 0,
+          "size": 6
+        },
+        {
+          "L": 1,
+          "barN": "2",
+          "c": 10,
+          "r": 0,
+          "size": 2
+        }
+      ],
+      "realized_identity": "184756/1331",
+      "square_beats_formal_proxy": true,
+      "square_beats_realized_identity": false
     }
   },
-  "census_542_reproduced": [
-    {"p": 5, "n": 8, "a": 4, "Omega_sq": 6, "L_sq": 5, "max_bucket": 2, "QR6": 2},
-    {"p": 7, "n": 12, "a": 4, "Omega_sq": 15, "L_sq": 7, "max_bucket": 3, "QR6": 3},
-    {"p": 11, "n": 20, "a": 4, "Omega_sq": 45, "L_sq": 11, "max_bucket": 5, "QR6": 5}
-  ],
-  "decision": {
-    "c_i_prime_no_drop": "PROVED: prime base field => lambda_c=1 all scales, (FI) holds => identity dominates whole envelope; SB1/(1.9) is the complete comparison",
-    "c_ii_tower_obstruction": "COUNTEREXAMPLE (route-scoped): c=2 field-drop square beats formal identity budget; = paper's own thm:smooth-quotient-obstruction; NOT a new floor",
-    "c_iii_reduction_sharpened": "PROVED reduction: input 4 = proved wrapper o (identity+quotient (FI) = input 2) + (RC); NEW: identity (FI) itself fails on smooth coset, coupling to input 2 through the identity term"
+  "schema": "rs-mca-profile-envelope-target-comparison-v2",
+  "scope": {
+    "asymptotic_FI_decided": false,
+    "complete_profile_inventory": false,
+    "enumerated": "identity and complete-power-fiber quotient/remainder slices",
+    "not_enumerated": [
+      "received-line and first-match admission",
+      "Chebyshev profiles",
+      "planted profiles",
+      "arbitrary partial-occupancy profiles",
+      "balanced-core profiles",
+      "PEU and RC upper payments"
+    ],
+    "universal_prime_theorem": false,
+    "unsafe_theorem": false
   },
-  "residual_open": "(PEU-id) identity-slice (FI) L_id >= e^{-o(n)}|B|^w uniformly = hard input 2 applied to the identity term",
-  "fences_respected": [
-    "no emission-based lower reserve (thm:aperiodic-one-ray-saturation)",
-    "realized-image normalization L_lambda (PO5), never ambient",
-    "no route killed by prop:pairwise-overlap-limit / drc:prop-recurrence-nonadditive / prop:no-growing-prime-density re-attempted"
+  "source_bindings": [
+    {
+      "path": "experimental/notes/thresholds/profile_envelope_target_comparison.md",
+      "sha256": "7c74d9c8088c772054f8d2674032e637e144107782407e17f4a48a3ae2d1c998"
+    },
+    {
+      "path": "experimental/scripts/verify_profile_envelope_target_comparison.py",
+      "sha256": "b7e843fbebc48b4312dd0b190df4deb3880aad6d29f05c0276ada7ee3d0c266d"
+    },
+    {
+      "path": "experimental/lean/profile_envelope_target_comparison/ProfileEnvelopeTargetComparison.lean",
+      "sha256": "579b9b2b3d949c8e1c053f5fe1ad599826f1c1606c09fbd473a5a69715944d35"
+    },
+    {
+      "path": "experimental/notes/thresholds/profile_envelope_completeness.md",
+      "sha256": "2c17054fe09092a620156acdf8ff606755c1cb6605fa6f4094142d08123a845b"
+    },
+    {
+      "path": "experimental/notes/thresholds/envelope_identity_window.md",
+      "sha256": "e0977296754ef0d5115d2e3219f2f1e990f2cc7b10aac9d789d464827a3d3fa2"
+    },
+    {
+      "path": "experimental/asymptotic_rs_mca_frontiers.tex",
+      "sha256": "0e3aa7b1ba79b1065439ae484f4cb989d80cabe18afb68ec63a6b21d1f3370fd"
+    }
   ],
-  "caps": {
-    "full_identity_enumeration_max_n": 20,
-    "largest_enumerated_binomial": "C(20,10) = 184756",
-    "cpu_seconds": 1.9,
-    "max_rss_kb": 14208
-  }
+  "status": "COUNTEREXAMPLE",
+  "target_direction": {
+    "B_star": 26,
+    "conclusion": "selected realized safe test fails; no unsafe theorem",
+    "formal_identity_plus_all_selected_power_cells": 65,
+    "formal_identity_plus_square_proxy": 50,
+    "formal_identity_proxy": 26,
+    "realized_identity_plus_all_selected_power_cells": 191,
+    "realized_identity_plus_square_selected_budget": 176,
+    "realized_identity_selected_budget": 152
+  },
+  "verifier": "experimental/scripts/verify_profile_envelope_target_comparison.py",
+  "verifier_result": "PASS (89/89)"
 }

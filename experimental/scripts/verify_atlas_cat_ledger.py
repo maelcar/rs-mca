@@ -43,6 +43,8 @@ Four blocks.
 No .tex/.pdf is modified.
 """
 
+import hashlib
+import json
 import os
 import sys
 
@@ -64,6 +66,12 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.normpath(os.path.join(HERE, ".."))          # experimental/
 TEX = os.path.join(ROOT, "asymptotic_rs_mca_frontiers.tex")
 NOTES = os.path.join(ROOT, "notes", "thresholds")
+CERTIFICATE = os.path.join(
+    ROOT, "data", "certificates", "atlas-cat-ledger", "atlas_cat_ledger.json"
+)
+EXPECTED_CERTIFICATE_SHA256 = (
+    "df79dad137e2ff8241eb35c8bafe977454508917eb2fa714a302e6467f10862d"
+)
 
 WINDOW = 2  # tolerance window, in lines, either side of the stated anchor
 
@@ -268,7 +276,8 @@ NOTE_LABELS = [
      "the differential-locator and Frobenius-index cell laws, PROVED"),
     ("ray_compiler_balanced_core.md", "conditional discharge of `(RC)`"),
     ("bc_moving_root.md", "thm:bc-moving-root incidence bound holds"),
-    ("balanced_core_kappa_growth.md", "residual charts force kappa = k = Theta(n)"),
+    ("balanced_core_kappa_growth.md",
+     "raw empty-core prefix families, including the PTM family and the finite census below, can have `kappa = k = Theta(n)`"),
     ("split_pencil_ray_collapse.md", "the deduplicated census IS the list count"),
     ("a4_quotient_major_compiler.md", "two finite theorems are PROVED"),
     ("quotient_census_window_compiler.md", "PROVED-COMPILER-ARITHMETIC"),
@@ -318,35 +327,158 @@ LEDGER = [
 
 def run_block_d():
     print("BLOCK D -- per-cell ledger row counts")
-    check(len(LEDGER) == 9, "9 cells in the catalogue -> %d" % len(LEDGER))
+    try:
+        with open(CERTIFICATE, "rb") as fh:
+            certificate_bytes = fh.read()
+        certificate_sha256 = hashlib.sha256(certificate_bytes).hexdigest()
+        certificate = json.loads(certificate_bytes.decode("utf-8"))
+    except (OSError, ValueError, TypeError):
+        certificate_sha256 = None
+        certificate = {}
+    certificate_cells = certificate.get("cells", [])
+    if not isinstance(certificate_cells, list):
+        certificate_cells = []
+    certificate_by_id = {
+        row.get("id"): row for row in certificate_cells if isinstance(row, dict)
+    }
+    tally = certificate.get("tally", {})
+    if not isinstance(tally, dict):
+        tally = {}
+    composition = certificate.get("composition", {})
+    if not isinstance(composition, dict):
+        composition = {}
+    expected_cells = {
+        cell: (blocks, target) for cell, _, blocks, target in LEDGER
+    }
+    expected_verdicts = {
+        "C1": "PAID",
+        "C2": "PAID",
+        "C3": "CONDITIONAL",
+        "C4": "PAID",
+        "C5": "PAID",
+        "C6": "PAID",
+        "C7": "DETECTION-PAID / PAYMENT-OPEN",
+        "C8": "PAID (proj-dim-1) / CONDITIONAL on (RC) (higher-dim)",
+        "C9": "UNPAID",
+    }
+
+    check(
+        len(LEDGER) == 9
+        and certificate.get("artifact") == "atlas_cat_cell_ledger"
+        and len(certificate_cells) == 9
+        and certificate_sha256 == EXPECTED_CERTIFICATE_SHA256
+        and set(certificate_by_id) == set(expected_cells)
+        and all(
+            (
+                certificate_by_id[cell].get("blocks_summation"),
+                certificate_by_id[cell].get("residual_target"),
+            )
+            == expected_cells[cell]
+            and certificate_by_id[cell].get("verdict") == expected_verdicts[cell]
+            for cell in expected_cells
+        ),
+        "9 semantic cells in code and SHA-pinned frozen certificate -> %d"
+        % len(LEDGER),
+    )
     paid = [c for c, s, _, _ in LEDGER if s == "PAID"]
     cond = [c for c, s, _, _ in LEDGER if s == "COND"]
-    check(len(paid) == 5, "PAID cells = 5 {C1,C2,C4,C5,C6} -> %d %s" % (len(paid), paid))
-    check(len(cond) == 4, "UNPAID/CONDITIONAL cells = 4 {C3,C7,C8,C9} -> %d %s" % (len(cond), cond))
-    check(len(paid) + len(cond) == 9, "paid + conditional = 9 (partition of the catalogue)")
+    check(
+        len(paid) == 5 and tally.get("paid_ids") == paid,
+        "PAID cells = 5 {C1,C2,C4,C5,C6} in code/certificate -> %d %s"
+        % (len(paid), paid),
+    )
+    check(
+        len(cond) == 4 and tally.get("residual_ids") == cond,
+        "UNPAID/CONDITIONAL cells = 4 {C3,C7,C8,C9} in code/certificate -> %d %s"
+        % (len(cond), cond),
+    )
+    check(
+        len(paid) + len(cond) == 9
+        and tally.get("cells") == 9
+        and tally.get("paid") == 5
+        and tally.get("unpaid_or_conditional") == 4,
+        "paid + conditional = 9 (code/certificate partition)",
+    )
 
     blockers = [c for c, _, b, _ in LEDGER if b]
-    check(sorted(blockers) == ["C3", "C7", "C8", "C9"],
-          "summation blockers = {C3,C7,C8,C9} -> %s" % sorted(blockers))
-    check(all(not b for c, _, b, _ in LEDGER if c in paid),
-          "no paid cell blocks the summation")
+    certificate_blockers = (
+        composition.get("summation_over_full_catalogue", {}).get("blockers", [])
+        if isinstance(composition.get("summation_over_full_catalogue", {}), dict)
+        else []
+    )
+    check(
+        sorted(blockers) == ["C3", "C7", "C8", "C9"]
+        and sorted(certificate_blockers) == sorted(blockers),
+        "summation blockers = {C3,C7,C8,C9} in code/certificate -> %s"
+        % sorted(blockers),
+    )
+    check(
+        all(not b for c, _, b, _ in LEDGER if c in paid)
+        and all(
+            certificate_by_id.get(cell, {}).get("blocks_summation") is False
+            for cell in paid
+        ),
+        "no paid cell blocks the summation in code/certificate",
+    )
 
     targets = sorted(set(t for _, _, _, t in LEDGER if t))
-    check(targets == ["input-3", "input-4/5", "planted-census"],
-          "residual targets = {input-3, input-4/5, planted-census} -> %s" % targets)
-    check(sum(1 for _, _, _, t in LEDGER if t == "input-3") == 2, "input-3 residual cells = 2 (C7,C8)")
-    check(sum(1 for _, _, _, t in LEDGER if t == "input-4/5") == 1, "input-4/5 residual cells = 1 (C9)")
+    check(
+        targets == ["input-3", "input-4/5", "planted-census"]
+        and certificate_by_id.get("C3", {}).get("residual_target") == "planted-census",
+        "residual targets include planted-census in code/certificate -> %s" % targets,
+    )
+    check(
+        sum(1 for _, _, _, t in LEDGER if t == "input-3") == 2
+        and certificate_by_id.get("C7", {}).get("residual_target") == "input-3"
+        and certificate_by_id.get("C8", {}).get("residual_target") == "input-3",
+        "input-3 residual cells = 2 (C7,C8) in code/certificate",
+    )
+    check(
+        sum(1 for _, _, _, t in LEDGER if t == "input-4/5") == 1
+        and certificate_by_id.get("C9", {}).get("residual_target") == "input-4/5",
+        "input-4/5 residual cells = 1 (C9) in code/certificate",
+    )
 
     # composition verdicts (Section 3)
     exhaustion = "COMPOSES-PROVED"
     summation_paid = "COMPOSES-PROVED"
     summation_full = "BLOCKED"
-    check(exhaustion == "COMPOSES-PROVED", "exhaustion verdict = COMPOSES-PROVED (#536 + #627/#625)")
-    check(summation_paid == "COMPOSES-PROVED", "paid-cell summation verdict = COMPOSES-PROVED")
-    check(summation_full == "BLOCKED", "full-catalogue summation verdict = BLOCKED at 4 cells")
+    check(
+        exhaustion == "COMPOSES-PROVED"
+        and composition.get("exhaustion", {}).get("verdict") == exhaustion,
+        "exhaustion verdict = COMPOSES-PROVED in code/certificate (#536 + #627/#625)",
+    )
+    check(
+        summation_paid == "COMPOSES-PROVED"
+        and composition.get("summation_over_paid_cells", {}).get("verdict")
+        == summation_paid,
+        "paid-cell summation verdict = COMPOSES-PROVED in code/certificate",
+    )
+    check(
+        summation_full == "BLOCKED"
+        and composition.get("summation_over_full_catalogue", {}).get("verdict")
+        == summation_full,
+        "full-catalogue summation verdict = BLOCKED at 4 cells in code/certificate",
+    )
 
-    check(len(ANCHORS) == 57, "BLOCK-A anchors declared -> %d" % len(ANCHORS))
-    check(len(NOTE_FILES) == len(set(NOTE_FILES)), "note-file list has no duplicates")
+    check(
+        len(ANCHORS) == 57
+        and certificate.get("tex_source")
+        == "experimental/asymptotic_rs_mca_frontiers.tex",
+        "BLOCK-A anchors declared and certificate TeX source pinned -> %d"
+        % len(ANCHORS),
+    )
+    check(
+        len(NOTE_FILES) == len(set(NOTE_FILES))
+        and certificate.get("verifier")
+        == "experimental/scripts/verify_atlas_cat_ledger.py"
+        and certificate.get("verifier_result")
+        == {"check": "PASS 219/219", "tamper_selftest": "PASS 4/4"}
+        and certificate.get("all_pass") is True
+        and set(certificate_by_id.get("C8", {}).get("prs", []))
+        == {518, 528, 534, 868},
+        "note list unique; frozen certificate binds verifier results and C8 provenance",
+    )
 
 
 # --------------------------------------------------------------------------

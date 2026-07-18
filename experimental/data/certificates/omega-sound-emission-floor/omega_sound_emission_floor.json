@@ -13,6 +13,15 @@
  ],
  "packet": "omega-sound-emission-floor",
  "pairs_total": 558,
+ "scope": {
+  "certifies": "local scalar omega-cap accounting",
+  "does_not_certify": [
+   "same-owner first-match profile cell",
+   "A4 analytic/Sidon payment",
+   "A6/RC distinct-slope bound",
+   "uniform subexponential aggregate census"
+  ]
+ },
  "t3_overpay_pairs": 263,
  "zero_charge_paid": 135
 }

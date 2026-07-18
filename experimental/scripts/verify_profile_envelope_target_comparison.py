@@ -1,67 +1,49 @@
 #!/usr/bin/env python3
-"""Hard input 4: the COMPLETE profile-envelope comparison with the target,
-verified by EXACT enumeration at deployed-shape rows (not by symbolic grids).
+"""Exact finite census for selected profile-envelope slices.
 
-This verifier is the *deployed-scale numeric certificate* that the assembly
-packet profile_envelope_completeness.md explicitly disclaims ("structural, not a
-deployed-scale numeric certificate") and that envelope_identity_window.md (#542)
-supplies only for the single cheapest square folding (c=2, r=0).  Here every
-envelope term of eq:profile-envelope (1.6) is built from ACTUAL supports over
-ACTUAL small finite fields, at the realized-image scale of rem PO5 / (6.4'):
+The verifier enumerates the identity slice and complete-power-fiber
+quotient/remainder slices at the printed GF(13), GF(7^2), GF(11^2), and GF(41)
+rows.  It does not enumerate the Chebyshev, planted, balanced-core, or general
+first-match profile inventory in (1.6), and it proves no universal
+prime-field theorem.
 
-    every profile lambda is a SLICE  Omega_lambda subset C(D,a);
-    one global boundary map  Phi_w(S) = depth-w locator prefix of Q_S;
-    L_lambda   = | Phi_w(Omega_lambda) |          (REALIZED image, not codomain)
-    barN_lambda= | Omega_lambda | / L_lambda       (1.6 average full-slice fiber)
-    E_n(a)     = 1 + (n-a+1) + sum_lambda (1 + barN_lambda)   (sum=max on exp scale)
+All finite arithmetic uses Fraction/bigint gates.  In particular it records:
+  * the GF(13) square is identity-dominated, while the shallow c=3,r=0 cell has
+    barN=6 > 924/169 and is only covered by the separate deep term 7;
+  * the tower square beats the formal ambient identity proxy, but not the
+    realized identity average at the n=20 smooth-coset row;
+  * a factor-p exact full-codomain deficit is observed for that identity image;
+    this finite equality does not decide the asymptotic (FI) condition;
+  * failure of a safe-side upper-budget test is not an unsafe theorem.
 
-The whole point of the complete comparison is whether the identity slice
-Omega_id = C(D,a) DOMINATES the envelope: barN_lambda <= barN_id for every
-realized profile lambda, so the identity-prefix budget SB1/L(a) certifies E_n.
-
-Ground truth established here, all EXACT (Fraction / bigint, no floats in gates):
-  (i)  prime-field rows (|B| = p prime, no proper subfield => lambda_c = 1 forced
-       for every folding): the identity slice dominates EVERY quotient/remainder
-       slice at EVERY scale c | gcd(n, m).  Identity comparison IS complete.
-  (ii) subfield-tower rows (B = F_{p^2}, B_phi = F_p, the thm:smooth-quotient-
-       obstruction tower): the c=2 field-drop square slice STRICTLY exceeds the
-       identity slice at the crossing -- exactly the paper's own obstruction,
-       realized to the integer.  NOT a new floor.
-  (iii) realized-image measurement: identity slice satisfies (FI) L_id = |B|^w at
-       these rows, while the square slice collapses to L_sq <= p^{w/2} by
-       lacunarity + field drop -- so PO5's realized-image normalization is the
-       operative one and is finite-faithful (it does not silently change the
-       verdict).
-  (iv) target side: build P_env(a) from barN_env through the collision-aware
-       pole M(L), compare against U(a)=min(|Gamma|,C(n,a)) and B*=floor(eps|Gamma|),
-       and print which envelope term dominates at each agreement a.
-
-Interfaces (consumed, not reproved): eq:profile-envelope (1.6),
-thm:smooth-quotient-obstruction (6.1-6.4'), prop:necessary-quotient-envelope
-(6.13), prop:identity-quotient-comparison (QR6-QR9), rem PO5, SB1-SB4
-thm:unconditional-support-envelope-bracket, thm:deep-regime-upper (n-a+1).
-Credit: envelope_identity_window.md (Holm Buar, #542) -- window/wall + the c=2
-F_{p^2} census this extends to the full scale inventory;
-profile_envelope_completeness.md (Holm Buar) -- the class-exponent reduction and
-add-back this certifies at deployed shape; profile_envelope_vs_target (LegaSage
-#520) -- the finite bracket; #524 GF(p^2) obstruction reproduction.
-
-Stdlib only.  Deterministic.  Zero-arg for the full run; `--tamper-selftest`
-flips one stored ground-truth integer and asserts a gate then fails.
-Every number quoted in profile_envelope_target_comparison.md is recomputed here.
-
-CPU/'MEMORY caps (printed, no silent truncation): full identity enumeration is
-capped at n<=14 (C(14,7)=3432); the medium tower row n=20 enumerates only the
-square slice C(10,5)=252 and uses the SB1 pigeonhole L(a)=ceil(C(n,a)|B|^{-w})
-for the identity term (its full enumeration C(20,10)=184756 is skipped and the
-skip is asserted, not hidden).
+The JSON certificate is source-bound and validated here.  Stdlib only,
+deterministic, with normal/-O parity and two independent tamper mutations.
+Full identity enumeration is capped at n=20 (C(20,10)=184756); the generic
+GF(121) control exhausts all 184756 supports.
 """
 from __future__ import annotations
 
+import copy
+import hashlib
+import json
 import sys
 from fractions import Fraction as Q
 from itertools import combinations
 from math import comb, gcd
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[2]
+CERT_PATH = Path(
+    "experimental/data/certificates/profile-envelope-target-comparison/cert.json"
+)
+NOTE_PATH = Path(
+    "experimental/notes/thresholds/profile_envelope_target_comparison.md"
+)
+LEAN_PATH = Path(
+    "experimental/lean/profile_envelope_target_comparison/"
+    "ProfileEnvelopeTargetComparison.lean"
+)
+SCRIPT_PATH = Path("experimental/scripts/verify_profile_envelope_target_comparison.py")
 
 # ------------------------------------------------------------------ checker ---
 
@@ -355,8 +337,11 @@ def section_A_reproduce_542(c: Checker) -> None:
 
 
 def full_envelope_census(c: Checker, tag: str, F, B, D, n, a, k, prime_field: bool):
-    """Enumerate EVERY envelope slice at one row (n<=14): identity + every
-    complete-c-fiber quotient (all c | gcd, all r<c).  Return the report dict."""
+    """Enumerate the identity and complete-power-fiber quotient inventory.
+
+    This is not the complete (1.6) profile inventory: Chebyshev, planted,
+    balanced-core, and arbitrary first-match profiles are outside this census.
+    """
     w = a - k - 1
     assert w >= 0
     deep_term = n - a + 1                              # thm:deep-regime-upper
@@ -366,17 +351,13 @@ def full_envelope_census(c: Checker, tag: str, F, B, D, n, a, k, prime_field: bo
     id_size, id_L, id_max, _ = census_slice(F, D, a, w, identity_slice(D, a))
     c.ok(id_size == comb(n, a), f"{tag}: |Omega_id|=C(n,a)")
     barN_id = barN(id_size, id_L)
-    # "saturated" regime := |B|^w <= C(n,a): only then can the pigeonhole floor
-    # L(a)=ceil(C(n,a)|B|^{-w}) be faithful and (FI) L_id=|B|^w hold.  Below it
-    # (sparse regime) the identity realized image itself collapses to <C(n,a).
+    # "saturated" only describes the ambient count |B|^w <= C(n,a).  It does
+    # NOT imply exact full-codomain image or the asymptotic (FI) condition.
     saturated = (Bq ** w <= comb(n, a))
-    fi_id = (id_L == Bq ** w)
+    fi_id = (id_L == Bq ** w)  # exact full-codomain equality, not asymptotic FI
     # SB1 pigeonhole floor on the MAX identity fiber (a valid pole list size).
     Lpig = -(-comb(n, a) // (Bq ** w))
     c.ok(Lpig <= id_max, f"{tag}: SB1 pigeonhole floor <= enumerated id max fiber")
-    if saturated:
-        c.ok(fi_id, f"{tag}: (FI) identity L_id=|B|^w (saturated, no collapse)")
-
     report = dict(tag=tag, n=n, a=a, k=k, w=w, Bq=Bq, deep_term=deep_term,
                   id_size=id_size, id_L=id_L, id_max=id_max,
                   barN_id=barN_id, fi_id=fi_id, Lpig=Lpig, saturated=saturated,
@@ -422,15 +403,14 @@ def full_envelope_census(c: Checker, tag: str, F, B, D, n, a, k, prime_field: bo
 
 
 def section_B_prime(c: Checker) -> dict:
-    """(c-i) PRIME saturated row GF(13), n=12, a=6, k=3, w=2.  |B|^w=169 <=
-    C(12,6)=924 (saturated), so the identity pigeonhole is faithful and (FI)
-    holds.  Identity dominates EVERY quotient/remainder slice at EVERY scale."""
-    c.note("== B. (c-i) PRIME GF(13) n=12 a=6 k=3 w=2: identity dominates ==")
+    """Prime GF(13) selected-power inventory, including the exact ID failure."""
+    c.note("== B. PRIME GF(13): square dominated; shallow c=3 exceeds identity ==")
     n, a, k = 12, 6, 3
     F, B, D, nn = build_prime_row(13)
     c.ok(nn == n, "B: n=12")
     rep = full_envelope_census(c, "prime GF(13)", F, B, D, n, a, k, True)
     c.ok(rep["saturated"], "B: prime row is saturated (|B|^w <= C(n,a))")
+    c.ok(rep["fi_id"], "B: exact identity image equals |B|^w at this row")
     all_ok = True
     for cell in rep["cells"]:
         accounted = cell["id_dominated"] or cell["deep_dominated"]
@@ -443,7 +423,16 @@ def section_B_prime(c: Checker) -> dict:
             c.ok(cell["shallow"] and cell["barN"] <= rep["deep_term"],
                  f"B: id-excess only via shallow deep bucket c={cell['c']}")
         all_ok = all_ok and accounted
-    c.ok(all_ok, "B: identity+deep account for the WHOLE envelope (c-i)")
+    c.ok(all_ok, "B: identity+deep account for this selected power inventory")
+    c3 = next(cl for cl in rep["cells"] if cl["c"] == 3 and cl["r"] == 0)
+    c.ok(
+        c3["barN"] == Q(6) and not c3["id_dominated"],
+        "B negative control: c=3,r=0 has barN=6 > 924/169",
+    )
+    c.ok(
+        c3["shallow"] and c3["deep_dominated"],
+        "B boundary: the c=3,r=0 ID failure is shallow and <= deep term 7",
+    )
     # square field values fill F_13 (no drop): the mechanism that keeps it small
     sq = next(cl for cl in rep["cells"] if cl["c"] == 2 and cl["r"] == 0)
     c.ok(sq["field_vals"] > 7,
@@ -475,12 +464,17 @@ def section_C_tower_mechanism(c: Checker) -> dict:
     c.ok(sq["barN"] > barN1_formal,
          f"C: barN_sq={sq['barN']} > formal identity budget C(n,a)|B|^-w="
          f"{barN1_formal} (6.3/6.4' obstruction holds)")
-    # (FI)-for-identity sharpening: on the SMOOTH coset the identity realized
-    # image ALSO collapses below |B|^w (the input-2 coupling of the IDENTITY).
+    # Exact full-codomain measurement on the smooth coset.  This one-row
+    # factor-p deficit does not decide the asymptotic (FI) condition.
     rep["fi_id_holds"] = rep["fi_id"]
     rep["sq_field_vals"] = sq["field_vals"]
     rep["barN1_formal"] = barN1_formal
     rep["sq_barN"] = sq["barN"]
+    c.ok(
+        all(cell["barN"] > barN1_formal for cell in rep["cells"])
+        and max(cell["barN"] for cell in rep["cells"]) == Q(6),
+        "C boundary: all four power cells beat the formal proxy; c=3 is leader",
+    )
     return rep
 
 
@@ -488,7 +482,7 @@ def _saturated_tower_row(c: Checker, tag: str, p: int, a: int, k: int) -> dict:
     """Saturated tower GF(p^2), enumerate identity AND square slices.  Compares
     the square realized scale (6.4') against the paper's FORMAL identity budget
     (6.3) barN_1 = C(n,a)|B|^{-w}; SEPARATELY measures the identity realized
-    image L_id (the (FI)-for-identity coupling to input 2)."""
+    image L_id (an exact full-codomain measurement, not an asymptotic FI test)."""
     F, B, D, n = build_tower_row(p)
     w = a - k - 1
     Bq = p * p
@@ -498,7 +492,7 @@ def _saturated_tower_row(c: Checker, tag: str, p: int, a: int, k: int) -> dict:
     barN1_formal = Q(comb(n, a), Bq ** w)
     c.ok(barN1_formal >= 1, f"{tag}: crossing barN_1(formal)={float(barN1_formal):.3f}>=1")
     c.ok(barN1_formal < Bq ** 2, f"{tag}: barN_1(formal) < |B|^2 (subexp, 6.3)")
-    # identity slice enumerated: realized image L_id and (FI) status
+    # identity slice enumerated: realized image and exact full-codomain status
     id_size, id_L, id_max, _ = census_slice(F, D, a, w, identity_slice(D, a))
     c.ok(id_size == comb(n, a), f"{tag}: |Omega_id|=C(n,a)={comb(n,a)}")
     fi_id = (id_L == Bq ** w)
@@ -515,26 +509,53 @@ def _saturated_tower_row(c: Checker, tag: str, p: int, a: int, k: int) -> dict:
     # THE OBSTRUCTION (paper's 6.4' vs 6.3): square realized > identity FORMAL
     c.ok(barN_sq > barN1_formal,
          f"{tag}: barN_sq={float(barN_sq):.3f} > barN_1(formal)={float(barN1_formal):.3f}"
-         f" -- identity-prefix comparison INCOMPLETE (obstruction)")
+         f" -- square beats the formal ambient identity proxy")
     floor642 = Q(comb(n // 2, a // 2), p ** (w // 2))
     c.ok(barN_sq >= floor642, f"{tag}: barN_sq >= 6.4' floor {floor642}")
+    power_cells = []
+    for cfold in range(2, n + 1):
+        if n % cfold != 0:
+            continue
+        qvals, fiber = fibers_of_power(F, D, cfold)
+        if not all(len(values) == cfold for values in fiber.values()):
+            continue
+        for r in range(cfold):
+            if (a - r) % cfold != 0:
+                continue
+            m = (a - r) // cfold
+            if not 1 <= m <= len(qvals):
+                continue
+            size, image, maxfib, _ = census_slice(
+                F, D, a, w, quotient_slice(D, a, cfold, r, qvals, fiber)
+            )
+            if size:
+                power_cells.append(
+                    dict(c=cfold, r=r, size=size, L=image,
+                         maxfib=maxfib, barN=barN(size, image))
+                )
+    c.ok(
+        [(x["c"], x["r"], x["size"], x["L"]) for x in power_cells]
+        == [(2, 0, 252, 11), (4, 2, 660, 190), (5, 0, 6, 1), (10, 0, 2, 1)],
+        f"{tag}: complete-power inventory is pinned",
+    )
     return dict(tag=tag, n=n, a=a, k=k, w=w, Bq=Bq, id_L=id_L, id_max=id_max,
                 fi_id=fi_id, barN1_formal=barN1_formal, barN1_real=barN1_real,
                 sq_size=sq_size, sq_L=sq_L, sq_max=sq_max, barN_sq=barN_sq,
-                floor=floor642, excess=barN_sq - barN1_formal)
+                floor=floor642, excess=barN_sq - barN1_formal,
+                power_cells=power_cells)
 
 
 def _saturated_prime_row(c: Checker, tag: str, p: int, sub: int, a: int, k: int) -> dict:
     """Saturated PRIME deep row: D = order-`sub` subgroup of F_p^x, w>=2.  No
     field drop possible -> square dominated by identity at BOTH the formal and
-    the realized scale, and identity (FI) holds (L_id=|B|^w)."""
+    the realized scale; exact full-codomain equality is checked at this row."""
     F, B, D, n = build_prime_subgroup_row(p, sub)
     w = a - k - 1
     c.ok(p ** w <= comb(n, a), f"{tag}: saturated")
     barN1_formal = Q(comb(n, a), p ** w)
     id_size, id_L, id_max, _ = census_slice(F, D, a, w, identity_slice(D, a))
     fi_id = (id_L == p ** w)
-    c.ok(fi_id, f"{tag}: identity (FI) holds L_id={id_L}=|B|^w={p**w} (no collapse)")
+    c.ok(fi_id, f"{tag}: exact identity image L_id={id_L}=|B|^w={p**w}")
     barN1_real = barN(id_size, id_L)
     Qv, fb = fibers_of_power(F, D, 2)
     if not all(len(v) == 2 for v in fb.values()):
@@ -552,129 +573,341 @@ def _saturated_prime_row(c: Checker, tag: str, p: int, sub: int, a: int, k: int)
 
 
 def section_E_separation(c: Checker) -> dict:
-    """(c-ii) The clean obstruction separation at the saturated tower, plus the
-    prime parallel confirming domination in the same deep saturated regime."""
-    c.note("== E. (c-ii) Saturated separation: tower obstruction + prime control ==")
+    """Formal-proxy tower separation plus a selected prime-square control."""
+    c.note("== E. Formal-proxy tower separation + selected prime-square control ==")
     # primary tower CE: p=11, n=20, a=10, k=7, w=2 (barN_1>=1 crossing, deep c=2)
     tower = _saturated_tower_row(c, "tower GF(121) n=20", p=11, a=10, k=7)
     c.note(f"   tower n=20 a=10 w=2: barN_1(formal)={float(tower['barN1_formal']):.4f}"
            f"  barN_sq={float(tower['barN_sq']):.4f}  L_sq={tower['sq_L']}  "
-           f"excess={float(tower['excess']):.4f}  (identity-prefix comparison INCOMPLETE)")
-    c.note(f"   (FI)-for-identity: L_id={tower['id_L']} vs |B|^w={tower['Bq']**tower['w']}"
-           f"  -> identity image {'FILLS' if tower['fi_id'] else 'COLLAPSES (factor p)'};"
-           f" realized barN_1={float(tower['barN1_real']):.4f} (input-2 coupling)")
+           f"excess={float(tower['excess']):.4f}  (beats formal proxy only)")
+    c.note(f"   exact full-codomain check: L_id={tower['id_L']} vs "
+           f"|B|^w={tower['Bq']**tower['w']} -> "
+           f"{'equal' if tower['fi_id'] else 'factor-p deficit'}; realized "
+           f"barN_id={float(tower['barN1_real']):.4f}")
     # prime parallel in the SAME deep saturated regime: p=41, D=order-20 subgroup
     prime = _saturated_prime_row(c, "prime GF(41) n=20", p=41, sub=20, a=10, k=7)
     if prime:
         c.note(f"   prime n=20 a=10 w=2: barN_1(formal)={float(prime['barN1_formal']):.4f}"
-               f"  barN_sq={float(prime['barN_sq']):.4f}  (FI) holds, identity DOMINATES")
-    # CONTROL: the identity image collapse is SPECIFIC to the smooth coset D=theta*H.
-    # A generic (non-coset) 20-subset of GF(121) does NOT collapse: count distinct
-    # depth-2 prefixes over the first CAP supports (deterministic combinations
-    # order; CAP printed, no silent truncation).
+               f"  barN_sq={float(prime['barN_sq']):.4f}  square is identity-dominated")
+    # CONTROL: complete the same deterministic generic-domain census.  Its image
+    # is larger than the smooth-coset image but still does not fill the codomain.
     Fg = make_gf_p2(11)
     Dg = [e for e in Fg["elems"] if e != Fg["zero"]][:20]
-    CAP = 60000
-    seen, cnt = set(), 0
-    for S in identity_slice(Dg, 10):
-        seen.add(locator_prefix(Fg, S, 2))
-        cnt += 1
-        if cnt >= CAP:
-            break
-    generic_L = len(seen)
+    generic_size, generic_L, generic_max, _ = census_slice(
+        Fg, Dg, 10, 2, identity_slice(Dg, 10)
+    )
+    c.ok(
+        (generic_size, generic_L, generic_max) == (184756, 9359, 57),
+        "E control: full generic census is 184756 supports, image 9359, max 57",
+    )
     c.ok(generic_L > tower["id_L"],
-         f"E control: generic 20-subset image {generic_L} >> smooth-coset collapse "
-         f"L_id={tower['id_L']} (collapse is coset-specific, CAP={CAP})")
-    c.note(f"   control: generic 20-subset of GF(121) has {generic_L} distinct depth-2 "
-           f"prefixes in first {CAP} supports (no collapse; vs coset {tower['id_L']})")
-    return dict(tower=tower, prime=prime, generic_L=generic_L, generic_cap=CAP)
+         f"E control: generic image {generic_L} exceeds smooth-coset {tower['id_L']}")
+    c.ok(generic_L < 11 ** 4,
+         "E control: generic image 9359 still does not fill ambient 14641")
+    c.note(
+        f"   full control: generic 20-subset image={generic_L}, max fiber="
+        f"{generic_max}, versus smooth coset {tower['id_L']} and ambient 14641"
+    )
+    return dict(
+        tower=tower,
+        prime=prime,
+        generic_size=generic_size,
+        generic_L=generic_L,
+        generic_max=generic_max,
+    )
 
 
 def section_D_target(c: Checker, sep: dict) -> dict:
-    """(D) Target comparison via the safe-side envelope budget E_n(a) (1.6/13.2).
-    At the saturated crossing the complete budget uses barN_env=barN_sq>barN_1,
-    so a target B* between the two is certified SAFE by the identity budget but
-    UNSAFE by the complete envelope -> the identity comparison is INCOMPLETE."""
-    c.note("== D. Target comparison: safe-side budget E_n(a) vs B* (1.6/13.2) ==")
+    """Separate formal, realized, and selected-profile safe-side budgets.
+
+    A budget above B* only fails the sufficient safe test (13.2); it does not
+    prove an unsafe row.  No lower-reserve theorem is invoked here.
+    """
+    c.note("== D. Target direction: proxy pass versus failure to certify safety ==")
     t = sep["tower"]
     n, a = t["n"], t["a"]
     deep = n - a + 1
-    barN1, barN_sq = t["barN1_formal"], t["barN_sq"]   # paper's formal identity budget
-    # identity-only vs complete envelope safe-side budget (round up to integers)
+    barN_formal = t["barN1_formal"]
+    barN_real = t["barN1_real"]
+    barN_sq = t["barN_sq"]
     import math
-    E_id = 1 + deep + (1 + math.ceil(barN1))          # identity + deep + const
-    E_env = 1 + deep + (1 + math.ceil(barN1)) + (1 + math.ceil(barN_sq))
-    barN_env = max(barN1, barN_sq)
-    c.ok(barN_env == barN_sq, "D: envelope max = square term at the crossing")
-    c.ok(E_env > E_id, f"D: complete budget E_env={E_env} > identity E_id={E_id}")
-    # a target strictly between the two budgets: identity says safe, env says unsafe
-    Bstar = E_id                                      # >= identity budget
-    id_safe = (E_id <= Bstar)
-    env_safe = (E_env <= Bstar)
-    c.ok(id_safe and not env_safe,
-         f"D: B*={Bstar} SAFE by identity budget ({E_id}) but UNSAFE by complete "
-         f"envelope ({E_env}) -- identity comparison INCOMPLETE")
-    c.note(f"   n=20 crossing: E_identity={E_id}  E_complete={E_env}  "
-           f"target B*={Bstar}: identity->SAFE, complete->UNSAFE (strict move)")
-    return dict(E_id=E_id, E_env=E_env, Bstar=Bstar, barN_env=barN_env)
+    E_formal_id = 1 + deep + (1 + math.ceil(barN_formal))
+    E_formal_id_square = E_formal_id + (1 + math.ceil(barN_sq))
+    E_real_id = 1 + deep + (1 + math.ceil(barN_real))
+    E_real_id_square = E_real_id + (1 + math.ceil(barN_sq))
+    power_addback = sum(
+        1 + math.ceil(cell["barN"]) for cell in t["power_cells"]
+    )
+    E_formal_power = E_formal_id + power_addback
+    E_real_power = E_real_id + power_addback
+    Bstar = E_formal_id
+    c.ok(barN_real > barN_sq > barN_formal,
+         "D: realized identity > square > formal ambient identity proxy")
+    c.ok(
+        (E_formal_id, E_formal_id_square) == (26, 50),
+        "D: legacy 26/50 values are formal-identity and identity+square proxies",
+    )
+    c.ok(
+        (E_real_id, E_real_id_square) == (152, 176),
+        "D: realized identity/identity+square selected budgets are 152/176",
+    )
+    c.ok(
+        (E_formal_power, E_real_power) == (65, 191),
+        "D: all selected complete-power cells give formal/realized sums 65/191",
+    )
+    c.ok(
+        E_real_id > Bstar and E_real_id_square > Bstar,
+        "D: B*=26 fails the selected realized safe tests; no unsafe conclusion",
+    )
+    c.note(
+        "   n=20: formal identity proxy=26; formal identity+square proxy=50; "
+        "realized identity selected budget=152; realized identity+square=176; "
+        "B*=26 does NOT certify safety at realized scale, and this test proves "
+        "no unsafe statement"
+    )
+    return dict(
+        E_formal_id=E_formal_id,
+        E_formal_id_square=E_formal_id_square,
+        E_real_id=E_real_id,
+        E_real_id_square=E_real_id_square,
+        E_formal_power=E_formal_power,
+        E_real_power=E_real_power,
+        Bstar=Bstar,
+    )
 
 
 def section_F_reduction(c: Checker, prime12: dict, tower12: dict, sep: dict) -> None:
-    """Consolidated decision + reduction, with exact backing and honest labels."""
-    c.note("== F. Decision: reduction to the field-drop test lambda_c ==")
-    # (c-i) prime: identity dominates whole envelope (deep saturated + n=12)
+    """Consolidate only the finite selected-slice conclusions."""
+    c.note("== F. Scope: selected finite slices, not a universal iff ==")
     prime_deep_max = max((cl["barN"] for cl in prime12["cells"]
                           if not cl["shallow"]), default=Q(0))
     c.ok(prime12["barN_id"] >= prime_deep_max,
          "F c-i: prime identity barN >= every DEEP quotient cell (n=12)")
     if sep["prime"]:
         c.ok(sep["prime"]["barN_sq"] <= sep["prime"]["barN1_formal"],
-             "F c-i: prime identity dominates in deep saturated regime (n=20)")
+             "F c-i: selected prime GF41 square is identity-dominated")
     # (c-ii) tower: the c=2 field drop beats the FORMAL identity budget
     t = sep["tower"]
     c.ok(t["barN_sq"] > t["barN1_formal"],
          "F c-ii: tower c=2 field-drop beats formal identity budget (saturated n=20)")
-    # (c-iii NEW) (FI)-for-identity is nontrivial: the smooth coset collapses the
-    # identity image too, so the realized-scale verdict couples to input 2.
+    c.ok(t["barN1_real"] > t["barN_sq"],
+         "F boundary: tower square does not beat realized identity at n=20")
     c.ok(not t["fi_id"],
-         "F c-iii: identity (FI) FAILS on the smooth coset (L_id collapses) -- the "
-         "realized-scale comparison couples to input 2 through the IDENTITY too")
+         "F c-iii: exact full-codomain equality fails on the smooth coset")
     c.ok(sep["prime"] and sep["prime"]["fi_id"],
-         "F c-iii: identity (FI) HOLDS on the prime subgroup (contrast)")
+         "F c-iii: exact full-codomain equality holds on the prime subgroup")
     c.ok(tower12["sq_field_vals"] <= 7,
          "F c-iii: field-drop structure exact already at n=12 (F_p confinement)")
-    c.note("   VERDICT (route-scoped): the complete comparison is identity-"
-           "dominant IFF no realized folding admits a positive-rate scaled-"
-           "quotient field drop AND the identity slice satisfies (FI).  PRIME "
-           "base fields (lambda=1, (FI) holds) force identity dominance across "
-           "ALL scales/remainders (PROVED + exact).  The F_{p^2} tower "
-           "(lambda_2=1/2) makes the c=2 square slice beat the FORMAL identity "
-           "budget -- the paper's OWN thm:smooth-quotient-obstruction, realized "
-           "to the integer; NOT a new floor.  NEW: the smooth coset ALSO "
-           "collapses the identity image (factor p at n=20), so the realized-"
-           "scale comparison additionally needs an identity-side (FI)/flatness "
-           "estimate = hard input 2 -- sharpening the completeness reduction, "
-           "which routed input 4->2 only through the quotient.")
+    c.note(
+        "   VERDICT: selected prime squares are dominated at GF(13)/GF(41), "
+        "while GF(13 c=3 violates literal ID and the tower square beats only "
+        "the formal identity proxy.  These finite facts do not establish a "
+        "complete-envelope iff; first-match admission, PEU/RC, and the other "
+        "profile classes remain external."
+    )
+
+
+def section_G_prime_counterexamples(c: Checker) -> dict:
+    """No-field-drop counterexamples to literal exact ID."""
+    c.note("== G. Prime no-drop negative controls for literal exact ID ==")
+    F, B, D, n = build_prime_row(19)
+    a, k, w = 8, 4, 3
+    id_size, id_L, _, _ = census_slice(F, D, a, w, identity_slice(D, a))
+    Qv, fb = fibers_of_power(F, D, 2)
+    sq_size, sq_L, _, _ = census_slice(
+        F, D, a, w, quotient_slice(D, a, 2, 0, Qv, fb)
+    )
+    c.ok((id_size, id_L) == (43758, 6859),
+         "G GF19: identity size/image are 43758/6859 = C(18,8)/19^3")
+    c.ok((sq_size, sq_L) == (126, 19),
+         "G GF19: square size/image are 126/19 with no field drop")
+    c.ok(
+        sq_size * id_L > id_size * sq_L,
+        "G GF19: square 126/19 exceeds identity 43758/6859",
+    )
+    family = []
+    for p in (11, 13, 17, 19, 23, 29, 31, 37, 41):
+        sq = Q(p - 1, 2)
+        ident = Q((p - 1) * (p - 2), 2 * p)
+        family.append(sq > ident and sq > 3)
+    c.ok(all(family),
+         "G w=1 family p=11..41: square exceeds identity and deep=3")
+    c.note(
+        "   GF19 n=18,a=8,k=4,w=3: 126/19 > 43758/6859 despite "
+        "prime base and exact identity image 19^3; the w=1 family also beats "
+        "identity and deep=3 for every tested p=11..41"
+    )
+    return dict(
+        gf19_id_size=id_size,
+        gf19_id_L=id_L,
+        gf19_sq_size=sq_size,
+        gf19_sq_L=sq_L,
+        family_primes=[11, 13, 17, 19, 23, 29, 31, 37, 41],
+    )
+
+
+def file_sha256(relative: Path) -> str:
+    return hashlib.sha256((ROOT / relative).read_bytes()).hexdigest()
+
+
+def canonical_payload(data: dict) -> str:
+    unsigned = copy.deepcopy(data)
+    unsigned.pop("payload_sha256", None)
+    raw = json.dumps(
+        unsigned, sort_keys=True, separators=(",", ":"), ensure_ascii=True
+    ).encode("utf-8")
+    return hashlib.sha256(raw).hexdigest()
+
+
+def certificate_sources_fresh(cert: dict) -> bool:
+    expected = {
+        str(NOTE_PATH),
+        str(SCRIPT_PATH),
+        str(LEAN_PATH),
+        "experimental/notes/thresholds/profile_envelope_completeness.md",
+        "experimental/notes/thresholds/envelope_identity_window.md",
+        "experimental/asymptotic_rs_mca_frontiers.tex",
+    }
+    bindings = cert.get("source_bindings")
+    if not isinstance(bindings, list):
+        return False
+    if {row.get("path") for row in bindings if isinstance(row, dict)} != expected:
+        return False
+    return all(
+        isinstance(row, dict)
+        and isinstance(row.get("path"), str)
+        and isinstance(row.get("sha256"), str)
+        and (ROOT / row["path"]).is_file()
+        and file_sha256(Path(row["path"])) == row["sha256"]
+        for row in bindings
+    )
+
+
+def certificate_semantics(cert: dict) -> bool:
+    rows = cert.get("rows", {})
+    gf13 = rows.get("prime_GF13_n12", {})
+    gf19 = rows.get("prime_GF19_n18", {})
+    generic = rows.get("generic_20subset_GF121", {})
+    tower = rows.get("tower_GF121_n20", {})
+    target = cert.get("target_direction", {})
+    scope = cert.get("scope", {})
+    return (
+        cert.get("schema") == "rs-mca-profile-envelope-target-comparison-v2"
+        and cert.get("artifact") == "profile-envelope-target-comparison"
+        and cert.get("status") == "COUNTEREXAMPLE"
+        and cert.get("producer_head") == "8cd4f4b6"
+        and cert.get("integration") == "2633895a"
+        and scope.get("enumerated")
+        == "identity and complete-power-fiber quotient/remainder slices"
+        and scope.get("complete_profile_inventory") is False
+        and scope.get("universal_prime_theorem") is False
+        and scope.get("unsafe_theorem") is False
+        and scope.get("asymptotic_FI_decided") is False
+        and gf13.get("identity") == {"size": 924, "L": 169, "barN": "924/169"}
+        and gf13.get("c3r0")
+        == {
+            "size": 6,
+            "L": 1,
+            "barN": "6",
+            "identity_dominated": False,
+            "deep_dominated": True,
+        }
+        and gf19.get("identity") == {"size": 43758, "L": 6859}
+        and gf19.get("square") == {"size": 126, "L": 19}
+        and gf19.get("square_beats_identity") is True
+        and generic
+        == {
+            "size": 184756,
+            "L_id": 9359,
+            "max_fiber": 57,
+            "ambient": 14641,
+            "full_codomain": False,
+        }
+        and tower.get("power_cells")
+        == [
+            {"c": 2, "r": 0, "size": 252, "L": 11, "barN": "252/11"},
+            {"c": 4, "r": 2, "size": 660, "L": 190, "barN": "66/19"},
+            {"c": 5, "r": 0, "size": 6, "L": 1, "barN": "6"},
+            {"c": 10, "r": 0, "size": 2, "L": 1, "barN": "2"},
+        ]
+        and target
+        == {
+            "B_star": 26,
+            "formal_identity_proxy": 26,
+            "formal_identity_plus_square_proxy": 50,
+            "formal_identity_plus_all_selected_power_cells": 65,
+            "realized_identity_selected_budget": 152,
+            "realized_identity_plus_square_selected_budget": 176,
+            "realized_identity_plus_all_selected_power_cells": 191,
+            "conclusion": "selected realized safe test fails; no unsafe theorem",
+        }
+    )
+
+
+def certificate_valid(cert: dict) -> bool:
+    return (
+        cert.get("payload_sha256") == canonical_payload(cert)
+        and certificate_sources_fresh(cert)
+        and certificate_semantics(cert)
+    )
+
+
+def validate_certificate(c: Checker) -> dict:
+    cert = json.loads((ROOT / CERT_PATH).read_text(encoding="utf-8"))
+    c.ok(
+        cert.get("schema") == "rs-mca-profile-envelope-target-comparison-v2"
+        and cert.get("status") == "COUNTEREXAMPLE",
+        "H certificate schema/status are repaired",
+    )
+    c.ok(
+        cert.get("payload_sha256") == canonical_payload(cert),
+        "H certificate canonical payload is fresh",
+    )
+    c.ok(certificate_sources_fresh(cert), "H all six certificate source bindings are fresh")
+    c.ok(certificate_semantics(cert), "H certificate rows and scope match repaired claims")
+    c.ok(certificate_valid(cert), "H certificate passes combined strict validation")
+    return cert
 
 
 def tamper_selftest() -> int:
-    c = Checker()
+    rejected = 0
     F, B, D, n = build_tower_row(5)
     Qvals, fiber = fibers_of_power(F, D, 2)
     _, Ldist, _, _ = census_slice(F, D, 4, 2, quotient_slice(D, 4, 2, 0, Qvals, fiber))
     corrupted_expect = Ldist + 1          # true is p=5
-    c.ok(Ldist == corrupted_expect, "tamper: corrupted distinct-prefix gate")
-    if c.fails:
-        print("RESULT: PASS (tamper-selftest correctly FAILED the corrupted gate)")
-        print(f"  corrupted expectation {corrupted_expect} vs true {Ldist}")
+    if Ldist != corrupted_expect:
+        rejected += 1
+
+    cert = json.loads((ROOT / CERT_PATH).read_text(encoding="utf-8"))
+    bad_row = copy.deepcopy(cert)
+    bad_row["rows"]["prime_GF13_n12"]["c3r0"]["barN"] = "5"
+    bad_row["payload_sha256"] = canonical_payload(bad_row)
+    if not certificate_valid(bad_row):
+        rejected += 1
+
+    bad_source = copy.deepcopy(cert)
+    bad_source["source_bindings"][0]["sha256"] = "0" * 64
+    bad_source["payload_sha256"] = canonical_payload(bad_source)
+    if not certificate_valid(bad_source):
+        rejected += 1
+
+    if rejected == 3:
+        print("RESULT: PASS (tamper-selftest)")
+        print("tamper_mutations_rejected=3/3")
+        print("STATUS: COUNTEREXAMPLE")
         return 0
-    print("RESULT: FAIL (tamper-selftest did NOT trip)")
+    print(f"RESULT: FAIL (tamper mutations rejected {rejected}/3)")
+    print("STATUS: COUNTEREXAMPLE")
     return 1
 
 
 def main(argv) -> int:
-    if "--tamper-selftest" in argv:
+    if argv == ["--tamper-selftest"]:
         return tamper_selftest()
+    if argv:
+        print(f"RESULT: FAIL (unknown arguments: {' '.join(argv)})")
+        print("STATUS: COUNTEREXAMPLE")
+        return 2
     c = Checker()
     section_A_reproduce_542(c)
     prime12 = section_B_prime(c)
@@ -682,6 +915,8 @@ def main(argv) -> int:
     sep = section_E_separation(c)
     dtar = section_D_target(c, sep)
     section_F_reduction(c, prime12, tower12, sep)
+    section_G_prime_counterexamples(c)
+    validate_certificate(c)
 
     for line in c.log:
         print(line)
@@ -690,30 +925,35 @@ def main(argv) -> int:
     print("GROUND TRUTH (exact, realized-image scale of PO5/6.4'):")
     print(f"  prime GF(13) n=12: identity barN={float(prime12['barN_id']):.4f}  "
           f"square barN={float(sqp['barN']):.4f} (field vals {sqp['field_vals']}, "
-          f"no drop) -> identity DOMINATES all scales")
+          f"no drop) -> square dominated; c=3,r=0 still violates literal ID")
     print(f"  tower GF(49) n=12: square field vals={tower12['sq_field_vals']}(<=7), "
           f"barN_sq={float(tower12['sq_barN']):.4f} > formal id "
           f"{float(tower12['barN1_formal']):.4f} -> obstruction (exact field drop)")
     tw = sep["tower"]
     print(f"  tower GF(121) n=20 (crossing): formal id barN_1={float(tw['barN1_formal']):.4f}"
           f"  square barN_sq={float(tw['barN_sq']):.4f}  excess={float(tw['excess']):.4f}"
-          f" -> identity-prefix comparison INCOMPLETE (obstruction)")
-    print(f"     (FI)-for-identity: L_id={tw['id_L']}<|B|^w={tw['Bq']**tw['w']} COLLAPSES"
-          f" (factor p) on the smooth coset -> realized-scale couples to input 2")
+          f" -> beats formal identity proxy only")
+    print(f"     exact full-codomain deficit: L_id={tw['id_L']}<|B|^w="
+          f"{tw['Bq']**tw['w']} (factor p); asymptotic FI is not decided")
     if sep["prime"]:
         pr = sep["prime"]
         print(f"  prime GF(41) n=20 (same deep regime): formal id barN_1="
               f"{float(pr['barN1_formal']):.4f}  square barN_sq={float(pr['barN_sq']):.4f}"
-              f"  (FI) holds -> identity DOMINATES (no drop)")
-    print(f"  target: E_identity={dtar['E_id']} E_complete={dtar['E_env']} "
-          f"B*={dtar['Bstar']} -> identity SAFE / complete UNSAFE (strict move)")
+              f"  exact full image; square is identity-dominated")
+    print(f"  target proxies: formal id={dtar['E_formal_id']} formal id+square="
+          f"{dtar['E_formal_id_square']} formal selected-power={dtar['E_formal_power']}")
+    print(f"  realized selected budgets: id={dtar['E_real_id']} id+square="
+          f"{dtar['E_real_id_square']} selected-power={dtar['E_real_power']} "
+          f"vs B*={dtar['Bstar']} -> safe test fails; no unsafe conclusion")
     print()
     if c.fails:
         print(f"RESULT: FAIL ({len(c.fails)} of {c.n})")
         for m in c.fails[:30]:
             print("  -", m)
+        print("STATUS: COUNTEREXAMPLE")
         return 1
     print(f"RESULT: PASS ({c.n}/{c.n})")
+    print("STATUS: COUNTEREXAMPLE")
     return 0
 
 

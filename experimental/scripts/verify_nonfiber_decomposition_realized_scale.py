@@ -13,8 +13,10 @@ per-fiber emission grammar closed (#735).  Two new facts reframe it: the paper's
 emission does not pay lower reserve) and the paper's `rem` PO5 effective
 normalization (the correct Fourier denominator is the realized-image group
 |G_lambda|, and "it does not assert that the realized image fills the affine
-group").  The profile-envelope comparison packet (PR #759, open) shows the
-identity image can itself collapse by a factor p at realized scale.
+group").  The profile-envelope comparison packet (PR #759, integrated in the
+same `2633895a` wave) records an exact finite full-codomain deficit for the
+identity image.  This is not an asymptotic `(FI)` conclusion and is motivational
+only; this verifier's proof is independent of #759.
 
 The staircase-concentration class (#739 / #732 / #735 corrected Thm 2a / #717
 Sec 7 / DannyExperiments-corrected #749):
@@ -67,7 +69,9 @@ criterion, layer-cake); #732 (Thm A/B, Prop 3.1); #735 (per-fiber emission
 grammar, corrected Thm 2a); #739 (staircase non-concentration, the cut fiber
 route -- DannyExperiments-corrected via #749); #725 (coset census); the paper's
 rem PO5 / eq:profile-envelope / thm:aperiodic-one-ray-saturation; the
-profile-envelope comparison packet (PR #759, OPEN -- dependency CONDITIONAL).
+profile-envelope comparison packet (PR #759, integrated in wave `2633895a`;
+finite full-codomain deficit only, not asymptotic `(FI)`; motivational only and
+proof-independent here).
 
 Usage:
   python3 verify_nonfiber_decomposition_realized_scale.py            # RESULT: PASS (n/n)

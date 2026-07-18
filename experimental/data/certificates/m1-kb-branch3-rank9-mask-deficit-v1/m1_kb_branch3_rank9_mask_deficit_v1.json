@@ -738,7 +738,7 @@
     "worst_corner_for_each_fixed_cutoff": "N_V=n AND d_V=1",
     "worst_corner_monotonicity": "BINOM(N_V,9) INCREASES IN N_V; mu_d(delta) INCREASES IN d_V"
   },
-  "payload_sha256": "e104cc0cfe3b142e91b453ccd6391dfe1c9899f6ee88af1f1eadd248bd5180d9",
+  "payload_sha256": "d2359383a8a0f92544f3d0615454c4e884d95c26e38b0770c2793603492ce32d",
   "predecessor_contract": {
     "actual_core_rank_r": 8,
     "basis_carrier_equals_complete_union": true,
@@ -815,19 +815,19 @@
       "binding_id": "packet-note",
       "path": "experimental/notes/m1/m1_kb_branch3_rank9_mask_deficit_route_cut_v1.md",
       "role": "load-bearing route-cut note",
-      "sha256": "59d0d6075d023c673ff110ea7a7ee89f1b42ec8e51e90e90303843d3512345c3"
+      "sha256": "945e0b2af86d8888d718f2407fc2faa7995df93eefffaca29d4256675144d3c0"
     },
     {
       "binding_id": "packet-readme",
       "path": "experimental/data/certificates/m1-kb-branch3-rank9-mask-deficit-v1/README.md",
       "role": "replay instructions",
-      "sha256": "b97f0ab4a1ff1c611e20f1d2d3c45ed93e305613e0d32142a86a700b5c397167"
+      "sha256": "548eb9d1755b844a36d4f0ddb804ca938da8c5386d023e1b0141e4844c4d60e3"
     },
     {
       "binding_id": "packet-verifier",
       "path": "experimental/scripts/verify_m1_kb_branch3_rank9_mask_deficit_v1.py",
       "role": "exact optimizer verifier",
-      "sha256": "c88d87e11da61f1b2fd2f40a2a39b3c43d3db35afc0bbc01bbded3721de1a880"
+      "sha256": "057f2cc2488d5f62b7d8b505e2bc8c0b21df44c8f40bb983187ccbaac1c2c8a7"
     },
     {
       "binding_id": "sage-control",
@@ -845,7 +845,7 @@
       "binding_id": "rank-ladder-certificate",
       "path": "experimental/data/certificates/m1-kb-branch3-actual-core-mds-v1/m1_kb_branch3_actual_core_mds_v1.json",
       "role": "frozen rank-nine carrier boundaries",
-      "sha256": "1d33311376fae565924bf9656d2e5f11b59a735238eb053aa6b485cceea80392"
+      "sha256": "750d2ff597730fcf47b3867f08bbf34bce613ab7aca2746bee923b1f9d585eca"
     },
     {
       "binding_id": "rank-ladder-verifier",

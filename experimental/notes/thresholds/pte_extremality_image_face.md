@@ -23,9 +23,10 @@ enumeration), **MEASURED** (exact finite toy, asymptotic read off but not proved
 from the toy), **AUDIT** (cross-reference), **OPEN**.
 
 **Credit.** The convergence this packet adjudicates comes from three lineages:
-**#534** (`balanced_core_kappa_growth.md`, the Prouhet-Thue-Morse family as the
-extremal for the per-chart *secant count* `C(R+k,k+1) ~ 2^{0.97n}` on the
-agreement/kernel side); **scottdhughes #564** (the equal-power-sum wall on the
+**#534** (`balanced_core_kappa_growth.md`, the raw Prouhet--Thue--Morse
+family as a stress test where the per-chart *secant upper-bound constant*
+`C(R+k,k+1) ~ 2^{0.97n}` is exponential; it does not attain that many
+realized slopes); **scottdhughes #564** (the equal-power-sum wall on the
 ambient/signed side, and the **canonical star-PTE trade lemma** `w_a_star_pte
 _lemma.md` / `star_pte_support_bound.md` — the fiber-algebra fact this packet
 makes literal on the image face); **Codex #615** (`c9_r2_near_sidon_razor.md`,

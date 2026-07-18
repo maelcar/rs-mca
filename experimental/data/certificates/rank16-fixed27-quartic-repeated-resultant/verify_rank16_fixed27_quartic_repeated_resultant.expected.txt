@@ -1,0 +1,10 @@
+R29_FIXED27_QUARTIC_REPEATED_RESULTANT: PASS
+p=2130706433 n=2097152 B=32768 a=67472 D=96369 d=63601 w=28897
+Qres_cap=51988 Base_cap=12997
+preliminary_union=133009 refined_endpoint=141685
+endpoint=c:11545,r:52056,lambda:17352
+strict_union_floor=141686 low_triple_floor=150361
+descent=17352/32768,8676/16384,4338/8192,2169/4096
+pair_secant_degree=2 high_triple=Fano_minus_one_Xm
+ledger_delta=0 official_score=0/2
+RESULT: PASS

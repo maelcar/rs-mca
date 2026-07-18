@@ -30,10 +30,10 @@ fixed-deficiency theorem always applies, and over a finite field it can be
 minimized with the complete paving-basis charge.  These charges are not
 multiplied.  They do not dominate one another.
 
-The fixed-slope theorem that introduced `J_K` is pending upstream PR `#817`.
-The arithmetic reduction here is standalone and does not vendor or assume the
-integration of that packet.  It consumes the pending result only to interpret
-`J_K>0` as the neighboring fixed-slope payment.
+The fixed-slope theorem that introduced `J_K` originated in PR `#817` and
+was integrated through superset PR `#823` head `06c06581` in `168e9ba0`.
+The arithmetic reduction here remains standalone.  It uses that integrated
+result only to interpret `J_K>0` as the neighboring fixed-slope payment.
 
 ## 1. Parameters and the three denominators
 
@@ -63,7 +63,8 @@ J_K=a^2-N(kappa-1).                                      (4)
 The first two expressions are exactly the high-direction and punctured
 Johnson denominators in
 `selector_free_direction_distance_all_pair.md`.  The last is the direct
-fixed-syndrome kernel denominator of pending PR `#817`.
+fixed-syndrome kernel denominator of integrated PR `#823`, which covers
+PR `#817`.
 
 ## 2. Denominator nesting theorem
 
@@ -391,11 +392,19 @@ paving and affine-core packets:
 >
 > or route the whole corresponding pair fiber to a named earlier owner.
 
-Equivalently, the remaining atom is basis-heavy and has neither a low-rank
-transversal nor uniformly low-rank same-slope fibers.  It needs an inverse
-step extracting a common flat/low-degree locator family, or a genuinely new
-polynomial-value/beyond-Johnson input.  Another mask-by-mask Johnson count
-cannot distinguish it.
+PR `#832`, integrated in the same `168e9ba0` wave, corrects how (31) may be
+used on the deep-hole boundary.  When `d_dir=R`,
+`beta_(kappa+1)(A)=binom(N,kappa+1)` automatically, so basis heaviness has no
+inverse content.  At the first sharp case `R-t=1`, the exact source target is
+the **deep-hole pencil/design owner dichotomy**: prove an image-normalized
+deficit for the distributed core pencils or almost-Steiner design, or route
+the whole pair fiber to a named earlier owner.  The exact pencil-slack ledger
+in `augmented_basis_pencil_design_inverse.md` shows that `beta` alone has no
+inverse content.  Its positive-depth affine-line equality fixture has
+`kappa=1` and lies outside `J_K<=0`, so it is a source-boundary example,
+not a counterexample to a stronger in-chamber inverse.  Any common-flat or
+low-degree conclusion on (31) needs additional `J_K` and first-match
+hypotheses; it does not follow from basis heaviness.
 
 Statement (31) is local to one received line/profile.  Claiming that it covers
 every survivor, or summing it uniformly over profiles and received lines,
@@ -404,7 +413,7 @@ Neither is supplied here.
 
 ## 7. Verification and formalization
 
-The standard-library verifier and pinned strict-JSON certificate are
+The standard-library verifier and pinned JSON certificate are
 
 ```text
 experimental/scripts/verify_triple_negative_first_match_reduction.py
@@ -456,4 +465,4 @@ This packet does not:
 - move a deployed finite row, prove an unsafe-side reserve or adjacent
   crossing, or alter Grand MCA, Grand List, or either prize question;
 - alter stable paper TeX/PDF; or
-- treat pending PR `#817` as integrated.
+- use integrated PR `#823` to turn `J_K<=0` into a semantic owner cell.

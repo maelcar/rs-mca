@@ -33,7 +33,7 @@ SOURCE_MARKERS = {
     ),
     "experimental/notes/thresholds/all_pair_paving_basis_multiplicity_compiler.md": (
         "|P| <= floor(beta_(kappa+1)(A)/Lambda_(d,t))",
-        "The exact remaining wall is the **basis-heavy deep-hole owner dichotomy**",
+        "The exact remaining wall is the **deep-hole pencil/design owner dichotomy**",
     ),
     "experimental/notes/thresholds/depth_zero_identity_lineray_owner.md": (
         "|P| <= binom(N,a).                                      (1)",
@@ -75,7 +75,10 @@ def source_binding() -> list[dict[str, Any]]:
         pins = []
         for marker in markers:
             matches = [(i, line) for i, line in enumerate(lines, 1) if marker in line]
-            require(len(matches) == 1, f"source marker is not unique: {marker}")
+            require(
+                len(matches) == 1,
+                f"source marker count {len(matches)} != 1: {marker}",
+            )
             line_no, line = matches[0]
             pins.append(
                 {
@@ -357,7 +360,7 @@ def build() -> dict[str, Any]:
                 "kappa=o(N), because J_K<=0 forces gap_g=o(N) and the complementary binomial index kappa+2gap_g-1=o(N)",
                 "identity_depth_h=0 is paid exactly at the depth-zero identity profile scale",
             ],
-            "remaining_wall": "positive-depth first-match profiles with positive-linear kappa and deficiency, after exact-weight, curve/pencil, low-rank affine-core, and earlier semantic owners are removed; compare owned augmented-basis mass to the realized profile scale or route the whole fiber",
+            "remaining_wall": "the local positive-depth J_K<=0 ratio remains conditional; on d=R the exact source target is the deep-hole core-pencil/design owner dichotomy, with beta automatically maximal, so prove image-normalized pencil/design deficit or route the whole fiber",
         },
         "exhaustive_parameter_scan": exhaustive_scan(),
         "positive_depth_boundary_fixtures": boundary_fixtures(),
@@ -370,7 +373,7 @@ def build() -> dict[str, Any]:
             "No owner-free subexponential bound is claimed on all of J_K<=0.",
             "No theorem says a triple-negative witness survives earlier quotient, planted, curve, common-support, or other owners.",
             "No witness-exhaustive atlas, profile add-back, uniform received-line theorem, deployed-row movement, Grand MCA, or Grand List result is claimed.",
-            "The pending fixed-slope J_K source packet is not vendored or treated as integrated by this standalone arithmetic reduction.",
+            "The integrated fixed-slope J_K source theorem from PR #823 is used only for its displayed neighboring J_K>0 interpretation; it does not make J_K<=0 a semantic owner cell.",
         ],
     }
     out["payload_sha256"] = payload_sha256(out)

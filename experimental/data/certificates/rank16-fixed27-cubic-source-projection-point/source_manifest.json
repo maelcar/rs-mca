@@ -1,0 +1,90 @@
+{
+  "schema": "rs-mca.r31-role04-cubic-source-projection-point.v1",
+  "base": {
+    "ref": "origin/main",
+    "commit": "c4856fa6db0b2cd491f5c5fe2a0f3c8468de645e"
+  },
+  "dependencies": [
+    {
+      "kind": "open_pr",
+      "number": 892,
+      "head": "d4a33c87ac3e3e1a5078b88fddf085cb6536b75e",
+      "packaged_patch_sha256": "faf67009c6bdc57627d5b9d27dbcd865b67b95abb4d13f7ddb37ee90e44cc1f3"
+    },
+    {
+      "kind": "open_pr",
+      "number": 904,
+      "head": "213c4ebdebf28c0bd92aa47f293f0138b034037b",
+      "files": {
+        "experimental/notes/l2/rank16_fixed27_cubic_near_equality_genus.md": "6571a5b527de2cd6da6e12884deed4bc4f4feb46465e90a7cd90cbc402c71e6b",
+        "experimental/scripts/verify_rank16_fixed27_cubic_near_equality_genus.py": "7ed4f5ffe2e7a07fd5c9d82a9e0b4185bd03aaedb617bc76901f9301c457df11",
+        "experimental/scripts/verify_rank16_fixed27_cubic_near_equality_genus.expected.txt": "239042dff50d435936a08d6585bec46f760f9a8ecb2549cb5f28d82d4619735a"
+      }
+    }
+  ],
+  "integrated_replay_pin": {
+    "path": "experimental/scripts/verify_rank16_fixed_core_quotient_line_obstruction.expected.txt",
+    "sha256": "8dbe50b5911bfcdbc10fcc3ee578398d0d068f43f57b672c4e84eb42b64dc109"
+  },
+  "worker_return": {
+    "role": 4,
+    "path_hint": "RS_MCA_HOMERUN_15PRO_20260718_R31/returns_raw/in_app_pro/role_04/assistant_clean_rendered.txt",
+    "sha256": "b6ade103354b7e3910c401d549f918af83bdab3df6b113408453738a9fd513c4"
+  },
+  "independent_audits": [
+    {
+      "kind": "hostile_proof",
+      "packet_sha256": "edbbf55819f1edbe0d5877f7794acae61eaba21debec05bdbd2985d8317a3b04",
+      "response_sha256": "67e17a51fc450eb09120c3613b3005d61c58b9c71a8464f874ace800e6953c08",
+      "verdict": "ACCEPT_NARROWED"
+    },
+    {
+      "kind": "source_compiler",
+      "packet_sha256": "47b47f7c8643c9913c947a5a6bc35886ec8577a539b964082d30b2b9c56640e6",
+      "response_sha256": "55964db626ec826153fe60253b1ca0c1c8a1076ef8d6a9c4682be0581a346c9c",
+      "verdict": "ACCEPT"
+    }
+  ],
+  "missing_worker_attachments": [
+    {
+      "name": "verify_r31_role04_source_projection.py",
+      "claimed_sha256": "b599b541e5281fb3c9c4e07385eab946a02bc418bd8d1712dc0e553b055c9e78"
+    },
+    {
+      "name": "verify_r31_role04_source_projection.expected.txt",
+      "claimed_sha256": "e516f67b64e57ee91219f432ee8b063d68912281475fff8fe788fc273bb4c705"
+    }
+  ],
+  "contract": {
+    "source": "one_literal_fixed27_affine_rank2_cubic_source_cell",
+    "field_prime": 2130706433,
+    "subgroup_order": 2097152,
+    "block_size": 32768,
+    "residual_degree": 63601,
+    "base_layers": [18619, 18618],
+    "function_field_identity": "L1(F)=X^B*L0(F)",
+    "multiplicity_identity": "mult_Pstar(C)=(r-B)/k",
+    "floors": {
+      "c18619": 246937,
+      "c18618": 246938
+    },
+    "next_delta": {
+      "c18619": 1470,
+      "c18618": 2392
+    },
+    "local_parent_charge": 0,
+    "global_ledger_charge": 0,
+    "official_score": "0/2"
+  },
+  "nonclaims": {
+    "boundary_existence": false,
+    "fixed27_cubic_cap_six": false,
+    "global_first_match_owner": false,
+    "cross_cell_add_back": false,
+    "recurrence_parent": false,
+    "asymptotic_theorem": false,
+    "grand_mca": false,
+    "grand_list": false,
+    "official_theorem": false
+  }
+}

@@ -1,5 +1,5 @@
 /-!
-# Heavy prefix fibers emit planted/saturation precursors (statement stub)
+# Heavy prefix fibers emit planted/saturation precursors
 
 Maps to **hard input 2**: the SEMANTIC EMISSION clause of avdeevvadim's #716
 charge-preserving semantic-or-signed dichotomy -- does every exponentially heavy
@@ -15,19 +15,19 @@ Repair:   `experimental/scripts/verify_heavy_fiber_planted_emission_hypothesis_r
 HONEST NONCLAIM.  The emission theorems and the exhaustive census (the
 no-counterexample scan, the F_p precursor battery, the l^q-free structural
 content) are PROVED in the note + Python verifier, NOT in Lean.  This module is
-the DECIDABLE arithmetic shadow (stdlib-only `native_decide`) of the parts that
-are pure integer / F_p combinatorics:
+the decidable arithmetic and order-theoretic shadow of the parts that are pure
+integer / F_p combinatorics:
 
-1. THM 1 saturation-forcing: the recursive Johnson constant-weight-code bound
-   `cwBound n d w` and the strict drop `A(n,2(R+2),a) < A(n,2(R+1),a)` that makes
-   "heavier than the non-saturating ceiling => must saturate" go through;
+1. THM 1 saturation-forcing: concrete recursive-ceiling values and the general
+   contrapositive bridge from an explicit non-saturating ceiling hypothesis to
+   saturation.  Correctness of `cwBound` as a Johnson bound is not proved here;
 2. THM 2a involution twin-pair: the emitted fiber size `W = C(B,B/2)` (planted
    template on B/2 of B pairs) and Johnson saturation exponent `a-2`;
 3. THM 3 multiplicative folding: an order-d multiplicative-subgroup coset has
    vanishing power sums `p_1 = ... = p_{d-1} = 0 mod p`, so coset-union supports
    sit in ONE depth-(d-1) prefix fiber, with #725 coset census `sigma(p-1)`.
 
-No mathlib.  No Batteries.  One honest `sorry` at the single general target.
+No mathlib.  No Batteries.  No unresolved proof placeholders.
 -/
 
 namespace HeavyFiberPlantedEmission
@@ -125,13 +125,18 @@ def sigmaNat (n : Nat) : Nat :=
 theorem sigma_p7  : sigmaNat 6  = 12 := by native_decide     -- p=7  -> sigma(6)
 theorem sigma_p13 : sigmaNat 12 = 28 := by native_decide     -- p=13 -> sigma(12)
 
-/-! ## 5. The single general target (honestly unproved in Lean).
+/-! ## 5. THM 1 logical bridge and statement repair.
 
 THM 1 saturation-forcing, general form: for every `n a R`, a constant-weight code
 `C` (subsets of `Fin n` of size `a`, pairwise `|S ∩ S'| ≤ a-R-1`) with
 `C.card > cwBound n (2*(R+2)) a` contains a pair with `|S ∩ S'| = a-R-1` (it
-saturates).  The note + verifier prove this via the Johnson bound; here it is a
-STATEMENT TARGET carrying an explicit `sorry`.  The hypotheses match the note. -/
+saturates).  The note proves this by applying a Johnson constant-weight-code
+bound to the non-saturating case and taking the contrapositive.
+
+The former Lean target omitted the constant-weight semantics and the
+non-saturating ceiling theorem, so it was false for arbitrary lists of lists.
+The declarations below record a concrete counterexample and prove exactly the
+order-theoretic bridge under the missing ceiling hypothesis. -/
 
 /-- Max pairwise intersection of a list of finite index-sets (as `List Nat`
     supports); `0` if fewer than two.  stdlib-only nested folds (no List monad). -/
@@ -144,15 +149,29 @@ def maxIntersect (fibers : List (List Nat)) : Nat :=
       if i < j then Nat.max acc2 (interLen (fibers.get! i) (fibers.get! j)) else acc2)
       acc) 0
 
-/-- STATEMENT TARGET (UNPROVED): if a fiber list of `a`-subsets of an `n`-set with
-    all pairwise intersections `≤ a-R-1` has more than `cwBound n (2*(R+2)) a`
-    members, then its max pairwise intersection is exactly `a-R-1` (saturation).
-    Proved in the note/verifier by the Johnson constant-weight bound. -/
-theorem saturation_forcing_STATEMENT_TARGET_UNPROVED
+/-- The former unrestricted target is false: four empty supports exceed the
+    computed `(n,a,R) = (12,4,2)` ceiling `3`, but their maximum intersection is
+    `0`, not the claimed saturation value `1`. -/
+theorem old_saturation_target_counterexample :
+    let fibers : List (List Nat) := [[], [], [], []]
+    maxIntersect fibers ≤ 4 - 2 - 1 ∧
+      fibers.length > cwBound 12 (2 * (2 + 2)) 4 ∧
+      maxIntersect fibers ≠ 4 - 2 - 1 := by
+  native_decide
+
+/-- Logical core of THM 1: an admissible family above an explicitly supplied
+    non-saturating ceiling must attain the saturation value.  The hypothesis
+    `hceiling` is the substantive Johnson constant-weight-code input; this
+    theorem does not derive it from the list representation. -/
+theorem saturation_forcing_of_nonsaturating_ceiling
     (n a R : Nat) (fibers : List (List Nat))
     (hbound : maxIntersect fibers ≤ a - R - 1)
-    (hheavy : fibers.length > cwBound n (2 * (R + 2)) a) :
+    (hheavy : fibers.length > cwBound n (2 * (R + 2)) a)
+    (hceiling : maxIntersect fibers < a - R - 1 →
+      fibers.length ≤ cwBound n (2 * (R + 2)) a) :
     maxIntersect fibers = a - R - 1 := by
-  sorry
+  apply Nat.le_antisymm hbound
+  exact Nat.le_of_not_gt (fun hlt =>
+    (Nat.not_lt_of_ge (hceiling hlt)) hheavy)
 
 end HeavyFiberPlantedEmission

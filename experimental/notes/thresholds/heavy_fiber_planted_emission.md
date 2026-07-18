@@ -76,8 +76,12 @@ deterministic, `RESULT: PASS (138/138)`, `--tamper-selftest` catches `4/4`,
 Johnson sanity + no-counterexample scans run over EVERY fiber.  Machine-readable
 certificate:
 `experimental/data/certificates/heavy-fiber-planted-emission/heavy_fiber_planted_emission.json`.
-Lean statement stub: `experimental/lean/heavy_fiber_planted_emission/`
-(`lake build` succeeds; `native_decide` instances + one honest `sorry` target).
+Lean formalization: `experimental/lean/heavy_fiber_planted_emission/`.  It
+checks the finite arithmetic anchors and proves the exact contrapositive bridge
+from an explicit non-saturating ceiling to saturation.  The former unrestricted
+list-level target was false because it omitted constant-weight semantics and the
+ceiling theorem; the package records a concrete counterexample and exposes that
+ceiling as a hypothesis.
 The hypothesis correction, its integer/modular counterexample, and the repaired
 structural/heavy split are replayed separately by
 `experimental/scripts/verify_heavy_fiber_planted_emission_hypothesis_repair.py`.
@@ -437,6 +441,15 @@ is the universal precursor of sufficiently heavy fibers.  Verified (BLOCK B):
 all 54 census heavy fibers exceeding `A(n,2(R+2),a)` saturate, 0 exceptions
 (the other 14 saturate too, though not forced by the bound). `square`
 
+**Lean boundary.**  The standalone Lean representation does not encode that
+the inner lists are distinct `a`-subsets of an `n`-element universe, and the
+recursive function `cwBound` alone is not a proof that the corresponding
+non-saturating family has bounded cardinality.  Accordingly, Lean proves the
+contrapositive order step only after receiving that non-saturating ceiling as
+an explicit hypothesis.  It also checks a four-empty-support counterexample to
+the old unrestricted list statement.  This repairs the formal interface; it
+does not weaken or reprove the source theorem's classical Johnson input.
+
 ### Theorems 2a/2b, 3 (Sec 1, Sec 2) -- the two structured emission classes.
 
 ### Discriminator (PROVED)
@@ -533,9 +546,9 @@ fiber and flags any all-`False` row (a counterexample); none occur.
   `eq:exact-power-sum-map` and the primitivity definition (L459) -- heavy prefix
   fibers on the structured charts emit named precursors; the residual is the
   max-fiber profile count, not the precursor grammar.
-- Lean statement stub: `experimental/lean/heavy_fiber_planted_emission/`
-  (saturation-forcing code-bound, twin count `C(B,B/2)`, multiplicative coset
-  power-sum vanishing, `sigma` census; statements only, `lake build` succeeds).
+- Lean formalization: `experimental/lean/heavy_fiber_planted_emission/`
+  (finite ceiling/twin/coset/census anchors plus a proved saturation
+  contrapositive under an explicit non-saturating-ceiling hypothesis).
 
 ## Reproducibility
 
@@ -545,5 +558,5 @@ python3 experimental/scripts/verify_heavy_fiber_planted_emission.py
 python3 experimental/scripts/verify_heavy_fiber_planted_emission.py --tamper-selftest
 # -> tamper-selftest: caught 4/4 ; then RESULT: PASS (138/138)
 cd experimental/lean/heavy_fiber_planted_emission && lake build
-# -> Build completed successfully (one 'sorry' warning, by design)
+# -> Build completed successfully
 ```

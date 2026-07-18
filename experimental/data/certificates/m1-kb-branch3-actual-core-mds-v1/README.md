@@ -28,13 +28,17 @@ retained family.  They are not summed and are not charged per triple or
 subfamily.  No unconditional ledger movement, complete rank-nine payment,
 branch-3 closure, row closure, or deployed selector census is claimed.
 
-Replay:
+Replay the committed certificate before any regeneration.  Use `--write` only
+after an intentional source change, then re-run `--check`.
 
 ```bash
-python3 experimental/scripts/verify_m1_kb_branch3_actual_core_mds_v1.py --write
 python3 experimental/scripts/verify_m1_kb_branch3_actual_core_mds_v1.py --check
 python3 experimental/scripts/verify_m1_kb_branch3_actual_core_mds_v1.py \
   --tamper-selftest
+
+# Regeneration only after an intentional source change:
+python3 experimental/scripts/verify_m1_kb_branch3_actual_core_mds_v1.py --write
+python3 experimental/scripts/verify_m1_kb_branch3_actual_core_mds_v1.py --check
 
 python3 -O experimental/scripts/verify_m1_kb_branch3_actual_core_mds_v1.py \
   --check

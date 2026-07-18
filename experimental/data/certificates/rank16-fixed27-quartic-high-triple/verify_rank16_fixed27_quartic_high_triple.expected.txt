@@ -1,0 +1,19 @@
+R30_FIXED27_QUARTIC_HIGH_TRIPLE: PASS
+B=32768 d=63601 w=28897 Base_cap=12997 lambda_range=15900..28897 checked_pairs=181972
+block=    4 orbit= 8192 min_gap=       1 at_lambda=16384 L=2 S=11 Q=10 cap=9
+block=    8 orbit= 4096 min_gap=       5 at_lambda=16384 L=4 S=21 Q=54 cap=49
+block=   16 orbit= 2048 min_gap=      15 at_lambda=16384 L=8 S=41 Q=240 cap=225
+block=   32 orbit= 1024 min_gap=      37 at_lambda=15900 L=15 S=78 Q=936 cap=899
+block=   64 orbit=  512 min_gap=      57 at_lambda=15900 L=31 S=156 Q=3900 cap=3843
+block=  128 orbit=  256 min_gap=     189 at_lambda=15900 L=62 S=311 Q=15810 cap=15621
+block=  256 orbit=  128 min_gap=     875 at_lambda=15900 L=124 S=622 Q=63860 cap=62985
+block=  512 orbit=   64 min_gap=    3321 at_lambda=15900 L=248 S=1243 Q=256266 cap=252945
+block= 1024 orbit=   32 min_gap=   11709 at_lambda=15904 L=497 S=2486 Q=1027548 cap=1015839
+block= 2048 orbit=   16 min_gap=   46115 at_lambda=15904 L=994 S=4971 Q=4113504 cap=4067389
+block= 4096 orbit=    8 min_gap=  181269 at_lambda=15900 L=1987 S=9938 Q=16450704 cap=16269435
+block= 8192 orbit=    4 min_gap=  712429 at_lambda=15900 L=3975 S=19876 Q=65822688 cap=65110259
+block=16384 orbit=    2 min_gap= 2843933 at_lambda=15900 L=7950 S=39751 Q=263317250 cap=260473317
+block=32768 orbit=    1 min_gap=11364167 at_lambda=15900 L=15900 S=79501 Q=1053322000 cap=1041957833
+terminal_orbit=16384 residual_range=50604..63601 bracket=49152<50604<=63601<65536
+union_floor=150361
+tamper_checks=3/3

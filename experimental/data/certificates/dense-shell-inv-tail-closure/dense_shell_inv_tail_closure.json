@@ -1,0 +1,105 @@
+{
+ "packet": "dense_shell_inv_tail_closure",
+ "date": "2026-07-17",
+ "upstream_base": "a575019",
+ "claim": "INV-TAIL (#880: persistence of the three certified floors for j >= 49) reduces to the single scalar (PROP-TAIL); given it, the |K|=1 class-sum dichotomy is unconditional at every B",
+ "discharge_chain": [
+  "PROP(-TAIL)",
+  "bundle step-closed (COMPUTED census V12 + PROVED-sufficiency corner-sufficiency)",
+  "i=0 assembly >= 1.2848 (f=0.98 census floors) >= gamma_req_loose",
+  "KEY@loose (P8, margin 0.015)",
+  "three floors persist",
+  "|K|=1 unconditional"
+ ],
+ "constants": {
+  "gamma_req_loose_exact": 1.1470992682,
+  "gamma_req_certified_exact": 1.1010921818,
+  "gamma_req_banked_error_corrected": {
+   "was": 1.036,
+   "is": 1.1011
+  },
+  "assembly_gamma0_full_floors": 1.3032,
+  "assembly_gamma0_f098": 1.2848,
+  "assembly_margin_full": "13.6%",
+  "assembly_margin_f098": "12.0%",
+  "assembly_note": "r0 floors and span floor all computed in-gate (V7) from the level-48 cascade; gated at both f=1.00 and f=0.98",
+  "census_target_rho_prop": 1.02560749,
+  "census_target_note": "precise bisected value; the rounded 1.026 is past the cliff (census fails there by ~-0.0046)",
+  "census_closure": {
+   "cap": "+0.00000 (non-strict; the r_0 = 2 degenerate fixed point)",
+   "floor": 0.00075,
+   "output_LC": "-1.4e-8 (>= -1e-6 tolerance)"
+  },
+  "pareto_knee_floor_scale": 0.98,
+  "rho_prop_operative_window": "i < 17 (the corner-vector length; the window V12 imposes and V13 gates)",
+  "rho_prop_operative_i17": {
+   "j48": 1.02559,
+   "j50": 1.02352,
+   "j55": 1.01933,
+   "j60": 1.01617
+  },
+  "rho_prop_informational_i10": {
+   "j48": 1.00796,
+   "j60": 1.00506,
+   "note": "narrower window decays faster; NOT the operative census constraint"
+  },
+  "coup_threshold": 1.53209,
+  "coup_kappa_measured_max_jc6_48": 1.4606,
+  "sigma_range": [
+   0.243,
+   0.4196
+  ],
+  "sigma_birkhoff_upper": 0.46,
+  "mass_cocycle_theta_computed": 0.949,
+  "p_mass_cocycle_theta_computed": 0.966,
+  "kappa_max_over_N": 1.0155,
+  "kappa_max_over_N_threshold": 1.1695,
+  "clt_beta": 0.6191,
+  "caps_step_tight_point": "t = 1/2 (d_- + 1/4 = 0 exactly)",
+  "pair1_loose_closure_Lstar": 0.974,
+  "span_floor": 0.8766,
+  "span_floor_source": "computed in-gate (V7) = level-48 min_i Y2[i]/Y[i], with 0.995 persistence pad",
+  "r0_floors_consumed": [
+   1.9646,
+   1.9647
+  ]
+ },
+ "gates": {
+  "count": 13,
+  "list": "V1-V7, V9-V14 (V8 retired during development)",
+  "default_seconds": 2.8,
+  "deep_seconds": 4.1,
+  "tampers": 13,
+  "tampers_broke": 13
+ },
+ "lean": {
+  "package": "experimental/lean/inv_tail_closure",
+  "toolchain": "leanprover/lean4:v4.14.0",
+  "sorry_count": 0,
+  "content": [
+   "interior_row_nonneg",
+   "center_row_nonneg",
+   "aggregate_center_nonneg",
+   "trace_core",
+   "coup_threshold_core",
+   "cubic_is_2T3m1"
+  ]
+ },
+ "refutations_witnessed": [
+  "2-step composed-kernel PF2 (mp L1 fails on parent t in [0.40, 0.50], min -0.01155)",
+  "fixed regional bands at depth (r0 = 1.9795 at j = 60 > banked 1.948)",
+  "geometric contraction (theta_j = 1 - 2/j, polynomial)",
+  "decoupled invariants (independent adversaries, slack -0.58)",
+  "flat-caps all-i tail assembly (decays through the requirement from i ~ 16)",
+  "edge-notched floors (fixed-point self-reference)",
+  "symmetric coherence band kappa_c = 1.32 as census closer (residual plateaus)",
+  "p-share buffer absorption (gamma_p < 1)",
+  "banked gamma_req at certified caps 1.036 (true 1.1011)"
+ ],
+ "conditional": {
+  "name": "PROP-TAIL",
+  "statement": "rho_prop@i<17(j) <= 1.02560749 persists for j > 60 (gate V13 covers j <= 60 on the operative window i < 17; measured monotone-decreasing 1.02559 at j=48 -> 1.01617 at j=60; the target equals the realized j=48 value up to +1.7e-5)",
+  "margins": "operative-window margin at the worst gated level j=48 is +1.7e-5 (the target is the bisected realized value); the real safety is the measured monotone j-decay to 1.01617 at j=60. The i<10 window's ~1.008 is informational, NOT the census margin.",
+  "closed_proof_route": "Edgeworth remainder of the coupled two-branch recurrence (share part: COMPUTED scalar cocycle contraction theta ~ 0.95-0.97; shape part: fiber collapse)"
+ }
+}

@@ -25,8 +25,8 @@ The packet proves:
    antichain-size, and complete-union scalar constraints still permits the
    all-zero deficit profile and therefore cannot improve the predecessor's
    coarse rank-nine cap;
-4. for any proved cumulative bound `H_D <= T`, the exact largest sufficient
-   right side at a fixed cutoff is
+4. in a predecessor coarse-failure cell, for any proved cumulative bound
+   `H_D <= T`, the exact largest sufficient right side at a fixed cutoff is
 
    ```text
    T_star = floor(
@@ -47,15 +47,20 @@ The scalar extremizer is not a constructed Reed--Solomon witness.  The packet
 does not prove the missing incidence lemma, pay rank nine, move the ledger,
 close branch 3, or close the KoalaBear row.
 
-Replay:
+Replay the committed certificate before any regeneration.  Use `--write` only
+after an intentional source change, then re-run `--check`.
 
 ```bash
-python3 experimental/scripts/verify_m1_kb_branch3_rank9_mask_deficit_v1.py \
-  --write
 python3 experimental/scripts/verify_m1_kb_branch3_rank9_mask_deficit_v1.py \
   --check
 python3 experimental/scripts/verify_m1_kb_branch3_rank9_mask_deficit_v1.py \
   --tamper-selftest
+
+# Regeneration only after an intentional source change:
+python3 experimental/scripts/verify_m1_kb_branch3_rank9_mask_deficit_v1.py \
+  --write
+python3 experimental/scripts/verify_m1_kb_branch3_rank9_mask_deficit_v1.py \
+  --check
 
 python3 -O experimental/scripts/verify_m1_kb_branch3_rank9_mask_deficit_v1.py \
   --check

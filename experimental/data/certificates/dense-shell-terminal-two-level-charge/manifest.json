@@ -1,0 +1,40 @@
+{
+  "claim": "For every B >= 2 and every dense prefix pi of length B-2, T_pi({B-1,B}) > beta_0*m_2 > 0; consequently T_empty({1,B-1,B}) > 0 for B >= 3.",
+  "claim_level": "local_all_depth_theorem",
+  "source_ref": "origin/main@c4856fa6db0b2cd491f5c5fe2a0f3c8468de645e",
+  "source_dependencies": [
+    "experimental/notes/thresholds/dense_shell_sign_dichotomy.md",
+    "experimental/notes/thresholds/dense_shell_class_charges.md"
+  ],
+  "independent_audit": {
+    "conversation_id": "6a5b74ec-1558-83ec-a709-778e3ae6ffdc",
+    "verdict": "ACCEPT_NARROWED",
+    "clean_response_sha256": "e4d738e3c6b6f31d5e75a6583fff63331b70545cacca440264d40db45238e3f7"
+  },
+  "replay": {
+    "command": "python3 experimental/scripts/verify_dense_shell_terminal_two_level_charge.py",
+    "optimized_command": "python3 -O experimental/scripts/verify_dense_shell_terminal_two_level_charge.py",
+    "tamper_command": "python3 experimental/scripts/verify_dense_shell_terminal_two_level_charge.py --tamper-selftest",
+    "expected": "RESULT: PASS (13/13)",
+    "tamper_expected": "TAMPER SELFTEST: 3/3 caught",
+    "continuous_samples": 100001,
+    "finite_prefixes": 32767,
+    "maximum_depth": 16,
+    "root_anchor_maximum_depth": 10,
+    "m2": "9.423028002201822e-04",
+    "minimum_enumerated_charge": "1.399892570065204e-06",
+    "minimum_bound_ratio": "55.688719230337"
+  },
+  "artifact_sha256": {
+    "experimental/notes/thresholds/dense_shell_terminal_two_level_charge.md": "62d6eb2be200aee77501a8a855075aa0d3a1d4a445051cf93a654d192e98b731",
+    "experimental/scripts/verify_dense_shell_terminal_two_level_charge.py": "d6187bc357a20738c7c162db23efe1d84f03d8c0a95bd324a6980634d9d39854",
+    "experimental/data/certificates/dense-shell-terminal-two-level-charge/verify_dense_shell_terminal_two_level_charge.expected.txt": "05f812d204a4e49f8572cafb9fbf280ad03ccca392a891d19009d4e567d16f1b"
+  },
+  "nonclaims": [
+    "No arbitrary-decoration theorem.",
+    "No class-payment or omega identity.",
+    "No product-profile emission schedule.",
+    "No Grand MCA or Grand List implication.",
+    "Official score remains 0/2."
+  ]
+}

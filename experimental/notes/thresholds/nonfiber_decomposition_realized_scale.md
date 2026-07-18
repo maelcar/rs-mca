@@ -126,11 +126,10 @@ Integrated in-tree packets (consumed and credited, not reproved):
   the `sigma(p-1)` coset census (the semantic coarsenings that DO exist are its
   coset-unions, sec 6).
 - **The profile-envelope comparison packet (PR #759)**
-  (`profile_envelope_target_comparison.md`, on its own line): its sub-finding
-  that the IDENTITY realized image collapses by a factor `p` on a smooth coset
-  `D = theta H` is the (N2) reframing that motivates rung (a).  **This PR is
-  OPEN, not yet integrated: the dependency on its `(FI)`-for-identity finding is
-  CONDITIONAL-on-open-PR.**  Rung (a)'s own decision does not depend on it (the
+  (`profile_envelope_target_comparison.md`, integrated in the same `2633895a`
+  wave): its exact finite full-codomain deficit for the identity map on a smooth
+  coset `D = theta H` is the (N2) reframing that motivates rung (a).  This is not
+  an asymptotic `(FI)` conclusion.  Rung (a)'s proof is independent of #759 (the
   Sidon-paired realized images are computed exactly here).
 
 Classical facts used by name: distinct-subset-sum / `B[+-2]`-dissociativity
@@ -394,8 +393,9 @@ reserve from emission (a heavy fiber can one-ray-saturate,
   threshold uses `L` (# nonempty fibers), the smaller, favorable denominator.
   Both are killed either way `(ORD)`.
 - Rung (a)'s decision is UNCONDITIONAL (exact Sidon-paired realized images).
-  The `(N2)` framing via PR #759's `(FI)`-for-identity collapse is
-  **CONDITIONAL-on-open-PR** and used only as motivation, not in any proof.
+  The `(N2)` framing via integrated PR #759's exact finite full-codomain deficit
+  is used only as motivation, not in any proof; it is not an asymptotic `(FI)`
+  conclusion.
 - The abundance census (sec 6) is exhaustive for `B <= 8` (Sidon) and the
   depth-2 `F_p` families `p in {7,11}`; the `3^{B-2}`/`3^{B-1}` crossovers and the
   `(3^B+1)/2` scale are closed-form, tabulated by the verifier.
@@ -421,10 +421,11 @@ reserve from emission (a heavy fiber can one-ray-saturate,
   (`c3_planted_divisor_census.md`): the only semantic coarsenings are their
   multiplicative coset-unions (single deep fiber, `sigma(p-1)` census), not a
   whole-packet decomposition.
-- **profile-envelope comparison packet (PR #759)**: rung (a) supplies the
-  additive-chart companion to its smooth-coset identity collapse -- on the
-  Sidon-paired chart the collapse is present (`5^i`) but insufficient for
-  concentration (CONDITIONAL-on-open-PR link).
+- **profile-envelope comparison packet (PR #759, integrated in wave
+  `2633895a`)**: rung (a) supplies the additive-chart companion to its exact
+  finite smooth-coset full-codomain deficit -- on the Sidon-paired chart the
+  collapse is present (`5^i`) but insufficient for concentration.  The link is
+  motivational only; this packet's proof is independent of #759.
 - `asymptotic_rs_mca_frontiers.tex` / `rs_mca_thresholds.tex`: paste-ready as the
   remark after the decomposition proposition and PO5 -- image-class normalization
   does not create a new decomposition; the open input is the transverse/signed

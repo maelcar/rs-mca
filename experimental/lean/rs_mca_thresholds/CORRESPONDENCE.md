@@ -42,6 +42,17 @@
   staircase range and tangent lower bound.
 - `thm:intro-delta-formula`: `firstSafeAgreement_crossing_bounds`,
   `firstSafeAgreement_isLittleO`, and `certificateRadius_tendsto`.
+- `Exact support and actual error support` and `Lift to the deep agreement` in
+  `experimental/notes/m1/m1_kb_branch2_rank_deep_owner_v1.md` at source
+  snapshot `168e9ba0`: `fullAgreementSupport`,
+  `mem_fullAgreementSupport_iff`, `fullAgreementSupport_card`,
+  `fullAgreementSupport_witness`, and
+  `mcaBad_lift_of_wordSupport_card_le`.
+- The source specialization `r = t - 1` and printed endpoint
+  `n - (t - 1) = n - t + 1`: `nat_sub_pred_eq_sub_add_one` records the
+  necessary hypotheses `0 < t` and `t ≤ n`, while
+  `rankDepth_mcaBad_lift_of_wordSupport_card_le` derives them from the exact
+  witness data.
 
 `MinimumDistanceAtLeast C d` is the exact minimum-distance interface used by
 HD1: every nonzero codeword has support cardinality at least `d`. The shared

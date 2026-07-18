@@ -1,0 +1,13 @@
+rank16 fixed27 cubic near-equality genus verifier
+origin_main=c4856fa6db0b2cd491f5c5fe2a0f3c8468de645e
+pr892_head=d4a33c87ac3e3e1a5078b88fddf085cb6536b75e
+atlas_counts slack2=2,2,4,2 slack5=5,3,12,5
+decisive c=18619 k=1 U=230414 E=103079 N=103079 D_pair=252931326 D_root=758711395 p_a=1011622690 excess=20031
+decisive c=18619 k=2 U=230413 E=103080 N=51540 D_pair=63221175 D_root=189669415 p_a=252888805 excess=1785
+decisive c=18618 k=1 U=230414 E=103085 N=103085 D_pair=252960774 D_root=758711395 p_a=1011667671 excess=4498
+first_unresolved c=18619 k=1 U=230419 shortfall=4509
+first_unresolved c=18619 k=2 U=230415 shortfall=669
+first_unresolved c=18618 k=1 U=230415 shortfall=410
+common_union_floor=230415
+mutations=3/3
+PASS

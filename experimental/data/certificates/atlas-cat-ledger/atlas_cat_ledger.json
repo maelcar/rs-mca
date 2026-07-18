@@ -93,7 +93,7 @@
       "condition": "pair of equal-degree monic residual locators with a common depth-w prefix",
       "verdict": "PAID (proj-dim-1) / CONDITIONAL on (RC) (higher-dim)",
       "paying_notes": ["bc_moving_root.md", "split_pencil_ray_collapse.md", "ray_compiler_balanced_core.md", "balanced_core_kappa_growth.md"],
-      "prs": [518, 528],
+      "prs": [518, 528, 534, 868],
       "regime": "split pencil (proj dim 1) paid via prop:split-pencil-payment; higher-dim needs proved decomposition or direct ray count (L2473-2474)",
       "profile_count": "split pencil: moving-root incidence <= n-g; higher-dim: e^{o(n)} only under (RC) = input 3",
       "growth_exponent": null,

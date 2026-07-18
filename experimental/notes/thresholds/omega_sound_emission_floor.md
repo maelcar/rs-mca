@@ -1,4 +1,4 @@
-# The omega-sound emission floor: T3's cap is against the wrong measure, the fix is one identity, and compiler soundness discharges
+# The omega-sound emission floor: T3's cap is against the wrong measure, the fix is one identity, and local scalar soundness discharges
 
 ## Status
 
@@ -25,31 +25,33 @@ Status: COUNTEREXAMPLE (S1) + PROVED (S2, the fix): band-uniform T3's
         symmetric pieces (31/31 classes positive), subgroup unions, and
         the maximal band's positive levels.  The #791 flat-cube
         reduction consumed the floor ONLY there: it is untouched.
-      + PROVED (S4, soundness discharged): the corrected rank-one rule
+      + PROVED (S4, local scalar soundness): the corrected rank-one rule
         -- pay min(2^s |hcube_v(D*)|, sum_eps h_+), one pattern per
         class (#818 E3's cap), pieces disjoint (the decomposition
         definition) -- never overpays omega, per class, per piece, and
         globally (payments sum to at most Omega_+ by disjointness).
-        The admission decision's compiler-level soundness obligation
-        (band-uniform Nonclaims; fold-charge Sec 5) is DISCHARGED as
-        arithmetic: 0 violations.
-      + COMPUTED (S5, full adequacy): on EVERY charged hierarchy
+        The local scalar no-overcredit obligation is DISCHARGED as
+        arithmetic: 0 violations.  This does not supply a source-to-cell,
+        profile-payment, or distinct-slope theorem.
+      + COMPUTED (S5, local scalar-cap attainment): on EVERY charged hierarchy
         (piece, class) pair at B = 6 the argmax payment already reaches
         the positive charge (2^s |hcube(D*)| >= sum_eps h_+, 421/421),
-        so the corrected rule pays hierarchy pieces IN FULL -- no
-        efficiency loss anywhere at the verified scale.  A general-B
-        proof of best >= cap is open.
+        so the argmax coefficient reaches each account's local scalar cap --
+        no local scalar efficiency loss occurs at the verified scale.  This
+        supplies no source-to-cell, profile-payment, or distinct-slope theorem;
+        a general-B proof of best >= cap is open.
 LANE: hard input 2 ("image-scale MI + MA, or a direct Sidon payment",
         agents.md L51) -- eighth packet of the arc (forcing -> typing ->
         reduction -> scope -> compression -> classification -> admission
-        arithmetic -> ADMISSION SOUNDNESS): with the floor corrected,
-        rank-one emission carries NO remaining soundness obligation, and
-        at B = 6 no adequacy loss either.  The admission decision on
-        hierarchy pieces is now a pure grammar-acceptance question
-        (soundness universally; adequacy at the verified scale).
-        Input-2 residual: that
-        acceptance, genuinely non-hierarchy bands, atlas totality (the
-        Codex team's lane), large-q Sidon.  Fence (N1)
+        arithmetic -> LOCAL SCALAR SOUNDNESS): with the floor corrected,
+        rank-one emission carries no remaining scalar overcredit obligation,
+        and at B = 6 no scalar adequacy loss either.  The governing
+        profile-payment interface remains OPEN: an actual same-owner
+        first-match cell, an (A4) analytic/Sidon payment, a separate (A6)/(RC)
+        distinct-slope bound, and a uniform subexponential aggregate census.
+        Input-2 residual: that semantic bridge and a grammar rule, genuinely
+        non-hierarchy bands, product-profile emission, atlas totality, and
+        large-q Sidon.  Fence (N1)
         (thm:aperiodic-one-ray-saturation) respected: nothing here pays
         or claims lower reserve.
 ```
@@ -85,9 +87,9 @@ Integrated in-tree packets (consumed and credited, not reproved):
   T3 is the object under audit.  Its floor statement is TRUE as written
   (against the cube ell^1); what S1 shows is that the COMPILER-relevant
   measure is omega = h_+, and against that the floor needs the S2 cap.
-  Its Nonclaims line ("the compiler-level soundness obligation ... is
-  part of the admission decision itself") is exactly the obligation S4
-  discharges.
+  Its Nonclaims line names the omega no-overcredit obligation that S4
+  discharges at local scalar scope.  S4 does not discharge the separate
+  source-to-cell/profile-payment and distinct-slope interfaces.
 - **The fold-charge packet** (#791, `fold_charge_localization.md`): its
   Sec-0 grammar dialect (signed CS-P vs semantic ell^1-via-emission) and
   Sec-5 reduction are consumed; S3 proves the reduction is untouched
@@ -96,7 +98,7 @@ Integrated in-tree packets (consumed and credited, not reproved):
   decomposition-piece formalism (its Sec 0) are the accounting frame.
 - **avdeevvadim's #716 Sec 6**: the charge-condition split this packet's
   soundness notion lives in.
-- **Codex team's atlas-totality lane** (in progress, theirs): unchanged.
+- **Atlas-totality residual**: unchanged by this packet.
 
 ---
 
@@ -174,18 +176,20 @@ Verified: worst single-sign overpay `1.4e-15`; depth-1 overpay exactly
 
 ---
 
-## 3. S4: compiler soundness discharges
+## 3. S4: local scalar cap soundness
 
 > **S4.**  The CORRECTED rank-one rule -- against a decomposition into
 > disjoint pieces, pay each (class, one certificate-named pattern `D*`)
-> at `min(2^s |hcube_v(D*)|, sum_eps h_+)` -- is compiler-sound against
+> at `min(2^s |hcube_v(D*)|, sum_eps h_+)` -- is scalar-accounting-sound against
 > omega: per class (the min), per piece (classes partition a
 > fold-measurable piece's supports, and syndrome sets of distinct classes
 > are disjoint), and globally (pieces are disjoint by the decomposition
 > definition, so payments sum to at most `Omega_+`).  With #818's E3
-> (one pattern per class necessary) and this cap, NO soundness
-> obligation on rank-one emission remains open: the admission decision
-> is purely whether the grammar ACCEPTS the rule.
+> (one pattern per class necessary) and this cap, no local scalar
+> overcredit obligation remains open.  This does not decide admission.
+> The governing profile-payment interface remains OPEN: an actual same-owner
+> first-match cell, an (A4) analytic/Sidon payment, a separate (A6)/(RC)
+> distinct-slope bound, and a uniform subexponential aggregate census.
 
 **Proof.**  The three levels are the min, disjointness of class syndrome
 sets (re-verified Lemma-N structure), and disjointness of pieces.  Units:
@@ -202,17 +206,18 @@ Verified: 0 violations over all pairs.
 
 ---
 
-## 4. S5: at the verified scale, the corrected rule pays in full
+## 4. S5: `B = 6` scalar-cap saturation on charged accounts
 
 > **S5 (COMPUTED).**  On every charged (piece, class) pair at `B = 6`
 > (421 of 558), `2^s |hcube_v(D*)| >= sum_eps h_+`: the min in S4 is
-> always the cap, and the corrected rule collects the class's ENTIRE
-> positive charge.  Hierarchy pieces are paid in full -- the soundness
-> correction costs nothing in adequacy at the verified scale.
+> always the local scalar cap.  Thus the argmax coefficient reaches the
+> local scalar cap on all 421 charged accounts.  This is local scalar
+> accounting only and supplies no source-to-cell, profile-payment, or
+> distinct-slope theorem.
 
 A general-`B` proof of `2^s |hcube(D*)| >= sum h_+` on rank-one classes
-is open (it would make full adequacy a theorem); the `B = 6` fact is
-exhaustive, not sampled.
+is open (it would generalize this scalar-cap-saturation statement); the
+`B = 6` fact is exhaustive, not sampled.
 
 ---
 
@@ -222,9 +227,11 @@ exhaustive, not sampled.
   `ell^1`) and proof are correct; S1 corrects the COMPILER-facing
   reading only.  The band-uniform packet itself flagged this obligation
   as open -- S1/S4 close it, they do not contradict it.
-- **NOT a proof of admission**: soundness and (verified-scale) adequacy
-  are discharged, but no emission rule is added to the grammar; the
-  acceptance itself remains the open decision.
+- **NOT a proof of admission**: only local scalar soundness and
+  verified-scale scalar adequacy are discharged.  The governing
+  profile-payment interface remains OPEN: an actual same-owner first-match
+  cell, an (A4) analytic/Sidon payment, a separate (A6)/(RC) distinct-slope
+  bound, and a uniform subexponential aggregate census.  No grammar rule is added.
 - **S5 is a `B = 6` computed fact**; the counts (263/558, 135, 421/421)
   are exhaustive at `B = 6` over symmetric pieces at `k in {1,2,3}`.
 - **Base 3 only**; single cosets and asymmetric profiles follow by the
@@ -235,12 +242,12 @@ exhaustive, not sampled.
 
 ## Consumers
 
-- **The admission decision (#791 Sec 5, #716 Sec 7.1, #818 Sec 6)**: the
-  soundness obligation named in band-uniform's Nonclaims is DISCHARGED;
-  the decision is now pure grammar acceptance, with the corrected floor
+- **The admission decision (#791 Sec 5, #716 Sec 7.1, #818 Sec 6)**: only
+  the local scalar no-overcredit obligation is discharged, with the floor
   `min(2^s |hcube(D*)|, (budget + 2^s hcube(empty))/2)` as the rule's
-  payment line.
-- **The band-uniform packet (#795)**: T3 gains its compiler-facing
+  scalar payment line.  Source-to-cell, A4, A6/RC, aggregate census, and
+  grammar admission remain open.
+- **The band-uniform packet (#795)**: T3 gains its omega-facing scalar
   corollary; its named-pattern schedule should quote the S2 cap.
 - **The emission-arithmetic packet (#818)**: its budgets/argmax feed the
   corrected rule unchanged; its E4 shares are unaffected (shares compare
@@ -248,8 +255,9 @@ exhaustive, not sampled.
 - `rs_mca_thresholds.tex`: paste-ready remark after the PO4 material --
   "emission payments must be capped by the positive part, not the
   ell^1: sum h_+ = (sum|h| + 2^s * flat coefficient)/2, closed-form on
-  hierarchy pieces; with that cap rank-one emission is compiler-sound,
-  and at the verified scales it pays hierarchy pieces in full" --
+  hierarchy pieces; with that cap rank-one emission is scalar-accounting-
+  sound, and at the verified scales it reaches the scalar cap; no source-to-
+  cell/profile-payment or distinct-slope theorem follows" --
   visible hypotheses: #749-corrected class, base-3 chart, q=2 rooting.
 
 ## Reproducibility

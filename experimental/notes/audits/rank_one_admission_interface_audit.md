@@ -17,9 +17,11 @@ therefore remains necessary.
 
 ```text
 rank_one_greedy_adequacy.md, Theorem T4:        NO ISSUE / PROVED
-omega_sound_emission_floor.md, statement S4:   NO ISSUE / PROVED
+omega_sound_emission_floor.md, statement S4:   NO ISSUE / PROVED LOCALLY
 structure-specific reading of T4 adequacy:     OPEN GAP / TYPE MISMATCH
-"grammar acceptance alone remains":            OPEN GAP / FIXED IN PROSE
+grammar-only wording in the #824 consumer:     OPEN GAP / FIXED HERE
+#818/#820/#827/#842 related wording:            OPEN GAP / FIXED IN FOLLOW-UP
+source-to-verifier correspondence:             BOUND IN FOLLOW-UP
 hard input 2 and the ray interface:             OPEN
 ```
 

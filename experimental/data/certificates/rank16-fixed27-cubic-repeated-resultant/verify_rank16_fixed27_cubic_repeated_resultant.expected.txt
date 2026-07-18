@@ -1,0 +1,8 @@
+R29_FIXED27_CUBIC_REPEATED_RESULTANT: PASS
+p=2130706433 n=2097152 B=32768 a=67472 D=96369 d=63601 w=28897
+cubic_deficit=30832 resultant_M_cap=55859
+Base_cap=18619 union_floor=176056 improvement=25695
+deepest_layers=nonzero:9,zero:196611
+label_degree=2 chord_admissible_roots=0_or_1
+ledger_delta=0 official_score=0/2
+RESULT: PASS

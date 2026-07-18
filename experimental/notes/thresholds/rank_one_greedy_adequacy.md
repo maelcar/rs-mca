@@ -97,7 +97,7 @@ Integrated in-tree packets (consumed and credited, not reproved):
   remains untouched (it operates on flat territory, where one pattern --
   D = empty -- is the whole schedule and adequacy is exact at any depth).
 - **The transverse-charge packet** (#776): omega and the accounting.
-- **Codex team's atlas-totality lane** (in progress, theirs): unchanged.
+- **Atlas-totality residual**: unchanged by this packet.
 
 ---
 

@@ -2,6 +2,7 @@ import MomentToMax.MomentMapMaxFiber
 import MomentToMax.PowerWeightedConcentrationFloor
 import MomentToMax.PTEClusterPacking
 import MomentToMax.CombTradeChampion
+import MomentToMax.FiberDenominatorVandermonde
 
 /-!
 # Q-to-SP moment-to-max transfer (W42 M2)

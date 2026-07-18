@@ -6,3 +6,4 @@ import PowersumRigidity.FrobeniusInversion
 import PowersumRigidity.FrobeniusClosure
 import PowersumRigidity.PrefixFlatness
 import PowersumRigidity.VandermondeRank
+import PowersumRigidity.WeightedMomentRank

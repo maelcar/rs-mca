@@ -22,9 +22,11 @@ This package is a partial Lean formalization of
   first-match reduction to one residual wall.
 - `GrandeFinale/AugmentedBasisPencilDesignInverse.lean`: augmented-basis
   pencil and deep-hole design inverse audit kernel.
-- `GrandeFinale/FirstWallMDSExtensionInverse.lean`: first-wall MDS
-  extension inverse audit, including owner partition, slack ledger, graph-arc
-  normalization, and finite counting kernels.
+- `GrandeFinale/FirstWallMDSExtensionInverse.lean`: abstract finite
+  owner-image bounds, equality/injectivity criteria, the exact owner-fiber
+  partition, and five pinned binomial identities used by the first-wall audit.
+  Weighted-GRS interpolation, the MDS-extension equivalence, retained/deleted
+  slack, and graph-arc normalization remain outside this Lean module.
 - `GrandeFinale/C0PeriodicFirstMatchTarget.lean`: exact finite-set proof of
   Danny's #796 four-cell first-match union cap, with the component caps and
   cover supplied explicitly and the complete `c=0` parent kept outside scope.

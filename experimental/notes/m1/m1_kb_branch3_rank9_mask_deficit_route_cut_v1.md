@@ -352,6 +352,18 @@ C_V=\binom{N_V}{9}.
 \tag{5.1}
 \]
 
+This compiler is only invoked in a predecessor coarse-failure cell:
+
+\[
+\left\lfloor\frac{C_V}{\mu_0}\right\rfloor>B_{\rm rem},
+\qquad\text{equivalently}\qquad
+C_V\ge (B_{\rm rem}+1)\mu_0.
+\tag{5.1a}
+\]
+
+Outside this window the predecessor coarse cap already pays the cell, and the
+one-cut threshold and its sharpness histogram are not defined.
+
 For a proposed forbidden family of size \(m=B_{\rm rem}+1\), put
 
 \[

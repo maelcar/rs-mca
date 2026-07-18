@@ -4,10 +4,11 @@
 verify_a4_coverage.py -- gated verifier for the A4-coverage-of-high-kappa lane.
 
 Question (the wall named by PR #534, thresholds-balanced-core-kappa-growth):
-does the (A4) prefix-flatness / Sidon payment REACH the residual balanced-core
-charts that PR #534 proved carry kappa = k = Theta(n)?  This is a COVERAGE /
-ROUTING question -- NOT a question about the truth of the (MI)/(MA) inequalities
-(that is the scottdhughes program #498/#501/#505, consumed here as an input).
+does the (A4) prefix-flatness / Sidon payment reach any actual residual
+balanced-core chart lying in the high-kappa raw regime exposed by #534?
+#534 computed raw prefix-support families; it did not prove that they survive
+first-match removal or that raw member count equals realized slope mass. This
+is a COVERAGE / ROUTING question, not a proof of (MI)/(MA).
 
 The decisive structural fact this script recomputes with EXACT prime-field
 arithmetic (no floats/sampling in the gated identities): the (A4) payment axes
@@ -18,21 +19,18 @@ are all INDEPENDENT of the residual kernel dimension kappa = k - |common core|.
            the closure bound A <= |B|^{a-k-1} (thm:small-effective-dual-closure
            L3026-3061); the closure criterion is log A = o(|T|), i.e.
            (a-k-1) log|B| = o(n) -- a statement about prefix depth, not kappa.
-  Group B  the FIBER = CHART identity: the prefix-map fiber F_s = the #534
-           prefix class; f_s = member count; the LARGEST fiber is the empty-core
-           kappa=k chart (kappa recomputed two ways, kernel and k-|core|).
-  Group C  KAPPA-INDEPENDENCE census on #534's four configs: A_eff is a property
-           of the SLICE (identical across all charts in it) while kappa ranges
-           0..k; the closure criterion is met for EVERY chart regardless of
-           kappa; the additive energy Delta_s of the kappa=k fiber is measured
-           and classified (Sidon vs high-energy, def:sidon-heavy L5093).
-  Group D  the PTM stress test (disjoint_equal_prefix_pair, #534): the additively
-           structured Prouhet-Thue-Morse residual family is SHALLOW-prefix
-           (w=2 fixed, log A_eff = o(|T|)) hence PAID by closure through BOTH
-           (A4) and (A6), despite kappa = k = Theta(n).  Exact numbers at scale.
-  Group E  the w-sweep: A_eff(w) ~ p^{min(w,dim)} grows with prefix depth while
-           the largest fiber stays kappa=k at EVERY w -- so kappa is orthogonal
-           to the closure axis A_eff.  Names the deep-prefix WALL numerically.
+  Group B  the raw prefix-map fiber F_s = the #534 prefix class and f_s is its
+           support-member count. This is not an actual first-match chart or a
+           realized-slope count.
+  Group C  the raw census on #534's four configs: A_eff is a property of the
+           ambient slice while raw kappa varies; finite exponents and energies
+           are measured without promoting raw families to actual residuals.
+  Group D  the PTM stress test (disjoint_equal_prefix_pair, #534): the raw
+           family lies in shallow-prefix ambient slices. The closure theorem
+           pays any actual residual subfamily there, if one survives.
+  Group E  the w-sweep: A_eff(w) grows with prefix depth while each sampled
+           slice retains a near-maximal raw-kappa family. Names the deep-prefix
+           wall numerically.
   Group F  residual monotonicity (lem:residual-monotonicity L6574) as a SET fact:
            a residual sub-family's max-fiber <= the full-slice max-fiber, for
            any sub-family, independent of its kappa -- the coverage transfer.
@@ -41,12 +39,11 @@ Stdlib only.  Deterministic.  Runtime target < 120 s under ulimit -v 2097152.
 Prints  RESULT: PASS (N checks)  and exits 0 iff every gated check holds.
 
 Credit: builds directly on PR #534 (balanced_core_kappa_growth.md, verifier
-verify_kappa_growth.py) -- reuses its exact prefix/kernel primitives and its
-(K1)=(K2) identity and PTM family.  Consumes PR #528's (RC) statement and the
-scottdhughes (MI)/(MA) inequalities as inputs (not attacked).  LegaSage #531
-isolates the residual Sidon statement as an OPEN GAP audit; this lane is the
-complementary COVERAGE result (the payment reaches the high-kappa charts through
-closure + residual monotonicity, kappa-independently).
+verify_kappa_growth.py) and its raw prefix/kernel primitives. Consumes PR
+#528's (RC) statement and the scottdhughes (MI)/(MA) inequalities as inputs.
+LegaSage #531 isolates the residual Sidon statement as an OPEN GAP. The proved
+coverage statement is conditional on an actual residual being contained in an
+ambient shallow-prefix slice; its bound is independent of the kernel label.
 """
 
 import sys
@@ -161,7 +158,7 @@ def additive_energy(support_family):
     return E, Delta
 
 # ----------------------------------------------------------------------------
-# PTM residual family (verbatim mechanism from PR #534 verify_kappa_growth.py)
+# Raw PTM support family (verbatim mechanism from PR #534)
 # ----------------------------------------------------------------------------
 
 def disjoint_equal_prefix_pair(n, w):
@@ -223,7 +220,7 @@ def group_A():
             "closure L3057-3060]; it contains no kernel-dimension term.")
 
 # ============================================================================
-# GROUP B -- FIBER = CHART identity; largest fiber is the kappa=k chart
+# GROUP B -- raw prefix-fiber census; no actual first-match projection
 # ============================================================================
 def slice_fibers(p, n, k, a, w):
     """Group all a-subsets of D=[1..n] by depth-w prefix (= syndrome fiber).
@@ -235,11 +232,11 @@ def slice_fibers(p, n, k, a, w):
     return D, fibers
 
 def group_B():
-    print("[Group B] FIBER = CHART: f_s = member count; largest fiber = kappa=k chart")
+    print("[Group B] RAW PREFIX FIBER: member count is not realized-slope count")
     for (p, n, k, a, w, lab) in CENSUS_CONFIGS:
         R = n - k
         D, fibers = slice_fibers(p, n, k, a, w)
-        # largest fiber (most members ~ most rays = the dangerous chart)
+        # Largest raw prefix fiber. Its members are supports, not realized slopes.
         best_key = max(fibers, key=lambda kk: len(fibers[kk]))
         members = fibers[best_key]
         f_s = len(members)
@@ -256,11 +253,12 @@ def group_B():
         check("B.largest_fiber_kappa_k.%s" % lab, kap_ker == k and len(core) == 0,
               "largest fiber size=%d kappa=%d core=%d (want kappa=k=%d,core=0)"
               % (f_s, kap_ker, len(core), k))
-        # GATED: f_s (member count) equals the fiber cardinality (EF2 fiber = chart)
-        check("B.fiber_is_chart.%s" % lab, f_s == sum(1 for S in members),
+        # GATED: f_s is exactly the raw support-fiber cardinality.
+        check("B.raw_member_count.%s" % lab, f_s == sum(1 for S in members),
               "member count matches fiber cardinality")
         print("      [%s] largest fiber: f_s=%d  kappa=%d=k  core=EMPTY  "
-              "=> this IS the high-kappa balanced-core chart" % (lab, f_s, kap_ker))
+              "=> raw prefix family only; realized slopes not counted"
+              % (lab, f_s, kap_ker))
 
 # ============================================================================
 # GROUP C -- kappa-independence census + additive energy of the kappa=k fiber
@@ -299,10 +297,10 @@ def group_C():
               dim <= w and kap_max == k and f_max > f_min,
               "A_eff=p^%d (dim<=w=%d) shared by all fibers; f_s in [%d..%d]; "
               "kappa_max=%d=k" % (dim, w, f_min, f_max, kap_max))
-        # GATED: closure criterion log A_eff/|T| is met (small) for EVERY chart,
-        # since A_eff is the SAME for the kappa=0 and the kappa=k charts.
-        check("C.closure_met_all_kappa.%s" % lab, logA_over_T <= 0.5,
-              "log A_eff/|T|=%.3f <= 0.5 uniformly over kappa in [%d..%d]"
+        # GATED finite measurement only: the sampled exponent is below 1/2
+        # uniformly because A_eff belongs to the ambient slice.
+        check("C.sample_exponent_below_half.%s" % lab, logA_over_T <= 0.5,
+              "sample log A_eff/|T|=%.3f <= 0.5 over raw kappa in [%d..%d]"
               % (logA_over_T, kap_min, kap_max))
         # additive energy of the largest (kappa=k) fiber -- classify Sidon vs high
         best_key = max(fibers, key=lambda kk: len(fibers[kk]))
@@ -315,17 +313,15 @@ def group_C():
               "(max=k)  | kappa=k fiber: f_s=%d Delta=%.3f (avg fiber Nbar=%.2f)"
               % (lab, dim, logA_over_T, kap_min, kap_max, len(big), Delta, Nbar))
     # GATED cross-config: the closure exponent log A_eff/|T| DECREASES as n grows
-    # (w fixed) -- coverage gets STRONGER with scale, opposite to the kappa=k
-    # concentration #534 found.  So high-kappa concentration does not erode coverage.
+    # (w fixed) in these four finite rows. This is a measured trend, not an
+    # actual-residual existence or asymptotic-mass claim.
     exps = [s[5] for s in summaries]
     check("C.coverage_strengthens_with_n", exps[-1] < exps[0],
           "log A_eff/|T| falls along the ladder: %s" % [round(x, 3) for x in exps])
     # GATED (measured, key finding): the kappa=k (largest-member) fibers are
     # LOW-energy / Sidon-like -- Delta_s ~ 1/f_s STRICTLY DECREASING with scale
-    # ([0.36,0.17,0.06,0.02]).  So the high-kappa charts land in the SIDON branch
-    # of def:sidon-heavy, NOT the high-energy inverse branch: they are exactly the
-    # charts that need the (A4) Sidon/Fourier payment (or, shallow-prefix, closure)
-    # -- and are NOT dispatched by prop:high-energy-impossible.
+    # ([0.36,0.17,0.06,0.02]). This classifies the raw fibers only; an actual
+    # first-match residual would still require the source's projection step.
     deltas = [s[9] for s in summaries]
     check("C.kappa_k_fiber_is_sidon_low_energy",
           all(deltas[i] > deltas[i + 1] for i in range(len(deltas) - 1))
@@ -335,10 +331,10 @@ def group_C():
     return summaries
 
 # ============================================================================
-# GROUP D -- PTM stress test: additively structured, high-kappa, but SHALLOW => PAID
+# GROUP D -- raw PTM stress test inside shallow ambient slices
 # ============================================================================
 def group_D():
-    print("[Group D] PTM stress test: structured high-kappa family is shallow => PAID")
+    print("[Group D] raw PTM stress test: ambient prefix slice is shallow")
     rows = []
     prev_exp = None
     decreasing = True
@@ -348,7 +344,7 @@ def group_D():
         a = len(S1)
         k = a - w - 1
         R = n - k
-        # confirm equal depth-w prefix (residual family) and disjointness => empty core
+        # Confirm raw equal prefix and disjointness; no first-match survival claim.
         pref_eq = prefix_key(S1, p, w) == prefix_key(S2, p, w)
         core = set(S1) & set(S2)
         U = sorted(set(S1) | set(S2))
@@ -373,16 +369,17 @@ def group_D():
         logC_secant = math.log2(comb(R + kap_ker, kap_ker + 1))
         rows.append((n, a, k, kap_ker, logA_over_T, logC_secant / n, Delta_pair))
         print("      n=%3d a=%2d k=%2d : kappa=%2d=k  |  CLOSURE exp w log p/n=%.4f "
-              "(PAID)  vs  DEAD secant log2 C/n=%.3f  | PTM-pair Delta=%.3f"
+              "(RAW SLICE) vs secant-bound log2 C/n=%.3f | PTM-pair Delta=%.3f"
               % (n, a, k, kap_ker, logA_over_T, logC_secant / n, Delta_pair))
-    # GATED headline: the PTM family is PAID by closure (shallow) even though the
-    # per-chart secant route (#528/#534) is VACUOUS (exponential) on it.
-    check("D.ptm_paid_by_closure_not_secant",
+    # GATED finite stress comparison. The theorem-level routing statement is
+    # conditional on an actual residual subfamily of the ambient slice.
+    check("D.ptm_shallow_vs_secant_bound",
           decreasing and all(r[4] <= 0.65 for r in rows) and rows[-1][5] > 0.9,
-          "closure exp shrinks to o(1) while secant exp -> ~1 (vacuous)")
-    ungated("PTM family = the task's suggested stress case.  Verdict: PAID by "
-            "thm:small-effective-dual-closure (shallow prefix), kappa-independently. "
-            "NO counterexample: kappa=Theta(n) does not defeat (A4) here.")
+          "sample shallow exponents decrease while secant-bound exponent exceeds 0.9")
+    ungated("The raw PTM family lies in shallow ambient slices. "
+            "thm:small-effective-dual-closure pays any actual residual subfamily "
+            "there, but this census does not prove that the PTM family survives "
+            "first-match removal or realizes distinct slopes.")
     return rows
 
 # ============================================================================
@@ -429,10 +426,10 @@ def group_E():
         print("      w=%d k=%d : dim(V)=%d A_eff=p^%d  | kappa_max(slice)=%d (>=k-1)  "
               "largest-fiber(f_s=%d) kappa=%d  (A_eff GREW, kappa stayed near-max)"
               % (w, k, dim, dim, kap_max, len(members), kap_big))
-    # GATED: A_eff (the closure axis) MOVES with w while largest-fiber kappa is
-    # constant = k  ->  A_eff and kappa are ORTHOGONAL (kappa-independence).
-    check("E.A_orthogonal_to_kappa", dim_monotone,
-          "dim(V) strictly increases with w while largest-fiber kappa stays k")
+    # GATED: only the prefix-span dimension monotonicity is asserted here.
+    # The separate per-w gates above certify a near-maximal raw-kappa family.
+    check("E.prefix_span_dimension_increases", dim_monotone,
+          "dim(V) strictly increases with w; separate gates retain raw kappa>=k-1")
     # deep-prefix WALL (elementary, flagged): if w log p were Theta(n), closure
     # fails; that regime needs genuine (MI)/(MA), never a kappa bound.
     n_big, p_big, w_big = 1000, 1009, 300
@@ -445,16 +442,16 @@ def group_E():
             "character-sum condition, NOT a kappa condition.  This is the WALL.")
 
 # ============================================================================
-# GROUP F -- residual monotonicity as a SET fact (the coverage transfer)
+# GROUP F -- subset monotonicity as a set fact (conditional coverage transfer)
 # ============================================================================
 def group_F():
-    print("[Group F] residual monotonicity (lem:residual-monotonicity): coverage transfer")
+    print("[Group F] subset monotonicity: conditional residual coverage transfer")
     # Full slice Omega0 = all a-subsets; syndrome map = depth-R power-sum prefix.
-    # Claim: for ANY residual sub-family Omc subset Omega0, and for every syndrome
-    # s, |Omc cap Phi^{-1}(s)| <= |Omega0 cap Phi^{-1}(s)|.  Trivial set fact, but
-    # it is the exact mechanism transferring full-slice payment to the high-kappa
-    # residual REGARDLESS of the residual's kernel dimension.  We verify the
-    # max-fiber inequality on explicit residuals of differing kappa.
+    # Claim: for ANY subfamily Omc subset Omega0, and for every syndrome s,
+    # |Omc cap Phi^{-1}(s)| <= |Omega0 cap Phi^{-1}(s)|. This set fact transfers
+    # full-slice payment to an actual residual if its inclusion is separately
+    # certified. Here we test synthetic candidate subfamilies of differing raw
+    # kappa; the samples are not claimed to be first-match residual charts.
     p, n, k, a = 17, 14, 6, 9
     R = n - k
     w = a - k - 1
@@ -465,32 +462,37 @@ def group_F():
     all_supports = [S for v in full_fibers.values() for S in v]
     ok_all = True
     kappas_seen = set()
-    for trial in range(6):
-        # carve a residual sub-family of random size (a 'chart after removal')
+    candidate_families = [
+        set(all_supports),
+        {support for support in all_supports if 1 in support},
+        {support for support in all_supports if {1, 2}.issubset(support)},
+    ]
+    for _ in range(3):
         subsize = rng.randint(len(all_supports) // 4, len(all_supports) // 2)
-        Omc = set(rng.sample(all_supports, subsize))
+        candidate_families.append(set(rng.sample(all_supports, subsize)))
+    for trial, Omc in enumerate(candidate_families):
         # its own fibers
-        res_fibers = defaultdict(int)
+        sub_fibers = defaultdict(int)
         for S in Omc:
-            res_fibers[prefix_key(sorted(S), p, w)] += 1
-        res_maxfiber = max(res_fibers.values()) if res_fibers else 0
-        # kappa of this residual chart (union of error supports)
+            sub_fibers[prefix_key(sorted(S), p, w)] += 1
+        sub_maxfiber = max(sub_fibers.values()) if sub_fibers else 0
+        # Raw kappa of this synthetic candidate family (union of supports).
         core = set(D)
         for S in Omc:
             core &= S
         kap = max(0, k - len(core))
         kappas_seen.add(kap)
-        if res_maxfiber > full_maxfiber:
+        if sub_maxfiber > full_maxfiber:
             ok_all = False
-        check("F.monotone.trial%d" % trial, res_maxfiber <= full_maxfiber,
-              "residual max-fiber=%d <= full max-fiber=%d (kappa=%d)"
-              % (res_maxfiber, full_maxfiber, kap))
-    # GATED: monotonicity held across residuals of DIFFERING kappa
-    check("F.transfer_kappa_independent", ok_all and len(kappas_seen) >= 1,
-          "full-slice max-fiber bounds every residual, over kappa values %s"
+        check("F.monotone.trial%d" % trial, sub_maxfiber <= full_maxfiber,
+              "candidate max-fiber=%d <= full max-fiber=%d (raw kappa=%d)"
+              % (sub_maxfiber, full_maxfiber, kap))
+    # GATED: monotonicity held across deliberately varied core sizes.
+    check("F.transfer_kappa_independent", ok_all and len(kappas_seen) >= 3,
+          "full-slice max-fiber bounds every candidate, over raw kappa values %s"
           % sorted(kappas_seen))
-    print("      full-slice max-fiber=%d bounds every residual sub-family "
-          "(kappas seen: %s) -- payment transfers down regardless of kappa"
+    print("      full-slice max-fiber=%d bounds every synthetic candidate "
+          "(kappas seen: %s) -- actual-residual transfer needs inclusion"
           % (full_maxfiber, sorted(kappas_seen)))
 
 # ============================================================================

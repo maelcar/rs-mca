@@ -19,27 +19,41 @@ Claims verified here (computational layer of the packet):
                (exhaustive; margins recorded).
   G4 [LEAK]    B = 10 pointwise leak table: wrong-sign |h|-mass share by
                |U|: 0 for |U| <= 3; pinned values for 4..10 (the leak
-               correction of the charge arithmetic omega = |Sigma_U| + W_U).
+               correction of the charge arithmetic omega_U = W_U +
+               1_{s_U=+1}|Sigma_U|, equivalently (M_U+Sigma_U)/2).
   G5 [DP]      u-state-collapsed transfer DP (function-valued in u via
                Chebyshev nodes, z-polynomial payload) reproduces the
                subset charge table; certified additive tail bar in the
                #858-D6 constants, insertion levels carrying one extra
                2cosh factor; observed <= certified at the instances.
 
-Proof-layer gates P1-P12: the ATOM and coupling identity, A-purity, the
-exact-derivative envelope machinery (DG identity, L4 one-step bound, L5
-cancellation, sharp secant caps), the KEY scalar at the certified and the
-proved loose caps, Master base cases + direct check, the child-share
-floor, the R4 tree identity with the prefix-cone scan, and the general-K
-decorated-charge census with the anchored-case floor.
+Proof-layer gates P1-P15 (P2/P3 reserved, unused): the ATOM and coupling
+identity, A-purity, the exact-derivative envelope machinery (DG identity,
+L4 one-step bound, L5 cancellation), the sharp secant caps on the two
+MASTER-consumed COUPLED child curves (P7) plus an informational
+whole-support census (P14), the KEY scalar as a conditional check at the
+certified caps and (separately) at hypothesis loose caps, Master base
+cases + direct check, the child-share floor, the R4 tree identity with
+the prefix-cone scan, the general-K decorated-charge census with the
+anchored-case floor, the exhaustive parity-correct charge-identity census
+(P13), and certificate-JSON source/script binding (P15).
 
-Flags: default run ~10s; --deep extends the envelope/share horizons to
-j <= 48 (~50s); --tamper-selftest runs all tampers, each must FAIL;
---emit-cert writes the certificate JSON next to the data directory.
+Repair note (audit #914, COUNTEREXAMPLE verdict on the integrated
+a575019/#880 packet, repaired here): the old universal charge identity
+"omega_U = Sigma_U + W_U always" and the old broad-domain P7 pair-2 cap
+1.61 were FALSE as shipped (both had explicit numeric counterexamples).
+Both are corrected; P13 and P14 are the resulting permanent regression
+gates pinning the two counterexamples so they cannot silently regress.
+
+Flags: default run ~10s; --deep extends the envelope/share/coupled-curve
+horizons to q = j-1 <= 47 (~90s); --tamper-selftest runs all tampers,
+each must FAIL; --emit-cert [--deep] writes the certificate JSON (with
+source/script/commit binding) next to the data directory.
 
 stdlib only, deterministic. RESULT: PASS/FAIL summary.
 """
 import cmath
+import hashlib
 import json
 import math
 import os
@@ -47,6 +61,23 @@ import sys
 from itertools import product as iproduct, combinations
 
 PI = math.pi
+
+# ------------------------------------------------------- source binding
+# Pins this packet's base commit and gives the paths + hashing helper the
+# CERT-BIND gate (P15) uses to attest the shipped certificate JSON was
+# generated from these exact source bytes (audit #914 SHOULD item: the
+# JSON carried no commit/source/script binding and was never re-loaded).
+COMMIT = "c4856fa6db0b2cd491f5c5fe2a0f3c8468de645e"
+_HERE = os.path.dirname(__file__) or "."
+NOTE_PATH = os.path.join(_HERE, "..", "notes", "thresholds",
+                         "dense_shell_class_charges.md")
+CERT_DIR = os.path.join(_HERE, "..", "data", "certificates",
+                        "dense-shell-class-charges")
+CERT_PATH = os.path.join(CERT_DIR, "dense_shell_class_charges.json")
+
+def file_sha256(path):
+    with open(path, "rb") as f:
+        return hashlib.sha256(f.read()).hexdigest()
 
 # ---------------------------------------------------------------- basics
 
@@ -228,6 +259,69 @@ def gate_leak(report, B=10):
                    " ".join("%d:%.3g" % (m, table[m]) for m in range(4, B + 1)),
                    ok))
     return ok, table
+
+# ------------------------------------------- P13: charge-identity gate
+
+def gate_c6_parity(report, Bs=tuple(range(1, 9)), tamper=None):
+    """P13 C6-PARITY (audit #914 MUST-repair, now a permanent regression
+    gate): exhaustively checks the parity-correct charge identity
+
+        omega_U = W_U + 1_{s_U=+1} |Sigma_U|          (sign-law form)
+        omega_U = (M_U + Sigma_U) / 2                 (always-valid form)
+
+    for EVERY support class U at EVERY B <= max(Bs), both parities
+    s_U = (-1)^(B-|U|). omega_U = h_+ (sum of the positive class values,
+    definitional); Sigma_U the signed class sum; W_U the wrong-sign mass
+    (sign(h) != s_U); M_U = sum |h| the total variation. The old
+    'omega_U = Sigma_U + W_U always' claim is correct only at s_U = +1;
+    the audit's B=4, U={0} witness (s_U=-1) is printed explicitly:
+    Sigma_U=-3.599182825207051, W_U=omega_U=0, so the old formula would
+    give Sigma_U+W_U=-3.599... != 0. Tamper 'ident-universal' reinstates
+    the false always-form so this gate (only) catches it."""
+    worst_sign = 0.0
+    worst_general = 0.0
+    witness = None
+    for B in Bs:
+        c = 3 ** B
+        F = [0j] * c
+        for word in dense_words(B):
+            F[word_to_xi(word, B)] = hatf_by_scan(word)
+        H = fft3(F, -1)
+        Sigma = {}; W = {}; Omega = {}; M = {}
+        for sigma in range(c):
+            h = H[sigma].real / c
+            digits = balanced_digits(sigma, B)
+            U = tuple(i for i, d in enumerate(digits) if d != 0)
+            s_U = 1 if (B - len(U)) % 2 == 0 else -1
+            Sigma[U] = Sigma.get(U, 0.0) + h
+            M[U] = M.get(U, 0.0) + abs(h)
+            Omega[U] = Omega.get(U, 0.0) + max(h, 0.0)
+            wrong = W.get(U, 0.0)
+            if h * s_U < 0:
+                wrong += abs(h)
+            W[U] = wrong
+        for U, sigma_u in Sigma.items():
+            s_U = 1 if (B - len(U)) % 2 == 0 else -1
+            w_u = W[U]; m_u = M[U]; om_u = Omega[U]
+            if tamper == "ident-universal":
+                pred_sign = sigma_u + w_u             # the FALSE always-form
+            else:
+                pred_sign = w_u + (abs(sigma_u) if s_U > 0 else 0.0)
+            pred_general = (m_u + sigma_u) / 2.0
+            worst_sign = max(worst_sign, abs(om_u - pred_sign))
+            worst_general = max(worst_general, abs(om_u - pred_general))
+            if B == 4 and U == (0,):
+                witness = (sigma_u, w_u, om_u, s_U)
+    ok = (worst_sign < 1e-9) and (worst_general < 1e-9)
+    wsig, wwit, owit, swit = witness
+    report.append((
+        "P13 C6-PARITY omega_U=W_U+1[s_U=+1]|Sigma_U| (also "
+        "(M_U+Sigma_U)/2), ALL U every B<=%d both parities; audit "
+        "witness B=4 U={0}: Sigma_U=%.9f W_U=%.9f omega_U=%.9f s_U=%+d"
+        % (max(Bs), wsig, wwit, owit, swit),
+        "max|dev| sign-law=%.2e general=%.2e" % (worst_sign, worst_general),
+        ok))
+    return ok
 
 # ------------------------------------ G5: transfer DP + certified tail
 
@@ -607,52 +701,150 @@ def gate_l4(report, Glev, Dlev, jmax=12):
                    "supports), min slack" % jmax, "%+.3e" % minslack, ok))
     return ok
 
-def secant_env(Glev, j, lo, hi, gmin, gmax, n=110):
-    ts = grid(lo, hi, n); w = 0.0
+def secant_of_pair(Glev, j, x, y):
+    """Secant exponent of flip(G_j) between two argument points x, y."""
+    gx = flip(G_at(Glev, j, x)); gy = flip(G_at(Glev, j, y))
+    r = 1e9
+    for i in range(min(len(gx), len(gy))):
+        if gx[i] > GD_FLOOR and gy[i] > GD_FLOOR:
+            r = min(r, gx[i] / gy[i], gy[i] / gx[i])
+    g = abs(y - x)
+    return -math.log(max(r, 1e-15)) / g
+
+def secant_env(Glev, j, lo, hi, gmin, gmax, n=110, pts=None):
+    ts = pts if pts is not None else grid(lo, hi, n)
+    w = 0.0
     for x in range(len(ts)):
         for y in range(x + 1, len(ts)):
             g = ts[y] - ts[x]
             if g > gmax + 1e-12 or g < max(gmin, 1e-6) - 1e-12:
                 continue
-            gx = flip(G_at(Glev, j, ts[x])); gy = flip(G_at(Glev, j, ts[y]))
-            r = 1e9
-            for i in range(min(len(gx), len(gy))):
-                if gx[i] > GD_FLOOR and gy[i] > GD_FLOOR:
-                    r = min(r, gx[i] / gy[i], gy[i] / gx[i])
-            Lv = -math.log(max(r, 1e-15)) / g
+            Lv = secant_of_pair(Glev, j, ts[x], ts[y])
             if Lv > w:
                 w = Lv
     return w
 
+def forced_grid(lo, hi, n):
+    """Uniform (n+1)-point grid over [lo,hi] with the exact
+    boundary-adjacent points at gap 1/18 and 1/9 from each end forced
+    in. Audit #914's P7 counterexample sits exactly at hi - 1/18 with
+    y = hi; a plain uniform grid can straddle both and hide the true
+    supremum, which is how the shipped gate silently missed it."""
+    base = [lo + k * (hi - lo) / n for k in range(n + 1)]
+    forced = [lo, hi, lo + 1.0 / 18, lo + 1.0 / 9, hi - 1.0 / 18, hi - 1.0 / 9]
+    pts = base + [p for p in forced if lo - 1e-12 <= p <= hi + 1e-12]
+    return sorted(set(round(p, 15) for p in pts))
+
+def _pair1_curve(eps):
+    """t_out's inner child s and t_in's plus child r (s + r = 4/9
+    exactly, the pair-1 analog of pair-2's r2+s2=8/9)."""
+    return 7.0 / 36 - eps / 9.0, 1.0 / 4 + eps / 9.0
+
+def _pair2_curve(eps):
+    """t_in's minus child r2 and t_out's outer child s2 (r2+s2=8/9
+    exactly -- the coupled relation Step B of 3.2 actually uses)."""
+    return 5.0 / 12 - eps / 9.0, 17.0 / 36 + eps / 9.0
+
+def _coupled_eps_grid(n, tamper=None):
+    """n+1 eps-nodes over [0,1/4], BOTH endpoints included exactly.
+    Tamper 'p7-domain' silently re-shrinks the top endpoint (the
+    original audited bug: hi=0.49995 instead of the stated 0.50) so
+    the endpoint-inclusion check below (only) catches it."""
+    hi = 0.24999 if tamper == "p7-domain" else 0.25
+    return [hi * k / n for k in range(n + 1)]
+
 def gate_env(report, Glev, tamper=None, jmax=16):
-    """P7: sharp envelope secant constants on the true (Master-step-
-    consumed) pair supports, gaps in [1/18,1/9]: pair-1 <= 0.85,
-    pair-2 <= 1.608, for 2 <= j <= jmax."""
+    """P7 (repaired per audit #914): sharp envelope secant constants
+    restricted to the two MASTER-consumed COUPLED child curves --
+    pair-1 (s+r=4/9), pair-2 (r2+s2=8/9), see 3.2 Step B -- at levels
+    q = j-1 in [5, min(jmax,47)] (the general step needs j>=6, and the
+    B<=49 leg needs j<=48), eps in [0,1/4] with BOTH boundary
+    endpoints, n=440 (4x the former n=110 whole-support grid). This
+    THEOREM-supporting gate supersedes the old whole-support pairwise
+    census (now P14 ENV-BROAD, informational): audit #914's
+    counterexample (j=3, x=4/9, y=1/2) is off both curves
+    (x+y=17/18 != 8/9) and below q=5, so it is out of scope by
+    construction here, not by a silently shrunk domain -- the
+    endpoints_ok flag below is the check that the domain itself is not
+    quietly re-shrunk the way the original gate was."""
     cap1 = 0.55 if tamper == "env-tightcap" else 0.85
     cap2 = 1.61
-    sups1 = [secant_env(Glev, j, PAIR1[1], PAIR1[2], 1.0 / 18, 1.0 / 9)
-             for j in range(2, jmax + 1)]
-    sup1 = max(sups1)
-    sup2 = max(secant_env(Glev, j, PAIR2[1], PAIR2[2], 1.0 / 18, 1.0 / 9)
-               for j in range(2, jmax + 1))
+    n = 440
+    eps_nodes = _coupled_eps_grid(n, tamper=tamper)
+    endpoints_ok = (abs(eps_nodes[0] - 0.0) < 1e-15
+                    and abs(eps_nodes[-1] - 0.25) < 1e-15)
+    qmax = min(jmax, 47)
+    sup1 = 0.0; sup2 = 0.0; arg1 = None; arg2 = None
+    for q in range(5, qmax + 1):
+        for eps in eps_nodes:
+            x1, y1 = _pair1_curve(eps)
+            L1 = secant_of_pair(Glev, q, x1, y1)
+            if L1 > sup1:
+                sup1 = L1; arg1 = (q, eps)
+            x2, y2 = _pair2_curve(eps)
+            L2 = secant_of_pair(Glev, q, x2, y2)
+            if L2 > sup2:
+                sup2 = L2; arg2 = (q, eps)
+    ok = (sup1 <= cap1) and (sup2 <= cap2) and endpoints_ok
+    report.append((
+        "P7 ENV coupled-curve secants (pair-1 s+r=4/9, pair-2 "
+        "r2+s2=8/9), q=j-1 in [5,%d], eps-grid n=%d incl. both "
+        "endpoints: pair-1<=%.2f pair-2<=%.2f" % (qmax, n, cap1, cap2),
+        "sup1=%.4f@%s sup2=%.4f@%s endpoints_ok=%s"
+        % (sup1, arg1, sup2, arg2, endpoints_ok), ok))
+    return ok, {"pair1": sup1, "pair2": sup2}
+
+def gate_env_broad(report, Glev, tamper=None, jmax=16):
+    """P14 ENV-BROAD (audit #914 honesty exhibit; COMPUTED,
+    informational -- NOT MASTER-consumed, NOT a THEOREM ingredient):
+    the old whole-support pairwise secant census, on the TRUE stated
+    domain (pair-2 to its exact endpoint 0.50, not the silently
+    shrunk 0.49995) with boundary-adjacent points forced into the
+    grid so the true supremum cannot be hidden between nodes.
+    Reproduces audit #914's pair-2 counterexample honestly (sup ~
+    1.6101 > the old false cap 1.61) while showing pair-1 in fact
+    holds even on this broader domain/level range. The cap is
+    corrected (1.62), not the falsified 1.61; tamper 'p7-cap' restores
+    1.61 so this gate (only) catches a reinstated false claim."""
+    cap1 = 0.85
+    cap2 = 1.61 if tamper == "p7-cap" else 1.62
+    n = 110
+    lo1, hi1 = PAIR1[1], PAIR1[2]
+    lo2, hi2 = PAIR2[1], 0.5             # true endpoint, not .49995
+    ts1 = forced_grid(lo1, hi1, n)
+    ts2 = forced_grid(lo2, hi2, n)
+    sup1 = 0.0; sup2 = 0.0
+    for q in range(2, min(jmax, 48) + 1):
+        sup1 = max(sup1, secant_env(Glev, q, lo1, hi1, 1.0 / 18, 1.0 / 9,
+                                     pts=ts1))
+        sup2 = max(sup2, secant_env(Glev, q, lo2, hi2, 1.0 / 18, 1.0 / 9,
+                                     pts=ts2))
     ok = (sup1 <= cap1) and (sup2 <= cap2)
-    extra = ""
-    if jmax >= 24:
-        # INV-TAIL certified-support horizon: pair-1 sup over j >= 8
-        sup1_tail = max(sups1[6:])
-        ok = ok and (sup1_tail <= 0.65)
-        extra = " tail(j>=8)=%.4f<=0.65" % sup1_tail
-    report.append(("P7 ENV sharp envelope secants, gaps in [1/18,1/9] "
-                   "(2<=j<=%d): pair-1<=%.2f pair-2<=%.3f; sups"
-                   % (jmax, cap1, cap2),
-                   "pair1=%.4f pair2=%.4f%s" % (sup1, sup2, extra), ok))
+    report.append((
+        "P14 ENV-BROAD informational whole-support census (NOT "
+        "MASTER-consumed; COMPUTED honesty exhibit), true domain incl. "
+        "endpoint 0.50, 2<=q<=%d: pair-1<=%.2f pair-2<=%.2f (corrected "
+        "cap)" % (min(jmax, 48), cap1, cap2),
+        "sup1=%.4f sup2=%.4f" % (sup1, sup2), ok))
     return ok, {"pair1": sup1, "pair2": sup2}
 
 def gate_key(report, tamper=None):
     """P8: the (KEY) scalar inequality tying envelope+share constants
-    together, 4000-pt eps grid, monotone decreasing, endpoint margin."""
+    together, 4000-pt eps grid, monotone decreasing, endpoint margin.
+    Two instantiations, DIFFERENT epistemic status (audit #914 MUST
+    item -- do not conflate them): the sharp-cap check carries no
+    external hypothesis on the B<=49 leg (its inputs are gate
+    P7/P12-certified); the
+    loose-cap check is a CONDITIONAL IMPLICATION only -- 'IF the all-j
+    envelope/share hypotheses (1.086, 1.663, 1.20) hold, THEN (KEY)
+    holds with margin >= 0.015' -- since no gate in this file produces
+    those hypotheses. A producer now exists outside this packet: PR
+    #905 (head 0000964) proves the 1.086/1.663 envelopes and a 7/6
+    share floor via a positive two-state cone, modulo #905's own
+    finite Arb continuum certificate (independently audited in #911,
+    head 8d47b40: symbolic half verified, Arb half not replayed)."""
     L1S, L2S = 0.85, 1.61          # the P7-certified envelope caps
-    L1L, L2L = 1.086, 1.663        # the proved all-j loose caps
+    L1L, L2L = 1.086, 1.663        # HYPOTHESIS loose caps (producer: #905)
     GAMMA = 1.0 if tamper == "key-noshare" else 1.20
     s49 = math.sin(4 * PI / 9)
 
@@ -676,9 +868,11 @@ def gate_key(report, tamper=None):
     Fend = F(0.25 - 1e-9)
     worstL = min(Fgen(eps, L1L, L2L) for eps in eps_grid(4000))
     ok = (worst > 0.0) and mono and (Fend >= 0.030 - 1e-3) and (worstL >= 0.015 - 1e-3)
-    report.append(("P8 KEY scalar inequality at the certified caps "
-                   "(0.85,1.61,1.20) + the proved loose caps (1.086,1.663,1.20)",
-                   "minF=%.4f mono=%s Fend=%.4f minF_loose=%.4f"
+    report.append(("P8 KEY scalar: no external hypothesis at sharp caps "
+                   "(0.85,1.61,1.20); CONDITIONAL IMPLICATION only at "
+                   "HYPOTHESIS loose caps (1.086,1.663,1.20) -- producer "
+                   "PR #905 head 0000964, audited #911 head 8d47b40",
+                   "minF=%.4f mono=%s Fend=%.4f minF_loose(hyp)=%.4f"
                    % (worst, mono, Fend, worstL), ok))
     return ok, Fend
 
@@ -905,9 +1099,47 @@ def gate_share(report, Glev, jmax):
                    % (floor, arg[0], arg[1], arg[2]), ok))
     return ok, floor
 
+# --------------------------------------------- P15: certificate binding
+
+def gate_cert_binding(report, tamper=None):
+    """P15 CERT-BIND (audit #914 SHOULD item, now a permanent gate):
+    the shipped certificate JSON must be bound to the exact source
+    note + verifier bytes it certifies. Loads the on-disk JSON and
+    attests commit/source_sha256/script_sha256 against the current
+    files, and requires command/deep/jmax/horizon to be present --
+    exactly the fields the audit found missing (the old cert carried
+    none of them and was never re-loaded by the verifier). After
+    --emit-cert regenerates the file, a plain rerun must show this
+    gate PASS; any later edit to the note or this script without
+    re-emitting will correctly FAIL it. Tamper 'cert-unbound' strips
+    the metadata (the pre-repair shape) to confirm this is caught."""
+    required = {"commit", "source_sha256", "script_sha256", "command",
+                "deep", "jmax", "horizon"}
+    try:
+        with open(CERT_PATH, encoding="utf-8") as f:
+            cert = json.load(f)
+    except (OSError, ValueError):
+        cert = {}
+    if tamper == "cert-unbound":
+        cert = {k: v for k, v in cert.items() if k not in required}
+    missing = required - set(cert)
+    hashes_ok = (
+        not missing
+        and cert.get("commit") == COMMIT
+        and cert.get("source_sha256") == file_sha256(NOTE_PATH)
+        and cert.get("script_sha256") == file_sha256(__file__)
+    )
+    ok = hashes_ok and not missing
+    report.append((
+        "P15 CERT-BIND certificate JSON bound to source/script bytes + "
+        "commit/command/deep/jmax/horizon metadata",
+        "missing=%s hashes_ok=%s" % (sorted(missing), hashes_ok), ok))
+    return ok
+
 TAMPERS = ["atom-endpoint", "a-parity-flip", "kernel-flip", "law-parity",
            "dp-noins", "key-noshare", "r4-signflip", "env-tightcap",
-           "coupling-off"]
+           "coupling-off", "ident-universal", "p7-domain", "p7-cap",
+           "cert-unbound"]
 
 def run(tamper=None, deep=False):
     report = []
@@ -918,6 +1150,7 @@ def run(tamper=None, deep=False):
     oks.append(ok3)
     ok4, leak = gate_leak(report)
     oks.append(ok4)
+    oks.append(gate_c6_parity(report, tamper=tamper))
     oks.append(gate_dp(report, noins_tamper=(tamper == "dp-noins")))
     oks.append(gate_atom(report, tamper=tamper))
     oks.append(gate_A_purity(report, tamper=tamper))
@@ -928,6 +1161,9 @@ def run(tamper=None, deep=False):
     oks.append(gate_l4(report, Glev, Dlev, jmax=12))
     ok7, env_sups = gate_env(report, Glev, tamper=tamper, jmax=jmax_gd)
     oks.append(ok7)
+    ok14, env_sups_broad = gate_env_broad(report, Glev, tamper=tamper,
+                                           jmax=jmax_gd)
+    oks.append(ok14)
     ok8, key_margin = gate_key(report, tamper=tamper)
     oks.append(ok8)
     ok9, base_floors = gate_base(report, Glev)
@@ -937,6 +1173,7 @@ def run(tamper=None, deep=False):
     oks.append(gate_r4(report, tamper=tamper))
     ok11, tpi_min = gate_tpi(report)
     oks.append(ok11)
+    oks.append(gate_cert_binding(report, tamper=tamper))
 
     allok = all(oks)
     for name, val, ok in report:
@@ -946,9 +1183,12 @@ def run(tamper=None, deep=False):
     print("RESULT: %s (%d/%d)" % ("PASS" if allok else "FAIL", npass, n))
     extra = {"share_floor": share_floor,
              "envelope_sups": env_sups,
+             "envelope_sups_broad": env_sups_broad,
              "key_endpoint_margin": key_margin,
              "base_case_floors": {str(j): v for j, v in base_floors.items()},
-             "tpi_census_min": tpi_min}
+             "tpi_census_min": tpi_min,
+             "jmax": jmax_gd,
+             "deep": deep}
     return allok, margins, leak, extra
 
 if __name__ == "__main__":
@@ -961,24 +1201,34 @@ if __name__ == "__main__":
                 caught += 1
         print("TAMPER SELFTEST: %d/%d caught" % (caught, len(TAMPERS)))
     elif "--emit-cert" in sys.argv:
-        allok, margins, leak, extra = run()
+        deep_flag = "--deep" in sys.argv
+        allok, margins, leak, extra = run(deep=deep_flag)
+        command = "python3 " + " ".join(
+            [os.path.basename(__file__)] + sys.argv[1:])
+        jmax_used = extra["jmax"]
         cert = {"claims": "dense-shell class-charge computational core "
                           "+ proof-layer gates",
                 "law_margins": margins,
                 "leak_table_B10": {str(k): v for k, v in leak.items()},
                 "envelope_sups": extra["envelope_sups"],
+                "envelope_sups_broad": extra["envelope_sups_broad"],
                 "key_endpoint_margin": extra["key_endpoint_margin"],
                 "base_case_floors": extra["base_case_floors"],
                 "tpi_census_min": extra["tpi_census_min"],
                 "share_floor": extra["share_floor"],
-                "pass": bool(allok)}
-        root = os.path.join(os.path.dirname(__file__) or ".", "..", "data",
-                            "certificates", "dense-shell-class-charges")
-        os.makedirs(root, exist_ok=True)
-        path = os.path.join(root, "dense_shell_class_charges.json")
-        with open(path, "w") as f:
+                "pass": bool(allok),
+                "commit": COMMIT,
+                "source_sha256": file_sha256(NOTE_PATH),
+                "script_sha256": file_sha256(__file__),
+                "command": command,
+                "deep": deep_flag,
+                "jmax": jmax_used,
+                "horizon": ("coupled q=j-1 in [5,%d]; broad j in [2,%d]"
+                            % (min(jmax_used, 47), min(jmax_used, 48)))}
+        os.makedirs(CERT_DIR, exist_ok=True)
+        with open(CERT_PATH, "w") as f:
             json.dump(cert, f, indent=1, sort_keys=True)
-        print("cert written:", path)
+        print("cert written:", CERT_PATH)
     elif "--deep" in sys.argv:
         run(deep=True)
     else:

@@ -1,5 +1,5 @@
 /-!
-# Complete profile-envelope comparison with the target (decidable shadow)
+# Selected power-profile comparison (decidable arithmetic shadow)
 
 Maps to **hard input 4**: the complete profile-envelope comparison
 `E_n(a) = 1 + (n-a+1) + sup_line sum_lambda (1 + barN_lambda)` versus the
@@ -8,22 +8,15 @@ compares only `L(a)`; `eq:profile-envelope` (1.6) is the complete object).
 
 Note: `experimental/notes/thresholds/profile_envelope_target_comparison.md`.
 Verifier: `experimental/scripts/verify_profile_envelope_target_comparison.py`
-(`PASS (71/71)`).
+(`PASS (89/89)`).
 
-This module certifies the EXACT, DECIDABLE backbone of the comparison:
-the realized-image census integers of the decisive prime-vs-tower rows, and the
-cross-multiplied domination / obstruction inequalities that decide `(ID)`
-`barN_lambda(a) <= barN_id(a)` at those rows.  Every profile is a slice
-`Omega_lambda` under one depth-`w` boundary map, `barN = |Omega|/L` at the
-REALIZED image scale `L` (rem PO5), `w = a-k-1`.
-
-HONEST NONCLAIM: the general exponent inequality
-  no field drop (`lambda_c = 1`)  =>  `e_c = (1/c)(h - s) <= max 0 (h - s) = e_1`,
-which yields identity-dominance for every prime-field row, is PROVED in the note
-(sec 3, elementary) and checked over exact `Fraction`s in the verifier, NOT in
-Lean; it lives over `R` with the entropy `h = H_2(rho+g)`.  This package is the
-decidable arithmetic shadow, in the stdlib-only `native_decide` house style.
-No `sorry`.  No mathlib.
+This module checks fixed natural-number/binomial equalities and selected
+identity/square cross-products emitted by the verifier. It does not construct
+finite fields, enumerate first-match ownership units, or prove a complete
+profile envelope. The general exact prime-field identity-dominance claim is
+false; the companion note and verifier record explicit counterexamples. This
+package is the decidable arithmetic shadow, in the stdlib-only `native_decide`
+house style. No `sorry`. No mathlib.
 -/
 
 namespace ProfileEnvelopeTargetComparison
@@ -45,7 +38,7 @@ theorem binom_10_5   : binom 10 5 = 252    := by native_decide   -- |Omega_sq|, 
     Each row records `(|Omega_id|, L_id)` and `(|Omega_sq|, L_sq)`; `barN=|Omega|/L`.
     `L_sq = p` on the tower is the field drop; `L_sq = |B|` on the prime is none. -/
 
--- prime GF(13), n=12, a=6, w=2:  (FI) holds, L_id = 13^2
+-- prime GF(13), n=12, a=6, w=2: exact full-codomain equality, L_id = 13^2
 theorem prime13_id_size : binom 12 6 = 924        := by native_decide
 theorem prime13_L_id    : (169 : Nat) = 13 ^ 2    := by native_decide
 theorem prime13_sq_size : binom 6 3 = 20          := by native_decide
@@ -59,11 +52,11 @@ theorem tower49_id_collapse : (319 : Nat) < 49 ^ 2 := by native_decide
 theorem tower121_sq_size : binom 10 5 = 252        := by native_decide
 theorem tower121_sq_L_is_p : (11 : Nat) = 11       := by native_decide
 
--- prime GF(41), n=20, a=10, w=2:  (FI) holds, L_id = 41^2
+-- prime GF(41), n=20, a=10, w=2: exact full-codomain equality, L_id = 41^2
 theorem prime41_L_id : (1681 : Nat) = 41 ^ 2       := by native_decide
 
-/-! ## 3. `(ID)` decided by cross-multiplication (`barN_a >= barN_b  <=>
-    |Omega_a| * L_b >= |Omega_b| * L_a`). -/
+/-! ## 3. Selected identity/square comparisons by cross-multiplication
+    (`barN_a >= barN_b <=> |Omega_a| * L_b >= |Omega_b| * L_a`). -/
 
 /-- **(c-i) prime domination.** GF(13) `n=12`: `barN_id = 924/169 >= 20/13 =
     barN_sq`, i.e. identity dominates the square slice.  No field drop. -/
@@ -86,17 +79,18 @@ theorem tower121_square_beats_formal_identity :
 theorem tower121_crossing_bracket :
     11 ^ 4 ≤ binom 20 10 ∧ binom 20 10 < (11 ^ 4) * (11 ^ 4) := by native_decide
 
-/-! ## 4. `(FI)`-for-identity sharpening (new): on the smooth coset `D=theta H`
-    the identity realized image collapses by exactly a factor `p`, so the
-    realized-scale comparison couples to hard input 2 through the identity too. -/
+/-! ## 4. Exact full-codomain measurements
+
+These fixed finite equalities do not decide the source's asymptotic `(FI)`
+condition `L >= exp(-o(n)) A`. -/
 
 /-- GF(11^2) `n=20`: `L_id = 1331 = 11^3 = |B|^w / p`, a factor-`p` collapse of
     the identity image below its ambient codomain `11^4`. -/
-theorem tower121_identity_FI_fails :
+theorem tower121_identity_full_codomain_deficit :
     (1331 : Nat) = 11 ^ 3 ∧ 1331 * 11 = 11 ^ 4 ∧ 1331 < 11 ^ 4 := by native_decide
 
-/-- Contrast: on the prime subgroup GF(41) `n=20`, identity `(FI)` HOLDS
-    (`L_id = 1681 = 41^2 = |B|^w`), so its formal budget is the realized one. -/
-theorem prime41_identity_FI_holds : (1681 : Nat) = 41 ^ 2 := by native_decide
+/-- Contrast: on the prime subgroup GF(41) `n=20`, the identity image equals
+    its full ambient codomain (`L_id = 1681 = 41^2 = |B|^w`). -/
+theorem prime41_identity_full_codomain_exact : (1681 : Nat) = 41 ^ 2 := by native_decide
 
 end ProfileEnvelopeTargetComparison

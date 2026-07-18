@@ -1,5 +1,7 @@
+import Std.Tactic
+
 /-!
-# Emission arithmetic on the rank-one family: decidable counting shadow
+# Emission arithmetic on the rank-one family: arithmetic formalization
 
 Maps to **hard input 2**: seventh packet of the arc (forcing -> typing ->
 reduction -> scope -> compression -> classification -> admission
@@ -16,12 +18,13 @@ Verifier: `experimental/scripts/verify_rank_one_emission_arithmetic.py`
           (20/20, tamper 7/7).
 
 Analytic results (PROVED in note + Python verifier; NOT in Lean): the
-trig/emission content lives in the note and the scans.  This module is
-the DECIDABLE arithmetic shadow (stdlib-only `native_decide`, no mathlib,
-no `sorry`): the a <-> -a pairing census behind Lemma R's reality, the
-exact-rational depth-1 identity `3 G_{1,r}(l) = wtil(l) - wtil(l+1)`
-(`r in {1,2}`) behind flat-exactness, and the all-ones digit identities
-locating the resonant residue.
+trig/emission content lives in the note and the scans.  This module is the
+arithmetic shadow (stdlib-only, no mathlib, no `sorry`): the all-depth
+a <-> -a digit-count pairing kernel behind Lemma R(a), its finite pairing
+census, the exact-rational depth-1 identity
+`3 G_{1,r}(l) = wtil(l) - wtil(l+1)` (`r in {1,2}`) behind flat-exactness,
+and the finite all-ones digit identities locating the resonant residue.  The
+complex-valued `G` sum and its cosine folding remain outside this package.
 -/
 
 namespace RankOneEmissionArithmetic
@@ -47,10 +50,83 @@ def s3 (y ndig : Nat) : Nat :=
 /-! ## 1. The pairing behind Lemma R: `s3(-a) = s3(a)`, and the census of
     proper pairs `#{{a, 3^k - a} : a != 0} = (3^k - 1)/2`. -/
 
+/-- Arithmetic induction showing that complementing a canonical residue in
+`Z/(3^k)` preserves its recursive balanced-ternary nonzero-digit count.
+
+The bound is essential: it makes `Nat` subtraction model the complement in the
+chosen residue interval. -/
+theorem s3_pow_sub (k a : Nat) (ha : a ≤ 3 ^ k) :
+    s3 (3 ^ k - a) k = s3 a k := by
+  induction k generalizing a with
+  | zero =>
+      simp [s3]
+  | succ k ih =>
+      let q := a / 3
+      have hpow : 3 ^ (k + 1) = 3 * 3 ^ k := by
+        rw [Nat.pow_succ]
+        omega
+      have hmod : a % 3 < 3 := Nat.mod_lt _ (by omega)
+      have hdecomp : 3 * q + a % 3 = a := by
+        simpa [q] using Nat.div_add_mod a 3
+      have hq : q ≤ 3 ^ k := by
+        omega
+      have hcases : a % 3 = 0 ∨ a % 3 = 1 ∨ a % 3 = 2 := by
+        omega
+      rcases hcases with hzero | hone | htwo
+      · have hcomp : 3 ^ (k + 1) - a = 3 * (3 ^ k - q) := by
+          omega
+        simpa [s3, hcomp, hzero, q] using ih q hq
+      · have hcomp : 3 ^ (k + 1) - a = 3 * (3 ^ k - q - 1) + 2 := by
+          omega
+        have hcomp_mod : (3 ^ (k + 1) - a) % 3 = 2 := by
+          rw [hcomp]
+          simpa using Nat.mul_add_mod 3 (3 ^ k - q - 1) 2
+        have hcomp_div : (3 ^ (k + 1) - a) / 3 = 3 ^ k - q - 1 := by
+          rw [hcomp]
+          simpa using Nat.mul_add_div (m := 3) (by omega) (3 ^ k - q - 1) 2
+        have hcarry : 3 ^ k - q - 1 + 1 = 3 ^ k - q := by
+          omega
+        simpa [s3, hcomp_mod, hcomp_div, hone, hcarry, q] using ih q hq
+      · have hq_succ : q + 1 ≤ 3 ^ k := by
+          omega
+        have hcomp : 3 ^ (k + 1) - a = 3 * (3 ^ k - q - 1) + 1 := by
+          omega
+        have hcomp_mod : (3 ^ (k + 1) - a) % 3 = 1 := by
+          rw [hcomp]
+          simpa using Nat.mul_add_mod 3 (3 ^ k - q - 1) 1
+        have hcomp_div : (3 ^ (k + 1) - a) / 3 = 3 ^ k - q - 1 := by
+          rw [hcomp]
+          simpa using Nat.mul_add_div (m := 3) (by omega) (3 ^ k - q - 1) 1
+        have hsub : 3 ^ k - (q + 1) = 3 ^ k - q - 1 := by
+          omega
+        simpa [s3, hcomp_mod, hcomp_div, htwo, hsub, q] using
+          ih (q + 1) hq_succ
+
+/-- All-depth source-shaped form of the digit-count identity used in Lemma R(a).
+The input is a canonical representative of a residue modulo `3^k`. -/
+theorem pairing_symmetry_all (k a : Nat) (ha : a < 3 ^ k) :
+    s3 ((3 ^ k - a) % 3 ^ k) k = s3 a k := by
+  by_cases hzero : a = 0
+  · simp [hzero]
+  · have hpos : 0 < a := Nat.pos_of_ne_zero hzero
+    have hcomp_lt : 3 ^ k - a < 3 ^ k := by
+      omega
+    rw [Nat.mod_eq_of_lt hcomp_lt]
+    exact s3_pow_sub k a (Nat.le_of_lt ha)
+
+/-- Canonical arbitrary-`Nat` wrapper: reduce before using `Nat` subtraction. -/
+theorem pairing_symmetry_mod (k a : Nat) :
+    s3 ((3 ^ k - (a % 3 ^ k)) % 3 ^ k) k = s3 (a % 3 ^ k) k := by
+  apply pairing_symmetry_all
+  exact Nat.mod_lt _ (Nat.pow_pos (by omega))
+
+/-- The original finite-depth API, retained as a compatibility wrapper around
+the all-depth theorem. -/
 theorem pairing_symmetry :
     ∀ k ∈ [1, 2, 3, 4, 5, 6, 7], ∀ a ∈ List.range (3 ^ k),
       s3 ((3 ^ k - a) % 3 ^ k) k = s3 a k := by
-  native_decide
+  intro k _ a ha
+  exact pairing_symmetry_all k a (by simpa using ha)
 
 theorem pairing_census :
     ∀ k ∈ [1, 2, 3, 4, 5, 6, 7],

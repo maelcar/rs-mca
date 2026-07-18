@@ -1,0 +1,25 @@
+[PASS] certificate SHA256SUMS (all entries)
+[PASS] artifact hash independent_field_and_pasch_selftest.expected.txt (c57f426613f0a462cefd142bfcd72c2b7e97df4ebdf22df90da6978537ce1258)
+[PASS] artifact hash independent_field_and_pasch_selftest.py (0628b024daf5aaef80edf5d4859a643b59ba6d9e3a762f307fed073aca969135)
+[PASS] artifact hash independent_low_triple_arithmetic.expected.txt (8f1759c4c2732012981613c5fb153809c2bfbdc6d5f2036522f8dad6883b9106)
+[PASS] artifact hash independent_low_triple_arithmetic.py (1fd93482ced6dfe45b0cb1a7eee49c85c317e40ee7d4bc304b6eb82e318ba937)
+[PASS] artifact hash independent_split_quartic_audit.cpp (9ca0a0fc0a331a346bd68f5929ab19a06c80c14257e223d5701806523d40c8b0)
+[PASS] artifact hash independent_split_quartic_audit.expected.txt (4313da63584beed2bd9bf1a0bd338e0d245aa43523b61e7279f70abe31c46883)
+[PASS] artifact hash independent_triple_line_bound.expected.txt (f12d1ea94930be3e278707c66868e73753c0193068b334a0ed421ead9b371e9c)
+[PASS] artifact hash independent_triple_line_bound.py (5c2009116a2e552d38ec8b3af36fbaf1cbf3fa4f6d66d75ab910524ac4e6fb1a)
+[PASS] field order divides 64
+[PASS] field order is exactly 64
+[PASS] field factorization
+[PASS] passing-deficit state partition ((25996, 19346, 6647, 3))
+[PASS] passing-deficit strict minimum ((28, 12401, 16496, 51200, 2048, 16, 75776, 37, 8, 238, 210))
+[PASS] one-farther state partition ((25996, 19350, 6643, 3))
+[PASS] one-farther certificate failure ((-6766, 12997, 15900, 50604, 1, 32768, 72180, 72180, 15900, 1041918300, 1041925066))
+[PASS] union numerator is even
+[PASS] seven-residual union floor (154021)
+[PASS] certificate replay independent_low_triple_arithmetic (8f1759c4c2732012981613c5fb153809c2bfbdc6d5f2036522f8dad6883b9106)
+[PASS] certificate replay independent_triple_line_bound (f12d1ea94930be3e278707c66868e73753c0193068b334a0ed421ead9b371e9c)
+[PASS] certificate replay independent_field_and_pasch_selftest (c57f426613f0a462cefd142bfcd72c2b7e97df4ebdf22df90da6978537ce1258)
+[PASS] split-quartic census excludes target profile
+[PASS] split-quartic census has 11,328 unique Pasch configurations
+[PASS] split-quartic census profile partition
+RESULT: PASS (24/24)

@@ -1,0 +1,10 @@
+split_cubics=41664 translation_orbits=651
+disjoint_cubic_line_orbits=364
+actual_cubic_lines=23296
+split_quartics=635376
+concurrent_triples=1281280
+pair_records=3843840
+incident_edge_pairs=60006016 distinct_common_pairs=32465792 partial_target_pairs=200192
+pasch_unique=11328 raw_paths=67968 target_profiles=0
+profile=8,2,4,0 count=10880
+profile=12,0,4,0 count=448

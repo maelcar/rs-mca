@@ -6,10 +6,19 @@
   "5": 0.03124067077143391
  },
  "claims": "dense-shell class-charge computational core + proof-layer gates",
+ "command": "python3 verify_dense_shell_class_charges.py --emit-cert --deep",
+ "commit": "c4856fa6db0b2cd491f5c5fe2a0f3c8468de645e",
+ "deep": true,
  "envelope_sups": {
-  "pair1": 0.7890897387285589,
-  "pair2": 1.6078949860283844
+  "pair1": 0.5967999328109171,
+  "pair2": 1.2296424183663992
  },
+ "envelope_sups_broad": {
+  "pair1": 0.7890915800756328,
+  "pair2": 1.6101363604711778
+ },
+ "horizon": "coupled q=j-1 in [5,47]; broad j in [2,48]",
+ "jmax": 48,
  "key_endpoint_margin": 0.030255903753322932,
  "law_margins": {
   "B10": 49.30014867296388,
@@ -31,6 +40,8 @@
   "9": 0.12140273342113418
  },
  "pass": true,
+ "script_sha256": "23703024a296ff6c94ec9b2d4b652310e7e0e8b858dcc4677a28f3bd6c598212",
  "share_floor": 1.2154438881512928,
+ "source_sha256": "e13be4f164ac741329c98e174b2261970c368081a1f725bd4b9ae7249e4e7270",
  "tpi_census_min": 0.0009948824402161336
 }

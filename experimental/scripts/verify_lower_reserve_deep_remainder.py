@@ -48,9 +48,11 @@ This packet builds that atlas and records the hard-input-5 correction:
                   image size 86320 and maximum fiber 20.
 
 Deterministic, python3 stdlib ONLY (no numpy/sympy).  Modes:
-  (default)/--check : run every gate; print "RESULT: PASS n/n"; exit 0 iff all pass.
+  (default)/--check : run every gate and byte-check the frozen certificate;
+                      never writes repository data.
+  --write           : run every gate and explicitly regenerate the certificate.
   --tamper-selftest : corrupt each load-bearing number; confirm the gate flips.
-Writes a JSON certificate to
+Checks or explicitly writes the JSON certificate at
   experimental/data/certificates/lower-reserve-deep-remainder/deep_remainder_atlas.json.
 
 Gate groups (every number in the note is recomputed here):
@@ -523,12 +525,15 @@ def run_G():
     return {}
 
 # ===========================================================================
-def write_certificate(results):
+def certificate_path():
     lane_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)),
                             "..", "data", "certificates", "lower-reserve-deep-remainder")
     lane_dir = os.path.normpath(lane_dir)
-    os.makedirs(lane_dir, exist_ok=True)
-    cert = {
+    return os.path.join(lane_dir, "deep_remainder_atlas.json")
+
+
+def build_certificate(results):
+    return {
         "title": "Lower-reserve deep-remainder partial-occupancy atlas correction",
         "status": "COUNTEREXAMPLE / FIXED",
         "house_label": "no-clean-coordinate retained; Cartesian-image domination retired",
@@ -575,10 +580,27 @@ def write_certificate(results):
             "no change to any deployed finite row or M31/KoalaBear survivor count",
         ],
     }
-    cert_path = os.path.join(lane_dir, "deep_remainder_atlas.json")
-    with open(cert_path, "w", encoding="utf-8") as handle:
-        json.dump(cert, handle, indent=2, sort_keys=True)
-        handle.write("\n")
+
+
+def certificate_bytes(cert):
+    return (json.dumps(cert, indent=2, sort_keys=True) + "\n").encode("utf-8")
+
+
+def write_certificate(cert):
+    cert_path = certificate_path()
+    os.makedirs(os.path.dirname(cert_path), exist_ok=True)
+    with open(cert_path, "wb") as handle:
+        handle.write(certificate_bytes(cert))
+    return cert_path
+
+
+def check_certificate(cert):
+    cert_path = certificate_path()
+    require(os.path.isfile(cert_path), "missing frozen certificate: %s" % cert_path)
+    with open(cert_path, "rb") as handle:
+        stored = handle.read()
+    require(stored == certificate_bytes(cert),
+            "frozen certificate mismatch; use --write only after reviewing the recomputation")
     return cert_path
 
 def run_all():
@@ -609,8 +631,9 @@ def main():
     mode = sys.argv[1] if len(sys.argv) > 1 else "--check"
     if mode == "--tamper-selftest":
         return tamper()
-    if mode not in ("--check",):
-        print("usage: verify_lower_reserve_deep_remainder.py [--check | --tamper-selftest]")
+    if mode not in ("--check", "--write"):
+        print("usage: verify_lower_reserve_deep_remainder.py "
+              "[--check | --write | --tamper-selftest]")
         return 2
     try:
         results = run_all()
@@ -619,9 +642,14 @@ def main():
         for name, passed in CHECKS:
             print(("ok  " if passed else "FAIL") + "  " + name)
         require(npass == ntot, "one or more verification gates failed")
-        cert_path = write_certificate(results)
-        print("certificate written:", os.path.relpath(cert_path, os.path.dirname(
-              os.path.dirname(os.path.dirname(os.path.abspath(__file__))))))
+        cert = build_certificate(results)
+        if mode == "--write":
+            cert_path = write_certificate(cert)
+            print("certificate written:", os.path.relpath(cert_path, os.path.dirname(
+                  os.path.dirname(os.path.dirname(os.path.abspath(__file__))))))
+        else:
+            cert_path = check_certificate(cert)
+            print("certificate check: PASS (%s)" % cert_path)
         print("RESULT: PASS %d/%d" % (npass, ntot))
         return 0
     except (VerificationError, OSError, ValueError) as exc:

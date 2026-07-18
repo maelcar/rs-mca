@@ -23,7 +23,8 @@ Exit 0 iff every check passes.  Labels: PROVED (exact hand derivation),
 COMPUTED (exhaustive exact enumeration), MEASURED (exact finite toy, asymptotic
 read off), AUDIT (cross-reference).
 
-Credit: #534 (PTM kappa-growth lineage, the per-chart secant extremal),
+Credit: #534 (raw PTM kappa-growth lineage; exponential per-chart secant
+upper-bound constant, not an attained realized-slope extremal),
 scottdhughes #564 (the equal-power-sum wall + the canonical star-PTE trade
 lemma), Codex #615 (the two-moment Prouhet instantiation + the near-Sidon
 razor floor), LegaSage #585 chain (the R=2 razor predicate), holmbuar #614

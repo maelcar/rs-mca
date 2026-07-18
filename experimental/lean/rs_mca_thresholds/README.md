@@ -16,6 +16,27 @@ target-aware quadratic and half-distance window compilers (including the
 zero-budget branch), and the asymptotic first-safe certificate formula
 `a = k + 1 + gn + o(n)` with radius `1 - ρ - g + o(1)`.
 
+## Actual-error-support lift
+
+`RsMcaThresholds/ActualErrorSupportLift.lean` formalizes the witness lift in
+`Exact support and actual error support` and `Lift to the deep agreement` of
+`experimental/notes/m1/m1_kb_branch2_rank_deep_owner_v1.md` at source
+snapshot `168e9ba0`.
+
+| Source section / label | Lean declaration | Status |
+| --- | --- | --- |
+| `Lift`: `S* = D \ E` | `fullAgreementSupport` | DEFINITION |
+| `Lift`: membership in the full agreement set | `mem_fullAgreementSupport_iff` | PROVED |
+| `Lift`: `|S*| = n - |E|` | `fullAgreementSupport_card` | PROVED |
+| `Lift`: `S ⊆ S*`, same explanation, upward noncontainment | `fullAgreementSupport_witness` | PROVED |
+| `Lift`: support cap `|E| ≤ r` gives MCA-badness at `n - r` | `mcaBad_lift_of_wordSupport_card_le` | PROVED |
+| `Lift`: repaired identity `n - (t - 1) = n - t + 1` | `nat_sub_pred_eq_sub_add_one` | PROVED |
+| `Exact support` + `Lift`: rank-depth source wrapper | `rankDepth_mcaBad_lift_of_wordSupport_card_le` | PROVED |
+
+This module consumes the actual-error cap.  It does not prove the upstream
+rank-to-support implication, identify the abstract weighted-moment theorem
+with the source matrix, or construct a Route-D/RIM-to-owner adapter.
+
 Build with the pinned toolchain:
 
     lake build

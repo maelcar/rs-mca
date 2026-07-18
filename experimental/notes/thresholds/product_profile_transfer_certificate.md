@@ -42,13 +42,16 @@ LANE: hard input 2 ("image-scale MI + MA, or a direct Sidon payment",
         certificate obstacle #827 left for the canonical non-hierarchy
         family: product-profile band class data is poly-evaluable
         (empirically to machine precision), so the omega-capped greedy
-        machinery (#818/#820/#824) has computable inputs on the dense
-        shell and its family.  Remaining for product-profile EMISSION:
+        machinery (#818/#820/#824) has computable local scalar inputs on
+        the dense shell and its family.  Remaining for product-profile EMISSION:
         the rigorous truncation bound (C3's open step), the emission
         arithmetic on top (mechanical given trusted evaluation), and
-        the positivity pin's proof.  Input-2 residual: the admission
-        acceptance, those three steps, non-product non-hierarchy
-        bands, atlas totality (the Codex team's lane), large-q Sidon.
+        the positivity pin's proof.  The governing profile-payment interface
+        remains OPEN: an actual same-owner first-match cell, an (A4)
+        analytic/Sidon payment, a separate (A6)/(RC) distinct-slope bound,
+        and a uniform subexponential aggregate census.  Also open: a grammar
+        rule, those three product-profile steps, non-product non-hierarchy
+        bands, atlas totality, and large-q Sidon.
         Fence (N1) (thm:aperiodic-one-ray-saturation) respected:
         nothing here pays or claims lower reserve.
 ```
@@ -89,7 +92,7 @@ The dense band is `S_B = {xi : s3(xi) = B}`.
 Integrated in-tree packets (consumed and credited, not reproved):
 - **The cylinder packet (#798/#805-corrected)** and **the band-uniform
   packet (#795)**: the band/class conventions.
-- **Codex team's atlas-totality lane** (in progress, theirs): unchanged.
+- **Atlas-totality residual**: unchanged by this packet.
 
 ---
 
@@ -207,8 +210,10 @@ with cylinders, and smoothed variants are all in scope.
   gets its evaluation engine; the transfer-style calculus it gestured
   at (Theorem D(d)) is now the working C1-C4 machinery.
 - **The admission chain (#818/#820/#824)**: the omega-cap, budgets,
-  and greedy schedule become computable on the canonical non-hierarchy
-  family once C3's bound is rigorous.
+  and greedy schedule become computable as local scalar inputs on the
+  canonical non-hierarchy family once C3's bound is rigorous.  Even then,
+  the same-owner first-match cell, A4 payment, separate A6/RC bound,
+  aggregate census, and grammar rule remain open.
 - **The transverse-charge packet (#776)**: j*'s band data is now
   poly-evaluable (empirically, via C3; it lives in the dense shell).
 - `rs_mca_thresholds.tex`: paste-ready remark after the PO4 material --

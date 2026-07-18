@@ -12,7 +12,7 @@
     {
       "binding_id": "packet-readme",
       "path": "experimental/data/certificates/m1-kb-branch3-actual-core-mds-v1/README.md",
-      "sha256": "e27f26ba93dc44a6c37c9ac88858464a7935ca8317b227cf10263c6abd1e66af",
+      "sha256": "a1377b8079bab930d5d52b28f5da5d5cf1c3a7346926ed8319e54aba10bf27a5",
       "role": "replay instructions"
     },
     {
@@ -466,5 +466,5 @@
     "This packet does not begin a higher-m or degree-three parameter class.",
     "This packet does not authorize Lean or Paper-D theorem promotion."
   ],
-  "payload_sha256": "692c4ad8203b23cd37a2f4f363c103f97eb7959cd5a1d5a7aeb426b48f7a87f3"
+  "payload_sha256": "f4597bb91d0822ac9e40e62f0a8384011587abd942d3da3440beb0f03f8bfa9a"
 }

@@ -480,6 +480,10 @@ def one_cut_gate(
     cutoff: int,
 ) -> dict[str, Any]:
     require(0 <= cutoff < MAX_DEFICIT, "cutoff outside 0..Delta_max-1")
+    require(
+        coarse_cap(carrier_size, source_distance) > B_REMAINING,
+        "one-cut gate is only defined on predecessor coarse-failure cells",
+    )
     budget = math.comb(carrier_size, RANK_S)
     target_size = COUNTEREXAMPLE_SIZE
     mu0 = multiplicity(source_distance, 0)
@@ -1170,6 +1174,13 @@ def expected_certificate() -> dict[str, Any]:
 
 
 def validate_certificate(certificate: dict[str, Any]) -> None:
+    try:
+        one_cut_gate(COARSE_BOUNDARIES[1], 1, 0)
+    except VerificationError:
+        pass
+    else:
+        raise VerificationError("one-cut helper accepted a predecessor-paid cell")
+
     require(set(certificate) == TOP_KEYS, "top-level key drift")
     require(certificate["schema"] == SCHEMA, "schema drift")
     require(certificate["artifact_kind"] == ARTIFACT_KIND, "artifact kind drift")

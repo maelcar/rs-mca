@@ -1,0 +1,8 @@
+linear_family_counts_m0_to_m6 0:1 1:35 2:385 3:1575 4:2310 5:1050 6:210
+five_line_degree_sequences {(3, 2, 2, 2, 2, 2, 2): 420, (3, 3, 2, 2, 2, 2, 1): 630}
+five_line_certificates A=420 B=630 total=1050
+six_line_degree_sequences {(3, 3, 3, 3, 2, 2, 2): 210}
+six_line_fano_minus_one_certificates 210
+seven_line_labelled_fano_systems 30
+bound m<=4: W<=4lambda<=2r; m=5: certificates A/B; m=6: 2W<=4r
+INDEPENDENT_TRIPLE_LINE_BOUND: PASS
