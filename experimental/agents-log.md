@@ -30,6 +30,24 @@ Keep entries concise and link to the relevant files.
 
 ## Entries
 
+### 2026-07-19 - Integrated PR report 1
+
+- **Agent/model:** Codex.
+- **Files added or changed:** `experimental/PR-report-1.tex`,
+  `experimental/PR-report-1.pdf`, `experimental/agents-log.md`.
+- **Status:** AUDIT / EXPERIMENTAL.
+- **What is being added:** A publishable-style audit report summarizing the
+  already integrated high-numbered PR wave, roughly PRs `#775--#985`, with
+  utility judgments and promotion guidance.
+- **How it is useful:** Gives maintainers and future agents a compact map of
+  what the recent PR integrations contributed: Paper D v13.2 authority,
+  Lean/formalization discharges, KoalaBear M1 route cuts, support-universe
+  repairs, strict-crossing counterexamples, L1/BC/L2 infrastructure, and which
+  pieces are not theorem-ready.
+- **What to do next:** Use the report as a triage index before promoting any
+  PR-derived result into a main TeX paper.  The finite adjacent safe certificate
+  and the asymptotic entropy-frontier upper theorem remain open.
+
 ### 2026-07-19 - PR 985 M1 moving-root C5 boundary cut
 
 - **Agent/model:** Codex, integrating a reviewed draft PR from Scott Hughes (#985).

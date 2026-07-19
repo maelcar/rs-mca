@@ -1,0 +1,362 @@
+\documentclass[a4paper,11pt]{amsart}
+\usepackage[margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{hyperref}
+
+\title{Report on Integrated Pull Requests}
+\date{July 19, 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This report summarizes the already integrated pull-request material in the
+latest high-numbered integration band, roughly PRs \#775--\#985.  It is based
+on the local integration ledger, committed experimental notes, formalization
+packages, and representative source notes; it is not a fresh execution replay.
+The main conclusion is that the PR stream is useful, but mostly as a proof
+program: it narrows residual cases, repairs false statements, adds formalized
+kernels, and improves audit discipline.  The most promotion-worthy material is
+the Paper D v13.2 cap package, the Lean discharges for Paper D components, and
+the KoalaBear M1 rank-nine route cuts.  The finite adjacent safe side and the
+asymptotic entropy-frontier theorem remain open.
+\end{abstract}
+
+\section{Scope and Method}
+
+The request was to look at PRs already integrated, not to merge a new open
+queue.  I therefore used the local repository state, especially
+\texttt{experimental/agents-log.md}, the recent commits ending at
+\texttt{951ad203}, and the integrated notes under \texttt{experimental/notes/}.
+The effective scope is the latest approximately 200-number band of already
+handled PRs, from the L1/BC/L2 wave around \#775 through the M1 moving-root
+boundary cut \#985.
+
+No Python, Lean, Sage, or long-running certificate script was executed for this
+report.  Status words such as PROVED, CONDITIONAL, COUNTEREXAMPLE, AUDIT, and
+EXPERIMENTAL are inherited from the integrated notes and should be read subject
+to their local hypotheses.  In particular, ``proved local'' means proved under
+the packet's printed contracts; it does not by itself promote a main-paper
+theorem or close the Proximity Prize threshold.
+
+\section{Executive Assessment}
+
+The integrated PRs are not noise.  They have turned the repository from a
+collection of speculative ledgers into a much more structured proof program.
+The best contributions fall into four groups.
+
+First, the Paper D line has matured.  The v13.2 promotion gives a current
+authority source for the cap paper, with identity-prefix unsafe edges and a
+clear adjacent-safe certificate template.  It supersedes the old v12/raw-v13
+split as the main Paper D target.
+
+Second, the formalization stream is now genuinely useful.  Several Lean PRs do
+not merely restate definitions: they refute false skeleton signatures, repair
+interfaces, and discharge previously sorried kernels.  The strongest recent
+example is the ECFFT constructive discharge: \texttt{prop\_rational\_floor} and
+\texttt{cor\_ecfft\_onestep} are proved with byte-identical statements in the
+Lean skeleton.  The phi-fiber repair certificate is also valuable because it
+separates an old Lean-skeleton defect from the actual Paper D statement.
+
+Third, the KoalaBear M1 branch is more concrete.  The sequence of rank-nine
+route cuts now turns a broad full-outside high-degree residual into a small
+list of named algebraic one-slack cases.  The latest cut, PR \#985, shows that
+after the source-rational owner, every surviving full-outside rank-two record
+has
+\[
+        s\ge 67{,}474,\qquad e\ge 33{,}737,\qquad
+        \deg\gcd(P,Q)\le 1{,}014{,}838,
+\]
+and the remaining one-slack shapes are
+\[
+\begin{array}{c}
+\texttt{UNPAID\_NONBASE\_COMMON\_LINEAR\_GCD\_TWIST},\\
+\texttt{UNPAID\_SPLIT\_GCD\_NONBASE\_LINEAR\_MOVING\_COFACTOR}.
+\end{array}
+\]
+This is useful because it tells the next proof exactly where to look.
+
+Fourth, the counterexample and audit PRs are doing necessary cleanup.  They
+prevent attractive but false shortcuts: wrong support universes, false strict
+crossing demands, stale certificate bindings, and overbroad heavy-fiber claims.
+Those results do not ``move the leaderboard'', but they make the proof program
+less fragile.
+
+\section{Integrated Waves}
+
+\scriptsize
+\begin{longtable}{>{\raggedright\arraybackslash}p{0.12\textwidth}
+                  >{\raggedright\arraybackslash}p{0.28\textwidth}
+                  >{\raggedright\arraybackslash}p{0.32\textwidth}
+                  >{\raggedright\arraybackslash}p{0.10\textwidth}}
+\toprule
+PR range & Main content & Utility judgment & Promote now?\\
+\midrule
+\endhead
+\#775, \#777, \#779--\#802 &
+L1 mixed-petal and CRT packets, BC chart typing, resonant/fold/cylinder
+reductions, L2 rank-15/rank-16 route cuts, and several Lean threshold
+compilers. &
+Useful for the final-resolution atlas.  It makes residual cells more
+checkable, but it does not close Q/BC/SP or any deployed adjacent safe row. &
+No; summarize selectively.\\
+\addlinespace
+\#803--\#815 &
+L1 shared-auxiliary and total-degree CRT packets, rank-cell exclusions,
+KoalaBear base-slope universe audits, BC deficiency-2 typing, and site updates
+for corrected rows. &
+High utility for finite ledgers and public-board accuracy.  The most visible
+effect is better row display, not a new theorem closing the main gap. &
+Site yes; paper selective.\\
+\addlinespace
+\#817--\#845 &
+Threshold/compiler notes, C0 periodic Lean stack, M1 branch stack, L2
+source certificates, fixed-slope Johnson formalization, and rank-one
+corrections. &
+Important infrastructure.  The Lean and compiler items are reusable, while
+many route cuts remain local and conditional on packet contracts. &
+Map only.\\
+\addlinespace
+\#849, \#867, \#871, \#874 &
+KoalaBear branch-3 rank-nine route-cut stack: low-excess carrier cut, actual
+core MDS rank ladder, mask-deficit route cut, and syndrome-rank reduction. &
+High utility for M1.  These packets make the rank-nine branch structured, but
+leave sparse-sigma/rank-nine residuals and the KoalaBear row open. &
+No; keep as route cuts.\\
+\addlinespace
+\#879--\#880 &
+Paving-v8 audit and dense-shell class-charge material. &
+Useful for ePrint readiness and sign/class-sum separation.  It is supportive
+for the paving paper rather than a direct final-threshold proof. &
+Audit yes; theorem no.\\
+\addlinespace
+\#881--\#950 &
+Large wave: Route-D no-go and recursion tools, dense-shell repairs,
+transfer-shape evidence, M1 rank-nine route cuts, L2 rank-16 fixed-26/fixed-27
+cuts, Paving retained-factor audits, and Lean progress. &
+Mixed but useful.  The important effect is a stronger residual map and better
+guardrails against false promotion.  Heavy computations should remain
+off-by-default. &
+No wholesale promotion.\\
+\addlinespace
+\#951--\#975 &
+Route-D owner-typed forest and marked recursion, M1 source-Mobius and
+projective-base refinements, L2 fixed-26/fixed-27 local packets, dense-shell
+certificate audits, affine-line Steiner quotient ownership, and Lean repairs. &
+Very useful locally.  PR \#962 is the strongest mathematical move in this
+subwave, removing a selector-provenance gate for one M1 full-outside
+maximal-gcd cell.  PR \#965 is important because it keeps stale Arb evidence in
+OPEN-GAP status. &
+Only audited summaries.\\
+\addlinespace
+\#976--\#979 &
+Affine-prefix fixed-point and pole strata, primitive top-seam marked-incidence
+audit, and complete-fiber subset-packing Lean package. &
+Good regression material.  The top-seam audit is especially useful against
+marked-incidence overcounting; the Lean subset-packing compiler is reusable.
+No leaderboard movement. &
+Lean maybe; theory no.\\
+\addlinespace
+\#980--\#984 &
+Phi-fiber Lean repair certificate, ECFFT Lean constructive discharge, O5c
+strict-crossing counterexample, Case-B support-universe correction, and M1
+source-rational owner route cut. &
+High value.  The Lean discharges and phi-fiber repair are audit/formalization
+wins; the O5c and Case-B notes prevent wrong proof targets; the M1 owner cut
+narrows the KoalaBear rank-nine residual. &
+Audit.\\
+\addlinespace
+\#985 &
+M1 moving-root cofactor/slack and C5 boundary cut. &
+High local utility.  It raises the post-\#982 full-outside source floor to
+\(s\ge 67{,}474\) and leaves two explicit one-slack residuals. &
+Route-cut summary yes.\\
+\bottomrule
+\end{longtable}
+\normalsize
+
+\section{Most Useful Results}
+
+\subsection{Paper D and threshold authority}
+
+The main paper-level movement is not an individual small PR but the promotion
+of \texttt{tex/cs25\_cap\_v13\_2.tex}.  It makes Paper D v13.2 the current
+authority source.  Its useful contribution is the status split:
+\[
+\text{unsafe exact certificates are theorem-level in the paper package,}
+\]
+while adjacent first-safe statements remain conditional on exact upper ledgers.
+For the deployed KoalaBear MCA row, the current experimental unsafe agreement
+is \(a_0=1{,}116{,}047\), corresponding to
+\[
+        \delta=\frac{981105}{2097152}\approx 0.4678273.
+\]
+The next finite target is not to get a bigger error at a worse radius; it is to
+prove the adjacent safe certificate at \(a_0+1=1{,}116{,}048\), with exact
+integer constants.
+
+\subsection{Formalization}
+
+The integrated Lean material has crossed from outline to useful proof
+infrastructure.  The most important formalization items are:
+\begin{itemize}
+\item PR \#961, which refutes false Paper-D-v12 skeleton statements, repairs
+the formulations, and proves the \(c=1\) first-grid cap chain.
+\item PR \#977, which formalizes the complete-fiber subset-packing compiler.
+\item PR \#980, which gives a Lean counterexample to the old phi-fiber skeleton
+signature and a coefficient-to-value wrapper matching the Paper D v13.2
+premise \(\varphi\in B[X]\).
+\item PR \#983, which proves \texttt{prop\_rational\_floor} and
+\texttt{cor\_ecfft\_onestep} in the ECFFT skeleton, reducing the documented
+sorry count.
+\end{itemize}
+These are among the most promotion-worthy PR outputs because they reduce
+ambiguity rather than adding another heuristic layer.
+
+\subsection{M1 KoalaBear safe-side route cuts}
+
+The M1 packets are the strongest route toward the finite adjacent safe side.
+Their value is cumulative.  Early branch-3 packets split the problem into
+rank and carrier cases.  The source-Mobius/source-rational packets then remove
+large projective-rational owner classes without increasing the paid bound.  The
+moving-root C5 boundary packet composes the cofactor divisibility with the
+source-rational survivor inequality.
+
+The important current local endpoint is:
+\[
+        \text{post-C5 full-outside rank-two survivors have }
+        s\ge 67{,}474,\ e\ge 33{,}737.
+\]
+This replaces a vague high-degree residual by two explicit one-slack
+components.  The next useful theorem is therefore sharply stated: classify
+those two nonbase linear components against the regular locator equations and
+the eight rank-nine outlier directions.  Generic high-degree elimination is not
+the next best move.
+
+\subsection{L1, BC, L2, and Route-D}
+
+The L1/BC/L2/Route-D material is broad.  Its most useful function is not a
+single theorem but a better residual atlas.  The PRs add mixed-petal and CRT
+evidence on the L1 side, BC chart typing and first-interior modular-fiber
+notes, fixed-slope and complete-fiber L2 compilers, and Route-D owner/no-go
+packets.
+
+The judgment is conservative: these should not be promoted wholesale into the
+main TeX papers.  They are best used as a menu of local lemmas and
+counterexamples.  A future paper update should extract only statements that
+either close a named residual branch or give a reusable theorem with clearly
+printed hypotheses.
+
+\subsection{Audits and counterexamples}
+
+Several integrated PRs are valuable because they say ``do not prove this'':
+\begin{itemize}
+\item PR \#981 refutes a universal O5c strict-crossing demand using a sparse
+exact-deep family where the exact numerator is \(2\), equal to or below the
+frozen target in the relevant endpoint.
+\item PR \#984 corrects a Case-B support-universe mistake: supports must be
+counted by \(\binom{|D|}{m}\), not by \(\binom{|B|}{m}\).  The corrected
+fixed-density regime still gives an exponential-field lower picture, but the
+old \(m=2e\) calibration was wrong.
+\item PR \#978 is a useful primitive top-seam regression against marked
+incidence overcounting and common-core erasure.
+\item PR \#965 is useful precisely because it refuses to promote stale Arb
+evidence to a proved transfer theorem.
+\end{itemize}
+These negative or audit results should stay visible.  They prevent future
+agents from spending cycles on false shortcuts.
+
+\section{What Should Be Promoted}
+
+The following items are strong candidates for promotion into a clean TeX
+writeup, after human review.
+
+\begin{enumerate}
+\item The ECFFT Lean discharge can be summarized in the Paper D formalization
+appendix or an audit note: the rational floor and one-step ECFFT cap have
+machine-checked skeleton proofs with byte-identical statements.
+\item The phi-fiber repair certificate should be cited in the Paper D audit
+map as a formal check that the base-field polynomial premise is load-bearing
+and correctly bridges to the repaired value-level Lean theorem.
+\item The M1 KoalaBear route-cut sequence, ending with PR \#985, should be
+summarized as the current best finite safe-side residual reduction.  It should
+not be advertised as KoalaBear closure.
+\item The Case-B correction should be summarized in the asymptotic/frontier
+notes because it changes the correct support-counting calibration and
+separates subexponential-target lower constructions from fixed-epsilon
+constant-fraction questions.
+\item The complete-fiber subset-packing Lean compiler from PR \#977 should be
+kept in the formalization roadmap as reusable L2 infrastructure.
+\end{enumerate}
+
+\section{What Should Not Be Promoted Yet}
+
+The following should remain experimental.
+
+\begin{enumerate}
+\item Local route cuts whose hypotheses depend on selector provenance,
+first-match owner order, or frozen packet contracts.
+\item Large Python/Sage certificate packets unless a maintainer explicitly
+requests replay and the certificate is source-bound.
+\item Leaderboard or site rows that are only evidence, not theorem-level
+unsafe/safe certificates.
+\item Broad L1/BC/L2/Route-D stacks that narrow residuals but do not close a
+named theorem.
+\item Any statement using unspecified polynomial losses to close a finite
+adjacent deployed row.  The finite rows need constants fitting inside the
+printed bit margin.
+\end{enumerate}
+
+\section{Current Research State After These PRs}
+
+For the finite deployed Proximity Prize direction, the unsafe side is much
+sharper than before.  The main remaining task is the adjacent safe certificate:
+if \(B^*=\lfloor 2^{-128}q_{\rm line}\rfloor\), prove
+\[
+        U(a_0+1)\le B^* < L(a_0)
+\]
+with an exhaustive, deduplicated upper ledger \(U\) and an exact lower
+staircase \(L\).  The PRs mostly improve \(U\), especially through M1 route
+cuts.
+
+For the asymptotic direction, the conjectural picture is still the
+entropy-subfield frontier
+\[
+        \delta_C^*(\varepsilon^*)
+        =
+        1-\rho-g^*(\rho,\log_2 |B|)+o(1),
+\]
+where \(g^*\) is determined by the binary-entropy balance.  The recent PRs do
+not prove this theorem, but they improve the evidence and remove several false
+formulations of the required support-counting and residual-payment inputs.
+
+For formalization, the project is clearly moving in the right direction.  The
+next best formalization work is not to add more skeletons, but to mechanize
+the exact staircase compilers, the Paper D v13.2 cap chain, and the M1
+route-cut statements with their dependencies explicitly printed.
+
+\section{Bottom Line}
+
+The last integrated PR band is useful and worth keeping, but most of it should
+remain in \texttt{experimental/}.  The material most likely to survive into a
+submission-facing paper is:
+\[
+\begin{aligned}
+&\text{Paper D v13.2 authority}
++\text{ Lean formalization discharges}\\
+&\quad+\text{ KoalaBear M1 residual route cuts}
++\text{ support-universe and strict-crossing audits}.
+\end{aligned}
+\]
+The project is closer to RS MCA because the remaining proof obligations are
+now narrower and better named.  It is not done: the finite adjacent safe
+certificate and the asymptotic entropy-frontier upper theorem still require
+new proof, not just more certificates.
+
+\end{document}
