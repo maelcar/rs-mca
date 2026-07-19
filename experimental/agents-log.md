@@ -30,6 +30,15 @@ Keep entries concise and link to the relevant files.
 
 ## Entries
 
+### 2026-07-19 - Paper D v13.2 promotion
+
+- **Agent/model:** Codex, using Przemek Chojecki's `cap25_v13_2` paper and revision notes.
+- **Files added or changed:** Promoted `experimental/cap25_v13_2.tex` to `tex/cs25_cap_v13_2.tex`, promoted `experimental/cap25_v13_2.pdf` to `cs25_cap_v13_2.pdf`, added the site mirror `site/papers/cs25_cap_v13_2.pdf`, kept `experimental/cap25_v13_2_revision_notes.md`, moved `tex/cs25_cap_v12.tex` and `cs25_cap_v12.pdf` to `archived/`, moved `experimental/cap25_cap_v13_raw_compact.tex` and `.pdf` to `archived/`, and updated `agents.md`, `readme.md`, `towards-prize.md`, and `site/index.html`.
+- **Status:** PROVED / CONDITIONAL / AUDIT.
+- **What is being added:** Paper D v13.2 becomes the active cap paper.  The promoted draft incorporates the corrected identity-prefix unsafe frontier, repaired discrete subfield census convention, revised safe-side certificate template, corrected deployed endpoints, and audit fixes described in `experimental/cap25_v13_2_revision_notes.md`.
+- **How it is useful:** This replaces the v12 authority plus experimental raw-v13 split with one promoted Paper D source.  The current deployed unsafe edges are KoalaBear MCA agreement `1116047` at `981105/2097152`, KoalaBear list agreement `1116046`, Mersenne-31 MCA agreement `1116023`, and Mersenne-31 list agreement `1116022`; the adjacent first-safe rows remain conditional on exact upper ledgers.
+- **What to do next:** Audit every printed exact integer certificate and replay path in v13.2, especially the corrected identity-prefix rows and circle/genus-one transports.  Do not advertise the adjacent safe agreements as proved until the summed `U_paid + U_Q + U_BC + U_sp <= B*` certificate is instantiated with constants.
+
 ### 2026-07-19 - Reviewed PR integration sweep
 
 - **Agent/model:** Codex, integrating reviewed PRs from Holm Buar,

@@ -556,7 +556,7 @@
           <span class="hero-kicker">Proximity Prize threshold board</span>
           <h1>Can you push <em>RS MCA</em> frontier?</h1>
           <p class="lead">Track the \(2^{-128}\) MCA and interleaved-list frontiers for \(\rho\in\{1/2,1/4,1/8,1/16\}\), \(k\le2^{40}\), and \(|\mathbb F|<2^{256}\). Each row states whether it is a \(\delta^*\) upper cap, proof record, candidate, or target, with field ledgers and non-claims visible by default.</p>
-          <div class="warning-line"><strong>Pay-per-bit view.</strong> If the prize is allocated pro-rata by soundness-gap bits, our rows are already measured in that currency: Paper D v12 gives at least +42 certified bits over \(2^{-128}\) in its cap range, the Cycle116/119 finite numerator gives +32.82 bits, and the exact tangent staircase supplies the structural 6/7 threshold gate. The best rows are those that combine auditable bit margin with a smaller certified unsafe radius.</div>
+          <div class="warning-line"><strong>Pay-per-bit view.</strong> If the prize is allocated pro-rata by soundness-gap bits, our rows are already measured in that currency: Paper D v13.2 gives at least +42 certified bits over \(2^{-128}\) in its cap range, the Cycle116/119 finite numerator gives +32.82 bits, and the exact tangent staircase supplies the structural 6/7 threshold gate. The best rows are those that combine auditable bit margin with a smaller certified unsafe radius.</div>
           <div class="hero-links">
             <a class="primary" href="#leaderboard">View rate leaderboards →</a>
             <a href="#calculator">Try a certificate</a>
@@ -1077,9 +1077,9 @@
             <h3>Paper D: Two-Sided Cap and Certificate Grammar</h3>
             <p>Main Proximity Prize submission reference: self-contained cap route, safe-side pincer, deployed-row two-sided intervals, model transfers, explicit witnesses, optimized profile, and certificate grammar v2.</p>
             <div class="paper-link-strip">
-              <a href="https://github.com/przchojecki/rs-mca/blob/main/cs25_cap_v12.pdf" target="_blank" rel="noopener">PDF on GitHub</a>
-              <a href="https://github.com/przchojecki/rs-mca/blob/main/tex/cs25_cap_v12.tex" target="_blank" rel="noopener">TeX on GitHub</a>
-              <a href="papers/cs25_cap_v12.pdf" target="_blank" rel="noopener">Local mirror</a>
+              <a href="https://github.com/przchojecki/rs-mca/blob/main/cs25_cap_v13_2.pdf" target="_blank" rel="noopener">PDF on GitHub</a>
+              <a href="https://github.com/przchojecki/rs-mca/blob/main/tex/cs25_cap_v13_2.tex" target="_blank" rel="noopener">TeX on GitHub</a>
+              <a href="papers/cs25_cap_v13_2.pdf" target="_blank" rel="noopener">Local mirror</a>
             </div>
           </article>
           <article class="program-card paper-card">
@@ -1608,12 +1608,12 @@
     },
     {
         "date": "2026-07-04",
-        "status": "experimental v13 identity frontier",
+        "status": "Paper D v13.2 unsafe frontier",
         "author": "Przemek Chojecki / Codex audit",
-        "title": "Identity-prefix KoalaBear frontier edge added",
-        "summary": "The CAP25 v13 experimental source now uses the c=1 identity-prefix floor, superseding the c=2 addendum. The deployed KoalaBear sextic MCA unsafe edge improves from 15331/32768 to 981109/2097152, with the exact checker reporting a +25.7 bit margin over the 2^-128 target.",
-        "impact": "This appears on the rho=1/2 MCA board as experimental v13 material. It is not promoted to the active Paper D v12 draft; the adjacent safe-side agreement 1116044 still needs an exact upper ledger.",
-        "href": "https://github.com/przchojecki/rs-mca/blob/main/experimental/cap25_v13_experimental.tex"
+        "title": "Paper D v13.2 promotes the identity-prefix KoalaBear edge",
+        "summary": "Paper D v13.2 uses the c=1 identity-prefix floor and flexible-budget conversion, superseding the c=2 addendum. The deployed KoalaBear sextic MCA unsafe edge is now 981105/2097152, with unsafe agreement 1116047 and margin above the 2^-128 target.",
+        "impact": "This is now the active Paper D unsafe-edge row on the rho=1/2 MCA board. The adjacent safe-side agreement 1116048 still needs an exact upper ledger before the exact threshold is closed.",
+        "href": "https://github.com/przchojecki/rs-mca/blob/main/tex/cs25_cap_v13_2.tex"
     },
     {
         "date": "2026-07-03",
@@ -1629,27 +1629,27 @@
         "status": "theorem note / sparse threshold plan",
         "author": "Przemek Chojecki / Codex audit",
         "title": "Towards-prize note adds the sparse residual threshold layer",
-        "summary": "The compact towards-prize note is now promoted as a companion to Paper D v12, which remains the main submission reference. It keeps the integer delta-star staircase and deployed KoalaBear pincer, then adds the sparse residual reduction emca = max(eca, sigma_C/q) under its stated conventions.",
+        "summary": "The compact towards-prize note is now promoted as a companion to Paper D v13.2, which remains the main submission reference. It keeps the integer delta-star staircase and deployed KoalaBear pincer, then adds the sparse residual reduction emca = max(eca, sigma_C/q) under its stated conventions.",
         "impact": "This is not a new numerical leaderboard record. It sharpens the route to threshold determination: audit the sparse reduction, then produce CA/list certificates or sparse-residual bounds for the remaining band.",
         "href": "https://github.com/przchojecki/rs-mca/blob/main/tex/towards-prize.tex"
     },
     {
         "date": "2026-07-02",
-        "status": "paper promotion / v12 audit focus",
+        "status": "paper promotion / v13.2 audit focus",
         "author": "Przemek Chojecki / Codex audit",
-        "title": "Paper D v12 is the main submission reference",
-        "summary": "Paper D v12 supersedes v10/v11 as the active cap draft and is now the main Proximity Prize submission reference. It keeps the self-contained cap route and adds the safe-side pincer, deployed-row two-sided intervals, map/rational smooth extensions, circle/genus-one transports, explicit witness machinery, optimized failure profile, and certificate grammar v2.",
-        "impact": "The current project focus is auditing v12: direct conversion and radius conventions, optional BCIKS half-distance import, exact-integer certificate replay, and deployed model transfers.",
-        "href": "https://github.com/przchojecki/rs-mca/blob/main/tex/cs25_cap_v12.tex"
+        "title": "Paper D v13.2 is the main submission reference",
+        "summary": "Paper D v13.2 supersedes v10/v11 as the active cap draft and is now the main Proximity Prize submission reference. It keeps the self-contained cap route and adds the safe-side pincer, deployed-row two-sided intervals, map/rational smooth extensions, circle/genus-one transports, explicit witness machinery, optimized failure profile, and certificate grammar v2.",
+        "impact": "The current project focus is auditing v13.2: direct conversion and radius conventions, optional BCIKS half-distance import, exact-integer certificate replay, corrected identity-prefix rows, and deployed model transfers.",
+        "href": "https://github.com/przchojecki/rs-mca/blob/main/tex/cs25_cap_v13_2.tex"
     },
     {
         "date": "2026-06-30",
         "status": "paper promotion / quotient ledger audit",
         "author": "Przemek Chojecki / Codex audit",
-        "title": "Paper D v12 keeps quotient support and image ledgers",
-        "summary": "Paper D v12 preserves the universal and first-grid MCA caps, keeps conservative quotient-support plus exact quotient image ledgers, and adds extension and canonical regular-Hankel ledgers for branch accounting.",
-        "impact": "The public Paper D cap rows now cite v12 and use PROVED_PAPERD_V12_CAP / PROVED_PAPERD_V12_FIRST_GRID. The quotient and Hankel ledgers are proof-program infrastructure, not a new numeric leaderboard row or a full safe-side M1 theorem.",
-        "href": "https://github.com/przchojecki/rs-mca/blob/main/tex/cs25_cap_v12.tex"
+        "title": "Paper D v13.2 keeps quotient support and image ledgers",
+        "summary": "Paper D v13.2 preserves the universal and first-grid MCA caps, keeps conservative quotient-support plus exact quotient image ledgers, and adds extension and canonical regular-Hankel ledgers for branch accounting.",
+        "impact": "The public Paper D cap rows now cite v13.2 and use PROVED_PAPERD_V13_2_CAP / PROVED_PAPERD_V13_2_FIRST_GRID. The quotient and Hankel ledgers are proof-program infrastructure, not a new numeric leaderboard row or a full safe-side M1 theorem.",
+        "href": "https://github.com/przchojecki/rs-mca/blob/main/tex/cs25_cap_v13_2.tex"
     },
     {
         "date": "2026-06-29",
@@ -1700,9 +1700,9 @@
         "date": "2026-06-27",
         "status": "paper versions / leaderboard audit",
         "author": "Codex",
-        "title": "Papers B v4, C v5, and D v12 are now the public theory set",
-        "summary": "Paper B v4 promotes the high-agreement line/list/curve boundary layer, Paper C v5 adds the theorem-backed protocol ledger compiler, and Paper D v12 is now the main submission reference with the safe-side pincer and certificate grammar.",
-        "impact": "The leaderboard impact is source/status hygiene plus proof-program infrastructure: existing Paper D cap rows remain cap-row records, while new Hankel rows should cite the v12 certificate grammar and schema.",
+        "title": "Papers B v4, C v5, and D v13.2 are now the public theory set",
+        "summary": "Paper B v4 promotes the high-agreement line/list/curve boundary layer, Paper C v5 adds the theorem-backed protocol ledger compiler, and Paper D v13.2 is now the main submission reference with the safe-side pincer and certificate grammar.",
+        "impact": "The leaderboard impact is source/status hygiene plus proof-program infrastructure: existing Paper D cap rows remain cap-row records, while new Hankel rows should cite the v13.2 certificate grammar and schema.",
         "href": "https://github.com/przchojecki/rs-mca/blob/main/readme.md"
     },
     {
@@ -1716,11 +1716,11 @@
     },
     {
         "date": "2026-06-27",
-        "status": "PROVED_PAPERD_V12_CAP rows",
+        "status": "PROVED_PAPERD_V13_2_CAP rows",
         "author": "Codex scanner audit",
-        "title": "Prime192 scanner rows instantiate Paper D v12 across all four rates",
-        "summary": "The leaderboard_sweep_192 packet contributes four concrete q\u22482^192 smooth subgroup rows with k=2^40, one for each official rate, plus a small F_17^32 Paper D example. They instantiate the proved Paper D v12 cap with exact primes q = 1 mod n and +87 bit margins on the prime192 rows.",
-        "impact": "These are scanner-backed examples of the Paper D v12 cap, not new theorems beyond Paper D and not explicit slope censuses. The scanner verifies the divisor, binomial, and field ledgers for each displayed cap row.",
+        "title": "Prime192 scanner rows instantiate Paper D v13.2 across all four rates",
+        "summary": "The leaderboard_sweep_192 packet contributes four concrete q\u22482^192 smooth subgroup rows with k=2^40, one for each official rate, plus a small F_17^32 Paper D example. They instantiate the proved Paper D v13.2 cap with exact primes q = 1 mod n and +87 bit margins on the prime192 rows.",
+        "impact": "These are scanner-backed examples of the Paper D v13.2 cap, not new theorems beyond Paper D and not explicit slope censuses. The scanner verifies the divisor, binomial, and field ledgers for each displayed cap row.",
         "href": "https://github.com/przchojecki/rs-mca/blob/main/experimental/notes/certificate_scanner/outputs/leaderboard_sweep_192/site_candidate_rows.md"
     },
     {
@@ -2030,10 +2030,10 @@
         "id": "paper-d",
         "letter": "D",
         "title": "Paper D: Two-Sided Cap and Certificate Grammar",
-        "file": "cs25_cap_v12.pdf",
-        "pdf": "papers/cs25_cap_v12.pdf",
-        "githubPdf": "https://github.com/przchojecki/rs-mca/blob/main/cs25_cap_v12.pdf",
-        "tex": "https://github.com/przchojecki/rs-mca/blob/main/tex/cs25_cap_v12.tex",
+        "file": "cs25_cap_v13_2.pdf",
+        "pdf": "papers/cs25_cap_v13_2.pdf",
+        "githubPdf": "https://github.com/przchojecki/rs-mca/blob/main/cs25_cap_v13_2.pdf",
+        "tex": "https://github.com/przchojecki/rs-mca/blob/main/tex/cs25_cap_v13_2.tex",
         "summary": "Main Proximity Prize submission reference: self-contained cap route, safe-side pincer, deployed-row two-sided intervals, model transfers, explicit witnesses, optimized profile, and certificate grammar v2."
     },
     {
@@ -2081,8 +2081,8 @@
             "safeFrontier": "Johnson-radius MCA upper-bound regime, with polynomial reserve.",
             "rows": [
                 {
-                    "id": "paperD-v12-first-grid-rho-1-2",
-                    "title": "Paper D v12 first-grid MCA δ* upper cap",
+                    "id": "paperD-v13-2-first-grid-rho-1-2",
+                    "title": "Paper D v13.2 first-grid MCA δ* upper cap",
                     "rho": "1/2",
                     "track": "mca",
                     "trackLabel": "MCA / CA",
@@ -2118,10 +2118,10 @@
                         "powerOfTwoQuotient": false,
                         "quotientDivisor": "first closed grid point; no quotient divisor needed"
                     },
-                    "status": "PROVED_PAPERD_V12_FIRST_GRID",
-                    "statusLabel": "proved Paper D v12 first-grid cap",
-                    "source": "Paper D v12 first-grid deep-point cap",
-                    "sourceHref": "https://github.com/przchojecki/rs-mca/blob/main/tex/cs25_cap_v12.tex",
+                    "status": "PROVED_PAPERD_V13_2_FIRST_GRID",
+                    "statusLabel": "proved Paper D v13.2 first-grid cap",
+                    "source": "Paper D v13.2 first-grid deep-point cap",
+                    "sourceHref": "https://github.com/przchojecki/rs-mca/blob/main/tex/cs25_cap_v13_2.tex",
                     "nonClaims": [
                         "Applies to official-rate rows with 127 <= k <= 2^40, q<2^256, and q>n; it is stronger than the older fixed cap 255/512 in that range.",
                         "This is a δ* upper cap from a failure lower bound, not an exact threshold or a safe-side theorem.",
@@ -2167,13 +2167,13 @@
                         "powerOfTwoQuotient": true,
                         "quotientDivisor": "N=1024 divides n"
                     },
-                    "status": "PROVED_PAPERD_V12_CAP",
-                    "statusLabel": "proved Paper D v12 cap",
-                    "source": "Paper D v12 universal cap",
-                    "sourceHref": "https://github.com/przchojecki/rs-mca/blob/main/tex/cs25_cap_v12.tex",
+                    "status": "PROVED_PAPERD_V13_2_CAP",
+                    "statusLabel": "proved Paper D v13.2 cap",
+                    "source": "Paper D v13.2 universal cap",
+                    "sourceHref": "https://github.com/przchojecki/rs-mca/blob/main/tex/cs25_cap_v13_2.tex",
                     "nonClaims": [
-                        "Paper D v12 cap; hypotheses verified by the displayed divisor, binomial, and field ledgers.",
-                        "Paper D v12 routes the MCA cap through the self-contained deep-point argument; CA/list comparison statements still have separate radius and import conventions.",
+                        "Paper D v13.2 cap; hypotheses verified by the displayed divisor, binomial, and field ledgers.",
+                        "Paper D v13.2 routes the MCA cap through the self-contained deep-point argument; CA/list comparison statements still have separate radius and import conventions.",
                         "This is a δ* upper cap from a failure lower bound, not an exact threshold."
                     ],
                     "authors": "Paper D authors / Codex audit"
@@ -2216,12 +2216,12 @@
                         "powerOfTwoQuotient": true,
                         "quotientDivisor": "cap divisor N=n (first closed grid point)"
                     },
-                    "status": "PROVED_PAPERD_V12_CAP",
-                    "statusLabel": "proved Paper D v12 cap",
+                    "status": "PROVED_PAPERD_V13_2_CAP",
+                    "statusLabel": "proved Paper D v13.2 cap",
                     "source": "board_cap_certificate_generator.py + certificate_scanner.paper_d_cap",
                     "sourceHref": "https://github.com/przchojecki/rs-mca/blob/main/experimental/notes/certificate_scanner/board_nearcapacity_caps.md",
                     "nonClaims": [
-                        "Instantiated example of the Paper D v12 cap at divisor N=n, not a new theorem beyond Paper D.",
+                        "Instantiated example of the Paper D v13.2 cap at divisor N=n, not a new theorem beyond Paper D.",
                         "delta* upper cap from the near-capacity MCA error-floor lower bound eps >= (q-n)/(2kq); not an exact threshold or a safe-side theorem.",
                         "The bad-count is the equivalent numerator N_bad=floor((q-n)/(2k)) from the error floor, not an explicit slope census.",
                         "Prime-field row engineered near the cap ceiling; the committed scanner verifies the divisor/binomial/field ledgers."
@@ -2229,8 +2229,8 @@
                     "authors": "Scott Hughes / Codex + Sage cross-check"
                 },
                 {
-                    "id": "cap25-v13-identity-kb-mca-edge",
-                    "title": "CAP25 v13 experimental KoalaBear identity-prefix edge",
+                    "id": "paperD-v13-2-identity-kb-mca-edge",
+                    "title": "Paper D v13.2 KoalaBear identity-prefix edge",
                     "rho": "1/2",
                     "track": "mca",
                     "trackLabel": "support-wise MCA",
@@ -2241,18 +2241,18 @@
                     "fieldSizeLog2": 185.93,
                     "domainKind": "multiplicative-subgroup",
                     "smoothPowerOfTwo": true,
-                    "agreementA": "1116043",
-                    "sigma": "67467",
-                    "deltaExact": "981109/2097152",
-                    "deltaApprox": 0.4678292,
-                    "etaExact": "67467/2097152",
-                    "etaApprox": 0.03217077,
+                    "agreementA": "1116047",
+                    "sigma": "67471 (prefix depth w=67470)",
+                    "deltaExact": "981105/2097152",
+                    "deltaApprox": 0.4678273,
+                    "etaExact": "67471/2097152",
+                    "etaApprox": 0.03217268,
                     "qGen": "2130706433",
                     "qLine": "2130706433^6",
                     "qChal": "protocol-dependent",
                     "bound": "epsilon_mca > 2^-128",
-                    "failureMarginBits": 25.7,
-                    "marginLabel": "+25.7 bits",
+                    "failureMarginBits": 22.1,
+                    "marginLabel": "> +22.1 bits",
                     "prizeBox": {
                         "rate": true,
                         "smoothDomain": true,
@@ -2261,19 +2261,19 @@
                         "denominatorAudited": true,
                         "endpointConvention": true,
                         "publicSource": true,
-                        "conditionalImport": true,
+                        "conditionalImport": false,
                         "rhoNIntegral": true,
                         "powerOfTwoQuotient": true,
                         "quotientDivisor": "identity-prefix scale c=1 over the deployed KoalaBear subgroup"
                     },
-                    "status": "EXPERIMENTAL_V13_IDENTITY_FRONTIER",
-                    "statusLabel": "experimental v13 identity frontier",
-                    "source": "CAP25 v13 experimental identity frontier",
-                    "sourceHref": "https://github.com/przchojecki/rs-mca/blob/main/experimental/cap25_v13_experimental.tex",
+                    "status": "PROVED_PAPERD_V13_2_UNSAFE_EDGE",
+                    "statusLabel": "proved Paper D v13.2 unsafe edge",
+                    "source": "Paper D v13.2 identity-prefix unsafe frontier",
+                    "sourceHref": "https://github.com/przchojecki/rs-mca/blob/main/tex/cs25_cap_v13_2.tex",
                     "nonClaims": [
-                        "Experimental v13 source only; not promoted to the active Paper D v12 submission draft.",
-                        "This supersedes the c=2 addendum edge 490557/1048576 and narrows the deployed KoalaBear unsafe edge from 15331/32768 to 981109/2097152, but it does not close the safe-side threshold band.",
-                        "The conjectured adjacent safe agreement is 1116044 and still needs an exact upper ledger; the companion checker verifies the displayed lower edge, not the safe side."
+                        "Promoted Paper D v13.2 unsafe-edge certificate, not an exact threshold theorem.",
+                        "This supersedes the c=2 addendum and the older 15331/32768 v12 edge, but it does not close the safe-side threshold band.",
+                        "The conjectured adjacent safe agreement is 1116048 and still needs an exact upper ledger; the printed certificate verifies the lower edge, not the safe side."
                     ],
                     "authors": "Przemek Chojecki / Codex audit"
                 },
@@ -2376,7 +2376,7 @@
                 },
                 {
                     "id": "prime192-rho1_2-k2^40-paperD-N2199023255552",
-                    "title": "Prime192 Paper D v12 instantiated cap row",
+                    "title": "Prime192 Paper D v13.2 instantiated cap row",
                     "rho": "1/2",
                     "track": "mca",
                     "trackLabel": "support-wise MCA",
@@ -2412,20 +2412,20 @@
                         "powerOfTwoQuotient": true,
                         "quotientDivisor": "scanner cap divisor from leaderboard_sweep_192"
                     },
-                    "status": "PROVED_PAPERD_V12_CAP",
-                    "statusLabel": "proved Paper D v12 cap",
+                    "status": "PROVED_PAPERD_V13_2_CAP",
+                    "statusLabel": "proved Paper D v13.2 cap",
                     "source": "leaderboard_sweep_192 scanner row",
                     "sourceHref": "https://github.com/przchojecki/rs-mca/blob/main/experimental/notes/certificate_scanner/outputs/leaderboard_sweep_192/site_candidate_rows.md",
                     "nonClaims": [
-                        "Instantiated example of the Paper D v12 cap, not a new theorem beyond Paper D.",
-                        "Paper D v12 cap status applies after the scanner verifies the divisor, binomial, and field ledgers.",
+                        "Instantiated example of the Paper D v13.2 cap, not a new theorem beyond Paper D.",
+                        "Paper D v13.2 cap status applies after the scanner verifies the divisor, binomial, and field ledgers.",
                         "The bad-count field is an equivalent numerator from the MCA error-floor lower bound, not an explicit slope census."
                     ],
                     "authors": "leaderboard_sweep_192 scanner / Codex audit"
                 },
                 {
                     "id": "F17^32-n512-k256-paperD-N512",
-                    "title": "F_17^32 Paper D v12 instantiated cap row",
+                    "title": "F_17^32 Paper D v13.2 instantiated cap row",
                     "rho": "1/2",
                     "track": "mca",
                     "trackLabel": "support-wise MCA",
@@ -2461,13 +2461,13 @@
                         "powerOfTwoQuotient": true,
                         "quotientDivisor": "scanner cap divisor from leaderboard_sweep_192"
                     },
-                    "status": "PROVED_PAPERD_V12_CAP",
-                    "statusLabel": "proved Paper D v12 cap",
+                    "status": "PROVED_PAPERD_V13_2_CAP",
+                    "statusLabel": "proved Paper D v13.2 cap",
                     "source": "leaderboard_sweep_192 scanner row",
                     "sourceHref": "https://github.com/przchojecki/rs-mca/blob/main/experimental/notes/certificate_scanner/outputs/leaderboard_sweep_192/site_candidate_rows.md",
                     "nonClaims": [
-                        "Instantiated example of the Paper D v12 cap, not a new theorem beyond Paper D.",
-                        "Paper D v12 cap status applies after the scanner verifies the divisor, binomial, and field ledgers.",
+                        "Instantiated example of the Paper D v13.2 cap, not a new theorem beyond Paper D.",
+                        "Paper D v13.2 cap status applies after the scanner verifies the divisor, binomial, and field ledgers.",
                         "The bad-count field is an equivalent numerator from the MCA error-floor lower bound, not an explicit slope census."
                     ],
                     "authors": "leaderboard_sweep_192 scanner / Codex audit"
@@ -2953,8 +2953,8 @@
             "safeFrontier": "Johnson-radius MCA upper-bound regime, with polynomial reserve.",
             "rows": [
                 {
-                    "id": "paperD-v12-first-grid-rho-1-4",
-                    "title": "Paper D v12 first-grid MCA δ* upper cap",
+                    "id": "paperD-v13-2-first-grid-rho-1-4",
+                    "title": "Paper D v13.2 first-grid MCA δ* upper cap",
                     "rho": "1/4",
                     "track": "mca",
                     "trackLabel": "MCA / CA",
@@ -2990,10 +2990,10 @@
                         "powerOfTwoQuotient": false,
                         "quotientDivisor": "first closed grid point; no quotient divisor needed"
                     },
-                    "status": "PROVED_PAPERD_V12_FIRST_GRID",
-                    "statusLabel": "proved Paper D v12 first-grid cap",
-                    "source": "Paper D v12 first-grid deep-point cap",
-                    "sourceHref": "https://github.com/przchojecki/rs-mca/blob/main/tex/cs25_cap_v12.tex",
+                    "status": "PROVED_PAPERD_V13_2_FIRST_GRID",
+                    "statusLabel": "proved Paper D v13.2 first-grid cap",
+                    "source": "Paper D v13.2 first-grid deep-point cap",
+                    "sourceHref": "https://github.com/przchojecki/rs-mca/blob/main/tex/cs25_cap_v13_2.tex",
                     "nonClaims": [
                         "Applies to official-rate rows with 78 <= k <= 2^40, q<2^256, and q>n; it is stronger than the older fixed cap 383/512 in that range.",
                         "This is a δ* upper cap from a failure lower bound, not an exact threshold or a safe-side theorem.",
@@ -3039,13 +3039,13 @@
                         "powerOfTwoQuotient": true,
                         "quotientDivisor": "N=1024 divides n"
                     },
-                    "status": "PROVED_PAPERD_V12_CAP",
-                    "statusLabel": "proved Paper D v12 cap",
-                    "source": "Paper D v12 universal cap",
-                    "sourceHref": "https://github.com/przchojecki/rs-mca/blob/main/tex/cs25_cap_v12.tex",
+                    "status": "PROVED_PAPERD_V13_2_CAP",
+                    "statusLabel": "proved Paper D v13.2 cap",
+                    "source": "Paper D v13.2 universal cap",
+                    "sourceHref": "https://github.com/przchojecki/rs-mca/blob/main/tex/cs25_cap_v13_2.tex",
                     "nonClaims": [
-                        "Paper D v12 cap; hypotheses verified by the displayed divisor, binomial, and field ledgers.",
-                        "Paper D v12 routes the MCA cap through the self-contained deep-point argument; CA/list comparison statements still have separate radius and import conventions.",
+                        "Paper D v13.2 cap; hypotheses verified by the displayed divisor, binomial, and field ledgers.",
+                        "Paper D v13.2 routes the MCA cap through the self-contained deep-point argument; CA/list comparison statements still have separate radius and import conventions.",
                         "This is a δ* upper cap from a failure lower bound, not an exact threshold."
                     ],
                     "authors": "Paper D authors / Codex audit"
@@ -3088,12 +3088,12 @@
                         "powerOfTwoQuotient": true,
                         "quotientDivisor": "cap divisor N=n (first closed grid point)"
                     },
-                    "status": "PROVED_PAPERD_V12_CAP",
-                    "statusLabel": "proved Paper D v12 cap",
+                    "status": "PROVED_PAPERD_V13_2_CAP",
+                    "statusLabel": "proved Paper D v13.2 cap",
                     "source": "board_cap_certificate_generator.py + certificate_scanner.paper_d_cap",
                     "sourceHref": "https://github.com/przchojecki/rs-mca/blob/main/experimental/notes/certificate_scanner/board_nearcapacity_caps.md",
                     "nonClaims": [
-                        "Instantiated example of the Paper D v12 cap at divisor N=n, not a new theorem beyond Paper D.",
+                        "Instantiated example of the Paper D v13.2 cap at divisor N=n, not a new theorem beyond Paper D.",
                         "delta* upper cap from the near-capacity MCA error-floor lower bound eps >= (q-n)/(2kq); not an exact threshold or a safe-side theorem.",
                         "The bad-count is the equivalent numerator N_bad=floor((q-n)/(2k)) from the error floor, not an explicit slope census.",
                         "Prime-field row engineered near the cap ceiling; the committed scanner verifies the divisor/binomial/field ledgers."
@@ -3150,7 +3150,7 @@
                 },
                 {
                     "id": "prime192-rho1_4-k2^40-paperD-N4398046511104",
-                    "title": "Prime192 Paper D v12 instantiated cap row",
+                    "title": "Prime192 Paper D v13.2 instantiated cap row",
                     "rho": "1/4",
                     "track": "mca",
                     "trackLabel": "support-wise MCA",
@@ -3186,13 +3186,13 @@
                         "powerOfTwoQuotient": true,
                         "quotientDivisor": "scanner cap divisor from leaderboard_sweep_192"
                     },
-                    "status": "PROVED_PAPERD_V12_CAP",
-                    "statusLabel": "proved Paper D v12 cap",
+                    "status": "PROVED_PAPERD_V13_2_CAP",
+                    "statusLabel": "proved Paper D v13.2 cap",
                     "source": "leaderboard_sweep_192 scanner row",
                     "sourceHref": "https://github.com/przchojecki/rs-mca/blob/main/experimental/notes/certificate_scanner/outputs/leaderboard_sweep_192/site_candidate_rows.md",
                     "nonClaims": [
-                        "Instantiated example of the Paper D v12 cap, not a new theorem beyond Paper D.",
-                        "Paper D v12 cap status applies after the scanner verifies the divisor, binomial, and field ledgers.",
+                        "Instantiated example of the Paper D v13.2 cap, not a new theorem beyond Paper D.",
+                        "Paper D v13.2 cap status applies after the scanner verifies the divisor, binomial, and field ledgers.",
                         "The bad-count field is an equivalent numerator from the MCA error-floor lower bound, not an explicit slope census."
                     ],
                     "authors": "leaderboard_sweep_192 scanner / Codex audit"
@@ -3213,8 +3213,8 @@
             "safeFrontier": "Johnson-radius MCA upper-bound regime, with polynomial reserve.",
             "rows": [
                 {
-                    "id": "paperD-v12-first-grid-rho-1-8",
-                    "title": "Paper D v12 first-grid MCA δ* upper cap",
+                    "id": "paperD-v13-2-first-grid-rho-1-8",
+                    "title": "Paper D v13.2 first-grid MCA δ* upper cap",
                     "rho": "1/8",
                     "track": "mca",
                     "trackLabel": "MCA / CA",
@@ -3250,10 +3250,10 @@
                         "powerOfTwoQuotient": false,
                         "quotientDivisor": "first closed grid point; no quotient divisor needed"
                     },
-                    "status": "PROVED_PAPERD_V12_FIRST_GRID",
-                    "statusLabel": "proved Paper D v12 first-grid cap",
-                    "source": "Paper D v12 first-grid deep-point cap",
-                    "sourceHref": "https://github.com/przchojecki/rs-mca/blob/main/tex/cs25_cap_v12.tex",
+                    "status": "PROVED_PAPERD_V13_2_FIRST_GRID",
+                    "statusLabel": "proved Paper D v13.2 first-grid cap",
+                    "source": "Paper D v13.2 first-grid deep-point cap",
+                    "sourceHref": "https://github.com/przchojecki/rs-mca/blob/main/tex/cs25_cap_v13_2.tex",
                     "nonClaims": [
                         "Applies to official-rate rows with 58 <= k <= 2^40, q<2^256, and q>n; it is stronger than the older fixed cap 447/512 in that range.",
                         "This is a δ* upper cap from a failure lower bound, not an exact threshold or a safe-side theorem.",
@@ -3299,13 +3299,13 @@
                         "powerOfTwoQuotient": true,
                         "quotientDivisor": "N=1024 divides n"
                     },
-                    "status": "PROVED_PAPERD_V12_CAP",
-                    "statusLabel": "proved Paper D v12 cap",
-                    "source": "Paper D v12 universal cap",
-                    "sourceHref": "https://github.com/przchojecki/rs-mca/blob/main/tex/cs25_cap_v12.tex",
+                    "status": "PROVED_PAPERD_V13_2_CAP",
+                    "statusLabel": "proved Paper D v13.2 cap",
+                    "source": "Paper D v13.2 universal cap",
+                    "sourceHref": "https://github.com/przchojecki/rs-mca/blob/main/tex/cs25_cap_v13_2.tex",
                     "nonClaims": [
-                        "Paper D v12 cap; hypotheses verified by the displayed divisor, binomial, and field ledgers.",
-                        "Paper D v12 routes the MCA cap through the self-contained deep-point argument; CA/list comparison statements still have separate radius and import conventions.",
+                        "Paper D v13.2 cap; hypotheses verified by the displayed divisor, binomial, and field ledgers.",
+                        "Paper D v13.2 routes the MCA cap through the self-contained deep-point argument; CA/list comparison statements still have separate radius and import conventions.",
                         "This is a δ* upper cap from a failure lower bound, not an exact threshold."
                     ],
                     "authors": "Paper D authors / Codex audit"
@@ -3348,12 +3348,12 @@
                         "powerOfTwoQuotient": true,
                         "quotientDivisor": "cap divisor N=n (first closed grid point)"
                     },
-                    "status": "PROVED_PAPERD_V12_CAP",
-                    "statusLabel": "proved Paper D v12 cap",
+                    "status": "PROVED_PAPERD_V13_2_CAP",
+                    "statusLabel": "proved Paper D v13.2 cap",
                     "source": "board_cap_certificate_generator.py + certificate_scanner.paper_d_cap",
                     "sourceHref": "https://github.com/przchojecki/rs-mca/blob/main/experimental/notes/certificate_scanner/board_nearcapacity_caps.md",
                     "nonClaims": [
-                        "Instantiated example of the Paper D v12 cap at divisor N=n, not a new theorem beyond Paper D.",
+                        "Instantiated example of the Paper D v13.2 cap at divisor N=n, not a new theorem beyond Paper D.",
                         "delta* upper cap from the near-capacity MCA error-floor lower bound eps >= (q-n)/(2kq); not an exact threshold or a safe-side theorem.",
                         "The bad-count is the equivalent numerator N_bad=floor((q-n)/(2k)) from the error floor, not an explicit slope census.",
                         "Prime-field row engineered near the cap ceiling; the committed scanner verifies the divisor/binomial/field ledgers."
@@ -3410,7 +3410,7 @@
                 },
                 {
                     "id": "prime192-rho1_8-k2^40-paperD-N8796093022208",
-                    "title": "Prime192 Paper D v12 instantiated cap row",
+                    "title": "Prime192 Paper D v13.2 instantiated cap row",
                     "rho": "1/8",
                     "track": "mca",
                     "trackLabel": "support-wise MCA",
@@ -3446,13 +3446,13 @@
                         "powerOfTwoQuotient": true,
                         "quotientDivisor": "scanner cap divisor from leaderboard_sweep_192"
                     },
-                    "status": "PROVED_PAPERD_V12_CAP",
-                    "statusLabel": "proved Paper D v12 cap",
+                    "status": "PROVED_PAPERD_V13_2_CAP",
+                    "statusLabel": "proved Paper D v13.2 cap",
                     "source": "leaderboard_sweep_192 scanner row",
                     "sourceHref": "https://github.com/przchojecki/rs-mca/blob/main/experimental/notes/certificate_scanner/outputs/leaderboard_sweep_192/site_candidate_rows.md",
                     "nonClaims": [
-                        "Instantiated example of the Paper D v12 cap, not a new theorem beyond Paper D.",
-                        "Paper D v12 cap status applies after the scanner verifies the divisor, binomial, and field ledgers.",
+                        "Instantiated example of the Paper D v13.2 cap, not a new theorem beyond Paper D.",
+                        "Paper D v13.2 cap status applies after the scanner verifies the divisor, binomial, and field ledgers.",
                         "The bad-count field is an equivalent numerator from the MCA error-floor lower bound, not an explicit slope census."
                     ],
                     "authors": "leaderboard_sweep_192 scanner / Codex audit"
@@ -3473,8 +3473,8 @@
             "safeFrontier": "Johnson-radius MCA upper-bound regime, with polynomial reserve.",
             "rows": [
                 {
-                    "id": "paperD-v12-first-grid-rho-1-16",
-                    "title": "Paper D v12 first-grid MCA δ* upper cap",
+                    "id": "paperD-v13-2-first-grid-rho-1-16",
+                    "title": "Paper D v13.2 first-grid MCA δ* upper cap",
                     "rho": "1/16",
                     "track": "mca",
                     "trackLabel": "MCA / CA",
@@ -3510,10 +3510,10 @@
                         "powerOfTwoQuotient": false,
                         "quotientDivisor": "first closed grid point; no quotient divisor needed"
                     },
-                    "status": "PROVED_PAPERD_V12_FIRST_GRID",
-                    "statusLabel": "proved Paper D v12 first-grid cap",
-                    "source": "Paper D v12 first-grid deep-point cap",
-                    "sourceHref": "https://github.com/przchojecki/rs-mca/blob/main/tex/cs25_cap_v12.tex",
+                    "status": "PROVED_PAPERD_V13_2_FIRST_GRID",
+                    "statusLabel": "proved Paper D v13.2 first-grid cap",
+                    "source": "Paper D v13.2 first-grid deep-point cap",
+                    "sourceHref": "https://github.com/przchojecki/rs-mca/blob/main/tex/cs25_cap_v13_2.tex",
                     "nonClaims": [
                         "Applies to official-rate rows with 47 <= k <= 2^40, q<2^256, and q>n; it is stronger than the older fixed cap 959/1024 in that range.",
                         "This is a δ* upper cap from a failure lower bound, not an exact threshold or a safe-side theorem.",
@@ -3559,13 +3559,13 @@
                         "powerOfTwoQuotient": true,
                         "quotientDivisor": "N=2048 divides n"
                     },
-                    "status": "PROVED_PAPERD_V12_CAP",
-                    "statusLabel": "proved Paper D v12 cap",
-                    "source": "Paper D v12 universal cap",
-                    "sourceHref": "https://github.com/przchojecki/rs-mca/blob/main/tex/cs25_cap_v12.tex",
+                    "status": "PROVED_PAPERD_V13_2_CAP",
+                    "statusLabel": "proved Paper D v13.2 cap",
+                    "source": "Paper D v13.2 universal cap",
+                    "sourceHref": "https://github.com/przchojecki/rs-mca/blob/main/tex/cs25_cap_v13_2.tex",
                     "nonClaims": [
-                        "Paper D v12 cap; hypotheses verified by the displayed divisor, binomial, and field ledgers.",
-                        "Paper D v12 routes the MCA cap through the self-contained deep-point argument; CA/list comparison statements still have separate radius and import conventions.",
+                        "Paper D v13.2 cap; hypotheses verified by the displayed divisor, binomial, and field ledgers.",
+                        "Paper D v13.2 routes the MCA cap through the self-contained deep-point argument; CA/list comparison statements still have separate radius and import conventions.",
                         "This is a δ* upper cap from a failure lower bound, not an exact threshold."
                     ],
                     "authors": "Paper D authors / Codex audit"
@@ -3608,12 +3608,12 @@
                         "powerOfTwoQuotient": true,
                         "quotientDivisor": "cap divisor N=n (first closed grid point)"
                     },
-                    "status": "PROVED_PAPERD_V12_CAP",
-                    "statusLabel": "proved Paper D v12 cap",
+                    "status": "PROVED_PAPERD_V13_2_CAP",
+                    "statusLabel": "proved Paper D v13.2 cap",
                     "source": "board_cap_certificate_generator.py + certificate_scanner.paper_d_cap",
                     "sourceHref": "https://github.com/przchojecki/rs-mca/blob/main/experimental/notes/certificate_scanner/board_nearcapacity_caps.md",
                     "nonClaims": [
-                        "Instantiated example of the Paper D v12 cap at divisor N=n, not a new theorem beyond Paper D.",
+                        "Instantiated example of the Paper D v13.2 cap at divisor N=n, not a new theorem beyond Paper D.",
                         "delta* upper cap from the near-capacity MCA error-floor lower bound eps >= (q-n)/(2kq); not an exact threshold or a safe-side theorem.",
                         "The bad-count is the equivalent numerator N_bad=floor((q-n)/(2k)) from the error floor, not an explicit slope census.",
                         "Prime-field row engineered near the cap ceiling; the committed scanner verifies the divisor/binomial/field ledgers."
@@ -3670,7 +3670,7 @@
                 },
                 {
                     "id": "prime192-rho1_16-k2^40-paperD-N17592186044416",
-                    "title": "Prime192 Paper D v12 instantiated cap row",
+                    "title": "Prime192 Paper D v13.2 instantiated cap row",
                     "rho": "1/16",
                     "track": "mca",
                     "trackLabel": "support-wise MCA",
@@ -3706,13 +3706,13 @@
                         "powerOfTwoQuotient": true,
                         "quotientDivisor": "scanner cap divisor from leaderboard_sweep_192"
                     },
-                    "status": "PROVED_PAPERD_V12_CAP",
-                    "statusLabel": "proved Paper D v12 cap",
+                    "status": "PROVED_PAPERD_V13_2_CAP",
+                    "statusLabel": "proved Paper D v13.2 cap",
                     "source": "leaderboard_sweep_192 scanner row",
                     "sourceHref": "https://github.com/przchojecki/rs-mca/blob/main/experimental/notes/certificate_scanner/outputs/leaderboard_sweep_192/site_candidate_rows.md",
                     "nonClaims": [
-                        "Instantiated example of the Paper D v12 cap, not a new theorem beyond Paper D.",
-                        "Paper D v12 cap status applies after the scanner verifies the divisor, binomial, and field ledgers.",
+                        "Instantiated example of the Paper D v13.2 cap, not a new theorem beyond Paper D.",
+                        "Paper D v13.2 cap status applies after the scanner verifies the divisor, binomial, and field ledgers.",
                         "The bad-count field is an equivalent numerator from the MCA error-floor lower bound, not an explicit slope census."
                     ],
                     "authors": "leaderboard_sweep_192 scanner / Codex audit"

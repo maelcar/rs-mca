@@ -9,7 +9,7 @@ The four papers are:
 ```text
 RS_disproof_v3.tex      Paper A: no-slack obstruction
 slackMCA_v4.tex         Paper B: slack / quotient / entropy theory
-cs25_cap_v12.tex        Paper D: two-sided cap, safe-side pincer, and certificate grammar
+cs25_cap_v13_2.tex      Paper D: two-sided cap, safe-side pincer, and certificate grammar
 snarks_v5.tex           Paper C: SNARK / protocol ledger
 ```
 
@@ -34,7 +34,7 @@ comparison and for conditional profile-envelope/cell machinery:
 ```text
 experimental/asymptotic_rs_mca_frontiers.tex       broad frontiers/audit draft
 experimental/asymptotic_rs_mca.tex                 compact predecessor / audit reference
-experimental/cap25_cap_v13_raw.tex                 long v13 working ledger
+tex/cs25_cap_v13_2.tex                              active Paper D v13.2 ledger
 experimental/grande_finale.tex                     compact final-ledger note
 ```
 
@@ -74,12 +74,13 @@ profile-envelope comparison.
 
 ## Highest priority now
 
-1. **Lean formalization.**  Formalize the exact-threshold paper first, then
-   the broader frontiers dependencies under `experimental/lean/`.  Highest
-   priority tracks are:
+1. **Lean formalization.**  Formalize the exact-threshold paper and the
+   promoted Paper D v13.2 ledger first, then the broader frontiers dependencies
+   under `experimental/lean/`.  Highest priority tracks are:
 
    ```text
    experimental/rs_mca_thresholds.tex
+   tex/cs25_cap_v13_2.tex
    experimental/asymptotic_rs_mca_frontiers.tex
    experimental/lean/rs_mca_thresholds/
    experimental/lean/grande_finale/
@@ -211,7 +212,7 @@ require exact constants and remain a separate certificate project.
 Highest-value contributions are:
 
 1. Lean formalization of `experimental/rs_mca_thresholds.tex`, then
-   `experimental/asymptotic_rs_mca_frontiers.tex` and imported v13 raw / Grande Finale dependencies;
+   `experimental/asymptotic_rs_mca_frontiers.tex` and imported Paper D v13.2 / Grande Finale dependencies;
 2. adversarial proof audits focused on the five remaining hard inputs:
    witness-exhaustive atlas, image-scale MI/MA or Sidon payment, residual ray
    compiler, profile-envelope target comparison, and lower reserve;
@@ -231,13 +232,16 @@ new obstruction floor and updates the certificate logic.
 
 ## Paper authority and promotion rule
 
-`tex/cs25_cap_v12.tex` is the current complete Paper D authority.
-`tex/towards-prize.tex` is the compact prize-facing v12 note.
+`tex/cs25_cap_v13_2.tex` is the current complete Paper D authority.
+`tex/towards-prize.tex` is the compact prize-facing threshold note and should
+be audited for alignment with Paper D v13.2 before external use.
 `experimental/asymptotic_rs_mca.tex` is the active compact asymptotic proof.
-`experimental/cap25_cap_v13_raw.tex` and `experimental/grande_finale.tex` are
-the detailed source ledgers imported by that proof.
+`experimental/grande_finale.tex` is the compact final-ledger note imported by
+that proof. The old v12 cap paper and the former raw-v13 compact companion are
+archived under `archived/`.  The v13.2 revision notes are in
+`experimental/cap25_v13_2_revision_notes.md`.
 
-Promotion from v13/grande-finale into Paper D requires:
+Further promotion into Paper D requires:
 
 1. exact unsafe certificates and exact safe upper ledgers;
 2. a replayable certificate packet or printed integer proof for every finite
@@ -308,7 +312,7 @@ Treat Papers A-D as stable reference documents unless a maintainer explicitly as
 ```text
 tex/RS_disproof_v3.tex
 tex/slackMCA_v4.tex
-tex/cs25_cap_v12.tex
+tex/cs25_cap_v13_2.tex
 tex/snarks_v5.tex
 ```
 
@@ -328,12 +332,12 @@ Whenever you add or materially change something under `experimental/`, add an en
 1. Read the abstract and scope section of `RS_disproof_v3.tex`.
 2. Read the introduction and frontier/open-problems section of `slackMCA_v4.tex`.
 3. Read the abstract, direct conversion theorem, safe-side pincer, certificate
-   grammar, and open problems of `cs25_cap_v12.tex`.
-4. Read `tex/towards-prize.tex` as the compact prize-facing version of the v12
-   theorem package.
+   grammar, and open problems of `cs25_cap_v13_2.tex`.
+4. Read `tex/towards-prize.tex` as the compact prize-facing threshold note,
+   but audit it against Paper D v13.2 before quoting it externally.
 5. Read `experimental/asymptotic_rs_mca.tex` as the active compact asymptotic
    proof.
-6. For its imported structured cases, read `experimental/cap25_cap_v13_raw.tex`
+6. For its imported structured cases, read `tex/cs25_cap_v13_2.tex`
    and `experimental/grande_finale.tex`.
 7. Read the certificate ledgers and open problems of `snarks_v5.tex` only when
    working on protocol consumption.
@@ -346,10 +350,10 @@ The current research picture is:
 ```text
 Paper A gives explicit no-slack lower bounds.
 Paper B builds the corrected reserve theory and states the main missing local limits.
-Paper D v12 gives the current two-sided cap, safe-side pincer, map/rational
+Paper D v13.2 gives the current two-sided cap, safe-side pincer, map/rational
 smooth extensions, and finite certificate grammar.
 experimental/asymptotic_rs_mca.tex gives the active compact asymptotic proof:
-structured bad lines are imported from v13 raw / Grande Finale, and the
+structured bad lines are integrated into Paper D v13.2 and Grande Finale, and the
 primitive residual is ruled out by the Sidon/Fourier split plus BSG/quasicube
 growth.
 Paper C says how a protocol must consume the theory without mixing ledgers.
@@ -396,8 +400,8 @@ Every audit should end with `NO ISSUE`, `FIXED`, `OPEN GAP`, or
 
 Avoid internal shorthand.  Explain Reed--Solomon codes, MCA, bad lines, the
 entropy threshold, and the additive-combinatorics step in reader-facing terms.
-Replace broad citations such as "v13 raw ledger" with precise theorem labels
-from `experimental/cap25_cap_v13_raw.tex` and `experimental/grande_finale.tex`.
+Replace broad citations such as "v13 ledger" with precise theorem labels
+from `tex/cs25_cap_v13_2.tex` and `experimental/grande_finale.tex`.
 
 ### C0. Final computations and examples
 
@@ -437,9 +441,9 @@ Do not start from protocol claims.  Start from a row packet with exact
 
 ## Audit targets
 
-### A0. Audit Paper D v12 and older imported CA/list conversions
+### A0. Audit Paper D v13.2 and older imported CA/list conversions
 
-Paper D v12 is now the main Paper D package. Its direct conversion route is
+Paper D v13.2 is now the main Paper D package. Its direct conversion route is
 self-contained, while its half-distance safe edge uses an isolated BCIKS import
 and older CS25/ABF list-to-agreement routes remain relevant for CA and
 list-comparison statements. Audit:
@@ -585,14 +589,14 @@ Attach script, seed, exact command, or symbolic certificate.
 3. Turn one residual BC chart into either a paid one-parameter pencil or a named
    higher-dimensional obstruction.
 4. Add a theorem-statement Lean target for row-sharp Q in
-   `experimental/lean/grande_finale/`, or the corresponding v13 raw node in
+   `experimental/lean/grande_finale/`, or the corresponding v13.2/archived-compact node in
    `experimental/lean/cap25_cap_v13_raw_compact/`, without pretending it is
    proved.
 5. Formalize one already-proved `grande_finale` local lemma that is still
    TeX-only, such as the composite-prefix `gcd(e,N)` descent.
 6. Build a new exact adjacent example that prints `L(a0)`, `U(a0+1)`, `B*`,
    denominators, endpoint convention, and first-match cells.
-7. Audit one Paper D v12/v13 raw finite inequality against its script or printed
+7. Audit one Paper D v13.2 finite inequality against its script or printed
    integer certificate.
 
 ### Lean formalization correspondence
@@ -611,14 +615,14 @@ The two most important formalization tracks are:
 
 ```text
 experimental/lean/grande_finale/              final-ledger components
-experimental/lean/cap25_cap_v13_raw_compact/  v13 raw companion formalization
+experimental/lean/cap25_cap_v13_raw_compact/  archived raw-v13 companion formalization
 experimental/lean/asymptotic_rs_mca/          add this if building the compact proof
 ```
 
 Treat these as co-priority.  The first track targets
 `experimental/grande_finale.tex`: first-match ledger, BC reduction, SP-from-Q,
 Sidon/Fourier payment, and adjacent-threshold logic.  The second track targets
-the v13 raw/compact certificate ledger: identity-prefix floors, conversion
+the v13.2/compact certificate ledger: identity-prefix floors, conversion
 steps, structured-cell payments, finite certificates, and the theorem nodes
 that may later be promoted into Paper D.  The compact proof track should target
 `experimental/asymptotic_rs_mca.tex`: closed-ledger package, primitive Boolean
@@ -639,16 +643,16 @@ Still missing there:
 
 ```text
 formal statement of the closed-ledger package used by asymptotic_rs_mca.tex
-full theorem-by-theorem map from asymptotic_rs_mca.tex to v13 raw / grande_finale
+full theorem-by-theorem map from asymptotic_rs_mca.tex to Paper D v13.2 / grande_finale
 formal primitive Boolean slice proof through BSG and quasicube growth
 formal entropy-frontier calculation
 finite adjacent deployed safe rows with exact constants
 ```
 
 Use `experimental/lean/lean-blueprint.json` as the older formalization
-blueprint for `experimental/cap25_cap_v13_raw.tex`, and compare it against the
-package `experimental/lean/cap25_cap_v13_raw_compact/` when auditing v13
-coverage.  The blueprint is useful orientation, not a substitute for direct
+blueprint for the raw-v13 lineage, and compare it against `tex/cs25_cap_v13_2.tex`
+and the package `experimental/lean/cap25_cap_v13_raw_compact/` when auditing
+Paper D v13.2 coverage.  The blueprint is useful orientation, not a substitute for direct
 TeX/Lean statement comparison.  The current important v13 nodes are Q prefix
 flatness, BC chart decomposition, finite adjacent ledgers, identity-prefix
 floors, conversion/certificate steps, and full RS-MCA resolution; SP should be
@@ -685,21 +689,20 @@ been compared against the TeX node.
 
 The highest-priority formalization tasks are now:
 
-1. formalize `experimental/asymptotic_rs_mca.tex` end to end, at least as
-   theorem statements plus proved elementary steps;
+1. formalize `tex/cs25_cap_v13_2.tex` and `experimental/asymptotic_rs_mca.tex`
+   end to end, at least as theorem statements plus proved elementary steps;
 2. in `experimental/lean/grande_finale/`, connect the imported structured
    cases to the closed-ledger package used by the compact proof;
-3. in `experimental/lean/cap25_cap_v13_raw_compact/`, keep the v13 raw
-   companion formalization aligned with the raw/compact TeX ledger, especially
+3. in `experimental/lean/cap25_cap_v13_raw_compact/`, keep the archived raw-v13
+   companion formalization aligned with Paper D v13.2 where applicable, especially
    identity-prefix floors, structured-cell payments, and finite certificates;
 4. separately, formalize finite adjacent deployed certificates only after the
    exact constants and replay packets are stable.
 
 The supplementary v13 package `experimental/lean/cs25_cap_v13_experimental/`
-can be used for threshold/list-side compiler pieces if it matches the current
-raw ledger.  Paper D v12 still has a substantial Lean skeleton under
-`experimental/lean/cs25_cap_v12/`, but that is now secondary unless a
-maintainer explicitly asks for Paper D v12 formalization.
+can be used for threshold/list-side compiler pieces if it matches Paper D v13.2.  The older Paper D v12 Lean skeleton under
+`experimental/lean/cs25_cap_v12/` is now historical unless a maintainer
+explicitly asks for a v12-specific audit.
 
 For the compact prize-facing theorem note, use the separate Mathlib package
 `experimental/lean/towards_prize/`.  Its entry point is `TowardsPrize.lean` and
@@ -718,7 +721,7 @@ The project advances if an agent produces any of the following:
   `experimental/asymptotic_rs_mca.tex`;
 - an adversarial audit that finds and fixes a real gap, or records a
   checked `NO ISSUE` result with exact references;
-- a theorem-label map from `asymptotic_rs_mca.tex` to the v13 raw and Grande
+- a theorem-label map from `asymptotic_rs_mca.tex` to Paper D v13.2 and Grande
   Finale structured-case results;
 - a clean proof rewrite that is suitable for external readers;
 - a final computation or example that illustrates and checks a key proof

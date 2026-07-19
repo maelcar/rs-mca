@@ -11,7 +11,7 @@ The central theme is simple:
 
 **Pay-per-bit framing.** If the Proximity Prize is allocated pro-rata by
 soundness-gap bits, our current results are naturally scored by certified bits
-above the `2^-128` target at an audited radius and denominator. Paper D v12 gives
+above the `2^-128` target at an audited radius and denominator. Paper D v13.2 gives
 the cleanest broad record: in its cap range it proves `epsilon_mca > 2^-86`,
 which is at least **42 bits above** the target throughout the full prize field
 envelope. The strongest finite numerator record on the site is the
@@ -35,7 +35,7 @@ of the main papers are in `tex/`, experimental manuscripts are in
 |---|---|---|
 | `RS_disproof_v3.tex` | **Paper A: no-slack obstruction** | Refutes the unslacked, support-wise line-MCA reading of “up to capacity” for smooth multiplicative RS domains. Provides explicit lower-bound mechanisms and deployed-field obstructions. |
 | `slackMCA_v4.tex` | **Paper B: slack / quotient / entropy theory** | Main theory paper. Builds the corrected reserve framework and now promotes the solved high-agreement line/list/curve boundary layer into the main theory. |
-| `cs25_cap_v12.tex` | **Paper D: two-sided cap, safe-side pincer, and certificate grammar** | This is the main Proximity Prize submission reference. It keeps the self-contained cap route and adds the safe-side pincer, deployed-row two-sided intervals, map/rational smooth extensions, circle/genus-one transports, explicit witness machinery, optimized failure profile, and certificate grammar v2. |
+| `cs25_cap_v13_2.tex` | **Paper D: two-sided cap, safe-side pincer, and certificate grammar** | This is the main Proximity Prize submission reference. It keeps the self-contained cap route, promotes the v13.2 unsafe-frontier repairs, adds the safe-side pincer, deployed-row two-sided intervals, map/rational smooth extensions, circle/genus-one transports, explicit witness machinery, optimized failure profile, and certificate grammar. |
 | `snarks_v5.tex` | **Paper C: SNARK ledger** | Turns the corrected theory into a protocol-facing certificate and adds a theorem-backed high-agreement ledger compiler for line/list/curve coding numerators. |
 | `towards-prize.tex` | **Towards Prize: sparse threshold note** | Compact prize-facing note. It packages the `delta^*` staircase viewpoint, deployed KoalaBear pincer, and the new sparse residual reduction `emca = max(eca, sigma_C/q)` into the current execution target. |
 | `experimental/rs_mca_thresholds.tex` | **Reed--Solomon MCA Thresholds** | Current coherent exact-threshold draft. It packages exact deep/quadratic MCA staircases, CA/sparse decomposition, certified Proth prime rows at all four official rates, smooth/circle transports, and target-aware certificate formulas. |
@@ -90,14 +90,15 @@ leaderboard and submission notes should therefore rank results primarily by the
 smallest certified unsafe radius, or by the tightest proven interval for
 `delta*_C(2^-128)`, with error size used as supporting evidence.
 
-For the deployed KoalaBear sextic row, the best current deployed unsafe edge is
+For the deployed KoalaBear sextic MCA row, the best current deployed unsafe edge is
 
 ```text
-delta = 15331/32768 ~= 0.467865.
+delta = 981105/2097152 ~= 0.4678273,
+unsafe agreement a0 = 1116047.
 ```
 
-The remaining task is to close the open band below that edge, ideally by
-adjacent staircase certificates.
+The remaining task is to close the adjacent band below that edge, ideally by
+proving the first safe agreement `1116048` with an exact upper ledger.
 
 The active experimental program now splits this into two proof problems:
 
@@ -152,24 +153,24 @@ The ledgers that must be separated are:
 
 ## Current paper versions and leaderboard impact
 
-The current public paper set is **A v3, B v4, D v12, C v5**, plus the compact **towards-prize** threshold note.
+The current public paper set is **A v3, B v4, D v13.2, C v5**, plus the compact **towards-prize** threshold note.
 The version changes matter for the website and scanner as follows:
 
 - **Paper B v4** promotes the high-agreement tangent/list/curve boundary layer
   from experimental notes into the main theory. Public tangent and
   interleaved-list high-agreement rows should now cite `slackMCA_v4.tex` when
   they use this theorem package.
-- **Paper D v12** is the main Proximity Prize submission reference. It keeps the
-  headline universal MCA cap self-contained, adds a two-sided threshold
-  sandwich, proves the deep-regime safe theorem and MCA-from-CA pincer, extends
-  the cap machinery to map/rational smooth domains, and packages deployed-row
-  claims in certificate grammar v2. Auditing this paper is currently the main
+- **Paper D v13.2** is the main Proximity Prize submission reference. It keeps the
+  headline universal MCA cap self-contained, promotes the corrected identity-prefix
+  unsafe frontier, adds a two-sided threshold sandwich, proves the deep-regime
+  safe theorem and MCA-from-CA pincer, extends the cap machinery to map/rational
+  smooth domains, and packages deployed-row claims in certificate grammar. Auditing this paper is currently the main
   project focus.
 - **Paper C v5** adds the theorem-backed high-agreement ledger compiler for
   protocol-facing line/list/curve numerator accounting. It changes certificate
   packaging and denominator checks, not the mathematical value of the MCA cap
   rows.
-- **`towards-prize.tex`** is a compact companion to Paper D v12, not the final
+- **`towards-prize.tex`** is a compact companion to Paper D, not the final
   submission authority. It does not add a new leaderboard row by itself. Its
   role is to state the `delta^*` staircase problem compactly, record the
   deployed KoalaBear pincer, and reduce the remaining MCA task to the sparse
@@ -181,16 +182,16 @@ The version changes matter for the website and scanner as follows:
   conditional profile-envelope and cell-budget audits after the exact-threshold
   paper is checked.
 - **`experimental/rs_mca_proximity_prize_status.md`** is an experimental
-  committee-facing status memo for the v12/v13 raw picture. It summarizes the
+  committee-facing status memo for the v13.2 frontier picture. It summarizes the
   entropy-subfield-envelope thesis, the current exact unsafe certificates, and
   the remaining `(Q)`/split-pencil conjectural safe side. Do not cite it as
   paper authority until the relevant claims are promoted into Paper D or
   `towards-prize`.
-- **`experimental/cap25_cap_v13_raw.tex` and `experimental/grande_finale.tex`**
-  are the current experimental final-resolution sources. The former is the long
-  raw v13 ledger; the latter isolates the compact `Q`-focused route. They should
-  guide finite adjacent-certificate work and the asymptotic envelope proof, but
-  are not Paper D authority until promoted.
+- **`tex/cs25_cap_v13_2.tex` and `experimental/grande_finale.tex`**
+  are the current final-resolution sources. Paper D v13.2 is now the active
+  promoted cap ledger; Grande Finale isolates the compact `Q`-focused route for
+  the remaining safe-side work. The former raw-v13 compact companion and v12 cap
+  paper are archived under `archived/`.
 - **`experimental/lean/towards_prize/`** is the Mathlib-based Lean track for
   the compact threshold note. Its entry point is `TowardsPrize.lean`; it should
   be reviewed and mapped theorem-by-theorem before any towards-prize claim is
@@ -247,7 +248,7 @@ Paper B is where most new mathematics should land. It contains the theorem/conje
 
 ### Paper D: two-sided cap and certificate grammar
 
-`cs25_cap_v12.tex` is the main Proximity Prize submission reference.
+`cs25_cap_v13_2.tex` is the main Proximity Prize submission reference.
 
 It keeps the self-contained universal MCA cap:
 
@@ -274,14 +275,15 @@ machinery, an optimized failure profile, and finite certificate grammar v2.
 
 Paper D supersedes the older internal cap in Paper B for final constants.
 Paper B keeps its native quotient-core cap because it explains the mechanism;
-Paper D v12 owns the current field-size-universal and two-sided cap package,
+Paper D v13.2 owns the current field-size-universal and two-sided cap package,
 and is the canonical source for final submission hypotheses, denominators,
 endpoint conventions, and proof status.
 
-Version v12 supersedes v10/v11 as the active draft. The main remaining work is
+Version v13.2 supersedes v12 as the active draft. The main remaining work is
 audit: check the direct conversion/radius conventions, the optional BCIKS
-half-distance import, exact-integer certificate replay paths, and the precise
-scope of the circle/genus-one model transfers.
+half-distance import, exact-integer certificate replay paths, the corrected
+identity-prefix unsafe-frontier rows, and the precise scope of the circle/genus-one
+model transfers.
 
 ### Paper C: SNARK ledger
 
@@ -311,12 +313,12 @@ A rough status map:
 | Explicit deployed-field lower-bound floors | Proved in Paper A/B for the stated regimes. |
 | Quotient-core list obstructions | Proved in Paper B. |
 | Exact slack calculus and many failure ladders | Proved in Paper B. |
-| Universal field-size MCA cap | Proved in Paper D v12 under its printed divisor/binomial/subfield hypotheses. |
-| First-grid and widened deployed-row MCA caps | Proved in Paper D v12 under its printed `k`, `q>n`, subfield, and certificate hypotheses. |
+| Universal field-size MCA cap | Proved in Paper D v13.2 under its printed divisor/binomial/subfield hypotheses. |
+| First-grid, identity-prefix, and widened deployed-row MCA caps | Proved in Paper D v13.2 under its printed `k`, `q>n`, subfield, and certificate hypotheses; adjacent safe rows remain conditional. |
 | Safe-side pincer and two-sided threshold sandwich | Proved self-contained up to the deep/half-Johnson edges; half-distance edge depends on the isolated BCIKS import. |
-| Map/rational smooth, circle, and genus-one extensions | Proved in Paper D v12 under its stated model hypotheses; these are high-priority audit targets. |
-| Certificate grammar and printed deployed certificates | Stated in Paper D v12; every "verified exactly" inequality should have a reproducible script or printed integer certificate. |
-| Finite deployed adjacent threshold resolution | Open/experimental. v13 raw gives exact unsafe-side certificate claims; the adjacent safe side needs row-sharp `Q`, finite BC chart decomposition, and quotient/rung audits with constants. |
+| Map/rational smooth, circle, and genus-one extensions | Proved in Paper D v13.2 under its stated model hypotheses; these are high-priority audit targets. |
+| Certificate grammar and printed deployed certificates | Stated in Paper D v13.2; every "verified exactly" inequality should have a reproducible script or printed integer certificate. |
+| Finite deployed adjacent threshold resolution | Open/conditional. Paper D v13.2 gives exact unsafe-side certificate claims; the adjacent safe side needs row-sharp `Q`, finite BC chart decomposition, and quotient/rung audits with constants. |
 | Asymptotic entropy-subfield envelope | Active exact-threshold draft in `experimental/rs_mca_thresholds.tex`, with broader audit material in `experimental/asymptotic_rs_mca_frontiers.tex`. The remaining hard inputs are a witness-exhaustive first-match atlas, image-scale `MI` + `MA` or direct Sidon payment, residual ray compiler for higher-dimensional balanced cores, complete profile-envelope comparison with the target, and lower reserve / unsafe-side comparison. |
 | Generated-field locator local limit above all floors | Open. Main list-side positive theorem target. |
 | Corrected MCA / residue-line local limit above all floors | Open. Main MCA-side positive theorem target. |
@@ -333,12 +335,12 @@ Good first contributions include:
 1. **Proof audits.** Verify individual lemmas and theorem dependencies in the four papers. Flag any hidden field-size, divisibility, monotonicity, or support-wise assumptions.
 2. **Scripted certificates.** Implement scanners for entropy reserve, quotient profiles, restricted sums, interleaved-list budgets, and challenge-field accounting.
 3. **Toy-case exploration.** Exhaust small fields/domains to discover or refute local-limit behavior.
-4. **Paper D v12 audit.** Check direct conversion/radius conventions, ABF
+4. **Paper D v13.2 audit.** Check direct conversion/radius conventions, ABF
    normalization, the optional BCIKS import, exact-integer certificates, and
    circle/genus-one model transfers.
 5. **Hankel certificates.** Use `scripts/aperiodic_eliminant_schema.json` to
    package exact-agreement eliminants, empty chart certificates, or named
-   residual obstructions for the Paper D v12 certificate grammar.
+   residual obstructions for the Paper D v13.2 certificate grammar.
 6. **Finite/asymptotic threshold work.** Attack the five current hard inputs:
    witness-exhaustive first-match atlas; image-scale `MI` + `MA` or direct
    Sidon payment; residual ray compiler for higher-dimensional balanced cores;
@@ -362,7 +364,7 @@ ledger-audit tool, not a proof of extension-line MCA, arbitrary-word locator
 local limits, aperiodic Hankel-pencil packing, or deployed protocol soundness.
 
 The aperiodic Hankel certificate schema lives at
-`scripts/aperiodic_eliminant_schema.json`. It is for Paper D v12 certificate
+`scripts/aperiodic_eliminant_schema.json`. It is for Paper D v13.2 certificate
 packets: row and domain hash, exact agreement levels, removed tangent/quotient
 ledgers, regular minors, pivot charts, eliminants, empty-chart proofs,
 dimension-degree fallbacks, and named residual obstructions.
@@ -380,7 +382,7 @@ scripts/
   interleaved_budget.py      # base/interleaved list-to-field soundness budget
   certificate_emit.py        # JSON + TeX certificate tables for Paper C
   aperiodic_eliminant_schema.json
-                              # Paper D v12 Hankel eliminant certificate schema
+                              # Paper D v13.2 Hankel eliminant certificate schema
 
 experimental/notes/certificate_scanner/
   certificate_scanner.py     # EXPERIMENTAL A/B/C/D + high-agreement ledger scanner
@@ -412,7 +414,7 @@ When editing the papers:
 
 - Cite companion results with theorem/proposition numbers, not just “the companion proves.”
 - Mark every result as proved, conditional, conjectural, experimental, or audit-only.
-- Cite the main Paper D v12 MCA cap, safe-side pincer, and certificate grammar
+- Cite the main Paper D v13.2 MCA cap, safe-side pincer, and certificate grammar
   as the active Paper D package, under their printed hypotheses and audit
   caveats.
 - Do not state an error-one result from Paper D’s cap; Paper D caps the threshold and gives a small certified failure probability, but the error-one-in-the-band problem remains open.

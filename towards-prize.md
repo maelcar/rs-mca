@@ -1,15 +1,15 @@
-# Towards the Proximity Prize: v12 Authority and v13 raw Execution Plan
+# Towards the Proximity Prize: v13.2 Authority and Threshold Execution Plan
 
 Status: working plan / source-of-truth roadmap
 
-Date: 2026-07-01
+Date: 2026-07-19
 
 This document is the current execution plan for turning the RS-MCA repository
 into a serious Proximity Prize submission package.  It replaces the older
-strict264/frontier-search roadmap.  Paper D v12 is the main submission reference:
-the two-sided cap theorem, safe-side pincer, map/rational smooth extensions,
-explicit witness machinery, certificate grammar, and the corresponding
-proof-packet schema.
+strict264/frontier-search roadmap.  Paper D v13.2 is the main submission reference: the two-sided cap theorem,
+safe-side pincer, map/rational smooth extensions, corrected identity-prefix
+unsafe-frontier rows, explicit witness machinery, certificate grammar, and the
+corresponding proof-packet schema.
 
 The goal is not to collect more impressive-looking lower bounds.  The goal is
 to determine thresholds.  For a row \(C\), that means proving adjacent
@@ -22,10 +22,9 @@ tex/towards-prize.tex
 towards-prize.pdf
 ```
 
-It is the prize-facing companion to Paper D v12, not the submission authority.
+It is the prize-facing companion to Paper D v13.2, not the submission authority.
 Compared with the earlier roadmap drafts, the active note keeps the
-integer-staircase and deployed KoalaBear pincer.  The raw v13 package now
-sharpens the execution target further:
+integer-staircase and deployed KoalaBear pincer.  Paper D v13.2 now sharpens the execution target further:
 the residual safe-side problem is organized by the three named inputs
 
 ```text
@@ -42,15 +41,15 @@ emca(C,delta) = max(eca(C,delta), sigma_C(delta)/q)
 ```
 
 under its stated conventions.  This changes the execution target.  The next
-threshold proof should either promote the v13 raw Q/BC/SP packet to exact
-certificates or produce a counterexample that becomes a new explicit floor.  It
+threshold proof should either instantiate the v13.2 Q/BC/SP safe-side packet
+with exact certificates or produce a counterexample that becomes a new explicit floor.  It
 is not enough to add another lower bound without the adjacent safe certificate.
 
-## 0. Active v13 raw Final-Form Update
+## 0. Active Paper D v13.2 Final-Form Update
 
-This section is experimental until promoted into Paper D.  Paper D v12 remains
-the current paper authority, while `experimental/cap25_cap_v13_raw.tex` is the
-active raw final-resolution spine.
+Paper D v13.2 is now the current paper authority.  The older v12 cap paper and
+the former raw-v13 compact companion are archived under `archived/`; use
+`tex/cs25_cap_v13_2.tex` for current Paper D claims.
 
 The conjectural closed form is the entropy-subfield envelope:
 
@@ -69,7 +68,7 @@ separate transfer theorem says so.
 ### 0.1 Exact unsafe certificates now known
 
 The identity-prefix floor plus the flexible-budget deep-point conversion gives
-the following experimental v13 raw deployed unsafe edges.  Each row is an exact
+the following Paper D v13.2 deployed unsafe edges.  Each row is an exact
 integer comparison of the form
 
 ```text
@@ -86,8 +85,9 @@ at the printed agreement, with failure one step further in the same scanner.
 | Mersenne-31 circle list | `2^-100` | `490565/1048576 = 0.4678392...` |
 
 For the MCA rows this improves the older v12 public edge
-`15331/32768 = 0.467865...`, but it should not be cited as a Paper-D theorem
-until the v13 raw package is promoted and independently audited.
+`15331/32768 = 0.467865...`.  It is now part of the promoted Paper D v13.2
+source, but the adjacent safe rows remain conditional until their exact upper
+ledgers are instantiated and independently audited.
 
 ### 0.2 Safe side and the current sandwich
 
@@ -222,7 +222,7 @@ The no-slack smooth-domain MCA/RCA optimism is dead.  Paper A gives explicit
 obstructions.  Positive statements must include reserve and explicit quotient
 floors.
 
-Paper D v12 is the current Paper D package, the main submission reference, and the
+Paper D v13.2 is the current Paper D package, the main submission reference, and the
 main object to audit.  It
 preserves the universal-cap package, first-grid cap, aperiodic Hankel chart
 atlas, and v10 quotient/extension ledgers, then adds the safe-side pincer and
