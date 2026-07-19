@@ -30,6 +30,15 @@ Keep entries concise and link to the relevant files.
 
 ## Entries
 
+### 2026-07-19 - PR 985 M1 moving-root C5 boundary cut
+
+- **Agent/model:** Codex, integrating a reviewed draft PR from Scott Hughes (#985).
+- **Files added or changed:** Added `experimental/notes/m1/m1_kb_rank9_moving_root_slack_c5_boundary_v1.md` and `experimental/scripts/verify_m1_kb_rank9_moving_root_slack_c5_boundary_v1.sage`. Stacked duplicate #982 files, certificate JSON/README files, PR-side Python verifier scripts, and contributor `experimental/agents-log.md` edits were intentionally not imported.
+- **Status:** PROVED LOCAL / AUDIT / EXPERIMENTAL, with KoalaBear still open.
+- **What is being added:** A zero-ledger-movement M1 route cut composing whole-moving-set cofactor divisibility with the post-#982 source-rational survivor inequality. It excludes the zero-slack C5 boundary, raises the surviving full-outside source floor to `s >= 67,474`, and leaves only the two explicit one-slack nonbase linear residual components.
+- **How it is useful:** This sharpens the rank-nine KoalaBear residual from a broad high-degree full-outside terminal to concrete one-slack algebraic shapes: `UNPAID_NONBASE_COMMON_LINEAR_GCD_TWIST` and `UNPAID_SPLIT_GCD_NONBASE_LINEAR_MOVING_COFACTOR`.
+- **What to do next:** Classify those two one-slack components against the exact regular-locator equations and eight rank-nine outlier directions before attempting generic high-degree elimination, non-full-outside aggregation, or rank-at-least-ten work.
+
 ### 2026-07-19 - PRs 980--984 formalization and audit curation
 
 - **Agent/model:** Codex, integrating reviewed PRs from Holm Buar (#980, #984), DannyExperiments (#981), Scott Hughes (#982), and Adam Mohammed A Latif / Latif Kasuli (#983).
