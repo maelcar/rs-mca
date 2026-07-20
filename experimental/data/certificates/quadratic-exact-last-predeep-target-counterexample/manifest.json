@@ -1,0 +1,43 @@
+{
+  "name": "quadratic-exact-last-predeep-target-counterexample",
+  "status": "independently-audited-zero-payment-counterexample",
+  "base": "9908454995f3f195cfe748f35a1135211609d066",
+  "claim": "For every s>=129, the ordinary RS row over GF(2^(2s)) with n=2^(2s)-1, R=3*2^s-1, and a=n-2^s is one unit outside exact-deep, has exact MCA numerator 2^s+1, and violates the frozen strict target comparison because 2^s+1<2^(2s-128).",
+  "audit_receipts": {
+    "author_repair_archive_sha256": "95054d84cb3cc519cf73dde7dde4cd14e496c575b77de84f99b7f64daf4cdb04",
+    "hostile_proof_public_sha256": "871e4f263b27fe7b8c2dbba9748877217a23e531a56565516eebc02b0d238be7",
+    "source_compiler_public_sha256": "dd3e6c902f8221a92acbe4714f2a2816d217984eef429240cfb7de3c237879e6"
+  },
+  "live_overlap": {
+    "origin_main": "9908454995f3f195cfe748f35a1135211609d066",
+    "open_pr_986": "0b0fddc7d421b2469c58031b206711934a5bad93",
+    "open_pr_987": "335b9634074fe3a1650749be5985b15e7c8b36ed",
+    "open_pr_988": "1e7dae5a1b778ec7f2026616e8a2d1203f6b23aa",
+    "open_pr_989": "c1cfe797098ca6c14e2c6b60d2854503cb65dbfc",
+    "source_files_unchanged_since_dependency_floor": true,
+    "overlap_result": "No open head changes the two pinned source files or contains the last-predeep square-field parameter family."
+  },
+  "replay": {
+    "s_rows": "129 through 160",
+    "endpoint_field_irreducibility": true,
+    "semantic_mutations": 17,
+    "normal_optimized_expected_parity": true,
+    "expected_stdout_sha256": "a3db5bf9614dda38ee41e45098960e00b522a90b1c9420b70227184b2c4d0178"
+  },
+  "nonclaims": [
+    "no replacement O5c exclusion",
+    "no general profile-envelope theorem",
+    "no finite or asymptotic ledger delta",
+    "no Grand parent or recurrence",
+    "no official-score movement"
+  ],
+  "remaining_wall": "Prove a target-viable exclusion covering every quadratic-exact target-closed row under the source hypotheses, then prove the full profile comparison on the surviving regime.",
+  "files": {
+    "experimental/scripts/verify_quadratic_exact_last_predeep_target_counterexample.py": "8c8b404874d8e9bfeb99c5fd49f0e0ec6770151a82dbaaedab7114ab18d2e57c",
+    "experimental/notes/thresholds/quadratic_exact_last_predeep_target_counterexample.md": "4af8dc087a94b5982eed4413ddb4da7f253d626808ed34c44b2358d1d1a7d454",
+    "experimental/data/certificates/quadratic-exact-last-predeep-target-counterexample/README.md": "cf85e5d24025d4beed25f2d12515083949453dce855ff667193834cd7e048932",
+    "experimental/data/certificates/quadratic-exact-last-predeep-target-counterexample/claim.json": "955bcab54cb0d8972b2eb85cff36a104844f83d2e01ad6e0dd2f56f225621dbf",
+    "experimental/data/certificates/quadratic-exact-last-predeep-target-counterexample/source_pins.json": "396b6155e6a11fd5e8b83ccf8981d153923c2e66a83eeb443578f778bd5fffcb",
+    "experimental/data/certificates/quadratic-exact-last-predeep-target-counterexample/verify_quadratic_exact_last_predeep_target_counterexample.expected.txt": "a3db5bf9614dda38ee41e45098960e00b522a90b1c9420b70227184b2c4d0178"
+  }
+}

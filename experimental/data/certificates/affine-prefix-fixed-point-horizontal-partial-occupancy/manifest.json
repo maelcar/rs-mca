@@ -1,0 +1,44 @@
+{
+  "name": "affine-prefix-fixed-point-horizontal-partial-occupancy",
+  "status": "independently-audited-zero-payment-raw-structural-theorem",
+  "base": "9908454995f3f195cfe748f35a1135211609d066",
+  "claim": "For every B>=2 in the pinned characteristic-five affine-prefix fixed-point family, the horizontal two-fold refinement has profile counts N_Bf=[y^(2B)x^f]H(y,x)G(y,x)^(B-1), exact add-back sum_f N_Bf=c_B/2, pairwise disjoint slope images of those exact sizes, and raw maximum-profile exponent (1/4)log(14).",
+  "audit_receipts": {
+    "author_repair_sha256": "f49ef49c5cfc91f67619f0b31f511829666fa62166cad2e996ee7256944539aa",
+    "hostile_proof_public_sha256": "55afc4452babca37452697c36b54e158ae5011641caf3b4047e46d965c33c12f",
+    "source_compiler_public_sha256": "f5a5cfdd870d53ee5867f98a139a5c39f27a2e6bef3f9cbafe8eba3342f543a8"
+  },
+  "live_overlap": {
+    "origin_main": "9908454995f3f195cfe748f35a1135211609d066",
+    "open_pr_986": "0b0fddc7d421b2469c58031b206711934a5bad93",
+    "open_pr_987": "335b9634074fe3a1650749be5985b15e7c8b36ed",
+    "overlap_result": "No exact G/H profile specialization was found; the two live PRs touch unrelated Lean and head-floor files."
+  },
+  "finite_replay": {
+    "profile_rows": "B=2 through B=10",
+    "brute_force": [
+      "B=2: profiles 2,20,3",
+      "B=3: profiles 4,108,162,10"
+    ],
+    "semantic_mutations": 17,
+    "external_tamper_cases": 4,
+    "normal_optimized_expected_parity": true,
+    "python39_compatibility_transcription": "Only int.bit_count() was replaced by bin(mask).count('1') in an isolated replay copy; all expected-output hashes were unchanged."
+  },
+  "nonclaims": [
+    "no actual C1-C9 semantic owner",
+    "no value of e_B or retained C3 theorem",
+    "no degree-two folding polynomial or locator composition",
+    "no finite or asymptotic ledger delta",
+    "no recurrence or Grand parent",
+    "no official-score movement"
+  ],
+  "remaining_wall": "Construct a literal source-valid semantic classifier and first-match order for the raw profile images, determine earlier ownership and the retained set, and avoid charging repeated support labels as new MCA slopes.",
+  "files": {
+    "experimental/scripts/verify_affine_prefix_fixed_point_horizontal_partial_occupancy.py": "c70bd8dc4c214dd5ae69a7aacb37e910e3a210e772e78086210bc11914dec919",
+    "experimental/notes/thresholds/affine_prefix_fixed_point_horizontal_partial_occupancy.md": "4fbfb388d4d4536120566147ccfc28781e06a87adac3ba3b1d05b2f928776412",
+    "experimental/data/certificates/affine-prefix-fixed-point-horizontal-partial-occupancy/claim.json": "6324d41c4a1aa8c4580b8013f8c993974acb2deeb0aa397dca9729de908c6eaf",
+    "experimental/data/certificates/affine-prefix-fixed-point-horizontal-partial-occupancy/source_pins.json": "67020a9c419cea7a73d8f082005e1064fb671fbeb922c2e4d627ac30447305aa",
+    "experimental/data/certificates/affine-prefix-fixed-point-horizontal-partial-occupancy/verify_affine_prefix_fixed_point_horizontal_partial_occupancy.expected.txt": "e648afc818ee77b1de6c574bc0e4967473481bbafadfaab68fcdaaf4b1162821"
+  }
+}

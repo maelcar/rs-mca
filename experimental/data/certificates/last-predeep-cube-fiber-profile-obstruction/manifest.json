@@ -1,0 +1,49 @@
+{
+  "name": "last-predeep-cube-fiber-profile-obstruction",
+  "status": "independently-audited-zero-payment-obstruction",
+  "base": "9908454995f3f195cfe748f35a1135211609d066",
+  "claim": "For every s>=65, the last-predeep RS row over GF(2^(2s)) with n=q-1, R=8, r=3, k=q-9, a=q-4, and full challenge field has exact MCA numerator (q-1)/3 above the frozen target, while every source-consumed dimension-(k+1) O5c profile list is empty or singleton with maximum challenge floor one.",
+  "audit_receipts": {
+    "hostile_proof_packet_sha256": "46727f2d7c0f955939f4ee18dafe83456c6f7857bd8a705c420fd6d7b7f7454f",
+    "hostile_proof_public_sha256": "856814fb236ef02e25df41f97dcdf7d69745bf1c79c85cd80426272a25f54700",
+    "source_compiler_packet_sha256": "01ab70f2be552468fc436db852085f8548c15a16c360aad806e799b7fd9dc158",
+    "source_compiler_public_sha256": "6666cc0b1043ccfb6544c1d20d611b19ac2b8316a6d00d9d646fbf2fdda5594d"
+  },
+  "live_overlap": {
+    "origin_main": "9908454995f3f195cfe748f35a1135211609d066",
+    "open_pr_986": "0b0fddc7d421b2469c58031b206711934a5bad93",
+    "open_pr_987": "335b9634074fe3a1650749be5985b15e7c8b36ed",
+    "open_pr_988": "1e7dae5a1b778ec7f2026616e8a2d1203f6b23aa",
+    "open_pr_989": "c1cfe797098ca6c14e2c6b60d2854503cb65dbfc",
+    "open_pr_990_before_augmentation": "9063078af63328fe73d415ddb2748af6acc01719",
+    "open_pr_991": "a805911475ed17f824e8c54caa9b32642a8bebd9",
+    "open_pr_992": "e6b2d0ac368cb1d0568f0b13d0cf8b5bd238015a",
+    "open_pr_993": "8242ea37f4aa018c241c02fe9287f9914e9fd56a",
+    "overlap_result": "PR #990 is the correct existing owner for the last-predeep target-counterexample lane; no other open head states the cube-fiber syndrome pencil or the exact-safe-exclusion plus survivor-profile impossibility."
+  },
+  "replay": {
+    "cube_rows": [65, 66, 129],
+    "square_rows": [129, 130],
+    "exact_gates": 78,
+    "semantic_mutations": 15,
+    "normal_optimized_expected_parity": true,
+    "expected_stdout_sha256": "cc48804267a609815df8cb4069878c7844ccc6c651e41023c23d316b5ebaa011"
+  },
+  "nonclaims": [
+    "no semantic owner or first-match aggregation",
+    "no complete replacement exclusion",
+    "no middle-band classification",
+    "no finite or asymptotic ledger delta",
+    "no Grand theorem or recurrence",
+    "no official-score movement"
+  ],
+  "remaining_wall": "Source-define admissible target-unsafe middle-band cells and compile a direct incidence owner or residual upper into a chronology-correct first-match aggregation.",
+  "files": {
+    "experimental/scripts/verify_last_predeep_cube_fiber_profile_obstruction.py": "7e47da51f34add44201608747a37c958acd57aacb85148a8168a62603e66e2dd",
+    "experimental/notes/thresholds/last_predeep_cube_fiber_profile_obstruction.md": "4d23b62674a09d39757fee11900d3559e1277e814e9e50e823d10ecd6f043561",
+    "experimental/data/certificates/last-predeep-cube-fiber-profile-obstruction/README.md": "bbe212b4801660474ddf4f626a13847745eafcc628954bab33ba5cc5cacf10f7",
+    "experimental/data/certificates/last-predeep-cube-fiber-profile-obstruction/claim.json": "dc23c1261f7efdc3805a40aecf8efe619d8eb41cedcb539b91f58cf18df427b4",
+    "experimental/data/certificates/last-predeep-cube-fiber-profile-obstruction/source_pins.json": "00965f8d0d9989dd9a4a21403226f24171d623d27a6ccd472a30da504b9cf831",
+    "experimental/data/certificates/last-predeep-cube-fiber-profile-obstruction/verify_last_predeep_cube_fiber_profile_obstruction.expected.txt": "cc48804267a609815df8cb4069878c7844ccc6c651e41023c23d316b5ebaa011"
+  }
+}

@@ -1,0 +1,14 @@
+QUADRATIC_EXACT_LAST_PREDEEP_TARGET_COUNTEREXAMPLE: PASS
+source_pins=PASS,files=2,anchors=11
+artifact_manifest=PASS,files=6
+claim_guard=PASS,status=independently-audited-zero-payment-counterexample
+endpoint_field=GF(2^129)[Y]/(Y^2+Y+1),irreducibility=PASS
+family=q=2^(2s),n=q-1,R=3*2^s-1,k=n-R,a=n-2^s,Gamma=GF(q)
+quadratic_margins=left=1,right=1 adjacent_list_cap=1 profile_floor=1
+s=129 numerator=680564733841876926926749214863536422913 target=1361129467683753853853498429727072845824 list_margin=680564733841876926926749214863536422911
+s=160 numerator=1461501637330902918203684832716283019655932542977 target=6277101735386680763835789423207666416102355444464034512896 list_margin=1461501637330902918203684832716283019655932542975
+symbolic_result=2^s+1<2^(2s-128),all_s>=129
+occurring_lengths=n=2^(2s)-1 replacement_exclusion=NOT_PROVED
+mutations=17/17:lower_s,target_density,target_after_family,restricted_challenge,wrong_domain,reciprocal_pole,sum_reserves,drop_first_match,drop_profile_envelope,exact_deep,wrong_length,wrong_numerator,claim_replacement,claim_payment,claim_grand_mca,claim_recurrence,claim_score
+finite_ledger_delta=0 asymptotic_ledger_delta=0 official_score=0/2
+result=PASS

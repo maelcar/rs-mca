@@ -1,0 +1,31 @@
+{
+  "base": "9908454995f3f195cfe748f35a1135211609d066",
+  "files": {
+    "experimental/rs_mca_thresholds.tex": "ae662448b90d4db365feed6d8e826a5f7e7cc752b787ae7dc94af41c7c1d0a1e",
+    "experimental/asymptotic_rs_mca_frontiers.tex": "0e3aa7b1ba79b1065439ae484f4cb989d80cabe18afb68ec63a6b21d1f3370fd",
+    "experimental/notes/thresholds/lower_reserve_o5c_profile_lists.md": "97fbf00c01a9b41f516f61110920700b7dc04096d80e1573c26e521c685018ea",
+    "experimental/scripts/verify_lower_reserve_o5c.py": "cd732d218199df7bf7a72a105345f6127b56c715bea01238a21e6ffb0cf86daf",
+    "experimental/scripts/verify_lower_reserve_deep_remainder.py": "e31de8b93e68cf49b67770583442962c54adb7053ca20f26b385d2bf2282a9ac",
+    "experimental/scripts/verify_profile_envelope_completeness.py": "85dc2cdd627912a0e824331bbd04c6515b59a2a649dbb5bf6de152306eebb2b7"
+  },
+  "required_anchors": {
+    "experimental/rs_mca_thresholds.tex": [
+      "B_C^{\\rm MCA}(a)\\) is the maximum",
+      "\\label{prop:syndrome-line-normal-form}",
+      "\\label{thm:syndrome-secant-exact}",
+      "\\label{prop:universal-tangent-floor}",
+      "\\label{prop:general-overlap-packing-upper}",
+      "\\label{prop:exact-prefix-list}",
+      "\\label{thm:collision-aware-pole}",
+      "\\label{prop:simple-pole-lower}"
+    ],
+    "experimental/notes/thresholds/lower_reserve_o5c_profile_lists.md": [
+      "A *list* for a received word",
+      "quotient / Chebyshev / remainder"
+    ],
+    "experimental/asymptotic_rs_mca_frontiers.tex": [
+      "\\emph{first-match atlas}",
+      "\\label{prop:simple-pole-lower}"
+    ]
+  }
+}

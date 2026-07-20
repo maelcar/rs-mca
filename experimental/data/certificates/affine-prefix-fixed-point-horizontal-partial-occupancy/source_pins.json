@@ -1,0 +1,39 @@
+{
+  "base": "9908454995f3f195cfe748f35a1135211609d066",
+  "dependency_origin_commit": "6f4e918f27a11995d3951f4ebe7546d4add0f345",
+  "original_packet_sha256": "ece54e22f630ba4f836378fe0e971f07ac5b62cc0d2615409dd8fe0aadaac9e5",
+  "author_repair_sha256": "f49ef49c5cfc91f67619f0b31f511829666fa62166cad2e996ee7256944539aa",
+  "hostile_proof_packet_sha256": "49e2ed9aa4bfc56a70a887eaecd87e9e5b6fec9d7ee7361d8993ad18e2ffe93c",
+  "hostile_proof_public_sha256": "55afc4452babca37452697c36b54e158ae5011641caf3b4047e46d965c33c12f",
+  "source_compiler_packet_sha256": "fdaf787600ebdc9d32a8aa053476c28b2057a3c5b0bc5589f80fe4c778a8e692",
+  "source_compiler_public_sha256": "f5a5cfdd870d53ee5867f98a139a5c39f27a2e6bef3f9cbafe8eba3342f543a8",
+  "live_open_pr_heads": {
+    "986": "0b0fddc7d421b2469c58031b206711934a5bad93",
+    "987": "335b9634074fe3a1650749be5985b15e7c8b36ed"
+  },
+  "files": {
+    "experimental/asymptotic_rs_mca_frontiers.tex": "0e3aa7b1ba79b1065439ae484f4cb989d80cabe18afb68ec63a6b21d1f3370fd",
+    "experimental/rs_mca_thresholds.tex": "ae662448b90d4db365feed6d8e826a5f7e7cc752b787ae7dc94af41c7c1d0a1e",
+    "experimental/notes/audits/atlas_payment_interface_audit.md": "17c88a76da2ee27a959e01aaace695aba280d6ab5bbbdd7baec9713f5a772188",
+    "experimental/notes/thresholds/affine_prefix_fixed_point_half_slice.md": "d0ad963a90d12c5d1de35b5b5ad7d84563cd7d9847572071a794a0a18e854083",
+    "experimental/scripts/verify_affine_prefix_fixed_point_half_slice.py": "6fa62ab947af27e7640ff178a4bf9ad101868f4cd0aa4809db6e7b74ae834056",
+    "experimental/data/certificates/affine-prefix-fixed-point-half-slice/source_pins.json": "b0a18ca3b79f2f16402aebad4f11de03d3895c8848bb19417f23a53a4dc0cde8",
+    "experimental/data/certificates/affine-prefix-fixed-point-half-slice/verify_affine_prefix_fixed_point_half_slice.expected.txt": "9abdfc6f333f55431d4fe3507be8190126d8ea3847b036160bded602c2a5da65"
+  },
+  "required_anchors": {
+    "experimental/asymptotic_rs_mca_frontiers.tex": [
+      "\\begin{theorem}[Exact partial-occupancy disintegration]",
+      "support add-back is unconditional",
+      "Those are separate analytic and ray payments."
+    ],
+    "experimental/notes/audits/atlas_payment_interface_audit.md": [
+      "These locator-prefix witness cells are not a C1--C9 semantic classification.",
+      "Coverage constructs the cells and proves their union. It does **not**"
+    ],
+    "experimental/notes/thresholds/affine_prefix_fixed_point_half_slice.md": [
+      "It is not a semantic first-match theorem.",
+      "do not assign them to a semantic C1--C9 owner.",
+      "source does not bound `e_B` or prove survival through earlier owners."
+    ]
+  }
+}

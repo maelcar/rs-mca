@@ -1,0 +1,22 @@
+AFFINE_PREFIX_FIXED_POINT_HORIZONTAL_PARTIAL_OCCUPANCY: PASS
+source_pins=PASS,count=7,anchors=8
+claim_guard=PASS,verdict=REPAIR
+local_allowed=14 local_signature_injective=PASS folding=uniform_nontrivial_2fold
+canonical_parameters=t=0,m=f,p=r=2B-2f
+local_G=1+4y+2(1+x)y^2+4xy^3+x^2y^4
+local_H=y+(1+x)y^2+3xy^3+x^2y^4
+B=2 c_B=50 half=25 profiles=2,20,3 largest=20@f=1
+B=3 c_B=568 half=284 profiles=4,108,162,10 largest=162@f=2
+B=4 c_B=6982 half=3491 profiles=8,416,1992,1040,35 largest=1992@f=2
+B=5 c_B=87864 half=43932 profiles=16,1360,13680,22800,5950,126 largest=22800@f=3
+B=6 c_B=1127156 half=563578 profiles=32,4032,69840,253760,203700,31752,462 largest=253760@f=3
+B=7 c_B=14647280 half=7323640 profiles=64,11200,297696,1923040,3365320,1562904,161700,1716 largest=3365320@f=4
+B=8 c_B=192187718 half=96093859 profiles=128,29696,1123584,11415040,35950880,35957376,10814496,796224,6435 largest=35957376@f=5
+B=9 c_B=2540520280 half=1270260140 profiles=256,76032,3884544,57254400,287542080,517575744,330644160,69436224,3822390,24310 largest=517575744@f=5
+B=10 c_B=33782005660 half=16891002830 profiles=512,189440,12568320,253900800,1873468800,5406024960,6182447040,2723086080,421235100,17989400,92378 largest=6182447040@f=6
+brute_replay=B2,B3 raw_slope_partition=PASS
+asymptotic_raw_rate=max_profile=(1/4)log(14)
+semantic_owner=NOT_PROVED actual_e_B=UNDETERMINED retained_C3=UNDETERMINED
+mutations=17/17:admit_diagonals,drop_fixed_point,identity_folding,constant_folding,three_plus_one_folding,tamper_G,tamper_H,wrong_remainder_formula,tamper_B2_profile,tamper_B3_addback,wrong_Q,duplicate_profile_owner,zero_image_denominator,assert_actual_C1_owner,assert_retained_C3_empty,assert_positive_ledger,assert_degree_two_polynomial
+finite_ledger_delta=0 asymptotic_ledger_delta=0 official_score=0/2
+result=PASS

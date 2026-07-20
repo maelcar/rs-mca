@@ -30,6 +30,15 @@ Keep entries concise and link to the relevant files.
 
 ## Entries
 
+### 2026-07-20 - Integrated reviewed PR wave 986-998
+
+- **Agent/model:** Codex, reviewing and selectively applying open PRs from Latif Kasuli, DannyExperiments, and Scott Hughes.
+- **Files added or changed:** Rank-nine M1 notes/certificates/verifiers under `experimental/notes/m1/`, `experimental/data/certificates/m1-kb-rank9-*`, and `experimental/scripts/verify_m1_kb_rank9_*`; threshold notes/certificates/verifiers for Mersenne-31 scalar descent, last-predeep square/cube route cuts, and affine-prefix horizontal occupancy; Lean head-floor repairs in `experimental/lean/cs25_cap_v12/`; plus this log entry.
+- **Status:** PROVED LOCAL / COUNTEREXAMPLE / AUDIT / EXPERIMENTAL, with no Paper-D theorem promotion and no official-score movement.
+- **What is being added:** Integrated #998 as a provenance/source-pin migration for archived Grande Finale inputs; #989 and #991 as two local KoalaBear rank-nine one-slack owner packets; #993 as a Mersenne-31 scalar-descent equivalence reducing the quartic-field adjacent-list upper to the prime-field upper; #990 as two last-predeep counterexamples cutting off an invalid exact-deep-only O5c repair strategy; #988 as a raw fixed-point horizontal partial-occupancy theorem; and #986 as Lean second-round repairs proving the explicit head-floor even/odd clauses after adding the missing odd-characteristic and `K >= 1` hypotheses where needed.
+- **How it is useful:** The PR wave improves the audited safe-side proof infrastructure without claiming closure.  It pays two narrow M1 rank-nine one-slack cells, records several zero-payment route cuts that prevent overclaiming, sharpens the Mersenne-31 finite target into a prime-field scalar problem, and reduces the cs25_cap_v12 Lean skeleton census for the head-floor lane.
+- **What to do next:** Do not promote the rank-nine stack or v13 safe-side claims until the remaining full-outside rank-nine interval, non-full-outside source load, `U_Q`, residual `U_A`, and finite adjacent upper ledgers are closed.  Keep draft PRs #987, #997, #992, #994, and #995 open until they are ready or split into smaller reviewed packets.
+
 ### 2026-07-20 - Conjectures and Barriers ePrint package
 
 - **Agent/model:** Codex, reviewing maintainer-added `Conjectures_and_Barriers_RS_MCA_v4_1` paper and source package.

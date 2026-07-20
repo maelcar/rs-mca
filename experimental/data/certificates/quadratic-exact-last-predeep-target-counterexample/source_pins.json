@@ -1,0 +1,38 @@
+{
+  "base": "9908454995f3f195cfe748f35a1135211609d066",
+  "dependency_origin_commit": "6f4e918f27a11995d3951f4ebe7546d4add0f345",
+  "original_packet_sha256": "eb17f41003393d7f3ebc80808585c17afa935ef42552951319b2e4273a409618",
+  "author_repair_archive_sha256": "95054d84cb3cc519cf73dde7dde4cd14e496c575b77de84f99b7f64daf4cdb04",
+  "author_repair_public_sha256": "c3f94d35101bf94c14aa741946162841512246b5fa3aa2686c5e3007312520ce",
+  "hostile_proof_packet_sha256": "850c0c46267c1f65053ff46a72636746a9a94b1156be6fad5ff36a65b5781d22",
+  "hostile_proof_public_sha256": "871e4f263b27fe7b8c2dbba9748877217a23e531a56565516eebc02b0d238be7",
+  "source_compiler_packet_sha256": "82b0251d0772a28d551df29561946e611c6b36b16d86e9156e5b361fa3c1708a",
+  "source_compiler_public_sha256": "dd3e6c902f8221a92acbe4714f2a2816d217984eef429240cfb7de3c237879e6",
+  "live_open_pr_heads": {
+    "986": "0b0fddc7d421b2469c58031b206711934a5bad93",
+    "987": "335b9634074fe3a1650749be5985b15e7c8b36ed",
+    "988": "1e7dae5a1b778ec7f2026616e8a2d1203f6b23aa",
+    "989": "c1cfe797098ca6c14e2c6b60d2854503cb65dbfc"
+  },
+  "files": {
+    "experimental/rs_mca_thresholds.tex": "ae662448b90d4db365feed6d8e826a5f7e7cc752b787ae7dc94af41c7c1d0a1e",
+    "experimental/asymptotic_rs_mca_frontiers.tex": "0e3aa7b1ba79b1065439ae484f4cb989d80cabe18afb68ec63a6b21d1f3370fd"
+  },
+  "required_anchors": {
+    "experimental/rs_mca_thresholds.tex": [
+      "\\label{lem:exact-agreement-reduction}",
+      "\\label{prop:exact-support-upper}",
+      "\\label{prop:universal-tangent-floor}",
+      "\\label{lem:large-overlap-collapse}",
+      "\\label{thm:quadratic-mean-overlap}"
+    ],
+    "experimental/asymptotic_rs_mca_frontiers.tex": [
+      "\\label{prop:exact-prefix-list}",
+      "\\label{thm:collision-aware-pole}",
+      "\\label{def:admissible-sequence}",
+      "\\label{def:structured-folding}",
+      "\\label{prop:simple-pole-lower}",
+      "\\frac{L(q-n)}{q-n+k(L-1)}"
+    ]
+  }
+}
