@@ -1,0 +1,25 @@
+{
+  "status": "PASS_INDEPENDENT_TYPED_PAIR_RESOURCE_PARTITION",
+  "all_pairs": 15841,
+  "inter_T8_pairs": 12264,
+  "punctured_T8_internal_pairs": 21,
+  "base_ordinary_pairs": 12285,
+  "partial_complete_T8_pairs": 3556,
+  "counterprofile_rho": [
+    168,
+    0,
+    168
+  ],
+  "uniform_bounds": {
+    "16": 1635077,
+    "17": 1737269,
+    "18": 1839461,
+    "21": 2146038
+  },
+  "typed_21_1": 1687234,
+  "typed_21_2": 1710174,
+  "typed_21_4": 1756055,
+  "typed_21_5": 1778995,
+  "slack_21_4": 5460,
+  "excess_21_5": 17480
+}

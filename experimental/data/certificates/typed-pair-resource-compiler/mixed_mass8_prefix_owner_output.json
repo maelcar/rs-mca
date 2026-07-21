@@ -1,0 +1,73 @@
+{
+  "verdict": "PASS_MIXED_MASS8_PREFIX_OWNER_WITH_CAP_ONE_INPUT",
+  "free_module_audit": {
+    "basis": [
+      "X^0",
+      "X^1",
+      "X^2",
+      "X^3",
+      "X^4",
+      "X^5",
+      "X^6",
+      "X^7"
+    ],
+    "leading_degree_residues_are_distinct": true,
+    "difference_cutoff": 32,
+    "forbidden_quotient_difference_degrees_4_to_6": {
+      "1": [
+        33,
+        41,
+        49
+      ],
+      "2": [
+        34,
+        42,
+        50
+      ],
+      "3": [
+        35,
+        43,
+        51
+      ],
+      "4": [
+        36,
+        44,
+        52
+      ],
+      "5": [
+        37,
+        45,
+        53
+      ],
+      "6": [
+        38,
+        46,
+        54
+      ],
+      "7": [
+        39,
+        47,
+        55
+      ]
+    },
+    "allowed_degree3_lane_maxima": {
+      "1": 25,
+      "2": 26,
+      "3": 27,
+      "4": 28,
+      "5": 29,
+      "6": 30,
+      "7": 31
+    },
+    "deduced_quotient_difference_degree_upper": 3,
+    "unequal_owner_constant_degree": 56,
+    "deduced_unique_mixed_degree8_factor_per_prefix": true,
+    "fixed_top_quotient_coefficients": 3
+  },
+  "cap_one_corollary": {
+    "blockfree_seven_moment_fiber_cap_input": 1,
+    "external_quotient_weight": 3432,
+    "weighted_mass8_upper": 3432
+  },
+  "scope_guard": "The owner lemma is algebraic. The cap-one value is an explicit input from the D128 block-free injectivity theorem."
+}

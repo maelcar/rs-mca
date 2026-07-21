@@ -1,0 +1,33 @@
+{
+  "verdict": "PASS_M31_TRANSFER_CAP_LEDGER",
+  "inputs": {
+    "blockfree_seven_moment_fiber_cap": 1,
+    "mixed_mass8_prefix_owner_is_unique": true,
+    "external_weight": 3432
+  },
+  "ledger": {
+    "components": {
+      "complete_T8": 3866016,
+      "canonical_T16": 216216,
+      "mixed_mass8": 3432,
+      "mixed_mass16": 68640,
+      "mixed_mass24": 3012372
+    },
+    "paid_total": 7166676,
+    "global_M31_budget": 16777215,
+    "list_cardinality": 1116023,
+    "transfer_cap": 8928191,
+    "transferred_adjacent_upper": 16777214,
+    "higher_tail_residual": 1761515,
+    "tail_incidence_sufficient_target": 1387861
+  },
+  "typed_sufficient_point": {
+    "delta_base": 21,
+    "delta_partial": 4,
+    "price": "858/133",
+    "exact_upper": "33365046/19",
+    "floor_upper": 1756055,
+    "slack": 5460
+  },
+  "scope_guard": "The typed codegrees 21 and 4 are sufficient hypotheses; this arithmetic verifier does not prove either global codegree."
+}

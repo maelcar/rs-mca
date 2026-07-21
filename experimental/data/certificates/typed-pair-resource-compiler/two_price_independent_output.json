@@ -1,0 +1,120 @@
+{
+  "status": "PASS_INDEPENDENT_TWO_PRICE_COMPILER_AUDIT",
+  "prices": {
+    "alpha": "2244/599",
+    "beta": "45342/599"
+  },
+  "profile_count": 75,
+  "tight_profiles": [
+    {
+      "h": 5,
+      "c": 4,
+      "base": 256,
+      "partial": 10,
+      "occupancy_witness": [
+        [
+          1,
+          1,
+          2,
+          8
+        ],
+        [
+          1,
+          2,
+          2,
+          8
+        ],
+        [
+          1,
+          2,
+          2,
+          8
+        ],
+        [
+          1,
+          2,
+          2,
+          8
+        ],
+        [
+          "P",
+          [
+            7,
+            2,
+            2,
+            2
+          ]
+        ]
+      ]
+    },
+    {
+      "h": 7,
+      "c": 4,
+      "base": 171,
+      "partial": 2,
+      "occupancy_witness": [
+        [
+          1,
+          1,
+          1,
+          2
+        ],
+        [
+          1,
+          1,
+          1,
+          2
+        ],
+        [
+          1,
+          1,
+          1,
+          8
+        ],
+        [
+          1,
+          1,
+          1,
+          8
+        ],
+        [
+          1,
+          1,
+          1,
+          8
+        ],
+        [
+          1,
+          1,
+          1,
+          8
+        ],
+        [
+          "P",
+          [
+            7,
+            1,
+            1,
+            1
+          ]
+        ]
+      ]
+    }
+  ],
+  "resource_counts": {
+    "base": 12285,
+    "partial": 3556
+  },
+  "typed_codegrees": {
+    "base": 21,
+    "partial": 2
+  },
+  "exact_upper": "901390644/599",
+  "floor_upper": 1504825,
+  "slack": 256690,
+  "optimality_dual": {
+    "lambda_h5c4": "350091/599",
+    "lambda_h7c4": "379589/599"
+  },
+  "scope_guard": "Occupancy compiler only; pair codegrees 21 and 2 remain hypotheses."
+}

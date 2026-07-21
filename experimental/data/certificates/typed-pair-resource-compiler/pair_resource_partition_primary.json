@@ -1,0 +1,101 @@
+{
+  "status": "PASS_TYPED_PAIR_RESOURCE_PARTITION",
+  "resource_counts": {
+    "all_same_T32_pairs": 15841,
+    "inter_T8_pairs": 12264,
+    "punctured_T8_internal_pairs": 21,
+    "base_ordinary_pairs": 12285,
+    "partial_complete_T8_pairs": 3556
+  },
+  "typing_counterprofile": {
+    "outer_occupancy": [
+      [
+        8,
+        0,
+        0,
+        0
+      ],
+      [
+        7,
+        0,
+        0,
+        0
+      ],
+      [
+        7,
+        0,
+        0,
+        0
+      ],
+      [
+        7,
+        0,
+        0,
+        0
+      ],
+      [
+        7,
+        0,
+        0,
+        0
+      ],
+      [
+        7,
+        0,
+        0,
+        0
+      ],
+      [
+        7,
+        0,
+        0,
+        0
+      ],
+      [
+        7,
+        0,
+        0,
+        0
+      ],
+      [
+        7,
+        0,
+        0,
+        0
+      ]
+    ],
+    "points": 64,
+    "complete_T8_blocks": 1,
+    "rho_printed": 168,
+    "rho_cross": 0,
+    "rho_partial": 168,
+    "weight_cap_B9": 330
+  },
+  "uniform_all_pair_repair": {
+    "sharp_ratio": "858/133",
+    "bounds": {
+      "16": 1635077,
+      "17": 1737269,
+      "18": 1839461,
+      "21": 2146038
+    },
+    "largest_closing_integer_codegree": 17,
+    "first_failing_integer_codegree": 18,
+    "slack_at_17": 24246
+  },
+  "typed_two_resource_repair": {
+    "formula": "floor((858/133)*(12285*Delta_base+3556*Delta_partial))",
+    "bounds": {
+      "21_1": 1687234,
+      "21_2": 1710174,
+      "21_4": 1756055,
+      "21_5": 1778995,
+      "20_5": 1699743,
+      "19_8": 1689311,
+      "16_16": 1635077
+    },
+    "closing_21_4_slack": 5460,
+    "failing_21_5_excess": 17480
+  },
+  "scope_guard": "This repairs the compiler. It does not prove either typed codegree bound. The former 12285-resource Delta=21 implication is unsupported with rho(S) defined by subtracting only complete-T8 internal pairs."
+}
