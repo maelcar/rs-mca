@@ -1,0 +1,13 @@
+{
+  "verdict": "PASS_EXCLUDE_LEE_PROFILE",
+  "total_twos": 6,
+  "total_ones": 2,
+  "left_twos": 3,
+  "left_ones": 1,
+  "left_records": 40664064,
+  "right_records": 40664064,
+  "raw_syndrome_matches": 40664064,
+  "disjoint_relation_found": false,
+  "wall_seconds": 37.3738,
+  "witness": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+}

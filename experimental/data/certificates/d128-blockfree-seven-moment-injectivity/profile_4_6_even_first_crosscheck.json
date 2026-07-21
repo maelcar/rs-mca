@@ -1,0 +1,15 @@
+{
+  "verdict": "PASS_EXCLUDE_EVEN_FIRST_PROFILE",
+  "twos": 4,
+  "singletons": 6,
+  "even_half_subset_records": 41664,
+  "even_equal_sum_pairs": 29760,
+  "even_disjoint_relations": 0,
+  "doubled_odd_records": 10166016,
+  "singleton_sign_patterns": 0,
+  "raw_odd_syndrome_matches": 0,
+  "collision_found": false,
+  "positive_roots": [],
+  "negative_roots": [],
+  "wall_seconds": 2.77559
+}

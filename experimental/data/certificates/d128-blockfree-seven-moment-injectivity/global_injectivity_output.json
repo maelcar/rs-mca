@@ -1,0 +1,20 @@
+{
+  "verdict": "PASS_D128_BLOCKFREE_SEVEN_MOMENT_INJECTIVITY",
+  "field": 2147483647,
+  "domain": "roots of normalized T_128",
+  "domain_points": 128,
+  "T4_blocks": 32,
+  "support_size": 7,
+  "moments": [
+    1,
+    2,
+    3
+  ],
+  "small_side_intersection_upper": 1,
+  "six_set_disjoint_collisions": 0,
+  "therefore_distinct_seven_sets_are_disjoint": true,
+  "antipodal_profiles_excluded": 12,
+  "global_maximum_fiber_size": 1,
+  "injective": true,
+  "scope_guard": "Exact theorem for F_2147483647, the normalized T_128 root set, and its T_4 partition."
+}

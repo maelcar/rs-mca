@@ -1,0 +1,12 @@
+D128_FPLLL_PROVED_ODD_FIXED_RADIUS_V3
+status RED_SUCCESS
+evaluator FixedRadiusExactEvaluator
+radius_squared 15
+nonzero_hits 0
+leaf_callbacks 0
+zero_callbacks 0
+outside_radius_callbacks 0
+enumeration_nodes 1334988488
+threads 12
+mpfr_precision_bits 139
+wall_seconds 196.924

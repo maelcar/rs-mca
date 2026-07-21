@@ -1,0 +1,89 @@
+{
+  "verdict": "PASS_D128_ANTIPODAL_LEE_COLLISION_EXCLUSION",
+  "field": 2147483647,
+  "domain_points": 128,
+  "T4_blocks": 32,
+  "independent_cayley_parameter": 3,
+  "odd_lattice_rank": 64,
+  "odd_lattice_index": "4611686014132420609",
+  "proved_empty_radius_squared": 15,
+  "radius16_sign_normalized_classes": 1,
+  "radius16_minimum_lee_weight": 16,
+  "collision_profiles_excluded": [
+    [
+      2,
+      10
+    ],
+    [
+      3,
+      6
+    ],
+    [
+      3,
+      8
+    ],
+    [
+      4,
+      2
+    ],
+    [
+      4,
+      4
+    ],
+    [
+      4,
+      6
+    ],
+    [
+      5,
+      0
+    ],
+    [
+      5,
+      2
+    ],
+    [
+      5,
+      4
+    ],
+    [
+      6,
+      0
+    ],
+    [
+      6,
+      2
+    ],
+    [
+      7,
+      0
+    ]
+  ],
+  "collision_profiles_excluded_count": 12,
+  "profile_4_6_independent_even_first_check": true,
+  "audited_artifact_sha256": {
+    "antipodal_sector_generation_output.json": "135cdb527d82712327e9fd6257be314fbbf7d874e8dfa521f07c869c606cf2e0",
+    "antipodal_sector_lattice_certificate.txt": "7a81f1e58f700c2fc4f347c82149f4df70313ddd176009a2e7c68834c28b6c6c",
+    "odd_ball16_output.txt": "dda2e9544700c9ec278a47ee76bf2aa149921e18c2f1d5926fc811a112ffbaf0",
+    "odd_radius15_output.txt": "5b56dc1ac3fe8285cc14ca57268d671d6abefde2716d6863a68b94689a1611b9",
+    "odd_sector_enumeration_basis_copy.txt": "2cb65132e6408f30ed1f7515a8bb81e85d2847f9692ea0458f058bac83e86823",
+    "odd_sector_lll_replay_basis.txt": "be390c372a5e3f21b10d9ba6289628fc8a2c47bbd7d4a50ecf49d8798e5ea8fa",
+    "odd_sector_sdb40_basis.txt": "be390c372a5e3f21b10d9ba6289628fc8a2c47bbd7d4a50ecf49d8798e5ea8fa",
+    "profile_2_10_output.json": "9b1e0f6d43e232a55ad50ed490085d525c6d2aca73e6ba233a105cb3b5d1660c",
+    "profile_3_6_output.json": "0c7ec7fa273ae2658ea996dd5c8aae50d39d2d3cd9d7d71d39165e32fbf87551",
+    "profile_3_8_output.json": "9530a659f7341da4d8fe69e19d86b4358f3b29f407c5f76faa20af961a8eb8a8",
+    "profile_4_2_output.json": "1b3bc9f7b93cfb8a1e0b4d8535be6e22c86b0ffe2f9b81ed1c8bf9a2f6e273b8",
+    "profile_4_4_output.json": "9027c8a6a8ac2d860543b9311fcd47857b9ced6b667051fbe7fd01a3f351c8be",
+    "profile_4_6_even_first_crosscheck.json": "c6f79b3a5a93cd83498864b1016d208175d3fdc2fbfbe78d5c05e3efb6f5a798",
+    "profile_4_6_output.json": "4c3a050e56fbaf8f759561a421de3723f153c0f2d244caa4bba86d2dd328e13f",
+    "profile_5_0_output.json": "5a6e58df7107a236ee164b728d8b2bdadfc9c55686e1ee681e7a2d74fa84dac9",
+    "profile_5_2_output.json": "468c60160c76ec9033cbd6e93ee156f7f3ae4e06261a3b3f2c40e9c051684596",
+    "profile_5_4_output.json": "ab8508788f748d2baf81b2b11e03e6a86666b77b3cfdcd0f1a2f277439c2f471",
+    "profile_6_0_output.json": "1d2be3038e2d4ea3585a062182dc55379388a84a344ba29b4ee1fb45c0e3d334",
+    "profile_6_2_output.json": "c24964121e4d03814c8efa22c091b5e8b403165aa3f0b8eaf53c40192f807263",
+    "profile_7_0_output.json": "7ee7e4b5a7fb02de02892bc9db52d70000fbd7421d98415009247e82d66ba0f8",
+    "six_set_moment_collision_independent.json": "94bd309950972c819afea4cd0b01efaa65adf688de18a2b6708d346e081f3767",
+    "six_set_moment_collision_primary.json": "65a61bb4d31feabb7767dde3b2cbf746dd2429460ae39c90b4b6de2aff4f0b4c",
+    "small_side_moment_collision_audit.json": "6551046de3cf36745f8ce529c208e558ed4f88fbef9df9a86ffddd42439d8adf"
+  }
+}

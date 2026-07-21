@@ -1,0 +1,9 @@
+{
+  "verdict": "PASS_EXCLUDE_PROFILE_7_0",
+  "triple_records": 333312,
+  "quadruple_records": 10166016,
+  "raw_syndrome_matches": 0,
+  "disjoint_relation_found": false,
+  "wall_seconds": 1.16136,
+  "witness": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+}

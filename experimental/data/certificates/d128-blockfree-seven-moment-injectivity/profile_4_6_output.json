@@ -1,0 +1,12 @@
+{
+  "verdict": "PASS_EXCLUDE_PROFILE_4_6_BY_RAW_SYNDROME",
+  "left_records": 243984384,
+  "right_supports": 38122560,
+  "right_assignments": 1219921920,
+  "bloom_bits": 4294967296,
+  "bloom_passes": 14079951,
+  "raw_syndrome_match_found": false,
+  "matched_key": 0,
+  "threads": 12,
+  "wall_seconds": 51.5915
+}

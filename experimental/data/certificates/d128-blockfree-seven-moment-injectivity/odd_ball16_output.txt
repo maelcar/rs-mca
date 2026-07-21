@@ -1,0 +1,18 @@
+D128_FPLLL_PROVED_ODD_FIXED_RADIUS_V3
+status RED_SUCCESS
+evaluator FixedRadiusExactEvaluator
+radius_squared 16
+enumeration_mode collect_all
+nonzero_hits 1
+leaf_callbacks 1
+zero_callbacks 0
+outside_radius_callbacks 0
+enumeration_nodes 1491620685
+threads 12
+mpfr_precision_bits 139
+wall_seconds 564.601
+minimum_lee_weight 16
+profile norm=16 twos=0 ones=16 count=1
+first_exact_norm 16
+first_enumeration_coordinates 4 -4 -2 -1 0 -1 3 -2 -2 1 4 -3 0 -5 -2 1 1 0 3 -5 -1 2 0 1 1 1 -2 2 1 -2 -1 0 3 0 0 -3 3 1 -1 -1 1 -1 1 0 -2 2 -1 -1 1 0 -1 0 0 0 0 0 0 0 0 0 -1 0 0 1
+first_lattice_vector 0 1 1 -1 -1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 -1 0 0 -1 0 1 1 0 1 -1 0 0 1 0 0 0 1 0 0 0 0 0 0 0 0 -1 1 1 0 0 0 0 0 0 0 0 0

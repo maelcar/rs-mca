@@ -1,0 +1,37 @@
+{
+  "verdict": "PASS_D128_SMALL_SET_MOMENT_CLASSIFICATION",
+  "field": 2147483647,
+  "torus_generator_parameter": 3,
+  "root_count": 128,
+  "T4_block_count": 32,
+  "e4": {
+    "subset_size": 4,
+    "subsets_checked": 10668000,
+    "exact_distinct_moment_keys": 10667969,
+    "exact_collision_groups": 1,
+    "exact_colliding_subsets": 32,
+    "maximum_exact_group_size": 32,
+    "classified_groups": 1,
+    "other_collision_groups": 0,
+    "disjoint_collision_pairs": 496,
+    "exact_group_size_histogram": {"32": 1},
+    "common_intersection_size_histogram": {"0": 1},
+    "peak_bucket_records": 334333
+  },
+  "e5": {
+    "subset_size": 5,
+    "subsets_checked": 264566400,
+    "exact_distinct_moment_keys": 264562560,
+    "exact_collision_groups": 128,
+    "exact_colliding_subsets": 3968,
+    "maximum_exact_group_size": 31,
+    "classified_groups": 128,
+    "other_collision_groups": 0,
+    "disjoint_collision_pairs": 0,
+    "exact_group_size_histogram": {"31": 128},
+    "common_intersection_size_histogram": {"1": 128},
+    "peak_bucket_records": 8273153
+  },
+  "fingerprint_collision_safety": "Equal exact keys have equal fingerprints; every repeated fingerprint is recovered and regrouped by the full 96-bit key. Hash collisions can add candidates but cannot hide exact collisions.",
+  "total_seconds": 14.558913
+}
