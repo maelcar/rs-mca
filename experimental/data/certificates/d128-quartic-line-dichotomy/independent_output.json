@@ -1,0 +1,14 @@
+{
+  "status": "PASS_INDEPENDENT_D128_QUARTIC_LINE_AUDIT",
+  "domain_construction": "direct_D128_recurrence",
+  "canonical_quartets": 10667968,
+  "pairs_with_common_e1": 17244778,
+  "sketch_bits_per_filter": 24,
+  "exact_candidate_lines": 8196,
+  "maximum_pair_multiplicity": 1891,
+  "heavy_lines_at_least_22_points": 8128,
+  "heavy_opposite_pair_carriers": 8128,
+  "noncarrier_lines_with_at_least_3_points": 0,
+  "maximum_noncarrier_points": 2,
+  "no_false_negative_argument": "A line with at least three pairs increments one bucket in each saturating sketch at least three times; the second full pass counts every key passing both filters exactly."
+}
