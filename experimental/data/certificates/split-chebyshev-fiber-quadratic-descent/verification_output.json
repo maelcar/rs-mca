@@ -1,0 +1,46 @@
+{
+  "chebyshev_identities": {
+    "1024": true,
+    "256": true,
+    "512": true
+  },
+  "descent_rows": {
+    "8": [
+      {"j": 0, "degree": 8, "values": 22, "ratio": 32, "selected_degree": 176, "complement_degree": 80, "degree_relation": "equality", "outer_W_degree": 22},
+      {"j": 1, "degree": 4, "values": 44, "ratio": 64, "selected_degree": 176, "complement_degree": 80, "degree_relation": "strict", "outer_W_degree": 42},
+      {"j": 2, "degree": 2, "values": 88, "ratio": 128, "selected_degree": 176, "complement_degree": 80, "degree_relation": "strict", "outer_W_degree": 82}
+    ],
+    "16": [
+      {"j": 0, "degree": 16, "values": 22, "ratio": 32, "selected_degree": 352, "complement_degree": 160, "degree_relation": "equality", "outer_W_degree": 22},
+      {"j": 1, "degree": 8, "values": 44, "ratio": 64, "selected_degree": 352, "complement_degree": 160, "degree_relation": "strict", "outer_W_degree": 42},
+      {"j": 2, "degree": 4, "values": 88, "ratio": 128, "selected_degree": 352, "complement_degree": 160, "degree_relation": "strict", "outer_W_degree": 82},
+      {"j": 3, "degree": 2, "values": 176, "ratio": 256, "selected_degree": 352, "complement_degree": 160, "degree_relation": "strict", "outer_W_degree": 162}
+    ],
+    "32": [
+      {"j": 0, "degree": 32, "values": 22, "ratio": 32, "selected_degree": 704, "complement_degree": 320, "degree_relation": "equality", "outer_W_degree": 22},
+      {"j": 1, "degree": 16, "values": 44, "ratio": 64, "selected_degree": 704, "complement_degree": 320, "degree_relation": "strict", "outer_W_degree": 42},
+      {"j": 2, "degree": 8, "values": 88, "ratio": 128, "selected_degree": 704, "complement_degree": 320, "degree_relation": "strict", "outer_W_degree": 82},
+      {"j": 3, "degree": 4, "values": 176, "ratio": 256, "selected_degree": 704, "complement_degree": 320, "degree_relation": "strict", "outer_W_degree": 162},
+      {"j": 4, "degree": 2, "values": 352, "ratio": 512, "selected_degree": 704, "complement_degree": 320, "degree_relation": "strict", "outer_W_degree": 322}
+    ]
+  },
+  "status": "PASS",
+  "ramification_lemma_exhaustive_toy": {
+    "field": 5,
+    "monic_h_degree": 4,
+    "monic_W_degree": 2,
+    "solutions": 5,
+    "counterexamples": 0
+  },
+  "toy_equality_case": {
+    "differential_divisibility_identity": true,
+    "inverse_mod_A": true,
+    "square_descent": true
+  },
+  "uniform_two_thirds_cap": {
+    "active_ratio_32_cap": 21,
+    "degrees_checked": [4, 8, 16, 32],
+    "ratios_checked": [2, 128],
+    "total_descent_chains": 508
+  }
+}
